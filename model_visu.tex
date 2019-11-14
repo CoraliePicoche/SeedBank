@@ -1,0 +1,92 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{decorations.text}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
+
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\begin{tikzpicture}
+%\tikzstyle{place}=[circle,thick,draw=blue!75,fill=blue!20,minimum size=6mm]
+\tikzstyle{place}=[circle,thick,draw=black,fill=white,minimum size=6mm]
+\tikzstyle{place}=[circle,thick,draw=black,fill=white,minimum size=6mm]
+
+\begin{scope}
+    % First net
+    \node [place,tokens=1](sp1_v){$N_{1,f}$};
+    \node [place,node distance=1in,below of=sp1_v](sp1_r){$N_{1,r}$};
+    \node [place,right of=sp1_v,node distance=1in](sp2_v){$N_{2,f}$};
+    \node [place,node distance=1in,below of=sp2_v](sp2_r){$N_{2,r}$};
+    \node [circle,draw=white,fill=white,minimum size=6mm,right of=sp2_v,node distance=1in](sp_etc){\Huge ...};
+
+        \node [place,right of=sp1_v,node distance=4in](sp1_sea){$N_{1,s}$};
+       \node [place,right of=sp1_sea,node distance=1in](sp2_sea){$N_{2,s}$};
+      
+      \draw[black,thick,->,postaction={decorate,decoration={text along path,raise=5pt,text={{$\gamma_{1,f}$}{}},text align=center, reverse path}}] (sp1_v.90) arc (-0:264:5mm);
+  %  \draw[black,thick,<-] (sp2_v.180) arc (0:270:5mm);
+   
+  
+  \draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$\gamma_{2,f}$}{}},text align=center}}] (sp2_v) to [looseness=4, out=90,in=0] (sp2_v);
+   
+     \draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$\gamma_{2,s}$}{}},text align=center}}] (sp2_sea) to [looseness=4, out=90,in=0] (sp2_sea);
+
+          \draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$\gamma_{1,s}$}{}},text align=center}}] (sp1_sea) to [looseness=4, out=270,in=180] (sp1_sea);
+\draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$\gamma_{1,r}$}{}},text align=center, reverse path}}] (sp1_r) to [looseness=4, out=180,in=270] (sp1_r);
+\draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$\gamma_{2,r}$}{}},text align=center}}] (sp2_r) to [looseness=4, out=0,in=270] (sp2_r);
+            
+       
+       
+       \path[->]          (sp1_v)  edge   [bend left=20]   node [right] {$\sigma_1$} (sp1_r);
+       \path[->]          (sp1_r)  edge   [bend left=20]   node [left] {$g_1$} (sp1_v);
+ 
+        \path[->]          (sp2_v)  edge   [bend left=20]   node [right] {$\sigma_2$} (sp2_r);
+       \path[->]          (sp2_r)  edge   [bend left=20]   node [left] {$g_2$} (sp2_v);
+
+               \path[->]          (sp2_v)  edge   [bend left=20]   node [below] {$\alpha_{12}$} (sp1_v);
+       \path[->]          (sp1_v)  edge   [bend left=20]   node [above] {$\alpha_{21}$} (sp2_v);
+       
+               \path[->]          (sp2_sea)  edge   [bend left=20]   node [below] {$\beta_{12}$} (sp1_sea);
+       \path[->]          (sp1_sea)  edge   [bend left=20]   node [above] {$\beta_{21}$} (sp2_sea);
+
+       
+              \path[->]          (sp1_v)  edge   [bend left=40]   node [above] {$e$} (sp1_sea);
+
+                            \path[<-]          (sp1_v)  edge   [bend left=60]   node [above] {$e'$} (sp1_sea);
+       
+              \path[->]          (sp2_v)  edge   [bend right=40]   node [above] {$e$} (sp2_sea);
+
+                            \path[<-]          (sp2_v)  edge   [bend right=60]   node [above] {$e'$} (sp2_sea);
+
+       
+       \end{scope}
+    
+\end{tikzpicture}
+
+\begin{table}
+\begin{tabular} {ccc}
+Parameter & Description & Value \\
+\hline
+$N_{i,.}$ & Abundance or biomass (?) of species $i$. Either free-floating ($f$), resting ($r$) or at sea ($s$) & NA \\
+$\alpha_{ij}$, $\beta_{ij}$ & Interaction effect of species $j$ on species $i$, with $\alpha \ll \beta$ & \\
+$\gamma_{i,.}$ & growth rate/survival (??) of species $i$ & \\
+$g_i$ & germination and resuspension rate of species $i$ & \\
+$\sigma_i$ & seed production and sedimentation rate of species $i$ & \\
+$e$, $e'$ & exchange rate between coast and ocean & \\
+\end{tabular}
+\caption{Summary of parameters}
+ \end{table}
+
+ There is 2 transfer rates; ($6S + S^2$) parameters. Assuming we have 10 species, that's already 160!
+ 
+ 
+ Seed survival is actually a composite of survival, and resistance to predation, senescence, deep burial (Cacéres et al. 1997)
+ 
+ We have $\gamma_i(N_{i,.})=\frac{R_{i,.}{1+R_{i,.}N_{i,.}/K_{i,.}}$ where $R_{i,.}$ is the reproduction rate and $K_{i,.}$ is the carrying capacity. 
+ 
+\end{document}
