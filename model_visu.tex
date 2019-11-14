@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
 \usetikzlibrary{decorations.text}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
 
@@ -11,6 +13,8 @@
 \author{}
 
 \begin{document}
+
+For now, we assume there is no reproduction. 
 
 \begin{tikzpicture}
 %\tikzstyle{place}=[circle,thick,draw=blue!75,fill=blue!20,minimum size=6mm]
@@ -74,19 +78,35 @@ Parameter & Description & Value \\
 \hline
 $N_{i,.}$ & Abundance or biomass (?) of species $i$. Either free-floating ($f$), resting ($r$) or at sea ($s$) & NA \\
 $\alpha_{ij}$, $\beta_{ij}$ & Interaction effect of species $j$ on species $i$, with $\alpha \ll \beta$ & \\
-$\gamma_{i,.}$ & growth rate/survival (??) of species $i$ & \\
+$\gamma_{i,.}$ & growth function of species $i$ & \\
+$r_{i,.}$ & growth rate of species $i$ & \\
 $g_i$ & germination and resuspension rate of species $i$ & \\
 $\sigma_i$ & seed production and sedimentation rate of species $i$ & \\
 $e$, $e'$ & exchange rate between coast and ocean & \\
+\hline
 \end{tabular}
 \caption{Summary of parameters}
- \end{table}
+\label{param}
+\end{table}
+ 
+ We have $\gamma_i(N_{i,.})=\frac{e^{r_{i,.}}N_{i,.}}{1+\sum_j\alpha_{ij}N_{j,.}}$ where $r_{i,.}$ is the growth rate and $\alpha_{ij}$/$\beta_{ij}$ is the effect of species $j$ on species $i$. \\
+ 
+ We can also fix $\alpha_{ii}\propto10\bar{|\alpha_{ij}}|$. Interaction parameters could be taken from the beta distributions designed previously for the Granger-causality paper.\\
+ \begin{equation}
+\alpha_{ij}=\alpha_{min}+(\alpha_{max}-\alpha_{min})\text{Beta}(2,2)\label{eq:coef}
+\end{equation}
 
- There is 2 transfer rates; ($6S + S^2$) parameters. Assuming we have 10 species, that's already 160!
+with the bounds of the interaction coefficient selected as
+
+\begin{equation}
+(\alpha_{min},\alpha_{max})=\begin{cases}
+(0.05,0.1) & \forall i\neq j,\text{ with probability 0.2 (positive interaction)}\\
+(-0.2,-0.1) & \forall i\neq j,\text{ with probability 0.8 (negative interaction)}\\
+\end{cases}\label{eq:coef_condition}
+\end{equation}
+
  
  
- Seed survival is actually a composite of survival, and resistance to predation, senescence, deep burial (Cacéres et al. 1997)
- 
- We have $\gamma_i(N_{i,.})=\frac{R_{i,.}{1+R_{i,.}N_{i,.}/K_{i,.}}$ where $R_{i,.}$ is the reproduction rate and $K_{i,.}$ is the carrying capacity. 
- 
+ There are 2 transfer rates and ($5S + 2*(S-1)^2$) parameters. Assuming we have 10 species, that's already 214!
+   
 \end{document}

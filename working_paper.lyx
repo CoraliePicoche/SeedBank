@@ -118,11 +118,19 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Four types:
+Three types of resting cells:
 \end_layout
 
 \begin_layout Enumerate
+Diatom temporary cysts (might be from reproduction)
+\end_layout
 
+\begin_layout Enumerate
+Diatom long-term cysts
+\end_layout
+
+\begin_layout Enumerate
+Dinoflagellate cysts (can be from reproduction)
 \end_layout
 
 \begin_layout Standard
