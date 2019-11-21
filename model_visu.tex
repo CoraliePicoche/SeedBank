@@ -91,7 +91,7 @@ $e$, $e'$ & exchange rate between coast and ocean & \\
  
  We have $\gamma_i(N_{i,.})=\frac{e^{r_{i,.}}N_{i,.}}{1+\sum_j\alpha_{ij}N_{j,.}}$ where $r_{i,.}$ is the growth rate and $\alpha_{ij}$/$\beta_{ij}$ is the effect of species $j$ on species $i$. \\
  
- We can also fix $\alpha_{ii}\propto10\bar{|\alpha_{ij}}|$. Interaction parameters could be taken from the beta distributions designed previously for the Granger-causality paper.
+ We can also fix $\alpha_{ii} \sim 10\bar{|\alpha_{ij}}|$. Interaction parameters could be taken from the beta distributions designed previously for the Granger-causality paper.
  \begin{equation}
 \alpha_{ij}=\alpha_{min}+(\alpha_{max}-\alpha_{min})\text{Beta}(2,2)\label{eq:coef}
 \end{equation}
@@ -107,6 +107,8 @@ with the bounds of the interaction coefficient selected as\\
 
  
  Wondering if we should not add an immigration/emigration term from the open ocean pool.
+ 
+Just a note regarding $\alpha \ll \beta$: it's the other way aroung in Griffiths et al. 2015. 
  
  
  There are 2 transfer rates and ($5S + 2*(S-1)^2$) parameters. Assuming we have 10 species, that's already 214!

@@ -88,49 +88,545 @@
 Working document
 \end_layout
 
-\begin_layout Subsection*
-Discussion 25/09/19
-\end_layout
-
 \begin_layout Standard
 General idea: How can the terrestrial plant literature on seed bank be applied
  to phytoplankton coexistence?
 \end_layout
 
-\begin_layout Paragraph*
-The system
+\begin_layout Section*
+Introduction
 \end_layout
 
 \begin_layout Standard
-We will take advantage of the data that we have already explored to build
- a seemingly realistic model.
- Starting with 10-12 species distributed into 3-4 functional types (which
- can be inspired by 
+[[[I think we should have an even more general paragraph before the next
+ one, that is already too technical/precise, maybe?]]]
+\end_layout
+
+\begin_layout Standard
+The high biodiversity of plant communities has long been a subject of both
+ experimental and theoretical ecologists.
+ Analyses of coexistence in terrestrial plant communities often take into
+ account several life stages [refs].
+ Considering at least two stages, seeds/juveniles and adults, different
+ models have uncovered mechanisms that might explain long-term coexistence.
+ Bet-hedging is a long-term strategy relying on the creation of seeds which
+ can remain dormant for a long period of time (over a year, often much longer).
+ Dormant seeds can tolerate harsher years during which adults cannot maintain,
+ but they also reduce part of the population that could germinate from one
+ year to another (in case of an annual plant).
+ The storage effect is another mechanism that unfolds from seed bank formation
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I cannot find it, but I'm pretty sure the name 
+\begin_inset Quotes eld
+\end_inset
+
+storage effect
+\begin_inset Quotes erd
+\end_inset
+
+ does come from seed banks.
+ I need the ref here, or I can just remove this part
+\end_layout
+
+\end_inset
+
+ (Chesson & Huntlu 1989, Ellner 2016?): this mechanism requires a negative
+ correlation between the effect of the environment and the effect of competition.
+ In good enviromental conditions, competition from other individuals is
+ stronger.
+ Finally, models and experiments suggest that adults can have a negative
+ effect on seeding survival, through the Janzen-Connell effect [refs].
+ 
+\end_layout
+
+\begin_layout Standard
+Even though different coexistence mechanisms have been unveiled through
+ the use of several life stages and a focus on the youngest stage (seeds)
+ for terrestrial plants, aquatic plants, and more specifically phytoplanktonic
+ algae, have not been modeled with the same precision.
+ Although theoreticians have proposed for a long time that the blooms may
+ initiate after the resuspension and germination of seeds (Gran 1912, Marcus
+ and Boero 1998), it is unusal to see an explicit model of such process.
+ The classical view behind phytoplankton dynamics is that bloom formation
+ is mostly seasonal, due to the variation in light and temperature, assuming
+ that there are always enough cells in the environment to duplicate.
+ However, a recent review suggests that there might be more complexity behind
+ phytoplanktonic seeds/cysts 
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citep
 key "ellegaard_long-term_2018"
 literal "false"
 
 \end_inset
 
-, Table 1), we will question biodiversity maintenance thanks to resting
- stages with a discrete-time model.
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
+\end_layout
+
+\end_inset
+
+.
+ Neglecting explicit modeling of this life stage can modify the understanding
+ we have of the dynamics of the populations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nguyen_consequences_2019"
+literal "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
-Three types of resting cells:
+Phytoplankton communities in coastal environments may benefit from seed
+ banks even more than the oceanic communities, as the distance to the bottom
+ is lower.
+ Similarly to the seed bank approach, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "smayda_turbulence_2002"
+literal "false"
+
+\end_inset
+
+ has proposed the term 
+\begin_inset Quotes eld
+\end_inset
+
+pelagic seed bank
+\begin_inset Quotes erd
+\end_inset
+
+ to characterize the contribution of the ocean to coastal communities.
+ This has been noticed for dinoflagellate especially [[ref Dinophysis, check
+ what we have on diatoms]].
+ We can wonder, however, to which extent the seed banks can contribute to
+ the biodiversity in the ocean, especially in the long term.
+ Indeed, spores are able to germinate again after tens of years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mcquoid_viability_2002,ellegaard_long-term_2018"
+literal "false"
+
+\end_inset
+
+ or even thousands of years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "sanyal_not_2018"
+literal "false"
+
+\end_inset
+
+ of dormancy, which can play a huge role on biodiversity in both oceanic
+ and coastal environments.
 \end_layout
 
-\begin_layout Enumerate
-Diatom temporary cysts (might be from reproduction)
+\begin_layout Standard
+Here we build on the work by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "shoemaker_linking_2016,wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+, and previous findings in
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_how_2019,picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+, to examine the effect on coexistence and feedbacks from the different
+ compartments (ocean, coastal water column and bottom).
+ 
 \end_layout
 
-\begin_layout Enumerate
-Diatom long-term cysts
+\begin_layout Section*
+Model
 \end_layout
 
-\begin_layout Enumerate
-Dinoflagellate cysts (can be from reproduction)
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{t+h,i,c/o}=\frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{t+h,i,b}=N_{t,i,b}(1-m_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma_{i}N_{t+h,i,b}+eN_{t+h,i,o}\\
+N_{t+1,i,o} & = & N_{t+h,i,o}(1-e)+eN_{t+h,i,c}\\
+N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma_{i})+s_{i}N_{t+h,i,c}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Param
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r_{i}$
+\end_inset
+
+(T)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+growth rate of species i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_how_2019"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+temperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha_{ij,c/o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+interaction strength of species j on i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+seed mortality of species i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sinking rate of species i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $e$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+exchange rate between ocean and coast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+germination + resuspension rate of species i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Definition of main parameters in our model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the interactions, we can have 
+\begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{ii}\sim10\bar{|\alpha_{ij}}|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Regarding the distribution of the coefficients itself, we can use what we
+ had in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+ (maybe check that it can be matched by what was used for the 20-species
+ example in the GC paper?)
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
