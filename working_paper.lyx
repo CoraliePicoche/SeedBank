@@ -149,7 +149,9 @@ Even though different coexistence mechanisms have been unveiled through
  algae, have not been modeled with the same precision.
  Although theoreticians have proposed for a long time that the blooms may
  initiate after the resuspension and germination of seeds (Gran 1912, Marcus
- and Boero 1998), it is unusal to see an explicit model of such process.
+ and Boero 1998), it is unusal to see an explicit model of such process
+ [[Note: not necessarily theoreticians, but they have done small review
+ of the existence of spors and the possible benthic-pelagic coupling.]].
  The classical view behind phytoplankton dynamics is that bloom formation
  is mostly seasonal, due to the variation in light and temperature, assuming
  that there are always enough cells in the environment to duplicate.
@@ -328,7 +330,7 @@ Name
 \begin_inset Text
 
 \begin_layout Plain Layout
-Value
+Value (unit)
 \end_layout
 
 \end_inset
@@ -591,6 +593,10 @@ Definition of main parameters in our model
 
 \end_layout
 
+\begin_layout Paragraph*
+Interactions 
+\end_layout
+
 \begin_layout Standard
 For the interactions, we can have 
 \begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
@@ -600,13 +606,19 @@ For the interactions, we can have
 \begin_inset Formula $\alpha_{ii}\sim10\bar{|\alpha_{ij}}|$
 \end_inset
 
-.
- 
-\end_layout
+ and 
+\begin_inset Formula $\alpha_{ij}\sim\mathcal{N}(\mu,\sigma)$
+\end_inset
 
-\begin_layout Standard
-Regarding the distribution of the coefficients itself, we can use what we
- had in 
+ with 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ from 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "picoche_strong_2019"
@@ -614,8 +626,116 @@ literal "false"
 
 \end_inset
 
- (maybe check that it can be matched by what was used for the 20-species
- example in the GC paper?)
+ (that is, very approximately, around 0.0 and 0.01
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+I know it is not the same model, I am just starting with some values here...)
+\end_layout
+
+\end_inset
+
+ for the coast (and have a fixed conversion ratio 
+\begin_inset Formula $k$
+\end_inset
+
+ from coast to ocean, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\alpha_{ij,c}=k\alpha_{ij,o}$
+\end_inset
+
+?).
+ We could also use the formula for the 20-species example in the Granger-causali
+ty paper.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Growth rate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+r_{i}(T) & = & a_{r}(T_{0})e^{E_{r}\frac{(\tau-\tau_{\text{0}})}{k\tau\tau_{0}}}f_{i}(T)\label{eq:growth}\\
+\textnormal{where }f_{i}(T) & = & \begin{cases}
+e^{-|T-T_{i}^{opt}|^{3}/b_{i}}, & T\leq T_{i}^{opt}\\
+e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
+\end{cases}\label{eq:eppley_curve}\\
+\textnormal{and} & b_{i}\text{ is defined by numerically solving} & \int r_{i}(\tau)d\tau=A\label{eq:niche_breadth}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We could also use a simpler Gaussian distribution for the growth rate,s
+ as in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Exchange rate
+\end_layout
+
+\begin_layout Standard
+This parameter depends on the estuary.
+ In the Arcachon Bay, the exchange rate for each tide has been estimated
+ around 64% 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "plus_hydrodynamic_2009"
+literal "false"
+
+\end_inset
+
+.
+ If we take a tidal time-step, e=0.64.
+\end_layout
+
+\begin_layout Paragraph*
+Seed mortality, sinking rate, germination
+\end_layout
+
+\begin_layout Standard
+We have maximum values in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+.
+ Average values could be taken from Fig.
+ 3 in this same paper(?).
+\end_layout
+
+\begin_layout Standard
+Sinking rate will be an indicator of size.
+ (so there will be two traits in this model: opital temperature and size)
 \end_layout
 
 \begin_layout Section*
