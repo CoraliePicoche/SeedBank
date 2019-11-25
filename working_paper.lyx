@@ -32,7 +32,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
+\spacing onehalf
 \use_hyperref false
 \papersize default
 \use_geometry true
@@ -98,8 +98,8 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-[[[I think we should have an even more general paragraph before the next
- one, that is already too technical/precise, maybe?]]]
+%%% Begin here by the biodiversity question in more details than below.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -109,36 +109,32 @@ The high biodiversity of plant communities has long been a subject of both
  account several life stages [refs].
  Considering at least two stages, seeds/juveniles and adults, different
  models have uncovered mechanisms that might explain long-term coexistence.
+ Examples of such mechanisms are the bet-hedging strategy, the storage effect
+ and the Janzen-Connell effect.
  Bet-hedging is a long-term strategy relying on the creation of seeds which
  can remain dormant for a long period of time (over a year, often much longer).
  Dormant seeds can tolerate harsher years during which adults cannot maintain,
  but they also reduce part of the population that could germinate from one
  year to another (in case of an annual plant).
- The storage effect is another mechanism that unfolds from seed bank formation
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-I cannot find it, but I'm pretty sure the name 
-\begin_inset Quotes eld
-\end_inset
-
-storage effect
-\begin_inset Quotes erd
-\end_inset
-
- does come from seed banks.
- I need the ref here, or I can just remove this part
-\end_layout
+ The storage effect has first been defined by the presence of a long-lived
+ life stage and temporal variation in recruitment from this long-lived life
+ stage that helps escape interspecific competition (Chesson 1986, 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "caceres_temporal_1997"
+literal "false"
 
 \end_inset
 
- (Chesson & Huntlu 1989, Ellner 2016?): this mechanism requires a negative
- correlation between the effect of the environment and the effect of competition.
+).
+ This has been later generalized as a negative correlation between the effect
+ of the environment and the effect of competition (Ellner et al.
+ 2016).
  In good enviromental conditions, competition from other individuals is
- stronger.
+ stronger as seeds might germinate at the same time.
  Finally, models and experiments suggest that adults can have a negative
- effect on seeding survival, through the Janzen-Connell effect [refs].
+ effect on seed survival, through the Janzen-Connell effect (Comita et al.
+ 2014).
  
 \end_layout
 
@@ -151,7 +147,7 @@ Even though different coexistence mechanisms have been unveiled through
  initiate after the resuspension and germination of seeds (Gran 1912, Marcus
  and Boero 1998), it is unusal to see an explicit model of such process
  [[Note: not necessarily theoreticians, but they have done small review
- of the existence of spors and the possible benthic-pelagic coupling.]].
+ of the existence of spores and the possible benthic-pelagic coupling.]].
  The classical view behind phytoplankton dynamics is that bloom formation
  is mostly seasonal, due to the variation in light and temperature, assuming
  that there are always enough cells in the environment to duplicate.
@@ -170,6 +166,7 @@ status open
 
 \begin_layout Plain Layout
 We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
+ The last one might be kept for cysts from reproduction?
 \end_layout
 
 \end_inset
@@ -260,9 +257,21 @@ Model
 \end_layout
 
 \begin_layout Standard
+Let's consider two steps in the discrete-time model: species first grow
+ following a Beverton-Holt model for the coastal and oceanic cells, while
+ seeds only survive.
+ Then, we take into account exchange with the open-ocean and with the benthic
+ seeds.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-N_{t+h,i,c/o}=\frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}
+\left\{ \begin{array}{ccc}
+N_{t+h,i,c/o} & = & \frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}\\
+N_{t+h,i,b} & = & N_{t,i,b}(1-m_{i})
+\end{array}\right.
 \]
 
 \end_inset
@@ -273,21 +282,12 @@ N_{t+h,i,c/o}=\frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o
 \begin_layout Standard
 \begin_inset Formula 
 \[
-N_{t+h,i,b}=N_{t,i,b}(1-m_{i})
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
+\left\{ \begin{array}{ccc}
 N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma_{i}N_{t+h,i,b}+eN_{t+h,i,o}\\
 N_{t+1,i,o} & = & N_{t+h,i,o}(1-e)+eN_{t+h,i,c}\\
 N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma_{i})+s_{i}N_{t+h,i,c}
-\end{align*}
+\end{array}\right.
+\]
 
 \end_inset
 
@@ -576,7 +576,16 @@ germination + resuspension rate of species i
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Definition of main parameters in our model
+Definition of main parameters in our model [[These are not the notations
+ from 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+]]
 \end_layout
 
 \end_inset
@@ -631,7 +640,7 @@ literal "false"
 status open
 
 \begin_layout Plain Layout
-I know it is not the same model, I am just starting with some values here...)
+I know it is not the same model, I am just starting with some values here...
 \end_layout
 
 \end_inset
@@ -659,8 +668,7 @@ I know it is not the same model, I am just starting with some values here...)
 
 ?).
  We could also use the formula for the 20-species example in the Granger-causali
-ty paper.
- 
+ty paper (based on a beta-distribution and much less facilitation).
 \end_layout
 
 \begin_layout Paragraph*
@@ -684,8 +692,8 @@ e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
 \end_layout
 
 \begin_layout Standard
-We could also use a simpler Gaussian distribution for the growth rate,s
- as in 
+We could also use a simpler Gaussian distribution for the growth rate, as
+ in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wisnoski_dormancy_2019"
@@ -720,7 +728,7 @@ Seed mortality, sinking rate, germination
 \end_layout
 
 \begin_layout Standard
-We have maximum values in 
+For mortality, we have maximum values in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -731,11 +739,40 @@ literal "false"
 .
  Average values could be taken from Fig.
  3 in this same paper(?).
+ Or could be taken from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hinners_modelling_2019"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Sinking rate will be an indicator of size.
- (so there will be two traits in this model: opital temperature and size)
+Sinking rate can be an indicator of size.
+ (so there will be two traits in this model: optimal temperature and size).
+ Sinking can also be related to other events (for instance, overcrowding
+ leading to reproduction as in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eilertsen_phytoplankton_2000"
+literal "false"
+
+\end_inset
+
+, but reasons behind reproduction are still not clear...
+ Best is related to shrinking as in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "dalelio_time_2010"
+literal "false"
+
+\end_inset
+
+, but for now, we do not have an explicit representation of the size variation).
+ 
 \end_layout
 
 \begin_layout Section*
