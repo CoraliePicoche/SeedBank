@@ -144,10 +144,22 @@ Even though different coexistence mechanisms have been unveiled through
  for terrestrial plants, aquatic plants, and more specifically phytoplanktonic
  algae, have not been modeled with the same precision.
  Although theoreticians have proposed for a long time that the blooms may
- initiate after the resuspension and germination of seeds (Gran 1912, Marcus
- and Boero 1998), it is unusal to see an explicit model of such process
- [[Note: not necessarily theoreticians, but they have done small review
- of the existence of spores and the possible benthic-pelagic coupling.]].
+ initiate after the resuspension and germination of seeds (Patrick 1948,
+ Marcus and Boero 1998)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Gran 1912 before, but too hard to find.
+ However, for a historical point of view, Patrick 1948 and Taylor 1980 from
+ Oceanography, The Past, are good source
+\end_layout
+
+\end_inset
+
+, it is unusal to see an explicit model of such process [[Note: not necessarily
+ theoreticians, but they have done small review of the existence of spores
+ and the possible benthic-pelagic coupling.]].
  The classical view behind phytoplankton dynamics is that bloom formation
  is mostly seasonal, due to the variation in light and temperature, assuming
  that there are always enough cells in the environment to duplicate.
@@ -432,6 +444,30 @@ interaction strength of species j on i
 
 \begin_layout Plain Layout
 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\mathcal{N}(\mu,\sigma)$
+\end_inset
+
+, 
+\begin_inset Formula $\mu=0.0$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=0.01$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -463,6 +499,14 @@ seed mortality of species i
 \begin_inset Text
 
 \begin_layout Plain Layout
+See 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
 
 \end_layout
 
@@ -495,6 +539,14 @@ sinking rate of species i
 \begin_inset Text
 
 \begin_layout Plain Layout
+See 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kamykowski_comparison_nodate,olenina_biovolumes_2006"
+literal "false"
+
+\end_inset
+
 
 \end_layout
 
@@ -527,7 +579,7 @@ exchange rate between ocean and coast
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.64
 \end_layout
 
 \end_inset
@@ -559,7 +611,11 @@ germination + resuspension rate of species i
 \begin_inset Text
 
 \begin_layout Plain Layout
+[0.1,0.01,0.001] * 0.5 * 
+\begin_inset Formula $s_{i}$
+\end_inset
 
+ 
 \end_layout
 
 \end_inset
@@ -609,6 +665,17 @@ Interactions
 \begin_layout Standard
 For the interactions, we can have 
 \begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This must be true for competition, but what happens for apparent facilitation?
+ Does it change sign? Does it just decrease?
+\end_layout
+
 \end_inset
 
  and 
@@ -671,6 +738,23 @@ I know it is not the same model, I am just starting with some values here...
 ty paper (based on a beta-distribution and much less facilitation).
 \end_layout
 
+\begin_layout Standard
+Just a note regarding 
+\begin_inset Formula $\alpha_{..,c}\ll\beta_{..,o}$
+\end_inset
+
+: it's the other way aroung in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "griffiths_phytoplankton_2015"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
 \begin_layout Paragraph*
 Growth rate
 \end_layout
@@ -720,11 +804,13 @@ literal "false"
 \end_inset
 
 .
- If we take a tidal time-step, e=0.64.
+ If we take a tidal time-step, e=0.64 (we can also say that we have a daily
+ time step, see notes below).
+ 
 \end_layout
 
 \begin_layout Paragraph*
-Seed mortality, sinking rate, germination
+Seed mortality
 \end_layout
 
 \begin_layout Standard
@@ -739,7 +825,90 @@ literal "false"
 .
  Average values could be taken from Fig.
  3 in this same paper(?).
- Or could be taken from 
+ 
+\end_layout
+
+\begin_layout Standard
+Assuming, m is the probability of mortality, the life duration L follow
+ the distribution 
+\begin_inset Formula $p(L>l)=e^{-mk}.$
+\end_inset
+
+We have maximum values, we can arbitrarily choose that for these values
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p(L>l_{max})=0.05$
+\end_inset
+
+.
+ In this, 
+\begin_inset Formula $m=-\frac{ln(p(L>l_{max}))}{l_{max}}$
+\end_inset
+
+.
+ We then have values around 10^-4 d-1.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Standard
+We also have mean survival.
+ In this case, 
+\begin_inset Formula $m=\frac{1}{l_{mean}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We also have values from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "montresor_diversity_2013"
+literal "false"
+
+\end_inset
+
+, but they are much higher as they could only keep species for a little
+ more than a year (which goes against 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "sanyal_not_2018"
+literal "false"
+
+\end_inset
+
+).
+ This can be explained by the fact that spores were kept in dark and cold
+ environments, not exactly what they could encounter in the field.
+\end_layout
+
+\begin_layout Standard
+A fixed mortality could also be taken from 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "hinners_modelling_2019"
@@ -747,13 +916,75 @@ literal "false"
 
 \end_inset
 
-.
+ (0.0097 d-1), but this seems very high compared to previous values.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Sinking rate
 \end_layout
 
 \begin_layout Standard
 Sinking rate can be an indicator of size.
  (so there will be two traits in this model: optimal temperature and size).
- Sinking can also be related to other events (for instance, overcrowding
+ 
+\end_layout
+
+\begin_layout Standard
+Taking the formula from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kamykowski_comparison_nodate"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset Formula $s_{i}=-22.90\frac{A_{i}}{V_{i}}+7.50$
+\end_inset
+
+ where 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ is the surface area and 
+\begin_inset Formula $V_{i}$
+\end_inset
+
+ is the volume, and 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+ is the sinking-velocity in m.s^-1: we can divide it by the mean water depth.
+ We can find values for surface and volume in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "olenina_biovolumes_2006"
+literal "false"
+
+\end_inset
+
+.
+ This estimate was computed on narcotized dinoflagellates, so we don't need
+ to take into account swimming velocities BUT they do not necessarily have
+ the same compositions.
+ Values can be taken directly from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "smayda_suspension_1983"
+literal "false"
+
+\end_inset
+
+ for certain dinoflagellates.
+ NOTE: if we use this formula, we have rates well over 1.
+ Something might be missing.
+ Might be because of constant mixing.
+ How to take that into account?
+\end_layout
+
+\begin_layout Standard
+Sinking can also be related to other events (for instance, overcrowding
  leading to reproduction as in 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -773,6 +1004,202 @@ literal "false"
 
 , but for now, we do not have an explicit representation of the size variation).
  
+\end_layout
+
+\begin_layout Paragraph*
+Germination/resuspension
+\end_layout
+
+\begin_layout Standard
+Germination and resuspension might be difficult to differentiate.
+ From 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+, we can assume that there is a temperature threshold for germination (but
+ this cannot explain a lot of long-term dormancy), which is confirmed by
+ the review by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "agrawal_factors_2009"
+literal "false"
+
+\end_inset
+
+.
+ Photoperiodicity does not seem to have a strong effect, but see 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eilertsen_photoperiodic_1995"
+literal "false"
+
+\end_inset
+
+.
+ However, day light will be correlated, even slightly, with temperature
+ anyway.
+\end_layout
+
+\begin_layout Standard
+Even though we have no estimation of germination and resuspension rate,
+ we can try several values.
+ Germination can be 1%, 0.1%, 0.01%.
+ Resuspension can be half sinking rate (maybe ?).
+ Resuspension will not really matter with these low values of germination.
+\end_layout
+
+\begin_layout Subsubsection*
+Species
+\end_layout
+
+\begin_layout Standard
+The basis for the species we use can be 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "barraquand_coastal_2018,picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "montresor_diversity_2013"
+literal "false"
+
+\end_inset
+
+ (who also tested if the species they observed were able to sporulate).
+ Keeping in mind that we only have model diatoms, and not actual species,
+ we can still try to model 
+\begin_inset Quotes eld
+\end_inset
+
+look alike
+\begin_inset Quotes erd
+\end_inset
+
+ groups.
+ 
+\end_layout
+
+\begin_layout Standard
+We can have one small and one big Chaetoceros species.
+ 
+\end_layout
+
+\begin_layout Standard
+One Skeletonema (whose functioning will be very similar to Chaetoceros)
+ ?
+\end_layout
+
+\begin_layout Standard
+One Thalassiosira ? (very low survival in the sediment)
+\end_layout
+
+\begin_layout Standard
+A very big one, like Rhizosolenia (used Gyrosigma)
+\end_layout
+
+\begin_layout Standard
+Pseudo-Nitzschia (no spore found in 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "montresor_diversity_2013"
+literal "false"
+
+\end_inset
+
+), Nitzschia, Navicula (as a replacement for Asterionellopsis, based on
+ biovolume and the fact that it is a pennate diatom)
+\end_layout
+
+\begin_layout Standard
+Two dinoflagellates: gymnodinium and protoperidinium (both present in 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "barraquand_coastal_2018"
+literal "false"
+
+\end_inset
+
+; and both having mortality values in 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+, one low, one high).
+ 
+\end_layout
+
+\begin_layout Standard
+See temporary choice in param_plankton.ods for now.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Thoughts from last discussion:
+\end_layout
+
+\begin_layout Plain Layout
+- we assume that mortality is weak, as we observed spores remaining in the
+ ground for decades.
+\end_layout
+
+\begin_layout Plain Layout
+- With germination and mortality low, can we observe a strong coexistence?
+ We have a fast-slow system (vegetative-dormancy), can we simplify it? (steady
+ state approx?)
+\end_layout
+
+\begin_layout Plain Layout
+- If we are asked about emigration and immigration term from and to the
+ ocean, we can say that there is no reason for both rates not to be equal.
+\end_layout
+
+\begin_layout Plain Layout
+- In the ocean, when a species gets extinct, it cannot go back (no resuspension
+ from the deeper ocean), that's why we can assume that the coast can maintain
+ part of the diversity.
+\end_layout
+
+\begin_layout Plain Layout
+- If asked about the choice of a discrete model: seed bank are usually treated
+ with such models and we wanted to stay close to what was developed for
+ terrestrail plants.
+ There can be numerical problem with germination and mortality low.
+ There is only growth during the day.
+ However, I think this can be a problem: even though there is no growth,
+ there is exchange.
+ Should we have two different formula alternating?
+\end_layout
+
+\begin_layout Plain Layout
+Biological questions:
+\end_layout
+
+\begin_layout Plain Layout
+- Do we observe a strong variation in composition in sediments?
+\end_layout
+
+\begin_layout Plain Layout
+- Are there oceanic blooms? What are the traits of the species there? Are
+ they really different from the ones in the coast?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
