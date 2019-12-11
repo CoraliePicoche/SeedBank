@@ -98,14 +98,15 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-%%% Begin here by the biodiversity question in more details than below.
+The high biodiversity of plant communities has long been a subject of both
+ experimental and theoretical ecologists.
+ Both terrestrial plants and phytoplanktonic communities can present hundreds
+ of species which seem to consume the same resources.
  
 \end_layout
 
 \begin_layout Standard
-The high biodiversity of plant communities has long been a subject of both
- experimental and theoretical ecologists.
- Analyses of coexistence in terrestrial plant communities often take into
+Analyses of coexistence in terrestrial plant communities often take into
  account several life stages [refs].
  Considering at least two stages, seeds/juveniles and adults, different
  models have uncovered mechanisms that might explain long-term coexistence.
@@ -740,10 +741,10 @@ ty paper (based on a beta-distribution and much less facilitation).
 
 \begin_layout Standard
 Just a note regarding 
-\begin_inset Formula $\alpha_{..,c}\ll\beta_{..,o}$
+\begin_inset Formula $\alpha_{..,c}\ll\alpha_{..,o}$
 \end_inset
 
-: it's the other way aroung in 
+: it's the other way around in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "griffiths_phytoplankton_2015"
@@ -781,6 +782,47 @@ We could also use a simpler Gaussian distribution for the growth rate, as
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Optimal temperature
+\end_layout
+
+\begin_layout Standard
+If we use eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to model growth rate, we will need optimal temperature.
+ Contrary to what was done in the toy model of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_how_2019"
+literal "false"
+
+\end_inset
+
+, I do not think a uniform law is realistic.
+ We can have the Asterionellopsis-lookalike and Skeletonema costatum at
+ the lower end (which would differentiate it from Chaetoceros), around 15.
+ Others can be between 20 and 25.
+ Note that it's 5 degrees above the observed mean in the REPHY dataset,
+ but it's also the domain of application of the model from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
 literal "false"
 
 \end_inset
@@ -968,7 +1010,17 @@ literal "false"
  This estimate was computed on narcotized dinoflagellates, so we don't need
  to take into account swimming velocities BUT they do not necessarily have
  the same compositions.
- Values can be taken directly from 
+ NOTE: if we use this formula, we have rates well over 1.
+ Something might be missing.
+ Might be because of constant mixing.
+ How to take that into account? NOTE BIS: This is because this formula compute
+ sinking velocities.
+ These are not sinking rates, even with a dimensional analysis.
+ I am not even sure we can go from one to the other.
+\end_layout
+
+\begin_layout Standard
+Values can be taken directly from 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "smayda_suspension_1983"
@@ -977,10 +1029,7 @@ literal "false"
 \end_inset
 
  for certain dinoflagellates.
- NOTE: if we use this formula, we have rates well over 1.
- Something might be missing.
- Might be because of constant mixing.
- How to take that into account?
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1004,6 +1053,24 @@ literal "false"
 
 , but for now, we do not have an explicit representation of the size variation).
  
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "passow_species-specific_1991"
+literal "false"
+
+\end_inset
+
+ (who measured actual sinking rate), rates can vary between 1 and 30% for
+ the same species (Chaetoceros spp.), with the most usual values around 10%.
+ However, this is based on two diatoms only (one ciliate has a sinking rate
+ of 1%...
+ but it's a ciliate, it can swim).
+ What about a log-normal law centered on ln(10) ? NOTE: A lof of authors
+ talk about sinking rate but present sinking velocity.
 \end_layout
 
 \begin_layout Paragraph*
