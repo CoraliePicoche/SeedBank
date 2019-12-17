@@ -31,6 +31,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -101,7 +102,7 @@ literal "false"
 
 \end_inset
 
-, and previous findings in
+, and previous findings in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "picoche_how_2019,picoche_strong_2019"
@@ -201,10 +202,34 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{%
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -847,7 +872,7 @@ sinking rate of species
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $30\beta(0.5,1)$
+\begin_inset Formula $30\beta(0.55,1.25)$
 \end_inset
 
  from values given in 
@@ -978,6 +1003,17 @@ germination + resuspension rate of species i
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -998,6 +1034,10 @@ name "tab:State_Parameter"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -1083,7 +1123,7 @@ literal "false"
 \end_inset
 
 , 
-\begin_inset Formula $\alpha_{ii}\sim10\bar{|\alpha_{ij}}|$
+\begin_inset Formula $\alpha_{ii}\sim10\bar{|\alpha_{.j}}|$
 \end_inset
 
  and 
@@ -1458,8 +1498,23 @@ Species definition
 \end_layout
 
 \begin_layout Standard
-We based our species definition on observed species, keeping in mind that
- we can only be schematic in such definition.
+The composition of the community is based on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+, with somes changes to remain close to species present in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+.
  
 \end_layout
 
