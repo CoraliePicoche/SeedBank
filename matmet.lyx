@@ -1,0 +1,1479 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Methods
+\end_layout
+
+\begin_layout Subsection*
+Model
+\end_layout
+
+\begin_layout Standard
+We use the model developed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "shoemaker_linking_2016,wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+, and previous findings in
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_how_2019,picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We consider two steps in the discrete-time model: species first grow following
+ a Beverton-Holt model for the coastal and oceanic cells, while seeds are
+ only subject to a small mortality.
+ Then, we take into account exchanges between the coast and the open-ocean,
+ and between the water column and the benthos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left\{ \begin{array}{ccc}
+N_{t+h,i,c/o} & = & \frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}\\
+N_{t+h,i,b} & = & N_{t,i,b}(1-m_{i})
+\end{array}\right.\label{eq:model_step1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left\{ \begin{array}{ccc}
+N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma_{i}N_{t+h,i,b}+eN_{t+h,i,o}\\
+N_{t+1,i,o} & = & N_{t+h,i,o}(1-e)+eN_{t+h,i,c}\\
+N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma_{i})+s_{i}N_{t+h,i,c}
+\end{array}\right.\label{eq:model_step2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with growth rate defined according to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\begin_inset Formula 
+\begin{eqnarray}
+r_{i}(T) & = & a_{r}(\tau_{0})e^{E_{r}\frac{(T-\tau_{\text{0}})}{kT\tau_{0}}}f_{i}(T)\nonumber \\
+\textnormal{where }f_{i}(T) & = & \begin{cases}
+e^{-|T-T_{i}^{opt}|^{3}/b_{i}}, & T\leq T_{i}^{opt}\\
+e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
+\end{cases}\nonumber \\
+\textnormal{and} & b_{i}\text{ is defined by numerically solving} & \int r_{i}(\tau)d\tau=A\label{eq:growth_rate}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parameters and state variables definitions are given in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:State_Parameter"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="18" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Param
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value (unit)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{t,i,c/o/b}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abundances of species 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ in the coast (
+\begin_inset Formula $c$
+\end_inset
+
+) or ocean (
+\begin_inset Formula $o$
+\end_inset
+
+) water column, or in the benthos (
+\begin_inset Formula $b$
+\end_inset
+
+) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NA (Number of cells)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+temperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NA (K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r_{i}$
+\end_inset
+
+(T)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+growth rate of species 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Normalization constant for the thermal decay rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(K^{3}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\tau_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reference temperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+293 (K) / 20 (°C)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{r}(\tau_{0})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Growth rate at reference temperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $386(\frac{\text{kg}}{\text{kg\times year}}$
+\end_inset
+
+)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As the final dimension of this variable is year-1, I don't think we have
+ to convert to number of cells but I am still wondering about the usability
+ of this parameter + we have to convert from year to day
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E_{r}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Activation energy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.467 (eV)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boltzmann's constant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $8.6173324.10^{-5}(\text{eV.K}^{-1})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fraction of the maximum rate achieved for the 
+\begin_inset Formula $i^{th}$
+\end_inset
+
+ species
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(NA)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T_{\text{min}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum thermal optimum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+288 (K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T_{\text{max}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum thermal optimum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+298 (K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Optimal temperature for species 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adapted from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha_{ij,c/o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+interaction strength of species 
+\begin_inset Formula $j$
+\end_inset
+
+ on 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\mathcal{N}(\mu,\sigma)$
+\end_inset
+
+, 
+\begin_inset Formula $\mu=0.0$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=0.01$
+\end_inset
+
+; adapted 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+seed mortality of species 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\approx10^{-4}/10^{-5}$
+\end_inset
+
+Values from on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sinking rate of species 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $30\beta(0.5,1)$
+\end_inset
+
+ from values given in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "passow_species-specific_1991"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $e$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+exchange rate between ocean and coast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.64 d
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $^{-1}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "plus_hydrodynamic_2009"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+germination + resuspension rate of species i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[0.1,0.01,0.001] * 0.5 * 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+ (abitrary)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Definition of variable states and parameters 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:State_Parameter"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Parameter definition
+\end_layout
+
+\begin_layout Paragraph*
+Interactions 
+\end_layout
+
+\begin_layout Standard
+Assuming that nutrients are rarer in the ocean than in the coast [ref],
+ 
+\begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
+\end_inset
+
+, with a fixed coefficient 
+\begin_inset Formula $k$
+\end_inset
+
+ such that 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\alpha_{ij,c}=k\alpha_{ij,o}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This must be true for competition, but what happens for apparent facilitation?
+ Does it change sign? Does it just decrease? Maybe positive interactions
+ are reduced to 0 when in the ocean, that is why many interactions were
+ removed in the oceanic site 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "griffiths_phytoplankton_2015"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{ii}\sim10\bar{|\alpha_{ij}}|$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{ij}\sim\mathcal{N}(\mu,\sigma)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ around 0.0 and 0.01
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+I know it is not the same model, I am just starting with some values here...
+\end_layout
+
+\end_inset
+
+ for coastal interactions
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.
+\end_layout
+
+\begin_layout Paragraph*
+Optimal temperature
+\end_layout
+
+\begin_layout Standard
+To define each species growth rate according to daily temperature, species
+ are defined according to their optimal temperature.
+ In the toy model of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_how_2019"
+literal "false"
+
+\end_inset
+
+, optimal temperatures followed a uniform law between 15 and 25°C.
+ This does not seem realistic, especially if we look at the effect of temperatur
+e in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+.
+ We can define two species preferring the cold (around 15°C), as we had
+ Asterionellopsis and Skeletonema in our datasets, and the other preferring
+ warmer temperatures (uniform law between 20 and 25°C).
+ 
+\end_layout
+
+\begin_layout Standard
+Note that these temperature values are 5 degrees above the observed mean
+ in the REPHY dataset, but they are in the domain of application of the
+ model from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Exchange rate
+\end_layout
+
+\begin_layout Standard
+This parameter depends on the estuary.
+ In the Arcachon Bay, the exchange rate for each tide has been estimated
+ around 64% 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "plus_hydrodynamic_2009"
+literal "false"
+
+\end_inset
+
+.
+ If we take a daily time-step and consider only the tide that takes place
+ during the day, there is only one tide and then, e=0.64
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+We need to have very good arguments to take into account only one tide per
+ day.
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Seed mortality
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+ present maximum and mean depth at which germination of diatoms and dinoflagella
+tes occurred in sediments.
+ They also present sediment datation according to depth.
+ Depth can therefore be related to maximum and mean age of phytoplankton
+ before death.
+ 
+\end_layout
+
+\begin_layout Standard
+Assuming m is the probability of mortality, m follows a geometric law, i.e.,
+ m is the probability distribution of the number of days needed for a phytoplank
+on spore to die.
+ The expectancy for the life duration (the number of days without dying)
+ is 
+\begin_inset Formula $\frac{\ensuremath{1}}{m}\Leftrightarrow m=\frac{1}{L_{mean}}$
+\end_inset
+
+where 
+\begin_inset Formula $L_{mean}$
+\end_inset
+
+ is the average life duration.
+\end_layout
+
+\begin_layout Standard
+Another way to look at the process is that life expectancy 
+\begin_inset Formula $L$
+\end_inset
+
+ follows the distribution 
+\begin_inset Formula $p(L>l)=e^{-ml}.$
+\end_inset
+
+With maximum values, we can arbitrarily choose that for these values 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p(L>l_{max})=0.05$
+\end_inset
+
+.
+ In this, 
+\begin_inset Formula $m=-\frac{ln(p(L>l_{max}))}{l_{max}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+In both cases, 
+\begin_inset Formula $m\propto10^{-4}\text{\text{d}}^{-1}$
+\end_inset
+
+.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Sinking rate
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "passow_species-specific_1991"
+literal "false"
+
+\end_inset
+
+ (who measured sinking rates in real conditions), rates can vary between
+ 1 and 30% for the same species (Chaetoceros spp.), with a mean value for
+ two diatom species of 10 (Chaetoceros and Thalassiosira).
+ Values are much for the others, around 1% for the others.
+\end_layout
+
+\begin_layout Standard
+Sinking rate values around 10% are consistent with the loss rate values
+ in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wiedmann_seasonality_2016"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can arbitrarily fix a beta distribution with mean value close to the
+ one observed in both papers (between 9 and 10), and maximum around 30%,
+ that is 
+\begin_inset Formula $s\backsim\beta(0.55,1.25)*30$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename beta_law.pdf
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Possible distribution of sinking rates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We may have to force the values for species like Chaetoceros, Thalassiosira,
+ to have higher sinking rates.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Germination/resuspension
+\end_layout
+
+\begin_layout Standard
+Germination and resuspension might be difficult to differentiate, they are
+ defined by the same parameters (
+\begin_inset Formula $\gamma=\text{resuspension*germination})$
+\end_inset
+
+.Even though we have no estimation of germination and resuspension rate,
+ we can try several values.
+ Germination can be 1%, 0.1%, 0.01%.
+ Resuspension can be half sinking rate (maybe ?).
+ Resuspension will not really matter with these low values of germination.
+\end_layout
+
+\begin_layout Standard
+Additional information regarding germination: from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+, we can assume that there is a temperature threshold for germination (but
+ this cannot explain a lot of long-term dormancy) and the existence of such
+ threshold is confirmed by the review by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "agrawal_factors_2009"
+literal "false"
+
+\end_inset
+
+.
+ Photoperiodicity does not seem to have a strong effect according to this
+ review (but see 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eilertsen_photoperiodic_1995"
+literal "false"
+
+\end_inset
+
+).
+ We could use a temperature threshold at 15°C, as we already take this temperatu
+re for the growth rate 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Species definition
+\end_layout
+
+\begin_layout Standard
+We based our species definition on observed species, keeping in mind that
+ we can only be schematic in such definition.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "biblio_seed"
+options "ecol_let"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

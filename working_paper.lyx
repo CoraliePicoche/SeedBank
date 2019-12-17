@@ -270,6 +270,29 @@ Model
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This document presents different methods that we thought of to calibrate
+ the model.
+ We now present the 
+\begin_inset Quotes eld
+\end_inset
+
+final
+\begin_inset Quotes erd
+\end_inset
+
+ definition in draft1.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Let's consider two steps in the discrete-time model: species first grow
  following a Beverton-Holt model for the coastal and oceanic cells, while
  seeds only survive.
@@ -1269,10 +1292,6 @@ Biological questions:
 
 \end_layout
 
-\begin_layout Section*
-Results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1285,7 +1304,7 @@ Results
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "biblio_seed"
-options "plainnat"
+options "ecol_let"
 
 \end_inset
 
