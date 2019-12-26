@@ -1447,7 +1447,19 @@ Germination and resuspension might be difficult to differentiate, they are
 .Even though we have no estimation of germination and resuspension rate,
  we can try several values.
  Germination can be 1%, 0.1%, 0.01%.
- Resuspension can be half sinking rate (maybe ?).
+ Resuspension can be half sinking rate (maybe ?)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This does not make sense: it would mean that the larger/heavier species
+ are also the easiest to re-suspend.
+ It should be the other way around
+\end_layout
+
+\end_inset
+
+.
  Resuspension will not really matter with these low values of germination.
 \end_layout
 

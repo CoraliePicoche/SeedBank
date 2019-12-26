@@ -26,9 +26,12 @@ growth_rate=function(temp,T_opt,B){
 step1=function(n_t,list_inter,temp,T_opt,M,B){
 	tmp=matrix(NA,dim(n_t)[1],dim(n_t)[2])
 	for(i in 1:2){
-		tmp[i,]=exp(growth_rate(temp,T_opt,B))*n_t[i,]/pmax(0.0001,1-list_inter[[i]]%*%n_t[i,]) #The minus sign is there so that negative interactions do reduce growth rates
+		tmp[i,]=exp(growth_rate(temp,T_opt,B))*n_t[i,]/pmax(0.001,1-list_inter[[i]]%*%n_t[i,]) #The minus sign is there so that negative interactions do reduce growth rates
 	}
 	tmp[3,]=n_t[3,]*(1-M)
+	#print(tmp)
+	if(sum(c(tmp)<0)>0){
+	stop(tmp)}
 	return(tmp)
 }
 

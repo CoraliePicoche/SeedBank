@@ -7,17 +7,36 @@ rm(list=ls())
 
 source("code1/param_definition.r")
 
-n_iter=100
+n_iter=10000
 N=array(NA,dim=c(n_iter,3,length(sp)))
-N[1,,]=rep(10,length(sp)*3)
+N[1,,]=rep(10^6,length(sp)*3)
 
-
-
-temp=rnorm(n_iter,273+20,5)
+theta=1.3
+mean_temp=273+20
+sd_temp=2.5
+temp=mean_temp+theta*sd_temp*sin(2*pi*1:n_iter/365.25)+rnorm(n_iter,0,sd_temp*sqrt(1-theta^2/2))
 
 for(t in 1:(n_iter-1)){
 	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B)
-### For now, we have negative abundances from the beginning!
-### I think the problem is due to the interaction matrix. I need to check how it is taken into account in a classical BH model, and with positive interactions. Maybe check that it can be stable??
 	N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
+
+colo=rainbow(10)
+
+par(mfrow=c(1,3))
+plot(1:n_iter,log10(N[,1,1]),col=colo[1],t="p",pch=16,xlim=c(n_iter-1000,n_iter),ylim=range(log10(10^(-5)+N[,1,])))
+for(i in 2:10){
+points(1:n_iter,log10(N[,1,i]),col=colo[i],t="p",pch=16)
+}
+
+plot(1:n_iter,log10(N[,2,1]),col=colo[1],t="p",pch=16,xlim=c(n_iter,n_iter-1000),ylim=range(log10(10^(-5)+N[,2,])))
+for(i in 2:10){
+points(1:n_iter,log10(N[,2,i]),col=colo[i],pch=16)
+}
+
+plot(1:n_iter,log10(N[,3,1]),col=colo[1],t="p",pch=16,xlim=c(n_iter,n_iter-1000),ylim=range(log10(10^(-5)+N[,3,])))
+for(i in 2:10){
+points(1:n_iter,log10(N[,3,i]),col=colo[i],pch=16)
+}
+
+
