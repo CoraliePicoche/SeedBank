@@ -141,7 +141,7 @@ N_{t+h,i,b} & = & N_{t,i,b}(1-m_{i})
 \begin{equation}
 \left\{ \begin{array}{ccc}
 N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma_{i}N_{t+h,i,b}+eN_{t+h,i,o}\\
-N_{t+1,i,o} & = & N_{t+h,i,o}(1-e)+eN_{t+h,i,c}\\
+N_{t+1,i,o} & = & N_{t+h,i,o}(1-e-s'_{i})+eN_{t+h,i,c}\\
 N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma_{i})+s_{i}N_{t+h,i,c}
 \end{array}\right.\label{eq:model_step2}
 \end{equation}
@@ -234,7 +234,7 @@ textwidth}{!}{%
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="18" columns="3">
+<lyxtabular version="3" rows="19" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -863,7 +863,7 @@ sinking rate of species
 \begin_inset Formula $i$
 \end_inset
 
-
+ in a coastal environment
 \end_layout
 
 \end_inset
@@ -884,6 +884,52 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s'_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sinking rate of species 
+\begin_inset Formula $i$
+\end_inset
+
+ in an oceanic environment
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+WARNING: this is not implemented yet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
 \end_layout
 
 \end_inset
@@ -1122,12 +1168,8 @@ literal "false"
 
 \end_inset
 
-, impact as a function of self-regulation, 
-\begin_inset Formula $\alpha_{ii}\sim10\bar{|\alpha_{.j}}|$
-\end_inset
-
- and 
-\begin_inset Formula $\alpha_{ij}\sim\mathcal{N}(\mu,\sigma)$
+, 
+\begin_inset Formula $\alpha_{ij,i\neq j}\sim\mathcal{N}(\mu,\sigma)$
 \end_inset
 
  with 
@@ -1161,6 +1203,14 @@ I know it is not the same model, I am just starting with some values here...
 \uwave off
 \noun off
 \color none
+.
+ Centric diatoms, pennate diatoms and dinoflagellates can only interact
+ with each other, i.e.
+ the community matrix is modular.
+ Self-regulation is computed as a function of vulnerability, with 
+\begin_inset Formula $\alpha_{ii}\sim-0.49\alpha_{i.}-0.37$
+\end_inset
+
 .
 \end_layout
 
@@ -1197,9 +1247,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Note that these temperature values are 5 degrees above the observed mean
- in the REPHY dataset, but they are in the domain of application of the
- model from 
+Note that these temperature values are 5 degrees above the observed temperature
+ mean in the REPHY dataset, but they are in the domain of application of
+ the model from 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -1444,23 +1494,75 @@ Germination and resuspension might be difficult to differentiate, they are
 \begin_inset Formula $\gamma=\text{resuspension*germination})$
 \end_inset
 
-.Even though we have no estimation of germination and resuspension rate,
+.
+ Even though we have no estimation of germination and resuspension rate,
  we can try several values.
  Germination can be 1%, 0.1%, 0.01%.
- Resuspension can be half sinking rate (maybe ?)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-This does not make sense: it would mean that the larger/heavier species
- are also the easiest to re-suspend.
- It should be the other way around
+ Resuspension is arbitrarily set as a function of sinking rate.
+ Species that have the highest sinking rates have the lowest resuspension
+ values, and conversely.
+ We use only half of the resulting value (abritrary too).
+ Contrary to what we previously thought, this value has a strong effect
+ on the dynamics even though germination was supposed to be the most important.
+ 
 \end_layout
+
+\begin_layout Standard
+Resuspension values vary from one publication to another: in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "fransz_modelling_1985"
+literal "false"
 
 \end_inset
 
+, resuspension rate of sediments is evaluated around 
+\begin_inset Formula $5.10^{-5}$
+\end_inset
+
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
 .
- Resuspension will not really matter with these low values of germination.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kowe_modelling_1998"
+literal "false"
+
+\end_inset
+
+, resuspension rate of diatoms is evaluated around 
+\begin_inset Formula $1.9.10^{-5}$
+\end_inset
+
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+, with a maximum sinking rate of 
+\begin_inset Formula $0.085$
+\end_inset
+
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "le_pape_pelagic_1999"
+literal "false"
+
+\end_inset
+
+, resuspension rate of sediments and dead diatoms is 0.002 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
