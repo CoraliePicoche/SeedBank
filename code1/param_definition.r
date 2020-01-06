@@ -61,12 +61,12 @@ for(i in 1:length(sp)){
 
 }
 
-#Centric 4*4, Pennate 3*3, Dino 2*2
+#Centric 4*4, Pennate 4*4, Dino 2*2
 if(add_modules){
 	inter_mat[5:10,1:4]=0
 	inter_mat[1:4,5:10]=0
-	inter_mat[5:7,8:10]=0
-	inter_mat[8:10,5:7]=0
+	inter_mat[5:8,9:10]=0
+	inter_mat[9:10,5:8]=0
 }
 
 inter_ocean=inter_mat*k_coast2ocean
@@ -75,8 +75,8 @@ inter_ocean=inter_mat*k_coast2ocean
 #Compute mean growth rate
 b_middle=optimize(f_to_optimize,T_min,T_max,293,A,interval=c(0,100))$minimum
 r_mean=growth_rate(293,T_opt,B)
-#r_mean=r<-runif(length(sp),0.5,1)
 
+#### Check if both interaction matrices can lead to a stable, positive equilibrium
 Nstar_coast=solve(-1*inter_mat)%*%(exp(r_mean)-1)
 Nstar_ocean=solve(-1*inter_ocean)%*%(exp(r_mean)-1)
 }
@@ -84,17 +84,17 @@ print(iter)
 if(any(inter_mat<(-1))|any(inter_ocean<(-1))){
         print("Overcompensation, you may want to stop")
 }
-#### Check if both interaction matrices can lead to a stable, positive equilibrium
 
 
 list_inter=list(inter_mat,inter_ocean)
 
 #Sinking rate
 S=rbeta(length(sp),0.55,1.25)*30/100
+names(S)=sp
 #Manip so that Chaetoceros spp and THA have the highest sinking rate
 tmp_S=S
 or=order(S,decreasing=T)
-tmp_S[1:3]=S[or[1:3]]
+tmp_S[c("CHD","CHS","THA")]=S[or[1:3]]
 tmp_S[or[1:3]]=S[1:3]
 S=tmp_S
 
@@ -107,5 +107,3 @@ tmp_S[or_dec]=S[or_inc]
 
 resuspension=0.25*tmp_S
 Gamma=resuspension*germination
-
-
