@@ -14,6 +14,7 @@ k_inter2intra=-0.493729 #is the coefficient in self-regulation~-0.365043-0.49372
 base_inter2intra=-0.365043
 add_modules=TRUE
 
+k_sediment2resuspension=10^(-1)*0.5
 e=0.64
 germination=0.01 #Could be 0.1, 0.001
 A=10^(3.1)/365.25
@@ -105,5 +106,5 @@ or_inc=order(S,decreasing=F)
 tmp_S=S
 tmp_S[or_dec]=S[or_inc]
 
-resuspension=0.25*tmp_S
+resuspension=k_sediment2resuspension*tmp_S
 Gamma=resuspension*germination
