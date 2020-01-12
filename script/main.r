@@ -5,7 +5,7 @@
 graphics.off()
 rm(list=ls())
 
-source("code1/param_definition.r")
+source("script/param_definition.r")
 
 n_iter=10000
 N=array(NA,dim=c(n_iter,3,length(sp)),dimnames=list(NULL,c("coast","ocean","seed"),sp))
@@ -21,8 +21,8 @@ for(t in 1:(n_iter-1)){
 	N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 
-#colo=rainbow(10)
+write.table(N[,1,],"output/out_coast.csv",sep=";",dec=".")
+write.table(N[,2,],"output/out_ocean.csv",sep=";",dec=".")
+write.table(N[,3,],"output/out_seed.csv",sep=";",dec=".")
 
-write.table(N[,1,],"code1/out_coast.csv",sep=";",dec=".")
-write.table(N[,2,],"code1/out_ocean.csv",sep=";",dec=".")
-write.table(N[,3,],"code1/out_seed.csv",sep=";",dec=".")
+source("script/diagnostics.r")

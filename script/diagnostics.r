@@ -7,9 +7,9 @@ colo=c(rep(c("red","orange","green","blue"),2),"red","orange")
 apch=c(rep(16,4),rep(17,4),rep(18,2))
 alty=c(rep(1,4),rep(2,4),rep(3,2))
 
-N_coast=read.table("code1/out_coast.csv",sep=";",dec=".")
-N_ocean=read.table("code1/out_ocean.csv",sep=";",dec=".")
-N_seed=read.table("code1/out_seed.csv",sep=";",dec=".")
+N_coast=read.table("output/out_coast.csv",sep=";",dec=".")
+N_ocean=read.table("output/out_ocean.csv",sep=";",dec=".")
+N_seed=read.table("output/out_seed.csv",sep=";",dec=".")
 
 sp=colnames(N_coast)
 n_iter=nrow(N_coast)
@@ -20,7 +20,7 @@ transfo_N_seed=log10(N_seed+10^(-5))
 
 id=n_iter:(n_iter-365)
 
-pdf("all_in_out.pdf",width=16,height=16)
+pdf("exploratory/fig/all_in_out.pdf",width=16,height=16)
 par(mfrow=c(3,1))
 
 plot(id,transfo_N_coast[id,1],col=colo[1],t="o",pch=apch[1],ylim=range(transfo_N_coast[id,]),xaxt="n",ylab="Coast",xlab="",lty=alty[1])
@@ -42,7 +42,7 @@ legend("bottomright",sp,col=colo,pch=apch,lty=alty)
 
 dev.off()
 
-pdf("one_by_one.pdf",width=10)
+pdf("exploratory/fig/one_by_one.pdf",width=10)
 par(mfrow=c(1,1))
 
 for(i in 1:length(sp)){
@@ -52,3 +52,7 @@ for(i in 1:length(sp)){
 	lines(id,transfo_N_seed[id,i],col="brown",t="o",pch=16,lty=1)
 }
 dev.off()
+
+print(max(transfo_N_coast[id,"CHD"]))
+print(mean(transfo_N_coast[id,"CHD"]))
+print(mean(transfo_N_coast[id,"CHS"]))

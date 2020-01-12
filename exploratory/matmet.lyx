@@ -141,7 +141,7 @@ N_{t+h,i,b} & = & N_{t,i,b}(1-m_{i})
 \begin{equation}
 \left\{ \begin{array}{ccc}
 N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma_{i}N_{t+h,i,b}+eN_{t+h,i,o}\\
-N_{t+1,i,o} & = & N_{t+h,i,o}(1-e-s'_{i})+eN_{t+h,i,c}\\
+N_{t+1,i,o} & = & N_{t+h,i,o}(1-s'_{i}-e)+eN_{t+h,i,c}\\
 N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma_{i})+s_{i}N_{t+h,i,c}
 \end{array}\right.\label{eq:model_step2}
 \end{equation}
@@ -234,8 +234,8 @@ textwidth}{!}{%
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="3">
-<features tabularvalignment="middle">
+<lyxtabular version="3" rows="20" columns="3">
+<features rotate="90" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -800,6 +800,38 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $k_{c2o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+conversion coefficient from coastal to oceanic interactions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula $m_{i}$
 \end_inset
 
@@ -911,16 +943,6 @@ sinking rate of species
 \end_inset
 
  in an oceanic environment
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-WARNING: this is not implemented yet
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -929,7 +951,10 @@ WARNING: this is not implemented yet
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+\begin_inset Formula $s=s'_{i}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1119,7 +1144,7 @@ Assuming that nutrients are rarer in the ocean than in the coast [ref],
 \noun off
 \color none
 
-\begin_inset Formula $\alpha_{ij,c}=k\alpha_{ij,o}$
+\begin_inset Formula $\alpha_{ij,c}=k_{c2o}\alpha_{ij,o}$
 \end_inset
 
 
@@ -1212,6 +1237,8 @@ I know it is not the same model, I am just starting with some values here...
 \end_inset
 
 .
+ Interaction matrices are drawn randomly until we reach a feasible equilibrium.
+ 
 \end_layout
 
 \begin_layout Paragraph*
@@ -1524,7 +1551,8 @@ literal "false"
 \begin_inset Formula $^{-1}$
 \end_inset
 
-.
+ in winter and decreases in summer (there is a link between resuspension/sinking
+ and light extinction coefficient).
  In 
 \begin_inset CommandInset citation
 LatexCommand citet
