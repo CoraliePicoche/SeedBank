@@ -17,7 +17,7 @@ sd_temp=2.5
 temp=mean_temp+theta*sd_temp*sin(2*pi*1:n_iter/365.25)+rnorm(n_iter,0,sd_temp*sqrt(1-theta^2/2))
 
 for(t in 1:(n_iter-1)){
-	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B)
+	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B,model="fixed",fixed_growth=exp(0.52))
 	N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 
