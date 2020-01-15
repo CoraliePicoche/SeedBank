@@ -22,8 +22,8 @@ k_inter2intra=-0.493729 #is the coefficient in self-regulation~-0.365043-0.49372
 base_inter2intra=-0.365043
 
 #Other information on the interaction matrix
-add_modules=TRUE #Centric diatoms / Pennate diatoms / Dinoflagellates can only interact within their group
-intra_only=TRUE #Only intraspecific interactions (mostly to debug) 
+add_modules=FALSE #Centric diatoms / Pennate diatoms / Dinoflagellates can only interact within their group
+intra_only=FALSE #Only intraspecific interactions (mostly to debug) 
 
 #Conversion from sinking/sedimentation rate to resuspension rate (might be based on the volume/surface/weight or shape of the cells
 #k_sediment2resuspension=10^(-1)*0.5
@@ -74,8 +74,8 @@ f_to_optimize_A=function(A,B,N){
         A=matrix(A,nrow=nrow(B),ncol=ncol(B))
         for(i in 1:dim(B)[1]){
                 for(j in i:dim(B)[2]){
-                        J[i,j]=-A[i,j]*N[j]/(1+A[,j]%*%N)
-                        J[j,i]=-A[j,i]*N[i]/(1+A[,i]%*%N)
+                        J[i,j]=-A[i,j]*N[j]/(1+A[i,]%*%N)
+                        J[j,i]=-A[j,i]*N[i]/(1+A[j,]%*%N)
                 }
         }
         tmp=sum(abs(B-J))
@@ -83,7 +83,9 @@ f_to_optimize_A=function(A,B,N){
 }
 
 #Observed equilibrium
-aN=c(10^6,10^6,runif(length(sp)-2,10^2,10^4))
+#aN=c(10^6,10^6,runif(length(sp)-2,10^2,10^4))
+aN=c(runif(length(sp),10^3,5*10^3))
+#aN=c(runif(length(sp),1,10))
 
 #Matrix at equilibrium
 Nstar_coast=matrix(-1,length(sp),length(sp))
@@ -92,10 +94,11 @@ Nstar_ocean=matrix(-1,length(sp),length(sp))
 iter=0
 conv_coast=1
 conv_ocean=1
-while(sum(Nstar_coast<0)>0|sum(Nstar_ocean<0)>0|((conv_coast+conv_ocean)!=0)){
+#while(sum(Nstar_coast<0)>0|sum(Nstar_ocean<0)>0|((conv_coast+conv_ocean)!=0)){ ##We will have to go back to that...
+while((conv_coast+conv_ocean)!=0){
 #Interaction matrix, coastal
 iter=iter+1
-
+print(iter)
 inter_mat=matrix(rnorm(length(sp)^2,0,0.05),length(sp),length(sp)) #In REPHY littoral, normal law with mean=0.01 and sd=0.05 for interspecies coefficients
 colnames(inter_mat)=rownames(inter_mat)=sp
 
@@ -129,11 +132,21 @@ if(intra_only){
 	}
 }
 
+print(paste("Start",Sys.time()))
 tmpA=matrix(rnorm(length(sp)^2,0,0.1),length(sp),length(sp))
-val_optim_coast=optim(tmpA,f_to_optimize_A,control=list(maxit=10000000),B=inter_mat,N=aN)
+val_optim_coast=optim(tmpA,f_to_optimize_A,control=list(maxit=10000000),method="CG",B=inter_mat,N=aN) #c("Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN","Brent")
+#Nelder-Mead: about 30 seconds to convergence
+#BFGS: can reach 8 minutes
+#CG: between 10 and 30 seconds
+#L-BFGS-B does not converge
+#SANN: At least 15 minutes for only one
+#Brent only for one dimension problem
 conv_coast=val_optim_coast$convergence
-val_optim_ocean=optim(tmpA,f_to_optimize_A,control=list(maxit=10000000),B=inter_ocean,N=aN)
+print(paste("Intermediate",Sys.time()))
+val_optim_ocean=optim(tmpA,f_to_optimize_A,control=list(maxit=10000000),method="CG",B=inter_ocean,N=aN)
 conv_ocean=val_optim_ocean$convergence
+print(paste("Stop",Sys.time()))
+#Even after 100 iterations, we can find no case in which Nstar>0 (either ocean or coast)
 
 A_coast=val_optim_coast$par
 A_ocean=val_optim_ocean$par
@@ -146,8 +159,13 @@ b_middle=optimize(f_to_optimize_B,T_min,T_max,293,A,interval=c(0,100))$minimum
 r_mean=growth_rate(293,T_opt,B)
 
 #### Check if both interaction matrices can lead to a stable, positive equilibrium
-Nstar_coast=solve(-1*A_coast)%*%(exp(r_mean)-1)
-Nstar_ocean=solve(-1*A_ocean)%*%(exp(r_mean)-1)
+Nstar_coast=solve(A_coast)%*%(exp(r_mean)-1)
+Nstar_ocean=solve(A_ocean)%*%(exp(r_mean)-1)
+
+print(sum(Nstar_coast<0))
+print(sum(Nstar_ocean<0))
+print((conv_coast+conv_ocean))
+print("#######################")
 }
 print(iter)
 #if(any(inter_mat<(-1))|any(inter_ocean<(-1))){

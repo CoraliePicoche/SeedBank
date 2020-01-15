@@ -31,9 +31,9 @@ step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_gr
 		mat_pos[mat_pos<0]=0
 		mat_neg[mat_neg>0]=0
 		if(model=="BH"){
-			tmp[i,]=exp(growth_rate(temp,T_opt,B))*n_t[i,]/pmax(threshold,1-list_inter[[i]]%*%n_t[i,]) #The minus sign is there so that negative interactions do reduce growth rates
+			tmp[i,]=exp(growth_rate(temp,T_opt,B))*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) #We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
 		}else if(model=="fixed"){
-			tmp[i,]=fixed_growth*n_t[i,]/pmax(threshold,1-list_inter[[i]]%*%n_t[i,])
+			tmp[i,]=fixed_growth*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,])
 		}else if(model=="Martorell"){
 ################### This is the formula from Martorell
 		for(j in 1:dim(tmp)[2]){
@@ -52,6 +52,7 @@ step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_gr
 ################## End of the formula from Martorell
 	}
 	tmp[3,]=n_t[3,]*(1-M)
+	print(tmp[1,])
 	if(sum(c(tmp)<0)>0){
 	print(tmp[1,])
 	stop()}
