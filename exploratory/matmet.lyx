@@ -1117,10 +1117,27 @@ Parameter definition
 \end_layout
 
 \begin_layout Paragraph*
-Interactions 
+Interactions
 \end_layout
 
 \begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Assuming that nutrients are rarer in the ocean than in the coast [ref],
  
 \begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
@@ -1184,7 +1201,7 @@ literal "false"
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 According to 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1238,7 +1255,229 @@ I know it is not the same model, I am just starting with some values here...
 
 .
  Interaction matrices are drawn randomly until we reach a feasible equilibrium.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interaction matrices are inspired by previous works on phytoplankton abundance
+ time-series 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barraquand_coastal_2018,picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+.
+ The model used in these two papers is a multivariate autoregressive (MAR)
+ model, that is a discrete-time linear model of the dynamics in which 
+\begin_inset Formula $X_{t+1}=\textbm{B}X_{t}$
+\end_inset
+
+ where 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+ is the vector of log-abundances of the phytoplankton species and 
+\begin_inset Formula $B$
+\end_inset
+
+ is the interaction matrices.
+ Based on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset Formula $b_{ij,i\neq j}\sim\mathcal{N}(\mu,\sigma)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ around 0.0 and 0.01.
  
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Centric diatoms, pennate diatoms and dinoflagellates can only interact with
+ each other, i.e.
+ the community matrix is modular.
+ Self-regulation is computed as a function of vulnerability, with 
+\begin_inset Formula $b_{ii}\sim-0.49b_{i.}-0.37$
+\end_inset
+
+.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Assuming that nutrients are rarer in the ocean than in the coast [ref],
+ 
+\begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
+\end_inset
+
+, with a fixed coefficient 
+\begin_inset Formula $k$
+\end_inset
+
+ such that 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $b_{ij,c}=k_{c2o}b_{ij,o}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "certain_how_2018"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Corrected in the Appendices of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ showed that MAR and Beverton-Holt interaction coefficients, respectively
+ 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+, could map once abundances at equilibrium 
+\begin_inset Formula $N_{i}^{*}$
+\end_inset
+
+ are defined.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}\\
+b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For now, we compute 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ parameters through optimization by a conjugate gradients method (Fletcher
+ and Reeves 1964, R function 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb|optim|
+\end_layout
+
+\end_inset
+
+).
+ However, corresponding interaction coefficients do not lead to a feasible
+ equilibrium (i.e., 
+\begin_inset Formula $\exists i,N_{i}^{*}\text{in }A^{-1}(\text{e}^{r}-1)<0$
+\end_inset
+
+)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+It is quite surprising to compute 
+\begin_inset Formula $A$
+\end_inset
+
+ with 
+\begin_inset Formula $N^{*}$
+\end_inset
+
+, and not be able to retrieve 
+\begin_inset Formula $N^{*}$
+\end_inset
+
+ afterwards.
+ There is (at least) one issue with growth rates here
+\end_layout
+
+\end_inset
+
+.
+ Even ignoring this condition, they do not lead to realistic abundances
+ (see Intermediate results below).
 \end_layout
 
 \begin_layout Paragraph*
@@ -1287,6 +1526,28 @@ literal "false"
 .
 \end_layout
 
+\begin_layout Standard
+This leads to growth rates between 
+\begin_inset Formula $10^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $10^{-8}.$
+\end_inset
+
+ However, if we follow 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "reynolds2006ecology"
+literal "false"
+
+\end_inset
+
+, such values should be vary betwen 0.7 and 1.8 (only considering Bacillariophyta)
+, and may be calibrated on the surface/volume ratio instead of temperature.
+ 
+\end_layout
+
 \begin_layout Paragraph*
 Exchange rate
 \end_layout
@@ -1324,6 +1585,11 @@ Seed mortality
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+Mortality in the sediment:
+\series default
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -1425,6 +1691,30 @@ In both cases,
  
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Burying by deposition
+\series default
+ Even when seeds can be resurrected, they are not accessible when they are
+ below a certain depth.
+ Deposition happens, which reduces the reachable stock of seeds
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+No idea how to parameterize this.
+ Arcachon tends to silt-up, by what rate? We also need to know the maximum
+ depth of sediments which can resuspended through hydrodynamics.
+ However, this might become a key parameter (much higher than mortality
+ in the sediment).
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Paragraph*
 Sinking rate
 \end_layout
@@ -1476,7 +1766,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename beta_law.pdf
+	filename fig/beta_law.pdf
 	width 75text%
 
 \end_inset
@@ -1640,15 +1930,16 @@ Species definition
 \end_layout
 
 \begin_layout Standard
-The composition of the community is based on 
+The composition of the community is inspired by the most common species
+ along the French coast (see time series in 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citealp
 key "picoche_strong_2019"
 literal "false"
 
 \end_inset
 
-, with somes changes to remain close to species present in 
+), with a preference for species also present in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -1656,7 +1947,68 @@ literal "false"
 
 \end_inset
 
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+But if we finally ignore this paper as mortality in the sediment is too
+ low, we might as well change this a bit
+\end_layout
+
+\end_inset
+
 .
+ 
+\end_layout
+
+\begin_layout Itemize
+Chaetoceros (2 species) are one of the most common diatoms present along
+ the French coast.
+ We can define a small and big species among this genera, with potentially
+ different sinking rates, related to their volume.
+\end_layout
+
+\begin_layout Itemize
+Thalassiosira
+\end_layout
+
+\begin_layout Itemize
+Skeletonema (also interesting because of a preference towards colder temperature
+s)
+\end_layout
+
+\begin_layout Itemize
+Gyrosigma/Rhizosolenia (the idea behind is to have a very large species,
+ maybe leading to higher sinking rate/lower growth rate?)
+\end_layout
+
+\begin_layout Itemize
+Pseudo-Nitzschia and Nitzschia
+\end_layout
+
+\begin_layout Itemize
+Asterionellopsis (also interesting because of a preference towards colder
+ temperatures)
+\end_layout
+
+\begin_layout Itemize
+Gymnodinium and Protoperidinium as two of the most common dinoflagellates
+\end_layout
+
+\begin_layout Subsection*
+Intermediate results
+\end_layout
+
+\begin_layout Standard
+Looking at species in isolation, we aim to obtain realistic abundances,
+ that is of the same order of magnitude than observed abundances.
+ Each compartment (ocean, coast, seed bank) contain 
+\begin_inset Formula $10^{6}$
+\end_inset
+
+ cells at the beginning of the simulation, which is run for 10000 time steps.
+ Up to now, we focused on Chaetoceros species.
  
 \end_layout
 

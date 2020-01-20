@@ -82,9 +82,29 @@ f_to_optimize_A=function(A,B,N){
         return(tmp)
 }
 
+f_to_optimize_A_diag=function(A,B,N){
+#compute the log-scale Jacobian of A (more precisely J-I)
+        J=matrix(0,nrow=nrow(B),ncol=ncol(B))
+        A=matrix(A,nrow=nrow(B),ncol=ncol(B))
+        for(i in 1:dim(B)[1]){
+        	J[i,i]=-A[i,i]*N[i]/(1+A[i,i]*N[i])
+        }
+        tmp=sum(abs(diag(B)-diag(J)))
+        return(tmp)
+}
+
+f_MAR2BH=function(B,N){
+        A=matrix(0,nrow=nrow(B),ncol=ncol(B))
+        for(i in 1:dim(B)[1]){
+        	A[i,i]=-B[i,i]*1/N[i]*1/(1+B[i,i])
+        }
+	return(A)
+}
+
 #Observed equilibrium
-#aN=c(10^6,10^6,runif(length(sp)-2,10^2,10^4))
-aN=c(runif(length(sp),10^3,5*10^3))
+aN=c(10^6,10^6,runif(length(sp)-2,10^2,10^4))
+#aN=c(runif(length(sp),10^3,5*10^3))
+#aN=c(runif(length(sp),10,10^6))
 #aN=c(runif(length(sp),1,10))
 
 #Matrix at equilibrium
@@ -94,8 +114,8 @@ Nstar_ocean=matrix(-1,length(sp),length(sp))
 iter=0
 conv_coast=1
 conv_ocean=1
-#while(sum(Nstar_coast<0)>0|sum(Nstar_ocean<0)>0|((conv_coast+conv_ocean)!=0)){ ##We will have to go back to that...
-while((conv_coast+conv_ocean)!=0){
+while(sum(Nstar_coast<0)>0|sum(Nstar_ocean<0)>0|((conv_coast+conv_ocean)!=0)){ ##We will have to go back to that...
+#while((conv_coast+conv_ocean)!=0){
 #Interaction matrix, coastal
 iter=iter+1
 print(iter)
@@ -132,9 +152,10 @@ if(intra_only){
 	}
 }
 
-print(paste("Start",Sys.time()))
-tmpA=matrix(rnorm(length(sp)^2,0,0.1),length(sp),length(sp))
+tmpA=matrix(rnorm(length(sp)^2,10^(-6),10^(-7)),length(sp),length(sp))
+#tmpA=diag(rnorm(length(sp),10^(-6),10^(-7)))
 val_optim_coast=optim(tmpA,f_to_optimize_A,control=list(maxit=10000000),method="CG",B=inter_mat,N=aN) #c("Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN","Brent")
+
 #Nelder-Mead: about 30 seconds to convergence
 #BFGS: can reach 8 minutes
 #CG: between 10 and 30 seconds
@@ -142,21 +163,21 @@ val_optim_coast=optim(tmpA,f_to_optimize_A,control=list(maxit=10000000),method="
 #SANN: At least 15 minutes for only one
 #Brent only for one dimension problem
 conv_coast=val_optim_coast$convergence
-print(paste("Intermediate",Sys.time()))
 val_optim_ocean=optim(tmpA,f_to_optimize_A,control=list(maxit=10000000),method="CG",B=inter_ocean,N=aN)
 conv_ocean=val_optim_ocean$convergence
-print(paste("Stop",Sys.time()))
 #Even after 100 iterations, we can find no case in which Nstar>0 (either ocean or coast)
 
 A_coast=val_optim_coast$par
 A_ocean=val_optim_ocean$par
 
-
-
 #### Check if both interaction matrices can lead to a stable, positive equilibrium
 #Compute mean growth rate
-b_middle=optimize(f_to_optimize_B,T_min,T_max,293,A,interval=c(0,100))$minimum
-r_mean=growth_rate(293,T_opt,B)
+#b_middle=optimize(f_to_optimize_B,T_min,T_max,293,A,interval=c(0,100))$minimum
+r_mean=growth_rate(295,T_opt,B)
+#r_mean<-runif(length(sp),0.5,1) # Maximal growth rates -- instead of (1,2) or (2,3)
+#A_coast<-matrix(rnorm(length(sp)^2,0.0,0.05), ncol=length(sp))
+
+
 
 #### Check if both interaction matrices can lead to a stable, positive equilibrium
 Nstar_coast=solve(A_coast)%*%(exp(r_mean)-1)
