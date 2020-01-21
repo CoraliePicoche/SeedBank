@@ -52,9 +52,11 @@ step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_gr
 ################## End of the formula from Martorell
 	}
 	tmp[3,]=n_t[3,]*(1-M)
-	print(tmp[1,])
+#	print(tmp[1,])
 	if(sum(c(tmp)<0)>0){
 	print(tmp[1,])
+	print(tmp[2,])
+	print(tmp[3,])
 	stop()}
 	return(tmp)
 }

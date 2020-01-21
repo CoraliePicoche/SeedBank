@@ -11,15 +11,16 @@ n_iter=10000
 N=array(NA,dim=c(n_iter,3,length(sp)),dimnames=list(NULL,c("coast","ocean","seed"),sp))
 N[1,,]=rep(10^4,length(sp)*3)
 
-theta=1.3
+#theta=1.3
+theta=0 #No seasonality
 mean_temp=273+20
 sd_temp=2.5
 temp=mean_temp+theta*sd_temp*sin(2*pi*1:n_iter/365.25)+rnorm(n_iter,0,sd_temp*sqrt(1-theta^2/2))
 
 for(t in 1:(n_iter-1)){
 #	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B,model="fixed",fixed_growth=exp(0.52))
-#	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B,model="BH",threshold=0.1)
-	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B,model="Martorell")
+	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B,model="BH",threshold=0.000001)
+#	Ntmp=step1(N[t,,],list_inter,temp[t],T_opt,M,B,model="Martorell")
 	N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 

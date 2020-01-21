@@ -202,10 +202,6 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -221,7 +217,7 @@ status open
 \backslash
 noindent
 \backslash
-resizebox{
+resizebox{0.45
 \backslash
 textwidth}{!}{%
 \end_layout
@@ -1108,10 +1104,6 @@ name "tab:State_Parameter"
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Subsection*
 Parameter definition
 \end_layout
@@ -1275,7 +1267,7 @@ literal "false"
 .
  The model used in these two papers is a multivariate autoregressive (MAR)
  model, that is a discrete-time linear model of the dynamics in which 
-\begin_inset Formula $X_{t+1}=\textbm{B}X_{t}$
+\begin_inset Formula $X_{t+1}=BX_{t}$
 \end_inset
 
  where 
@@ -1418,7 +1410,7 @@ literal "false"
 \[
 \begin{cases}
 b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}\\
-b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}
+b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}
 \end{cases}
 \]
 
@@ -1428,56 +1420,82 @@ b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}
 \end_layout
 
 \begin_layout Standard
-For now, we compute 
-\begin_inset Formula $\alpha$
-\end_inset
-
- parameters through optimization by a conjugate gradients method (Fletcher
- and Reeves 1964, R function 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-verb|optim|
-\end_layout
-
-\end_inset
-
-).
- However, corresponding interaction coefficients do not lead to a feasible
- equilibrium (i.e., 
-\begin_inset Formula $\exists i,N_{i}^{*}\text{in }A^{-1}(\text{e}^{r}-1)<0$
-\end_inset
-
-)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-It is quite surprising to compute 
-\begin_inset Formula $A$
-\end_inset
-
- with 
-\begin_inset Formula $N^{*}$
-\end_inset
-
-, and not be able to retrieve 
-\begin_inset Formula $N^{*}$
-\end_inset
-
- afterwards.
- There is (at least) one issue with growth rates here
-\end_layout
-
+Let's define 
+\begin_inset Formula $f_{A}(i)=\sum_{l}\alpha_{ij}N_{l}^{*}$
 \end_inset
 
 .
- Even ignoring this condition, they do not lead to realistic abundances
- (see Intermediate results below).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{ij}(1+f_{A}(i))=-\alpha_{ij}N_{j}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We then sum on columns (on j).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j}[b_{ij}(1+f_{A}(i))]=-f_{A}(i)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow-f_{A}(i)(1+\sum_{j}b_{ij})=\sum_{j}b_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow f_{A}(i)=-\frac{\sum_{j}b_{ij}}{(1+\sum_{j}b_{ij})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}b_{ij}(1-\frac{\sum_{j}b_{ij}}{1+\sum_{j}b_{ij}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}\frac{b_{ij}}{1+\sum_{j}b_{ij}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph*

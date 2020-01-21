@@ -56,3 +56,14 @@ dev.off()
 print(max(transfo_N_coast[id,"CHD"]))
 print(mean(transfo_N_coast[id,"CHD"]))
 print(mean(transfo_N_coast[id,"CHS"]))
+
+pdf("exploratory/fig/growth_rate.pdf",width=10)
+par(mfrow=c(4,3))
+id_hot=(temp>293)[id[1:(length(id)-1)]]
+for(i in 1:10){
+	growth_rate_coast=diff(log(N_coast[id,i]))
+	plot(log(N_coast[id[1:(length(id)-1)],i]),growth_rate_coast)
+	points(log(N_coast[id[1:(length(id)-1)],i][id_hot]),growth_rate_coast[id_hot],pch=16,col="red")
+	points(log(N_coast[id[1:(length(id)-1)],i][!id_hot]),growth_rate_coast[!id_hot],pch=16,col="blue")
+}
+dev.off()
