@@ -23,7 +23,7 @@ base_inter2intra=-0.365043
 
 #Other information on the interaction matrix
 add_modules=TRUE #Centric diatoms / Pennate diatoms / Dinoflagellates can only interact within their group
-intra_only=TRUE #Only intraspecific interactions (mostly to debug) 
+intra_only=FALSE #Only intraspecific interactions (mostly to debug) 
 
 #Conversion from sinking/sedimentation rate to resuspension rate (might be based on the volume/surface/weight or shape of the cells
 #k_sediment2resuspension=10^(-1)*0.5

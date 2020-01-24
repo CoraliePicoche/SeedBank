@@ -1,0 +1,474 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Interaction and growth
+\end_layout
+
+\begin_layout Section*
+Starting Point
+\end_layout
+
+\begin_layout Subsubsection*
+Growth rates
+\end_layout
+
+\begin_layout Standard
+%Here, describe the variability of species growth rate in the literature.
+ Insist on the fact that we need to have growth rate values in isolation
+ (so lab conditions) and that may vary from one study to the other.
+ Most of the time, these are not taken at different temperature, so we cannot
+ take that into account to reproduce a seasonal environment.
+\end_layout
+
+\begin_layout Standard
+%We can start with the values from Scranton and Vasseur but they are much
+ lower than the ones found in the literature, in lab conditions.
+ They also rely on optimal temperatures for phytoplankton growth, and we
+ rarely have access to that.
+ Finally, they do not lead to However, they enable us to show blooms due
+ to seasonal environments.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Interaction matrix
+\end_layout
+
+\begin_layout Standard
+Interaction matrices are inspired by previous works on phytoplankton abundance
+ time-series 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barraquand_coastal_2018,picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+.
+ The model used in these two papers is a multivariate autoregressive (MAR)
+ model, that is a discrete-time linear model of the dynamics in which 
+\begin_inset Formula $X_{t+1}=BX_{t}$
+\end_inset
+
+ where 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+ is the vector of log-abundances of the phytoplankton species and 
+\begin_inset Formula $B$
+\end_inset
+
+ is the interaction matrices.
+ Based on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset Formula $b_{ij,i\neq j}\sim\mathcal{N}(\mu,\sigma)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ around 0.0 and 0.01.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Centric diatoms, pennate diatoms and dinoflagellates can only interact with
+ each other, i.e.
+ the community matrix is modular.
+ Self-regulation is computed as a function of vulnerability, with 
+\begin_inset Formula $b_{ii}\sim-0.49b_{i.}-0.37$
+\end_inset
+
+.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Assuming that nutrients are rarer in the ocean than in the coast [ref],
+ 
+\begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
+\end_inset
+
+, with a fixed coefficient 
+\begin_inset Formula $k$
+\end_inset
+
+ such that 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $b_{ij,c}=k_{c2o}b_{ij,o}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "certain_how_2018"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Corrected in the Appendices of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ showed that MAR and Beverton-Holt interaction coefficients, respectively
+ 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+, could map once abundances at equilibrium 
+\begin_inset Formula $N_{i}^{*}$
+\end_inset
+
+ are defined.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}\\
+b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's define 
+\begin_inset Formula $f_{A}(i)=\sum_{l}\alpha_{ij}N_{l}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{ij}(1+f_{A}(i))=-\alpha_{ij}N_{j}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We then sum on columns (on j).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j}[b_{ij}(1+f_{A}(i))]=-f_{A}(i)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow-f_{A}(i)(1+\sum_{j}b_{ij})=\sum_{j}b_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow f_{A}(i)=-\frac{\sum_{j}b_{ij}}{(1+\sum_{j}b_{ij})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}b_{ij}(1-\frac{\sum_{j}b_{ij}}{1+\sum_{j}b_{ij}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}\frac{b_{ij}}{1+\sum_{j}b_{ij}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%However, strong variability between sites and calibration on biweekly data
+ (so, we should actually use 
+\begin_inset Formula $\mathbf{B}^{\frac{1}{15}}$
+\end_inset
+
+ but this leads to complex numbers and right now, I'm not sure what to do
+ with that).
+ 
+\end_layout
+
+\begin_layout Section*
+Quadratic programming
+\end_layout
+
+\begin_layout Standard
+%Due to the strong uncertainty for all parameters, we need to calibrate
+ more precisely.
+ For that, we use quadratic programming [ref], applied to interaction matrices
+ and growth rates by Maynard et al.
+ 2019
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Actually, Maynard et al.
+ 2019 uses a Least Square Inverse Problem solver, with a package (limSolve::lsei
+) that also offers quadratic programming
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In the following, I am basically copying the package documentation to make
+ the code understandable for later.
+ Would maybe be better with a Rmarkdown file.
+ This algorithm aims at finding 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $||\mathbf{Cx}-\mathbf{d}||^{2}$
+\end_inset
+
+ under the constraints 
+\begin_inset Formula $\mathbf{Ex}=\mathbf{f}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{Gx}>=\mathbf{h}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Here, 
+\begin_inset Formula $\mathbf{C}=\mathbf{I}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{d}=[\text{vec(\ensuremath{\mathbf{A}^{T})}}^{\frown}\mathbf{r'}]$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathbf{r'}=-(\text{e}^{\mathbf{r}}-\mathbb{\mathbb{\mathbf{1}}})$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+ so that we verify the equality 
+\begin_inset Formula $\mathbf{AN^{*}+r'}=0$
+\end_inset
+
+, and 
+\begin_inset Formula $\mathbf{G},\mathbf{h}$
+\end_inset
+
+ so that 
+\begin_inset Formula $\mathbf{r}>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\forall i,a_{ii}>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "biblio_seed"
+options "ecol_let"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
