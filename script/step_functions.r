@@ -2,7 +2,7 @@
 # 17/12/2019 CP: define the functions we will use in the code
 ##########
 
-growth_rate=function(temp,T_opt,B){
+growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016 
 	#Define parameters that are fixed, not phytoplankton specific
 	a_r=386/365.25
 	E_r=0.467
@@ -23,7 +23,12 @@ growth_rate=function(temp,T_opt,B){
 	return(rtmp)
 }
 
-step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_growth=NA){
+growth_rate_Bissinger=function(temp){
+	tmp=0.5*0.81*exp(0.0631*temp) #This is supposed to be specific growth rate already
+	return(tmp)	
+}
+
+step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_growth=NA,gr="SV"){
 	tmp=matrix(NA,dim(n_t)[1],dim(n_t)[2])
 	colnames(tmp)=names(n_t)
 	for(i in 1:2){
@@ -31,7 +36,13 @@ step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_gr
 		mat_pos[mat_pos<0]=0
 		mat_neg[mat_neg>0]=0
 		if(model=="BH"){
-			tmp[i,]=exp(growth_rate(temp,T_opt,B))*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) #We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
+			growth=NA
+			if(gr=="SV"){
+				growth=growth_rate_SV(temp,T_opt,B)
+			}else if(gr=="Bissinger"){
+				growth=growth_rate_Bissinger(temp-273)
+			}
+			tmp[i,]=exp(growth)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) #We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
 		}else if(model=="fixed"){
 			tmp[i,]=fixed_growth*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,])
 		}else if(model=="Martorell"){
@@ -46,7 +57,7 @@ step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_gr
 				}
 				sum_neg=sum_neg-mat_neg[j,k]*n_t[i,k]
 			}
-			tmp[i,j]=exp(growth_rate(temp,T_opt[j],B[j]))*n_t[i,j]*prod_pos/pmax(threshold,1+sum_neg)
+			tmp[i,j]=exp(growth_rate_SV(temp,T_opt[j],B[j]))*n_t[i,j]*prod_pos/pmax(threshold,1+sum_neg)
 		}
 		}
 ################## End of the formula from Martorell

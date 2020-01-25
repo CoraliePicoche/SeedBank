@@ -55,7 +55,7 @@ names(T_opt)=sp
 
 #b parameter to keep the same niche area
 f_to_optimize_B=function(b,T_min,T_max,T_opt,A){
-	f1=integrate(Vectorize(growth_rate),lower=T_min-5,upper=T_max+5,T_opt,b)$val
+	f1=integrate(Vectorize(growth_rate_SV),lower=T_min-5,upper=T_max+5,T_opt,b)$val
 	tmp=abs(f1-A)
 	return(tmp)
 }
@@ -188,7 +188,7 @@ A_ocean=f_exact_resolution(inter_ocean,aN)
 #### Check if both interaction matrices can lead to a stable, positive equilibrium
 #Compute mean growth rate
 #b_middle=optimize(f_to_optimize_B,T_min,T_max,293,A,interval=c(0,100))$minimum
-#r_mean=growth_rate(293,T_opt,B)
+#r_mean=growth_rate_SV(293,T_opt,B)
 r_mean<-runif(length(sp),0.5,1) # Maximal growth rates -- instead of (1,2) or (2,3)
 #A_coast<-matrix(rnorm(length(sp)^2,0.0,0.05), ncol=length(sp))
 

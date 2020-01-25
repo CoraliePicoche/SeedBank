@@ -114,6 +114,29 @@ Growth rates
  
 \end_layout
 
+\begin_layout Standard
+%Another method that we can have is to use the formula developed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+, based on 1,501 analysis, that is 
+\begin_inset Formula $r(T)=0.81\text{e}^{0.0631T},$
+\end_inset
+
+with 
+\begin_inset Formula $T$
+\end_inset
+
+ in °C.
+ This represents the daily growth rate, which we can divide by two (even
+ less than that) because daylight is around 12 hours.
+ 
+\end_layout
+
 \begin_layout Subsubsection*
 Interaction matrix
 \end_layout
@@ -381,8 +404,15 @@ Quadratic programming
 %Due to the strong uncertainty for all parameters, we need to calibrate
  more precisely.
  For that, we use quadratic programming [ref], applied to interaction matrices
- and growth rates by Maynard et al.
- 2019
+ and growth rates by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "maynard_reconciling_2019"
+literal "false"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
