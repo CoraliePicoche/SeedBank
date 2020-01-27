@@ -5,7 +5,7 @@
 #Maynard et al. 2019 used the conditions that growth_rate>0 and self-regulation>0 (a_ii>0).
 #############
 
-rm(list=ls())
+#rm(list=ls())
 graphics.off()
 set.seed(42)
 
@@ -14,15 +14,16 @@ set.seed(42)
 library(limSolve)
 library(Matrix)
 source("script/step_functions.r")
+source("script/matrix_MAR_clean.r")
 
-nspp=10
+nspp=11
 r <- runif(nspp)
 A <- -matrix(runif(nspp^2), nspp,nspp)
 diag(A) <- diag(A)*2
 x_obs <- runif(nspp)
 
 tol=0.1 #In the first example: 1000
-sp=1:10
+sp=1:11
 
 ##Random initial values for growth rate #With this, we can have AN-(exp(r)-1)=0 after quadratic optim
 r_mean=runif(sp,0.5,1.5)
@@ -50,12 +51,27 @@ for(i in 1:length(sp)){
 r_mean=growth_rate(293,T_opt,B)
 }
 
+###Based on Bissinger expression
+#With mean temperature
+tab_hydro=read.table("param/Augerhydro.txt",header=T,sep=";")
+mean_temp=mean(tab_hydro[,"TEMP"],na.rm=T)
+
+r_mean=rep(growth_rate_Bissinger(mean_temp,0.5),nspp)
+
 r_2=1-exp(r_mean)
 
 
 ##Interaction matrix
+####RANDOM
 inter_mat=matrix(rnorm(length(sp)^2,0,0.05),length(sp),length(sp)) 
 diag(inter_mat)=-abs(diag(inter_mat))*2
+
+####EXACT
+load("param/Auger_pencen_null_regular_common_MO.RData")
+name_spp=colnames(cis$call$model$B)
+inter_mat=clean_matrix(cis,signif=F)
+rownames(inter_mat)=colnames(inter_mat)=name_spp
+
 f_exact_resolution=function(B,N){
         A=matrix(NA,nrow=nrow(B),ncol=ncol(B))
         for(i in 1:dim(B)[1]){
@@ -69,10 +85,15 @@ f_exact_resolution=function(B,N){
         return(A)
 }
 
+#### RANDOM
 aN=c(10^6,10^6,runif(length(sp)-2,10^2,10^4))
 x_obs=aN
 
-A_coast=f_exact_resolution(inter_mat,aN)
+###EXACT
+pop_table=read.table("param/abundances_Auger.txt")
+aN=x_obs=pop_table[name_spp,]
+
+A_coast=f_exact_resolution(inter_mat,x_obs)
 Avec=as.numeric(t(A_coast))
 
 parvec <- c(Avec,r_2)
@@ -108,3 +129,6 @@ r_after=log(1-fit$X[(nspp^2+1):length(fit$X)])
 
 
 plot(1:length(parvec),100*(abs(fit$X-parvec)/parvec),xlab="Initial Values",ylab="Absolue %Difference")
+
+
+list_inter=list(A_coast,5*A_coast)

@@ -9,6 +9,8 @@ library(optimr)
 source("script/step_functions.r")
 
 set.seed(42)
+spp=11
+sp=1:11
 
 ###################  Fixed parameters  ###################
 
@@ -42,10 +44,12 @@ T_max=298
 
 ##############  Species-specific parameters  ##############
 #Seed mortality rate
-tab_morta=read.table("param/param_fake.csv",sep=";",header=T,dec=".")
-M=tab_morta[,"mortality_rate"]
-sp=tab_morta[,"Code"]
-names(M)=sp
+#tab_morta=read.table("param/param_fake.csv",sep=";",header=T,dec=".")
+#M=tab_morta[,"mortality_rate"]
+#sp=tab_morta[,"Code"]
+#names(M)=sp
+M=rep(0.1,spp)
+
 
 ####Definition of growth rates
 #Optimum temperature
@@ -213,9 +217,9 @@ names(S)=sp
 #Manip so that Chaetoceros spp and THA have the highest sinking rate
 tmp_S=S
 or=order(S,decreasing=T)
-tmp_S[c("CHD","CHS","THA")]=S[or[1:3]]
-tmp_S[or[1:3]]=S[1:3]
-S=tmp_S
+#tmp_S[c("CHD","CHS","THA")]=S[or[1:3]]
+#tmp_S[or[1:3]]=S[1:3]
+#S=tmp_S
 names(S)=sp
 
 #Gamma=germination*resuspension

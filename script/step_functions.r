@@ -23,12 +23,12 @@ growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016
 	return(rtmp)
 }
 
-growth_rate_Bissinger=function(temp){
-	tmp=0.5*0.81*exp(0.0631*temp) #This is supposed to be specific growth rate already
+growth_rate_Bissinger=function(temp,irradiance){
+	tmp=irradiance*0.81*exp(0.0631*temp) #This is supposed to be specific growth rate already
 	return(tmp)	
 }
 
-step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_growth=NA,gr="SV"){
+step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_growth=NA,gr="SV",irradiance=NA){
 	tmp=matrix(NA,dim(n_t)[1],dim(n_t)[2])
 	colnames(tmp)=names(n_t)
 	for(i in 1:2){
@@ -40,7 +40,7 @@ step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_gr
 			if(gr=="SV"){
 				growth=growth_rate_SV(temp,T_opt,B)
 			}else if(gr=="Bissinger"){
-				growth=growth_rate_Bissinger(temp-273)
+				growth=growth_rate_Bissinger(temp-273,irradiance)
 			}
 			tmp[i,]=exp(growth)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) #We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
 		}else if(model=="fixed"){
