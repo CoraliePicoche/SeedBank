@@ -1,5 +1,6 @@
 ##########
 # 17/12/2019 CP: define the functions we will use in the code
+# 05/02/2020 CP: test for ssh
 ##########
 
 growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016 
