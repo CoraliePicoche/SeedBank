@@ -53,9 +53,9 @@ for(i in 1:length(sp)){
 }
 dev.off()
 
-print(max(transfo_N_coast[id,"CHD"]))
-print(mean(transfo_N_coast[id,"CHD"]))
-print(mean(transfo_N_coast[id,"CHS"]))
+#print(max(transfo_N_coast[id,"CHD"]))
+#print(mean(transfo_N_coast[id,"CHD"]))
+#print(mean(transfo_N_coast[id,"CHS"]))
 
 pdf("exploratory/fig/growth_rate.pdf",width=10)
 par(mfrow=c(4,3))

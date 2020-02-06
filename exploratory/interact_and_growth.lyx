@@ -92,30 +92,72 @@ Interaction and growth
 Starting Point
 \end_layout
 
+\begin_layout Standard
+When necessary, environmental variable values or examples of genera are
+ taken from the Auger station of the REPHY dataset, as it balances the most
+ common and numerous diatom species and the longest time series.
+ 
+\end_layout
+
 \begin_layout Subsubsection*
 Growth rates
 \end_layout
 
 \begin_layout Standard
-%Here, describe the variability of species growth rate in the literature.
- Insist on the fact that we need to have growth rate values in isolation
- (so lab conditions) and that may vary from one study to the other.
- Most of the time, these are not taken at different temperature, so we cannot
- take that into account to reproduce a seasonal environment.
-\end_layout
+Phytoplanktonic growth rates are highly variable, in situ or in experimental
+ conditions.
+ For ten strains in one genus only, and in the same experimental conditions,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "balzano_effects_2011"
+literal "false"
 
-\begin_layout Standard
-%We can start with the values from Scranton and Vasseur but they are much
- lower than the ones found in the literature, in lab conditions.
- They also rely on optimal temperatures for phytoplankton growth, and we
- rarely have access to that.
- Finally, they do not lead to However, they enable us to show blooms due
- to seasonal environments.
+\end_inset
+
+ have been able to detect growth rates between 0.5 and 1.25 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+, which corresponds more generally to the values found in the literature
+ (between 0.2 and 1.78 for diatoms, even reaching 3 in the meta-analysis of
+ 308 experiments by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_light_2015"
+literal "false"
+
+\end_inset
+
+; this can be much lower for dinoflagellates).
+ These growth rates are maximum, fixed values for isolated species in laboratory
+ conditions.
+ Most of the time, they correspond to fixed temperature conditions, or to
+ only a small set of values.
+ These observations therefore cannot accomodate realistic, seasonal environment.
  
 \end_layout
 
 \begin_layout Standard
-%Another method that we can have is to use the formula developed by 
+In order to alleviate this obstacle, equations deriving growth rates from
+ temperatures are useful.
+ The equation from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+s can be considered but their range of application is between 15°C and 25°C
+ whereas the minimum temperature in Auger is 3°C, with a mean value around
+ 15°C.
+ This leads to unrealistically small growth rates.
+ 
+\end_layout
+
+\begin_layout Standard
+Another, more general formulation, is the one by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bissinger_predicting_2008"
@@ -123,7 +165,27 @@ literal "false"
 
 \end_inset
 
-, based on 1,501 analysis, that is 
+, itself based on a previous work by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+.
+ The relationship between temperature and growth rate, evaluated on a large
+ database
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+1,501 data points from several studies
+\end_layout
+
+\end_inset
+
+, is then 
 \begin_inset Formula $r(T)=0.81\text{e}^{0.0631T},$
 \end_inset
 
@@ -132,8 +194,23 @@ with
 \end_inset
 
  in °C.
- This represents the daily growth rate, which we can divide by two (even
- less than that) because daylight is around 12 hours.
+ This represents the daily growth rate with a continuous irradiance and
+ can therefore be at least halved because mean daylight is around 12 hours.
+ In this case, growth rates vary between 0.5 and 1.9, in line with previous
+ observations.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+It should however be noted that, contrary to the values obtained with the
+ SV equations, the Bissinger formulation does not lead to real blooms (that
+ is, a very large range of abundance values, covering up to 6 orders of
+ magnitude, between winter and spring).
+ 
+\end_layout
+
+\end_inset
+
  
 \end_layout
 
@@ -174,7 +251,24 @@ literal "false"
 
 \end_inset
 
-, 
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+However, strong variability between sites and calibration on biweekly data
+ (so, we should actually use 
+\begin_inset Formula $\mathbf{B}^{\frac{1}{15}}$
+\end_inset
+
+ but this leads to complex numbers and right now, I'm not sure what to do
+ with that).
+ 
+\end_layout
+
+\end_inset
+
+, random values can be taken as 
 \begin_inset Formula $b_{ij,i\neq j}\sim\mathcal{N}(\mu,\sigma)$
 \end_inset
 
@@ -208,6 +302,7 @@ Centric diatoms, pennate diatoms and dinoflagellates can only interact with
 \end_inset
 
 .
+ However, we can also directly use the interaction matrix from Auger.
  
 \family default
 \series default
@@ -221,7 +316,17 @@ Centric diatoms, pennate diatoms and dinoflagellates can only interact with
 \uwave default
 \noun default
 \color inherit
-Assuming that nutrients are rarer in the ocean than in the coast [ref],
+Assuming that nutrients are rarer in the ocean than in the coast 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+[[ref]]
+\end_layout
+
+\end_inset
+
+, competition in the ocean is considered higher than along the coast, and
  
 \begin_inset Formula $\alpha_{ij,c}<<\alpha_{ij,o}$
 \end_inset
@@ -247,7 +352,7 @@ Assuming that nutrients are rarer in the ocean than in the coast [ref],
 \begin_inset Formula $b_{ij,c}=k_{c2o}b_{ij,o}$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -296,7 +401,7 @@ literal "false"
 \begin_inset Formula 
 \[
 \begin{cases}
-b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}\\
+b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}\\
 b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}
 \end{cases}
 \]
@@ -386,25 +491,27 @@ We then sum on columns (on j).
 \end_layout
 
 \begin_layout Standard
-%However, strong variability between sites and calibration on biweekly data
- (so, we should actually use 
-\begin_inset Formula $\mathbf{B}^{\frac{1}{15}}$
+This gives an exact correspondance between 
+\begin_inset Formula $\alpha_{ij}$
 \end_inset
 
- but this leads to complex numbers and right now, I'm not sure what to do
- with that).
- 
+ and 
+\begin_inset Formula $b_{ij}.$
+\end_inset
+
+
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsubsection*
 Quadratic programming
 \end_layout
 
 \begin_layout Standard
-%Due to the strong uncertainty for all parameters, we need to calibrate
- more precisely.
- For that, we use quadratic programming [ref], applied to interaction matrices
- and growth rates by 
+Even though we could directly use the values obtained previously, the switch
+ to another model with a different timestep and the strong uncertainty for
+ all parameters, among other factors of variability, are motivations to
+ calibrate the model more precisely.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "maynard_reconciling_2019"
@@ -412,7 +519,17 @@ literal "false"
 
 \end_inset
 
+ have already shown that su an additional calibrations of parameter could
+ lead to more realistic simulations.
+ Followin their example, we use quadratic programming 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bazaraa2013nonlinear"
+literal "false"
 
+\end_inset
+
+, applied to interaction matrices and growth rates
 \begin_inset Foot
 status open
 
@@ -429,10 +546,19 @@ Actually, Maynard et al.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 In the following, I am basically copying the package documentation to make
  the code understandable for later.
  Would maybe be better with a Rmarkdown file.
- This algorithm aims at finding 
+ 
+\end_layout
+
+\end_inset
+
+The quadratic programming algorithm aims at finding 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
@@ -461,19 +587,28 @@ Here,
 \begin_inset Formula $\mathbf{d}=[\text{vec(\ensuremath{\mathbf{A}^{T})}}^{\frown}\mathbf{r'}]$
 \end_inset
 
- with 
+ where 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is the interaction matrix, 
 \begin_inset Formula $\mathbf{r'}=-(\text{e}^{\mathbf{r}}-\mathbb{\mathbb{\mathbf{1}}})$
 \end_inset
 
-, 
+ is the vector of growth rates, 
 \begin_inset Formula $\mathbf{E}$
 \end_inset
 
- so that we verify the equality 
+ is built so that we verify the equality 
 \begin_inset Formula $\mathbf{AN^{*}+r'}=0$
 \end_inset
 
-, and 
+ where 
+\begin_inset Formula $\mathbf{N}^{*}$
+\end_inset
+
+is the vectore of abundance at equilibrium (more precisely, here, average
+ abundance values over the whole time series), and 
 \begin_inset Formula $\mathbf{G},\mathbf{h}$
 \end_inset
 
@@ -481,11 +616,13 @@ Here,
 \begin_inset Formula $\mathbf{r}>0$
 \end_inset
 
- and 
+ (genera have a positive growth rate when taken in isolation) and 
 \begin_inset Formula $\forall i,a_{ii}>0$
 \end_inset
 
-.
+ (negative density-dependence, individuals from the same genus compete with
+ each other).
+ 
 \end_layout
 
 \begin_layout Standard

@@ -14,6 +14,7 @@ f_to_optimize=function(b,T_min,T_max,T_opt,A){
 }
 
 temp=293
+temp=15+273 #15 degres is the actual mean temperature in Auger
 A=10^(3.1)/365.25
 T_min=288
 T_max=298
