@@ -102,6 +102,13 @@ The high biodiversity of plant communities has long been a subject of both
  experimental and theoretical ecologists.
  Both terrestrial plants and phytoplanktonic communities can present hundreds
  of species which seem to consume the same resources.
+ First theoreticians have proposed that environmental fluctuations [ref]
+ could sustain such coexistence but further research have proved that this
+ could not actually explain the observed richness of species communities
+ [ref].
+ Other mechanisms such as niche differentiation or neutral theory have completed
+ environmental variation and stochasticity to solve this question [ref].
+ The role of demography and life history traits also proves important [ref].
  
 \end_layout
 
@@ -267,6 +274,13 @@ literal "false"
 
 \begin_layout Section*
 Model
+\end_layout
+
+\begin_layout Standard
+
+\size large
+Warning!! This needs to be completely rewritten as methods have evolved
+ a lot (see matmet.pdf)
 \end_layout
 
 \begin_layout Standard
@@ -1297,6 +1311,10 @@ Biological questions:
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection*
+Results
 \end_layout
 
 \begin_layout Standard

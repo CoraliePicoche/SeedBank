@@ -29,7 +29,7 @@ growth_rate_Bissinger=function(temp,irradiance){
 	return(tmp)	
 }
 
-step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_growth=NA,gr="SV",irradiance=NA){
+step1=function(n_t,list_inter,temp,M,model="BH",threshold=0.001,fixed_growth=NA,gr="Bissinger",irradiance=NA,T_opt=NA,B=NA){
 	tmp=matrix(NA,dim(n_t)[1],dim(n_t)[2])
 	colnames(tmp)=names(n_t)
 	for(i in 1:2){
@@ -40,12 +40,12 @@ step1=function(n_t,list_inter,temp,T_opt,M,B,model="BH",threshold=0.001,fixed_gr
 			growth=NA
 			if(gr=="SV"){
 				growth=growth_rate_SV(temp,T_opt,B)
-			}else if(gr=="Bissinger"){
+			}else if(gr=="B"){
 				growth=growth_rate_Bissinger(temp-273,irradiance)
+			}else if(gr=="fixed"){
+				growth=fixed_growth
 			}
 			tmp[i,]=exp(growth)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) #We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
-		}else if(model=="fixed"){
-			tmp[i,]=fixed_growth*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,])
 		}else if(model=="Martorell"){
 ################### This is the formula from Martorell
 		for(j in 1:dim(tmp)[2]){

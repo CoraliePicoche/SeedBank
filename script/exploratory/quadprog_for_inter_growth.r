@@ -22,7 +22,7 @@ A <- -matrix(runif(nspp^2), nspp,nspp)
 diag(A) <- diag(A)*2
 x_obs <- runif(nspp)
 
-tol=0.1 #In the first example: 1000
+tol=1000 #In the first example: 1000
 sp=1:11
 
 ##Random initial values for growth rate #With this, we can have AN-(exp(r)-1)=0 after quadratic optim
@@ -94,6 +94,7 @@ pop_table=read.table("param/abundances_Auger.txt")
 aN=x_obs=pop_table[name_spp,]
 
 A_coast=f_exact_resolution(inter_mat,x_obs)
+colnames(A_coast)=rownames(A_coast)=name_spp
 Avec=as.numeric(t(A_coast))
 
 parvec <- c(Avec,r_2)
@@ -105,13 +106,19 @@ Alow <- Avec-abs(Avec*tol)
 Aupp <- Avec+abs(Avec*tol) 
 
 #rlow <- rep(0,length(r_2))
-rlow <- r_2-abs(r_2*tol) #In Maynard's code
+rlow <- r_2-abs(r_2*0.000000000000000000000000000000000000000001) #We have a fixed value of r
+rupp <- r_2+abs(r_2*0.000000000000000000000000000000000000000001) #We have a fixed value of r
 #rupp <- r_2+abs(r_2*tol) #In Maynard's code
-rupp=rep(0,length(r_2))
+#rupp=rep(0,length(r_2)) #Negative value only for r2 so that actual r>1 -> species have a positive maximum growth rate
 
 # constrain the diagonals to be negative, and some small value away from zero
 #Aupp[as.logical(as.numeric(diag(nspp)))] <- min(-1e-4,max(diag(A_coast)))/4 #This was for LV
 Alow[as.logical(as.numeric(diag(nspp)))] = rep(0,nspp)
+
+#Also keep the sign from A: species that compete should keep a positive coefficient. Same for species that are mutualist (negative coefficients).
+Alow[Avec>0]=0
+Aupp[Avec<0]=0
+
 # inequality constraints
 h <- c(Alow,rlow,-Aupp,-rupp)
 G <- rbind(diag(npar),-diag(npar))
@@ -125,10 +132,29 @@ f <- rep(0,nrow(E))
 fit=limSolve::lsei(A = diag(npar), B = parvec, E = E, F = f, G = G, H = h,type=1,verbose=TRUE,fulloutput=TRUE)
 
 A_after=t(matrix(fit$X[1:nspp^2],nspp,nspp))
+colnames(A_after)=rownames(A_after)=name_spp
 r_after=log(1-fit$X[(nspp^2+1):length(fit$X)])
 
+par(mfrow=c(1,2))
+diag_sq=seq(1,11^2,12)
+diag_A_after=diag(A_after)
+diag_A_coast=diag(A_coast)
+#A_after=c(A_after[A_after!=0])
+#A_coast=c(A_coast[A_coast!=0])
+plot(1:(nspp^2),(A_after-A_coast)/A_coast,xlab="Param",ylab="Absolute %Difference",pch=16,col="black",xaxt="n")
+points(diag_sq,(diag_A_after-diag_A_coast)/diag_A_coast,pch=16,col="red")
+abline(v=diag_sq,lty=2)
+abline(h=1,lty=2)
+axis(1,at=diag_sq,labels=name_spp)
 
-plot(1:length(parvec),100*(abs(fit$X-parvec)/parvec),xlab="Initial Values",ylab="Absolue %Difference")
+plot(log10(abs(A_coast)),(A_after-A_coast)/A_coast,xlab="Log10(Initial Values)",ylab="Absolue Difference",pch=16,col="black")
+points(log10(abs(diag_A_coast)),(diag_A_after-diag_A_coast)/diag_A_coast,pch=16,col="red")
+#plot(1:nspp,(r_after-r_mean)/r_mean,xlab="Initial Values",ylab="Absolue %Difference")
 
+#par(mfrow=c(1,2))
+#plot(A_coast,A_after)
+#abline(a=0,b=1)
+#plot(log10(r_mean),log10(r_after))
+#abline(a=0,b=1)
 
-list_inter=list(A_coast,5*A_coast)
+#list_inter=list(A_coast,5*A_coast)
