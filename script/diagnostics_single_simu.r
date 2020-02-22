@@ -155,8 +155,7 @@ dev.off()
 #Observation
 gr_observed=apply(log(tab_plankton),2,diff)
 
-
-pdf(paste("output/growth_rate_",n_simulation,".pdf",sep=""),width=10,height=10)
+pdf(paste("output/growth_rate_",n_simulation,"_daily.pdf",sep=""),width=10,height=10)
 par(mfrow=c(4,3))
 #id_hot=(temp>293)[id[1:(length(id)-1)]]
 for(i in 1:length(sp)){
@@ -166,29 +165,33 @@ for(i in 1:length(sp)){
 #        points(log(N_coast[id[1:(length(id)-1)],i][!id_hot]),growth_rate_coast[!id_hot],pch=16,col="blue")
 }
 dev.off()
-
-pdf(paste("output/growth_rate_",n_simulation,"vs_observation.pdf",sep=""),width=10,height=10)
+pdf(paste("output/growth_rate_",n_simulation,"vs_observation_biweekly.pdf",sep=""),width=10,height=10)
 par(mfrow=c(4,3))
 
 ######Take back here for growth rate every two weeks
 
 #Simulation
-tab_coast_every_2_weeks=matrix(NA,nrow=length(id_observed),ncol=length(name_spp))
-abundances_every_2_weeks=matrix(NA,nrow=length(id_observed),ncol=length(name_spp))
+id_every_2_weeks=min(id)+seq(1:26)*14
+tab_coast_every_2_weeks=matrix(NA,nrow=length(id_every_2_weeks),ncol=length(name_spp))
+abundances_every_2_weeks=matrix(NA,nrow=length(id_every_2_weeks),ncol=length(name_spp))
 j=0
-for(i in id_observed[1]:id_observed[length(id)-1]){
+for(i in id_every_2_weeks[1:(length(id_every_2_weeks)-1)]){
 	j=j+1
-	tab_coast_every_two_weeks[j,]=log(tab_coast[,i+1])-log(tab_coast[i])
-	abundance_2_weaks[j,]=log(tab_coast[,i])
+	tab_coast_every_2_weeks[j,]=as.numeric(log(tab_coast[i+1,])-log(tab_coast[i,]))
+	abundances_every_2_weeks[j,]=as.numeric(log(tab_coast[i,]))
 }
 
 #Observation
-id_obs=
+obs=diff(log(tab_plankton))
+abundance_obs=log(tab_plankton)
+abundance_obs=abundance_obs[1:(nrow(abundance_obs)-1),]
 
 for(i in 1:length(sp)){
-        growth_rate_coast=diff(log(tab_coast[id,i]))
-        plot(log(tab_coast[id[1:(length(id)-1)],i]),growth_rate_coast,pch=16,xlab="log abundance",ylab="growth")
-#        points(log(N_coast[id[1:(length(id)-1)],i][id_hot]),growth_rate_coast[id_hot],pch=16,col="red")
+	limix=range(c(abundances_every_2_weeks[,i]),c(abundance_obs[,i]),na.rm=T)
+	limiy=range(c(tab_coast_every_2_weeks[,i]),c(obs[,i]),na.rm=T)
+
+        plot(abundance_obs[,i],obs[,i],pch=1,col="red",xlab="log abundance",ylab="growth",ylim=limiy,xlim=limix)
+/bin/bash: q: command not found
 #        points(log(N_coast[id[1:(length(id)-1)],i][!id_hot]),growth_rate_coast[!id_hot],pch=16,col="blue")
 }
 dev.off()
