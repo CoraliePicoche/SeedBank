@@ -9,7 +9,7 @@ library('lubridate')
 library('zoo')
 
 set.seed(42)
-n_simulation=1
+n_simulation=10
 
 colo=c(rep(c("red","orange","green","blue"),2),"red","orange")
 apch=c(rep(16,4),rep(17,4),rep(18,2))
@@ -77,7 +77,7 @@ for (i in 1:ncol(before_A)){
 }
 
 diff=(after_A/before_A)
-id_diff=which(diff>10)
+id_diff=which(diff>1)
 
 id=0
 val=c()
@@ -92,6 +92,7 @@ for(i in 1:ncol(after_A)){
 }
 
 plot(1:length(before_A),after_A/before_A,pch=16,col="black",xlab="",ylab="Ratio after/before",xaxt="n")
+print(id_diff)
 text(id_diff,diff[id_diff],val,pos=1)
 seq_axis=seq(1,length(before_A),by=4)
 abline(h=10,lty=3)
@@ -191,7 +192,6 @@ for(i in 1:length(sp)){
 	limiy=range(c(tab_coast_every_2_weeks[,i]),c(obs[,i]),na.rm=T)
 
         plot(abundance_obs[,i],obs[,i],pch=1,col="red",xlab="log abundance",ylab="growth",ylim=limiy,xlim=limix)
-/bin/bash: q: command not found
 #        points(log(N_coast[id[1:(length(id)-1)],i][!id_hot]),growth_rate_coast[!id_hot],pch=16,col="blue")
 }
 dev.off()

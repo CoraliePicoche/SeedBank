@@ -8,6 +8,6 @@ dist_sinking=rbeta(10000,0.55,1.25)*30
 
 #We have val_m prop to mean(dist_sinking)
 
-pdf("beta_law.pdf")
+pdf("output/beta_law.pdf")
 hist(dist_sinking,freq=F,xlab="Sinking rate (%)",ylab="Freq",main="")
 dev.off()

@@ -12,6 +12,8 @@ source("script/infer_interaction_matrix_growth_rate.r")
 args = commandArgs(trailingOnly=TRUE)
 n_simulation=args[1]
 
+n_simulation=10
+
 #Fixed parameters
 tab=read.table(paste("param/simu",n_simulation,".csv",sep=""),sep=";",dec=".",header=T)
 M=as.numeric(as.character(tab[tab[,1]=="M",2]))
@@ -54,21 +56,35 @@ if(growth_model=="B"){ #B for Bissinger
 	r_mean=rep(growth_rate_Bissinger(mean_temp,0.5),nspp)
 }else if(growth_model=="SV"){ #SV for Scranton Vasseur
 	#Niche area to compute growth rates + range of optimal temperatures
-	A=10^(3.1)/365.25
-	T_min=288
-	T_max=298
+#	A=10^(3.1)/365.25
+	A=15
+	T_min=273
+	T_max=273+35
 
 	#Optimum temperature
-	T_opt=runif(nspp,293,298) #Between 20 And 25 for most species
+	T_opt=runif(nspp,280,303) #Between 20 And 25 for most species
 	names(T_opt)=name_spp
 
-	B=rep(NA,nspp)
-	for(i in 1:length(sp)){
-        	B[i]=optimize(f_to_optimize_B,T_min,T_max,T_opt[i],A,interval=c(0,100))$minimum
-	}
-	names(B)=name_sp
+	###This is from a previous simulation where T_opt was varying between 293 and 298. This actually worked pretty well before.
+	T_opt["CHA"]=298
+	T_opt["DIT"]=285
+	T_opt["GUI"]=297
+	T_opt["LEP"]=297
+	T_opt["PLE"]=297
+	T_opt["PSE"]=294
+	T_opt["PRO"]=295
+	T_opt["PRP"]=294
 
-	r_mean=growth_rate(293,T_opt,B)
+	T_opt["SKE"]=283
+	T_opt["THP"]=290
+
+	B=rep(NA,nspp)
+	for(i in 1:nspp){
+        	B[i]=optimize(f_to_optimize_B,T_min,T_max,T_opt[i],A,interval=c(0,100000))$minimum
+	}
+	names(B)=name_spp
+
+	r_mean=growth_rate_SV(293,T_opt,B)
 
 }else if(growth_model=="fixed"){
 	r_mean=0.1
@@ -88,6 +104,8 @@ or=order(S,decreasing=T)
 tmp_S[c("CHA")]=S[or[1]]
 tmp_S[or[1]]=S[1]
 S=tmp_S
+
+S=0.7
 
 
 if(quad_prog==1){

@@ -9,6 +9,8 @@ growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016
 	E_r=0.467
 	k=8.6173324*10^(-5)
 	t_0=293
+	t_0=293
+	cons=1#This is added to the original Scranton and Vasseur model to enlarge the niche
 
 	#Compute r(temp)
 	ftmp=rep(NA,length(T_opt))
@@ -19,7 +21,7 @@ growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016
 		}else{
 			ftmp[i]=exp(-5*(abs(temp-T_opt[i]))^3/B[i])
 		}
-		rtmp[i]=a_r*ftmp[i]*exp(E_r*(temp-t_0)/(k*temp*t_0))
+		rtmp[i]=a_r*ftmp[i]*exp(cons*E_r*(temp-t_0)/(k*temp*t_0))
 	}
 	return(rtmp)
 }
@@ -45,7 +47,7 @@ step1=function(n_t,list_inter,temp,M,model="BH",threshold=0.001,fixed_growth=NA,
 			}else if(gr=="fixed"){
 				growth=fixed_growth
 			}
-			tmp[i,]=exp(growth)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) #We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
+			tmp[i,]=exp(growth+0.25)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) #We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
 		}else if(model=="Martorell"){
 ################### This is the formula from Martorell
 		for(j in 1:dim(tmp)[2]){
