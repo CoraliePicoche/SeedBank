@@ -9,7 +9,7 @@ library('lubridate')
 library('zoo')
 
 set.seed(42)
-n_simulation=10
+n_simulation=1
 
 colo=c(rep(c("red","orange","green","blue"),2),"red","orange")
 apch=c(rep(16,4),rep(17,4),rep(18,2))
@@ -55,15 +55,15 @@ diag(after_A_nodiag)=NA
 ratio_after=mean(abs(diag(after_A)))/mean(abs(after_A_nodiag))
 ratio_before=mean(abs(diag(before_A)))/mean(abs(before_A_nodiag))
 
-pdf(paste("output/calibration_A_",n_simulation,".pdf",sep=""),width=10,height=10)
-par(mfrow=c(3,1))
-plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before",ylab="After")
+pdf(paste("output/calibration_A_",n_simulation,".pdf",sep=""),width=7.5,height=10)
+par(mfrow=c(3,1),mar=c(4,4,1,1))
+plot(c(before_A),c(after_A),pch=16,col="black",xlab="",ylab="After calibration")
 abline(a=0,b=1)
 points(diag(before_A),diag(after_A),pch=16,col="red")
 legend("topleft",c("Inter","Intra"),col=c("black","red"),pch=16)
 text(1,0,paste("Before ",ratio_before,"\nAfter ",ratio_after,sep=""))
 
-plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before",ylab="After",xlim=c(min(c(before_A)),10^-4),ylim=c(min(c(after_A)),10^-4))
+plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=c(min(c(before_A)),10^-4),ylim=c(min(c(after_A)),10^-4),main="Zoom")
 abline(a=0,b=1)
 points(diag(before_A),diag(after_A),pch=16,col="red")
 
@@ -77,7 +77,7 @@ for (i in 1:ncol(before_A)){
 }
 
 diff=(after_A/before_A)
-id_diff=which(diff>1)
+id_diff=which(diff>10)
 
 id=0
 val=c()
@@ -144,9 +144,9 @@ for(i in 1:length(sp)){
 	axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
         lines(id,transfo_N_ocean[id,i],col="darkblue",t="o",pch=16,lty=1)
         lines(id,transfo_N_seed[id,i],col="brown",t="o",pch=16,lty=1)
-	points(id_observed,log10(tab_mean[,i]+10^(-5)),pch=16,col="red",cex=2)
+	points(id_observed,log10(tab_mean[,i]+10^(-5)),pch=17,col="red",cex=2)
 	if(i==1){
-		legend("right",c("coast","ocean","seed"),col=c("lightblue","darkblue","brown"),pch=16)
+		legend("right",c("coast","ocean","seed","mean obs"),col=c("lightblue","darkblue","brown","red"),pch=c(16,16,16,17))
 	}
 }
 dev.off()
@@ -175,12 +175,12 @@ par(mfrow=c(4,3))
 id_every_2_weeks=min(id)+seq(1:26)*14
 tab_coast_every_2_weeks=matrix(NA,nrow=length(id_every_2_weeks),ncol=length(name_spp))
 abundances_every_2_weeks=matrix(NA,nrow=length(id_every_2_weeks),ncol=length(name_spp))
-j=0
-for(i in id_every_2_weeks[1:(length(id_every_2_weeks)-1)]){
+for(j in 1:(length(id_every_2_weeks)-1)){
 	j=j+1
-	tab_coast_every_2_weeks[j,]=as.numeric(log(tab_coast[i+1,])-log(tab_coast[i,]))
-	abundances_every_2_weeks[j,]=as.numeric(log(tab_coast[i,]))
+	tab_coast_every_2_weeks[j,]=as.numeric(log(tab_coast[id_every_2_weeks[j+1],])-log(tab_coast[id_every_2_weeks[j],]))
+	abundances_every_2_weeks[j,]=as.numeric(log(tab_coast[id_every_2_weeks[j+1],]))
 }
+
 
 #Observation
 obs=diff(log(tab_plankton))
@@ -189,10 +189,12 @@ abundance_obs=abundance_obs[1:(nrow(abundance_obs)-1),]
 
 for(i in 1:length(sp)){
 	limix=range(c(abundances_every_2_weeks[,i]),c(abundance_obs[,i]),na.rm=T)
-	limiy=range(c(tab_coast_every_2_weeks[,i]),c(obs[,i]),na.rm=T)
+	#limiy=range(c(tab_coast_every_2_weeks[,i]),c(obs[,i]),na.rm=T)
+#	limiy=range(c(tab_coast_every_2_weeks[,i]),na.rm=T)
+	limiy=c(-2,2)
 
         plot(abundance_obs[,i],obs[,i],pch=1,col="red",xlab="log abundance",ylab="growth",ylim=limiy,xlim=limix)
-#        points(log(N_coast[id[1:(length(id)-1)],i][!id_hot]),growth_rate_coast[!id_hot],pch=16,col="blue")
+        points(abundances_every_2_weeks,tab_coast_every_2_weeks,pch=16,col="blue")
 }
 dev.off()
 

@@ -31,6 +31,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing onehalf
 \use_hyperref false
@@ -309,7 +310,7 @@ literal "false"
 \begin{equation}
 \left\{ \begin{array}{ccc}
 N_{t+h,i,c/o} & = & \frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}\\
-N_{t+h,i,b} & = & N_{t,i,b}(1-m_{i}\zeta_{i})
+N_{t+h,i,b} & = & N_{t,i,b}(1-m_{i}-\zeta_{i})
 \end{array}\right.\label{eq:model_step1}
 \end{equation}
 
@@ -1979,7 +1980,142 @@ Results
 \end_layout
 
 \begin_layout Subsubsection*
-Growth rates
+Quadratic programming
+\end_layout
+
+\begin_layout Standard
+Using quadratic programming as a way to tune parameters on the observed
+ abundances leads to changes in parameter values.
+ Some interactions can be multiplied by 80 after re-calibration (LEP/GUI)
+ while most of the parameters remain in the same domain.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/calibration_A_1.pdf
+	height 99theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Changes in interaction strengths after calibration by quadratic programming.
+ The middle panel is a zoom on interspecific interaction strengths.
+ Bottom panel shows the ratio of parameter values after and before quadratic
+ programming.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Changes-quadratic-programming"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Phytoplankton dynamics
+\end_layout
+
+\begin_layout Standard
+Average abundances seem to be respected but blooms do not appear clearly.
+ The variation in abundances due to seasonality is, for now, underestimated.
+ Species with a lower thermal optima such as Skeletonema miss their two
+ blooms.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/timeseries_one_by_one1.pdf
+	width 45text%
+	special page=1
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/timeseries_one_by_one1.pdf
+	width 45text%
+	special page=5
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Examples of phytoplankton dynamics (Chaetoceros on the left, Skeletonema
+ on the right) 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Phytoplankton-abundances"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thermal optima need to be redesigned in relation to niche area.
+ For now, species with a preference for low temperatures also have a wider
+ niches which buffers their growth.
+ Moreover, a distinction between generalists and specialists species (Hernandez-
+Farinas et al.
+ 2015).
+ could emerge from the modification of the growth rate formula.
+ 
 \end_layout
 
 \begin_layout Section*

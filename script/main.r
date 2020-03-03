@@ -12,7 +12,7 @@ source("script/infer_interaction_matrix_growth_rate.r")
 args = commandArgs(trailingOnly=TRUE)
 n_simulation=args[1]
 
-n_simulation=10
+n_simulation=1
 
 #Fixed parameters
 tab=read.table(paste("param/simu",n_simulation,".csv",sep=""),sep=";",dec=".",header=T)
@@ -104,8 +104,6 @@ or=order(S,decreasing=T)
 tmp_S[c("CHA")]=S[or[1]]
 tmp_S[or[1]]=S[1]
 S=tmp_S
-
-S=0.7
 
 
 if(quad_prog==1){
