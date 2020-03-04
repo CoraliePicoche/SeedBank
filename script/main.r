@@ -12,7 +12,7 @@ source("script/infer_interaction_matrix_growth_rate.r")
 args = commandArgs(trailingOnly=TRUE)
 n_simulation=args[1]
 
-n_simulation=1
+n_simulation=2
 
 #Fixed parameters
 tab=read.table(paste("param/simu",n_simulation,".csv",sep=""),sep=";",dec=".",header=T)
@@ -75,7 +75,7 @@ if(growth_model=="B"){ #B for Bissinger
 	T_opt["PRO"]=295
 	T_opt["PRP"]=294
 
-	T_opt["SKE"]=283
+	T_opt["SKE"]=273
 	T_opt["THP"]=290
 
 	B=rep(NA,nspp)
@@ -83,6 +83,10 @@ if(growth_model=="B"){ #B for Bissinger
         	B[i]=optimize(f_to_optimize_B,T_min,T_max,T_opt[i],A,interval=c(0,100000))$minimum
 	}
 	names(B)=name_spp
+	#Trying constant B
+	B=rep(mean(B),nspp)
+	names(B)=name_spp
+
 
 	r_mean=growth_rate_SV(293,T_opt,B)
 

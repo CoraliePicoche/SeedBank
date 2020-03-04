@@ -127,23 +127,37 @@ Analyses of coexistence in terrestrial plant communities often take into
  year to another (in case of an annual plant).
  The storage effect has first been defined by the presence of a long-lived
  life stage and temporal variation in recruitment from this long-lived life
- stage that helps escape interspecific competition (Chesson 1986, 
+ stage that helps escape interspecific competition 
 \begin_inset CommandInset citation
-LatexCommand citealp
-key "caceres_temporal_1997"
+LatexCommand citep
+key "chesson1986environmental,caceres_temporal_1997"
 literal "false"
 
 \end_inset
 
-).
+.
  This has been later generalized as a negative correlation between the effect
- of the environment and the effect of competition (Ellner et al.
- 2016).
+ of the environment and the effect of competition 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ellner_how_2016"
+literal "false"
+
+\end_inset
+
+.
  In good enviromental conditions, competition from other individuals is
  stronger as seeds might germinate at the same time.
  Finally, models and experiments suggest that adults can have a negative
- effect on seed survival, through the Janzen-Connell effect (Comita et al.
- 2014).
+ effect on seed survival, through the Janzen-Connell effect 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "comita_testing_2014"
+literal "false"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -153,16 +167,11 @@ Even though different coexistence mechanisms have been unveiled through
  for terrestrial plants, aquatic plants, and more specifically phytoplanktonic
  algae, have not been modeled with the same precision.
  Although theoreticians have proposed for a long time that the blooms may
- initiate after the resuspension and germination of seeds (Patrick 1948,
- Marcus and Boero 1998)
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Gran 1912 before, but too hard to find.
- However, for a historical point of view, Patrick 1948 and Taylor 1980 from
- Oceanography, The Past, are good source
-\end_layout
+ initiate after the resuspension and germination of seeds 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "patrick_factors_1948,marcus_minireview:_1998"
+literal "false"
 
 \end_inset
 
@@ -300,7 +309,7 @@ literal "false"
  dependant on both the species and the current temperature.
  During the same first step, the abundance of cells present at the bottom
  of the floor in coastal areas (hereafter called cysts) decreases due to
- both cyst mortality and the burial **consécutif** to sedimentation.
+ both cyst mortality and the burial resulting from sedimentation.
  During the second step, exchanges take place between the different compartments
 , 
 \end_layout
@@ -326,7 +335,15 @@ with
 
  was calibrated for this study (see SI for more information) and interactions
  are inferred from previous work on real data with a Multivariate AutoRegressive
- (MAR) model.
+ (MAR) model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+.
  The shift from MAR to BH- matrices of interactions is described in SI.
  
 \end_layout
@@ -359,7 +376,7 @@ noprefix "false"
 
 .
  Each compartment (ocean, coast, seed bank) contain 
-\begin_inset Formula $10^{6}$
+\begin_inset Formula $10^{3}$
 \end_inset
 
  cells at the beginning of the simulation, which is run for 10000 time steps.
@@ -1571,6 +1588,19 @@ Calibration
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Might be best in the Supporting Information, especially the network figure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Groups of species (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1593,9 +1623,15 @@ noprefix "false"
 \end_inset
 
 ) and realistic environmental conditions are taken from one of the sites
- (Auger) in a previous analysis based on field data (Picoche & Barraquand
- 2020), which shows the longest time-series for the most common groups of
- species.
+ (Auger) in a previous analysis based on field data 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+, which shows the longest time-series for the most common groups of species.
 \end_layout
 
 \begin_layout Standard
@@ -1888,7 +1924,16 @@ Thalassiosira+Porosira
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Name and composition of the groups of species present in our reference site.
+Name and composition of the groups of species present in our reference site,
+ based on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hernandez_farinas_assessing_2015"
+literal "false"
+
+\end_inset
+
+.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1934,7 +1979,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Description of the interaction networks in Auger 
+Description of the interaction networks in our reference site, with negative
+ interactions in solide black lines and positive interactions in dashed
+ blue lines.
+ Edgewidth is proportional to the decimal logarithm of interaction strengths.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Description-of-network"
@@ -1959,7 +2008,7 @@ name "fig:Description-of-network"
 \end_layout
 
 \begin_layout Standard
-Growth rates and phenologies are used to calibrate the model.
+Observred growth rates and phenologies are used to calibrate the model.
 \end_layout
 
 \begin_layout Subsection*
@@ -1967,7 +2016,7 @@ Scenarios
 \end_layout
 
 \begin_layout Standard
-In addition to sensibility analyses on parameters we cannot directly know
+In addition to sensitivty analyses on parameters we cannot directly know
  (burial, sinking, resuspension, germination rates), scenarios can be proposed
  to study the effect of a seed bank on coexistence of species, by (1) removing
  such seed bank (by setting seed mortality to 1) and (2) removing the exchanges
@@ -2001,7 +2050,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /home/cpicoche/Documents/Thesis/SeedBank/output/calibration_A_1.pdf
-	height 99theight%
+	height 80theight%
 
 \end_inset
 
@@ -2014,7 +2063,7 @@ status open
 \begin_layout Plain Layout
 Changes in interaction strengths after calibration by quadratic programming.
  The middle panel is a zoom on interspecific interaction strengths.
- Bottom panel shows the ratio of parameter values after and before quadratic
+ The bottom panel shows the ratio of parameter values after and before quadratic
  programming.
  
 \begin_inset CommandInset label
@@ -2111,9 +2160,15 @@ name "fig:Phytoplankton-abundances"
 Thermal optima need to be redesigned in relation to niche area.
  For now, species with a preference for low temperatures also have a wider
  niches which buffers their growth.
- Moreover, a distinction between generalists and specialists species (Hernandez-
-Farinas et al.
- 2015).
+ Moreover, a distinction between generalists and specialists species 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hernandez_farinas_assessing_2015"
+literal "false"
+
+\end_inset
+
+.
  could emerge from the modification of the growth rate formula.
  
 \end_layout
@@ -2240,16 +2295,38 @@ e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
 However, the niches described by this growth function are too narrow, correspond
 ing to values close to 0 for temperatures in which phytoplakton can normally
  grow.
- The meta-analysis by Edwards et al.
- (2016) allows to correct, at least qualitatively the growth rates obtained
- with Scranton and Vasseur.
+ The meta-analysis by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_phytoplankton_2016"
+literal "false"
+
+\end_inset
+
+ allows to correct, at least qualitatively the growth rates obtained with
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-By increasing the niche area A in Scranton and Vasseur as well as directly
- increasing the final growth rate by 0.25, thermal niches seem closer to
- other values in the literature (Fig.
+By increasing the niche area in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ as well as directly increasing the final growth rate by 0.25, thermal niches
+ seem closer to other values in the literature (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
