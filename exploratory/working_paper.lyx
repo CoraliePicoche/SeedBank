@@ -90,8 +90,8 @@ Working document
 \end_layout
 
 \begin_layout Standard
-General idea: How can the terrestrial plant literature on seed bank be applied
- to phytoplankton coexistence?
+Preliminary idea: How can the terrestrial plant literature on seed bank
+ be applied to phytoplankton coexistence?
 \end_layout
 
 \begin_layout Section*
@@ -99,17 +99,16 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-The high biodiversity of plant communities has long been a subject of both
- experimental and theoretical ecologists.
+The high biodiversity of plant communities is still an unresolved question
+ for both experimental and theoretical ecologists.
  Both terrestrial plants and phytoplanktonic communities can present hundreds
  of species which seem to consume the same resources.
- First theoreticians have proposed that environmental fluctuations [ref]
- could sustain such coexistence but further research have proved that this
- could not actually explain the observed richness of species communities
- [ref].
- Other mechanisms such as niche differentiation or neutral theory have completed
- environmental variation and stochasticity to solve this question [ref].
- The role of demography and life history traits also proves important [ref].
+ Earlier theoreticians have proposed that environmental fluctuations only
+ [ref] could sustain coexistence but further research showed that this could
+ not explain the order of magnitude of species richness [ref].
+ Other mechanisms such as niche differentiation[ref], demography [ref] and
+ life history traits [ref] have completed environmental variation and stochastic
+ity as other explanations.
  
 \end_layout
 
@@ -158,6 +157,16 @@ literal "false"
 \end_inset
 
 .
+ Therefore, neglecting explicit modeling of this life stage can modify the
+ understanding we have of the dynamics of the populations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nguyen_consequences_2019"
+literal "false"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -166,8 +175,8 @@ Even though different coexistence mechanisms have been unveiled through
  the use of several life stages and a focus on the youngest stage (seeds)
  for terrestrial plants, aquatic plants, and more specifically phytoplanktonic
  algae, have not been modeled with the same precision.
- Although theoreticians have proposed for a long time that the blooms may
- initiate after the resuspension and germination of seeds 
+ Although ecologists have proposed for a long time that the blooms may initiate
+ after the resuspension and germination of seeds 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "patrick_factors_1948,marcus_minireview:_1998"
@@ -175,9 +184,7 @@ literal "false"
 
 \end_inset
 
-, it is unusal to see an explicit model of such process [[Note: not necessarily
- theoreticians, but they have done small review of the existence of spores
- and the possible benthic-pelagic coupling.]].
+, it is unusal to see an explicit model of such process.
  The classical view behind phytoplankton dynamics is that bloom formation
  is mostly seasonal, due to the variation in light and temperature, assuming
  that there are always enough cells in the environment to duplicate.
@@ -202,23 +209,13 @@ We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
 \end_inset
 
 .
- Neglecting explicit modeling of this life stage can modify the understanding
- we have of the dynamics of the populations 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "nguyen_consequences_2019"
-literal "false"
-
-\end_inset
-
-.
  
 \end_layout
 
 \begin_layout Standard
 Phytoplankton communities in coastal environments may benefit from seed
- banks even more than the oceanic communities, as the distance to the bottom
- is lower.
+ banks even more than the oceanic communities [REF-find back], as the distance
+ to the bottom is lower.
  Similarly to the seed bank approach, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -301,17 +298,55 @@ literal "false"
 
  builds on a two-step discrete-time model: the abundances of cells present
  in the coastal or oceanic waters first increase following Beverton-Holt
- dynamics.
+ dynamics (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_step1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  The Beverton-Holt (BH) formulation is classical for discrete-time models
- of terrestrial plants and includes both maximum growth rates and the effects
- of positive and negative interactions on said growth rates.
+ of terrestrial plants and includes both maximum growth rates 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+ and the effects of positive and negative interactions 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ on said growth rates.
  In our models, the maximum achievable growth rate for one time step is
  dependant on both the species and the current temperature.
  During the same first step, the abundance of cells present at the bottom
- of the floor in coastal areas (hereafter called cysts) decreases due to
- both cyst mortality and the burial resulting from sedimentation.
+ of the floor in coastal areas (hereafter called cysts) decreases because
+ of cyst mortality (
+\begin_inset Formula $m_{i})$
+\end_inset
+
+ and the burial resulting from sedimentation (
+\begin_inset Formula $\zeta_{i})$
+\end_inset
+
+.
  During the second step, exchanges take place between the different compartments
-, 
+ (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_step2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -345,7 +380,6 @@ literal "false"
 
 .
  The shift from MAR to BH- matrices of interactions is described in SI.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1307,6 +1341,10 @@ name "tab:State_Parameter"
 
 \end_layout
 
+\begin_layout Subsection*
+Definition of parameter values
+\end_layout
+
 \begin_layout Paragraph*
 Optimal temperature
 \end_layout
@@ -1316,7 +1354,7 @@ Each species is defined by its own thermal optimum.
  However, the variability of this temperature is high, even within a single
  genus.
  A qualitative calibration of thermal optima based on the phenology of the
- groups we consider seems to be the more realistic approach.
+ groups we consider seems to be the most realistic approach.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1345,12 +1383,23 @@ We need to have very good arguments to take into account only one tide per
 
 \end_inset
 
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+I've just realized we need to find this kind of value for Auger, as this
+ is the place we have finally decided to focus on
+\end_layout
+
+\end_inset
+
 .
  
 \end_layout
 
 \begin_layout Paragraph*
-Cyst mortality
+Cyst mortality and burial
 \end_layout
 
 \begin_layout Standard
@@ -1364,12 +1413,12 @@ literal "false"
 
 \end_inset
 
- provides values of maximum depth at which cysts can still germinate for
- different species, leading to mortality values around 
+ provides values of mean and maximum depths at which cysts can still germinate
+ for different species, leading to mortality values around 
 \begin_inset Formula $10^{-4}/10^{-5}$
 \end_inset
 
- (for more details on the approximation of mortality rate from maximum depth,
+ (for more details on the approximation of mortality rate from these depths,
  see SI).
 \end_layout
 
@@ -1398,7 +1447,7 @@ literal "false"
  (who measured sinking rates in real conditions), rates can vary between
  1 and 30% for the same species (Chaetoceros spp.), with a mean value for
  two diatom species of 10 (Chaetoceros and Thalassiosira).
- Values are much for the others, around 1% for the others.
+ Values are much lower for the other species, around 1%.
 \end_layout
 
 \begin_layout Standard
@@ -1486,7 +1535,7 @@ Germination and resuspension might be difficult to differentiate, they are
 
 \begin_layout Standard
 Germination can be 1%, 0.1%, 0.01%.
- from 
+ From 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -1505,8 +1554,16 @@ literal "false"
 \end_inset
 
 .
- Photoperiodicity does not seem to have a strong effect according to this
- review (but see 
+ We use a temperature threshold at 15°C.
+ Photoperiodicity does not seem to have a strong effect according to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "agrawal_factors_2009"
+literal "false"
+
+\end_inset
+
+(but see 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "eilertsen_photoperiodic_1995"
@@ -1514,8 +1571,7 @@ literal "false"
 
 \end_inset
 
-).
- We use a temperature threshold at 15°C.
+), and might be mingled with seasonal variation in temperature.
 \end_layout
 
 \begin_layout Standard
@@ -1623,7 +1679,7 @@ noprefix "false"
 \end_inset
 
 ) and realistic environmental conditions are taken from one of the sites
- (Auger) in a previous analysis based on field data 
+ (Auger) considered in a previous analysis based on field data 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "picoche_strong_2019"
@@ -1982,7 +2038,8 @@ status open
 Description of the interaction networks in our reference site, with negative
  interactions in solide black lines and positive interactions in dashed
  blue lines.
- Edgewidth is proportional to the decimal logarithm of interaction strengths.
+ Edge linewidth is proportional to the decimal logarithm of interaction
+ strengths.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2008,7 +2065,8 @@ name "fig:Description-of-network"
 \end_layout
 
 \begin_layout Standard
-Observred growth rates and phenologies are used to calibrate the model.
+Observations of abundances, growth rates and phenologies are used to calibrate
+ the model.
 \end_layout
 
 \begin_layout Subsection*
@@ -2016,7 +2074,7 @@ Scenarios
 \end_layout
 
 \begin_layout Standard
-In addition to sensitivty analyses on parameters we cannot directly know
+In addition to sensitivty analyses for parameters we cannot directly know
  (burial, sinking, resuspension, germination rates), scenarios can be proposed
  to study the effect of a seed bank on coexistence of species, by (1) removing
  such seed bank (by setting seed mortality to 1) and (2) removing the exchanges
@@ -2033,10 +2091,32 @@ Quadratic programming
 \end_layout
 
 \begin_layout Standard
-Using quadratic programming as a way to tune parameters on the observed
- abundances leads to changes in parameter values.
+Using quadratic programming(see SI) as a way to tune interaction strengths
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+I have not really formalized how we could do that with growth rates, as
+ they are not fixed through time and do not depend on only one mean parameter.
+ For now, calibration only applies to interactions.
+\end_layout
+
+\end_inset
+
+ on the observed abundances leads to changes in parameter values (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Changes-quadratic-programming"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  Some interactions can be multiplied by 80 after re-calibration (LEP/GUI)
- while most of the parameters remain in the same domain.
+ while most of the parameters at least keep their order of magnitude.
  
 \end_layout
 
@@ -2094,7 +2174,19 @@ Phytoplankton dynamics
 \end_layout
 
 \begin_layout Standard
-Average abundances seem to be respected but blooms do not appear clearly.
+Average abundances seem to be respected but blooms do not appear clearly
+ (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Phytoplankton-abundances"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  The variation in abundances due to seasonality is, for now, underestimated.
  Species with a lower thermal optima such as Skeletonema miss their two
  blooms.
@@ -2160,7 +2252,7 @@ name "fig:Phytoplankton-abundances"
 Thermal optima need to be redesigned in relation to niche area.
  For now, species with a preference for low temperatures also have a wider
  niches which buffers their growth.
- Moreover, a distinction between generalists and specialists species 
+ A distinction between generalists and specialists species 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "hernandez_farinas_assessing_2015"
@@ -2184,8 +2276,17 @@ Growth rate
 \begin_layout Standard
 Phytoplanktonic growth rates are highly variable, in situ or in experimental
  conditions.
- For ten strains in one genus only, and in the same experimental conditions,
- 
+ As an example of such variability appears in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "balzano_effects_2011"
+literal "false"
+
+\end_inset
+
+.
+ For ten strains of one genus only (Skeletonema), and in the same experimental
+ conditions, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "balzano_effects_2011"
@@ -2198,8 +2299,15 @@ literal "false"
 \end_inset
 
 , which corresponds more generally to the values found in the literature
- (between 0.2 and 1.78 for diatoms, even reaching 3 in the meta-analysis of
- 308 experiments by 
+ (between 0.2 and 1.78 for diatoms in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "reynolds2006ecology"
+literal "false"
+
+\end_inset
+
+, even reaching 3 in the meta-analysis of 308 experiments by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "edwards_light_2015"
@@ -2258,8 +2366,9 @@ with
  can therefore be at least halved because mean daylight is around 12 hours.
  In this case, growth rates vary between 0.5 and 1.9, in line with previous
  observations.
- However, these values only illustrate an exponential growth which cannot
- be realistic for species which actually show different niche temperatures.
+ However, these values only illustrate a maximum, exponential growth which
+ cannot be realistic for species which actually show different niche temperature
+s.
 \end_layout
 
 \begin_layout Standard
@@ -2293,7 +2402,7 @@ e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
 
 \begin_layout Standard
 However, the niches described by this growth function are too narrow, correspond
-ing to values close to 0 for temperatures in which phytoplakton can normally
+ing to values close to 0 for temperatures in which phytoplankton can normally
  grow.
  The meta-analysis by 
 \begin_inset CommandInset citation
@@ -2660,12 +2769,13 @@ is the vectore of abundance at equilibrium (more precisely, here, average
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 
 \series bold
-Mortality in the sediment:
-\series default
- 
+Mortality in the sediment
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
