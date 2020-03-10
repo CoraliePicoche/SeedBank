@@ -9,7 +9,7 @@ library('lubridate')
 library('zoo')
 
 set.seed(42)
-n_simulation=1
+n_simulation=2
 
 colo=c(rep(c("red","orange","green","blue"),2),"red","orange")
 apch=c(rep(16,4),rep(17,4),rep(18,2))
@@ -41,6 +41,7 @@ tab_mean=matrix(NA,ncol=length(name_spp),nrow=12,dimnames=list(c("01","02","03",
 for(i in 1:nrow(tab_mean)){
 	tab_mean[i,]=apply(tab_plankton[month(dates)==as.numeric(rownames(tab_mean)[i]),],2,mean)
 }
+
 
 #Variation due to quadratic programming
 before=as.matrix(read.table(paste("output/matrix_A_before_quad_",n_simulation,".csv",sep=""),sep=";",dec=".",header=T))
@@ -93,7 +94,7 @@ for(i in 1:ncol(after_A)){
 
 plot(1:length(before_A),after_A/before_A,pch=16,col="black",xlab="",ylab="Ratio after/before",xaxt="n")
 print(id_diff)
-text(id_diff,diff[id_diff],val,pos=1)
+#####text(id_diff,diff[id_diff],val,pos=1)
 seq_axis=seq(1,length(before_A),by=4)
 abline(h=10,lty=3)
 axis(1,at=seq_axis,labels=convert_c_to_tab[seq_axis])

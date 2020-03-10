@@ -325,11 +325,11 @@ noprefix "false"
  During the same first step, the abundance of cells present at the bottom
  of the floor in coastal areas (hereafter called cysts) decreases because
  of cyst mortality (
-\begin_inset Formula $m_{i})$
+\begin_inset Formula $m)$
 \end_inset
 
  and the burial resulting from sedimentation (
-\begin_inset Formula $\zeta_{i})$
+\begin_inset Formula $\zeta)$
 \end_inset
 
 .
@@ -353,8 +353,8 @@ noprefix "false"
 \begin_inset Formula 
 \begin{equation}
 \left\{ \begin{array}{ccc}
-N_{t+h,i,c/o} & = & \frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}\\
-N_{t+h,i,b} & = & N_{t,i,b}(1-m_{i}-\zeta_{i})
+N_{t+h,i,c/o} & = & \frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}-lN_{t,i,c/o}\\
+N_{t+h,i,b} & = & N_{t,i,b}(1-m-\zeta)
 \end{array}\right.\label{eq:model_step1}
 \end{equation}
 
@@ -386,9 +386,9 @@ literal "false"
 \begin_inset Formula 
 \begin{equation}
 \left\{ \begin{array}{ccc}
-N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma_{i}N_{t+h,i,b}+eN_{t+h,i,o}\\
+N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma N_{t+h,i,b}+eN_{t+h,i,o}\\
 N_{t+1,i,o} & = & N_{t+h,i,o}(1-s'_{i}-e)+eN_{t+h,i,c}\\
-N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma_{i})+s_{i}N_{t+h,i,c}
+N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma)+s_{i}N_{t+h,i,c}
 \end{array}\right.\label{eq:model_step2}
 \end{equation}
 
@@ -445,7 +445,7 @@ textwidth}{!}{%
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="3">
+<lyxtabular version="3" rows="22" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -782,7 +782,7 @@ Boltzmann's constant
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $A$
+\begin_inset Formula $A_{i}$
 \end_inset
 
 
@@ -803,7 +803,47 @@ Niche area
 \begin_inset Text
 
 \begin_layout Plain Layout
-15 [calibrated]
+15 [arbitrary], maybe species-dependent
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+loss of vegetative phytoplankton (predation, mortality...)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.04 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1064,7 +1104,7 @@ conversion coefficient from coastal to oceanic interactions
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $m_{i}$
+\begin_inset Formula $m$
 \end_inset
 
 
@@ -1076,11 +1116,7 @@ conversion coefficient from coastal to oceanic interactions
 \begin_inset Text
 
 \begin_layout Plain Layout
-cyst mortality of species 
-\begin_inset Formula $i$
-\end_inset
-
-
+cyst mortality
 \end_layout
 
 \end_inset
@@ -1111,7 +1147,7 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\zeta_{i}$
+\begin_inset Formula $\zeta$
 \end_inset
 
 
@@ -1132,7 +1168,7 @@ cyst burial
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Will depend on the scenario
 \end_layout
 
 \end_inset
@@ -1215,40 +1251,10 @@ exchange rate between ocean and coast
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.64 d
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $^{-1}$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- 
+[40-100]% 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "plus_hydrodynamic_2009"
+key "ascione_kenov_water_2015"
 literal "false"
 
 \end_inset
@@ -1264,7 +1270,7 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\gamma_{i}$
+\begin_inset Formula $\gamma$
 \end_inset
 
 
@@ -1276,11 +1282,7 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-germination + resuspension rate of species 
-\begin_inset Formula $i$
-\end_inset
-
-
+germination + resuspension rate of species
 \end_layout
 
 \end_inset
@@ -1353,8 +1355,7 @@ Optimal temperature
 Each species is defined by its own thermal optimum.
  However, the variability of this temperature is high, even within a single
  genus.
- A qualitative calibration of thermal optima based on the phenology of the
- groups we consider seems to be the most realistic approach.
+ Thermal optima will be determined with the observed dynamics of each species.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1383,14 +1384,12 @@ We need to have very good arguments to take into account only one tide per
 
 \end_inset
 
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-I've just realized we need to find this kind of value for Auger, as this
- is the place we have finally decided to focus on
-\end_layout
+ In Marennes-Oléron, the renewal time is very low at the site we study,
+ between 1 and 2.5 days 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ascione_kenov_water_2015"
+literal "false"
 
 \end_inset
 
@@ -2069,17 +2068,234 @@ Observations of abundances, growth rates and phenologies are used to calibrate
  the model.
 \end_layout
 
+\begin_layout Standard
+The parameters that need to be calibrated are the following:
+\end_layout
+
+\begin_layout Enumerate
+thermal optimal (mostly with the phenologies) 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+sinking rates 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sensivity of the model to certain parameters needs to assessed before
+ going further with other parameters.
+\end_layout
+
+\begin_layout Enumerate
+germination x resuspension 
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 Scenarios
 \end_layout
 
 \begin_layout Standard
-In addition to sensitivty analyses for parameters we cannot directly know
- (burial, sinking, resuspension, germination rates), scenarios can be proposed
- to study the effect of a seed bank on coexistence of species, by (1) removing
- such seed bank (by setting seed mortality to 1) and (2) removing the exchanges
- between the coast and the ocean (e=0).
- Final richness and average abundances are first diagnostics for such scenarios.
+Scenarios can be proposed to study the effect of a seed bank on coexistence
+ of species, by
+\end_layout
+
+\begin_layout Enumerate
+removing such seed bank (by setting seed mortality/burial to 1)
+\end_layout
+
+\begin_layout Enumerate
+changing the exchanges between the coast and the ocean (e=0)
+\end_layout
+
+\begin_layout Standard
+Final richness and average abundance/biomass productivity (to link with
+ ecosystem functions
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Might be too dangerous to try and talk about increase in temperature and
+ change in phytoplankton abundances.
+\end_layout
+
+\end_inset
+
+) can be diagnostics.
+\end_layout
+
+\begin_layout Paragraph*
+Expected results
+\end_layout
+
+\begin_layout Standard
+WARNING: FIGURES ARE NOT BASED ON REAL RESULTS
+\end_layout
+
+\begin_layout Standard
+We can make 2 a-priori hypotheses: removing the seed bank would increase
+ the sensitivity to competition, i.e.
+ decrease the maximum sustainable interspecific competition strength, and
+ decrease the resilience of the community confronted to changes in the environme
+nt (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Changes-compet-temperature"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/expected_change_in_tolerance.pf
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected changes in tolerance (stable richness) to interspecific competition
+ and increase in temperature with and without seed banks 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Changes-compet-temperature"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Changes_seed_exchange"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ gives a more precise view of the possible interactions of seed mortality
+ and exchange between the coast and the ocean.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/expected_change_in_richness.pf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected changes in community richness in the ocean for different values
+ of seed mortality/burial (=access to the seed compartment) and exchange
+ with the ocean.
+ Point color indicates richness, from low (blue) to high (red).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Changes_seed_exchange"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Going further
+\end_layout
+
+\begin_layout Standard
+We may need/be interested in 
+\end_layout
+
+\begin_layout Enumerate
+defining niches in different ways.
+ Keeping the same area but changing width and eight of the niche OR Generalist
+ vs specialists OR keeping the same niches
+\end_layout
+
+\begin_layout Enumerate
+using a density-dependent mortality
+\end_layout
+
+\begin_layout Enumerate
+using a delay in the exchange rate to implicitely represent a transfer to
+ populations farther away
+\end_layout
+
+\begin_layout Enumerate
+using much more species (100) and/or explicitely accounting for more population
+ than only coast/ocean (more transitions between compartments)
 \end_layout
 
 \begin_layout Section*

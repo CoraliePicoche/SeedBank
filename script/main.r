@@ -27,6 +27,7 @@ quad_prog=tab[tab[,1]=="quad_prog",2]
 n_iter=as.numeric(as.character(tab[tab[,1]=="n_iter",2]))
 temp_germin=as.numeric(as.character(tab[tab[,1]=="germin_threshold",2]))
 mean_irr=0.5 #daylength, actually
+morta=15/365.25
 
 #Data to use (Auger)
 dataset=as.character(tab[tab[,1]=="dataset",2])
@@ -57,7 +58,7 @@ if(growth_model=="B"){ #B for Bissinger
 }else if(growth_model=="SV"){ #SV for Scranton Vasseur
 	#Niche area to compute growth rates + range of optimal temperatures
 #	A=10^(3.1)/365.25
-	A=15
+	A=10
 	T_min=273
 	T_max=273+35
 
@@ -75,8 +76,8 @@ if(growth_model=="B"){ #B for Bissinger
 	T_opt["PRO"]=295
 	T_opt["PRP"]=294
 
-	T_opt["SKE"]=273
-	T_opt["THP"]=290
+	T_opt["SKE"]=200
+	T_opt["THP"]=270
 
 	B=rep(NA,nspp)
 	for(i in 1:nspp){
@@ -99,16 +100,10 @@ if(growth_model=="B"){ #B for Bissinger
 
 write.table(cbind(inter_mat,r_mean),paste("output/matrix_A_before_quad_",n_simulation,".csv",sep=""),sep=";",row.names=F,dec=".")
 
-#Variable parameters
-S=rbeta(nspp,0.55,1.25)*30/100
-names(S)=name_spp
-#Manip so that Chaetoceros spp have the highest sinking rate
-tmp_S=S
-or=order(S,decreasing=T)
-tmp_S[c("CHA")]=S[or[1]]
-tmp_S[or[1]]=S[1]
-S=tmp_S
-
+#Sinking rates
+tab=read.table("param/sinking_rates_simulated.txt",sep=";",dec=".")
+S=tab$x
+names(S)=rownames(tab)
 
 if(quad_prog==1){
 	if(growth_model=="fixed"){
@@ -133,11 +128,11 @@ N[1,,]=rep(10^3,nspp*3)
 ##Run
 for(t in 1:(n_iter-1)){
 	if(growth_model=="B"){
-	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,model="BH",gr=growth_model,threshold=0.001,irradiance=mean_irr)
+	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,irradiance=mean_irr)
 	}else if(growth_model=="SV"){
-	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,model="BH",gr=growth_model,threshold=0.001,T_opt=T_opt,B=B)
+	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,T_opt=T_opt,B=B)
 	}else if(growth_model=="fixed"){
-	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,model="BH",gr=growth_model,threshold=0.001,fixed_growth=r_mean)
+	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,fixed_growth=r_mean)
 	}else{
 		stop("This growth model does not exist")
 	}
