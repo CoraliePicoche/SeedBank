@@ -27,7 +27,10 @@ quad_prog=tab[tab[,1]=="quad_prog",2]
 n_iter=as.numeric(as.character(tab[tab[,1]=="n_iter",2]))
 temp_germin=as.numeric(as.character(tab[tab[,1]=="germin_threshold",2]))
 mean_irr=0.5 #daylength, actually
+
+#For now I'm cheating
 morta=15/365.25
+correct=0.2
 
 #Data to use (Auger)
 dataset=as.character(tab[tab[,1]=="dataset",2])
@@ -47,46 +50,65 @@ B_matrix=clean_matrix(cis,signif=F)
 rownames(B_matrix)=colnames(B_matrix)=name_spp
 nspp=length(name_spp)
 
-pop_table=read.table("param/abundances_Auger.txt")
-x_obs=pop_table[name_spp,]
+#pop_table=read.table("param/abundances_Auger.txt")
+pop_table=read.table("param/phenology_Auger.csv",sep=",",dec=".",header=T)
+rownames(pop_table)=pop_table$sp
+x_obs=pop_table[name_spp,"Mean_abundances"]
+names(x_obs)=name_spp
+
+width=pop_table[name_spp,"NicheWidth"]
+timing=pop_table[name_spp,"Timing"]
+names(width)=name_spp
+names(timing)=name_spp
 
 inter_mat=MAR2BH(B_matrix,x_obs)
+
+#Sinking rates and T_opt
+tab=read.table("param/species_specific_parameter.txt",sep=";",dec=".",header=T)
+S=tab$S
+#T_opt=tab$T_opt+273 #For now, T_opt are not good at all
+names(S)=tab$sp
+#names(T_opt)=tab$sp
 
 #First proxy for r
 if(growth_model=="B"){ #B for Bissinger
 	r_mean=rep(growth_rate_Bissinger(mean_temp,0.5),nspp)
 }else if(growth_model=="SV"){ #SV for Scranton Vasseur
 	#Niche area to compute growth rates + range of optimal temperatures
-#	A=10^(3.1)/365.25
-	A=10
+	A=rep(NA,nspp)
+	names(A)=name_spp
+	T_opt=rep(NA,nspp)
+	names(T_opt)=name_spp
+	for(sp in name_spp){
+		if(width[sp]=="G"){ #Generalist, wider niche area
+			A[sp]=runif(1,10,15)
+		}else{
+			A[sp]=runif(1,5,10)
+		}	
+		if(timing[sp]=="L"){ #Late bloomer, prefers higher temperature
+			T_opt[sp]=runif(1,11,15)+273
+		}else{
+			T_opt[sp]=runif(1,11,15)+273
+			#T_opt[sp]=runif(1,9,12.5)+273 #Early bloomer, will appear during spring
+		}	
+	}
+#	A=runif(nspp,5,20)
+	print(A)
 	T_min=273
 	T_max=273+35
 
 	#Optimum temperature
-	T_opt=runif(nspp,280,303) #Between 20 And 25 for most species
-	names(T_opt)=name_spp
-
-	###This is from a previous simulation where T_opt was varying between 293 and 298. This actually worked pretty well before.
-	T_opt["CHA"]=298
-	T_opt["DIT"]=285
-	T_opt["GUI"]=297
-	T_opt["LEP"]=297
-	T_opt["PLE"]=297
-	T_opt["PSE"]=294
-	T_opt["PRO"]=295
-	T_opt["PRP"]=294
-
-	T_opt["SKE"]=200
-	T_opt["THP"]=270
+	#T_opt=runif(nspp,283,288) #Between 10 And 15 for most species
+#	T_opt=rep(288,nspp) #Just a test
 
 	B=rep(NA,nspp)
 	for(i in 1:nspp){
-        	B[i]=optimize(f_to_optimize_B,T_min,T_max,T_opt[i],A,interval=c(0,100000))$minimum
+        	B[i]=optimize(f_to_optimize_B,T_min,T_max,T_opt[i],A[i],interval=c(0,100000))$minimum
 	}
 	names(B)=name_spp
 	#Trying constant B
-	B=rep(mean(B),nspp)
-	names(B)=name_spp
+#	B=rep(mean(B),nspp)
+#	names(B)=name_spp
 
 
 	r_mean=growth_rate_SV(293,T_opt,B)
@@ -100,10 +122,6 @@ if(growth_model=="B"){ #B for Bissinger
 
 write.table(cbind(inter_mat,r_mean),paste("output/matrix_A_before_quad_",n_simulation,".csv",sep=""),sep=";",row.names=F,dec=".")
 
-#Sinking rates
-tab=read.table("param/sinking_rates_simulated.txt",sep=";",dec=".")
-S=tab$x
-names(S)=rownames(tab)
 
 if(quad_prog==1){
 	if(growth_model=="fixed"){
@@ -130,7 +148,7 @@ for(t in 1:(n_iter-1)){
 	if(growth_model=="B"){
 	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,irradiance=mean_irr)
 	}else if(growth_model=="SV"){
-	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,T_opt=T_opt,B=B)
+	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,correct,model="BH",gr=growth_model,threshold=0.001,T_opt=T_opt,B=B)
 	}else if(growth_model=="fixed"){
 	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,fixed_growth=r_mean)
 	}else{
@@ -138,6 +156,8 @@ for(t in 1:(n_iter-1)){
 	}
         N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
+
+write.table(temp,paste(:q
 
 write.table(N[,1,],paste("output/out_coast",n_simulation,".csv",sep=""),sep=";",dec=".")
 write.table(N[,2,],paste("output/out_ocean",n_simulation,".csv",sep=""),sep=";",dec=".")

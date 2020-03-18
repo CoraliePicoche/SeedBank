@@ -31,7 +31,7 @@ growth_rate_Bissinger=function(temp,irradiance){
 	return(tmp)	
 }
 
-step1=function(n_t,list_inter,temp,M,mort,model="BH",threshold=0.001,fixed_growth=NA,gr="Bissinger",irradiance=NA,T_opt=NA,B=NA){
+step1=function(n_t,list_inter,temp,M,mort,correct,model="BH",threshold=0.001,fixed_growth=NA,gr="Bissinger",irradiance=NA,T_opt=NA,B=NA){
 	tmp=matrix(NA,dim(n_t)[1],dim(n_t)[2])
 	colnames(tmp)=names(n_t)
 	for(i in 1:2){
@@ -47,7 +47,7 @@ step1=function(n_t,list_inter,temp,M,mort,model="BH",threshold=0.001,fixed_growt
 			}else if(gr=="fixed"){
 				growth=fixed_growth
 			}
-			tmp[i,]=exp(growth+0.25)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) - mort*n_t[i,]#We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
+			tmp[i,]=exp(growth+correct)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) - mort*n_t[i,]#We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
 			#print(paste("Growth",exp(growth_rate_SV(temp,T_opt[j],B[j]))*n_t[i,j]*prod_pos/pmax(threshold,1+sum_neg)))
 			#print(paste("Mortality",mort*n_t[i,j]))
 		}else if(model=="Martorell"){

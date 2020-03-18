@@ -41,7 +41,8 @@ tab_mean=matrix(NA,ncol=length(name_spp),nrow=12,dimnames=list(c("01","02","03",
 for(i in 1:nrow(tab_mean)){
 	tab_mean[i,]=apply(tab_plankton[month(dates)==as.numeric(rownames(tab_mean)[i]),],2,mean)
 }
-
+rownames(tab_mean)=1:12
+write.table(tab_mean,"param/mean_value_for_reconstructed_abundances.txt",sep=";",dec=".",row.names=T)
 
 #Variation due to quadratic programming
 before=as.matrix(read.table(paste("output/matrix_A_before_quad_",n_simulation,".csv",sep=""),sep=";",dec=".",header=T))
@@ -133,6 +134,12 @@ legend("bottomright",sp,col=colo,pch=apch,lty=alty)
 
 dev.off()
 
+
+pop_table=read.table("param/phenology_Auger.csv",sep=",",dec=".",header=T)
+rownames(pop_table)=pop_table$sp
+x_obs=pop_table[name_spp,"Mean_abundances"]
+names(x_obs)=name_spp
+
 pdf(paste("output/timeseries_one_by_one",n_simulation,".pdf",sep=""),width=10)
 par(mfrow=c(1,1))
 
@@ -145,9 +152,11 @@ for(i in 1:length(sp)){
 	axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
         lines(id,transfo_N_ocean[id,i],col="darkblue",t="o",pch=16,lty=1)
         lines(id,transfo_N_seed[id,i],col="brown",t="o",pch=16,lty=1)
-	points(id_observed,log10(tab_mean[,i]+10^(-5)),pch=17,col="red",cex=2)
+	abline(h=log10(x_obs[sp[i]]))
+	#points(id_observed,log10(tab_mean[,i]+10^(-5)),pch=17,col="red",cex=2)
 	if(i==1){
-		legend("right",c("coast","ocean","seed","mean obs"),col=c("lightblue","darkblue","brown","red"),pch=c(16,16,16,17))
+		#legend("right",c("coast","ocean","seed","mean obs"),col=c("lightblue","darkblue","brown","red"),pch=c(16,16,16,17))
+		legend("right",c("coast","ocean","seed"),col=c("lightblue","darkblue","brown"),pch=c(16,16,16))
 	}
 }
 dev.off()
