@@ -199,7 +199,9 @@ status open
 
 \begin_layout Plain Layout
 We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
- The last one might be kept for cysts from reproduction?
+ The last one might be kept for cysts from reproduction? Wondering if we
+ shouldn't call them seed, as it would do a direct link with terrestrial
+ plant literature
 \end_layout
 
 \end_inset
@@ -337,18 +339,8 @@ noprefix "false"
 
 .
  During the same first step, the abundance of cells present at the bottom
- of the water column in coastal areas (hereafter called cysts
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Wondering if we shouldn't call them seed, as it would do a direct link with
- terrestrial plant literature
-\end_layout
-
-\end_inset
-
-) decreases with cyst mortality (
+ of the water column in coastal areas (hereafter called cysts) decreases
+ with cyst mortality (
 \begin_inset Formula $m)$
 \end_inset
 
@@ -689,19 +681,7 @@ Growth rate at reference temperature
 \begin_inset Formula $386(\frac{\text{kg}}{\text{kg\times year}}$
 \end_inset
 
-)
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-As the final dimension of this variable is year-1, I don't think we have
- to convert to number of cells but I am still wondering about the usability
- of this parameter + we have to convert from year to day
-\end_layout
-
-\end_inset
-
- 
+) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "scranton_coexistence_2016"
@@ -932,9 +912,7 @@ Minimum thermal optimum
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
-CHECK
+0
 \end_layout
 
 \end_inset
@@ -966,9 +944,15 @@ Maximum thermal optimum
 \begin_inset Text
 
 \begin_layout Plain Layout
+30 (approximate of the range in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_phytoplankton_2016"
+literal "false"
 
-\series bold
-CHECK
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1193,7 +1177,7 @@ cyst burial
 \begin_inset Text
 
 \begin_layout Plain Layout
-[0.01 ; 0.3]
+{0.01 ; 0.1 ; 0.3} [arbitrary]
 \end_layout
 
 \end_inset
@@ -1312,11 +1296,11 @@ germination + resuspension rate of species
 \begin_inset Text
 
 \begin_layout Plain Layout
-{0.1;0.01;0.001} * [
+{0.1;0.01;0.001} * {
 \begin_inset Formula $10^{-5}$
 \end_inset
 
-,0.1] (abitrary)
+,0.1} [abitrary]
 \end_layout
 
 \end_inset
@@ -1348,7 +1332,7 @@ gain in growth rate
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.25 [this study, based on 
+0.2 [this study, based on 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "edwards_phytoplankton_2016"
@@ -1585,7 +1569,19 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-INTRODUCE THE VARIABILITY IN SEASONAL TEMPERATURE
+Finally, the temperature at each time step is a repetition of the temperatures
+ observed over 20 yers in our example dataset
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We could also use the formula from the Theor.
+ Ecol, with mean and sd from the dataset in Auger
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1692,14 +1688,12 @@ Blabla on REPHY, Auger in Marennes Oléron, Fig of exact position in SI
 Parameter values
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 
 \series bold
 Phenology
-\end_layout
-
-\begin_layout Standard
-In eq.
+\series default
+ In eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1769,8 +1763,8 @@ a bloom lasts over 100 days in at least 10 years out of the 20 covered by
 \begin_layout Itemize
 the standard deviation of the temperatures at the beginning of the blooms
  is over the median of the standard deviation of all genera.
-\begin_inset Foot
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
 These are completely arbitrary values that have not been checked.
@@ -1893,17 +1887,7 @@ Phytoplanktonic particles have a higher density than water and are not able
  Sinking is also affected by hydrodynamics: more turbulence and eddies can
  retain the cells at the top of the water column while laboratory conditions
  in still water specifically measure parameters that affect particle settling.
- In field conditions
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-field ? Ocean ? Coast ? Estuary ?
-\end_layout
-
-\end_inset
-
-, 
+ In field conditions (Gotland Basin in central Baltic Sea), 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "passow_species-specific_1991"
@@ -1926,6 +1910,16 @@ literal "false"
 
 \end_inset
 
+ in a river
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+So we may want to remove this one
+\end_layout
+
+\end_inset
+
  and 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1934,17 +1928,7 @@ literal "false"
 
 \end_inset
 
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Check in which conditions this has been measured
-\end_layout
-
-\end_inset
-
-.
+ in an estuary (mouth of Adventfjorden).
 \end_layout
 
 \begin_layout Standard
@@ -1952,16 +1936,6 @@ An arbitrary beta distribution was selected, with mean value close to the
  one observed in both papers (between 9 and 10), and a maximum around 30%,
  that is 
 \begin_inset Formula $s\backsim\beta(0.55,1.25)*0.3$
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-I do think this will need to be varied a lot
-\end_layout
-
 \end_inset
 
 .
@@ -2039,7 +2013,7 @@ literal "false"
 
 \end_inset
 
-, resuspension rate of sediments is evaluated around 
+ in a coastal area, resuspension rate of sediments is evaluated around 
 \begin_inset Formula $5.10^{-5}$
 \end_inset
 
@@ -2048,11 +2022,11 @@ literal "false"
 \end_inset
 
  in winter and decreases in summer
-\begin_inset Foot
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Decrease to which value in summer?
+no value is given
 \end_layout
 
 \end_inset
@@ -2130,7 +2104,7 @@ where
 \end_layout
 
 \begin_layout Standard
-Finally, it should be noted that cyst burial, sinking rate
+Finally, it should be noted that cyst burial, sinking rate 
 \begin_inset Note Note
 status open
 
@@ -2154,7 +2128,7 @@ literal "false"
 
 \end_inset
 
- and resuspension are all dependent on the hydrodynamics of the place and
+and resuspension are all dependent on the hydrodynamics of the place and
  are therefore, at least in biological terms, not identifiable.
 \end_layout
 
@@ -2326,8 +2300,8 @@ As mentioned above, several parameters are highly variable and the effect
  of a change in parameter values need to be evaluated.
  The sinking, resuspension/germination and burial rates are the parameters
  to evaluate.
- The range of probable values, and more specifically the set of values to
- be tested, for these parameters is given in Table 
+ The range of probable values for each parameter, and more specifically
+ the set of values to be tested, is given in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:State_Parameter"
@@ -2344,9 +2318,9 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-For each combination of values, the diagnostics are performed on the final
- simulation and the variability of theses diagnostics with respect to each
- parameter is determined, as well as the best fit to real data.
+For each combination of values, the diagnostics are performed on the last
+ year of the simulation and the variability of theses diagnostics with respect
+ to each parameter is determined, as well as the best fit to real data.
 \end_layout
 
 \begin_layout Subsection*
@@ -2370,7 +2344,7 @@ changing the exchanges between the coast and the ocean (e=0)
 \begin_layout Standard
 Final richness and average abundance/biomass productivity (to link with
  ecosystem functions
-\begin_inset Foot
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -2523,6 +2497,25 @@ name "fig:Changes_seed_exchange"
 \end_layout
 
 \begin_layout Section*
+Discussion
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+At one point, we may have to compare the classification of generalist and
+ specialist to what is found in the literature, more particularly the niche
+ literature concerning the REPHY dataset (Hernandez, Karasiewicz...)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Supplementary Information
 \end_layout
 
@@ -2639,7 +2632,7 @@ literal "false"
  to compute the maximum possible growth rate depending on the temperature.
  The relationship between temperature and growth rate, evaluated on a large
  database
-\begin_inset Foot
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -2800,11 +2793,11 @@ literal "false"
 \end_inset
 
 
-\begin_inset Foot
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Corrected in the Appendices of 
+Should we add: Corrected in the Appendices of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "picoche_strong_2019"
@@ -2966,7 +2959,7 @@ literal "false"
 \end_inset
 
 , applied to interaction matrices and growth rates
-\begin_inset Foot
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -2988,7 +2981,7 @@ status open
 \begin_layout Plain Layout
 In the following, I am basically copying the package documentation to make
  the code understandable for later.
- Would maybe be better with a Rmarkdown file.
+ Would maybe be better with a Rmarkdown file, but would that be useful?.
 \end_layout
 
 \end_inset
