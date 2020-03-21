@@ -1,4 +1,5 @@
 #CP 10/03/2020: Just a small script to give a conceptual examples of the different niches that can be seen
+#21/03/2020: Just changed the limits to have a nicer plot
 
 rm(list=ls())
 graphics.off()
@@ -7,7 +8,7 @@ source("script/infer_interaction_matrix_growth_rate.r")
 T_min=0+273
 T_max=30+273
 T_opt=seq(T_min+5,T_max-5,length.out=4)
-T_seq=seq(T_min,T_max,length.out=1000)
+T_seq=seq(T_min-5,T_max+5,length.out=1000)
 nspp=length(T_opt)
 
 #SV model, keeping the same area

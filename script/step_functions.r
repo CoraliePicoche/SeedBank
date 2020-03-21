@@ -1,6 +1,7 @@
 ##########
 # 17/12/2019 CP: define the functions we will use in the code
 # 05/02/2020 CP: test for ssh
+# 21/03/2020 CP: added the Eppley curve and cleaned useless variables that were not used anymore
 ##########
 
 growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016 
@@ -9,8 +10,6 @@ growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016
 	E_r=0.467
 	k=8.6173324*10^(-5)
 	t_0=293
-	t_0=293
-	cons=1#This is added to the original Scranton and Vasseur model to enlarge the niche
 
 	#Compute r(temp)
 	ftmp=rep(NA,length(T_opt))
@@ -21,13 +20,18 @@ growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016
 		}else{
 			ftmp[i]=exp(-5*(abs(temp-T_opt[i]))^3/B[i])
 		}
-		rtmp[i]=a_r*ftmp[i]*exp(cons*E_r*(temp-t_0)/(k*temp*t_0))
+		rtmp[i]=a_r*ftmp[i]*exp(E_r*(temp-t_0)/(k*temp*t_0))
 	}
 	return(rtmp)
 }
 
 growth_rate_Bissinger=function(temp,irradiance){
 	tmp=irradiance*0.81*exp(0.0631*temp) #This is supposed to be specific growth rate already
+	return(tmp)	
+}
+
+growth_rate_Eppley=function(temp,irradiance){
+	tmp=irradiance*0.59*exp(0.0633*temp) #This is supposed to be specific growth rate already
 	return(tmp)	
 }
 
@@ -48,8 +52,8 @@ step1=function(n_t,list_inter,temp,M,mort,correct,model="BH",threshold=0.001,fix
 				growth=fixed_growth
 			}
 			tmp[i,]=exp(growth+correct)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) - mort*n_t[i,]#We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
-			#print(paste("Growth",exp(growth_rate_SV(temp,T_opt[j],B[j]))*n_t[i,j]*prod_pos/pmax(threshold,1+sum_neg)))
-			#print(paste("Mortality",mort*n_t[i,j]))
+#		print(paste("Growth",exp(growth+correct)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,])))
+#			print(paste("Mortality",mort*n_t[i,]))
 		}else if(model=="Martorell"){
 ################### This is the formula from Martorell
 		for(j in 1:dim(tmp)[2]){

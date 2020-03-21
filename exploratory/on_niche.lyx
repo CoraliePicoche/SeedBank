@@ -1,0 +1,259 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Niche definition with Scranton & Vasseur
+\end_layout
+
+\begin_layout Paragraph*
+Preliminary
+\end_layout
+
+\begin_layout Standard
+Scranton and Vasseur (2016) designed an equation that distinguised different
+ niches based on optimal temperature.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+r_{i}(T) & = & E(T)f_{i}(T)\nonumber \\
+\textnormal{where }E(T) & = & a_{r}(\tau_{0})e^{E_{r}\frac{(T-\tau_{\text{0}})}{kT\tau_{0}}}\\
+\textnormal{where }f_{i}(T) & = & \begin{cases}
+e^{-|T-T_{i}^{opt}|^{3}/b_{i}}, & T\leq T_{i}^{opt}\\
+e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
+\end{cases}\nonumber \\
+\textnormal{and} & b_{i}\text{ is defined by numerically solving} & \int r_{i}(\tau)d\tau=A\label{eq:growth_rate-1}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hereafter, we will call f_i the niche part of the equation and E(T) the
+ metabolism part.
+ The metabolism part is driven by both metabolism theory ecology (k is the
+ Boltzmann's constant) and by observations in Eppley's study of maximum
+ growth rates for phytoplankton.
+ 
+\end_layout
+
+\begin_layout Section*
+Generalist and specialist 
+\end_layout
+
+\begin_layout Standard
+The simplest way to define generalists and specialists in is to remove the
+ constraint on the fixed niche area A.
+ In this case, the only parameter that defines the niche width is b.
+ However, increasing b does not only lead to increases in niche width, but
+ also to a shift towards larger values to attain the maximum growth rate.
+ This means that for the same theoretical T_i^{opt}, the observed thermal
+ optimum is higher.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/further_notes_on_SV.pdf
+	width 99text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relationship between daily growth rates and temperature with different values
+ of niche width b (whose values are indicated in the legend) and the same
+ thermal optimum, 15°C, indicated by the solid black.
+ In the left panel, only the two extreme values of b (200 and 20 000) are
+ shown in blue and red respectively.
+ Coloured lines then correspond to the final growth rate, dashed lines correspon
+d to f_i values (see eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ dotted lines correspond to E values.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When B increases, the niche term f_i shows smaller variations in values
+ around the thermal optimum and the final value of the growth rate is driven
+ by the metabolism part of the equation.
+ This can lead to confusions on the observed thermal optimum that we wish
+ to obtain.
+\end_layout
+
+\begin_layout Standard
+Even if we only keep the maximum growth rate computed by Bissinger (as an
+ update of Eppley's curve), we obtain slightly higher growth rate values
+ but the same shift.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/Eppley_Bissinger.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relationship between daily growth rates and temperature with different values
+ of niche width b (legend for the values of b is give in the figure above).
+ Dashed lines correspond to the original formulation of Scranton & Vasseur
+ (2016) while solid lines correspond to a formulation of the temperature-depende
+nt maximum growth computed by Bissinger.
+ The solid green line corresponds to a thermal optimum of 25°C with Bissinger's
+ formula.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

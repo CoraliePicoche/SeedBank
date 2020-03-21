@@ -12,7 +12,7 @@ source("script/infer_interaction_matrix_growth_rate.r")
 args = commandArgs(trailingOnly=TRUE)
 n_simulation=args[1]
 
-n_simulation=2
+n_simulation=1
 
 #Fixed parameters
 tab=read.table(paste("param/simu",n_simulation,".csv",sep=""),sep=";",dec=".",header=T)
@@ -156,8 +156,6 @@ for(t in 1:(n_iter-1)){
 	}
         N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
-
-write.table(temp,paste(:q
 
 write.table(N[,1,],paste("output/out_coast",n_simulation,".csv",sep=""),sep=";",dec=".")
 write.table(N[,2,],paste("output/out_ocean",n_simulation,".csv",sep=""),sep=";",dec=".")

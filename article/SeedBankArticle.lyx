@@ -1499,30 +1499,8 @@ literal "false"
 \begin_inset Formula $A_{i}$
 \end_inset
 
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-I should actually check how height and width vary with 
-\begin_inset Formula $A_{i}$
-\end_inset
-
-, this is an area, not a width.
- Maybe I should actually change 
-\begin_inset Formula $b_{i}$
-\end_inset
-
- and not care about 
-\begin_inset Formula $A_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
+ (for more details on the way to represent generalist and specialist, see
+ SI).
  Field-based estimation of the niche area 
 \begin_inset Formula $A_{i}$
 \end_inset
@@ -1739,17 +1717,8 @@ We base estimates of
  The duration of the bloom is the number of days between the beginning and
  the date where abundance fall below the median value.
  Generalists are characterized by one long bloom in the year or several
- blooms (over 4
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-CHECK THAT
-\end_layout
-
-\end_inset
-
-) corresponding to various temperatures.
+ blooms when the abundances oscillate around their median, corresponding
+ to various temperatures.
  Specialists tend to appear only once or twice in the year and to favour
  lower temperatures.
  A genus is therefore defined as a generalist if it meets to two criteria.
@@ -2274,7 +2243,7 @@ I use this term because I am really not sure this is what we want to keep.
  to apply quadratic programming to our interaction matrices.
  Contrary to them, we do not broaden the calibration process to growth rates
  as these are not fixed values in a linear model
-\begin_inset Foot
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -2283,7 +2252,9 @@ However, it just occurred to me that, using a mean temperature, we may be
 \begin_inset Formula $b_{i}$
 \end_inset
 
-
+.
+ But would that be really useful? For now, when we try to calibrate interactions
+ and keep B, the model just crashes.
 \end_layout
 
 \end_inset
@@ -2558,7 +2529,7 @@ Possible distribution of sinking rates
 \end_layout
 
 \begin_layout Subsubsection*
-Growth rate
+Growth rate: variation with temperature
 \end_layout
 
 \begin_layout Standard
@@ -2650,9 +2621,29 @@ with
 \end_inset
 
  in °C.
- This represents the daily growth rate under a continuous irradiance and
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Previously: 
+\begin_inset Quotes eld
+\end_inset
+
+This represents the daily growth rate under a continuous irradiance and
  can therefore be at least halved because mean daylight is around 12 hours.
- In this case, growth rates vary between 0.5 and 1.9, in line with previous
+\begin_inset Quotes erd
+\end_inset
+
+ Actually, this was the case for the Eppley curve but Bissinger is based
+ mostly on the LPD dataset, which was not always taken in maximum growth
+ condition - replete nutrient and light.
+ So the correction was not right.
+\end_layout
+
+\end_inset
+
+In this case, growth rates vary between 0.5 and 1.9, in line with previous
  observations.
  However, these values only illustrate a maximum, exponential growth which
  cannot be realistic for species which actually show different niche temperature
@@ -2747,7 +2738,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/compare_growth_rate.pdf
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/compare_growth_rate_rawBissinger.pdf
 	width 80text%
 
 \end_inset
@@ -2771,6 +2762,241 @@ name "fig:Comparison-of-growth-rate"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Growth rate: generalists vs specialists
+\end_layout
+
+\begin_layout Standard
+Let us note 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $r_{i}(T)=a_{r}(\tau_{0})e^{E_{r}\frac{(T-\tau_{\text{0}})}{kT\tau_{0}}}f_{i}(T)=E(T)f_{i}(T)$
+\end_inset
+
+.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ Hereafter, we will call f_i the niche part of the equation and E(T) the
+ metabolism part.
+ The metabolism part is driven by both metabolism theory ecology (k is the
+ Boltzmann's constant) and by observations in Eppley's study of maximum
+ growth rates for phytoplankton.
+ 
+\end_layout
+
+\begin_layout Standard
+The simplest way to define generalists and specialists in is to remove the
+ constraint on the fixed niche area A.
+ In this case, the only parameter that defines the niche width is b.
+ However, increasing b does not only lead to increases in niche width, but
+ also to a shift towards larger values to attain the maximum growth rate.
+ This means that for the same theoretical T_i^{opt}, the observed thermal
+ optimum is higher.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/further_notes_on_SV.pdf
+	width 99text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relationship between daily growth rates and temperature with different values
+ of niche width b (whose values are indicated in the legend) and the same
+ thermal optimum, 15°C, indicated by the solid black.
+ In the left panel, only the two extreme values of b (200 and 20 000) are
+ shown in blue and red respectively.
+ Coloured lines then correspond to the final growth rate, dashed lines correspon
+d to f_i values (see eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ dotted lines correspond to E values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When B increases, the niche term f_i shows smaller variations in values
+ around the thermal optimum and the final value of the growth rate is driven
+ by the metabolism part of the equation.
+ This can lead to confusions on the observed thermal optimum that we wish
+ to obtain.
+\end_layout
+
+\begin_layout Standard
+Even if we only keep the maximum growth rate computed by Bissinger (as an
+ update of Eppley's curve), we obtain slightly higher growth rate values
+ but the same shift.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/Eppley_Bissinger.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relationship between daily growth rates and temperature with different values
+ of niche width b (legend for the values of b is give in the figure above).
+ Dashed lines correspond to the original formulation of Scranton & Vasseur
+ (2016) while solid lines correspond to a formulation of the temperature-depende
+nt maximum growth computed by Bissinger.
+ The solid green line corresponds to a thermal optimum of 25°C with Bissinger's
+ formula.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The control over the width, height and location of the niche is not obvious
+ with the realistic Scranton & Vasseur (2016) model.
+ In addition to this lack of control, specialists present in our dataset
+ tend to bloom at lower temperatures (spring and sometimes autumn), which
+ would mean they would both have a smaller and more narrow niches
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Is it realistic? Would these species really survive?
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A toy-model would allow us to have more control on the width and height,
+ see other possibilities below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/examples_niches.pdf
+	width 99text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of niche shape we could use
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
