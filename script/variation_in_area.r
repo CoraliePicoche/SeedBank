@@ -111,7 +111,7 @@ gr_max_lit=1.78
 
 pdf("output/Eppley_Bissinger.pdf")
 par(mfrow=c(1,1))
-plot(0,0,xlim=range(seq_T),ylim=c(0,5),ylab="growth rate",xlab="temperature",t="n")
+plot(0,0,xlim=range(seq_T),ylim=c(0,3),ylab="growth rate",xlab="temperature",t="n")
 abline(v=T_opt)
 for(a in 1:nspp){
         rtmp_temp=rep(NA,length(seq_T))
@@ -131,7 +131,6 @@ for(a in 1:nspp){
                 plou=growth_rate_noMTE_Bissinger(seq_T[t],T_opt+10,B[a])
                 rtmp_temp_other[t]=plou[[2]]
 		}
-        	lines(seq_T,rtmp_temp_other,col="darkgreen",lty=1)
 	}
 }
 

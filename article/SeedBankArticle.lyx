@@ -98,13 +98,13 @@ Introduction
 The high biodiversity of plant communities is still an unresolved question
  for both experimental and theoretical ecologists.
  Both terrestrial plants and phytoplanktonic communities can present hundreds
- of species which seem to consume the same resources.
- Earlier theoreticians have proposed that environmental fluctuations only
+ of species maintained by similar resources.
+ Early theoreticians have proposed that environmental fluctuations only
  [ref] could sustain coexistence but further research showed that this could
  not explain the order of magnitude of species richness [ref].
  Other mechanisms such as niche differentiation[ref], demography [ref] and
- life history traits [ref] have completed environmental variation and stochastic
-ity as other explanations.
+ life history traits [ref] have completed explanation by the stochastic
+ environmental variations and demographic processes.
  
 \end_layout
 
@@ -141,8 +141,9 @@ literal "false"
 \end_inset
 
 .
- In good enviromental conditions, competition from other individuals is
- stronger as seeds might germinate at the same time.
+ In good environmental conditions, competition between individuals is stronger
+ as seeds might germinate and therefore use the same resources at the same
+ time.
  Finally, models and experiments suggest that adults can have a negative
  effect on seed survival, through the Janzen-Connell effect 
 \begin_inset CommandInset citation
@@ -164,6 +165,33 @@ literal "false"
 
 .
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I am not sure any more about this paragraph as we explore neither effects
+ - storage effect is removed from SV formulation, and there is no bet-hedging
+ nor Janzen-Connell effect.
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ Still, there is a way to introduce them, but is it really what we want/can
+ do?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -171,7 +199,8 @@ Even though different coexistence mechanisms have been unveiled through
  the use of several life stages and a focus on the youngest stage (seeds)
  for terrestrial plants, aquatic plants, and more specifically phytoplanktonic
  algae, have not been modeled with the same precision.
- Although ecologists have proposed for a long time that the blooms may initiate
+ Although ecologists have proposed for a long time that the blooms (peaks
+ in abundances that can cover several orders of magnitude) may initiate
  after the resuspension and germination of seeds 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -180,12 +209,20 @@ literal "false"
 
 \end_inset
 
-, it is unusal to see an explicit model of such process.
+, it is unusal to see an explicit model of such process (but see 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "hinners_modelling_2019"
+literal "false"
+
+\end_inset
+
+).
  The classical view behind phytoplankton dynamics is that bloom formation
  is mostly seasonal, due to the variation in light and temperature, assuming
- that there are always enough cells in the environment to duplicate.
- However, a recent review suggests that there might be more complexity behind
- phytoplanktonic seeds/cysts 
+ vegetative cells remaining in the environment can duplicate enough to attain
+ bloom amplitude.
+ However, a recent review 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ellegaard_long-term_2018"
@@ -193,7 +230,7 @@ literal "false"
 
 \end_inset
 
-
+ suggests that seeds/cysts might another player 
 \begin_inset Note Note
 status open
 
@@ -201,7 +238,9 @@ status open
 We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
  The last one might be kept for cysts from reproduction? Wondering if we
  shouldn't call them seed, as it would do a direct link with terrestrial
- plant literature
+ plant literature.
+ Whatever term we choose, we may want to define several of them to finally
+ be precise on the one we use.
 \end_layout
 
 \end_inset
@@ -213,8 +252,9 @@ We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
 \begin_layout Standard
 Phytoplankton communities in coastal environments may benefit from seed
  banks even more than the oceanic communities [REF-find back], as the distance
- to the bottom is lower.
- Similarly to the seed bank approach, 
+ to the bottom is smaller.
+ Also, and similarly to the seed bank approach in the terrestrial plant
+ literature, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "smayda_turbulence_2002"
@@ -233,8 +273,8 @@ pelagic seed bank
  to characterize the contribution of the ocean to coastal communities.
  This has been noticed for dinoflagellate especially [[ref Dinophysis, check
  what we have on diatoms]].
- We can wonder, however, to which extent the seed banks can contribute to
- the biodiversity in the ocean, especially in the long term.
+ Conversely, we can wonder to which extent the seed banks can contribute
+ to the biodiversity in the ocean, especially in the long term.
  Indeed, spores are able to germinate again after tens of years 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -251,20 +291,28 @@ literal "false"
 
 \end_inset
 
- of dormancy, which can play a huge role on biodiversity in both oceanic
- and coastal environments.
+ of dormancy, which can have a long-term effect on biodiversity in both
+ oceanic and coastal environments.
 \end_layout
 
 \begin_layout Standard
 Here we build on the work by 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "shoemaker_linking_2016,wisnoski_dormancy_2019"
+key "shoemaker_linking_2016"
 literal "false"
 
 \end_inset
 
-, and previous findings in
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+, as well as previous findings in
 \begin_inset CommandInset citation
 LatexCommand citet
 key "picoche_how_2019,picoche_strong_2019"
@@ -272,8 +320,8 @@ literal "false"
 
 \end_inset
 
-, to examine the effect on coexistence and feedbacks from the different
- compartments (ocean, coastal water column and bottom).
+, to examine the effect of exchanges between different compartments (ocean
+ and coastal water column and the bottom sediment) on coexistence.
  
 \end_layout
 
@@ -283,6 +331,19 @@ Methods
 
 \begin_layout Subsection*
 Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Is this too wordy?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -303,17 +364,6 @@ literal "false"
 \end_inset
 
  builds on a two-step discrete-time model.
- Parameters and state variables are defined in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:State_Parameter"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
  First, coastal and oceanic cell numbers increase following Beverton-Holt
  (BH) dynamics (eq.
  
@@ -328,16 +378,45 @@ noprefix "false"
 
 ).
  The BH formulation is classical for discrete-time models of terrestrial
- plants and includes both a species- and temperature-specific maximum achievable
- growth rates 
-\begin_inset Formula $r_{i}(T)$
+ plants and includes a maximum achievable growth rate 
+\begin_inset Formula $r$
 \end_inset
 
- and its modification by positive and negative interactions 
+ which is modified by positive and negative interactions 
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
 .
+ As we assume that competition for nutrients is stronger in the ocean than
+ along the coast [ref], a coefficient 
+\begin_inset Formula $k_{c2o}>1$
+\end_inset
+
+ is applied to competitive interactions and facilitation is removed from
+ the oceanic interaction matrices.
+ Here, the growth rate 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+ varies with the temperature, and this variation depends on the genus of
+ interest (see eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Abundances are also affected by a density-independent loss term 
+\begin_inset Formula $l$
+\end_inset
+
+ which can cover all other lethal processes such a natural mortality or
+ predation.
  During the same first step, the abundance of cells present at the bottom
  of the water column in coastal areas (hereafter called cysts) decreases
  with cyst mortality (
@@ -353,10 +432,25 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Question remains on what we do for mutualistic interactions but I am not
+ even sur I talk about that
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 \left\{ \begin{array}{ccc}
-N_{t+h,i,c/o} & = & \frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j}\alpha_{ij,c/o}N_{t,j,c/o}}-lN_{t,i,c/o}\\
+N_{t+h,i,c} & = & \frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}\\
+N_{t+h,i,o} & = & \frac{e^{r_{i}(T)}N_{t,i,o}}{1+k_{c2o}\sum_{j}\alpha_{ij}N_{t,j,o}}-lN_{t,i,o}\\
 N_{t+h,i,b} & = & N_{t,i,b}(1-m-\zeta)
 \end{array}\right.\label{eq:model_step1}
 \end{equation}
@@ -398,6 +492,20 @@ N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma)+s_{i}N_{t+h,i,c}
 \end_layout
 
 \begin_layout Standard
+Parameters and state variables are defined in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:State_Parameter"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -426,7 +534,7 @@ textwidth}{!}{%
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="23" columns="3">
+<lyxtabular version="3" rows="21" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -740,157 +848,6 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $k$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Boltzmann's constant
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $8.6173324.10^{-5}(\text{eV.K}^{-1})$
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $A_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Niche area
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-15 [arbitrary], maybe species-dependent
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $l$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-loss of vegetative phytoplankton (predation, mortality...)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.04 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $f_{i}(T)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Fraction of the maximum rate achieved for the 
-\begin_inset Formula $i^{th}$
-\end_inset
-
- species
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(NA)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $T_{\text{min}}$
 \end_inset
 
@@ -1113,7 +1070,7 @@ conversion coefficient from coastal to oceanic interactions
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $m$
+\begin_inset Formula $A_{i},b_{i}$
 \end_inset
 
 
@@ -1125,7 +1082,7 @@ conversion coefficient from coastal to oceanic interactions
 \begin_inset Text
 
 \begin_layout Plain Layout
-cyst mortality
+Niche area, width
 \end_layout
 
 \end_inset
@@ -1134,18 +1091,7 @@ cyst mortality
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\approx10^{-4}/10^{-5}$
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citep
-key "mcquoid_viability_2002"
-literal "false"
-
-\end_inset
-
-
+NA
 \end_layout
 
 \end_inset
@@ -1156,7 +1102,7 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\zeta$
+\begin_inset Formula $g$
 \end_inset
 
 
@@ -1168,7 +1114,7 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-cyst burial
+gain in growth rate
 \end_layout
 
 \end_inset
@@ -1177,7 +1123,15 @@ cyst burial
 \begin_inset Text
 
 \begin_layout Plain Layout
-{0.01 ; 0.1 ; 0.3} [arbitrary]
+0.2 [this study, based on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_phytoplankton_2016"
+literal "false"
+
+\end_inset
+
+]
 \end_layout
 
 \end_inset
@@ -1275,7 +1229,7 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\gamma$
+\begin_inset Formula $l$
 \end_inset
 
 
@@ -1287,7 +1241,7 @@ literal "false"
 \begin_inset Text
 
 \begin_layout Plain Layout
-germination + resuspension rate of species
+loss of vegetative phytoplankton (predation, mortality...)
 \end_layout
 
 \end_inset
@@ -1296,11 +1250,90 @@ germination + resuspension rate of species
 \begin_inset Text
 
 \begin_layout Plain Layout
-{0.1;0.01;0.001} * {
-\begin_inset Formula $10^{-5}$
+0.04 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "scranton_coexistence_2016"
+literal "false"
+
 \end_inset
 
-,0.1} [abitrary]
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cyst mortality
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\approx10^{-4}/10^{-5}$
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\zeta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cyst burial
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{0.01 ; 0.1 ; 0.3} [arbitrary]
 \end_layout
 
 \end_inset
@@ -1311,7 +1344,7 @@ germination + resuspension rate of species
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $g$
+\begin_inset Formula $\gamma$
 \end_inset
 
 
@@ -1323,7 +1356,11 @@ germination + resuspension rate of species
 \begin_inset Text
 
 \begin_layout Plain Layout
-gain in growth rate
+germination 
+\begin_inset Formula $\times$
+\end_inset
+
+ resuspension rate of species
 \end_layout
 
 \end_inset
@@ -1332,15 +1369,11 @@ gain in growth rate
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.2 [this study, based on 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "edwards_phytoplankton_2016"
-literal "false"
-
+{0.1;0.01;0.001} * {
+\begin_inset Formula $10^{-5}$
 \end_inset
 
-]
+,0.1} [abitrary]
 \end_layout
 
 \end_inset
@@ -1371,10 +1404,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Definition of variable states and parameters.
- Fixed values or distributions are from the literature.
+Definition of main variable states and parameters of the model.
+ Fixed values or distributions are estimated from the literature.
  When a set or a range of values is given, the sensitivity of the model
- related to changes in parametes has been assessed.
+ related to changes in parametes has been assessed (see text).
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1428,8 +1461,8 @@ noprefix "false"
 \begin_inset Formula $j$
 \end_inset
 
-, are inferred from a previous work on real data with a Multivariate AutoRegress
-ive (MAR) model 
+, are inferred from a previous work on coastal data with a Multivariate
+ AutoRegressive (MAR) model 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "picoche_strong_2019"
@@ -1438,7 +1471,7 @@ literal "false"
 \end_inset
 
 .
- The shift from MAR to BH- matrices of interactions is described in SI.
+ The shift from MAR to BH- interaction matrices is described in SI.
  The change in growth rate 
 \begin_inset Formula $r_{i}(T)$
 \end_inset
@@ -1483,7 +1516,12 @@ e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
 \end_layout
 
 \begin_layout Standard
-Two modifications were made on the formula by 
+In this model, species are therefore defined by their thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+.
+ The equation by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -1491,21 +1529,21 @@ literal "false"
 
 \end_inset
 
-.
- Species roughly divide between generalists and specialists, with more or
- less tolerance to variations in the temperature.
+ was modified to account for two more processes.
+ Taxa roughly divide between generalists and specialists, with more or less
+ tolerance to variations in the temperature.
  Generalists have a larger niche width than specialists, which can be roughly
  translated by a larger 
 \begin_inset Formula $A_{i}$
 \end_inset
 
- (for more details on the way to represent generalist and specialist, see
- SI).
+ (for more details on the modeling of generalist and specialist, see specific
+ section in SI).
  Field-based estimation of the niche area 
 \begin_inset Formula $A_{i}$
 \end_inset
 
- is described below.
+ is described in the next section.
  However, apart from a radical and unrealistic change in 
 \begin_inset Formula $A_{i}$
 \end_inset
@@ -1525,8 +1563,8 @@ literal "false"
 
 \end_inset
 
- allows to correct the growth rate for temperature outside the range, at
- least qualitatively, with a gain 
+ can be used to correct at least qualitatively the growth rate for temperature
+ outside the range of the considered taxa, by adding a gain 
 \begin_inset Formula $g$
 \end_inset
 
@@ -1548,13 +1586,14 @@ noprefix "false"
 
 \begin_layout Standard
 Finally, the temperature at each time step is a repetition of the temperatures
- observed over 20 yers in our example dataset
+ observed over 20 years in our example dataset
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-We could also use the formula from the Theor.
- Ecol, with mean and sd from the dataset in Auger
+For now, we use the formula from the Theor.
+ Ecol, with mean and sd from the dataset in Auger, but this is not the best
+ solution, I think.
 \end_layout
 
 \end_inset
@@ -1659,7 +1698,17 @@ Data set example
 \end_layout
 
 \begin_layout Standard
-Blabla on REPHY, Auger in Marennes Oléron, Fig of exact position in SI
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Blabla on REPHY, Auger in Marennes Oléron, Fig of exact position in SI +
+ Add that we work on genus (and then maybe use the term taxon/taxa above).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1675,7 +1724,7 @@ Phenology
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:growth_rate-1"
+reference "eq:growth_rate"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1692,8 +1741,8 @@ noprefix "false"
 \end_inset
 
 , which drive the phenology of the genus.
- Each year, the dynamics of these organisms is characterized by a blooming
- period and a lower concentration during the rest of the year.
+ Each year, the dynamics of phytoplanktonic organisms is characterized by
+ a blooming period and a lower concentration during the rest of the year.
  The bloom can be triggered by a combination of nutrient and light input,
  as well as a sufficient temperature.
  All parameters being more or less dependent on seasonality, it is reasonable
@@ -1703,7 +1752,7 @@ noprefix "false"
 
 \begin_layout Standard
 We base estimates of 
-\begin_inset Formula $T_{opt}^{i}$
+\begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
  and 
@@ -1711,17 +1760,26 @@ We base estimates of
 \end_inset
 
  on field observations.
- For each genus and each year, the beginning of the bloom is defined by
- the date at which the abundance exceed the median abundance over the year.
- The optimal temperature is the temperature at this date.
+ For each genus and each year, the beginning of the bloom of a given genus
+ is defined by the date at which its abundance exceeds its median abundance
+ over the year.
  The duration of the bloom is the number of days between the beginning and
  the date where abundance fall below the median value.
  Generalists are characterized by one long bloom in the year or several
- blooms when the abundances oscillate around their median, corresponding
- to various temperatures.
- Specialists tend to appear only once or twice in the year and to favour
- lower temperatures.
- A genus is therefore defined as a generalist if it meets to two criteria.
+ blooms when the abundances oscillate around their median.
+ Specialists tend to appear only once or twice in the year for shorter amounts
+ of time.
+ A genus is therefore defined as a generalist if its cumulated blooms cover
+ at least a third of the year (122 days) for at least 15 years over the
+ 20 years of the time series.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A genus is therefore defined as a generalist if it meets to two criteria.
 \end_layout
 
 \begin_layout Itemize
@@ -1745,13 +1803,50 @@ These are completely arbitrary values that have not been checked.
 
 \end_layout
 
-\begin_layout Standard
-With these values in mind, we can define two range of values for the niche
- width (5-10 for specialists, 12-17 for the generalists and then order the
- species in these ranges, 
-\begin_inset Formula $sd(mean_{y}(T_{i,y}))>sd(mean_{y}(T_{j,y}))\Rightarrow A_{i}>A_{j}$
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+With these values in mind, we can define two range of values for the niche
+ width (5-10 for specialists, 12-17 for the generalists) and then order
+ the species in these ranges as a function of the mean sum of their bloom
+ length, i.e.
+ 
+\begin_inset Formula $\sum\overline{L}_{i,b}>\sum L_{j,b}\Rightarrow A_{i}>A_{j}$
+\end_inset
+
+ where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\overline{L}$
+\end_inset
+
+is the mean over 20 years of the annual cumulated lengths of the bloom
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 .
  
 \end_layout
@@ -1762,7 +1857,7 @@ The thermal optimum
 \end_inset
 
  is defined as the mean minimum value of the temperature at the beginning
- bloom over 20 years.
+ bloom throughout the whole time series.
 \end_layout
 
 \begin_layout Standard
@@ -1779,68 +1874,30 @@ I would put the text below in the SI
 \end_layout
 
 \begin_layout Paragraph*
-Exchange rate
+Mortality
 \end_layout
 
 \begin_layout Standard
-The exchanges between the ocean and the coast depend on the shape and location
- of the estuary.
- In Marennes-Oléron and more specifically in Auger, the renewal time is
- very short, between 1 and 2.5 days 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "ascione_kenov_water_2015"
-literal "false"
-
-\end_inset
-
-, which correponds to a daily rate of [40-100] %.
- 
-\end_layout
-
-\begin_layout Paragraph*
-Cyst mortality and burial
-\end_layout
-
-\begin_layout Standard
-Cyst loss is a composite of cyst mortality and inaccessibility.
- 
+The loss rate of vegetative cells is defined according to 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "mcquoid_viability_2002"
+key "scranton_coexistence_2016"
 literal "false"
 
 \end_inset
 
- provide species-specific values of mean and maximum depths at which cysts
- can still germinate.
- Corresponding mortality values range between 
-\begin_inset Formula $10^{-5}$
+.
+ It could however be turned into a delayed, density-dependent mortality
+ to take into account phenomena such as predation (simplest form: 
+\begin_inset Formula $lN_{t-\tau,i,o/c}$
 \end_inset
 
- and 
-\begin_inset Formula $10^{-4}$
+where 
+\begin_inset Formula $\tau$
 \end_inset
 
- (more details on the approximation of mortality rate are given SI).
- However, cyst burial
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Find a better way to call it than burial
-\end_layout
-
-\end_inset
-
- might be a prevailing phenomenum in driving phytoplanktonic dynamics.
- Once cysts have been buried, they are not accessible for resuspension even
- if they could germinate.
- Burial depends on the hydrodynamics of the site, but also on biotic processes
- (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
- activities (e.g., jet skiing).
- This parameter thus heavily dependent on the environmental context we wish
- to describe.
+ is the necessary lag between phytoplanktonic growth and predator response,
+ for instance [look for ref, Reynolds not helpful here]).
 \end_layout
 
 \begin_layout Paragraph*
@@ -1848,14 +1905,21 @@ Sinking rate
 \end_layout
 
 \begin_layout Standard
-Phytoplanktonic particles have a higher density than water and are not able
- to prevent sinking (although see [ref on Reynolds to show that actually,
- even diatoms seem to control this]).
+Phytoplanktonic particles have a higher density than water and cannot swim
+ to prevent sinking (although see 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "reynolds2006ecology"
+literal "false"
+
+\end_inset
+
+ for a discussion on the settling of phytoplanktonic cells compared to inorganic
+ particles).
  The sinking rate of vegetative cells depends mostly on their size and shape,
- which can be affected by their capacity to form colonies.
+ and can also be affected by their capacity to form colonies.
  Sinking is also affected by hydrodynamics: more turbulence and eddies can
- retain the cells at the top of the water column while laboratory conditions
- in still water specifically measure parameters that affect particle settling.
+ retain the cells at the top of the water column.
  In field conditions (Gotland Basin in central Baltic Sea), 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1865,11 +1929,22 @@ literal "false"
 \end_inset
 
  measured a large variability in sinking rates, even within the same genus
- (e.g., between 1 and 30% for Chaetoceros spp.).
+ (e.g., between 1 and 30% for 
+\shape italic
+Chaetoceros
+\shape default
+ spp.).
  However, a pattern could be distinguished, with a small number of genera
  that sinked more than the rest of the community.
- The mean rate for Chaetoceros and Thalassiosira was around 10% while it
- was around 1% for the other species.
+ The mean rate for 
+\shape italic
+Chaetoceros
+\shape default
+ and 
+\shape italic
+Thalassiosira
+\shape default
+ was around 10% while it was around 1% for the other species.
  Sinking rate values around 10% are consistent with the loss rate values
  in 
 \begin_inset CommandInset citation
@@ -1901,23 +1976,108 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-An arbitrary beta distribution was selected, with mean value close to the
- one observed in both papers (between 9 and 10), and a maximum around 30%,
- that is 
-\begin_inset Formula $s\backsim\beta(0.55,1.25)*0.3$
+An arbitrary beta distribution was selected, with a mean value close to
+ the ones observed in both papers (between 9 and 10), and a maximum around
+ 30%, that is 
+\begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
 \end_inset
 
-.
+ (see Fig.
+ S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sinking-distribution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
 \end_layout
 
 \begin_layout Standard
 However, it should be noted that the sinking rate measured in these two
- articles represent the sinking of all cells.
+ articles represent the sinking of all cells, therefore including dead cells.
  In our model, it should represent the exchange of live cells between the
  coast and the seed bank, or a loss of cells in the ocean.
  Our sinking rate might therefore need to be decreased to avoid modeling
  dead cells already taken into account in the loss term.
  
+\end_layout
+
+\begin_layout Paragraph*
+Exchange rate
+\end_layout
+
+\begin_layout Standard
+The exchange rate between the ocean and the coast depends on the shape and
+ location of the estuary.
+ In Marennes-Oléron and more specifically in Auger, the renewal time is
+ very short, between 1 and 2.5 days 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ascione_kenov_water_2015"
+literal "false"
+
+\end_inset
+
+, which correponds to a daily rate between 40 and 100 %.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Cyst mortality and burial
+\end_layout
+
+\begin_layout Standard
+Cyst loss is a composite of cyst mortality 
+\begin_inset Formula $m$
+\end_inset
+
+ and inaccessibility 
+\begin_inset Formula $\zeta$
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+ provide species-specific values of mean and maximum depths at which cysts
+ can still germinate.
+ Corresponding mortality values range between 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ and 
+\begin_inset Formula $10^{-4}$
+\end_inset
+
+ (more details on the approximation of mortality rates are given in SI).
+ However, cyst burial by sedimentation
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Any idea for a better way to call it than burial?
+\end_layout
+
+\end_inset
+
+ might be a prevailing phenomenum in driving phytoplanktonic dynamics.
+ Once cysts have been buried, they are not accessible for resuspension even
+ if they could have germinated.
+ Burial depends on the hydrodynamics of the site, but also on biotic processes
+ (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
+ activities (e.g., jet skiing).
+ This parameter is thus heavily dependent on the environmental context we
+ wish to describe.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1927,7 +2087,7 @@ Germination/resuspension
 \begin_layout Standard
 Germination and resuspension might be difficult to differentiate as they
  are finally gathered in only one parameter (
-\begin_inset Formula $\gamma=\text{resuspension*germination})$
+\begin_inset Formula $\gamma=\text{resuspension\ensuremath{\times}germination})$
 \end_inset
 
 .
@@ -1943,8 +2103,7 @@ literal "false"
 
 \end_inset
 
-, we can only assume that there is a temperature threshold for germination.
- The existence of a thermal threshold is confirmed by the review by 
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "agrawal_factors_2009"
@@ -1952,7 +2111,7 @@ literal "false"
 
 \end_inset
 
-.
+, we can assume that there is a temperature threshold for germination.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1967,12 +2126,11 @@ literal "false"
  As rates are not easily deduced from the literature, arbitrary values are
  fixed (1%, 0.1%, 0.01%) and the effect of their variation on the simulations
  is assessed.
- Germination can be 1%, 0.1%, 0.01%.
  
 \end_layout
 
 \begin_layout Standard
-Resuspension values are seldom devoted to phytoplanktonic cells, but models
+Resuspension values are seldom computed for phytoplanktonic cells, but models
  for other particles such as sediments can be used.
  Rates vary from one publication to another: in 
 \begin_inset CommandInset citation
@@ -2000,7 +2158,7 @@ no value is given
 
 \end_inset
 
-, with a link between resuspension/sinking and light extinction coefficient.
+, with a link between resuspension and light extinction coefficient.
  In 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -2036,33 +2194,6 @@ literal "false"
 \end_inset
 
  (stratified water column) to 0.1 (highly mixed environment).
-\end_layout
-
-\begin_layout Paragraph*
-Mortality
-\end_layout
-
-\begin_layout Standard
-Mortality value is defined according to 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
-.
- It could however be turned into a delayed, density-dependent mortality
- to take into account phenomena such as predation (simplest form: 
-\begin_inset Formula $m_{i}N_{t-\tau,i,o/c}$
-\end_inset
-
-where 
-\begin_inset Formula $\tau$
-\end_inset
-
- is the necessary lag between phytoplanktonic growth and predator response
- [look for ref, Reynolds not helpful here]).
 \end_layout
 
 \begin_layout Standard
@@ -2218,14 +2349,26 @@ literal "false"
 \end_inset
 
 , the switch from a fifteen-day MAR model to a daily BH-model and the high
- uncertainty for all parameters due to the use of proxies, values in the
- literature and high variability in phytoplanktonic genera on their own,
- are motivations to calibrate the model more precisely.
+ uncertainty for all parameters due to the use of proxies, and high variability
+ in phytoplanktonic genera on their own, are motivations to calibrate the
+ model more precisely.
  Following the example of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "maynard_reconciling_2019"
 literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Actually, Maynard et al.
+ 2019 uses a Least Square Inverse Problem solver, with a package (limSolve::lsei
+) that also offers quadratic programming
+\end_layout
 
 \end_inset
 
@@ -2241,8 +2384,16 @@ I use this term because I am really not sure this is what we want to keep.
 \end_inset
 
  to apply quadratic programming to our interaction matrices.
- Contrary to them, we do not broaden the calibration process to growth rates
- as these are not fixed values in a linear model
+ Contrary to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "maynard_reconciling_2019"
+literal "false"
+
+\end_inset
+
+, we do not broaden the calibration process to growth rates as ours are
+ not fixed values in a linear model
 \begin_inset Note Note
 status open
 
@@ -2254,7 +2405,8 @@ However, it just occurred to me that, using a mean temperature, we may be
 
 .
  But would that be really useful? For now, when we try to calibrate interactions
- and keep B, the model just crashes.
+ and keep B, the model may crash because there is no test on the feasability
+ when calibrating.
 \end_layout
 
 \end_inset
@@ -2267,8 +2419,8 @@ Sensitivity analysis
 \end_layout
 
 \begin_layout Standard
-As mentioned above, several parameters are highly variable and the effect
- of a change in parameter values need to be evaluated.
+As mentioned above, several parameters are site-specific and the effect
+ of a change in parameter values needs to be evaluated.
  The sinking, resuspension/germination and burial rates are the parameters
  to evaluate.
  The range of probable values for each parameter, and more specifically
@@ -2305,7 +2457,8 @@ Maintenance of biodiversity by exchanges between compartments can be gauged
 \end_layout
 
 \begin_layout Enumerate
-removing such seed bank (by setting seed mortality/burial to 1)
+modifying the storage of cysts in seed bank (by setting seed mortality/burial
+ to 1)
 \end_layout
 
 \begin_layout Enumerate
@@ -2313,8 +2466,8 @@ changing the exchanges between the coast and the ocean (e=0)
 \end_layout
 
 \begin_layout Standard
-Final richness and average abundance/biomass productivity (to link with
- ecosystem functions
+Final richness and average abundance/biomass productivity (approximated
+ by the final total abundances, to create a link with ecosystem functions
 \begin_inset Note Note
 status open
 
@@ -2347,17 +2500,9 @@ noprefix "false"
 \end_inset
 
 ).
- 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Note on the variability
-\end_layout
-
-\end_inset
-
-
+ Under high competition, variability in final richness may increase because
+ exclusion is more likely, especially without a seed bank.
+ This is also true for higher temperatures.
 \end_layout
 
 \begin_layout Standard
@@ -2381,8 +2526,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Expected changes in tolerance (stable richness) to interspecific competition
- and increase in temperature with and without seed banks 
+Expected changes in the model outputs in the ocean.
+ Left panel, final richness with and without seed bank, with high (red)
+ and low (blue) interspecific competition.
+ Right panel, final primary productivity with and without seed-bank, with
+ a high (red) and low (blue) mean temperature.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Changes-compet-temperature"
@@ -2403,9 +2552,9 @@ name "fig:Changes-compet-temperature"
 \end_layout
 
 \begin_layout Standard
-Second, reducing the exchange with the ocean might end up depleting the
+Second, by reducing the exchange with the ocean might end up depleting the
  ocean biomass and richness as it loses species by sinking but cannot regain
- them thanks to coastal production.
+ them thanks to coastal production fueled by a seed bank.
  Fig.
  
 \begin_inset CommandInset ref
@@ -2446,11 +2595,190 @@ status open
 Expected changes in community richness in the ocean for different values
  of seed mortality/burial (=access to the seed compartment) and exchange
  with the ocean.
- Point color indicates richness, from low (blue) to high (red).
+ Point color indicates final richness in the ocean, from low (blue) to high
+ (red)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Could be a heatmap
+\end_layout
+
+\end_inset
+
+.
  
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Changes_seed_exchange"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Subsubsection*
+Quadratic programming
+\end_layout
+
+\begin_layout Standard
+Using quadratic programming (see SI) as a way to tune interaction strengths
+ on the observed abundances leads to changes in parameter values (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Changes-quadratic-programming"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Some interactions can be multiplied by 40 after re-calibration (LEP/GUI)
+ while most of the parameters at least keep their order of magnitude.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/calibration_A_1.pdf
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Changes in interaction strengths after calibration by quadratic programming.
+ The middle panel is a zoom on interspecific interaction strengths presented
+ in the top panel.
+ Orange stars show the interactions for which the ratio of values before
+ and after calibration is the higher, i.e.
+ above 10.The bottom panel shows the ratio of parameter values after and
+ before quadratic programming, with a dotted line showing a threshold at
+ 10.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Changes-quadratic-programming"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Phytoplankton dynamics
+\end_layout
+
+\begin_layout Standard
+There are still issues in the calibration of the model: abundances can be
+ lower than expected and the variation in abundances due to seasonality
+ is, for now, underestimated (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Phytoplankton-abundances"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+WARNING: This was not done with an updated phenology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/timeseries_one_by_one1.pdf
+	width 45text%
+	special page=1
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/timeseries_one_by_one1.pdf
+	width 45text%
+	special page=5
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Examples of phytoplankton dynamics (
+\shape italic
+Chaetoceros
+\shape default
+ on the left, 
+\shape italic
+Skeletonema
+\shape default
+ on the right).
+ The solid black line is the observed average abundance of the species.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Phytoplankton-abundances"
 
 \end_inset
 
@@ -2515,7 +2843,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Possible distribution of sinking rates
+Possible beta-distribution of sinking rates 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sinking-distribution"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2535,7 +2870,7 @@ Growth rate: variation with temperature
 \begin_layout Standard
 Phytoplanktonic growth rates are highly variable, in situ or in experimental
  conditions.
- As an example of such variability appears in 
+ An example of such variability appears in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "balzano_effects_2011"
@@ -2544,8 +2879,11 @@ literal "false"
 \end_inset
 
 .
- For ten strains of one genus only (Skeletonema), and in the same experimental
- conditions, 
+ For ten strains of one genus only (
+\shape italic
+Skeletonema
+\shape default
+), and in the same experimental conditions, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "balzano_effects_2011"
@@ -2601,8 +2939,8 @@ literal "false"
 \end_inset
 
  to compute the maximum possible growth rate depending on the temperature.
- The relationship between temperature and growth rate, evaluated on a large
- database
+ The relationship between temperature and maximum growth rate, evaluated
+ on a large database
 \begin_inset Note Note
 status open
 
@@ -2643,14 +2981,17 @@ This represents the daily growth rate under a continuous irradiance and
 
 \end_inset
 
-In this case, growth rates vary between 0.5 and 1.9, in line with previous
- observations.
+In this case, growth rates vary between 0.81 and 3.9 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ for temperatures between 0 and 25°C, in line with previous observations.
  However, these values only illustrate a maximum, exponential growth which
- cannot be realistic for species which actually show different niche temperature
-s.
+ cannot be realistic for species with different niche temperatures.
 \end_layout
 
 \begin_layout Standard
+The equation of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -2658,75 +2999,17 @@ literal "false"
 
 \end_inset
 
- designed an equation that distinguised different niches based on optimal
- temperature.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray}
-r_{i}(T) & = & a_{r}(\tau_{0})e^{E_{r}\frac{(T-\tau_{\text{0}})}{kT\tau_{0}}}f_{i}(T)\nonumber \\
-\textnormal{where }f_{i}(T) & = & \begin{cases}
-e^{-|T-T_{i}^{opt}|^{3}/b_{i}}, & T\leq T_{i}^{opt}\\
-e^{-5|T-T_{i}^{opt}|^{3}/b_{i}}, & T>T_{i}^{opt}
-\end{cases}\nonumber \\
-\textnormal{and} & b_{i}\text{ is defined by numerically solving} & \int r_{i}(\tau)d\tau=A\label{eq:growth_rate-1}
-\end{eqnarray}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-However, the niches described by this growth function are too narrow, correspond
-ing to values close to 0 for temperatures in which phytoplankton can normally
- grow.
- The meta-analysis by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "edwards_phytoplankton_2016"
-literal "false"
-
-\end_inset
-
- allows to correct, at least qualitatively the growth rates obtained with
+ distinguishes different niches based on optimal temperature.
+ However, it needed to be modified to be closer to the shape in other works
  
 \begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
+LatexCommand citep
+key "eppley_temperature_1972,bissinger_predicting_2008,edwards_phytoplankton_2016"
 literal "false"
 
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-By increasing the niche area in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
- as well as directly increasing the final growth rate by 0.25, thermal niches
- seem closer to other values in the literature (Fig.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Comparison-of-growth-rate"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
- 
 \end_layout
 
 \begin_layout Standard
@@ -2750,7 +3033,17 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparison of growth rate formula 
+Comparison of growth rate formula.
+ The SV solid grey line corresponds to the original Scranton and Vasseur
+ (2016) formula.
+ The solid black line includes both a new niche area and a gain in growth
+ rate, and the shape of the growth rate as a function of temperature is
+ given for a low (blue) and high (red) values of thermal optimum with dotted
+ lines.
+ The Bissinger and Eppley lines correspond to the formula of maximum growth
+ rates in the studies from eponymous authors.
+ Finally, horizontal lines show limits taken in the literature.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Comparison-of-growth-rate"
@@ -2775,7 +3068,18 @@ Growth rate: generalists vs specialists
 \end_layout
 
 \begin_layout Standard
-Let us note 
+From eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, let us note 
 \family roman
 \series medium
 \shape up
@@ -2806,22 +3110,47 @@ Let us note
 \uwave default
 \noun default
 \color inherit
- Hereafter, we will call f_i the niche part of the equation and E(T) the
- metabolism part.
- The metabolism part is driven by both metabolism theory ecology (k is the
- Boltzmann's constant) and by observations in Eppley's study of maximum
- growth rates for phytoplankton.
+ Hereafter, we will call 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ the niche part of the equation and 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ the metabolism part.
+ The metabolism part is driven by both metabolism theory ecology and by
+ observations in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+ study of maximum growth rates for phytoplankton.
  
 \end_layout
 
 \begin_layout Standard
-The simplest way to define generalists and specialists in is to remove the
+The simplest way to define generalists and specialists is to remove the
  constraint on the fixed niche area A.
- In this case, the only parameter that defines the niche width is b.
- However, increasing b does not only lead to increases in niche width, but
- also to a shift towards larger values to attain the maximum growth rate.
- This means that for the same theoretical T_i^{opt}, the observed thermal
- optimum is higher.
+ In this case, the only parameter that defines the niche width is 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ However, increasing 
+\begin_inset Formula $b$
+\end_inset
+
+ does not only lead to increases in niche width, but also to a shift towards
+ larger values to attain the maximum growth rate.
+ This means that for the same theoretical 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+, the observed thermal optimum is higher.
 \end_layout
 
 \begin_layout Standard
@@ -2846,16 +3175,27 @@ status open
 
 \begin_layout Plain Layout
 Relationship between daily growth rates and temperature with different values
- of niche width b (whose values are indicated in the legend) and the same
- thermal optimum, 15°C, indicated by the solid black.
- In the left panel, only the two extreme values of b (200 and 20 000) are
- shown in blue and red respectively.
+ of niche width 
+\begin_inset Formula $b$
+\end_inset
+
+ (whose values are indicated in the legend) and the same thermal optimum,
+ 15°C, indicated by the solid black.
+ In the left panel, only the two extreme values of 
+\begin_inset Formula $b$
+\end_inset
+
+ (200 and 20 000) are shown in blue and red respectively.
  Coloured lines then correspond to the final growth rate, dashed lines correspon
-d to f_i values (see eq.
+d to 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ values (see eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:growth_rate-1"
+reference "eq:growth_rate"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2875,7 +3215,18 @@ noprefix "false"
 \uwave off
 \noun off
 \color none
- dotted lines correspond to E values.
+ dotted lines correspond to 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ values.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Growth_niche_metabolism"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2889,17 +3240,31 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-When B increases, the niche term f_i shows smaller variations in values
- around the thermal optimum and the final value of the growth rate is driven
- by the metabolism part of the equation.
+When 
+\begin_inset Formula $b$
+\end_inset
+
+ increases, the niche term 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ shows smaller variations in values around the thermal optimum and the final
+ value of the growth rate is driven by the metabolism part of the equation.
  This can lead to confusions on the observed thermal optimum that we wish
  to obtain.
 \end_layout
 
 \begin_layout Standard
-Even if we only keep the maximum growth rate computed by Bissinger (as an
- update of Eppley's curve), we obtain slightly higher growth rate values
- but the same shift.
+Even if we only keep the maximum growth rate computed in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ (as an update of Eppley's curve), we obtain slightly higher growth rate
+ values but the same shift.
  
 \end_layout
 
@@ -2926,11 +3291,31 @@ status open
 \begin_layout Plain Layout
 Relationship between daily growth rates and temperature with different values
  of niche width b (legend for the values of b is give in the figure above).
- Dashed lines correspond to the original formulation of Scranton & Vasseur
- (2016) while solid lines correspond to a formulation of the temperature-depende
-nt maximum growth computed by Bissinger.
- The solid green line corresponds to a thermal optimum of 25°C with Bissinger's
- formula.
+ Dashed lines correspond to the original formulation of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ while solid lines correspond to a formulation of the temperature-dependent
+ maximum growth computed in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Niche_area_Bissinger"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2948,7 +3333,7 @@ The control over the width, height and location of the niche is not obvious
  with the realistic Scranton & Vasseur (2016) model.
  In addition to this lack of control, specialists present in our dataset
  tend to bloom at lower temperatures (spring and sometimes autumn), which
- would mean they would both have a smaller and more narrow niches
+ would mean they would have both a smaller and more narrow niches
 \begin_inset Note Note
 status open
 
@@ -2963,7 +3348,18 @@ Is it realistic? Would these species really survive?
 
 \begin_layout Standard
 A toy-model would allow us to have more control on the width and height,
- see other possibilities below.
+ see other possibilities in Fig.
+ S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Simple-niches"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2988,7 +3384,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Example of niche shape we could use
+Example of simplistic niche shapes we could use.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Simple-niches"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3036,8 +3440,7 @@ literal "false"
 
 \end_inset
 
- showed that MAR and Beverton-Holt interaction coefficients, respectively
- 
+ showed that MAR and BH interaction coefficients, respectively 
 \begin_inset Formula $b_{ij}$
 \end_inset
 
@@ -3162,45 +3565,6 @@ Quadratic programming
 \end_layout
 
 \begin_layout Standard
-Even though we could directly use the values obtained previously, the switch
- to another model with a different timestep and the strong uncertainty for
- all parameters, among other factors of variability, are motivations to
- calibrate the model more precisely.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "maynard_reconciling_2019"
-literal "false"
-
-\end_inset
-
- have already shown that an additional calibration of parameter could lead
- to more realistic simulations.
- Followin their example, we use quadratic programming 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bazaraa2013nonlinear"
-literal "false"
-
-\end_inset
-
-, applied to interaction matrices and growth rates
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Actually, Maynard et al.
- 2019 uses a Least Square Inverse Problem solver, with a package (limSolve::lsei
-) that also offers quadratic programming
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3261,7 +3625,7 @@ Here,
 \begin_inset Formula $\mathbf{N}^{*}$
 \end_inset
 
-is the vectore of abundance at equilibrium (more precisely, here, average
+is the vector of abundance at equilibrium (more precisely, here, average
  abundance values over the whole time series), and 
 \begin_inset Formula $\mathbf{G},\mathbf{h}$
 \end_inset
@@ -3310,9 +3674,16 @@ tes occurred in sediments.
 \end_layout
 
 \begin_layout Standard
-Assuming m is the probability of mortality, m follows a geometric law, i.e.,
- m is the probability distribution of the number of days needed for a phytoplank
-on spore to die.
+Assuming 
+\begin_inset Formula $m$
+\end_inset
+
+ is the probability of mortality, 
+\begin_inset Formula $m$
+\end_inset
+
+ follows a geometric law, i.e., m is the probability distribution of the number
+ of days needed for a phytoplankon cyst to die.
  The expectancy for the life duration (the number of days without dying)
  is 
 \begin_inset Formula $\frac{\ensuremath{1}}{m}\Leftrightarrow m=\frac{1}{L_{mean}}$

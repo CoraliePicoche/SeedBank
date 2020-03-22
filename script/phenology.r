@@ -119,15 +119,19 @@ par(mfrow=c(5,5),mar=c(3,3,3,3))
 #name_spp=c("LEP")
 #yy=2001
 dur_final=c()
+sum_dur_final=c()
 total_bloom_final=c()
 temp_min_final=c()
+temp_mean_final=c()
 for(sp in name_spp){
 	plot(0,0,t="n",xlab="",ylab="")
 	legend(-0.75,0.5,c("observed","interpolated","temperature"),pch=c(16,NA,NA),col=c("black","blue","red"),lty=c(1),bty="n")
 	text(0,0,sp)
 	total_bloom=c()
 	duration=c()
+	sum_duration=c()
 	temp_min=c()
+	temp_mean=c()
 	for(y in yy){
 		print(y)
 		dates_y=dates[year(dates)==y]
@@ -150,7 +154,9 @@ for(sp in name_spp){
 
 		total_bloom=c(total_bloom, length(x[[1]]))
 		duration=c(duration,x[[2]])
+		sum_duration=c(sum_duration,sum(x[[2]]))
 		temp_min=c(temp_min,min(x[[4]]))
+		temp_mean=c(temp_mean,x[[4]])
 
 		if(is.null(x[[1]])){
 			x[[1]]=NA
@@ -176,23 +182,28 @@ for(sp in name_spp){
 		print(c(paste("Deb",month(as.Date((x[[1]][1])),label=T)),paste("Nb:",length(x[[1]])),paste("Dur:",min(x[[2]]),max(x[[2]])),paste("Temp:",format(min(x[[4]],digits=1)),"/",format(max(x[[4]]),digits=1))))
 
 	}
-	hist(total_bloom)
-	hist(duration)
-	hist(temp_min)
+	hist(total_bloom,main="",xlab="Bloom/year")
+	#hist(duration,xlab="Duration",main="")
+	#legend("topright",legend=paste("Nb>100days",sum(duration>100)),bty="n")
+	hist(sum_duration,xlab="Duration",main="")
+	legend("topleft",legend=paste("Nb>145days",sum(sum_duration>122)),bty="n")
+	hist(temp_min,xlab="Temperature at begining",main="")
+	legend("topright",legend=c(paste("Sd temp",format(sd(temp_min),digits=1))),bty="n")
 	
 	total_bloom_final=c(total_bloom_final,total_bloom)
-	dur_final=c(dur_final,duration)
+	dur_final=c(dur_final,sum_duration)
 	temp_min_final=c(temp_min_final,temp_min)
 }
 
 dev.off()
 
-pdf("output/summary_all_indices.pdf",width=12)
-par(mfrow=c(1,3))
-	hist(total_bloom_final)
+pdf("output/summary_all_indices.pdf",width=7.5,height=3)
+par(mfrow=c(1,3),mar=c(4,4,1,1))
+	hist(total_bloom_final,main="",xlab="Bloom/year")
 	abline(v=median(total_bloom_final),col="red")
-	hist(dur_final)
+	hist(dur_final,main="",xlab="Total Duration of all blooms/y")
+	print(median(dur_final))
 	abline(v=median(dur_final),col="red")
-	hist(temp_min_final)
+	hist(temp_min_final,main="",xlab="Minimum temperature")
 	abline(v=median(temp_min_final),col="red")
 dev.off()

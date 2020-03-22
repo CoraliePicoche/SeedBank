@@ -9,7 +9,7 @@ library('lubridate')
 library('zoo')
 
 set.seed(42)
-n_simulation=2
+n_simulation=1
 
 colo=c(rep(c("red","orange","green","blue"),2),"red","orange")
 apch=c(rep(16,4),rep(17,4),rep(18,2))
@@ -65,22 +65,8 @@ points(diag(before_A),diag(after_A),pch=16,col="red")
 legend("topleft",c("Inter","Intra"),col=c("black","red"),pch=16)
 text(1,0,paste("Before ",ratio_before,"\nAfter ",ratio_after,sep=""))
 
-plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=c(min(c(before_A)),10^-4),ylim=c(min(c(after_A)),10^-4),main="Zoom")
-abline(a=0,b=1)
-points(diag(before_A),diag(after_A),pch=16,col="red")
-
-convert_c_to_tab=c()
-for (i in 1:ncol(before_A)){
-	deb=as.character(i)
-	for(j in 1:ncol(before_A)){
-		end=as.character(j)
-		convert_c_to_tab=c(convert_c_to_tab,paste("(",deb,",",end,")",sep=""))
-	}
-}
-
 diff=(after_A/before_A)
 id_diff=which(diff>10)
-
 id=0
 val=c()
 for(i in 1:ncol(after_A)){
@@ -93,9 +79,27 @@ for(i in 1:ncol(after_A)){
 	}
 }
 
+#plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=c(min(c(before_A)),10^-4),ylim=c(min(c(after_A)),10^-4),main="Zoom")
+plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=c(-5*10^-5,5*10^-5),ylim=c(-7.5*10^(-5),7.5*10^-5),main="Zoom")
+abline(a=0,b=1)
+points(diag(before_A),diag(after_A),pch=16,col="red")
+
+points(before_A[id_diff],after_A[id_diff],col="orange",pch="*",cex=2)
+
+convert_c_to_tab=c()
+for (i in 1:ncol(before_A)){
+	deb=as.character(i)
+	for(j in 1:ncol(before_A)){
+		end=as.character(j)
+		convert_c_to_tab=c(convert_c_to_tab,paste("(",deb,",",end,")",sep=""))
+	}
+}
+
+
+
 plot(1:length(before_A),after_A/before_A,pch=16,col="black",xlab="",ylab="Ratio after/before",xaxt="n")
 print(id_diff)
-#####text(id_diff,diff[id_diff],val,pos=1)
+text(id_diff,diff[id_diff],val,pos=1)
 seq_axis=seq(1,length(before_A),by=4)
 abline(h=10,lty=3)
 axis(1,at=seq_axis,labels=convert_c_to_tab[seq_axis])

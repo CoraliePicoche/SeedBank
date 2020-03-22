@@ -4,7 +4,7 @@
 
 rm(list=ls())
 graphics.off()
-set.seed(42)
+set.seed(40) #Warning: results and even feasibility can be highly seed-sensitive
 
 source("script/matrix_MAR_clean.r")
 source("script/infer_interaction_matrix_growth_rate.r")
@@ -81,7 +81,7 @@ if(growth_model=="B"){ #B for Bissinger
 	names(T_opt)=name_spp
 	for(sp in name_spp){
 		if(width[sp]=="G"){ #Generalist, wider niche area
-			A[sp]=runif(1,10,15)
+			A[sp]=runif(1,12,17)
 		}else{
 			A[sp]=runif(1,5,10)
 		}	
