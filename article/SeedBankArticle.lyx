@@ -77,17 +77,36 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
 
 \begin_layout Title
 A great title
+\change_inserted -666822487 1584954533
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584954538
+Try one!
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section*
@@ -95,10 +114,33 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-The high biodiversity of plant communities is still an unresolved question
- for both experimental and theoretical ecologists.
- Both terrestrial plants and phytoplanktonic communities can present hundreds
- of species maintained by similar resources.
+
+\change_deleted -666822487 1584954552
+T
+\change_inserted -666822487 1584954553
+How t
+\change_unchanged
+he high biodiversity of plant communities 
+\change_inserted -666822487 1584954562
+maintains 
+\change_unchanged
+is still an unresolved question for both experimental and theoretical ecologists.
+ 
+\change_deleted -666822487 1584954571
+Both t
+\change_inserted -666822487 1584954571
+T
+\change_unchanged
+errestrial plants and phytoplanktonic communities can present hundreds of
+ species 
+\change_deleted -666822487 1584954579
+maintained
+\change_inserted -666822487 1584954582
+relying on
+\change_deleted -666822487 1584954583
+ by
+\change_unchanged
+ similar resources.
  Early theoreticians have proposed that environmental fluctuations only
  [ref] could sustain coexistence but further research showed that this could
  not explain the order of magnitude of species richness [ref].
@@ -106,6 +148,24 @@ The high biodiversity of plant communities is still an unresolved question
  life history traits [ref] have completed explanation by the stochastic
  environmental variations and demographic processes.
  
+\change_inserted -666822487 1584954591
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584954605
+To edit...
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -115,8 +175,26 @@ Analyses of coexistence in terrestrial plant communities often take into
  models have uncovered mechanisms that might explain long-term coexistence.
  Examples of such mechanisms are the bet-hedging strategy, the storage effect
  and the Janzen-Connell effect.
- Bet-hedging is a long-term strategy relying on the creation of seeds which
- can remain dormant for a long period of time (over a year, often much longer).
+ Bet-hedging is a long-term strategy relying on the creation of seeds
+\change_inserted -666822487 1584954625
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584954638
+A bit restrictive on the definition of bet hedging
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ which can remain dormant for a long period of time (over a year, often
+ much longer).
  Dormant seeds can tolerate harsher years during which adults cannot maintain,
  but they also reduce part of the population that could germinate from one
  year to another (in case of an annual plant).
@@ -166,7 +244,7 @@ literal "false"
 .
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 I am not sure any more about this paragraph as we explore neither effects
@@ -187,6 +265,12 @@ I am not sure any more about this paragraph as we explore neither effects
 \color none
  Still, there is a way to introduce them, but is it really what we want/can
  do?
+\change_inserted -666822487 1584954709
+ You can explain, as you do, that with a juvenile stage this may heighten
+ the possibilities for storage effects.
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -232,7 +316,7 @@ literal "false"
 
  suggests that seeds/cysts might another player 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
@@ -241,6 +325,13 @@ We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
  plant literature.
  Whatever term we choose, we may want to define several of them to finally
  be precise on the one we use.
+
+\change_inserted -666822487 1584954762
+ If for most species people use cysts, then that is good.
+ What does the review use? Would be smart to align ourselves with them.
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -252,7 +343,16 @@ We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
 \begin_layout Standard
 Phytoplankton communities in coastal environments may benefit from seed
  banks even more than the oceanic communities [REF-find back], as the distance
- to the bottom is smaller.
+ to the
+\change_inserted -666822487 1584954794
+ sea
+\change_unchanged
+ bottom is smaller
+\change_inserted -666822487 1584954810
+ allowing frequently recolonization of the pelagic environment from the
+ shallow sea bottom
+\change_unchanged
+.
  Also, and similarly to the seed bank approach in the terrestrial plant
  literature, 
 \begin_inset CommandInset citation
@@ -323,6 +423,29 @@ literal "false"
 , to examine the effect of exchanges between different compartments (ocean
  and coastal water column and the bottom sediment) on coexistence.
  
+\change_inserted -666822487 1584954837
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584954937
+Will need some writing improvements but we can see that later –> be more
+ precise about how we use each work.
+ E.g., we incorporate the empirical interactione estimates in XXX into a model
+ similar to that developed by XXX, except that the growth rate formulation
+ is taken from XXXX.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section*
@@ -347,7 +470,13 @@ Is this too wordy?
 \end_layout
 
 \begin_layout Standard
-The model developed by 
+
+\change_deleted -666822487 1584954960
+The model
+\change_inserted -666822487 1584954969
+Our model builds atop those
+\change_unchanged
+ developed by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "shoemaker_linking_2016"
@@ -363,9 +492,44 @@ literal "false"
 
 \end_inset
 
- builds on a two-step discrete-time model.
- First, coastal and oceanic cell numbers increase following Beverton-Holt
- (BH) dynamics (eq.
+
+\change_inserted -666822487 1584955008
+.
+ These are
+\change_deleted -666822487 1584954989
+ builds on a two-step 
+\change_inserted -666822487 1584954992
+two-stages 
+\change_unchanged
+discrete-time model
+\change_inserted -666822487 1584955019
+ with multiple species competing
+\change_unchanged
+.
+ 
+\change_inserted -666822487 1584955030
+In our model, several add-ons are introduced.
+ 
+\change_unchanged
+First, coastal and oceanic cell numbers increase following
+\change_inserted -666822487 1584955041
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584955043
+following?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ Beverton-Holt (BH) dynamics (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -433,11 +597,15 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Question remains on what we do for mutualistic interactions but I am not
  even sur I talk about that
+\change_inserted -666822487 1584955108
+ -> One problem at the time...
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1582,18 +1750,27 @@ noprefix "false"
 
 ).
  
+\change_deleted -666822487 1584955182
+
 \end_layout
 
 \begin_layout Standard
 Finally, the temperature at each time step is a repetition of the temperatures
  observed over 20 years in our example dataset
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 For now, we use the formula from the Theor.
  Ecol, with mean and sd from the dataset in Auger, but this is not the best
  solution, I think.
+
+\change_inserted -666822487 1584955178
+ –> Let's talks about that.
+ There should be some autocorrelation, but perhaps the seasonality already
+ takes care of this? 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1670,6 +1847,17 @@ b) Modeled dataset / qualitative dynamics
 \begin_layout Plain Layout
 .OR.
  yet another structure?
+\change_inserted -666822487 1584955221
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584955231
+The first option currently makes sense to me.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1678,10 +1866,23 @@ On the same subject, it seems to me that there are three different types
  of them will be moved later on), the ones that are calibrated according
  to the data and the ones that will be moved in order to propose different
  scenarios.
- We could also add a sensitivity analysis on a subset of these parameters,
+ 
+\change_inserted -666822487 1584955245
+-> Yes.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+We could also add a sensitivity analysis on a subset of these parameters,
  and it would be relevant for all three sub-themes (and I don't think we
  really want to do that for all parameters).
  
+\change_inserted -666822487 1584955289
+-> The third set of parameters you mean? Or a subset within all three sets?
+ Explain that to me later on.
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1694,12 +1895,18 @@ Parameterisation
 \end_layout
 
 \begin_layout Subsubsection*
+
+\change_deleted -666822487 1584955304
 Data set example
+\change_inserted -666822487 1584955311
+Empirical dataset used for calibration
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Blabla on REPHY, Auger in Marennes Oléron, Fig of exact position in SI +
@@ -1976,9 +2183,27 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-An arbitrary beta distribution was selected, with a mean value close to
- the ones observed in both papers (between 9 and 10), and a maximum around
- 30%, that is 
+An arbitrary
+\change_inserted -666822487 1584955937
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584955965
+It is NOT arbitrary! You chose it because its shape reproduced the observed
+ shape.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ beta distribution was selected, with a mean value close to the ones observed
+ in both papers (between 9 and 10), and a maximum around 30%, that is 
 \begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
 \end_inset
 
@@ -2379,6 +2604,13 @@ status open
 \begin_layout Plain Layout
 I use this term because I am really not sure this is what we want to keep.
  I need to know how this method can be applied to cycles.
+
+\change_inserted -666822487 1584955395
+ You mean, whether it can handle something else than a fixed point equilibrium?
+ I'm pretty sure it can.
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2395,7 +2627,7 @@ literal "false"
 , we do not broaden the calibration process to growth rates as ours are
  not fixed values in a linear model
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 However, it just occurred to me that, using a mean temperature, we may be
@@ -2469,7 +2701,7 @@ changing the exchanges between the coast and the ocean (e=0)
 Final richness and average abundance/biomass productivity (approximated
  by the final total abundances, to create a link with ecosystem functions
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Might be too dangerous to try and talk about increase in temperature and
@@ -2478,11 +2710,59 @@ Might be too dangerous to try and talk about increase in temperature and
 
 \end_inset
 
-) can be diagnostics.
+) can be diagnostics
+\change_inserted -666822487 1584955446
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584955462
+I think you mean 
+\begin_inset Quotes eld
+\end_inset
+
+summary statistics
+\begin_inset Quotes erd
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
-We can make 2 a-priori hypotheses.
+We can make 2 a-priori 
+\change_inserted -666822487 1584955498
+ecological 
+\change_unchanged
+hypotheses
+\change_inserted -666822487 1584955492
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584955493
+Good
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  First, removing the seed bank would increase the sensitivity to competition,
  i.e.
  decrease the maximum sustainable interspecific competition strength, and
@@ -2514,7 +2794,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/expected_change_in_tolerance.pf
+	filename ../output/expected_change_in_tolerance.pf
 	width 80text%
 
 \end_inset
@@ -2580,7 +2860,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/expected_change_in_richness.pf
+	filename ../output/expected_change_in_richness.pf
 	width 50text%
 
 \end_inset
@@ -2632,7 +2912,13 @@ Results
 \end_layout
 
 \begin_layout Subsubsection*
-Quadratic programming
+
+\change_deleted -666822487 1584955587
+Q
+\change_inserted -666822487 1584955599
+Inference of interaction strengths through q
+\change_unchanged
+uadratic programming
 \end_layout
 
 \begin_layout Standard
@@ -2663,7 +2949,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/calibration_A_1.pdf
+	filename ../output/calibration_A_1.pdf
 	height 80theight%
 
 \end_inset
@@ -2728,6 +3014,11 @@ status open
 
 \begin_layout Plain Layout
 WARNING: This was not done with an updated phenology
+\change_inserted -666822487 1584955650
+ -> OK.
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2744,7 +3035,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/timeseries_one_by_one1.pdf
+	filename ../output/timeseries_one_by_one1.pdf
 	width 45text%
 	special page=1
 
@@ -2752,7 +3043,7 @@ status open
 
 
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/timeseries_one_by_one1.pdf
+	filename ../output/timeseries_one_by_one1.pdf
 	width 45text%
 	special page=5
 
@@ -2831,7 +3122,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/beta_law.pdf
+	filename ../output/beta_law.pdf
 	width 50text%
 
 \end_inset
@@ -3021,7 +3312,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/compare_growth_rate_rawBissinger.pdf
+	filename ../output/compare_growth_rate_rawBissinger.pdf
 	width 80text%
 
 \end_inset
@@ -3162,7 +3453,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/further_notes_on_SV.pdf
+	filename ../output/further_notes_on_SV.pdf
 	width 99text%
 
 \end_inset
@@ -3272,12 +3563,12 @@ literal "false"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/Eppley_Bissinger.pdf
+	filename ../output/Eppley_Bissinger.pdf
 	width 60text%
 
 \end_inset
@@ -3315,6 +3606,33 @@ name "fig:Niche_area_Bissinger"
 
 \end_inset
 
+
+\change_inserted -666822487 1584955748
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1584955788
+If that's 
+\emph on
+our 
+\emph default
+reformulation of Bissinger et al.
+ we should say so – is the formula in Bissinger et al.
+ (2008).
+
+\emph on
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -3372,7 +3690,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/examples_niches.pdf
+	filename ../output/examples_niches.pdf
 	width 99text%
 
 \end_inset
