@@ -1,0 +1,429 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Seed-bank contribution in maintaining phytoplanktonic biodiversity
+\end_layout
+
+\begin_layout Title
+Outline
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Itemize
+Classical paragraph on plant biodiversity / the phytoplankton paradox
+\end_layout
+
+\begin_layout Itemize
+Importance of the seedling/juvenile stage to explain terrestrial plant biodivers
+ity (definition of some of the mechanisms that can sustain biodiversity)
+\end_layout
+
+\begin_layout Itemize
+Low occurrence of the seed stage in phytoplankton models (defined as cyst
+ later on), even though they do exist in the field.
+\end_layout
+
+\begin_layout Itemize
+Presentation of the observed exchanges that happens between seed bank/ocean/coas
+t, the three compartments that we model here
+\end_layout
+
+\begin_layout Itemize
+Outline of the model and, later, of the main results
+\end_layout
+
+\begin_layout Section*
+Methods
+\end_layout
+
+\begin_layout Subsection*
+Model
+\end_layout
+
+\begin_layout Itemize
+global presentation of state variables and parameters, as well as the two
+ main steps in the model (growth; exchanges between compartments)
+\end_layout
+
+\begin_layout Itemize
+focus on the growth rate and the alterations that were made on the Scranton
+ & Vasseur model (only the fact that b_i will be varied; and that Bissinger
+ will be used instead of Eppley.
+ Details will be given in SI)
+\end_layout
+
+\begin_layout Subsection*
+Parameters from the literature
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Will need to find better titles
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+moved phenology to the field-based calibrations part
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In two sentences each:
+\end_layout
+
+\begin_layout Itemize
+loss rate
+\end_layout
+
+\begin_layout Itemize
+sinking rate
+\end_layout
+
+\begin_layout Itemize
+exchange rate
+\end_layout
+
+\begin_layout Itemize
+cyst mortality and burial
+\end_layout
+
+\begin_layout Itemize
+germination/resuspension
+\end_layout
+
+\begin_layout Subsection*
+Parameter fit to dataset
+\end_layout
+
+\begin_layout Subsubsection*
+Data set
+\end_layout
+
+\begin_layout Standard
+Usual presentation of a REPHY dataset (no detail on monitoring, just basic
+ information on the location and species)
+\end_layout
+
+\begin_layout Subsubsection*
+Field-based niche estimates
+\end_layout
+
+\begin_layout Standard
+Definition of generalist vs specialist, definition of the way we infer which
+ species is what in our dataset, and their thermal optima.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Quadratic programming
+\end_layout
+
+\begin_layout Standard
+Definition by Bazaara, use in Maynard, implementation here (on mean abundances
+ and interactions only, contrary to what is done in their paper).
+\end_layout
+
+\begin_layout Subsubsection*
+Sensitivity analyses
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+I am using this term here, but we can still call it another way if you think
+ that's too strong a word for a few parameter values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parameter space
+\end_layout
+
+\begin_layout Itemize
+sinking rate 
+\begin_inset Formula $\{0.1;0.3;0.5\}\beta(0.55,1.25)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+cyst mortality and burial 
+\begin_inset Formula $\approx10^{-4}/10^{-5}\times{0.01;0.1;0.3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+germination/resuspension 
+\begin_inset Formula ${0.1;0.01;0.001}*{10^{-5},0.1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diagnostics
+\end_layout
+
+\begin_layout Itemize
+Mean abundance
+\end_layout
+
+\begin_layout Itemize
+Amplitude and timing of the bloom
+\end_layout
+
+\begin_layout Subsection*
+Scenarios
+\end_layout
+
+\begin_layout Enumerate
+Effect of seed bank (with seedbank, cyst mortality=
+\begin_inset Formula $10^{-4}$
+\end_inset
+
+, without seedbank cyst mortality=1) on the coastal community
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+final richness vs mean interspecific interaction strengths.
+ Hypothesis: in the absence of a seed bank, final richness decreases when
+ interspecific interaction strengths increase, in absence of a seed bank.
+\end_layout
+
+\begin_layout Enumerate
+final abundance vs high and low temperatures / or higher variability in
+ the environment.
+ Hypothesis: in the absence of a seed bank, final abundance decreases when
+ there are extreme temperatures or variability
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Variations in the exchange rate with the ocean, interacting with the effect
+ of the seed bank.
+ In this case, the final richness in the ocean would be a good statistic.
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Subsubsection*
+Quadratic programming
+\end_layout
+
+\begin_layout Standard
+Variation in interaction strengths due to quadratic programming.
+ (Fig.
+ 1)
+\end_layout
+
+\begin_layout Subsubsection*
+Sensitivity analyses
+\end_layout
+
+\begin_layout Standard
+Find a way to represent the main variation in the models (Fig.
+ 2); extract the best parameter set.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Scenarios
+\end_layout
+
+\begin_layout Standard
+Fig.
+ 3 and 4 as already shown in the main text.
+\end_layout
+
+\begin_layout Section*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Waiting for at least a few results to beef up the structure, but:
+\end_layout
+
+\begin_layout Itemize
+First paragraph as usual, to remind model and main results
+\end_layout
+
+\begin_layout Itemize
+Second paragraph on the functioning of the model (quadratic programming,
+ sensitivity).
+ Would maybe lead to a discussion of the lack of information on certain
+ key parameters.
+\end_layout
+
+\begin_layout Itemize
+Among others, but wouldn't be the first point: discussion of the impact
+ of the niches, or at least the fact that our definition of the niche/generalist
+ vs specialist could be different in other papers.
+\end_layout
+
+\begin_layout Section*
+Supplementary Information
+\end_layout
+
+\begin_layout Subsubsection*
+Dataset
+\end_layout
+
+\begin_layout Standard
+Map of the location (Fig.
+ S1), table of species, time-series (Fig.
+ S2)
+\end_layout
+
+\begin_layout Subsubsection*
+Parameter defintion
+\end_layout
+
+\begin_layout Itemize
+sinking rate: values in the literature + distribution (Fig.
+ S3)
+\end_layout
+
+\begin_layout Itemize
+cyst mortality and burial: explanation of the inference of mortality from
+ McQuoid 2002 + literature on burial by sedimentation
+\end_layout
+
+\begin_layout Itemize
+germination/resuspension: a bit more details, as it may have been really
+ reduced in main text
+\end_layout
+
+\begin_layout Subsubsection*
+Focus on growth rate
+\end_layout
+
+\begin_layout Itemize
+Remind the variability of the growth rates of phytoplankton (Balzano 2011
+ among others), introduce fixed values from the literature Reynolds and
+ dependence on environmental factors (Edwards 2015, 2016) 
+\end_layout
+
+\begin_layout Itemize
+Remind the SV growth part and its decomposition between niche and metabolism;
+ add niche width (Fig.
+ S6)
+\end_layout
+
+\begin_layout Itemize
+Equation Eppley and Bissinger for the metabolism part, show comparison of
+ growth rates (Fig.
+ S5) and what we finally chose (already in main text, so we don't have to
+ dwell on that)
+\end_layout
+
+\begin_layout Subsubsection*
+Community matrix, from MAR to BH
+\end_layout
+
+\end_body
+\end_document
