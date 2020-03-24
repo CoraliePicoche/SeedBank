@@ -116,7 +116,10 @@ t, the three compartments that we model here
 \end_layout
 
 \begin_layout Itemize
-Outline of the model and, later, of the main results
+Outline of the model (with details on what features of which model we take
+ from whom) and the main hypotheses on the effect of the seed bank (maintenance
+ of biodiversity and production in harsher conditions + effect of exchanges
+ and seed bank on the ocean richness)
 \end_layout
 
 \begin_layout Section*
@@ -360,6 +363,11 @@ Second paragraph on the functioning of the model (quadratic programming,
 \end_layout
 
 \begin_layout Itemize
+Emergent properties from the model? For instance, storage effect: does the
+ germination rate interact with environmental varition?
+\end_layout
+
+\begin_layout Itemize
 Among others, but wouldn't be the first point: discussion of the impact
  of the niches, or at least the fact that our definition of the niche/generalist
  vs specialist could be different in other papers.
@@ -419,6 +427,11 @@ Equation Eppley and Bissinger for the metabolism part, show comparison of
  growth rates (Fig.
  S5) and what we finally chose (already in main text, so we don't have to
  dwell on that)
+\end_layout
+
+\begin_layout Itemize
+Growth rate as a function of temperature (that is, basically, Fig.
+ S5) for each species defined by b_i and T_i^opt
 \end_layout
 
 \begin_layout Subsubsection*

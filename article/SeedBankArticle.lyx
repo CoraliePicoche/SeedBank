@@ -82,29 +82,16 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \author -666822487 "frederic"
 \end_header
 
 \begin_body
 
 \begin_layout Title
-A great title
-\change_inserted -666822487 1584954533
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1584954538
-Try one!
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
+\change_inserted -2100369821 1584980836
+Seed-bank contribution in maintaining phytoplanktonic biodiversity
 \change_unchanged
 
 \end_layout
@@ -244,7 +231,7 @@ literal "false"
 .
  
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 I am not sure any more about this paragraph as we explore neither effects
@@ -269,8 +256,8 @@ I am not sure any more about this paragraph as we explore neither effects
  You can explain, as you do, that with a juvenile stage this may heighten
  the possibilities for storage effects.
  
-\change_unchanged
-
+\change_inserted -2100369821 1584959408
+Yeah, but the description of other processes is not needed anymore.
 \end_layout
 
 \end_inset
@@ -316,7 +303,7 @@ literal "false"
 
  suggests that seeds/cysts might another player 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
@@ -330,8 +317,17 @@ We will have to choose the vocabulary: Seed? Cyst? Resting stage? Spore?
  If for most species people use cysts, then that is good.
  What does the review use? Would be smart to align ourselves with them.
  
-\change_unchanged
+\change_inserted -2100369821 1584959563
+Cyst is the most general in the review (exact definition is 
+\begin_inset Quotes eld
+\end_inset
 
+Generalized term for unspecified resting stage
+\begin_inset Quotes erd
+\end_inset
+
+, but I am wondering about the link with seeds.
+ Do we replace seed bank by cyst bank everywhere?
 \end_layout
 
 \end_inset
@@ -597,7 +593,7 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Question remains on what we do for mutualistic interactions but I am not
@@ -1758,7 +1754,7 @@ noprefix "false"
 Finally, the temperature at each time step is a repetition of the temperatures
  observed over 20 years in our example dataset
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 For now, we use the formula from the Theor.
@@ -2701,7 +2697,7 @@ changing the exchanges between the coast and the ocean (e=0)
 Final richness and average abundance/biomass productivity (approximated
  by the final total abundances, to create a link with ecosystem functions
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Might be too dangerous to try and talk about increase in temperature and
@@ -3563,7 +3559,7 @@ literal "false"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3647,6 +3643,8 @@ reformulation of Bissinger et al.
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1585066783
 The control over the width, height and location of the niche is not obvious
  with the realistic Scranton & Vasseur (2016) model.
  In addition to this lack of control, specialists present in our dataset
@@ -3665,6 +3663,8 @@ Is it realistic? Would these species really survive?
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1585066783
 A toy-model would allow us to have more control on the width and height,
  see other possibilities in Fig.
  S
@@ -3681,6 +3681,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1585066783
 \begin_inset Float figure
 wide false
 sideways false
