@@ -2955,6 +2955,18 @@ Q
 Inference of interaction strengths through q
 \change_unchanged
 uadratic programming
+\change_inserted -2100369821 1585258887
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1585259052
+NOTE: In some cases, calibration by quadratic programming leads to unusable
+ interaction matrices (in the sense that it leads to negative abundances).
+ In this case, there is no calibration (leading to the following figures).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
