@@ -22,6 +22,9 @@ growth_rate_SV=function(temp,T_opt,B){ #from Scranton and Vasseur 2016
 		}
 		rtmp[i]=a_r*ftmp[i]*exp(E_r*(temp-t_0)/(k*temp*t_0))
 	}
+	print(paste("ftmp",ftmp))
+	print(paste("metabolism",a_r*exp(E_r*(temp-t_0)/(k*temp*t_0))))
+	print(paste("rtmp",rtmp))
 	return(rtmp)
 }
 
@@ -45,7 +48,7 @@ growth_rate_noMTE_Bissinger=function(temp,T_opt,B){ #from Scranton and Vasseur 2
         #Compute r(temp)
         ftmp=rep(NA,length(T_opt))
         rtmp=rep(NA,length(T_opt))
-        metabolism=0.81*exp(0.0631*(temp-273))
+        metabolism=0.81*exp(0.0631*(temp-273))*0.2
         for(i in 1:length(T_opt)){
                 if(temp<=T_opt[i]){
                         ftmp[i]=exp(-(abs(temp-T_opt[i]))^3/B[i])
@@ -54,6 +57,9 @@ growth_rate_noMTE_Bissinger=function(temp,T_opt,B){ #from Scranton and Vasseur 2
                 }
                 rtmp[i]=ftmp[i]*metabolism
         }
+	print(paste("ftmp",ftmp))
+	print(paste("metabolism",metabolism))
+	print(paste("rtmp",rtmp))
         return(rtmp)
 }
 
@@ -77,6 +83,10 @@ step1=function(n_t,list_inter,temp,M,mort,correct,model="BH",threshold=0.001,fix
 				growth=fixed_growth
 			}
 			tmp[i,]=exp(growth+correct)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) - mort*n_t[i,]#We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
+#			tmp[i,]=exp(growth+correct)*n_t[i,]/pmax(threshold,1+mat_pos%*%n_t[i,]) - mort*n_t[i,]#We only take into account competitive interactions to see if it can compensate for the very high growth rates
+			#print(paste("Growth",exp(growth+correct)*n_t[i,]))
+			#print(paste("Inter",pmax(threshold,1+list_inter[[i]]%*%n_t[i,])))
+			#print(paste("Loss",mort*n_t[i,]))
 #			tmp[i,tmp[i,]<0]=0.0001
 		}else if(model=="Martorell"){
 ################### This is the formula from Martorell

@@ -67,11 +67,13 @@ names(T_opt)=tab$sp
 #First proxy for r
 if(growth_model=="B"){ #B for Bissinger
 	r_mean=rep(growth_rate_Bissinger(mean_temp,0.5),nspp)
-}else if(growth_model=="SV"||growth_model=="SV_Bissinger"){ #SV for Scranton Vasseur, SV_Bissinger for SV model with the Bissinger/noMTE metabolism part
+}else if(growth_model=="SV"){ #SV for Scranton Vasseur, SV_Bissinger for SV model with the Bissinger/noMTE metabolism part
 	#Niche area to compute growth rates + range of optimal temperatures
 	B=tab$Val_b
 	r_mean=growth_rate_SV(293,T_opt,B)
-
+}else if(growth_model=="SV_Bissinger"){ #SV for Scranton Vasseur, SV_Bissinger for SV model with the Bissinger/noMTE metabolism part
+	B=tab$Val_b
+        r_mean=growth_rate_noMTE_Bissinger(293,T_opt,B)
 }else if(growth_model=="fixed"){
 	r_mean=0.1
 	print("Warning: for now, this option is not implemented")
