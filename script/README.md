@@ -15,3 +15,7 @@ This folder contains all scripts used to model the effect of seed banks on phyto
 * `step_functions.r` contains all the functions for each time step, i.e. growth step and exchange step
 
 #### Exploratory analyses
+* `autocorrelation_in_temperature.r` UNFINISHED (looked for autocorrelation in the residuals of the temperature once seasonality has been taken into account)
+* `growth_rate_in_isolation.r` DEPRECATED (simulated dynamics in absence of interactions with other species)
+* `param_definition.r` DEPRECATED (old formulation of interaction matrix, checking the feasability of the equilibrium)
+* `surface_volume.r` tried to compute sinking based on surface and volume of species (issue: this is sinking speed, not the sinking rate)
