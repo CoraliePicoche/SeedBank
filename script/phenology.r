@@ -123,6 +123,9 @@ sum_dur_final=c()
 total_bloom_final=c()
 temp_min_final=c()
 temp_mean_final=c()
+
+tab=array(NA,dim=c(length(name_spp),length(yy),4),dimnames=list(name_spp,as.character(yy),c("Sum_duration","Nb_blooms","Temp_min","Temp_mean")))
+
 for(sp in name_spp){
 	plot(0,0,t="n",xlab="",ylab="")
 	legend(-0.75,0.5,c("observed","interpolated","temperature"),pch=c(16,NA,NA),col=c("black","blue","red"),lty=c(1),bty="n")
@@ -157,6 +160,12 @@ for(sp in name_spp){
 		sum_duration=c(sum_duration,sum(x[[2]]))
 		temp_min=c(temp_min,min(x[[4]]))
 		temp_mean=c(temp_mean,x[[4]])
+
+		yc=as.character(y)
+		tab[sp,yc,"Sum_duration"]=sum(x[[2]])
+		tab[sp,yc,"Nb_blooms"]=length(x[[1]])
+		tab[sp,yc,"Temp_min"]=min(x[[4]])
+		tab[sp,yc,"Temp_mean"]=mean(x[[4]])
 
 		if(is.null(x[[1]])){
 			x[[1]]=NA
@@ -207,3 +216,19 @@ par(mfrow=c(1,3),mar=c(4,4,1,1))
 	hist(temp_min_final,main="",xlab="Minimum temperature")
 	abline(v=median(temp_min_final),col="red")
 dev.off()
+
+
+##Write table: a species is a generalist if the sum of all durations for a year exceeds 122 days for at least 15 years 
+## T_opt is the mean of Temp_min
+table_to_write=matrix(NA,length(name_spp),3,dimnames=list(name_spp,c("Type","Mean_length","T_opt")))
+for(s in name_spp){
+	nb_dur=sum(tab[s,,"Sum_duration"]>137)
+	table_to_write[s,"Mean_length"]=mean(tab[s,,"Sum_duration"])
+	table_to_write[s,"T_opt"]=mean(tab[s,,"Temp_mean"])
+	if(nb_dur>=15){
+		table_to_write[s,"Type"]="G"
+	}else{
+		table_to_write[s,"Type"]="S"
+	}
+}
+write.table(table_to_write,"param/generalist_specialist_spp.csv",sep=";",dec=".") #To be read with read.table(...,row.names=T,header=T)

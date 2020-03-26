@@ -16,21 +16,21 @@ n_simulation=1
 
 #Fixed parameters
 tab=read.table(paste("param/simu",n_simulation,".csv",sep=""),sep=";",dec=".",header=T)
-M=as.numeric(as.character(tab[tab[,1]=="M",2]))
+cyst_mortality=as.numeric(as.character(tab[tab[,1]=="cyst_mortality",2]))
+cyst_burial=as.numeric(as.character(tab[tab[,1]=="cyst_burial",2]))
+M=cyst_mortality+cyst_burial
 k_coast2ocean=as.numeric(as.character(tab[tab[,1]=="k_coast2ocean",2]))
+morta=as.numeric(as.character(tab[tab[,1]=="loss_rate",2]))
 e=as.numeric(as.character(tab[tab[,1]=="exchange",2]))
 germination=as.numeric(as.character(tab[tab[,1]=="germination",2]))
 resuspension=as.numeric(as.character(tab[tab[,1]=="resuspension",2]))
 Gamma=resuspension*germination
-growth_model=tab[tab[,1]=="growth_model",2]
+correct=as.numeric(as.character(tab[tab[,1]=="gain",2]))
+growth_model=as.character(tab[tab[,1]=="growth_model",2])
+S_max=as.numeric(as.character(tab[tab[,1]=="max_sinking",2]))
 quad_prog=tab[tab[,1]=="quad_prog",2]
 n_iter=as.numeric(as.character(tab[tab[,1]=="n_iter",2]))
 temp_germin=as.numeric(as.character(tab[tab[,1]=="germin_threshold",2]))
-mean_irr=0.5 #daylength, actually
-
-#For now I'm cheating
-morta=15/365.25
-correct=0.2
 
 #Data to use (Auger)
 dataset=as.character(tab[tab[,1]=="dataset",2])
@@ -50,67 +50,26 @@ B_matrix=clean_matrix(cis,signif=F)
 rownames(B_matrix)=colnames(B_matrix)=name_spp
 nspp=length(name_spp)
 
-#pop_table=read.table("param/abundances_Auger.txt")
-pop_table=read.table("param/phenology_Auger.csv",sep=",",dec=".",header=T)
-rownames(pop_table)=pop_table$sp
+pop_table=read.table("param/abundances_Auger.txt",sep=",",dec=".",header=T)
+name_spp=pop_table$sp
 x_obs=pop_table[name_spp,"Mean_abundances"]
 names(x_obs)=name_spp
-
-width=pop_table[name_spp,"NicheWidth"]
-timing=pop_table[name_spp,"Timing"]
-names(width)=name_spp
-names(timing)=name_spp
 
 inter_mat=MAR2BH(B_matrix,x_obs)
 
 #Sinking rates and T_opt
-tab=read.table("param/species_specific_parameter.txt",sep=";",dec=".",header=T)
-S=tab$S
-#T_opt=tab$T_opt+273 #For now, T_opt are not good at all
+tab=read.table(paste("param/species_specific_parameters_",n_simulation,".txt",sep=""),sep=";",dec=".",header=T)
+S=S_max*tab$S
+T_opt=tab$T_opt+273+5
 names(S)=tab$sp
-#names(T_opt)=tab$sp
+names(T_opt)=tab$sp
 
 #First proxy for r
 if(growth_model=="B"){ #B for Bissinger
 	r_mean=rep(growth_rate_Bissinger(mean_temp,0.5),nspp)
-}else if(growth_model=="SV"){ #SV for Scranton Vasseur
+}else if(growth_model=="SV"||growth_model=="SV_Bissinger"){ #SV for Scranton Vasseur, SV_Bissinger for SV model with the Bissinger/noMTE metabolism part
 	#Niche area to compute growth rates + range of optimal temperatures
-	A=rep(NA,nspp)
-	names(A)=name_spp
-	T_opt=rep(NA,nspp)
-	names(T_opt)=name_spp
-	for(sp in name_spp){
-		if(width[sp]=="G"){ #Generalist, wider niche area
-			A[sp]=runif(1,12,17)
-		}else{
-			A[sp]=runif(1,5,10)
-		}	
-		if(timing[sp]=="L"){ #Late bloomer, prefers higher temperature
-			T_opt[sp]=runif(1,11,15)+273
-		}else{
-			T_opt[sp]=runif(1,11,15)+273
-			#T_opt[sp]=runif(1,9,12.5)+273 #Early bloomer, will appear during spring
-		}	
-	}
-#	A=runif(nspp,5,20)
-	print(A)
-	T_min=273
-	T_max=273+35
-
-	#Optimum temperature
-	#T_opt=runif(nspp,283,288) #Between 10 And 15 for most species
-#	T_opt=rep(288,nspp) #Just a test
-
-	B=rep(NA,nspp)
-	for(i in 1:nspp){
-        	B[i]=optimize(f_to_optimize_B,T_min,T_max,T_opt[i],A[i],interval=c(0,100000))$minimum
-	}
-	names(B)=name_spp
-	#Trying constant B
-#	B=rep(mean(B),nspp)
-#	names(B)=name_spp
-
-
+	B=tab$Val_b
 	r_mean=growth_rate_SV(293,T_opt,B)
 
 }else if(growth_model=="fixed"){
@@ -147,7 +106,7 @@ N[1,,]=rep(10^3,nspp*3)
 for(t in 1:(n_iter-1)){
 	if(growth_model=="B"){
 	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,irradiance=mean_irr)
-	}else if(growth_model=="SV"){
+	}else if(growth_model=="SV"|growth_model=="SV_Bissinger"){
 	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,correct,model="BH",gr=growth_model,threshold=0.001,T_opt=T_opt,B=B)
 	}else if(growth_model=="fixed"){
 	        Ntmp=step1(N[t,,],list_inter,temp_model[t],M,morta,model="BH",gr=growth_model,threshold=0.001,fixed_growth=r_mean)

@@ -35,6 +35,29 @@ growth_rate_Eppley=function(temp,irradiance){
 	return(tmp)	
 }
 
+growth_rate_noMTE_Bissinger=function(temp,T_opt,B){ #from Scranton and Vasseur 2016 
+        #Define parameters that are fixed, not phytoplankton specific
+        a_r=386/365.25
+        E_r=0.467
+        k=8.6173324*10^(-5)
+        t_0=293
+
+        #Compute r(temp)
+        ftmp=rep(NA,length(T_opt))
+        rtmp=rep(NA,length(T_opt))
+        metabolism=0.81*exp(0.0631*(temp-273))
+        for(i in 1:length(T_opt)){
+                if(temp<=T_opt[i]){
+                        ftmp[i]=exp(-(abs(temp-T_opt[i]))^3/B[i])
+                }else{
+                        ftmp[i]=exp(-5*(abs(temp-T_opt[i]))^3/B[i])
+                }
+                rtmp[i]=ftmp[i]*metabolism
+        }
+        return(rtmp)
+}
+
+
 step1=function(n_t,list_inter,temp,M,mort,correct,model="BH",threshold=0.001,fixed_growth=NA,gr="Bissinger",irradiance=NA,T_opt=NA,B=NA){
 	tmp=matrix(NA,dim(n_t)[1],dim(n_t)[2])
 	colnames(tmp)=names(n_t)
@@ -46,14 +69,15 @@ step1=function(n_t,list_inter,temp,M,mort,correct,model="BH",threshold=0.001,fix
 			growth=NA
 			if(gr=="SV"){
 				growth=growth_rate_SV(temp,T_opt,B)
+			}else if(gr=="SV_Bissinger"){
+				growth=growth_rate_noMTE_Bissinger(temp,T_opt,B)
 			}else if(gr=="B"){
 				growth=growth_rate_Bissinger(temp-273,irradiance)
 			}else if(gr=="fixed"){
 				growth=fixed_growth
 			}
 			tmp[i,]=exp(growth+correct)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) - mort*n_t[i,]#We can also use the minus sign as 1-list_inter to make sure we interprete the interactions the right way.
-#		print(paste("Growth",exp(growth+correct)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,])))
-#			print(paste("Mortality",mort*n_t[i,]))
+#			tmp[i,tmp[i,]<0]=0.0001
 		}else if(model=="Martorell"){
 ################### This is the formula from Martorell
 		for(j in 1:dim(tmp)[2]){

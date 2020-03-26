@@ -67,6 +67,7 @@ text(1,0,paste("Before ",ratio_before,"\nAfter ",ratio_after,sep=""))
 
 diff=(after_A/before_A)
 id_diff=which(diff>10)
+if(length(id_diff)>0){
 id=0
 val=c()
 for(i in 1:ncol(after_A)){
@@ -77,6 +78,7 @@ for(i in 1:ncol(after_A)){
 			val=c(val,paste("(",colnames(after_A)[i],",",colnames(after_A)[j],")",sep=""))
 		}
 	}
+}
 }
 
 #plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=c(min(c(before_A)),10^-4),ylim=c(min(c(after_A)),10^-4),main="Zoom")
@@ -99,7 +101,9 @@ for (i in 1:ncol(before_A)){
 
 plot(1:length(before_A),after_A/before_A,pch=16,col="black",xlab="",ylab="Ratio after/before",xaxt="n")
 print(id_diff)
+if(length(id_diff)>0){
 text(id_diff,diff[id_diff],val,pos=1)
+}
 seq_axis=seq(1,length(before_A),by=4)
 abline(h=10,lty=3)
 axis(1,at=seq_axis,labels=convert_c_to_tab[seq_axis])
@@ -139,7 +143,7 @@ legend("bottomright",sp,col=colo,pch=apch,lty=alty)
 dev.off()
 
 
-pop_table=read.table("param/phenology_Auger.csv",sep=",",dec=".",header=T)
+pop_table=read.table("param/abundances_Auger.txt",sep=",",dec=".",header=T)
 rownames(pop_table)=pop_table$sp
 x_obs=pop_table[name_spp,"Mean_abundances"]
 names(x_obs)=name_spp

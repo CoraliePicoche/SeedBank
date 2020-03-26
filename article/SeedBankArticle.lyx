@@ -1972,9 +1972,13 @@ We base estimates of
  blooms when the abundances oscillate around their median.
  Specialists tend to appear only once or twice in the year for shorter amounts
  of time.
- A genus is therefore defined as a generalist if its cumulated blooms cover
- at least a third of the year (122 days) for at least 15 years over the
- 20 years of the time series.
+ A genus is therefore defined as a generalist if its cumulated blooms 
+\change_deleted -2100369821 1585204520
+cover at least a third of the year (122 days)
+\change_inserted -2100369821 1585204536
+last more than the average duration (137 days)
+\change_unchanged
+ for at least 15 years over the 20 years of the time series.
 \end_layout
 
 \begin_layout Standard
@@ -2037,6 +2041,10 @@ With these values in mind, we can define two range of values for the niche
 \begin_inset Formula $\overline{L}$
 \end_inset
 
+
+\change_inserted -2100369821 1585204547
+ 
+\change_unchanged
 is the mean over 20 years of the annual cumulated lengths of the bloom
 \family default
 \series default
@@ -2061,6 +2069,26 @@ The thermal optimum
 
  is defined as the mean minimum value of the temperature at the beginning
  bloom throughout the whole time series.
+
+\change_inserted -2100369821 1585204553
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1585204741
+This was way too low and led to blooms during autumn and winter.
+ Tried the average mean values, did not work either
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2077,7 +2105,19 @@ I would put the text below in the SI
 \end_layout
 
 \begin_layout Paragraph*
+
+\change_deleted -2100369821 1585152514
 Mortality
+\change_inserted -2100369821 1585152516
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\change_inserted -2100369821 1585152763
+Loss rate
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
