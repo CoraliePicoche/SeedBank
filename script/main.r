@@ -51,7 +51,8 @@ rownames(B_matrix)=colnames(B_matrix)=name_spp
 nspp=length(name_spp)
 
 pop_table=read.table("param/abundances_Auger.txt",sep=",",dec=".",header=T)
-name_spp=pop_table$sp
+rownames(pop_table)=pop_table$sp
+pop_table=pop_table[name_spp,]
 x_obs=pop_table[name_spp,"Mean_abundances"]
 names(x_obs)=name_spp
 
@@ -59,10 +60,11 @@ inter_mat=MAR2BH(B_matrix,x_obs)
 
 #Sinking rates and T_opt
 tab=read.table(paste("param/species_specific_parameters_",n_simulation,".txt",sep=""),sep=";",dec=".",header=T)
+tab=tab[name_spp,]
 S=S_max*tab$S
 T_opt=tab$T_opt+273+5
-names(S)=tab$sp
-names(T_opt)=tab$sp
+names(S)=name_spp
+names(T_opt)=name_spp
 
 #First proxy for r
 if(growth_model=="B"){ #B for Bissinger
@@ -70,6 +72,7 @@ if(growth_model=="B"){ #B for Bissinger
 }else if(growth_model=="SV"){ #SV for Scranton Vasseur, SV_Bissinger for SV model with the Bissinger/noMTE metabolism part
 	#Niche area to compute growth rates + range of optimal temperatures
 	B=tab$Val_b
+	names(B)=name_spp
 	r_mean=growth_rate_SV(293,T_opt,B)
 }else if(growth_model=="SV_Bissinger"){ #SV for Scranton Vasseur, SV_Bissinger for SV model with the Bissinger/noMTE metabolism part
 	B=tab$Val_b

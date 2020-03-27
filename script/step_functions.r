@@ -48,7 +48,7 @@ growth_rate_noMTE_Bissinger=function(temp,T_opt,B){ #from Scranton and Vasseur 2
         #Compute r(temp)
         ftmp=rep(NA,length(T_opt))
         rtmp=rep(NA,length(T_opt))
-        metabolism=0.81*exp(0.0631*(temp-273))*0.2
+        metabolism=0.81*exp(0.0631*(temp-273))*0.5
         for(i in 1:length(T_opt)){
                 if(temp<=T_opt[i]){
                         ftmp[i]=exp(-(abs(temp-T_opt[i]))^3/B[i])
