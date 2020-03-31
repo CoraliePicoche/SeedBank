@@ -1,0 +1,316 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection*
+Steps
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $1-\left\{ \begin{array}{ccc}
+N_{t+h,i,c} & = & \frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}\\
+N_{t+h,i,o} & = & \frac{e^{r_{i}(T)}N_{t,i,o}}{1+k_{c2o}\sum_{j}\alpha_{ij}N_{t,j,o}}-lN_{t,i,o}\\
+N_{t+h,i,b} & = & N_{t,i,b}(1-m-\zeta)
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $2-\left\{ \begin{array}{ccc}
+N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma N_{t+h,i,b}+eN_{t+h,i,o}\\
+N_{t+1,i,o} & = & N_{t+h,i,o}(1-s{}_{i}-e)+eN_{t+h,i,c}\\
+N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma)+s_{i}N_{t+h,i,c}
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Growth rate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+e^{r_{i}(T)} & = & f(T)E(T)\\
+\text{where }E(T) & = & d\times0.81e^{0.0631T_{c°}}\\
+\textnormal{and }f_{i}(T) & = & \begin{cases}
+e^{-|T_{K}-T_{K,i}^{opt*}|^{3}/b_{i}}, & T_{K}\leq T_{K,i}^{opt*}\\
+e^{-5|T_{K}-T_{K,i}^{opt*}|^{3}/b_{i}}, & T>T_{K,i}^{opt*}
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $d$
+\end_inset
+
+ is the daylength (growth rate proposed by Bissinger et al.
+ 2008 is for a whole day but phytoplankton does not growth during the night:
+ in field conditions, growth rate is therefore reduced), 
+\begin_inset Formula $T_{\ensuremath{C°}}$
+\end_inset
+
+is the temperature in Celsius degree, 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ is a measure of the species-specific niche width and 
+\begin_inset Formula $T_{K,i}^{opt*}$
+\end_inset
+
+ is the modified (see below) optimal temperature of each species in Kelvin.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The latter two parameters are estimated on field-data phenology.
+ For each genus and each year, the beginning of the bloom of a given genus
+ is defined by the date at which its abundance exceeds its median abundance
+ over the year.
+ The duration of the bloom is the number of days between the beginning and
+ the date where abundance fall below the median value.
+ Generalists are characterized by one long bloom in the year or several
+ blooms when the abundances oscillate around their median.
+ Specialists tend to appear only once or twice in the year for shorter amounts
+ of time.
+ A genus is therefore defined as a generalist if its annual cumulated blooms
+ 
+\begin_inset Formula $L_{i,y}$
+\end_inset
+
+ last more than the average duration (137 days) for at least 15 years over
+ the 20 years of the time series.
+\end_layout
+
+\begin_layout Standard
+With these values in mind, we can define two range of values for the niche
+ width (5-10 for specialists, 12-17 for the generalists) and then order
+ the species in these ranges as a function of the mean sum of their bloom
+ length, i.e.
+ 
+\begin_inset Formula $\overline{L_{i}}>\overline{L_{j}}\Rightarrow b_{i}>b_{j}$
+\end_inset
+
+ where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\overline{L}$
+\end_inset
+
+ is the mean over 20 years of the annual cumulated lengths of the bloom
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ has first been defined as the mean temperature at the beginning bloom throughou
+t the whole time series.
+ This led to very low value and to blooms preferentially in winter and autumn.
+ Therefore, 
+\begin_inset Formula $T_{i}^{opt*}=$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $T_{i}^{opt}+5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Interactions
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ directly comes from the MAR-model.
+ In the ocean, competitive interaction strengths are multiplied by 1.5 and
+ facilitative interactions are null.
+\end_layout
+
+\begin_layout Standard
+Finally, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\text{min}(1+\sum_{j}\alpha_{ij}N_{t,j,c})=1$
+\end_inset
+
+ to avoid an orgy of mutual benefactions.
+ 
+\end_layout
+
+\end_body
+\end_document

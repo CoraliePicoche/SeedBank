@@ -245,32 +245,32 @@ comp_ocean_final=comp_ocean[id,]
 pdf("interaction_effect_coast.pdf",width=7.5,height=7.5)
 par(mfrow=c(2,1))
 ##first 6 are centric diatoms
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 1:3){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[1:3],col=colo[1:3],pch=16,lty=1,bty="n")
 
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 4:6){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[4:6],col=colo[4:6],pch=16,lty=1,bty="n")
 
 ##Last 5 are pennate diatoms and dinoflagellates
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 7:9){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[7:9],col=colo[7:9],pch=16,lty=1,bty="n")
 
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 10:11){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[10:11],col=colo[10:11],pch=16,lty=1,bty="n")
 dev.off()
@@ -278,32 +278,32 @@ dev.off()
 pdf("interaction_effect_ocean.pdf",width=7.5,height=7.5)
 par(mfrow=c(2,1))
 ##first 6 are centric diatoms
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 1:3){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[1:3],col=colo[1:3],pch=16,lty=1,bty="n")
 
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 4:6){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[4:6],col=colo[4:6],pch=16,lty=1,bty="n")
 
 ##Last 5 are pennate diatoms and dinoflagellates
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 7:9){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[7:9],col=colo[7:9],pch=16,lty=1,bty="n")
 
-plot(1:366,rep(NA,366),t="n",ylim=c(0,1.5),xlab="Day of the year",ylab="BH denominator")
+plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
 abline(h=1.0)
 for(i in 10:11){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i])
+points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
 }
 legend("bottomleft",name_spp[10:11],col=colo[10:11],pch=16,lty=1,bty="n")
 dev.off()
