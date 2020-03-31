@@ -392,7 +392,17 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Here we build on the work by 
+Here we build on the
+\change_inserted -2100369821 1585297605
+ discrete
+\change_unchanged
+ 
+\change_deleted -2100369821 1585297600
+work
+\change_inserted -2100369821 1585297603
+metacommunity model
+\change_unchanged
+ by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "shoemaker_linking_2016"
@@ -408,6 +418,47 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1585299593
+ who included exchanges with a seed bank.
+ The growth rate in this model is temperature-dependent and adapted from
+ a metabolism-based model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+, updated 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ and adapted to the specific phenology of modeled phytoplankton groups 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+.
+ Empirical interactions between organisms are informed by previous analyses
+ of field data 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_how_2019,picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+.
+ 
+\change_deleted -2100369821 1585299603
 , as well as previous findings in
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -416,8 +467,28 @@ literal "false"
 
 \end_inset
 
-, to examine the effect of exchanges between different compartments (ocean
- and coastal water column and the bottom sediment) on coexistence.
+
+\change_inserted -2100369821 1585299660
+ With these different elements
+\change_deleted -2100369821 1585299603
+,
+\change_inserted -2100369821 1585299642
+, we
+\change_deleted -2100369821 1585299615
+ 
+\change_inserted -2100369821 1585299805
+aim to
+\change_deleted -2100369821 1585299615
+to 
+\change_unchanged
+examine the effect of exchanges between different compartments (ocean and
+ coastal water column and the 
+\change_inserted -2100369821 1585299636
+seed bank at the bottom of the water column
+\change_deleted -2100369821 1585299630
+bottom sediment
+\change_unchanged
+) on coexistence.
  
 \change_inserted -666822487 1584954837
 

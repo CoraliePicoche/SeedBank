@@ -6,13 +6,8 @@ rm(list=ls())
 graphics.off()
 set.seed(40) #Warning: results and even feasibility can be highly seed-sensitive
 
-source("script/matrix_MAR_clean.r")
-source("script/infer_interaction_matrix_growth_rate.r")
-
-args = commandArgs(trailingOnly=TRUE)
-n_simulation=args[1]
-
-n_simulation=1
+source("matrix_MAR_clean.r")
+source("infer_interaction_matrix_growth_rate.r")
 
 #Fixed parameters
 tab=read.table(paste("param/simu",n_simulation,".csv",sep=""),sep=";",dec=".",header=T)

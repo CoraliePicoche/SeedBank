@@ -4,7 +4,8 @@
 
 library(limSolve)
 library(Matrix)
-source("script/step_functions.r")
+source("step_functions.r")
+#source("../../script/step_functions.r")
 
 #compute b parameter in Scranton & Vasseur model
 f_to_optimize_B=function(b,T_min,T_max,T_opt,A){

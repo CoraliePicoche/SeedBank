@@ -1,0 +1,15 @@
+Param;Value
+k_coast2ocean;1.5
+loss_rate;0.04
+max_sinking;0.3
+exchange;0.4
+cyst_mortality;0.00001
+cyst_burial;0.01
+germination;0.01
+resuspension;0.1
+quad_prog;1
+n_iter;1000
+dataset;Auger
+germin_threshold;15
+daylength;0.5
+threshold;1
