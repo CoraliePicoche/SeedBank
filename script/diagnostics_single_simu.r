@@ -197,43 +197,42 @@ dev.off()
 
 ###SAD
 #Completely arbitrary (once more): count species [0,1000],[1001,5000],[5001,10000],[10001,...]
-pdf("SAD.pdf",width=7.5,height=5)
-par(mfrow=c(1,2))
+pdf("SAD.pdf",width=10,height=15)
+par(mfrow=c(4,3),mar=c(3,3,1,1))
+
+day_in_year=0
+end=0
+deb=0
+vec=rep(c(1,0),6)
+for(m in 1:12){
 #Observations
-#In Winter
 tab_categories=rep(NA,4)
-tab_categories[1]=sum(tab_mean[1,]<=1000)
-tab_categories[2]=sum(tab_mean[1,]>1000&tab_mean[1,]<=5000)
-tab_categories[3]=sum(tab_mean[1,]>5000&tab_mean[1,]<=10000)
-tab_categories[4]=sum(tab_mean[1,]>10000)
-plot(1:4,tab_categories+0.1,t="p",pch=16,col="black",xaxt="n",xlab="Nb individuals",ylab="Nb species",lwd=4,main="January",ylim=c(0,7),cex=1.5)
+tab_categories[1]=sum(tab_mean[m,]<=1000)
+tab_categories[2]=sum(tab_mean[m,]>1000&tab_mean[1,]<=5000)
+tab_categories[3]=sum(tab_mean[m,]>5000&tab_mean[1,]<=10000)
+tab_categories[4]=sum(tab_mean[m,]>10000)
+plot(1:4,tab_categories+0.1,t="p",pch=16,col="black",xaxt="n",xlab="Nb individuals",ylab="Nb species",lwd=4,main=paste("Month",m),ylim=c(0,7),cex=1.5)
 axis(1,at=1:4,labels=c("[0,1000]","]1000,5000]","]5000,10000]","[10001,...]"))
 legend("topright",c("Observations","Simulations"),col=c("black","blue"),pch=16,bty="n")
 
 #Simulations
-tab_sim=apply(tab_coast[id[1:31],],2,mean)
+
+deb=end+1
+if(m!=2){
+end=deb+29+vec[m]
+}else{
+end=deb+28
+}
+day_in_year=end
+
+tab_sim=apply(tab_coast[id[deb:end],],2,mean)
 tab_categories[1]=sum(tab_sim<=1000)
 tab_categories[2]=sum(tab_sim>1000&tab_sim<=5000)
 tab_categories[3]=sum(tab_sim>5000&tab_sim<=10000)
 tab_categories[4]=sum(tab_sim>10000)
 points(1:4,tab_categories,pch=16,col="blue",cex=1.5)
 
-
-#In Summer
-tab_categories=rep(NA,4)
-tab_categories[1]=sum(tab_mean[7,]<=1000)
-tab_categories[2]=sum(tab_mean[7,]>1000&tab_mean[1,]<=5000)
-tab_categories[3]=sum(tab_mean[7,]>5000&tab_mean[1,]<=10000)
-tab_categories[4]=sum(tab_mean[7,]>10000)
-plot(1:4,tab_categories+0.1,t="p",pch=16,col="black",xaxt="n",xlab="Nb individuals",ylab="Nb species",lwd=4,main="July",ylim=c(0,7),cex=1.5)
-axis(1,at=1:4,labels=c("[0,1000]","]1000,5000]","]5000,10000]","[10001,...]"))
-
-tab_sim=apply(tab_coast[id[180:210],],2,mean)
-tab_categories[1]=sum(tab_sim<=1000)
-tab_categories[2]=sum(tab_sim>1000&tab_sim<=5000)
-tab_categories[3]=sum(tab_sim>5000&tab_sim<=10000)
-tab_categories[4]=sum(tab_sim>10000)
-points(1:4,tab_categories,pch=16,col="blue",cex=1.5)
+}
 dev.off()
 
 ###Output denominator
