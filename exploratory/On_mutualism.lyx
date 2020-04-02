@@ -121,8 +121,7 @@ General framework for both uni- and bidirectional mutualism, with a reminder
 \end_layout
 
 \begin_layout Standard
-(and conversely for species 2).
- In a unidirectional mutualism, 
+In a unidirectional mutualism, 
 \begin_inset Formula $q_{2}g_{2}(R_{1}(N_{1},N_{2})$
 \end_inset
 
@@ -143,7 +142,7 @@ The structure of the model implies that there is a cost for providing its
 \end_layout
 
 \begin_layout Standard
-When adapted to the Rosensweig-MacArthur model:
+When adapted to the Rosenzweig-MacArthur model:
 \end_layout
 
 \begin_layout Standard
@@ -220,7 +219,7 @@ Logistic growth.
 \begin_inset Formula $N_{j}^{p}$
 \end_inset
 
- is is the population of species 
+ is the population of species 
 \begin_inset Formula $j$
 \end_inset
 
@@ -271,7 +270,7 @@ In this model, the effective growth rate of a species is divided between
 \noun off
 \color none
 
-\begin_inset Formula $K_{i}=\frac{1}{c_{i}}$
+\begin_inset Formula $K_{i}\rightarrow\frac{1}{c_{i}}$
 \end_inset
 
 .
@@ -306,7 +305,7 @@ literal "false"
 
 \begin_layout Standard
 Removed the notion of metacommunity in patches to focus on the effect of
- mutualism in one patch only, but the focus of the model is the colonisation.
+ mutualism in one patch only, but the focus of the paper is the colonisation.
  (BH look-alike if we ignore the facilitation product)
 \end_layout
 
@@ -348,8 +347,8 @@ where
 \begin_inset Formula $k^{th}$
 \end_inset
 
- year in absence of interactions (maximum growth rate measured in isolation?)
- and 
+ year in absence of interactions (maximum growth rate measured in isolation
+ in specific environmental conditions?) and 
 \begin_inset Formula $\beta_{i}$
 \end_inset
 
