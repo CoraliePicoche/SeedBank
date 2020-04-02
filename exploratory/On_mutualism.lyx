@@ -436,8 +436,8 @@ We focus here on the implementation of competition and facilitation.
 \begin_inset Formula 
 \[
 \begin{array}{cccccc}
-\frac{1}{N_{i}}\frac{dN_{i}}{dt} & = & r_{1}+\frac{s_{i}}{K_{i}}N_{1} & -\sum_{j}^{S_{c_{i}}}a_{ij}N_{j} & +\sum_{j}^{S_{M_{i}}}\frac{a_{ij}N_{j}}{h+N_{j}} & \text{(Unique Interaction Model)}\\
-\frac{1}{N_{i}}\frac{dN_{i}}{dt} & = & r_{1}+\frac{s_{i}}{K_{i}}N_{1} & -\sum_{j}^{S_{c_{i}}}a_{ij}N_{j} & +\sum_{j}^{S_{M_{i}}}\frac{a_{ij}N_{j}}{h+\sum_{j}^{S_{M_{i}}}N_{j}} & \text{(Individual Interaction Model)}
+\frac{1}{N_{i}}\frac{dN_{i}}{dt} & = & r_{1}+\frac{s_{i}}{K_{i}}N_{i} & -\sum_{j}^{S_{c_{i}}}a_{ij}N_{j} & +\sum_{j}^{S_{M_{i}}}\frac{a_{ij}N_{j}}{h+N_{j}} & \text{(Unique Interaction Model)}\\
+\frac{1}{N_{i}}\frac{dN_{i}}{dt} & = & r_{1}+\frac{s_{i}}{K_{i}}N_{i} & -\sum_{j}^{S_{c_{i}}}a_{ij}N_{j} & +\sum_{j}^{S_{M_{i}}}\frac{a_{ij}N_{j}}{h+\sum_{j}^{S_{M_{i}}}N_{j}} & \text{(Individual Interaction Model)}
 \end{array}
 \]
 
