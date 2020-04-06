@@ -678,7 +678,7 @@ We consider saturating interactions, for both competition and facilitation.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-N_{t+h,i,c}=\frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j,c}}{h_{C}+N_{t,j,c}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j,c}}{h_{F}+N_{t,j,c}}}-lN_{t,i,c}
+N_{t+h,i,c}=\frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j,c}}{H_{C}+N_{t,j,c}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j,c}}{H_{F}+N_{t,j,c}}}-lN_{t,i,c}
 \]
 
 \end_inset
@@ -707,7 +707,11 @@ where
 \end_layout
 
 \begin_layout Subsection*
-Jacobian
+Jacobian (
+\begin_inset Formula $\alpha=\alpha_{ij}$
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
@@ -719,7 +723,7 @@ We can try and start with a simplified version of the model, without the
 \begin_layout Standard
 \begin_inset Formula 
 \[
-N_{t+1,i}=\frac{e^{r_{i}}N_{t,i}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j}}{h_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j}}{h_{F}+N_{t,j}}}
+N_{t+1,i}=\frac{e^{r_{i}}N_{t,i}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j}}{H_{F}+N_{t,j}}}
 \]
 
 \end_inset
@@ -738,7 +742,7 @@ Let's have
 \begin_layout Standard
 \begin_inset Formula 
 \[
-n_{t+1,i,c}=r_{i}+n_{t,i}-\log(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j}}{h_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j}}{h_{F}+N_{t,j}})
+n_{t+1,i,c}=r_{i}+n_{t,i}-\log(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j}}{H_{F}+N_{t,j}})
 \]
 
 \end_inset
@@ -752,7 +756,7 @@ We assume that there is an equilibrium for
 \end_inset
 
  (we just remove the time subscript) and we have 
-\begin_inset Formula $X_{i}=\log(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{h_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{h_{F}+N_{j}})$
+\begin_inset Formula $X_{i}=\log(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}})$
 \end_inset
 
 .
@@ -792,11 +796,11 @@ Let's take it step by step:
 \end_inset
 
  can be either 
-\begin_inset Formula $h_{C}+N_{j}$
+\begin_inset Formula $H_{C}+N_{j}$
 \end_inset
 
  or 
-\begin_inset Formula $h_{F}+N_{j}$
+\begin_inset Formula $H_{F}+N_{j}$
 \end_inset
 
 .
@@ -810,7 +814,7 @@ Let's take it step by step:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\partial u_{i}}{\partial N_{j}}=\partial\frac{\alpha_{ij}N_{j}}{h_{\centerdot}+N_{j}}\frac{1}{\partial N_{j}}=\frac{a_{ij}(h_{\centerdot}+N_{j})-a_{ij}N_{j}}{(h_{\centerdot}+N_{j})2}=\frac{a_{ij}}{(h_{\centerdot}+N_{j})^{2}}
+\frac{\partial u_{i}}{\partial N_{j}}=\partial\frac{\alpha_{ij}N_{j}}{H_{\centerdot}+N_{j}}\frac{1}{\partial N_{j}}=\frac{a_{ij}(H_{\centerdot}+N_{j})-a_{ij}N_{j}}{(H_{\centerdot}+N_{j})2}=\frac{a_{ij}}{(H_{\centerdot}+N_{j})^{2}}
 \]
 
 \end_inset
@@ -825,7 +829,7 @@ Therefore,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\partial X_{i}}{\partial n_{j}}=\frac{a_{ij}h_{\centerdot}}{(h_{\centerdot}+N_{i})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{h_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{h_{F}+N_{j}}\right)}
+\frac{\partial X_{i}}{\partial n_{j}}=\frac{a_{ij}H_{\centerdot}}{(H_{\centerdot}+N_{i})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)}
 \]
 
 \end_inset
@@ -845,10 +849,10 @@ If we have
 \begin_inset Formula 
 \[
 \begin{cases}
-b_{ii}-1= & \frac{a_{ii}h_{C}}{(h_{C}+N_{i})2}\frac{N_{i}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{h_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{h_{F}+N_{j}}\right)}\\
+b_{ii}-1= & \frac{a_{ii}H_{C}}{(H_{C}+N_{i})2}\frac{N_{i}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)}\\
 b_{ij,i\neq j}= & \begin{cases}
-\frac{a_{ij}h_{C}}{(h_{C}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{h_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{h_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{C}\\
-\frac{a_{ij}h_{F}}{(h_{F}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{h_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{h_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{F}
+\frac{a_{ij}H_{C}}{(H_{C}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{C}\\
+\frac{a_{ij}H_{F}}{(H_{F}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{F}
 \end{cases}
 \end{cases}
 \]
@@ -856,6 +860,116 @@ b_{ij,i\neq j}= & \begin{cases}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection*
+Alternative (
+\begin_inset Formula $H=H_{ij}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+According to FB:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{t+1,i}=\frac{e^{r_{i}}N_{t,i}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{M}N_{t,j}}{H_{ij}+N_{t,j}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+How to choose 
+\begin_inset Formula $\alpha_{C}$
+\end_inset
+
+ et 
+\begin_inset Formula $\alpha_{M}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha_{C},\alpha_{M}\text{ so that }\forall t,1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{M}N_{t,j}}{H_{ij}+N_{t,j}}>\exp(r_{i,max}(T))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To compute 
+\begin_inset Formula $\alpha_{C}$
+\end_inset
+
+, compute 
+\begin_inset Formula $b_{i.,max}=-\sum_{j,j\neq i}|b_{ij}|N_{j}$
+\end_inset
+
+ and translate into 
+\begin_inset Formula $\alpha_{C}$
+\end_inset
+
+ (with classical BH formula ? or with saturating interactions (see equations
+ above) ? With LV model? Using 
+\begin_inset Formula $\overline{N_{j}}$
+\end_inset
+
+, 
+\begin_inset Formula $N_{j,max}$
+\end_inset
+
+?) (or should we first compute 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ and then 
+\begin_inset Formula $\alpha_{C}=\sum_{j,j\neq i}|\alpha_{ij}|N_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And use 
+\begin_inset Formula $H_{ij}=\frac{\alpha_{C}}{\alpha_{ij}}$
+\end_inset
+
+ ?
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note from CP:
+\end_layout
+
+\begin_layout Itemize
+I don't think dimensions match.
+\end_layout
+
+\begin_layout Itemize
+Wouldn't 
+\begin_inset Formula $\sum\frac{\alpha_{C}N_{j,max}}{H_{ij}+N_{j,max}}>>\sum_{\in\mathbb{F}}\frac{\alpha_{M}N_{j,max}}{H_{ij}+N_{j,max}}$
+\end_inset
+
+ be enough?
 \end_layout
 
 \end_body

@@ -3913,7 +3913,19 @@ b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}
 \end_layout
 
 \begin_layout Standard
-Let's define 
+Let's define
+\change_inserted -2100369821 1586186157
+ 
+\begin_inset Formula $\tilde{b_{ij}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\tilde{b_{ii}}=b_{ii}-1$
+\end_inset
+
+, and
+\change_unchanged
+ 
 \begin_inset Formula $f_{A}(i)=\sum_{l}\alpha_{ij}N_{l}^{*}$
 \end_inset
 
