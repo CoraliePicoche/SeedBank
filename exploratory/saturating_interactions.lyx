@@ -255,7 +255,7 @@ maximum growth rate of species
 \begin_inset Text
 
 \begin_layout Plain Layout
-NA
+NA (NA)
 \end_layout
 
 \end_inset
@@ -321,7 +321,7 @@ Adapted
 \uwave default
 \noun default
 \color inherit
-from Picoche&Barraquand 2020
+from Picoche&Barraquand 2020 (NA)
 \end_layout
 
 \end_inset
@@ -353,7 +353,7 @@ conversion coefficient from coastal to oceanic interactions
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.5 [arbitrary]
+1.5 [arbitrary] (NA)
 \end_layout
 
 \end_inset
@@ -392,7 +392,7 @@ sinking rate of species
 \begin_inset Formula $\{0.1;0.3;0.5\}\beta(0.55,1.25)$
 \end_inset
 
-
+ (NA)
 \end_layout
 
 \end_inset
@@ -424,7 +424,7 @@ exchange rate between ocean and coast
 \begin_inset Text
 
 \begin_layout Plain Layout
-{0.4 ; 0.6 ; 1} 
+{0.4 ; 0.6 ; 1} (NA)
 \end_layout
 
 \end_inset
@@ -456,7 +456,7 @@ loss of vegetative phytoplankton (predation, mortality...)
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.04 
+0.04 (NA)
 \end_layout
 
 \end_inset
@@ -491,7 +491,7 @@ cyst mortality
 \begin_inset Formula $\approx10^{-4}/10^{-5}$
 \end_inset
 
-
+(NA)
 \end_layout
 
 \end_inset
@@ -523,7 +523,7 @@ cyst burial
 \begin_inset Text
 
 \begin_layout Plain Layout
-{0.01 ; 0.1 ; 0.3}
+{0.01 ; 0.1 ; 0.3} (NA)
 \end_layout
 
 \end_inset
@@ -563,7 +563,7 @@ germination
 \begin_inset Formula $10^{-5}$
 \end_inset
 
-,0.1}
+,0.1} (NA)
 \end_layout
 
 \end_inset
@@ -584,6 +584,16 @@ Definition of main state variables and parameters of the model.
  Fixed values or distributions are estimated from the literature.
  When a set or a range of values is given, the sensitivity of the model
  related to changes in parametes has been assessed.
+ In the 
+\begin_inset Quotes eld
+\end_inset
+
+Value (unit)
+\begin_inset Quotes erd
+\end_inset
+
+ column, V indicates a state variable while (NA) indicates that the parameter
+ is dimensionless.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -938,7 +948,22 @@ To compute
 \begin_inset Formula $\alpha_{C}=\sum_{j,j\neq i}|\alpha_{ij}|N_{j}$
 \end_inset
 
-.
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+I'd rather do this one as the formula is non-linear and I fear that we distort
+ the value if we first compute 
+\begin_inset Formula $b_{i.,max}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

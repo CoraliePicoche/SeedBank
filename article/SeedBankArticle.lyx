@@ -4104,6 +4104,57 @@ NOTE: This may not be useful as only the mean growth rate can be used to
 n of the interaction matrix tends to lead to a stable community, that is
  not able to represent the yearly cycles due to seasonality.
  
+\change_inserted -2100369821 1586249780
+
+\end_layout
+
+\begin_layout Subsubsection*
+
+\change_inserted -2100369821 1586252067
+Calibration
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586252335
+In addition to quadratric programming which aims to get closer to observed
+ average abundances, calibration is necessary to approximate other features
+ of the system.
+ Several indicators can be used:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1586252433
+species-abundance distribution within each month/each semester/each season
+ (see SAD in output/modelev1.1/)
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1586252462
+phenology can be checked with the date of the beginning of the bloom for
+ each year
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1586252559
+dynamics themselves can be used.
+ To avoid artefacts created by average abundances over the year, an idea
+ would be stabilize the model on synthetic temperatures, then use the actual
+ observed temperature to observe the simulated dynamics year after year.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586252570
+In all cases, a simple measure of |obs-sim|
+\begin_inset space ~
+\end_inset
+
+might be enough.
+ Calibration would then be a multi-criterion process.
 \end_layout
 
 \begin_layout Subsubsection*
