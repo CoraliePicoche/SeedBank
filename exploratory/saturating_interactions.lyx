@@ -620,13 +620,36 @@ Saturating interactions
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-N_{t+h,i,c}=\frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}
-\]
+\begin{equation}
+N_{t+dt,i,c}=\frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}\label{eq:nonsaturating}
+\end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+For the sake of simplicity, we hereafter ignore the loss term and concentrate
+ on the growth rate/interaction part, and drop the compartment name (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $N_{t+h,i,c}\rightarrow N_{t+h,i})$
+\end_inset
+
+ as the functioning of the oceanic compartment reproduces the coastal one,
+ only with stronger (competitive only?) interactions.
 \end_layout
 
 \begin_layout Standard
@@ -639,13 +662,13 @@ There are both competitive (
 \end_inset
 
 <0) interactions, which means that the denominator 
-\begin_inset Formula $1+\sum_{j}\alpha_{ij}N_{t,j,c}$
+\begin_inset Formula $1+\sum_{j}\alpha_{ij}N_{t,j}$
 \end_inset
 
  can be very close to 0, or negative, thus leading to unrealistic growth
  rate values.
  Ignoring possible overyielding, we should have 
-\begin_inset Formula $\sum\alpha_{ij}N_{t,j,c}\geq0$
+\begin_inset Formula $\sum\alpha_{ij}N_{t,j}\geq0$
 \end_inset
 
 , as 
@@ -678,18 +701,14 @@ For now, coefficients are directly adapted from the MAR model (exact equivalence
 
 \begin_layout Standard
 We consider saturating interactions, for both competition and facilitation.
- I did not find direct formulations of such feature in a Beverton-Holt growth
- model.
- My only idea is loosely based on the Unique Interaction Model of Qian and
- Akçay (2020) who however use a continuous-time, linear model.
- I only added a saturating competition in addition to saturating facilitation:
+ There are two ways to consider interaction differences between species.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-N_{t+h,i,c}=\frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j,c}}{H_{C}+N_{t,j,c}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j,c}}{H_{F}+N_{t,j,c}}}-lN_{t,i,c}
-\]
+\begin{equation}
+N_{t+dt,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{a_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{a_{ij}N_{t,j}}{H_{F}+N_{t,j}}}\label{eq:saturation_a}
+\end{equation}
 
 \end_inset
 
@@ -697,7 +716,29 @@ N_{t+h,i,c}=\frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\fra
 \end_layout
 
 \begin_layout Standard
-where 
+where coefficients 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ are the maximum interaction strength of species 
+\begin_inset Formula $j$
+\end_inset
+
+ on species 
+\begin_inset Formula $i$
+\end_inset
+
+ (the interaction strengths when the abundance of the competitor/facilitator
+ tends towards infinity), 
+\begin_inset Formula $H_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{F}$
+\end_inset
+
+ are the half-saturation constants corresponding to competitive and mutualistic
+ interactions respectively, 
 \begin_inset Formula $\mathbb{C}$
 \end_inset
 
@@ -710,30 +751,110 @@ where
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Jacobian (
-\begin_inset Formula $\alpha=\alpha_{ij}$
-\end_inset
-
-)
+OR
 \end_layout
 
 \begin_layout Standard
-We can try and start with a simplified version of the model, without the
- loss term.
+\begin_inset Formula 
+\begin{equation}
+N_{t+dt,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}\frac{a_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/a\in\mathbb{F}}\frac{a_{M}N_{t,j}}{H_{ij}+N_{t,j}}}\label{eq:saturation_h}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where coefficients 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+are the maximum interaction strength for competition and facilitation respective
+ly, 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ coefficients are the abundance of species 
+\begin_inset Formula $j$
+\end_inset
+
+ to reach half of the maximum effect in the interaction of 
+\begin_inset Formula $j$
+\end_inset
+
+ on 
+\begin_inset Formula $i$
+\end_inset
+
+, and and 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ are the sets of competitive and facilitative interactions.
+ Variations in 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ can be attributed to the limiting resource (light can saturate more rapidly
+ than nutrients, especially in a coastal environment where they are supposed
+ to be plentiful, which would lead to a smaller 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ in the case of light).
+ 
+\end_layout
+
+\begin_layout Subsection*
+Jacobian
+\end_layout
+
+\begin_layout Standard
+We use the notation from eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saturation_a"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but the derivation of the Jacobian is the same for both eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saturation_a"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saturation_h"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-N_{t+1,i}=\frac{e^{r_{i}}N_{t,i}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j}}{H_{F}+N_{t,j}}}
+N_{t+1,i}=\frac{e^{r_{i}}N_{t,i}}{1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{a_{ij}N_{t,j}}{H_{F}+N_{t,j}}}
 \]
 
 \end_inset
@@ -752,7 +873,7 @@ Let's have
 \begin_layout Standard
 \begin_inset Formula 
 \[
-n_{t+1,i,c}=r_{i}+n_{t,i}-\log(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{t,j}}{H_{F}+N_{t,j}})
+n_{t+1,i,c}=r_{i}+n_{t,i}-\log(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{a_{ij}N_{t,j}}{H_{F}+N_{t,j}})
 \]
 
 \end_inset
@@ -766,7 +887,7 @@ We assume that there is an equilibrium for
 \end_inset
 
  (we just remove the time subscript) and we have 
-\begin_inset Formula $X_{i}=\log(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}})$
+\begin_inset Formula $X_{i}=\log(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{a_{ij}N_{j}}{H_{F}+N_{j}})$
 \end_inset
 
 .
@@ -824,7 +945,7 @@ Let's take it step by step:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\partial u_{i}}{\partial N_{j}}=\partial\frac{\alpha_{ij}N_{j}}{H_{\centerdot}+N_{j}}\frac{1}{\partial N_{j}}=\frac{a_{ij}(H_{\centerdot}+N_{j})-a_{ij}N_{j}}{(H_{\centerdot}+N_{j})2}=\frac{a_{ij}}{(H_{\centerdot}+N_{j})^{2}}
+\frac{\partial u_{i}}{\partial N_{j}}=\partial\frac{a_{ij}N_{j}}{H_{\centerdot}+N_{j}}\frac{1}{\partial N_{j}}=\frac{a_{ij}(H_{\centerdot}+N_{j})-a_{ij}N_{j}}{(H_{\centerdot}+N_{j})2}=\frac{a_{ij}H_{\centerdot}}{(H_{\centerdot}+N_{j})^{2}}
 \]
 
 \end_inset
@@ -839,7 +960,7 @@ Therefore,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\partial X_{i}}{\partial n_{j}}=\frac{a_{ij}H_{\centerdot}}{(H_{\centerdot}+N_{i})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)}
+\frac{\partial X_{i}}{\partial n_{j}}=\frac{a_{ij}H_{\centerdot}}{(H_{\centerdot}+N_{i})2}\frac{N_{j}}{\left(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{a_{ij}N_{j}}{H_{F}+N_{j}}\right)}
 \]
 
 \end_inset
@@ -857,57 +978,107 @@ If we have
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \begin{cases}
-b_{ii}-1= & \frac{a_{ii}H_{C}}{(H_{C}+N_{i})2}\frac{N_{i}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)}\\
+b_{ii}-1= & \frac{a_{ii}H_{C}}{(H_{C}+N_{i})2}\frac{N_{i}}{\left(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{a_{ij}N_{j}}{H_{F}+N_{j}}\right)}\\
 b_{ij,i\neq j}= & \begin{cases}
-\frac{a_{ij}H_{C}}{(H_{C}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{C}\\
-\frac{a_{ij}H_{F}}{(H_{F}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{F}
+\frac{a_{ij}H_{C}}{(H_{C}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{a_{ij}N_{j}}{H_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{C}\\
+\frac{a_{ij}H_{F}}{(H_{F}+N_{j})2}\frac{N_{j}}{\left(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{\alpha_{ij}N_{j}}{H_{F}+N_{j}}\right)} & \forall a_{ij}\in\mathbb{F}
 \end{cases}
-\end{cases}
-\]
+\end{cases}\label{eq:calibrate}
+\end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In both formula, it is clear that the model has no unique solutions for
+ all coefficients.
+ Either 
+\begin_inset Formula $a$
+\end_inset
+
+ or 
+\begin_inset Formula $H$
+\end_inset
+
+ need to be fixed beforehand.
+ In addition to this constraint, the formula in eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:calibrate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ might be too complex to help parameterize either 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ or 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection*
-Alternative (
-\begin_inset Formula $H=H_{ij}$
-\end_inset
-
-)
+Alternative to direct Jacobian
 \end_layout
 
 \begin_layout Standard
-According to FB:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-N_{t+1,i}=\frac{e^{r_{i}}N_{t,i}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{M}N_{t,j}}{H_{ij}+N_{t,j}}}
-\]
+In eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saturation_a"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-How to choose 
-\begin_inset Formula $\alpha_{C}$
+, we need to have access to maximum interaction strength.
+ This is never reached as the populations never tend to their maximum in
+ field conditions.
+ On the contrary, if we consider 
+\begin_inset Formula $H_{ij}$
 \end_inset
 
- et 
-\begin_inset Formula $\alpha_{M}$
+ coefficients, they tend to 
+\begin_inset Formula $\frac{a_{c}}{\alpha_{ij}}$
 \end_inset
 
-?
+ at low density
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+REPHRASE
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+.
+ We can begin with a proxy of the maximum competition strength 
+\begin_inset Formula $a_{C}=\sum_{j,j\neq i}|\alpha_{ij}|N_{j,max}$
+\end_inset
+
+, then compute all 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+How to a_M? 
 \begin_inset Formula 
 \[
 \alpha_{C},\alpha_{M}\text{ so that }\forall t,1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{M}N_{t,j}}{H_{ij}+N_{t,j}}>\exp(r_{i,max}(T))
@@ -918,83 +1089,13 @@ How to choose
 
 \end_layout
 
-\begin_layout Standard
-To compute 
-\begin_inset Formula $\alpha_{C}$
-\end_inset
-
-, compute 
-\begin_inset Formula $b_{i.,max}=-\sum_{j,j\neq i}|b_{ij}|N_{j}$
-\end_inset
-
- and translate into 
-\begin_inset Formula $\alpha_{C}$
-\end_inset
-
- (with classical BH formula ? or with saturating interactions (see equations
- above) ? With LV model? Using 
-\begin_inset Formula $\overline{N_{j}}$
-\end_inset
-
-, 
-\begin_inset Formula $N_{j,max}$
-\end_inset
-
-?) (or should we first compute 
-\begin_inset Formula $\alpha_{ij}$
-\end_inset
-
- and then 
-\begin_inset Formula $\alpha_{C}=\sum_{j,j\neq i}|\alpha_{ij}|N_{j}$
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-I'd rather do this one as the formula is non-linear and I fear that we distort
- the value if we first compute 
-\begin_inset Formula $b_{i.,max}$
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-And use 
-\begin_inset Formula $H_{ij}=\frac{\alpha_{C}}{\alpha_{ij}}$
-\end_inset
 
- ?
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Note from CP:
-\end_layout
-
-\begin_layout Itemize
-I don't think dimensions match.
-\end_layout
-
-\begin_layout Itemize
-Wouldn't 
-\begin_inset Formula $\sum\frac{\alpha_{C}N_{j,max}}{H_{ij}+N_{j,max}}>>\sum_{\in\mathbb{F}}\frac{\alpha_{M}N_{j,max}}{H_{ij}+N_{j,max}}$
-\end_inset
-
- be enough?
 \end_layout
 
 \end_body
