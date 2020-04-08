@@ -1103,7 +1103,12 @@ To compute
  is the maximum achievable growth rate for a species, included in a multi-specie
 s community (overyielding is not considered.
  Therefore, 
-\begin_inset Formula $1+0.3a_{C}+0.7a_{F}<\exp(r_{max})$
+\begin_inset Formula $1+0.3a_{C}+0.7a_{F}\geq1$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $0.3a_{C}+0.7a_{F}\geq0$
 \end_inset
 
 .
@@ -1115,7 +1120,7 @@ s community (overyielding is not considered.
 \end_inset
 
  could be used, leading to 
-\begin_inset Formula $1+0.3a_{C}+0.7a_{F}<O_{y}\exp(r_{max})$
+\begin_inset Formula $0.3a_{C}+0.7a_{F}\geq\frac{1}{O_{y}}-1$
 \end_inset
 
  (max 1.1 from Shurin et al.
@@ -1169,7 +1174,12 @@ Compute
 \end_inset
 
  so that 
-\begin_inset Formula $1+0.3a_{C}+0.7a_{F}<O_{y}\exp(r_{max})$
+\begin_inset Formula $0.3a_{C}+0.7a_{F}=\frac{1}{O_{y}}-1$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $a_{F}=\frac{1}{0.7}\left(\frac{1-O_{y}}{O_{y}}-0.3a_{C}\right)$
 \end_inset
 
  (for now, 

@@ -6,7 +6,7 @@ source("step_functions.r")
 source("../../script/matrix_MAR_clean.r")
 
 
-MAR2saturation=function(B,N_mean,N_max,max_g,O_y,ratio_pos){
+MAR2saturation=function(B,N_mean,N_max,O_y,ratio_pos){
 	#Step 1 translate MAR to classical BH
 	A=MAR2BH(B,N_mean)
 
@@ -16,7 +16,7 @@ MAR2saturation=function(B,N_mean,N_max,max_g,O_y,ratio_pos){
 
 	#Facilitation
 	#Compute max growth rate
-	a_F=(1/ratio_pos)*(O_y*exp(max_g)-1-(1-ratio_pos)*a_C)
+	a_F=(1/ratio_pos)*(1/O_y-1-(1-ratio_pos)*a_C)
 
 	#Step 3: compute corresponding half-saturation coefficients
 	#+We will need a matrix of these values for the step_function

@@ -57,9 +57,7 @@ abundances_tab=abundances_tab[year(dates)>=1996,name_spp]#Using data from 1996
 N_max=apply(abundances_tab,2,max,na.rm=T)
 N_mean=apply(abundances_tab,2,mean,na.rm=T)
 
-max_g=growth_rate_noMTE_Bissinger(273+25,273+25,1500,0.5) #25 degree is the maximum temperature we observe in Auger; 1500 is the maximum value we have for the generalist. We place ourselves in the best case scenario
-
-inter_mat=MAR2saturation(B_matrix,N_mean,N_max,max_g,O_y,ratio_pos)
+inter_mat=MAR2saturation(B_matrix,N_mean,N_max,O_y,ratio_pos)
 print("For now, interactions on the coast and in the ocean are the same")
 type_inter=list(inter_mat[[1]],inter_mat[[1]])
 list_H=list(inter_mat[[2]],inter_mat[[2]])
