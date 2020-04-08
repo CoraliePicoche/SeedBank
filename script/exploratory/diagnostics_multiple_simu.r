@@ -1,5 +1,5 @@
 ########################
-#20/02/2020 CP: "Sensitivity" analysis for certain parameters
+#20/02/2020 CP: "Sensitivity" analysis for certain parameters. DEPRECATED
 ########################
 
 rm(list=ls())
