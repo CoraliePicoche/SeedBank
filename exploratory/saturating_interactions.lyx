@@ -91,11 +91,15 @@ Steps
 
 \begin_layout Standard
 \align center
-\begin_inset Formula $1-\left\{ \begin{array}{ccc}
+\begin_inset Formula 
+\begin{equation}
+\left\{ \begin{array}{ccc}
 N_{t+h,i,c} & = & \frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}\\
 N_{t+h,i,o} & = & \frac{e^{r_{i}(T)}N_{t,i,o}}{1+k_{c2o}\sum_{j}\alpha_{ij}N_{t,j,o}}-lN_{t,i,o}\\
 N_{t+h,i,b} & = & N_{t,i,b}(1-m-\zeta)
-\end{array}\right.$
+\end{array}\right.\label{eq:step1}
+\end{equation}
+
 \end_inset
 
 
@@ -103,11 +107,15 @@ N_{t+h,i,b} & = & N_{t,i,b}(1-m-\zeta)
 
 \begin_layout Standard
 \align center
-\begin_inset Formula $2-\left\{ \begin{array}{ccc}
+\begin_inset Formula 
+\begin{equation}
+\left\{ \begin{array}{ccc}
 N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma N_{t+h,i,b}+eN_{t+h,i,o}\\
 N_{t+1,i,o} & = & N_{t+h,i,o}(1-s{}_{i}-e)+eN_{t+h,i,c}\\
 N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma)+s_{i}N_{t+h,i,c}
-\end{array}\right.$
+\end{array}\right.\label{eq:step2}
+\end{equation}
+
 \end_inset
 
 
@@ -853,9 +861,9 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 N_{t+1,i}=\frac{e^{r_{i}}N_{t,i}}{1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{a_{ij}N_{t,j}}{H_{F}+N_{t,j}}}
-\]
+\end{equation}
 
 \end_inset
 
@@ -872,9 +880,9 @@ Let's have
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 n_{t+1,i,c}=r_{i}+n_{t,i}-\log(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{t,j}}{H_{C}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{a_{ij}N_{t,j}}{H_{F}+N_{t,j}})
-\]
+\end{equation}
 
 \end_inset
 
@@ -904,9 +912,9 @@ We assume that there is an equilibrium for
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \frac{\partial X_{i}}{\partial n_{i}}=\frac{\partial X_{i}}{\partial N_{i}}\frac{\partial N_{i}}{\partial n_{i}}=\frac{\partial X_{i}}{\partial N_{i}}e^{n_{i}}
-\]
+\end{equation}
 
 \end_inset
 
@@ -944,9 +952,9 @@ Let's take it step by step:
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \frac{\partial u_{i}}{\partial N_{j}}=\partial\frac{a_{ij}N_{j}}{H_{\centerdot}+N_{j}}\frac{1}{\partial N_{j}}=\frac{a_{ij}(H_{\centerdot}+N_{j})-a_{ij}N_{j}}{(H_{\centerdot}+N_{j})2}=\frac{a_{ij}H_{\centerdot}}{(H_{\centerdot}+N_{j})^{2}}
-\]
+\end{equation}
 
 \end_inset
 
@@ -959,9 +967,9 @@ Therefore,
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \frac{\partial X_{i}}{\partial n_{j}}=\frac{a_{ij}H_{\centerdot}}{(H_{\centerdot}+N_{i})2}\frac{N_{j}}{\left(1+\sum_{j/a_{ij}\in\mathbb{C}}\frac{a_{ij}N_{j}}{H_{C}+N_{j}}+\sum_{j/a_{ij}\in\mathbb{F}}\frac{a_{ij}N_{j}}{H_{F}+N_{j}}\right)}
-\]
+\end{equation}
 
 \end_inset
 
@@ -1016,7 +1024,8 @@ noprefix "false"
 
 \end_inset
 
- might be too complex to help parameterize either 
+ might be too complex (cannot be linearized) to help parameterize either
+ 
 \begin_inset Formula $H_{ij}$
 \end_inset
 
@@ -1025,55 +1034,149 @@ noprefix "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Subsection*
-Alternative to direct Jacobian
+ Values at limit abundance can be used to approximate these parameters.
+ 
 \end_layout
 
 \begin_layout Standard
-In eq.
+When abundances tend to infinite, the interaction coefficient tends to 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+, which gives no information on the half-saturation coefficient.
+ However, it would be surprising that populations can reach their maximum
+ abundances in field conditions, and therefore their maximum competition
+ strengths.
+ In the absence of any information on the species-specific shape of the
+ interaction
+\end_layout
+
+\begin_layout Standard
+On the contrary, at low density (far from saturation), the system can be
+ modeled by a non-saturating function (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:saturation_a"
+reference "eq:nonsaturating"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
-, we need to have access to maximum interaction strength.
- This is never reached as the populations never tend to their maximum in
- field conditions.
- On the contrary, if we consider 
+).
+ Taking the tangent of the function at this point, 
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- coefficients, they tend to 
+ can be approximated by 
 \begin_inset Formula $\frac{a_{c}}{\alpha_{ij}}$
 \end_inset
 
- at low density
-\begin_inset Note Note
-status open
+ .
+ In this case, a proxy of the maximum competition strength 
+\begin_inset Formula $a_{C}$
+\end_inset
 
-\begin_layout Plain Layout
-REPHRASE
+ could be 
+\begin_inset Formula $\sum|\alpha_{ij}|N_{j,max}$
+\end_inset
+
+.
 \end_layout
 
+\begin_layout Subsection*
+Steps
+\end_layout
+
+\begin_layout Itemize
+Compute 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ from eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:nonsaturating"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (i.e.
+ from the derivation of Beverton-Holt and relationship with MAR interaction
+ coefficients 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Compute 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ from 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ as 
+\begin_inset Formula $\sum|\alpha_{ij}|N_{j,max}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Compute 
+\begin_inset Formula $H_{ij}=\text{\ensuremath{\frac{a_{C}}{\alpha_{ij}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optional: the tangent of the saturating function at low density might be
+ well-above the final type-II response.
+ In this case, multiplying 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ by 2 or 3 might be necessary to get closer to actual data.
+\end_layout
+
+\begin_layout Itemize
+Question: how to compute 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+? If overyielding is out of question (however, see Shurin et al.
+ 2014 where it was observed but not frequent), 
+\begin_inset Formula $1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{a_{C}N_{j,max}}{H_{ij}+N_{j,max}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{a_{F}N_{j,max}}{H_{ij}+N_{j,max}}<\exp(r_{i,max})$
 \end_inset
 
 .
- We can begin with a proxy of the maximum competition strength 
-\begin_inset Formula $a_{C}=\sum_{j,j\neq i}|\alpha_{ij}|N_{j,max}$
+ Otherwise, a factor can be applied.
+ Instead of 
+\begin_inset Formula $\exp(r_{i,max})$
 \end_inset
 
-, then compute all 
-\begin_inset Formula $H_{ij}$
+, 
+\begin_inset Formula $O_{y}\exp(r_{i,max})$
 \end_inset
 
-.
+ with 
+\begin_inset Formula $O_{y}$
+\end_inset
+
+ a overyielding factor (max 1.1 from Shurin et al.
+ 2014).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
