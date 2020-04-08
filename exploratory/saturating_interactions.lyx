@@ -782,8 +782,8 @@ where coefficients
 \begin_inset Formula $a_{F}$
 \end_inset
 
-are the maximum interaction strength for competition and facilitation respective
-ly, 
+ are the maximum interaction strength for competition and facilitation respectiv
+ely, 
 \begin_inset Formula $H_{ij}$
 \end_inset
 
@@ -815,6 +815,21 @@ ly,
 \end_inset
 
  in the case of light).
+ 
+\end_layout
+
+\begin_layout Standard
+In both formula, it is clear that the model has no unique solutions for
+ all coefficients.
+ Either 
+\begin_inset Formula $a_{\centerdot}$
+\end_inset
+
+ or 
+\begin_inset Formula $H_{\centerdot}$
+\end_inset
+
+ need to be fixed beforehand.
  
 \end_layout
 
@@ -1002,18 +1017,7 @@ b_{ij,i\neq j}= & \begin{cases}
 \end_layout
 
 \begin_layout Standard
-In both formula, it is clear that the model has no unique solutions for
- all coefficients.
- Either 
-\begin_inset Formula $a$
-\end_inset
-
- or 
-\begin_inset Formula $H$
-\end_inset
-
- need to be fixed beforehand.
- In addition to this constraint, the formula in eq.
+The formula in eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1070,7 +1074,7 @@ noprefix "false"
 \end_inset
 
  can be approximated by 
-\begin_inset Formula $\frac{a_{c}}{\alpha_{ij}}$
+\begin_inset Formula $\frac{a_{\centerdot}}{\alpha_{ij}}$
 \end_inset
 
  .
@@ -1083,6 +1087,39 @@ noprefix "false"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+To compute 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+, we can make two assumptions: a) there is about 70% facilitation in the
+ community (this is actually observed in Auger, and this high value can
+ help fix a maximum facilitation strength) and b) the growth rate 
+\begin_inset Formula $r$
+\end_inset
+
+ is the maximum achievable growth rate for a species, included in a multi-specie
+s community (overyielding is not considered.
+ Therefore, 
+\begin_inset Formula $1+0.3a_{C}+0.7a_{F}<\exp(r_{max})$
+\end_inset
+
+.
+ Overyielding can be debated though (see Schmidtke et al.
+ 2010 for underyielding and see Shurin et al.
+ 2014 for an observed but not frequent overyielding).
+ If we want a bit more flexibility, an overyielding factor 
+\begin_inset Formula $O_{y}$
+\end_inset
+
+ could be used, leading to 
+\begin_inset Formula $1+0.3a_{C}+0.7a_{F}<O_{y}\exp(r_{max})$
+\end_inset
+
+ (max 1.1 from Shurin et al.
+ 2014).
 \end_layout
 
 \begin_layout Subsection*
@@ -1127,12 +1164,24 @@ Compute
 \begin_inset Formula $\sum|\alpha_{ij}|N_{j,max}$
 \end_inset
 
+ and 
+\begin_inset Formula $a_{F}$
+\end_inset
 
+ so that 
+\begin_inset Formula $1+0.3a_{C}+0.7a_{F}<O_{y}\exp(r_{max})$
+\end_inset
+
+ (for now, 
+\begin_inset Formula $O_{y}=1$
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Itemize
 Compute 
-\begin_inset Formula $H_{ij}=\text{\ensuremath{\frac{a_{C}}{\alpha_{ij}}}}$
+\begin_inset Formula $H_{ij}=\text{\ensuremath{\frac{a_{\centerdot}}{\alpha_{ij}}}}$
 \end_inset
 
 
@@ -1153,48 +1202,7 @@ Question: how to compute
 \begin_inset Formula $a_{F}$
 \end_inset
 
-? If overyielding is out of question (however, see Shurin et al.
- 2014 where it was observed but not frequent), 
-\begin_inset Formula $1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{a_{C}N_{j,max}}{H_{ij}+N_{j,max}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{a_{F}N_{j,max}}{H_{ij}+N_{j,max}}<\exp(r_{i,max})$
-\end_inset
-
-.
- Otherwise, a factor can be applied.
- Instead of 
-\begin_inset Formula $\exp(r_{i,max})$
-\end_inset
-
-, 
-\begin_inset Formula $O_{y}\exp(r_{i,max})$
-\end_inset
-
- with 
-\begin_inset Formula $O_{y}$
-\end_inset
-
- a overyielding factor (max 1.1 from Shurin et al.
- 2014).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-How to a_M? 
-\begin_inset Formula 
-\[
-\alpha_{C},\alpha_{M}\text{ so that }\forall t,1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{\alpha_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{\alpha_{M}N_{t,j}}{H_{ij}+N_{t,j}}>\exp(r_{i,max}(T))
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+? 
 \end_layout
 
 \begin_layout Standard
