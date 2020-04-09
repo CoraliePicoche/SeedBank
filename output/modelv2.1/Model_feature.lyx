@@ -414,5 +414,11 @@ Interactions are the same in the ocean and in the coast.
  
 \end_layout
 
+\begin_layout Standard
+No quadratic programming can be applied to this model as it requires the
+ equilibrium constraint to be linear with respect to the interaction matrix.
+ 
+\end_layout
+
 \end_body
 \end_document

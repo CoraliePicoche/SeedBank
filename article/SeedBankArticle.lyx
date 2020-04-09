@@ -2201,8 +2201,10 @@ literal "false"
 \end_inset
 
 .
- It could however be turned into a delayed, density-dependent mortality
- to take into account phenomena such as predation (simplest form: 
+ 
+\change_deleted -2100369821 1586445991
+It could however be turned into a delayed, density-dependent mortality to
+ take into account phenomena such as predation (simplest form: 
 \begin_inset Formula $lN_{t-\tau,i,o/c}$
 \end_inset
 
@@ -2212,6 +2214,42 @@ where
 
  is the necessary lag between phytoplanktonic growth and predator response,
  for instance [look for ref, Reynolds not helpful here]).
+\change_inserted -2100369821 1586445991
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586445994
+It could however be turned into a delayed, density-dependent mortality to
+ take into account phenomena such as predation (simplest form: 
+\begin_inset Formula $lN_{t-\tau,i,o/c}$
+\end_inset
+
+where 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is the necessary lag between phytoplanktonic growth and predator response,
+ for instance [look for ref, Reynolds not helpful here]).
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586446030
+CP: I guess this remark is deprecated.
+ We want the delayed mortality to apply to intraspecific interaction strengths
+ (from last conversation 07/04/2020)
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -2230,8 +2268,52 @@ literal "false"
 
  for a discussion on the settling of phytoplanktonic cells compared to inorganic
  particles).
- The sinking rate of vegetative cells depends mostly on their size and shape,
- and can also be affected by their capacity to form colonies.
+ 
+\change_inserted -2100369821 1586443829
+Sinking is mostly affected by hydrodynamics, but at the species-level, 
+\change_deleted -2100369821 1586443835
+The sinking rate of vegetative cells depends mostly on their 
+\change_unchanged
+size
+\change_inserted -2100369821 1586443837
+,
+\change_deleted -2100369821 1586443839
+ and
+\change_unchanged
+ shape
+\change_deleted -2100369821 1586443909
+,
+\change_inserted -2100369821 1586443910
+ and
+\change_unchanged
+ 
+\change_inserted -2100369821 1586445557
+colony-formation capacity are key determinants of the particle floatation.
+ In this model, the sinking rate of each species is drawn from a beta distributi
+on with a mean value of 9%, and a maximum around 30%, that is 
+\begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
+\end_inset
+
+ (see Fig.
+ S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sinking-distribution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -2100369821 1586444267
+and can also be affected by their capacity to form colonies.
  Sinking is also affected by hydrodynamics: more turbulence and eddies can
  retain the cells at the top of the water column.
  In field conditions (Gotland Basin in central Baltic Sea), 
@@ -2290,9 +2372,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-An arbitrary
-\change_inserted -666822487 1584955937
 
+\change_deleted -2100369821 1586444267
+An arbitrary
 \begin_inset Note Note
 status open
 
@@ -2307,8 +2389,6 @@ It is NOT arbitrary! You chose it because its shape reproduced the observed
 
 \end_inset
 
-
-\change_unchanged
  beta distribution was selected, with a mean value close to the ones observed
  in both papers (between 9 and 10), and a maximum around 30%, that is 
 \begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
@@ -2330,6 +2410,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1586444267
 However, it should be noted that the sinking rate measured in these two
  articles represent the sinking of all cells, therefore including dead cells.
  In our model, it should represent the exchange of live cells between the
@@ -2364,7 +2446,17 @@ Cyst mortality and burial
 \end_layout
 
 \begin_layout Standard
-Cyst loss is a composite of cyst mortality 
+Cyst loss 
+\change_inserted -2100369821 1586445664
+is the result
+\change_deleted -2100369821 1586445609
+is a
+\change_unchanged
+ 
+\change_deleted -2100369821 1586445598
+composite
+\change_unchanged
+ of cyst mortality 
 \begin_inset Formula $m$
 \end_inset
 
@@ -2372,8 +2464,14 @@ Cyst loss is a composite of cyst mortality
 \begin_inset Formula $\zeta$
 \end_inset
 
+
+\change_inserted -2100369821 1586445591
+ because of burial by sedimentation
+\change_unchanged
 .
  
+\change_deleted -2100369821 1586444302
+
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -2383,7 +2481,11 @@ literal "false"
 
  provide species-specific values of mean and maximum depths at which cysts
  can still germinate.
- Corresponding mortality values range between 
+ Corresponding m
+\change_inserted -2100369821 1586444302
+M
+\change_unchanged
+ortality values range between 
 \begin_inset Formula $10^{-5}$
 \end_inset
 
@@ -2391,7 +2493,19 @@ literal "false"
 \begin_inset Formula $10^{-4}$
 \end_inset
 
- (more details on the approximation of mortality rates are given in SI).
+ (more details on the approximation of mortality rates 
+\change_inserted -2100369821 1586444322
+from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+ 
+\change_unchanged
+are given in SI).
  However, cyst burial by sedimentation
 \begin_inset Foot
 status open
@@ -2404,12 +2518,22 @@ Any idea for a better way to call it than burial?
 
  might be a prevailing phenomenum in driving phytoplanktonic dynamics.
  Once cysts have been buried, they are not accessible for resuspension even
- if they could have germinated.
+ if they could have germinated
+\change_inserted -2100369821 1586444870
+ if put in an accessible location
+\change_unchanged
+.
  Burial depends on the hydrodynamics of the site, but also on biotic processes
  (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
  activities (e.g., jet skiing).
  This parameter is thus heavily dependent on the environmental context we
- wish to describe.
+ wish to describe
+\change_inserted -2100369821 1586444526
+ and varies here between 0.01 and 0.3
+\change_deleted -2100369821 1586444515
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -2417,15 +2541,60 @@ Germination/resuspension
 \end_layout
 
 \begin_layout Standard
-Germination and resuspension might be difficult to differentiate as they
- are finally gathered in only one parameter (
+
+\change_deleted -2100369821 1586444443
+G
+\change_inserted -2100369821 1586445784
+G
+\change_unchanged
+ermination and resuspension 
+\change_inserted -2100369821 1586445856
+are both needed for cyst to get back to the water column
+\change_deleted -2100369821 1586444449
+might be difficult to differentiate as they are finally gathered in only
+ one parameter
+\change_unchanged
+ (
 \begin_inset Formula $\gamma=\text{resuspension\ensuremath{\times}germination})$
 \end_inset
 
 .
+
+\change_inserted -2100369821 1586445887
+ Following 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "agrawal_factors_2009"
+literal "false"
+
+\end_inset
+
+, we assume a temperature threshold: germination is triggered by temperatures
+ going above 15°C.
+ As actual rates of germination are not easily deduced from the literature,
+ a set of credible values are tested (1%, 0.1%, 0.01%).
+ Similarly, resuspension values are seldom computed for phytoplanktonic
+ cells, but models for other particles such as sediments can be used.
+ In this paper, we explore values between 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ (stratified water column) to 0.1 (highly mixed environment).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1586444686
 The germination process has been studied a lot.
  From 
 \begin_inset CommandInset citation
@@ -2459,9 +2628,13 @@ literal "false"
  fixed (1%, 0.1%, 0.01%) and the effect of their variation on the simulations
  is assessed.
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1586444720
 Resuspension values are seldom computed for phytoplanktonic cells, but models
  for other particles such as sediments can be used.
  Rates vary from one publication to another: in 
@@ -2526,6 +2699,8 @@ literal "false"
 \end_inset
 
  (stratified water column) to 0.1 (highly mixed environment).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2536,6 +2711,8 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1586445932
 Finally, it should be noted that cyst burial, sinking rate 
 \begin_inset Note Note
 status open
@@ -2544,7 +2721,7 @@ status open
 And even mortality is correlated with sinking rates, as the sinking rates
  measured in the literature do not discrimante seeds and dead cells.
  We therefore have something that should look like 
-\begin_inset Formula $(s_{i}+m_{i})N_{i}=$
+\begin_inset Formula $(s_{i}+\text{death}_{i})N_{i}=$
 \end_inset
 
  the observed sinking rate in 
@@ -2562,11 +2739,13 @@ literal "false"
 
 and resuspension are all dependent on the hydrodynamics of the place and
  are therefore, at least in biological terms, not identifiable.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 We have discussed several points that could/should be explored/implemented
@@ -3226,13 +3405,436 @@ At one point, we may have to compare the classification of generalist and
 
 \begin_layout Section*
 Supplementary Information
+\change_inserted -2100369821 1586443517
+
 \end_layout
 
 \begin_layout Subsection*
-Sinking rate distribution
+
+\change_inserted -2100369821 1586443567
+Parameterisation
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted -2100369821 1586443610
+This section contains additional information on certain parameter definitions.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\change_inserted -2100369821 1586443559
+Sinking rate
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586447274
+Among the hydrodynamics processes that drive sinking rate, turbulence and
+ eddies can retain the cells at the top of the water column, themselves
+ driven by tidal currents, shape of the estuary or wind conditions.
+ This is why lab experiments on sinking rates are not sufficient to calibrate
+ a field-based model.
+ Credible values for sinking rates are therefor taken from field studies.
+ In the Gotland Basin (central Baltic Sea), 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "passow_species-specific_1991"
+literal "false"
+
+\end_inset
+
+ measured a large variability in sinking rates, even within the same genus
+ (e.g., between 1 and 30% for 
+\shape italic
+Chaetoceros
+\shape default
+ spp.).
+ However, a pattern could be distinguished, with a small number of genera
+ that sinked more than the rest of the community.
+ The mean rate for 
+\shape italic
+Chaetoceros
+\shape default
+ and 
+\shape italic
+Thalassiosira
+\shape default
+ was around 10% while it was around 1% for the other species.
+ Sinking rate values around 10% are consistent with the loss rate values
+ in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kowe_modelling_1998"
+literal "false"
+
+\end_inset
+
+ in a river
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586443559
+So we may want to remove this one
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wiedmann_seasonality_2016"
+literal "false"
+
+\end_inset
+
+ in an estuary (mouth of Adventfjorden).
+ The chosen beta-distribution (Fig.
+ S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sinking-distribution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) therefore accounts for both maximum and mean values, while still allowing
+ a highly skewed distributions.
+ High sinking rates are kept for 
+\shape italic
+Chaetoceros
+\shape default
+ (CHA) and 
+\shape italic
+Thalassiosira 
+\shape default
+(THP)
+\shape italic
+.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586443637
+However, it should be noted that the sinking rate measured in these two
+ articles represent the sinking of all cells, therefore including dead cells.
+ In our model, it should represent the exchange of live cells between the
+ coast and the seed bank, or a loss of cells in the ocean.
+ Our sinking rate might therefore need to be decreased to avoid modeling
+ dead cells already taken into account in the loss term.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586443637
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted -2100369821 1586443637
+\begin_inset Graphics
+	filename ../output/beta_law.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586443637
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586443637
+Possible beta-distribution of sinking rates 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sinking-distribution"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\change_inserted -2100369821 1586446190
+Cyst mortality
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586447366
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+ present maximum and mean depth at which germination of diatoms and dinoflagella
+tes could still occur when incubated.
+ The authors also present sediment datation according to depth.
+ Depth can therefore be related to maximum and mean age of phytoplankton
+ cysts before death.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586446190
+Assuming 
+\begin_inset Formula $m$
+\end_inset
+
+ is the probability of mortality, 
+\begin_inset Formula $m$
+\end_inset
+
+ follows a geometric law, i.e., m is the probability distribution of the number
+ of days needed for a phytoplankon cyst to die.
+ The expectancy for the life duration (the number of days without dying)
+ is 
+\begin_inset Formula $\frac{\ensuremath{1}}{m}\Leftrightarrow m=\frac{1}{L_{mean}}$
+\end_inset
+
+where 
+\begin_inset Formula $L_{mean}$
+\end_inset
+
+ is the average life duration.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586446190
+Another way to look at the process is that life expectancy 
+\begin_inset Formula $L$
+\end_inset
+
+ follows the distribution 
+\begin_inset Formula $p(L>l)=e^{-ml}.$
+\end_inset
+
+With maximum values, we can arbitrarily choose that for these values 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p(L>l_{max})=0.05$
+\end_inset
+
+.
+ In this, 
+\begin_inset Formula $m=-\frac{ln(p(L>l_{max}))}{l_{max}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586446190
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+In both cases, 
+\begin_inset Formula $m\propto10^{-4}\text{\text{d}}^{-1}$
+\end_inset
+
+.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\change_inserted -2100369821 1586447642
+Resuspension
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586448098
+As mentioned in the main text, resuspension values are mostly taken from
+ model or data for inorganic particles.
+ Rates vary from one publication to another: in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "fransz_modelling_1985"
+literal "false"
+
+\end_inset
+
+ in a coastal area, the resuspension rate of sediments is evaluated around
+ 
+\begin_inset Formula $5.10^{-5}$
+\end_inset
+
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ in winter and decreases in summer
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586443559
+no value is given
+\end_layout
+
+\end_inset
+
+, with a link between resuspension and light extinction coefficient.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kowe_modelling_1998"
+literal "false"
+
+\end_inset
+
+, the resuspension rate of diatoms is evaluated around 
+\begin_inset Formula $1.9.10^{-5}$
+\end_inset
+
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "le_pape_pelagic_1999"
+literal "false"
+
+\end_inset
+
+, resuspension rate of sediments and dead diatoms is 0.002 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+ In this paper, we explore values between 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ (stratified water column) to 0.1 (highly mixed environment).
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586445943
+Finally, it should be noted that cyst burial, sinking rate 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586445943
+And even mortality is correlated with sinking rates, as the sinking rates
+ measured in the literature do not discrimante seeds and dead cells.
+ We therefore have something that should look like 
+\begin_inset Formula $(s_{i}+\text{death}_{i})N_{i}=$
+\end_inset
+
+ the observed sinking rate in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "passow_species-specific_1991"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+and resuspension are all dependent on the hydrodynamics of the place and
+ are therefore, at least in biological terms, not identifiable.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1586443559
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\change_deleted -2100369821 1586443647
+Sinking rate distribution
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -2100369821 1586443644
 \begin_inset Float figure
 wide false
 sideways false
@@ -3270,6 +3872,8 @@ name "fig:Sinking-distribution"
 
 \end_inset
 
+
+\change_unchanged
 
 \end_layout
 
@@ -4125,30 +4729,59 @@ In addition to quadratric programming which aims to get closer to observed
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1586252433
+\change_inserted -2100369821 1586446063
 species-abundance distribution within each month/each semester/each season
  (see SAD in output/modelev1.1/)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586446065
+Maybe not this one
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1586252462
+\change_inserted -2100369821 1586446111
 phenology can be checked with the date of the beginning of the bloom for
- each year
+ each year (and its duration, just to check that it doesn't last the whole
+ year)
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1586252559
+\change_inserted -2100369821 1586446087
 dynamics themselves can be used.
  To avoid artefacts created by average abundances over the year, an idea
  would be stabilize the model on synthetic temperatures, then use the actual
  observed temperature to observe the simulated dynamics year after year.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1586446135
+OR just average abundances and amplitude of variation (min-max) 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1586252570
+\change_inserted -2100369821 1586446054
 In all cases, a simple measure of |obs-sim|
 \begin_inset space ~
 \end_inset
@@ -4159,11 +4792,17 @@ might be enough.
 
 \begin_layout Subsubsection*
 
+\change_deleted -2100369821 1586446181
+
 \series bold
 Mortality in the sediment
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1586446178
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -4180,6 +4819,8 @@ tes occurred in sediments.
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1586446178
 Assuming 
 \begin_inset Formula $m$
 \end_inset
@@ -4203,6 +4844,8 @@ where
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1586446178
 Another way to look at the process is that life expectancy 
 \begin_inset Formula $L$
 \end_inset
@@ -4239,6 +4882,8 @@ With maximum values, we can arbitrarily choose that for these values
 
 \begin_layout Standard
 
+\change_deleted -2100369821 1586446178
+
 \family roman
 \series medium
 \shape up
@@ -4270,6 +4915,8 @@ In both cases,
 \noun default
 \color inherit
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

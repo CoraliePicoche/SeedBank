@@ -127,7 +127,7 @@ Methods
 \end_layout
 
 \begin_layout Subsection*
-Model
+Models
 \end_layout
 
 \begin_layout Itemize
@@ -142,6 +142,24 @@ focus on the growth rate and the alterations that were made on the Scranton
  Details will be given in SI)
 \end_layout
 
+\begin_layout Itemize
+Variations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classical BH model: Type I functional response, with a threshold
+\end_layout
+
+\begin_layout Itemize
+Saturating interaction model (type II functional response)
+\end_layout
+
+\begin_layout Itemize
+Delayed mortality (with a delay on the intraspecific interaction coefficient?)
+\end_layout
+
+\end_deeper
 \begin_layout Subsection*
 Parameters from the literature
 \begin_inset Foot
@@ -214,12 +232,30 @@ Definition of generalist vs specialist, definition of the way we infer which
 \end_layout
 
 \begin_layout Subsubsection*
+Calibration
+\end_layout
+
+\begin_layout Itemize
 Quadratic programming
 \end_layout
 
 \begin_layout Standard
 Definition by Bazaara, use in Maynard, implementation here (on mean abundances
  and interactions only, contrary to what is done in their paper).
+\end_layout
+
+\begin_layout Itemize
+Calibration of the interactions, based on dynamics
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is TOO MUCH calibration (this one and below).
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Subsubsection*
