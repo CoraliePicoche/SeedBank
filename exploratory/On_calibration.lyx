@@ -1,0 +1,234 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\usepackage{graphicx}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+On calibration
+\end_layout
+
+\begin_layout Subsection*
+Parameters to calibrate
+\end_layout
+
+\begin_layout Standard
+Regarding calibration on real data, we first thought of assessing the effect
+ of the parameters on which we had the most uncertainty.
+ We first called it a sensitivity analyses, but if we also plan to use the
+ best results afterwards for the rest of the simulations, this may be simply
+ called a calibration (with a few words on the variability of the results
+ with other parameters, which could be used in the discussion).
+ 
+\end_layout
+
+\begin_layout Standard
+As a reminder, the first parameters we wished to calibrate
+\end_layout
+
+\begin_layout Itemize
+sinking rate 
+\begin_inset Formula $\{0.1;0.3;0.5\}\beta(0.55,1.25)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+cyst mortality and burial 
+\begin_inset Formula $\approx10^{-4}/10^{-5}\times{0.01;0.1;0.3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+germination/resuspension 
+\begin_inset Formula ${0.1;0.01;0.001}*{10^{-5},0.1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This already means 10*11 parameters if we don't consider ranges.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then, when designing new models, we considered calibrating on interactions
+ too.
+ 
+\end_layout
+
+\begin_layout Standard
+Calibration by quadratic programming is only possible for linear 
+\end_layout
+
+\begin_layout Standard
+However, this would mean scanning a space of 49 parameters.
+ In the best case scenario, if we vary one parameter after the other (OAT,
+ Morris-style?) with only two values around the calculated interactions
+ (+/- 10 %, for instance), this still mean 49*48*3=7056 simulations.
+ If we want to vary all parameters together (for instance 
+\begin_inset Formula $a_{11}^{'}=1.1a_{11}\cap a_{12}^{'}=1.1a_{12}$
+\end_inset
+
+ with all other parameters at their first value, etc.), this means 
+\begin_inset Formula $C_{49*3,49}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Each simulation is very short, but we at least need to discuss this before
+ lauching all simulations.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Diagnostics
+\end_layout
+
+\begin_layout Standard
+We first considered:
+\end_layout
+
+\begin_layout Itemize
+SAD
+\end_layout
+
+\begin_layout Itemize
+direct calibration on annual dynamics (
+\begin_inset Quotes eld
+\end_inset
+
+burn-in
+\begin_inset Quotes erd
+\end_inset
+
+ on first 10 years with synthetic temperature data, then using actual temperatur
+e to compare the dynamics)
+\end_layout
+
+\begin_layout Itemize
+phenology based on the beginning of the bloom (maybe duration and number)
+\end_layout
+
+\begin_layout Standard
+However, I think this could be too restrictive if we just want 
+\begin_inset Quotes eld
+\end_inset
+
+phytoplankton-like
+\begin_inset Quotes erd
+\end_inset
+
+ dynamics, and not the exact simulation of all species.
+ Instead, we could simply have
+\end_layout
+
+\begin_layout Itemize
+average abundance
+\end_layout
+
+\begin_layout Itemize
+amplitude of the cycles
+\end_layout
+
+\begin_layout Itemize
+beginning of the bloom
+\end_layout
+
+\end_body
+\end_document
