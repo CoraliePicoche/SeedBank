@@ -1,0 +1,370 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\usepackage{graphicx}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Models with delays
+\end_layout
+
+\begin_layout Standard
+We discussed several scenarios to build a third model with delay, with two
+ different assumptions.
+\end_layout
+
+\begin_layout Subsection*
+Interactions are all due to exploitation
+\end_layout
+
+\begin_layout Standard
+In this case, exploitation can describe parasitism or predation.
+ Interactions can be mediated by exploitation in different scenarii: an
+ increase in abundance at time 
+\begin_inset Formula $t$
+\end_inset
+
+ stimulates the growth of exploiters, which leads to negative effects later
+ on.
+ Conversely, when a predator is able to switch from one prey species to
+ another, an apparent mutualis can emerge.
+ In the case where parasitism is the dominant driver, we can assume the
+ exploitation is species-specific and therefore competition only appears
+ on the intraspecific interaction coefficient.
+ In the case where predation is the most important process, we consider
+ exploiters are generalist and act on all species.
+ 
+\end_layout
+
+\begin_layout Standard
+In all cases, we define the interaction coefficient as a saturating function
+ of density at time 
+\begin_inset Formula $t-k$
+\end_inset
+
+ where k is the delay that can vary depending on the biology of considered
+ exploiters.
+ This saturating function can simply be taken from model II, whether it
+ is for competition and mutualism.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\alpha_{t,ij} & = & f(N_{t-k,j})\\
+\alpha_{t,ij} & = & \frac{a_{C}}{h_{ij}+N_{t-k,j}}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For all other interactions, for consistency reason, we keep the saturating
+ version of the interactions.
+\end_layout
+
+\begin_layout Subsubsection*
+Species-specific exploitation (
+\begin_inset Quotes eld
+\end_inset
+
+virus scenario
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+The only interactions that are modified are the intraspecific interactions.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{t+h,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j,j\neq i}\frac{a_{C}}{h_{ij}+N_{t,j}}N_{t,j}+\frac{a_{C}}{h_{ii}+N_{t-k,i}}N_{t,i}}-lN_{t,i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can assume that 
+\begin_inset Formula $k$
+\end_inset
+
+, the delay between the abundance of the competitor, is rather small as
+ virus/fungi have a high growth rate, maybe a high transmission rate, and
+ may react quicly to an increase in abundance.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Generalist exploitation (
+\begin_inset Quotes eld
+\end_inset
+
+zooplankton predation
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+In this case, all interactions are modified and predators depend on the
+ total density of species.
+ For each time step, we define 
+\begin_inset Formula $N_{t,T}=\sum_{i}N_{t,i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{t+h,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\frac{a_{C}}{h_{T}+N_{t-k,T}}N_{t,j}}-lN_{t,i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can assume a larger k (15 days?) as zooplankton is assumed to grow slower
+ than parasites.
+ 
+\end_layout
+
+\begin_layout Standard
+How to define 
+\begin_inset Formula $h_{T}$
+\end_inset
+
+ ? First, simplest proposition: 
+\begin_inset Formula $h_{T}=\sum_{i,j}h_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Loss rate is delayed
+\end_layout
+
+\begin_layout Standard
+In this case, we emphasise on the loss rate.
+ Interactions depend on processes different from exploitation: competition
+ can emerge from scarce nutrients, mutualism, on the other hand, can either
+ emerge from auxotrophy also beneficial to other species.
+ Loss still depends partly on the predation and is therefore subject to
+ the same type of transformation.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+l_{t}=\frac{l_{max}}{h_{l}+N_{t-k,j}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $l_{max}$
+\end_inset
+
+ is the maximum loss rate (when N tends to infinity) while 
+\begin_inset Formula $h_{l}$
+\end_inset
+
+ is the abundance for which loss rate is half of its maximum value.
+ For the sake of simplicity, we do not use a species-specific loss rate.
+\end_layout
+
+\begin_layout Standard
+In this case, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{t+h,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\frac{a_{C}}{h_{ij}+N_{t,j}}N_{t,j}}-l_{t}N_{t,i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+How to defined 
+\begin_inset Formula $l_{max}$
+\end_inset
+
+ and 
+\begin_inset Formula $l_{s}$
+\end_inset
+
+? Finding a maximum and half-saturation mortality rate could first depend
+ on the way 
+\begin_inset Formula $l$
+\end_inset
+
+ is determined.
+ Unfortunately, Scranton & Vasseur (2016), from whom we use the value 15kg/(kg*y
+ear)=0.04, do not give a reference for their value.
+ This is especially problematic as this value is in the lowest part of the
+ range of values found in the literature, often even 10 times lower.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Parameter values
+\end_layout
+
+\begin_layout Standard
+Several studies have studied the primary production loss rate to virus and
+ grazers.
+ A rapid screening gives the following values: [0.02;0.11] in Li & al.
+ (2000) in a model of the Strait of Georgia in the absence of zooplankton
+ grazing (the maximum zooplankton grazing in this case is between 0.03 and
+ 0.87, all rates being in day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+); Chen et al.
+ 2009 found 88% +/- 38%, sometimes reaching 225% of the total primary production
+, for a population made of up to 25% of microphytoplankton (the rest being
+ nanophyto and picophyto, the last one representing 72% of the total chlorophyll
+-a - hard to really know the mortality of diatoms when the population is
+ driven by Prochlorococcus and Synechococcus); in their review, Sarthou
+ et al.
+ (2005) give values between 45 and 110% only due to grazing, 0.13 potentially
+ due to cell autolysis (in the absence of nutrients, or because of viral
+ charge).
+ 
+\end_layout
+
+\begin_layout Standard
+However, these values are taken either on the current primary production
+ or the standing stock while we want to link mortality to a previous abundance.
+ In the absence of supplementary informatio, a first proxy could be a 50%
+ maximum loss rate (still in the lower part of the range), with 
+\begin_inset Formula $h_{l}$
+\end_inset
+
+ so that at very low density, the mortality rate is 0.04 (i.e., 
+\begin_inset Formula $h_{l}=\frac{l_{max}}{l}$
+\end_inset
+
+ with 
+\begin_inset Formula $l$
+\end_inset
+
+ the initial value we had, 4%), 
+\begin_inset Formula $h_{l}=12.5$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
