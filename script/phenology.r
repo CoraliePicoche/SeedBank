@@ -1,6 +1,6 @@
 ## 11/03/2020 CP: phenology of species
-#21/03/2020 Corrected a bug on the beginning of the time series and added histogram per species, and overall
-
+#21/03/2020 Corrected a bug on the beginning of the time series and added histogram per species, and overall plots
+#15/04/20 Added mean amplitude and season of the first bloom
 
 rm(list=ls())
 graphics.off()
@@ -8,6 +8,8 @@ library(lubridate)
 library(zoo)
 
 threshold=0.5
+
+doyouplot=F
 
 start_duration_bloom_new=function(time_series_interp,date_bis,hydro_interp,threshold){ #This function takes interpolated time series (abundance and temperature here) with corresponding dates to detect blooming beginning and end (and thus duration) and temperature for bloom. Beginning of the bloom is defined as the date when abundances goes above a certain threshold
         gradient=diff(time_series_interp)
@@ -114,7 +116,9 @@ dates_hydro=dates_hydro[year(dates_hydro)>=1996]
 yy=unique(year(dates))
 
 #name_spp=c("CHA")
+if(doyouplot){
 pdf("output/time_series_persp_peryear.pdf",width=17.5,height=15)
+}
 par(mfrow=c(5,5),mar=c(3,3,3,3))
 #name_spp=c("LEP")
 #yy=2001
@@ -124,7 +128,7 @@ total_bloom_final=c()
 temp_min_final=c()
 temp_mean_final=c()
 
-tab=array(NA,dim=c(length(name_spp),length(yy),4),dimnames=list(name_spp,as.character(yy),c("Sum_duration","Nb_blooms","Temp_min","Temp_mean")))
+tab=array(NA,dim=c(length(name_spp),length(yy),6),dimnames=list(name_spp,as.character(yy),c("Sum_duration","Nb_blooms","Temp_min","Temp_mean","Amplitude","Season")))
 
 for(sp in name_spp){
 	plot(0,0,t="n",xlab="",ylab="")
@@ -166,6 +170,17 @@ for(sp in name_spp){
 		tab[sp,yc,"Nb_blooms"]=length(x[[1]])
 		tab[sp,yc,"Temp_min"]=min(x[[4]])
 		tab[sp,yc,"Temp_mean"]=mean(x[[4]])
+		tab[sp,yc,"Amplitude"]=max(abundances_tab_y,na.rm=T)-min(abundances_tab_y,na.rm=T)
+		
+		month_beginning=month(as.Date(x[[1]][1]))
+		if((month_beginning>=3&month_beginning<5)|(month_beginning>=9&month_beginning<=11)){ #blooms in spring or autumn
+			tab[sp,yc,"Season"]=1
+		}else if(month_beginning>=5&month_beginning<9){ #blooms in summer
+			tab[sp,yc,"Season"]=2
+		}else{ #blooms in winter
+			tab[sp,yc,"Season"]=0
+		}
+
 
 		if(is.null(x[[1]])){
 			x[[1]]=NA
@@ -206,7 +221,10 @@ for(sp in name_spp){
 
 dev.off()
 
+
+if(doyouplot){
 pdf("output/summary_all_indices.pdf",width=7.5,height=3)
+}
 par(mfrow=c(1,3),mar=c(4,4,1,1))
 	hist(total_bloom_final,main="",xlab="Bloom/year")
 	abline(v=median(total_bloom_final),col="red")
@@ -220,15 +238,19 @@ dev.off()
 
 ##Write table: a species is a generalist if the sum of all durations for a year exceeds 122 days for at least 15 years 
 ## T_opt is the mean of Temp_min
-table_to_write=matrix(NA,length(name_spp),3,dimnames=list(name_spp,c("Type","Mean_length","T_opt")))
+table_to_write=matrix(NA,length(name_spp),5,dimnames=list(name_spp,c("Type","Mean_length","T_opt","Mean_amplitude","Season")))
 for(s in name_spp){
-	nb_dur=sum(tab[s,,"Sum_duration"]>137)
+	nb_dur=sum(c(tab[s,,"Sum_duration"])>137)
 	table_to_write[s,"Mean_length"]=mean(tab[s,,"Sum_duration"])
 	table_to_write[s,"T_opt"]=mean(tab[s,,"Temp_mean"])
+	table_to_write[s,"Mean_amplitude"]=mean(tab[s,,"Amplitude"])
+	tmp=table(tab[s,,"Season"])
+	table_to_write[s,"Season"]=names(tmp)[which(tmp==max(tmp))]
 	if(nb_dur>=15){
 		table_to_write[s,"Type"]="G"
 	}else{
 		table_to_write[s,"Type"]="S"
 	}
+
 }
-write.table(table_to_write,"param/generalist_specialist_spp.csv",sep=";",dec=".") #To be read with read.table(...,row.names=T,header=T)
+write.table(table_to_write,"param/generalist_specialist_spp_added_amplitude_season.csv",sep=";",dec=".") #To be read with read.table(...,row.names=T,header=T)

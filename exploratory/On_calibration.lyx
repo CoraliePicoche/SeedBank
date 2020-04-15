@@ -82,6 +82,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \author -666822487 "frederic"
 \end_header
 
@@ -96,67 +97,17 @@ Types of parameters
 \end_layout
 
 \begin_layout Standard
-The parameters we 
-\change_deleted -666822487 1586945772
-present
-\change_inserted -666822487 1586945773
-consider
-\change_unchanged
- are all characterized by a high degree of uncertainty.
- 
-\change_inserted -666822487 1586945821
-This follows from the fact that we 
-\change_deleted -666822487 1586945824
-The derivation of
-\change_inserted -666822487 1586945824
-derive
-\change_unchanged
- certain parameters from different model structures
-\change_inserted -666822487 1586945843
- (e.g., interaction models with different time scales like 15 days)
-\change_unchanged
-, 
-\change_deleted -666822487 1586945888
-the use values from other sites or other groups of species
-\change_inserted -666822487 1586945911
-that aggregated groups of species are monitored rather than single species
- or morphotypes
-\change_unchanged
-, or even different types of particles
-\change_deleted -666822487 1586945923
-, are all pragmatic solutions 
-\change_inserted -666822487 1586945933
-.
- While we take care to implement pragmatic solutions, 
-\change_deleted -666822487 1586945954
-but require
-\change_inserted -666822487 1586945957
-this calls for
-\change_unchanged
- a special attention 
-\change_deleted -666822487 1586945960
-on
-\change_inserted -666822487 1586945961
-given to
-\change_unchanged
- the calibration and sensitivity of the model
-\change_inserted -666822487 1586945976
- to parameters
-\change_deleted -666822487 1586945967
- to uncertainty
-\change_unchanged
-.
- 
+The parameters we consider are all characterized by a high degree of uncertainty.
+ This follows from the fact that we derive certain parameters from different
+ model structures (e.g., interaction models with different time scales like
+ 15 days), that aggregated groups of species are monitored rather than single
+ species or morphotypes, or even different types of particles.
+ While we take care to implement pragmatic solutions, this calls for a special
+ attention given to the calibration and sensitivity of the model to parameters.
 \end_layout
 
 \begin_layout Standard
-In this context, 
-\change_deleted -666822487 1586945985
-there are
-\change_inserted -666822487 1586945988
-we distinguish
-\change_unchanged
- several types of parameters:
+In this context, we distinguish several types of parameters:
 \end_layout
 
 \begin_layout Itemize
@@ -164,101 +115,26 @@ we distinguish
 \series bold
 calibrated parameters
 \series default
- 
-\change_inserted -666822487 1586946281
-are parameters for which we have initial estimates, but without those estimates
+ are parameters for which we have initial estimates, but without those estimates
  being exact; hence the need for calibration.
- 
-\change_deleted -666822487 1586946267
-that
-\change_inserted -666822487 1586946286
-These will, after calibration,
-\change_unchanged
- 
-\change_deleted -666822487 1586946293
-are then
-\change_inserted -666822487 1586946293
-be
-\change_unchanged
- 
-\change_deleted -666822487 1586946000
-fixed
-\change_inserted -666822487 1586946005
-set to a constant value
-\change_unchanged
- in the model
-\change_inserted -666822487 1586946315
+ These will, after calibration, be set to a constant value in the model
  considered.
- They include 
-\change_deleted -666822487 1586946310
-: 
-\change_unchanged
-phenology-based parameters (guesstimated
-\change_inserted -666822487 1586946323
- based on time series
-\change_unchanged
-), interaction parameters (use of 
-\change_deleted -666822487 1586946016
-direct
-\change_inserted -666822487 1586946017
-estimated
-\change_unchanged
- values
-\change_inserted -666822487 1586946330
- by MAR models
-\change_unchanged
-, and +/- 10% around this value).
- 
-\change_deleted -666822487 1586946371
-These values will be called 
-\series bold
-fixed parameters
-\series default
- hereafter as they won't be changed in the model.
-\change_unchanged
-
+ They include phenology-based parameters (guesstimated based on time series),
+ interaction parameters (use of estimated values by MAR models, and +/-
+ 10% around this value).
 \end_layout
 
 \begin_layout Itemize
 so-called
 \series bold
- 
-\change_deleted -666822487 1586946375
-free
-\change_inserted -666822487 1586946377
-fixed
-\change_unchanged
- parameters
+ fixed parameters
 \series default
- for which we select a specific parameter set 
-\change_deleted -666822487 1586946061
-among the different proposed values 
-\change_inserted -666822487 1586946408
-or a single value with some degree of arbitrariness 
-\change_unchanged
-(see sets of values in the Table: chosen values will most certainly be the
- middle one
-\change_inserted -666822487 1586946077
- by default
-\change_unchanged
-)
-\change_inserted -666822487 1586946093
-.
- We will investigate how
-\change_deleted -666822487 1586946087
- and see
-\change_unchanged
- changes in the final abundances and amplitudes of the total population
-\change_inserted -666822487 1586946419
- result from changes in these fixed parameter values
-\change_unchanged
-.
- 
-\change_deleted -666822487 1586946134
-These parameters can be related to different biological phenomena.
- 
-\change_unchanged
-These parameters are the sinking rate 
+ for which we select a specific parameter set or a single value with some
+ degree of arbitrariness (see sets of values in the Table: chosen values
+ will most certainly be the middle one by default).
+ We will investigate how changes in the final abundances and amplitudes
+ of the total population result from changes in these fixed parameter values.
+ These parameters are the sinking rate 
 \begin_inset Formula $s$
 \end_inset
 
@@ -275,58 +151,12 @@ These parameters are the sinking rate
 \end_inset
 
 .
- 
-\change_inserted -666822487 1586946172
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1586946450
-In my view, these won't be 
-\begin_inset Quotes eld
-\end_inset
-
-free
-\begin_inset Quotes erd
-\end_inset
-
-! 
-\begin_inset Quotes eld
-\end_inset
-
-Fixed
-\begin_inset Quotes erd
-\end_inset
-
- traduce the fact that 
-\emph on
-we 
-\emph default
-fixed those.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-parameters used 
-\change_deleted -666822487 1586946142
-in the
-\change_inserted -666822487 1586946146
-to define ecological
-\change_unchanged
- scenarii
+parameters used to define ecological scenarii
 \series default
 : the exchange rate 
 \begin_inset Formula $e$
@@ -337,83 +167,36 @@ to define ecological
 \end_inset
 
 , this time set to 0 to make the seed bank virtually disappear).
-
-\change_inserted -666822487 1586946468
  We can call these 
 \series bold
 scenario parameters
 \series default
 .
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 The effect of change in parameters is assessed with several diagnostics.
- 
 \end_layout
 
 \begin_layout Subsection*
-Diagnostics
-\change_inserted -666822487 1586946600
- of model fit
+Diagnostics of model fit
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1586946609
 aka Summary statistics.
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-We 
-\change_deleted -666822487 1586946523
-only
-\change_inserted -666822487 1586946527
-initially 
-\change_deleted -666822487 1586946526
- 
-\change_unchanged
-want
-\change_inserted -666822487 1586946529
- to model
-\change_unchanged
- phytoplankton-like dynamics corresponding to different morphotypes
-\change_inserted -666822487 1586946537
- or species
-\change_unchanged
-.
- Even though these groups may be 
-\change_deleted -666822487 1586946514
-linked
-\change_inserted -666822487 1586946518
-loosely mapped
-\change_unchanged
- with groups of species in the 
-\change_deleted -666822487 1586946507
-studied
-\change_inserted -666822487 1586946507
-target
-\change_unchanged
- dataset, we do not aim to
-\change_deleted -666822487 1586946551
- model them separately and with a good precision
-\change_inserted -666822487 1586946562
- reproduce exactly the observed dynamics
-\change_unchanged
-.
+We initially want to model phytoplankton-like dynamics corresponding to
+ different morphotypes or species.
+ Even though these groups may be loosely mapped with groups of species in
+ the target dataset, we do not aim to reproduce exactly the observed dynamics.
  In addition to the persistence of all 11 species, the diagnostics we use
  are therefore the following:
 \end_layout
@@ -451,25 +234,20 @@ This is not always true: some sites are known for their winter bloom; Arcachon
 \end_inset
 
 .
- We give a score of 0
-\change_deleted -666822487 1586946635
- point
-\change_unchanged
- if the species fall into the right period, 1 point if it falls in the other
- probable period, 2 points if the species bloom in winter.
+ We give a score of 0 if the species fall into the right period, 1 point
+ if it falls in the other probable period, 2 points if the species bloom
+ in winter.
  
-\change_inserted -666822487 1586946671
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1586946713
 This sounds to me like a pragmatic solution so long as we don't have winter
  specialists.
  You could simplify this by having for each species only 0 and 1 scores
  if they fall in the right period for them.
+
+\change_deleted -2100369821 1586954393
  
 \change_unchanged
 
@@ -477,8 +255,6 @@ This sounds to me like a pragmatic solution so long as we don't have winter
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -486,16 +262,14 @@ This sounds to me like a pragmatic solution so long as we don't have winter
 Scaling and weights can be attributed to each diagnostics and summarized
  into a single objective function.
  
-\change_inserted -666822487 1586946723
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1586946747
 I don't know if this is obvious, but what you propose here looks a lot like
  ABC computation.
+
+\change_deleted -2100369821 1586954393
  
 \change_unchanged
 
@@ -504,16 +278,10 @@ I don't know if this is obvious, but what you propose here looks a lot like
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsection*
 Interaction calibration
-\change_deleted -666822487 1586946844
- - fixed parameters
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -547,31 +315,16 @@ nt draws) allows to converge progressively towards the parameters.
 \end_layout
 
 \begin_layout Subsection*
-
-\change_deleted -666822487 1586946847
-Free
-\change_inserted -666822487 1586946847
-Fixed
-\change_unchanged
- parameters - test for biological hypotheses
-\change_inserted -666822487 1586946871
-
+Fixed parameters - test for biological hypotheses
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1586946888
 These are all dispersal-in-time parameters btw.
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -612,25 +365,6 @@ germination/resuspension
 Even though these are not the focus of the paper, variations in these values
  could at least be discussed at the end of the paper to improve our hindsight
  on the results.
- 
-\change_inserted -666822487 1586946899
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1586946901
-Yes.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \end_body

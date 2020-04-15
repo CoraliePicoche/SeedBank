@@ -82,46 +82,26 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \author -666822487 "frederic"
 \end_header
 
 \begin_body
 
 \begin_layout Title
-Models with delays
-\change_inserted -666822487 1586946994
- in intra- and inter-specific interactions
-\change_unchanged
-
+Models with delays in intra- and inter-specific interactions
 \end_layout
 
 \begin_layout Subsection*
-Interactions are all 
-\change_inserted -666822487 1586947010
-indirect effects of
-\change_deleted -666822487 1586947011
-due to
-\change_unchanged
- exploitation
+Interactions are all indirect effects of exploitation
 \end_layout
 
 \begin_layout Standard
-In this case, 
-\change_inserted -666822487 1586947047
-we consider – based on leads explored in our previous work – that interactions
- between and within species are in fact largerly driven by an unmodelled
- 
-\change_unchanged
-exploitation
-\change_inserted -666822487 1586947054
- process, which
-\change_unchanged
- can describe parasitism or predation
-\change_inserted -666822487 1586947079
- (i.e., natural enemies such a viruses, fungi or larger predators such as
- copepods)
-\change_unchanged
-.
+In this case, we consider – based on leads explored in our previous work
+ – that interactions between and within species are in fact largely driven
+ by an unmodelled exploitation process, which can describe parasitism or
+ predation (i.e., natural enemies such a viruses, fungi or larger predators
+ such as copepods).
  Interactions can be mediated by exploitation in different scenarii: an
  increase in abundance at time 
 \begin_inset Formula $t$
@@ -135,16 +115,10 @@ exploitation
  exploitation is species-specific and therefore competition only appears
  on the intraspecific interaction coefficient.
  In the case where predation is the most important process, we consider
- exploiters are generalist
-\change_inserted -666822487 1586947101
-s
-\change_unchanged
- and act on all species
-\change_inserted -666822487 1586947117
-, which then modifies all interaction coefficients.
- 
-\change_deleted -666822487 1586947104
-.
+ exploiters are generalists and act on all species, which then modifies
+ all interaction coefficients.
+
+\change_deleted -2100369821 1586954745
  
 \change_unchanged
 
@@ -185,42 +159,18 @@ That's not correct no.
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1586947231
-\begin_inset Formula 
-\[
-\begin{array}{ccc}
-\alpha_{t,ij} & = & f(N_{t-k,j})\\
-\alpha_{t,ij} & = & \frac{a_{C}}{h_{ij}+N_{t-k,j}}
-\end{array}
-\]
-
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -666822487 1586947319
-For all other interactions, for consistency reason, we keep the saturating
- version of the interactions.
-\change_inserted -666822487 1586947390
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1586947805
 Don't forget 
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
  is your Lotka-Volterra coefficient! You cannot use this notation for something
  else.
+
+\change_deleted -2100369821 1586954856
  
 \change_unchanged
 
@@ -232,15 +182,15 @@ Don't forget
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586947903
 Our model 3.0 will simply write, assuming that we keep a possible saturation
- of interaction, 
+ of interaction,
+\change_deleted -2100369821 1586954856
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586947461
 \begin_inset Formula 
 \begin{equation}
 N_{t+h,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}\frac{a_{C}N_{t-k,j}}{H_{ij}+N_{t-k,j}}+\sum_{j/a\in\mathbb{F}}\frac{a_{M}N_{t-k,j}}{H_{ij}+N_{t-k,j}}}\label{eq:saturation_h}
@@ -252,15 +202,11 @@ N_{t+h,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}\frac{a_{C}N_{t-k,
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586947593
 or with a more condensed notation
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1586947514
 NB: not sure why you had 
 \begin_inset Quotes eld
 \end_inset
@@ -270,8 +216,6 @@ dt
 \end_inset
 
  as an index but I would not recommend that
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -281,12 +225,14 @@ dt
 \end_inset
 
 .
+
+\change_deleted -2100369821 1586954856
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586947594
 \begin_inset Formula 
 \begin{equation}
 N_{t+h,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}g_{ij}(N_{t-k,j})+\sum_{j/a\in\mathbb{F}}g_{ij}(N_{t-k,j})}\label{eq:saturation_h-1}
@@ -298,8 +244,6 @@ N_{t+h,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}g_{ij}(N_{t-k,j})+
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586948729
 You can revert back to the Lotka-Volterra model by having 
 \family roman
 \series medium
@@ -323,13 +267,19 @@ You can revert back to the Lotka-Volterra model by having
 
  being delayed here of course.
  This would be, however, a too naive approach.
+
+\change_deleted -2100369821 1586954856
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
-
+So let's do here our 3.1 model
+\change_deleted -2100369821 1586954856
+ 
 \change_inserted -666822487 1586948743
-So let's do here our 3.1 model 
+
 \end_layout
 
 \begin_layout Subsubsection*
