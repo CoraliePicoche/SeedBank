@@ -90,11 +90,6 @@
 Models with delays
 \end_layout
 
-\begin_layout Standard
-We discussed several scenarios to build a third model with delay, with two
- different assumptions.
-\end_layout
-
 \begin_layout Subsection*
 Interactions are all due to exploitation
 \end_layout
@@ -323,23 +318,42 @@ Parameter values
 \begin_layout Standard
 Several studies have studied the primary production loss rate to virus and
  grazers.
- A rapid screening gives the following values: [0.02;0.11] in Li & al.
- (2000) in a model of the Strait of Georgia in the absence of zooplankton
- grazing (the maximum zooplankton grazing in this case is between 0.03 and
- 0.87, all rates being in day
+ A rapid screening gives the following values: [0.02;0.11] in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "li_what_2000"
+literal "false"
+
+\end_inset
+
+ in a model of the Strait of Georgia in the absence of zooplankton grazing
+ (the maximum zooplankton grazing in this case is between 0.03 and 0.87, all
+ rates being in day
 \begin_inset Formula $^{-1}$
 \end_inset
 
-); Chen et al.
- 2009 found 88% +/- 38%, sometimes reaching 225% of the total primary production
-, for a population made of up to 25% of microphytoplankton (the rest being
+); 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chen_close_2009"
+literal "false"
+
+\end_inset
+
+ found 88% +/- 38%, sometimes reaching 225% of the total primary production,
+ for a population made of up to 25% of microphytoplankton (the rest being
  nanophyto and picophyto, the last one representing 72% of the total chlorophyll
 -a - hard to really know the mortality of diatoms when the population is
- driven by Prochlorococcus and Synechococcus); in their review, Sarthou
- et al.
- (2005) give values between 45 and 110% only due to grazing, 0.13 potentially
- due to cell autolysis (in the absence of nutrients, or because of viral
- charge).
+ driven by Prochlorococcus and Synechococcus); in their review, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "sarthou_growth_2005"
+literal "false"
+
+\end_inset
+
+ give values between 45 and 110% only due to grazing, 0.13 potentially due
+ to cell autolysis (in the absence of nutrients, or because of viral charge).
  
 \end_layout
 
@@ -364,6 +378,18 @@ However, these values are taken either on the current primary production
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "biblio_seed"
+options "ecol_let"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
