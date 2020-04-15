@@ -131,8 +131,19 @@ Models
 \end_layout
 
 \begin_layout Itemize
-global presentation of state variables and parameters, as well as the two
- main steps in the model (growth; exchanges between compartments)
+global presentation of state variables and parameters (Table 1
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Do we indicate in the table which parameter will be calibrated, which parameter
+ will be assessed, wich parameter will be used in the scenarii
+\end_layout
+
+\end_inset
+
+), as well as the two main steps in the model (growth; exchanges between
+ compartments)
 \end_layout
 
 \begin_layout Itemize
@@ -148,7 +159,7 @@ Variations
 
 \begin_deeper
 \begin_layout Itemize
-classical BH model: Type I functional response, with a threshold
+Classical BH model: Type I functional response, with a threshold
 \end_layout
 
 \begin_layout Itemize
@@ -156,9 +167,22 @@ Saturating interaction model (type II functional response)
 \end_layout
 
 \begin_layout Itemize
-Delayed mortality (with a delay on the intraspecific interaction coefficient?)
+Model with delay (could be related to virus- or copepod- exploitation)
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+interactions are all due to exploitation with a) specialists (intraspecific
+ coefficient is the only one affected) and b) generalists (all coefficients
+ are affected)
+\end_layout
+
+\begin_layout Itemize
+interactions are linked with other phenomena, exploiters affect the loss
+ rate
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Subsection*
 Parameters from the literature
@@ -172,20 +196,10 @@ Will need to find better titles
 \end_inset
 
 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-moved phenology to the field-based calibrations part
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-In two sentences each:
+In two sentences each, define parameters that are not already described
 \end_layout
 
 \begin_layout Itemize
@@ -223,6 +237,18 @@ Usual presentation of a REPHY dataset (no detail on monitoring, just basic
 
 \begin_layout Subsubsection*
 Field-based niche estimates
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+I wonder if we shouldn't put this in the SI.
+ We already have an extensive description of the estimation process, and
+ I guess our M&M is already big enough
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -232,51 +258,23 @@ Definition of generalist vs specialist, definition of the way we infer which
 \end_layout
 
 \begin_layout Subsubsection*
-Calibration
+Calibration and model variability
 \end_layout
 
 \begin_layout Itemize
-Quadratic programming
-\end_layout
-
-\begin_layout Standard
-Definition by Bazaara, use in Maynard, implementation here (on mean abundances
- and interactions only, contrary to what is done in their paper).
+Definition of diagnostics
 \end_layout
 
 \begin_layout Itemize
-Calibration of the interactions, based on dynamics
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-This is TOO MUCH calibration (this one and below).
+Calibration of interactions
 \end_layout
 
-\end_inset
-
- 
+\begin_layout Itemize
+Analyses of the effect of other parameter variations, defining parameter
+ space
 \end_layout
 
-\begin_layout Subsubsection*
-Sensitivity analyses
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-I am using this term here, but we can still call it another way if you think
- that's too strong a word for a few parameter values.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Parameter space
-\end_layout
-
+\begin_deeper
 \begin_layout Itemize
 sinking rate 
 \begin_inset Formula $\{0.1;0.3;0.5\}\beta(0.55,1.25)$
@@ -287,7 +285,7 @@ sinking rate
 
 \begin_layout Itemize
 cyst mortality and burial 
-\begin_inset Formula $\approx10^{-4}/10^{-5}\times{0.01;0.1;0.3}$
+\begin_inset Formula $\approx10^{-4}/10^{-5}+{0.01;0.1;0.3}$
 \end_inset
 
 
@@ -301,18 +299,7 @@ germination/resuspension
 
 \end_layout
 
-\begin_layout Standard
-Diagnostics
-\end_layout
-
-\begin_layout Itemize
-Mean abundance
-\end_layout
-
-\begin_layout Itemize
-Amplitude and timing of the bloom
-\end_layout
-
+\end_deeper
 \begin_layout Subsection*
 Scenarios
 \end_layout
@@ -351,23 +338,22 @@ Results
 \end_layout
 
 \begin_layout Subsubsection*
-Quadratic programming
+Dynamics
 \end_layout
 
 \begin_layout Standard
-Variation in interaction strengths due to quadratic programming.
- (Fig.
+Presentation of the final dynamics observed in the model (Fig.
  1)
 \end_layout
 
 \begin_layout Subsubsection*
-Sensitivity analyses
+Parameter effect
 \end_layout
 
 \begin_layout Standard
-Find a way to represent the main variation in the models (Fig.
- 2); extract the best parameter set.
- 
+Find a way to represent the variation in total abundances in the models
+ (Fig.
+ 2) (mostly bar plots?)
 \end_layout
 
 \begin_layout Subsubsection*
@@ -375,7 +361,7 @@ Scenarios
 \end_layout
 
 \begin_layout Standard
-Fig.
+Proposed Fig.
  3 and 4 as already shown in the main text.
 \end_layout
 
@@ -427,6 +413,14 @@ Map of the location (Fig.
 Parameter defintion
 \end_layout
 
+\begin_layout Standard
+Better explanation of references for each value
+\end_layout
+
+\begin_layout Itemize
+loss rate
+\end_layout
+
 \begin_layout Itemize
 sinking rate: values in the literature + distribution (Fig.
  S3)
@@ -466,12 +460,57 @@ Equation Eppley and Bissinger for the metabolism part, show comparison of
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
+MAYBE
+\series default
+: field-based niche estimates if we don't already describe it in the MS
+\end_layout
+
+\begin_layout Itemize
 Growth rate as a function of temperature (that is, basically, Fig.
  S5) for each species defined by b_i and T_i^opt
 \end_layout
 
 \begin_layout Subsubsection*
-Community matrix, from MAR to BH
+Community matrix
+\end_layout
+
+\begin_layout Itemize
+From MAR to BH
+\end_layout
+
+\begin_layout Itemize
+From type I to type II
+\end_layout
+
+\begin_layout Subsubsection*
+Final parameter set/golden set
+\end_layout
+
+\begin_layout Standard
+Tables for the final species-specific parameters (for sinking rates, b,
+ T_opt)
+\end_layout
+
+\begin_layout Subsubsection*
+Effect of variation around the set
+\end_layout
+
+\begin_layout Standard
+Show the changes for each morphotype due to changes in parameter sets (basically
+, same as Fig.
+ 2, but for each morphotype)
+\end_layout
+
+\begin_layout Subsubsection*
+Use of quadratric programming
+\end_layout
+
+\begin_layout Standard
+Definition by Bazaara, use in Maynard, implementation here.
+ Can only be used on the first model, and may smooth the signal a bit much.
+ 
 \end_layout
 
 \end_body
