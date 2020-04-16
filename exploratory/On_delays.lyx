@@ -131,17 +131,15 @@ In all cases, we define the interaction coefficient as a saturating function
 \end_inset
 
 
-\change_inserted -666822487 1586947126
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1586947166
 That's not correct no.
  In a LV model that's the density that is delayed.
  In a type II model, that's the g() function that is delayed.
+
+\change_deleted -2100369821 1586956975
  
 \change_unchanged
 
@@ -149,13 +147,15 @@ That's not correct no.
 
 \end_inset
 
-
-\change_unchanged
  where k is the delay that can vary depending on the biology of considered
  exploiters.
  This saturating function can simply be taken from model II, whether it
  is for competition and mutualism.
+
+\change_deleted -2100369821 1586956975
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -202,34 +202,11 @@ N_{t+h,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}\frac{a_{C}N_{t-k,
 \end_layout
 
 \begin_layout Standard
-or with a more condensed notation
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-NB: not sure why you had 
-\begin_inset Quotes eld
-\end_inset
-
-dt
-\begin_inset Quotes erd
-\end_inset
-
- as an index but I would not recommend that
-\end_layout
-
-\end_inset
-
- where 
+or with a more condensed notation where 
 \begin_inset Formula $g_{ij}(N)$
 \end_inset
 
 .
-
-\change_deleted -2100369821 1586954856
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -267,24 +244,13 @@ You can revert back to the Lotka-Volterra model by having
 
  being delayed here of course.
  This would be, however, a too naive approach.
-
-\change_deleted -2100369821 1586954856
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 So let's do here our 3.1 model
-\change_deleted -2100369821 1586954856
- 
-\change_inserted -666822487 1586948743
-
 \end_layout
 
 \begin_layout Subsubsection*
-
-\change_inserted -666822487 1586948740
 Generalist exploitation (
 \begin_inset Quotes eld
 \end_inset
@@ -294,20 +260,14 @@ zooplankton predation
 \end_inset
 
 )
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586947964
 Let's do this mechanistically with a multispecies functional response, we
- would have for two prey and one predator a kill rate on prey 1 
+ would have for two prey and one predator a kill rate on prey 1
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586948169
 \begin_inset Formula $\frac{a_{1}N_{1}P}{H+N_{1}+N_{2}}$
 \end_inset
 
@@ -326,12 +286,10 @@ Let's do this mechanistically with a multispecies functional response, we
 \end_inset
 
  .
- This translates into 
+ This translates into
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586948232
 \begin_inset Formula 
 \[
 N_{t+h,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\frac{a_{C}}{H+\sum_{j}N_{t,j}}N_{T}(t-k)}-lN_{t,i}
@@ -340,7 +298,6 @@ N_{t+h,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\frac{a_{C}}{H+\sum_{j}N_{t,j}}N_{T}(t-
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -356,26 +313,20 @@ virus scenario
 \end_layout
 
 \begin_layout Standard
-The only interactions that are modified are the intraspecific interactions
-\change_inserted -666822487 1586948313
-, because the parasite is specialized on its prey
-\change_unchanged
-.
- 
-\change_inserted -666822487 1586948434
-For each individual parasite, we can assume that it increases the competition
+The only interactions that are modified are the intraspecific interactions,
+ because the parasite is specialized on its prey.
+ For each individual parasite, we can assume that it increases the competition
  rate as a function of its abundance and the current prey density, that
  is the total kill rate for the population of parasites P is something like
  
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -666822487 1586948671
 \begin_inset Formula $\frac{aN_{1}P}{H+N_{1}}$
 \end_inset
 
- (in continuous time).
+
+\end_layout
+
+\begin_layout Standard
+(in continuous time).
  This means that the more parasites we have, the higher the kill rate but
  it saturates with prey density: the parasite cannot get all the hosts (NB:
  the parasite has actually more changes to be Lotka-Volterra than the predator,
@@ -400,9 +351,6 @@ in continuous time which translates in the discrete-time setting below as
 \end_inset
 
 .
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -423,74 +371,7 @@ We can assume that
 
 , the delay between the abundance of the competitor, is rather small as
  virus/fungi have a high growth rate, maybe a high transmission rate, and
- may react quicly to an increase in abundance.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-
-\change_deleted -666822487 1586948718
-Generalist exploitation (
-\begin_inset Quotes eld
-\end_inset
-
-zooplankton predation
-\begin_inset Quotes erd
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -666822487 1586948715
-In this case, all interactions are modified and predators depend on the
- total density of species.
- For each time step, we define 
-\begin_inset Formula $N_{t,T}=\sum_{i}N_{t,i}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -666822487 1586948715
-\begin_inset Formula 
-\[
-N_{t+h,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\frac{a_{C}}{h_{T}+N_{t-k,T}}N_{t,j}}-lN_{t,i}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -666822487 1586948715
-We can assume a larger k (15 days?) as zooplankton is assumed to grow slower
- than parasites.
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -666822487 1586948715
-How to define 
-\begin_inset Formula $h_{T}$
-\end_inset
-
- ? First, simplest proposition: 
-\begin_inset Formula $h_{T}=\sum_{i,j}h_{ij}$
-\end_inset
-
-.
-\change_unchanged
-
+ may react quickly to an increase in abundance.
 \end_layout
 
 \begin_layout Subsection*
@@ -498,90 +379,13 @@ Loss rate is delayed
 \end_layout
 
 \begin_layout Standard
-In this case, we emphasise 
-\change_deleted -666822487 1586948778
-on the loss rate
-\change_inserted -666822487 1586948795
-model the effect of delays on the loss rate, i.e., the mortality term rather
- than the interactions
-\change_unchanged
-.
- 
-\change_inserted -666822487 1586948807
-This implicitly assumes that our i
-\change_deleted -666822487 1586948803
-I
-\change_unchanged
-nteraction
-\change_deleted -666822487 1586948810
-s
-\change_unchanged
- 
-\change_inserted -666822487 1586948816
-matrices have coefficients that 
-\change_unchanged
-depend on processes different from exploitation: competition can emerge
- from scarce nutrients, 
-\change_inserted -666822487 1586948824
-while 
-\change_unchanged
-mutualism
-\change_deleted -666822487 1586948827
-, on the other hand,
-\change_unchanged
- can
-\change_deleted -666822487 1586948832
- either
-\change_unchanged
- emerge from auxotrophy
-\change_deleted -666822487 1586948837
- also beneficial to other species
-\change_unchanged
-.
- 
-\change_inserted -666822487 1586948858
-The loss term, however, still includes mortality losses and therefore 
-\change_deleted -666822487 1586948860
-Loss still
-\change_unchanged
- 
-\change_deleted -666822487 1586948866
-depends partly on
-\change_inserted -666822487 1586948869
-changes with the level of 
-\change_deleted -666822487 1586948870
- the
-\change_unchanged
- predation
-\change_deleted -666822487 1586948877
- and is therefore subject to the same type of transformation
-\change_inserted -666822487 1586948878
-: 
-\change_deleted -666822487 1586948877
-.
-
-\change_unchanged
- 
-\change_inserted -666822487 1586948915
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1586948943
-NB I corrected the formula, you did not have a saturating function, N has
- to be both at the numerator and denominator for the function to saturate.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+In this case, we emphasise model the effect of delays on the loss rate,
+ i.e., the mortality term rather than the interactions.
+ This implicitly assumes that our interaction matrices have coefficients
+ that depend on processes different from exploitation: competition can emerge
+ from scarce nutrients, while mutualism can emerge from auxotrophy.
+ The loss term, however, still includes mortality losses and therefore changes
+ with the level of predation:
 \end_layout
 
 \begin_layout Standard
@@ -604,34 +408,11 @@ where
 \begin_inset Formula $H_{l}$
 \end_inset
 
- is the abundance for which loss rate is half of its maximum value
-\change_inserted -666822487 1586948978
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1586949002
-You really really can't use lowercase h for this, that's way too confusing
- since it is always handling time.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
- 
-\change_inserted -666822487 1586949219
-Here, we assume that the upper term in the equation represents parasite
+ is the abundance for which loss rate is half of its maximum value.
+ Here, we assume that the upper term in the equation represents parasite
  density (delayed prey density) while the bottom term represents the saturating
  effect of prey density.
- 
-\change_unchanged
-For the sake of simplicity, we do not use a species-specific loss rate.
+ For the sake of simplicity, we do not use a species-specific loss rate.
 \end_layout
 
 \begin_layout Standard
@@ -650,11 +431,7 @@ N_{t+h,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\frac{a_{C}}{H_{ij}+N_{t,j}}N_{
 \end_layout
 
 \begin_layout Standard
-How to define
-\change_deleted -666822487 1586949032
-d
-\change_unchanged
- 
+How to define 
 \begin_inset Formula $l_{max}$
 \end_inset
 
@@ -696,14 +473,10 @@ There will be papers on max predation rates by copepods, which you can then
 \end_layout
 
 \begin_layout Subsubsection*
-
-\change_inserted -666822487 1586949300
 Predator version
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586949332
 \begin_inset Formula 
 \[
 l(t,t-k)=\frac{l_{max}N_{T}(t-k)}{H_{l}+N_{T}(t)}
@@ -715,10 +488,7 @@ l(t,t-k)=\frac{l_{max}N_{T}(t-k)}{H_{l}+N_{T}(t)}
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1586949403
 Here we have the loss rate that depends on the sum of all species abundances.
- 
 \end_layout
 
 \begin_layout Paragraph*
