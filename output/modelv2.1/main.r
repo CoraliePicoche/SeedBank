@@ -40,16 +40,8 @@ O_y=as.numeric(as.character(tab[tab[,1]=="overyielding",2]))
 ratio_pos=as.numeric(as.character(tab[tab[,1]=="ratio_pos",2]))
 
 #Data to use (Auger)
-dataset=as.character(tab[tab[,1]=="dataset",2])
-evt_tab=read.table(paste("../../param/",dataset,"hydro.txt",sep=""),sep=";",header=T)
-temp=evt_tab[,"TEMP"]
-#We need to build a simulation for temperatures as we don't have enough data in the real dataset
-min_temp=min(temp,na.rm=T)
-max_temp=max(temp,na.rm=T)
-sd_temp=sd(temp,na.rm=T)
-mean_temp=mean(temp,na.rm=T)
-theta=1.3
-temp_model=273+mean_temp+theta*sd_temp*sin(2*pi*1:n_iter/365.25)+rnorm(n_iter,0,sd_temp*sqrt(1-theta^2/2))
+a=as.matrix(read.table("param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
+temp_model=a[1:n_iter]
 
 load(paste("../../param/",dataset,"_pencen_null_regular_common_MO.RData",sep=""))
 name_spp=colnames(cis$call$model$B)
