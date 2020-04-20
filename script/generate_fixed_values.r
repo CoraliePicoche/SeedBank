@@ -4,7 +4,7 @@ rm(list=ls())
 graphics.off()
 set.seed(42)
 
-pop_table=read.table("param/abundances_Auger.txt",sep=",",header=T)
+pop_table=read.table("param/mean_interpolated_abundances_Auger.txt",sep=",",header=T)
 name_spp=pop_table$sp
 nspp=length(name_spp)
 

@@ -48,9 +48,9 @@ B_matrix=clean_matrix(cis,signif=F)
 rownames(B_matrix)=colnames(B_matrix)=name_spp
 nspp=length(name_spp)
 
-
 ####Two options are possible for mean values
 #If we use raw values of corres_hernandez, we avoid the artefacts created by the interpolation and the random value used when gaps are over 2 points in the time series, but we increase the mean value artificially as cells are counted only when they are numerous. The inverse is true when using interpolated data. This is only a matter of choice.
+
 
 #abundances_tab=read.table(paste("param/","corres_hernandez_Auger.txt",sep=""),sep=";",header=T)
 #dates=as.Date(abundances_tab$Date)

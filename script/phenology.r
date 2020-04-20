@@ -106,8 +106,6 @@ dates=as.Date(abundances_tab$Date)
 abundances_tab=abundances_tab[year(dates)>=1996,name_spp]#Using data from 1996
 dates=dates[year(dates)>=1996]
 
-tab_mean=read.table("param/mean_value_for_reconstructed_abundances.txt",sep=";",dec=".",header=T)
-
 hydro_tab=read.table("param/Augerhydro.txt",sep=";",header=T)
 dates_hydro=as.Date(hydro_tab$Date)
 temp=hydro_tab[year(dates_hydro)>=1996,"TEMP"]#Using data from 1996
@@ -150,7 +148,6 @@ for(sp in name_spp){
 
 		plot(dates_y,abundances_tab_y,t="o",pch=16,ylim=range(log10(abundances_tab[,sp]),na.rm=T),xlim=c(as.Date(paste("01/01/",y,sep=""),format="%d/%m/%Y"),as.Date(paste("31/12/",y,sep=""),format="%d/%m/%Y")),main=y)
 		lines(dates_bis,time_series_interp,col="blue")
-#		points(as.Date(paste("15",1:12,y,sep="/"),format="%d/%m/%Y"),log10(tab_mean[,sp]),pch=16,col="red")
 		abline(h=ab_quantile,lty=2)
 		dates_y_hydro=dates_hydro[year(dates_hydro)==y]
 
