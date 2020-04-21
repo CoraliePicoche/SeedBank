@@ -68,7 +68,8 @@ for(t in 1:(n_iter-1)){
 }
 
 #Parameters to move
-free_param=read.table("free_parameters.txt",sep=";",dec=".",header=T,row.names=1)
+#free_param=read.table("free_parameters.txt",sep=";",dec=".",header=T,row.names=1)
+free_param=read.table("free_parameters_with_lowburial_testmortality.txt",sep=";",dec=".",header=T,row.names=1)
 list_simulation=matrix(NA,nrow=(ncol(free_param)-1)*nrow(free_param),ncol=nrow(free_param))
 colnames(list_simulation)=rownames(free_param)
 rownames(list_simulation)=1:nrow(list_simulation)
@@ -117,7 +118,7 @@ for(t in 1:(n_iter-1)){
 id=seq(n_iter-365,n_iter)
 mean_tot_original=mean(log10(apply(N_original_set[id,"coast",],1,sum)))
 
-pdf("mean_abundance_with_free_parameters.pdf",width=9)
+pdf("mean_abundance_with_free_parameters_with_lossrate.pdf",width=15)
 analyses=rownames(list_simulation)
 plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(3.5,5.5),xaxt="n",ylab="Average total abundance",xlab="")
 axis(1,labels=rownames(free_param),at=1:nrow(free_param))
@@ -128,11 +129,11 @@ val_text=c()
 at_val_text=c()
 for(param_to_move in rownames(free_param)){
 	l=l+1
-	id_param=grep(param_to_move,analyses)
+	id_param=grep(paste("^",param_to_move,sep=""),analyses)
 	space=0.5/(2*length(id_param))
 	seq_space=seq(-space,space,length.out=length(id_param))
 	for(i in 1:length(id_param)){
-		print(list_simulation[i,])
+		print(list_simulation[id_param[i],])
 		mean_tot=mean(log10(apply(N_sensitivity[id,"coast",,id_param[i]],1,sum)))
 		print(mean_tot)
 		points(l+seq_space[i],mean_tot,t="p",pch=16)

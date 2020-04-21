@@ -17,6 +17,7 @@ value=c(0.9,1.1) #Parameter space
 nb_simu=1000
 nb_year=2
 
+dataset="Auger"
 #Fixed parameters
 tab=read.table("simu.csv",sep=";",dec=".",header=T)
 cyst_mortality=as.numeric(as.character(tab[tab[,1]=="cyst_mortality",2]))
@@ -38,7 +39,7 @@ a_d=as.numeric(as.character(tab[tab[,1]=="daylength",2]))
 threshold=as.numeric(as.character(tab[tab[,1]=="threshold",2]))
 
 #Data to use (Auger)
-a=as.matrix(read.table("param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
+a=as.matrix(read.table("../../param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
 temp_model=a[1:n_iter]
 
 load(paste("../../param/",dataset,"_pencen_null_regular_common_MO.RData",sep=""))
