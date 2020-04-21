@@ -17,6 +17,7 @@ value=c(0.9,1.1) #Parameter space
 nb_simu=1000
 nb_year=2
 
+dataset="Auger"
 #Fixed parameters
 tab=read.table("simu.csv",sep=";",dec=".",header=T)
 cyst_mortality=as.numeric(as.character(tab[tab[,1]=="cyst_mortality",2]))
@@ -40,7 +41,7 @@ O_y=as.numeric(as.character(tab[tab[,1]=="overyielding",2]))
 ratio_pos=as.numeric(as.character(tab[tab[,1]=="ratio_pos",2]))
 
 #Data to use (Auger)
-a=as.matrix(read.table("param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
+a=as.matrix(read.table("../../param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
 temp_model=a[1:n_iter]
 
 load(paste("../../param/",dataset,"_pencen_null_regular_common_MO.RData",sep=""))
@@ -63,7 +64,7 @@ pop_table=read.table("../../param/mean_interpolated_abundances_Auger.txt",sep=",
 rownames(pop_table)=pop_table$sp
 pop_table=pop_table[name_spp,]
 N_mean=pop_table[name_spp,"Mean_abundances"]
-names(x_obs)=name_spp
+names(N_mean)=name_spp
 
 
 inter_mat=MAR2saturation(B_matrix,N_mean,N_max,O_y,ratio_pos)
@@ -193,8 +194,12 @@ for(t in 1:(n_iter-1)){
                 N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
 
+colnames(list_H_tmp[[1]])=name_spp
+rownames(list_H_tmp[[1]])=name_spp
+colnames(type_inter[[1]])=name_spp
+rownames(type_inter[[1]])=name_spp
 write.table(list_H_tmp[[1]],"matrix_H_after_calibration.csv",sep=";",dec=".")
-write.table(type_inter,"facilitation_and_competition.csv",sep=";",dec=".")
+write.table(type_inter[[1]],"facilitation_and_competition.csv",sep=";",dec=".")
 
 
 write.table(N[,1,],paste("out_coast.csv",sep=""),sep=";",dec=".")
