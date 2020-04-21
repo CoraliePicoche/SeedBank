@@ -36,6 +36,7 @@ step1=function(n_t,list_inter,temp,M,mort,irradiance,T_opt,B,threshold){
 		tmp[i,]=exp(growth)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) - mort*n_t[i,]
 	}
 	tmp[3,]=n_t[3,]*(1-M)
+#	print(tmp)
 	if(sum(c(tmp)<0)>0){
 	print(tmp[1,])
 	print(tmp[2,])

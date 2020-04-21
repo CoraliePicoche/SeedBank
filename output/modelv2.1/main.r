@@ -194,7 +194,7 @@ for(t in 1:(n_iter-1)){
 }
 
 write.table(list_H_tmp[[1]],"matrix_H_after_calibration.csv",sep=";",dec=".")
-write.table(type_inter,"faciliation_and_competition.csv",sep=";",dec=".")
+write.table(type_inter,"facilitation_and_competition.csv",sep=";",dec=".")
 
 
 write.table(N[,1,],paste("out_coast.csv",sep=""),sep=";",dec=".")
