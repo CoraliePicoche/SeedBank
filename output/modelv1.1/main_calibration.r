@@ -139,17 +139,23 @@ effect_compet=array(NA,dim=c(n_iter,2,nspp),dimnames=list(NULL,c("coast","ocean"
 N[1,,]=rep(10^3,nspp*3)
 
 ##Run
+try(
 for(t in 1:(n_iter-1)){
 	        var_tmp=step1(N[t,,],list_inter,temp_model[t],M,morta,a_d,T_opt,B,threshold)
 		Ntmp=var_tmp[[1]]
 		effect_compet[t+1,,]=var_tmp[[2]]
         	N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
+,silent=T)
 
 tab_coast=N[,1,]
-final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
-tab_summary[sim,1:3]=final_summary
-tab_summary[sim,4]=sum(final_summary)
+if(sum(is.na(tab_coast)>0)){
+	tab_summary[sim,1:3]=100
+}else{
+	final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
+	tab_summary[sim,1:3]=c(sqrt(sum(final_summary[[1]]))/nspp,sqrt(sum(final_summary[[2]]))/nspp,sqrt(sum(final_summary[[3]]))/nspp)
+}
+tab_summary[sim,4]=sum(tab_summary[sim,1:3])
 tab_summary[sim,5]=sum(tab_coast>0)
 if(tab_summary[sim,5]<ncol(tab_coast)){tab_summary[,4]=tab_summary[,4]*2} #We can't have a model with a missing species
 }
@@ -184,6 +190,13 @@ for(t in 1:(n_iter-1)){
                 effect_compet[t+1,,]=var_tmp[[2]]
                 N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
+tab_coast=N[,1,]
+#Statistics per species
+final_summary_tmp=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
+final_summary=matrix(unlist(final_summary_tmp),ncol=3)
+rownames(final_summary)=names(final_summary_tmp[[1]])
+colnames(final_summary)=colnames(tab_summary)[1:3]
+write.table(final_summary,"summary_statistics_per_species.txt",dec=".",sep=";")
 
 #Matrix
 write.table(tmp_inter,"matrix_A_after_calibration.csv",sep=";",dec=".")

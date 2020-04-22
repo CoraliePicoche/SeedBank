@@ -1,5 +1,6 @@
 ###################
 #19/02/2020 CP: diagnostics and plots for the model
+#22/04/2020 CP: improved diagnostic figure for single species with summary statistics
 ###################
 
 colo=c(rep(c("red","orange","green","blue"),2),"red","orange","orchid")
@@ -139,179 +140,32 @@ par(mfrow=c(1,1))
 
 id_observed=seq(13,12*30.5,length.out=12)+min(id)
 
+tab_pheno=read.table("../../param/generalist_specialist_spp_added_amplitude_season.csv",sep=";",dec=".",header=T,row.names=1)
 
 for(i in 1:length(sp)){
-        aylim=range(c(transfo_N_coast[id,i]),c(transfo_N_ocean[id,i]),c(transfo_N_seed[id,i]),c(log10(tab_mean[,i]+10^(-5))))
+        aylim=range(c(transfo_N_coast[id,i]),c(transfo_N_ocean[id,i]),c(log10(tab_mean[,i]+10^(-5))))
         plot(id,transfo_N_coast[id,i],main=sp[i],col="lightblue",t="o",pch=16,lty=1,xlab="time",ylab="abundance",ylim=aylim,xaxt="n")
 	axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
         lines(id,transfo_N_ocean[id,i],col="darkblue",t="o",pch=16,lty=1)
-        lines(id,transfo_N_seed[id,i],col="brown",t="o",pch=16,lty=1)
+#        lines(id,transfo_N_seed[id,i],col="brown",t="o",pch=16,lty=1)
 	abline(h=log10(x_obs[sp[i]]))
-	points(id_observed,log10(tab_mean[,i]+10^(-5)),pch=17,col="red",cex=2)
+	#points(id_observed,log10(tab_mean[,i]+10^(-5)),pch=17,col="red",cex=2)
+	points(id_observed,log10(tab_mean[,i]+10^(-5)),pch="*",col="red")
 	if(i==1){
 		#legend("right",c("coast","ocean","seed","mean obs"),col=c("lightblue","darkblue","brown","red"),pch=c(16,16,16,17))
-		legend("right",c("coast","ocean","seed"),col=c("lightblue","darkblue","brown"),pch=c(16,16,16))
+		legend("right",c("coast","ocean"),col=c("lightblue","darkblue"),pch=c(16,16,16),bty="n")
 	}
+	mtext(paste("Mean abundance sim",format(mean(transfo_N_coast[id,i]),digits=2),"obs",format(log10(x_obs[sp[i]]),digits=2),sep=" "),cex=0.75,side=3,line=3,adj=0)
+	mtext(paste("Mean amplitude sim",format(diff(range(transfo_N_coast[id,i])),digits=2),"obs",format(tab_pheno[sp[i],"Mean_amplitude"],digits=2),sep=" "),cex=0.75,side=3,line=2,adj=0)
+	tt=tab_pheno[sp[i],"Season"]
+	if(tt==0){
+		text_to_write="Bloom winter"
+	}else if(tt==1){
+		text_to_write="Early bloom"
+	}else{
+		text_to_write="Late bloom"
+	}
+	mtext(text_to_write,cex=0.75,side=3,line=1,adj=0)
 }
-dev.off()
-
-
-###Growthes
-#WARNING: for now, uses a file, corres_hernandez_Auger.txt, that has been removed in the new version of diagnostics it should be implemented back (as well as the interpolation of the time series, that can be copied from another file. Use seed(42), of course
-if(1==0){
-pdf(paste("growth_rate_daily.pdf",sep=""),width=10,height=10)
-par(mfrow=c(4,3))
-#id_hot=(temp>293)[id[1:(length(id)-1)]]
-for(i in 1:length(sp)){
-        growth_rate_coast=diff(log(tab_coast[id,i]))
-        plot(log(tab_coast[id[1:(length(id)-1)],i]),growth_rate_coast,pch=16,xlab="log abundance",ylab="growth")
-#        points(log(N_coast[id[1:(length(id)-1)],i][id_hot]),growth_rate_coast[id_hot],pch=16,col="red")
-#        points(log(N_coast[id[1:(length(id)-1)],i][!id_hot]),growth_rate_coast[!id_hot],pch=16,col="blue")
-}
-dev.off()
-pdf(paste("growth_rate_vs_observation_biweekly.pdf",sep=""),width=10,height=10)
-par(mfrow=c(4,3))
-
-######Take back here for growth rate every two weeks
-
-#Simulation
-id_every_2_weeks=min(id)+seq(1:26)*14
-tab_coast_every_2_weeks=matrix(NA,nrow=length(id_every_2_weeks),ncol=length(name_spp))
-abundances_every_2_weeks=matrix(NA,nrow=length(id_every_2_weeks),ncol=length(name_spp))
-for(j in 1:(length(id_every_2_weeks)-1)){
-	j=j+1
-	tab_coast_every_2_weeks[j,]=as.numeric(log(tab_coast[id_every_2_weeks[j+1],])-log(tab_coast[id_every_2_weeks[j],]))
-	abundances_every_2_weeks[j,]=as.numeric(log(tab_coast[id_every_2_weeks[j+1],]))
-}
-
-
-#Observation
-obs=diff(log(tab_plankton))
-abundance_obs=log(tab_plankton)
-abundance_obs=abundance_obs[1:(nrow(abundance_obs)-1),]
-
-for(i in 1:length(sp)){
-	limix=range(c(abundances_every_2_weeks[,i]),c(abundance_obs[,i]),na.rm=T)
-	#limiy=range(c(tab_coast_every_2_weeks[,i]),c(obs[,i]),na.rm=T)
-#	limiy=range(c(tab_coast_every_2_weeks[,i]),na.rm=T)
-	limiy=c(-2,2)
-
-        plot(abundance_obs[,i],obs[,i],pch=1,col="red",xlab="log abundance",ylab="growth",ylim=limiy,xlim=limix)
-        points(abundances_every_2_weeks,tab_coast_every_2_weeks,pch=16,col="blue")
-}
-dev.off()
-} #End of 1==0 for growth rate. Might take that back later.
-
-
-###SAD
-#Completely arbitrary (once more): count species [0,1000],[1001,5000],[5001,10000],[10001,...]
-pdf("SAD.pdf",width=10,height=15)
-par(mfrow=c(4,3),mar=c(3,3,1,1))
-
-day_in_year=0
-end=0
-deb=0
-vec=rep(c(1,0),6)
-for(m in 1:12){
-#Observations
-tab_categories=rep(NA,4)
-tab_categories[1]=sum(tab_mean[m,]<=1000)
-tab_categories[2]=sum(tab_mean[m,]>1000&tab_mean[1,]<=5000)
-tab_categories[3]=sum(tab_mean[m,]>5000&tab_mean[1,]<=10000)
-tab_categories[4]=sum(tab_mean[m,]>10000)
-plot(1:4,tab_categories+0.1,t="p",pch=16,col="black",xaxt="n",xlab="Nb individuals",ylab="Nb species",lwd=4,main=paste("Month",m),ylim=c(0,7),cex=1.5)
-axis(1,at=1:4,labels=c("[0,1000]","]1000,5000]","]5000,10000]","[10001,...]"))
-legend("topright",c("Observations","Simulations"),col=c("black","blue"),pch=16,bty="n")
-
-#Simulations
-
-deb=end+1
-if(m!=2){
-end=deb+29+vec[m]
-}else{
-end=deb+28
-}
-day_in_year=end
-
-tab_sim=apply(tab_coast[id[deb:end],],2,mean)
-tab_categories[1]=sum(tab_sim<=1000)
-tab_categories[2]=sum(tab_sim>1000&tab_sim<=5000)
-tab_categories[3]=sum(tab_sim>5000&tab_sim<=10000)
-tab_categories[4]=sum(tab_sim>10000)
-points(1:4,tab_categories,pch=16,col="blue",cex=1.5)
-
-}
-dev.off()
-
-###Output denominator
-comp_coast=read.table("compet_coast.csv",sep=";",dec=".")
-comp_coast_final=comp_coast[id,]
-comp_ocean=read.table("compet_ocean.csv",sep=";",dec=".")
-comp_ocean_final=comp_ocean[id,]
-
-pdf("interaction_effect_coast.pdf",width=7.5,height=7.5)
-par(mfrow=c(2,1))
-##first 6 are centric diatoms
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 1:3){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[1:3],col=colo[1:3],pch=16,lty=1,bty="n")
-
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 4:6){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[4:6],col=colo[4:6],pch=16,lty=1,bty="n")
-
-##Last 5 are pennate diatoms and dinoflagellates
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 7:9){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[7:9],col=colo[7:9],pch=16,lty=1,bty="n")
-
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 10:11){
-points(1:366,comp_coast_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[10:11],col=colo[10:11],pch=16,lty=1,bty="n")
-dev.off()
-
-pdf("interaction_effect_ocean.pdf",width=7.5,height=7.5)
-par(mfrow=c(2,1))
-##first 6 are centric diatoms
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 1:3){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[1:3],col=colo[1:3],pch=16,lty=1,bty="n")
-
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 4:6){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[4:6],col=colo[4:6],pch=16,lty=1,bty="n")
-
-##Last 5 are pennate diatoms and dinoflagellates
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 7:9){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[7:9],col=colo[7:9],pch=16,lty=1,bty="n")
-
-plot(1:366,rep(NA,366),t="n",ylim=c(0.25,1.25),xlab="Day of the year",ylab="BH denominator")
-abline(h=1.0)
-for(i in 10:11){
-points(1:366,comp_ocean_final[,i],pch=16,t="o",col=colo[i],cex=0.25)
-}
-legend("bottomleft",name_spp[10:11],col=colo[10:11],pch=16,lty=1,bty="n")
 dev.off()
 

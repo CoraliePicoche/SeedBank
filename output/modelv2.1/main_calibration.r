@@ -153,9 +153,9 @@ if(sum(is.na(tab_coast)>0)){
 tab_summary[sim,1:3]=100
 }else{
 final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
-tab_summary[sim,1:3]=final_summary
+tab_summary[sim,1:3]=c(sum(final_summary[[1]]),sum(final_summary[[2]]),sum(final_summary[[3]]))
 }
-tab_summary[sim,4]=sum(final_summary)
+tab_summary[sim,4]=sum(tab_summary[sim,1:3])
 tab_summary[sim,5]=sum(tab_coast>0,na.rm=T)
 if(tab_summary[sim,5]<ncol(tab_coast)){tab_summary[,4]=tab_summary[,4]*2} #We can't have a model with a missing species
 
@@ -192,6 +192,15 @@ for(t in 1:(n_iter-1)){
                 effect_compet[t+1,,]=var_tmp[[2]]
                 N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
+tab_coast=N[,1,]
+#Statistics per species
+final_summary_tmp=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
+final_summary=matrix(unlist(final_summary_tmp),ncol=3)
+rownames(final_summary)=names(final_summary_tmp[[1]])
+colnames(final_summary)=colnames(tab_summary)[1:3]
+write.table(final_summary,"summary_statistics_per_species.txt",dec=".",sep=";")
+
+
 
 colnames(list_H_tmp[[1]])=name_spp
 rownames(list_H_tmp[[1]])=name_spp

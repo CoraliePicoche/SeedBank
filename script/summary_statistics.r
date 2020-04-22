@@ -11,16 +11,16 @@ transfo_N_coast=log10(tab_coast[id,]+10^(-5))
 
 #Average abundance
 mean_sim=apply(transfo_N_coast,2,mean)
-vec_diff_abundances=abs(mean_sim-log10(tab_mean[,2]+10^(-5)))
-diff_abundances=sum(vec_diff_abundances)
+vec_diff_abundances=(mean_sim-log10(tab_mean[,2]+10^(-5)))^2
+#diff_abundances=sum(vec_diff_abundances)
 
 #table_summary_per_species[name_spp,"Abundances"]=vec_diff_abundances[name_spp]
 #table_summary_all_models[m,"Abundances"]=diff_abundances
 
 #Amplitude
 amplitude=apply(transfo_N_coast,2,max)-apply(transfo_N_coast,2,min)
-vec_diff_amplitude=abs(amplitude-tab_pheno[,"Mean_amplitude"])
-diff_amplitude=sum(vec_diff_amplitude)
+vec_diff_amplitude=(amplitude-tab_pheno[,"Mean_amplitude"])^2
+#diff_amplitude=sum(vec_diff_amplitude)
 
 #table_summary_per_species[name_spp,"Amplitude"]=vec_diff_abundances[name_spp]
 #table_summary_all_models[m,"Amplitude"]=diff_amplitude
@@ -56,15 +56,16 @@ for(s in 1:length(name_spp)){
 	vec_diff_season[s]=1
 }
 }
+
 #table_summary_per_species[name_spp,"Phenology"]=vec_diff_season[name_spp]
-diff_season=sum(vec_diff_season)
+#diff_season=sum(vec_diff_season)
 #table_summary_all_models[m,"Phenology"]=diff_season
 
 
 #Objective function
-final=diff_abundances+diff_amplitude+diff_season
-print(final)
+#final=diff_abundances+diff_amplitude+diff_season
+#print(final)
 
-#return(c(vec_diff_abundances,vec_diff_amplitude,vec_diff_season))
-return(c(diff_abundances,diff_amplitude,diff_season))
-}
+return(list(vec_diff_abundances,vec_diff_amplitude,vec_diff_season))
+#return(c(diff_abundances,diff_amplitude,diff_season))
+      }
