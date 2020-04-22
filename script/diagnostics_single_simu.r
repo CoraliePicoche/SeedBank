@@ -19,11 +19,11 @@ name_spp=colnames(tab_coast)
 tab_mean=read.table("../../param/mean_monthly_abundance.txt",sep=";",dec=".",header=T)
 
 #Variation due to quadratic programming
-before=as.matrix(read.table(paste("matrix_A_before_quad.csv",sep=""),sep=";",dec=".",header=T))
+before=as.matrix(read.table(paste("matrix_A_before_calibration.csv",sep=""),sep=";",dec=".",header=T))
 before_A=before[,1:(ncol(before)-1)]
 before_A_nodiag=before_A
 diag(before_A_nodiag)=NA
-after=as.matrix(read.table(paste("matrix_A_after_quad.csv",sep=""),sep=";",dec=".",header=T))
+after=as.matrix(read.table(paste("matrix_A_after_calibration.csv",sep=""),sep=";",dec=".",header=T))
 after_A=after[,1:(ncol(after)-1)]
 after_A_nodiag=after_A
 diag(after_A_nodiag)=NA

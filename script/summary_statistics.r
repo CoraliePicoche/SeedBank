@@ -32,6 +32,7 @@ val_bloom=apply(transfo_N_coast,2,median)
 tab_beginning_bloom=matrix(NA,length(name_spp),nb_year)
 rownames(tab_beginning_bloom)=name_spp
 for(s in 1:length(name_spp)){
+	if(tab_coast[id[length(id)],s]!=0){
 	season=NA
 	for(n in 1:nb_year){
 		id_y=seq((365*(n-1)+1),(365*n))
@@ -51,6 +52,9 @@ for(s in 1:length(name_spp)){
 	}else{
 		vec_diff_season[s]=1
 	}
+}else{
+	vec_diff_season[s]=1
+}
 }
 #table_summary_per_species[name_spp,"Phenology"]=vec_diff_season[name_spp]
 diff_season=sum(vec_diff_season)

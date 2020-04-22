@@ -13,7 +13,7 @@ source("../../script/summary_statistics.r")
 source("step_functions.r")
 
 ####Calibration
-value=c(0.9,1.1) #Parameter space
+value=c(0.5,0.9,1.1,2) #Parameter space
 nb_simu=1000
 nb_year=2
 
@@ -78,7 +78,7 @@ B=tab$Val_b
 names(B)=name_spp
 r_mean=growth_rate_noMTE_Bissinger(288,T_opt,B,a_d)
 
-#write.table(cbind(inter_mat,r_mean),paste("matrix_A_before_quad.csv",sep=""),sep=";",row.names=F,dec=".")
+write.table(inter_mat,paste("matrix_A_before_calibration.csv",sep=""),sep=";",row.names=F,dec=".")
 
 
 if(quad_prog==1){
@@ -104,9 +104,9 @@ tab_simu=matrix(NA,nrow=nb_simu,ncol=nb_link)
 rownames(tab_simu)=1:nb_simu
 colnames(tab_simu)=name_links
 
-tab_summary=matrix(NA,nrow=nb_simu,ncol=4)
+tab_summary=matrix(NA,nrow=nb_simu,ncol=5)
 rownames(tab_summary)=1:nb_simu
-colnames(tab_summary)=c("Abundance","Amplitude","Phenology","Diff")
+colnames(tab_summary)=c("Abundance","Amplitude","Phenology","Diff","Persistence")
 
 size_subset=floor(nb_link/(length(value)+1))
 
@@ -115,6 +115,7 @@ tab_pheno=read.table("../../param/generalist_specialist_spp_added_amplitude_seas
 
 t1=Sys.time()
 for(sim in 1:nb_simu){
+#for(sim in 1:1){
 	print(sim)
 	tmp_inter=inter_mat
 	set=1:nb_link
@@ -127,7 +128,7 @@ for(sim in 1:nb_simu){
 		set=set_tmp
 		tab_simu[sim,inter_v]=value[v]
 	}
-	inter_no_change=setdiff(set,nb_link-size_subset*length(value))
+	inter_no_change=set
 	tab_simu[sim,inter_no_change]=1.0
 
 	list_inter=list(tmp_inter,k_coast2ocean*tmp_inter)
@@ -149,6 +150,8 @@ tab_coast=N[,1,]
 final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
 tab_summary[sim,1:3]=final_summary
 tab_summary[sim,4]=sum(final_summary)
+tab_summary[sim,5]=sum(tab_coast>0)
+if(tab_summary[sim,5]<ncol(tab_coast)){tab_summary[,4]=tab_summary[,4]*2} #We can't have a model with a missing species
 }
 print(Sys.time()-t1)
 
@@ -157,7 +160,7 @@ write.table(tab_simu,paste("list_simulation.csv",sep=""),sep=";",dec=".")
 write.table(tab_summary,paste("list_statistics.csv",sep=""),sep=";",dec=".")
 
 
-best=which(tab_summary[,4]==min(tab_summary[,4]))
+best=which(tab_summary[,4]==min(tab_summary[,4],na.rm=T))
 
 best_line_inter=tab_simu[best,]
 
@@ -167,7 +170,7 @@ for(l in 1:nrow(links_to_explore)){
 }
 
 ###Finally, we can run the model for the best simulation
-        list_inter=list(tmp_inter,k_coast2ocean*tmp_inter)
+list_inter=list(tmp_inter,k_coast2ocean*tmp_inter)
 
 #Initialize
 N=array(NA,dim=c(n_iter,3,nspp),dimnames=list(NULL,c("coast","ocean","seed"),name_spp))

@@ -8,12 +8,21 @@ graphics.off()
 set.seed(40) #Warning: results and even feasibility can be highly seed-sensitive
 
 source("step_functions.r")
+source("../../script/summary_statistics.r")
 
 n_iter=1000
+nb_year=2
 
 #Data to use (Auger)
 a=as.matrix(read.table("../../param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
 temp_model=a[1:n_iter]
+#Used for summary statistics
+tab_pheno=read.table("../../param/generalist_specialist_spp_added_amplitude_season.csv",sep=";",dec=".",header=T,row.names=1)
+name_spp=rownames(tab_pheno)
+####Two options are possible for mean values
+pop_table=read.table("../../param/mean_interpolated_abundances_Auger.txt",sep=",",dec=".",header=T)
+rownames(pop_table)=pop_table$sp
+pop_table=pop_table[name_spp,]
 
 #Interaction
 tmp_inter=read.table("matrix_A_after_calibration.csv",sep=";",dec=".")
@@ -54,6 +63,7 @@ M=cyst_mortality+cyst_burial
 Gamma=resuspension*germination
 S=S_max*tab$S
 
+
 ###############Golden_set
 #Initialize
 N_original_set=array(NA,dim=c(n_iter,3,nspp),dimnames=list(NULL,c("coast","ocean","seed"),name_spp))
@@ -73,6 +83,17 @@ free_param=read.table("free_parameters_with_lowburial_testmortality.txt",sep=";"
 list_simulation=matrix(NA,nrow=(ncol(free_param)-1)*nrow(free_param),ncol=nrow(free_param))
 colnames(list_simulation)=rownames(free_param)
 rownames(list_simulation)=1:nrow(list_simulation)
+
+###############Store statistics
+tab_summary=matrix(NA,nrow=nrow(list_simulation)+1,ncol=5)
+rownames(tab_summary)=1:(nrow(list_simulation)+1)
+colnames(tab_summary)=c("Abundance","Amplitude","Phenology","Diff","Persistence")
+
+tab_coast=N_original_set[,1,]
+final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
+tab_summary[nrow(list_simulation)+1,1:3]=final_summary
+tab_summary[nrow(list_simulation)+1,4]=sum(final_summary)
+tab_summary[nrow(list_simulation)+1,5]=sum(tab_coast[nrow(tab_coast),]>0)
 
 #Initialize
 N_sensitivity=array(NA,dim=c(n_iter,3,nspp,nrow(list_simulation)),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,1:nrow(list_simulation)))
@@ -110,8 +131,16 @@ for(t in 1:(n_iter-1)){
 		Ntmp=var_tmp[[1]]
         	N_simu[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
-		print(N_simu[100,"coast",])
 		N_sensitivity[,,,nb_simu]=N_simu[,,]
+		tab_coast=N_simu[,1,]
+		final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
+		tab_summary[nb_simu,1:3]=final_summary
+		if(sum(tab_coast==0)>0){ #One species has died
+			tab_summary[nb_simu,4]=0
+		}else{
+			tab_summary[nb_simu,4]=sum(final_summary)
+		}
+		tab_summary[nb_simu,5]=sum(tab_coast[nrow(tab_coast),]>0)
 }
 }
 
@@ -133,10 +162,12 @@ for(param_to_move in rownames(free_param)){
 	space=0.5/(2*length(id_param))
 	seq_space=seq(-space,space,length.out=length(id_param))
 	for(i in 1:length(id_param)){
-		print(list_simulation[id_param[i],])
 		mean_tot=mean(log10(apply(N_sensitivity[id,"coast",,id_param[i]],1,sum)))
 		print(mean_tot)
-		points(l+seq_space[i],mean_tot,t="p",pch=16)
+		points(l+seq_space[i],mean_tot,t="p",pch=16,col="black")
+		if(tab_summary[id_param[i],4]==0){
+			points(l+seq_space[i],mean_tot,t="p",pch=16,col="red")
+		}
 		at_val_text=c(at_val_text,l+seq_space[i])
 		tmp_text=strsplit(analyses[id_param[i]],"_")
 		val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
@@ -144,3 +175,35 @@ for(param_to_move in rownames(free_param)){
 }	
 mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
 dev.off()
+
+pdf("summary_statistics_for_sensitivity.pdf",width=15)
+par(mfrow=c(2,2))
+analyses=rownames(list_simulation)
+for(summary in 1:(ncol(tab_summary)-1)){
+	plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=range(tab_summary[,summary]),xaxt="n",ylab=colnames(tab_summary)[summary],xlab="")
+	axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+	mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.8)
+	abline(h=tab_summary[nrow(tab_summary),summary])
+	l=0
+	val_text=c()
+	at_val_text=c()
+	for(param_to_move in rownames(free_param)){
+        	l=l+1
+	        id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        	space=0.5/(2*length(id_param))
+	        seq_space=seq(-space,space,length.out=length(id_param))
+        	for(i in 1:length(id_param)){
+			if(tab_summary[id_param[i],4]==0){
+				text(l+seq_space[i],tab_summary[id_param[i],summary],labels=tab_summary[id_param[i],5],col="red")
+			}else{
+                		points(l+seq_space[i],tab_summary[id_param[i],summary],col="black",t="p",pch=16)
+			}
+	                at_val_text=c(at_val_text,l+seq_space[i])
+        	        tmp_text=strsplit(analyses[id_param[i]],"_")
+	                val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        }
+}
+mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
+}
+dev.off()
+
