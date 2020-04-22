@@ -13,8 +13,8 @@ source("../../script/summary_statistics.r")
 source("compute_saturating_interactions.r")
 
 ####Calibration
-value=c(0.9,1.1) #Parameter space
-nb_simu=1000
+value=c(0.5,0.9,1.1,2) #Parameter space
+nb_simu=100
 nb_year=2
 
 dataset="Auger"
@@ -86,16 +86,7 @@ names(B)=name_spp
 r_mean=growth_rate_noMTE_Bissinger(288,T_opt,B,a_d)
 
 print("No quadratic programming available for saturating interactions, for now")
-write.table(cbind(inter_mat[[1]],r_mean),paste("matrix_A_before_quad.csv",sep=""),sep=";",row.names=F,dec=".")
-
-if(quad_prog==1){
-	tmp=quadprog(inter_mat,x_obs,r_mean,tol=10000,r_calibrate=F)
-	inter_mat=tmp[[1]]
-	growth_rate=tmp[[2]]
-}else{
-	growth_rate=r_mean
-}
-write.table(cbind(inter_mat[[1]],growth_rate),paste("matrix_A_after_quad.csv",sep=""),sep=";",row.names=F,dec=".")
+write.table(inter_mat[[2]],paste("matrix_A_before_calibration.csv",sep=""),sep=";",row.names=F,dec=".")
 
 #list_inter=list(inter_mat,k_coast2ocean*inter_mat)
 
@@ -113,9 +104,9 @@ tab_simu=matrix(NA,nrow=nb_simu,ncol=nb_link)
 rownames(tab_simu)=1:nb_simu
 colnames(tab_simu)=name_links
 
-tab_summary=matrix(NA,nrow=nb_simu,ncol=4)
+tab_summary=matrix(NA,nrow=nb_simu,ncol=5)
 rownames(tab_summary)=1:nb_simu
-colnames(tab_summary)=c("Abundance","Amplitude","Phenology","Diff")
+colnames(tab_summary)=c("Abundance","Amplitude","Phenology","Diff","Persistence")
 
 size_subset=floor(nb_link/(length(value)+1))
 
@@ -137,7 +128,7 @@ for(sim in 1:nb_simu){
                 set=set_tmp
                 tab_simu[sim,inter_v]=value[v]
         }
-        inter_no_change=setdiff(set,nb_link-size_subset*length(value))
+        inter_no_change=set
         tab_simu[sim,inter_no_change]=1.0
 
         list_H_tmp=list(tmp_inter,tmp_inter)
@@ -149,17 +140,25 @@ effect_compet=array(NA,dim=c(n_iter,2,nspp),dimnames=list(NULL,c("coast","ocean"
 N[1,,]=rep(10^3,nspp*3)
 
 ##Run
+try(
 for(t in 1:(n_iter-1)){
 		var_tmp=step1(N[t,,],list_H_tmp,type_inter,temp_model[t],M,morta,a_d,T_opt,B)
 		Ntmp=var_tmp[[1]]
 		effect_compet[t+1,,]=var_tmp[[2]]
         	N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 }
-
+,silent=T)
 tab_coast=N[,1,]
+if(sum(is.na(tab_coast)>0)){
+tab_summary[sim,1:3]=100
+}else{
 final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
 tab_summary[sim,1:3]=final_summary
+}
 tab_summary[sim,4]=sum(final_summary)
+tab_summary[sim,5]=sum(tab_coast>0,na.rm=T)
+if(tab_summary[sim,5]<ncol(tab_coast)){tab_summary[,4]=tab_summary[,4]*2} #We can't have a model with a missing species
+
 }
 
 print(Sys.time()-t1)
@@ -169,7 +168,7 @@ write.table(tab_simu,paste("list_simulation.csv",sep=""),sep=";",dec=".")
 write.table(tab_summary,paste("list_statistics.csv",sep=""),sep=";",dec=".")
 
 
-best=which(tab_summary[,4]==min(tab_summary[,4]))
+best=which(tab_summary[,4]==min(tab_summary[,4],na.rm=T))
 
 best_line_inter=tab_simu[best,]
 
@@ -198,7 +197,7 @@ colnames(list_H_tmp[[1]])=name_spp
 rownames(list_H_tmp[[1]])=name_spp
 colnames(type_inter[[1]])=name_spp
 rownames(type_inter[[1]])=name_spp
-write.table(list_H_tmp[[1]],"matrix_H_after_calibration.csv",sep=";",dec=".")
+write.table(list_H_tmp[[1]],"matrix_A_after_calibration.csv",sep=";",dec=".")
 write.table(type_inter[[1]],"facilitation_and_competition.csv",sep=";",dec=".")
 
 

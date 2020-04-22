@@ -32,7 +32,7 @@ step1=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B,threshold){
 	nspp=dim(n_t)[2]
 	tmp=matrix(NA,dim(n_t)[1],nspp)
 	effect_compet=matrix(NA,2,nspp)
-	colnames(tmp)=names(n_t)
+	colnames(tmp)=colnames(n_t)
 	for(i in 1:2){
 		growth=growth_rate_noMTE_Bissinger(temp,T_opt,B,irradiance)
 		for(sp1 in 1:nspp){
@@ -45,6 +45,11 @@ step1=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B,threshold){
 		tmp[i,]=exp(growth)*n_t[i,]/effect_compet[i,] - mort*n_t[i,]
 	}
 	tmp[3,]=n_t[3,]*(1-M)
+        extinction=which(tmp[,]<0.001,arr.ind=T)
+        if(length(extinction)>1){
+        	tmp[i,which(tmp[extinction]<0.001)]=0
+               	print(paste(colnames(n_t)[extinction[,2]],"is extinct"))
+               }
 	if(sum(c(tmp)<0)>0){
 	print(tmp[1,])
 	print(tmp[2,])
@@ -58,5 +63,11 @@ step2=function(n_t,S,Gamma,e){
 	tmp[1,]=n_t[1,]*(1-S-e)+Gamma*n_t[3,]+e*n_t[2,]
 	tmp[2,]=n_t[2,]*(1-S-e)+e*n_t[1,]
 	tmp[3,]=n_t[3,]*(1-Gamma)+S*n_t[1,]
+	extinction=which(tmp[,]<0.001,arr.ind=T)
+        if(length(extinction)>1){
+                tmp[i,which(tmp[extinction]<0.001)]=0
+                print(paste(colnames(n_t)[extinction[,2]],"is extinct"))
+               }
+
 	return(tmp)
 }
