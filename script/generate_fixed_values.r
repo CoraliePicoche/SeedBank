@@ -45,7 +45,7 @@ tmp=rbind(tab_bisG,tab_bisS)
 tmp=tmp[as.character(name_spp),]
 tmp=cbind(tmp,S)
 
-write.table(tmp,"param/species_specific_parameters_simulated.txt",sep=";",dec=".")
+write.table(tmp,"param/species_specific_parameters.txt",sep=";",dec=".")
 
 #Data to use (Auger)
 n_iter=10000
