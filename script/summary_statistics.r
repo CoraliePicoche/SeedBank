@@ -1,5 +1,6 @@
 #### CP 15/04/20 Diagnostics on different simulations / summary statistics
 #### CP 16/04/20 Turns into a function
+#### CP 23/04/20 From abs(error) to (error)^2 (sqrt(mean) is done in the main calibration file) + return a vector instead of a final number to keep track of the species-specific indicator
 
 summary_statistics=function(tab_mean,tab_pheno,tab_coast,nb_year){
 #Simulation

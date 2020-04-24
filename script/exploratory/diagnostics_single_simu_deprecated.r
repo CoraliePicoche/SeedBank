@@ -2,6 +2,27 @@
 ## 22/04/20 CP: old diagnostics used to debug models without delays. Not used anymore
 ############
 
+pdf(paste("timeseries_all_in_one.pdf",sep=""),width=16,height=16)
+par(mfrow=c(3,1))
+
+plot(id,transfo_N_coast[id,1],col=colo[1],t="o",pch=apch[1],ylim=range(transfo_N_coast[id,]),xaxt="n",ylab="Coast",xlab="",lty=alty[1])
+for(i in 2:10){
+points(id,transfo_N_coast[id,i],col=colo[i],t="o",pch=apch[i],lty=alty[i])
+}
+
+plot(id,transfo_N_ocean[id,1],col=colo[1],t="o",pch=apch[1],ylim=range(transfo_N_ocean[id,]),xaxt="n",ylab="Ocean",xlab="",lty=alty[1])
+for(i in 2:10){
+points(id,transfo_N_ocean[id,i],col=colo[i],pch=apch[i],t="o",lty=alty[i])
+}
+
+plot(id,transfo_N_seed[id,1],col=colo[1],t="p",pch=apch[1],ylim=range(transfo_N_seed[id,]),ylab="Seed",xlab="time",lty=alty[1])
+for(i in 2:10){
+points(id,transfo_N_seed[id,i],col=colo[i],pch=apch[i],t="o",lty=alty[i])
+}
+
+legend("bottomright",sp,col=colo,pch=apch,lty=alty)
+
+dev.off()
 ###Growthes
 #WARNING: for now, uses a file, corres_hernandez_Auger.txt, that has been removed in the new version of diagnostics it should be implemented back (as well as the interpolation of the time series, that can be copied from another file. Use seed(42), of course
 if(1==0){

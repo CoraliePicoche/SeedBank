@@ -39,7 +39,7 @@ step1=function(n_t,list_inter,temp,M,mort,irradiance,T_opt,B,threshold){
 	extinction=which(tmp[,]<0.001,arr.ind=T)
 	if(length(extinction)>1){
 			tmp[extinction]=0
-			print(paste(colnames(n_t)[extinction[,2]],"is extinct"))
+#			print(paste(colnames(n_t)[extinction[,2]],"is extinct"))
 		}
 #	print(tmp)
 	if(sum(c(tmp)<0)>0){
@@ -58,7 +58,7 @@ step2=function(n_t,S,Gamma,e){
 	extinction=which(tmp[,]<0.001,arr.ind=T)
 	if(length(extinction)>1){
 			tmp[extinction]=0
-			print(paste(names(n_t)[extinction[,2]],"is extinct"))
+#			print(paste(names(n_t)[extinction[,2]],"is extinct"))
 		}
 	return(tmp)
 }

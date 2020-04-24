@@ -98,10 +98,10 @@ start_duration_bloom_new=function(time_series_interp,date_bis,hydro_interp,thres
 }
 
 
-tab_coast=read.table(paste("output/out_coast1.csv",sep=""),sep=";",dec=".")
-name_spp=colnames(tab_coast)
+load("param/Auger_pencen_null_regular_common_MO.RData")
+name_spp=colnames(cis$call$model$B)
 
-abundances_tab=read.table(paste("param/","corres_hernandez_Auger.txt",sep=""),sep=";",header=T)
+abundances_tab=read.table(paste("param/","raw_abundances_Auger.txt",sep=""),sep=";",header=T)
 dates=as.Date(abundances_tab$Date)
 abundances_tab=abundances_tab[year(dates)>=1996,name_spp]#Using data from 1996
 dates=dates[year(dates)>=1996]
@@ -233,13 +233,13 @@ par(mfrow=c(1,3),mar=c(4,4,1,1))
 dev.off()
 
 
-##Write table: a species is a generalist if the sum of all durations for a year exceeds 122 days for at least 15 years 
+##Write table: a species is a generalist if the sum of all durations for a year exceeds 137 days for at least 15 years 
 ## T_opt is the mean of Temp_min
 table_to_write=matrix(NA,length(name_spp),5,dimnames=list(name_spp,c("Type","Mean_length","T_opt","Mean_amplitude","Season")))
 for(s in name_spp){
 	nb_dur=sum(c(tab[s,,"Sum_duration"])>137)
 	table_to_write[s,"Mean_length"]=mean(tab[s,,"Sum_duration"])
-	table_to_write[s,"T_opt"]=mean(tab[s,,"Temp_mean"])
+	table_to_write[s,"T_opt"]=mean(tab[s,,"Temp_min"])
 	table_to_write[s,"Mean_amplitude"]=mean(tab[s,,"Amplitude"])
 	tmp=table(tab[s,,"Season"])
 	table_to_write[s,"Season"]=names(tmp)[which(tmp==max(tmp))]
@@ -250,4 +250,4 @@ for(s in name_spp){
 	}
 
 }
-write.table(table_to_write,"param/generalist_specialist_spp_added_amplitude_season.csv",sep=";",dec=".") #To be read with read.table(...,row.names=T,header=T)
+write.table(table_to_write,"param/generalist_specialist_spp_added_amplitude_season_justtrying.csv",sep=";",dec=".") #To be read with read.table(...,row.names=T,header=T)

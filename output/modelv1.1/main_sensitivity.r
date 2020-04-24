@@ -19,15 +19,14 @@ temp_model=a[1:n_iter]
 #Used for summary statistics
 tab_pheno=read.table("../../param/generalist_specialist_spp_added_amplitude_season.csv",sep=";",dec=".",header=T,row.names=1)
 name_spp=rownames(tab_pheno)
+nspp=length(name_spp)
 ####Two options are possible for mean values
 pop_table=read.table("../../param/mean_interpolated_abundances_Auger.txt",sep=",",dec=".",header=T)
 rownames(pop_table)=pop_table$sp
 pop_table=pop_table[name_spp,]
 
 #Interaction
-tmp_inter=read.table("matrix_A_after_calibration.csv",sep=";",dec=".")
-name_spp=colnames(tmp_inter)
-nspp=length(name_spp)
+tmp_inter=read.table("interaction_matrix_after_calibration.csv",sep=";",dec=".")
 
 #Fixed parameters: golden parameter set
 tab=read.table("simu.csv",sep=";",dec=".",header=T)
@@ -49,7 +48,7 @@ a_d=as.numeric(as.character(tab[tab[,1]=="daylength",2]))
 threshold=as.numeric(as.character(tab[tab[,1]=="threshold",2]))
 
 #Sinking rates and T_opt
-tab=read.table(paste("species_specific_parameters.txt",sep=""),sep=";",dec=".",header=T)
+tab=read.table(paste("../../param/species_specific_parameters.txt",sep=""),sep=";",dec=".",header=T)
 tab=tab[name_spp,]
 S=S_max*tab$S
 T_opt=tab$T_opt+273+5
@@ -78,8 +77,7 @@ for(t in 1:(n_iter-1)){
 }
 
 #Parameters to move
-#free_param=read.table("free_parameters.txt",sep=";",dec=".",header=T,row.names=1)
-free_param=read.table("free_parameters_with_lowburial_testmortality.txt",sep=";",dec=".",header=T,row.names=1)
+free_param=read.table("sensitivity_parameters.txt",sep=";",dec=".",header=T,row.names=1)
 list_simulation=matrix(NA,nrow=(ncol(free_param)-1)*nrow(free_param),ncol=nrow(free_param))
 colnames(list_simulation)=rownames(free_param)
 rownames(list_simulation)=1:nrow(list_simulation)
@@ -91,8 +89,8 @@ colnames(tab_summary)=c("Abundance","Amplitude","Phenology","Diff","Persistence"
 
 tab_coast=N_original_set[,1,]
 final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
-tab_summary[nrow(list_simulation)+1,1:3]=final_summary
-tab_summary[nrow(list_simulation)+1,4]=sum(final_summary)
+tab_summary[nrow(list_simulation)+1,1:3]=c(sqrt(sum(final_summary[[1]])/nspp),sqrt(sum(final_summary[[2]])/nspp),sqrt(sum(final_summary[[3]])/nspp))
+tab_summary[nrow(list_simulation)+1,4]=sum(tab_summary[nrow(list_simulation)+1,1:3])
 tab_summary[nrow(list_simulation)+1,5]=sum(tab_coast[nrow(tab_coast),]>0)
 
 #Initialize
@@ -134,11 +132,11 @@ for(t in 1:(n_iter-1)){
 		N_sensitivity[,,,nb_simu]=N_simu[,,]
 		tab_coast=N_simu[,1,]
 		final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
-		tab_summary[nb_simu,1:3]=final_summary
+		tab_summary[nb_simu,1:3]=c(sqrt(sum(final_summary[[1]])/nspp),sqrt(sum(final_summary[[2]])/nspp),sqrt(sum(final_summary[[3]])/nspp))
 		if(sum(tab_coast==0)>0){ #One species has died
 			tab_summary[nb_simu,4]=0
 		}else{
-			tab_summary[nb_simu,4]=sum(final_summary)
+			tab_summary[nb_simu,4]=sum(tab_summary[nb_simu,1:3])
 		}
 		tab_summary[nb_simu,5]=sum(tab_coast[nrow(tab_coast),]>0)
 }
@@ -147,7 +145,7 @@ for(t in 1:(n_iter-1)){
 id=seq(n_iter-365,n_iter)
 mean_tot_original=mean(log10(apply(N_original_set[id,"coast",],1,sum)))
 
-pdf("mean_abundance_with_free_parameters_with_lossrate.pdf",width=15)
+pdf("mean_abundance_sensitivity.pdf",width=15)
 analyses=rownames(list_simulation)
 plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(3.5,5.5),xaxt="n",ylab="Average total abundance",xlab="")
 axis(1,labels=rownames(free_param),at=1:nrow(free_param))
@@ -207,3 +205,5 @@ mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
 }
 dev.off()
 
+write.table(list_simulation,paste("list_simulation_sensitivity.csv",sep=""),sep=";",dec=".")
+write.table(tab_summary,paste("list_statistics_sensitivity.csv",sep=""),sep=";",dec=".")

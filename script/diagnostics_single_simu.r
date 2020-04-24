@@ -20,11 +20,11 @@ name_spp=colnames(tab_coast)
 tab_mean=read.table("../../param/mean_monthly_abundance.txt",sep=";",dec=".",header=T)
 
 #Variation due to quadratic programming
-before=as.matrix(read.table(paste("matrix_A_before_calibration.csv",sep=""),sep=";",dec=".",header=T))
+before=as.matrix(read.table(paste("interaction_matrix_before_calibration.csv",sep=""),sep=";",dec=".",header=T))
 before_A=before[,1:(ncol(before)-1)]
 before_A_nodiag=before_A
 diag(before_A_nodiag)=NA
-after=as.matrix(read.table(paste("matrix_A_after_calibration.csv",sep=""),sep=";",dec=".",header=T))
+after=as.matrix(read.table(paste("interaction_matrix_after_calibration.csv",sep=""),sep=";",dec=".",header=T))
 after_A=after[,1:(ncol(after)-1)]
 after_A_nodiag=after_A
 diag(after_A_nodiag)=NA
@@ -32,7 +32,7 @@ diag(after_A_nodiag)=NA
 ratio_after=mean(abs(diag(after_A)))/mean(abs(after_A_nodiag))
 ratio_before=mean(abs(diag(before_A)))/mean(abs(before_A_nodiag))
 
-pdf(paste("calibration_A.pdf",sep=""),width=7.5,height=10)
+pdf(paste("calibration_interaction_matrix.pdf",sep=""),width=7.5,height=10)
 par(mfrow=c(3,1),mar=c(4,4,1,1))
 plot(c(before_A),c(after_A),pch=16,col="black",xlab="",ylab="After calibration")
 abline(a=0,b=1)
@@ -99,32 +99,11 @@ transfo_N_seed=log10(tab_seed+10^(-5))
 
 id=(n_iter-365):n_iter
 
-pdf(paste("timeseries_all_in_one.pdf",sep=""),width=16,height=16)
-par(mfrow=c(3,1))
-
-plot(id,transfo_N_coast[id,1],col=colo[1],t="o",pch=apch[1],ylim=range(transfo_N_coast[id,]),xaxt="n",ylab="Coast",xlab="",lty=alty[1])
-for(i in 2:10){
-points(id,transfo_N_coast[id,i],col=colo[i],t="o",pch=apch[i],lty=alty[i])
-}
-
-plot(id,transfo_N_ocean[id,1],col=colo[1],t="o",pch=apch[1],ylim=range(transfo_N_ocean[id,]),xaxt="n",ylab="Ocean",xlab="",lty=alty[1])
-for(i in 2:10){
-points(id,transfo_N_ocean[id,i],col=colo[i],pch=apch[i],t="o",lty=alty[i])
-}
-
-plot(id,transfo_N_seed[id,1],col=colo[1],t="p",pch=apch[1],ylim=range(transfo_N_seed[id,]),ylab="Seed",xlab="time",lty=alty[1])
-for(i in 2:10){
-points(id,transfo_N_seed[id,i],col=colo[i],pch=apch[i],t="o",lty=alty[i])
-}
-
-legend("bottomright",sp,col=colo,pch=apch,lty=alty)
-
-dev.off()
 
 ####Two options are possible for mean values
-#If we use raw values of corres_hernandez, we avoid the artefacts created by the interpolation and the random value used when gaps are over 2 points in the time series, but we increase the mean value artificially as cells are counted only when they are numerous. The inverse is true when using interpolated data. This is only a matter of choice.
+#If we use raw values of raw_abundances, we avoid the artefacts created by the interpolation and the random value used when gaps are over 2 points in the time series, but we increase the mean value artificially as cells are counted only when they are numerous. The inverse is true when using interpolated data. This is only a matter of choice.
 
-#abundances_tab=read.table(paste("param/","corres_hernandez_Auger.txt",sep=""),sep=";",header=T)
+#abundances_tab=read.table(paste("param/","raw_abundances_Auger.txt",sep=""),sep=";",header=T)
 #dates=as.Date(abundances_tab$Date)
 #abundances_tab=abundances_tab[year(dates)>=1996,name_spp]#Using data from 1996
 #dates=dates[year(dates)>=1996]

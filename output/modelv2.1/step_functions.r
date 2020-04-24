@@ -28,17 +28,20 @@ growth_rate_noMTE_Bissinger=function(temp,T_opt,B,d){ #from Scranton and Vasseur
 
 
 #Saturating interactions
-step1=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B,threshold){
+step1=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B){
 	nspp=dim(n_t)[2]
 	tmp=matrix(NA,dim(n_t)[1],nspp)
 	effect_compet=matrix(NA,2,nspp)
 	colnames(tmp)=colnames(n_t)
+	colnames(effect_compet)=colnames(n_t)
 	for(i in 1:2){
 		growth=growth_rate_noMTE_Bissinger(temp,T_opt,B,irradiance)
 		for(sp1 in 1:nspp){
 			val1=0
 			for(sp2 in 1:nspp){
-				val1=val1+type_inter[[i]][sp1,sp2]*n_t[i,sp2]/(list_H[[i]][sp1,sp2]+n_t[i,sp2])
+				if(list_H[[i]][sp1,sp2]>0){
+					val1=val1+type_inter[[i]][sp1,sp2]*n_t[i,sp2]/(list_H[[i]][sp1,sp2]+n_t[i,sp2])
+				}
 			}
 			effect_compet[i,sp1]=1+val1
 		}
@@ -47,8 +50,7 @@ step1=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B,threshold){
 	tmp[3,]=n_t[3,]*(1-M)
         extinction=which(tmp[,]<0.001,arr.ind=T)
         if(length(extinction)>1){
-        	tmp[i,which(tmp[extinction]<0.001)]=0
-               	print(paste(colnames(n_t)[extinction[,2]],"is extinct"))
+        	tmp[extinction]=0
                }
 	if(sum(c(tmp)<0)>0){
 	print(tmp[1,])
@@ -65,8 +67,7 @@ step2=function(n_t,S,Gamma,e){
 	tmp[3,]=n_t[3,]*(1-Gamma)+S*n_t[1,]
 	extinction=which(tmp[,]<0.001,arr.ind=T)
         if(length(extinction)>1){
-                tmp[i,which(tmp[extinction]<0.001)]=0
-                print(paste(colnames(n_t)[extinction[,2]],"is extinct"))
+                tmp[extinction]=0
                }
 
 	return(tmp)
