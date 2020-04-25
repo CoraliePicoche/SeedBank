@@ -77,13 +77,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2100369821 "cpicoche"
-\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -332,17 +330,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Here we build on the
-\change_inserted -2100369821 1585297605
- discrete
-\change_unchanged
- 
-\change_deleted -2100369821 1585297600
-work
-\change_inserted -2100369821 1585297603
-metacommunity model
-\change_unchanged
- by 
+Here we build on the discrete metacommunity model by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "shoemaker_linking_2016"
@@ -350,7 +338,7 @@ literal "false"
 
 \end_inset
 
- and 
+, completed by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wisnoski_dormancy_2019"
@@ -358,10 +346,8 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1585299593
  who included exchanges with a seed bank.
- The growth rate in this model is temperature-dependent and adapted from
+ The growth rate in this model is temperature-dependent and inspired by
  a metabolism-based model 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -370,15 +356,8 @@ literal "false"
 
 \end_inset
 
-, updated 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bissinger_predicting_2008"
-literal "false"
-
-\end_inset
-
- and adapted to the specific phenology of modeled phytoplankton groups 
+, which we adapted to the specific phenology of modeled phytoplankton groups
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "picoche_strong_2019"
@@ -397,63 +376,26 @@ literal "false"
 \end_inset
 
 .
+ In a first step, we use linear interaction effects, then tweak the Beverton-Hol
+t model to introduce saturating interactions.
+ With these different elements, we aim toexamine the effect of exchanges
+ between different compartments (ocean and coastal water column and the
+ seed bank at the bottom of the water column) on coexistence.
  
-\change_deleted -2100369821 1585299603
-, as well as previous findings in
-\begin_inset CommandInset citation
-LatexCommand citet
-key "picoche_how_2019,picoche_strong_2019"
-literal "false"
-
-\end_inset
-
-
-\change_inserted -2100369821 1585299660
- With these different elements
-\change_deleted -2100369821 1585299603
-,
-\change_inserted -2100369821 1585299642
-, we
-\change_deleted -2100369821 1585299615
- 
-\change_inserted -2100369821 1585299805
-aim to
-\change_deleted -2100369821 1585299615
-to 
-\change_unchanged
-examine the effect of exchanges between different compartments (ocean and
- coastal water column and the 
-\change_inserted -2100369821 1585299636
-seed bank at the bottom of the water column
-\change_deleted -2100369821 1585299630
-bottom sediment
-\change_unchanged
-) on coexistence.
- 
-\change_inserted -666822487 1584954837
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1584954937
-Will need some writing improvements but we can see that later –> be more
- precise about how we use each work.
+FB: Will need some writing improvements but we can see that later –> be
+ more precise about how we use each work.
  E.g., we incorporate the empirical interactione estimates in XXX into a model
  similar to that developed by XXX, except that the growth rate formulation
  is taken from XXXX.
- 
-\change_inserted -2100369821 1587824606
-Better now?
-\change_unchanged
-
+ CP: Better now?
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -462,11 +404,11 @@ Methods
 \end_layout
 
 \begin_layout Subsection*
-Model
+Models
 \end_layout
 
 \begin_layout Standard
-Our model builds atop those developed by 
+Our models builds atop those developed by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "shoemaker_linking_2016"
@@ -483,10 +425,88 @@ literal "false"
 \end_inset
 
 .
- These aretwo-stages discrete-time model with multiple species competing.
- In our model, several add-ons are introduced.
- First, coastal and oceanic cell numbers increase according to the model
- of Beverton-Holt (BH) growth (eq.
+ These discrete-time models are designed for metacommunities with multiple
+ species competing and unfold as follow: first, individuals increase with
+ a Beverton-Holt (BH) density-dependence (eqs.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_step1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_stepI_saturating"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), then exchanges occur between the different compartments or patches part
+ constituting the metacommunity (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_step2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+In this paper, individuals are phytoplanktonic cells that move between the
+ upper layer of coastal water, its bottom layer where a seed bank accumulates
+ (hereafter called a cyst bank to remain consistent with phytoplankton terminolo
+gy) and the ocean.
+ Only oceanic and coastal cells are subject to BH-density dependence.
+ Cysts are only affected by mortality 
+\begin_inset Formula $m$
+\end_inset
+
+ and burial due to sedimentation 
+\begin_inset Formula $\zeta$
+\end_inset
+
+.
+ Parameters and state variables are defined in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:State_Parameter"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ [[Table is false]]
+\end_layout
+
+\begin_layout Standard
+The BH formulation is the Lotka-Volterra equivalent for discrete-time models
+ and is often used to represent terrestrial plant growths.
+ In our model, the species-specific maximum achievable growth rate 
+\begin_inset Formula $r_{i}$
+\end_inset
+
+ is modified by positive and negative interactions 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+.
+ In the most classical formulation of the BH competition model, which is
+ also our first model (model I), interaction effects increase linearly with
+ the abundances (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -498,28 +518,66 @@ noprefix "false"
 \end_inset
 
 ).
- The BH formulation is classical for discrete-time models of terrestrial
- plants and includes a maximum achievable growth rate 
-\begin_inset Formula $r$
+ We subsequently defined saturating interactions (model II, eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_stepI_saturating"
+plural "false"
+caps "false"
+noprefix "false"
+
 \end_inset
 
- which is modified by positive and negative interactions 
-\begin_inset Formula $\alpha_{ij}$
+).
+ More specifically, in our case, the first step of the first model is written
+ as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left\{ \begin{array}{ccc}
+N_{t',i,c} & = & \frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}\\
+N_{t',i,o} & = & \frac{e^{r_{i}(T)}N_{t,i,o}}{1+k_{c2o}\sum_{j}\alpha_{ij}N_{t,j,o}}-lN_{t,i,o}\\
+N_{t',i,b} & = & N_{t,i,b}(1-m-\zeta)
+\end{array}\right.\label{eq:model_step1}
+\end{equation}
+
 \end_inset
 
-.
- As we assume that competition for nutrients is stronger in the ocean than
+
+\end_layout
+
+\begin_layout Standard
+In contrast, in model II, oceanic and coastal dynamics are governed by eq.
+ 2.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{t',i,c/o}=\frac{e^{r_{i}(T)}N_{t,i,c/o}}{1+\sum_{j/\alpha_{ij}\in\mathbb{C}}\frac{a_{C}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}+\sum_{j/\alpha_{ij}\in\mathbb{F}}\frac{a_{F}N_{t,j,c/o}}{H_{F}+N_{t,jc/o}}}-lN_{t,i,c/o}\label{eq:model_stepI_saturating}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+#################DEFINE THE REST here
+\end_layout
+
+\begin_layout Standard
+As we assume that competition for nutrients is stronger in the ocean than
  along the coast [ref], a coefficient 
 \begin_inset Formula $k_{c2o}>1$
 \end_inset
 
  is applied to competitive interactions and facilitation is removed from
  the oceanic interaction matrices.
-
-\change_inserted -2100369821 1587822447
- [[NO]]
-\change_unchanged
- Here, the growth rate 
+ [[NO]] Here, the growth rate 
 \begin_inset Formula $r_{i}(T)$
 \end_inset
 
@@ -553,11 +611,6 @@ noprefix "false"
 \end_inset
 
 .
-
-\change_deleted -2100369821 1587821827
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -575,22 +628,8 @@ Question remains on what we do for mutualistic interactions but I am not
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\left\{ \begin{array}{ccc}
-N_{t+h,i,c} & = & \frac{e^{r_{i}(T)}N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}\\
-N_{t+h,i,o} & = & \frac{e^{r_{i}(T)}N_{t,i,o}}{1+k_{c2o}\sum_{j}\alpha_{ij}N_{t,j,o}}-lN_{t,i,o}\\
-N_{t+h,i,b} & = & N_{t,i,b}(1-m-\zeta)
-\end{array}\right.\label{eq:model_step1}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Second, exchanges take place between the three compartments (eq.
+During the second step, exchanges take place between the three compartments
+ (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -601,48 +640,21 @@ noprefix "false"
 
 \end_inset
 
-)
-\change_inserted -2100369821 1587822604
- [[Check that formula are still ok]]
-\change_deleted -2100369821 1587822595
-.
- 
-\change_unchanged
-
+) [[Check that formula are still ok]]
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 \left\{ \begin{array}{ccc}
-N_{t+1,i,c} & = & N_{t+h,i,c}(1-s_{i}-e)+\gamma N_{t+h,i,b}+eN_{t+h,i,o}\\
-N_{t+1,i,o} & = & N_{t+h,i,o}(1-s{}_{i}-e)+eN_{t+h,i,c}\\
-N_{t+1,i,b} & = & N_{t+h,i,b}(1-\gamma)+s_{i}N_{t+h,i,c}
+N_{t+1,i,c} & = & N_{t',i,c}(1-s_{i}-e)+\gamma N_{t',i,b}+eN_{t',i,o}\\
+N_{t+1,i,o} & = & N_{t',i,o}(1-s{}_{i}-e)+eN_{t',i,c}\\
+N_{t+1,i,b} & = & N_{t',i,b}(1-\gamma)+s_{i}N_{t',i,c}
 \end{array}\right.\label{eq:model_step2}
 \end{equation}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Parameters and state variables are defined in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:State_Parameter"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-
-\change_inserted -2100369821 1587822465
- [[Table is false]]
-\change_deleted -2100369821 1587822462
-.
-\change_unchanged
 
 \end_layout
 
@@ -1637,12 +1649,8 @@ noprefix "false"
 \end_inset
 
 ).
- 
-\change_inserted -2100369821 1587822484
-[[NO.
+ [[NO.
  We need Eppley]]
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1728,11 +1736,7 @@ noprefix "false"
 
 ).
  Finally, the temperature at each time step is a repetition of the temperatures
- observed over 20 years in our example dataset
-\change_inserted -2100369821 1587822642
- [[NO]]
-\change_unchanged
-
+ observed over 20 years in our example dataset [[NO]]
 \end_layout
 
 \begin_layout Standard
@@ -1748,33 +1752,19 @@ Each compartment (ocean, coast, seed bank) contains
 \end_inset
 
  cells at the beginning of the simulation, which is run for 10000 time steps.
-
-\change_inserted -2100369821 1587822647
  [[NO]]
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsection*
-Parameterisation
-\change_inserted -2100369821 1587822643
- 
-\change_unchanged
-
+Parameterisation 
 \end_layout
 
 \begin_layout Subsubsection*
 Empirical dataset used for calibration
-\change_inserted -2100369821 1587822498
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1587822502
 [[Write here]]
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1887,30 +1877,19 @@ The thermal optimum
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
- is defined as the mean minimum value 
-\change_inserted -2100369821 1587823293
-[[CHECK]] 
-\change_unchanged
-of the temperature at the beginning bloom throughout the whole time series.
-
-\change_inserted -2100369821 1585204553
+ is defined as the mean minimum value [[CHECK]] of the temperature at the
+ beginning bloom throughout the whole time series.
  
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1587821910
 This was way too low and led to blooms during autumn and winter.
  Basically added 5
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1929,23 +1908,15 @@ literal "false"
 
 .
  
-\change_inserted -2100369821 1587821923
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1587821934
 I need to change that because is is way too low
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -2505,7 +2476,7 @@ Find a way to represent the variation in total abundances in the models
 Scenarios
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Discussion
 \begin_inset CommandInset bibtex
 LatexCommand bibtex

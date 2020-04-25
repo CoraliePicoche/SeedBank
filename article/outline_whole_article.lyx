@@ -164,7 +164,8 @@ Classical BH model: Type I functional response, with a threshold
 
 \begin_layout Itemize
 Saturating interaction model (type II functional response)
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Itemize
 Model with delay (could be related to virus- or copepod- exploitation)
@@ -183,6 +184,11 @@ interactions are linked with other phenomena, exploiters affect the loss
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Subsection*
 Parameters from the literature
@@ -199,7 +205,8 @@ Will need to find better titles
 \end_layout
 
 \begin_layout Standard
-In two sentences each, define parameters that are not already described
+Parameters that are not already described, most of them being the ones whose
+ impact of the model outputs will be assessed
 \end_layout
 
 \begin_layout Itemize
@@ -262,16 +269,17 @@ Calibration and model variability
 \end_layout
 
 \begin_layout Itemize
-Definition of diagnostics
+Definition of summary statistics
 \end_layout
 
 \begin_layout Itemize
-Calibration of interactions
+Calibration of interactions (NO quadratic programming.
+ This might be tackled in SI, not in MS)
 \end_layout
 
 \begin_layout Itemize
 Analyses of the effect of other parameter variations, defining parameter
- space
+ space.
 \end_layout
 
 \begin_deeper
@@ -294,6 +302,14 @@ cyst mortality and burial
 \begin_layout Itemize
 germination/resuspension 
 \begin_inset Formula ${0.1;0.01;0.001}*{10^{-5},0.1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+loss rate 
+\begin_inset Formula ${0.04;0.1;0.2}$
 \end_inset
 
 
@@ -393,6 +409,7 @@ Emergent properties from the model? For instance, storage effect: does the
 Among others, but wouldn't be the first point: discussion of the impact
  of the niches, or at least the fact that our definition of the niche/generalist
  vs specialist could be different in other papers.
+ See Hernandez, Karasiewicz...
 \end_layout
 
 \begin_layout Section*
@@ -482,6 +499,28 @@ From MAR to BH
 
 \begin_layout Itemize
 From type I to type II
+\end_layout
+
+\begin_layout Subsubsection*
+Calibration
+\end_layout
+
+\begin_layout Standard
+Effect of quadratic programming (smoothing??)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This needs to be discussed as this means taking more time to look at the
+ differences.
+ But we cannot use quadratic programming as this is not available for type
+ II responses
+\end_layout
+
+\end_inset
+
+, then maybe a view of the calibration of interaction matrix (interactions
+ before and after)
 \end_layout
 
 \begin_layout Subsubsection*
