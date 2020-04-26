@@ -242,6 +242,10 @@ Usual presentation of a REPHY dataset (no detail on monitoring, just basic
  information on the location and species)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Subsubsection*
 Field-based niche estimates
 \begin_inset Foot
@@ -258,10 +262,15 @@ I wonder if we shouldn't put this in the SI.
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Definition of generalist vs specialist, definition of the way we infer which
  species is what in our dataset, and their thermal optima.
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -293,7 +302,7 @@ sinking rate
 
 \begin_layout Itemize
 cyst mortality and burial 
-\begin_inset Formula $\approx10^{-4}/10^{-5}+{0.01;0.1;0.3}$
+\begin_inset Formula $\approx10^{-4}/10^{-5}+{10^{-3},10^{-2},10^{-1}}$
 \end_inset
 
 
@@ -301,7 +310,7 @@ cyst mortality and burial
 
 \begin_layout Itemize
 germination/resuspension 
-\begin_inset Formula ${0.1;0.01;0.001}*{10^{-5},0.1}$
+\begin_inset Formula ${10^{-3},10^{-2},10^{-1}}\times{10^{-5},10^{-3},10^{-1}}$
 \end_inset
 
 

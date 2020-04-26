@@ -474,6 +474,207 @@ Growth rate: variation with temperature
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+From MS: In this model, species are therefore defined by their thermal optimum
+ 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+.
+ The equation by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ was modified to account for two more processes.
+ Taxa roughly divide between generalists and specialists, with more or less
+ tolerance to variations in the temperature.
+ Generalists have a larger niche width than specialists, which can be roughly
+ translated by a larger 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ (for more details on the modeling of generalist and specialist, see specific
+ section in SI).
+ Field-based estimation of the niche area 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ is described in the next section.
+ However, apart from a radical and unrealistic change in 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ value, the resulting growth rate decreases very rapidly with the distance
+ from 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+, leading to values close to 0 for temperatures in which phytoplankton can
+ normally grow.
+ The meta-analysis by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_phytoplankton_2016"
+literal "false"
+
+\end_inset
+
+ can be used to correct at least qualitatively the growth rate for temperature
+ outside the range of the considered taxa, by adding a gain 
+\begin_inset Formula $g$
+\end_inset
+
+ in the final growth rate (see a comparison of the original and final versions
+ of the growth rates in SI, Fig.
+ S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-of-growth-rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Plain Layout
+FROM MS, PHENOLOGY: 
+\series bold
+Phenology
+\series default
+ In eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the niche part of the growth rate is mainly defined by two parameters:
+ the thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ and a proxy of its niche width 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+, which drive the phenology of the genus.
+ Each year, the dynamics of phytoplanktonic organisms is characterized by
+ a blooming period and a lower concentration during the rest of the year.
+ The bloom can be triggered by a combination of nutrient and light input,
+ as well as a sufficient temperature.
+ All parameters being more or less dependent on seasonality, it is reasonable
+ to restrain this study to the effect of temperature.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+We base estimates of 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ on field observations.
+ For each genus and each year, the beginning of the bloom of a given genus
+ is defined by the date at which its abundance exceeds its median abundance
+ over the year.
+ The duration of the bloom is the number of days between the beginning and
+ the date where abundance fall below the median value.
+ Generalists are characterized by one long bloom in the year or several
+ blooms when the abundances oscillate around their median.
+ Specialists tend to appear only once or twice in the year for shorter amounts
+ of time.
+ A genus is therefore defined as a generalist if its cumulated blooms last
+ more than the average duration (137 days) for at least 15 years over the
+ 20 years of the time series.
+\end_layout
+
+\begin_layout Plain Layout
+With these values in mind, we can define two range of values for the niche
+ width (5-10 for specialists, 12-17 for the generalists) and then order
+ the species in these ranges as a function of the mean sum of their bloom
+ length, i.e.
+ 
+\begin_inset Formula $\sum\overline{L}_{i,b}>\sum L_{j,b}\Rightarrow A_{i}>A_{j}$
+\end_inset
+
+ where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\overline{L}$
+\end_inset
+
+ is the mean over 20 years of the annual cumulated lengths of the bloom
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+\end_layout
+
+\begin_layout Plain Layout
+The thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ is defined as the mean minimum value [[CHECK]] of the temperature at the
+ beginning bloom throughout the whole time series.
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This was way too low and led to blooms during autumn and winter.
+ Basically added 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Phytoplanktonic growth rates are highly variable, in situ or in experimental
  conditions.
  An example of such variability appears in 
