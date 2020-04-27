@@ -91,16 +91,246 @@ Supporting Information
 \end_layout
 
 \begin_layout Title
+
+\size larger
 Seed-bank contribution in maintaining phytoplanktonic biodiversity
 \end_layout
 
-\begin_layout Subsection*
-Parameterisation
+\begin_layout Section*
+Growth calibration
 \end_layout
 
 \begin_layout Standard
-This section contains additional information on certain parameter definitions.
+This section is dedicated to the design of the growth function used in the
+ first step of the models, to the phenology parameters meant to characterize
+ the seasonal dynamics of the morphotypes we aim to mimick, and to the interacti
+ons that may reduce or enhance this growth.
+\end_layout
+
+\begin_layout Subsection*
+Growth response to the environment
+\end_layout
+
+\begin_layout Standard
+(need to rephrase entirely the parts belown beginning by Growth rate: variation
+ with temperature)
+\end_layout
+
+\begin_layout Standard
+- intrinsic variability and need to take into account the effect of temperature
+\end_layout
+
+\begin_layout Standard
+- scranton and vasseur proposition (decomposition in niche and metabolism,
+ this part being separated into Eppley and the Metabolic Theory of Ecology)
+ and its failure to represent values previously found in the literature
+\end_layout
+
+\begin_layout Standard
+- introduction of the Bissinger equation: maybe put here the 
+\begin_inset Quotes eld
+\end_inset
+
+issues
+\begin_inset Quotes erd
+\end_inset
+
+ we have previously detected (i.e.
+ variation in maximum growth rate due to the width of the niche)
+\end_layout
+
+\begin_layout Subsection*
+Extraction of taxon phenology from field data
+\end_layout
+
+\begin_layout Standard
+In eq.
  
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the niche part of the growth rate is mainly defined by two parameters:
+ the thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ and a proxy of its niche width 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+, which drive the phenology of the taxon.
+ Each year, the dynamics of phytoplanktonic organisms is characterized by
+ a blooming period and a lower concentration during the rest of the year.
+ The bloom can be triggered by a combination of nutrient and light input,
+ as well as a sufficient temperature.
+ All parameters being more or less dependent on seasonality, it is reasonable
+ to restrain this study to the effect of temperature.
+ 
+\end_layout
+
+\begin_layout Standard
+We base estimates of 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ on field observations.
+ For each taxon and each year, the beginning of the bloom of a given taxon
+ is defined by the date at which its abundance exceeds its median abundance
+ over the year.
+ The duration of the bloom is the number of days between the beginning and
+ the date where abundance falls below the median value.
+ Taxa are then separated into two groups.
+ In the field, generalists are characterized by one long bloom in the year
+ or several blooms when the abundances oscillate around their median.
+ Specialists tend to appear only once or twice in the year for shorter amounts
+ of time.
+ A genus is therefore defined as a generalist if its cumulated blooms last
+ more than the average duration of all blooms (137 days) for at least 15
+ years over the 20 years of the time series.
+\end_layout
+
+\begin_layout Standard
+In the model, we assume that generalists have a niche width between 15 and
+ 30°C and specialists, between 5 and 10°C.
+ We assume that temperatures outside of this range leads to a growth rate
+ at least 10 times inferior to the growth rate obtained at their thermal
+ optimum.
+ This leads to values of 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ between 180 and 1500 for generalists, and 7 and 55 for specialists.
+ A set of 
+\begin_inset Formula $b$
+\end_inset
+
+ values is drawn from a uniform distribution with these boundaries.
+ Meanwhile, taxa are ordered as a function of the mean sum of their bloom
+ length, i.e.
+ 
+\begin_inset Formula $\sum\overline{L}_{i,b}>\sum L_{j,b}\Rightarrow A_{i}>A_{j}$
+\end_inset
+
+ where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\overline{L}$
+\end_inset
+
+ is the mean over 20 years of the annual cumulated lengths of the bloom
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ Larger niche values are attributed to longer mean bloom length.
+\end_layout
+
+\begin_layout Standard
+The thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ was first defined as the mean temperature at the beginning of the first
+ annual bloom throughout the whole time series.
+ However, this value led to blooms occuring mainly in the winter and needed
+ to be increased by 5°C in order to simulate realistic phytoplankton cycles.
+\end_layout
+
+\begin_layout Subsection*
+Interaction computation
+\end_layout
+
+\begin_layout Section*
+Fixed parameters
+\end_layout
+
+\begin_layout Standard
+This section contains additional information of parameter definition, estimation
+ and value.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Loss rate
+\end_layout
+
+\begin_layout Standard
+The loss rate corresponds to multiple mortality processes.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ set this rate around 0.04 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "jewson_loss_1981"
+literal "false"
+
+\end_inset
+
+, washout (0.5%), parasitism (4% of infested cells) and grazing still remained
+ low when compared to growth rates.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "li_what_2000"
+literal "false"
+
+\end_inset
+
+ found values between 0.02 and 0.1 for natural mortality only, while a review
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "sarthou_growth_2005"
+literal "false"
+
+\end_inset
+
+ indicates a loss of daily primary productivity between 0.45 and 1.1 due to
+ grazing only, 0.13 being potentially due to cell autolysis (in the absence
+ of nutrients, or because of viral charge).
+ From this overview, the reference values for the models, 0.2, is a trade-off
+ between sometimes high level of mortality and the maintenance of the model.
 \end_layout
 
 \begin_layout Paragraph*
@@ -113,7 +343,7 @@ Among the hydrodynamics processes that drive sinking rate, turbulence and
  driven by tidal currents, shape of the estuary or wind conditions.
  This is why lab experiments on sinking rates are not sufficient to calibrate
  a field-based model.
- Credible values for sinking rates are therefor taken from field studies.
+ Credible values for sinking rates are therefore taken from field studies.
  In the Gotland Basin (central Baltic Sea), 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -180,7 +410,7 @@ noprefix "false"
 
 ) therefore accounts for both maximum and mean values, while still allowing
  a highly skewed distributions.
- High sinking rates are kept for 
+ High sinking rates are kept for the morphotypes corresponding to 
 \shape italic
 Chaetoceros
 \shape default
@@ -191,15 +421,28 @@ Thalassiosira
 (THP)
 \shape italic
 .
+
+\shape default
+ Variations of the sinking rate over time give values between 4 and 50%
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jewson_loss_1981"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-However, it should be noted that the sinking rate measured in these two
- articles represent the sinking of all cells, therefore including dead cells.
+However, it should be noted that the sinking rate measured in these articles
+ represent the sinking of all cells, therefore including dead cells.
  In our model, it should represent the exchange of live cells between the
  coast and the seed bank, or a loss of cells in the ocean.
- Our sinking rate might therefore need to be decreased to avoid modeling
- dead cells already taken into account in the loss term.
+ The maximum sinking rate used in this model might therefore need to be
+ decreased to avoid modeling dead cells already taken into account in the
+ loss term.
  
 \end_layout
 
@@ -383,7 +626,7 @@ literal "false"
 
  in winter and decreases in summer
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 no value is given
@@ -430,32 +673,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Finally, it should be noted that cyst burial, sinking rate 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-And even mortality is correlated with sinking rates, as the sinking rates
- measured in the literature do not discrimante seeds and dead cells.
- We therefore have something that should look like 
-\begin_inset Formula $(s_{i}+\text{death}_{i})N_{i}=$
-\end_inset
-
- the observed sinking rate in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "passow_species-specific_1991"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-and resuspension are all dependent on the hydrodynamics of the place and
- are therefore, at least in biological terms, not identifiable.
+Finally, it should be noted that cyst burial, sinking rate and resuspension
+ are all dependent on the hydrodynamics of the place and are therefore,
+ at least in biological terms, not identifiable.
 \end_layout
 
 \begin_layout Standard
@@ -465,213 +685,12 @@ and resuspension are all dependent on the hydrodynamics of the place and
 
 \end_layout
 
-\begin_layout Subsection*
-
+\begin_layout Standard
+[[[[END OF REFORMULATION]]]]
 \end_layout
 
 \begin_layout Subsubsection*
 Growth rate: variation with temperature
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-From MS: In this model, species are therefore defined by their thermal optimum
- 
-\begin_inset Formula $T_{i}^{opt}$
-\end_inset
-
-.
- The equation by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
- was modified to account for two more processes.
- Taxa roughly divide between generalists and specialists, with more or less
- tolerance to variations in the temperature.
- Generalists have a larger niche width than specialists, which can be roughly
- translated by a larger 
-\begin_inset Formula $A_{i}$
-\end_inset
-
- (for more details on the modeling of generalist and specialist, see specific
- section in SI).
- Field-based estimation of the niche area 
-\begin_inset Formula $A_{i}$
-\end_inset
-
- is described in the next section.
- However, apart from a radical and unrealistic change in 
-\begin_inset Formula $A_{i}$
-\end_inset
-
- value, the resulting growth rate decreases very rapidly with the distance
- from 
-\begin_inset Formula $T_{i}^{opt}$
-\end_inset
-
-, leading to values close to 0 for temperatures in which phytoplankton can
- normally grow.
- The meta-analysis by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "edwards_phytoplankton_2016"
-literal "false"
-
-\end_inset
-
- can be used to correct at least qualitatively the growth rate for temperature
- outside the range of the considered taxa, by adding a gain 
-\begin_inset Formula $g$
-\end_inset
-
- in the final growth rate (see a comparison of the original and final versions
- of the growth rates in SI, Fig.
- S
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Comparison-of-growth-rate"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Plain Layout
-FROM MS, PHENOLOGY: 
-\series bold
-Phenology
-\series default
- In eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:growth_rate"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, the niche part of the growth rate is mainly defined by two parameters:
- the thermal optimum 
-\begin_inset Formula $T_{i}^{opt}$
-\end_inset
-
- and a proxy of its niche width 
-\begin_inset Formula $b_{i}$
-\end_inset
-
-, which drive the phenology of the genus.
- Each year, the dynamics of phytoplanktonic organisms is characterized by
- a blooming period and a lower concentration during the rest of the year.
- The bloom can be triggered by a combination of nutrient and light input,
- as well as a sufficient temperature.
- All parameters being more or less dependent on seasonality, it is reasonable
- to restrain this study to the effect of temperature.
- 
-\end_layout
-
-\begin_layout Plain Layout
-We base estimates of 
-\begin_inset Formula $T_{i}^{opt}$
-\end_inset
-
- and 
-\begin_inset Formula $A_{i}$
-\end_inset
-
- on field observations.
- For each genus and each year, the beginning of the bloom of a given genus
- is defined by the date at which its abundance exceeds its median abundance
- over the year.
- The duration of the bloom is the number of days between the beginning and
- the date where abundance fall below the median value.
- Generalists are characterized by one long bloom in the year or several
- blooms when the abundances oscillate around their median.
- Specialists tend to appear only once or twice in the year for shorter amounts
- of time.
- A genus is therefore defined as a generalist if its cumulated blooms last
- more than the average duration (137 days) for at least 15 years over the
- 20 years of the time series.
-\end_layout
-
-\begin_layout Plain Layout
-With these values in mind, we can define two range of values for the niche
- width (5-10 for specialists, 12-17 for the generalists) and then order
- the species in these ranges as a function of the mean sum of their bloom
- length, i.e.
- 
-\begin_inset Formula $\sum\overline{L}_{i,b}>\sum L_{j,b}\Rightarrow A_{i}>A_{j}$
-\end_inset
-
- where 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\overline{L}$
-\end_inset
-
- is the mean over 20 years of the annual cumulated lengths of the bloom
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-.
-\end_layout
-
-\begin_layout Plain Layout
-The thermal optimum 
-\begin_inset Formula $T_{i}^{opt}$
-\end_inset
-
- is defined as the mean minimum value [[CHECK]] of the temperature at the
- beginning bloom throughout the whole time series.
- 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-This was way too low and led to blooms during autumn and winter.
- Basically added 5
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard

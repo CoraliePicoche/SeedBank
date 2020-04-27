@@ -728,7 +728,7 @@ literal "false"
 \end_inset
 
 .
- This maximum daily growth rate is proportional to the daylength 
+ This maximum daily growth rate is weighted by the daylength 
 \begin_inset Formula $d$
 \end_inset
 
@@ -738,7 +738,7 @@ literal "false"
 \begin_inset Formula $T_{K,i}^{opt}$
 \end_inset
 
- and its specific thermal decay 
+ to the observed temperature, and its specific thermal decay 
 \begin_inset Formula $b_{i}$
 \end_inset
 
@@ -1734,9 +1734,10 @@ Definition of main state variables and parameters of the model.
  but need to be improved through calibration.
  Fixed values or distributions are estimated from the literature and references
  are given in the main text.
- When a set or a range of values is given, the sensitivity of the model
- related to the parameter has been assessed.
- Scenario parameters are the parameters which will be used to build ecological
+ When a set or a range of values is given, the bold numbers indicate the
+ reference values while the others are used to test the sensitivity of the
+ model to changes in parameters.
+ Scenario parameters are the parameters which are used to build ecological
  scenarii (see text).
  
 \begin_inset CommandInset label
@@ -1799,39 +1800,6 @@ Loss rate
 \begin_layout Standard
 The loss rate of vegetative cells can be attributed to natural mortality,
  predation or parasitism.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
- set it around 0.04 day
-\begin_inset Formula $^{-1}$
-\end_inset
-
- but this value is low compared to other values found in the literature.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "li_what_2000"
-literal "false"
-
-\end_inset
-
- found values between 0.02 and 0.1 for phytoplankton natural mortality only
- while a review by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "sarthou_growth_2005"
-literal "false"
-
-\end_inset
-
- indicates a loss of daily primary productivity between 0.45 and 1.1 for grazing
- only, 0.13 being potentially due to cell autolysis (in the absence of nutrients,
- or because of viral charge).
  A maximum value of 0.2 is fixed for the model.
  
 \end_layout
@@ -1851,27 +1819,27 @@ literal "false"
 \end_inset
 
  for a discussion on the settling of phytoplanktonic cells compared to inorganic
- particles).
+ particles)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Remove the part in parentheses?
+\end_layout
+
+\end_inset
+
+.
  Sinking is mostly affected by hydrodynamics, but at the species-level,
  size, shape and colony-formation capacity are key determinants of the particle
  floatation.
- In this model, the sinking rate of each species is drawn from a beta distributi
-on with a mean value of 9%, and a maximum around 30%, that is 
+ In this model, the sinking rate of each taxon is drawn from a beta distribution
+ with a mean value of 9%, and a maximum around 30%, that is 
 \begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
 \end_inset
 
  (see Fig.
- S
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sinking-distribution"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-), adapted from observations by 
+ SXX), adapted from observations by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "passow_species-specific_1991"
@@ -1897,8 +1865,8 @@ Exchange rate
 \begin_layout Standard
 The exchange rate between the ocean and the coast depends on the shape and
  location of the estuary.
- In Marennes-Oléron and more specifically in Auger, the renewal time is
- very short, between 1 and 2.5 days 
+ In Marennes-Oléron and more specifically in Auger, the renewal time ranges
+ between 1 and 2.5 days 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ascione_kenov_water_2015"
@@ -1918,11 +1886,11 @@ Cyst loss is the result of cyst mortality
 \begin_inset Formula $m$
 \end_inset
 
- and inaccessibility 
+ and burial by sedimentation 
 \begin_inset Formula $\zeta$
 \end_inset
 
- because of burial by sedimentation.
+.
  Mortality values range between 
 \begin_inset Formula $10^{-5}$
 \end_inset
@@ -1939,7 +1907,7 @@ literal "false"
 
 \end_inset
 
- are given in SI).
+ are given in the SI).
  However, cyst burial by sedimentation
 \begin_inset Foot
 status open
@@ -1956,8 +1924,8 @@ Any idea for a better way to call it than burial?
  Burial depends on the hydrodynamics of the site, but also on biotic processes
  (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
  activities (e.g., jet skiing).
- This parameter is thus heavily dependent on the environmental context we
- wish to describe and varies here between 0.001 and 0.1.
+ This parameter is thus heavily dependent on the environmental context and
+ varies here between 0.001 and 0.1.
 \end_layout
 
 \begin_layout Paragraph*
@@ -2098,10 +2066,12 @@ Parameter calibration
 
 \begin_layout Standard
 In addition to phenology parameters whose estimation process is described
- in the SI, interaction parameters are calibrated directly on field-data.
- These interactions are first computed from previous models 
+ in the SI, the 49 non-null interactions that form the community matrix
+ of the model are calibrated on field-data.
+ These interactions are computed from previous models 
 \begin_inset CommandInset citation
 LatexCommand citep
+after "see SI for details on the equations"
 key "picoche_strong_2019"
 literal "false"
 
@@ -2112,17 +2082,92 @@ literal "false"
  
 \end_layout
 
+\begin_layout Standard
+The calibration procedure consisted in lauching 1000 simulations, each character
+ized by a specific interaction set.
+ More precisely, for each simulation, each interaction coefficient (
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ in model I, 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ in model II) has the same probability of keeping its value, being increased
+ or decreased by 10%, or being halved or doubled.
+ The abundances of the coastal compartment are then extracted over the last
+ 2 years of the simulation and compared to observations to compute the following
+ summary statistics.
+\end_layout
+
+\begin_layout Itemize
+average abundance: 
+\begin_inset Formula $f_{1}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left(\bar{N}_{i,obs}-\bar{N}_{i,sim}\right){}^{2}}$
+\end_inset
+
+ where 
+\begin_inset Formula $S$
+\end_inset
+
+ is the number of taxa.
+\end_layout
+
+\begin_layout Itemize
+amplitude of the cycles: 
+\begin_inset Formula $f_{2}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left(\left(\max(N_{i,obs})-\min(N_{i,obs}\right)-\left(\max(N_{i,sim})-\min(N_{i,sim})\right)\right){}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+beginning of the bloom: the year is divided in 3 periods, i.e.
+ summer, winter and the spring/autumn group (as taxa blooming in these periods
+ can appear in either or both seasons).
+ We give a score of 0 if the taxon blooms in the same period as its observed
+ counterpart and 1otherwise.
+\end_layout
+
+\begin_layout Standard
+These summary statistics are summed up to compute an objective function
+ that needs to be minimized.
+ Simulations with taxon extinction are discarded.
+ The parameter set corresponding to the lowest value of the objective function
+ is kept throughout the rest of the simulation.
+\end_layout
+
 \begin_layout Paragraph*
 Sensitivity analysis
 \end_layout
 
 \begin_layout Standard
-As mentioned above, several parameters are site-specific and the effect
- of a change in parameter values needs to be evaluated.
- The sinking, resuspension/germination and burial rates are the parameters
- to evaluate.
- The range of probable values for each parameter, and more specifically
- the set of values to be tested, is given in Table 
+Certain parameters, which were evaluated from the literature, may be site-
+ or model- specific, or vary over one order of magnitude, e.g.
+ rates of sinking 
+\begin_inset Formula $s$
+\end_inset
+
+, resuspension/germination 
+\begin_inset Formula $\gamma$
+\end_inset
+
+, cyst mortality 
+\begin_inset Formula $m$
+\end_inset
+
+ and burial 
+\begin_inset Formula $\zeta$
+\end_inset
+
+, as well as the loss rate 
+\begin_inset Formula $l$
+\end_inset
+
+.
+ The dependence between variation in values and outputs of present models
+ needs to be investigated before drawing conclusions in specific ecological
+ scenarii.
+ The set of tested values for each parameter is given in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:State_Parameter"
@@ -2133,19 +2178,13 @@ noprefix "false"
 \end_inset
 
 .
- The main diagnostics are the final mean abundance, amplitude and timing
- of the bloom (peak in abundance) for each genus.
- 
-\end_layout
-
-\begin_layout Standard
-For each combination of values, the diagnostics are performed on the last
- year of the simulation and the variability of theses diagnostics with respect
- to each parameter is determined, as well as the best fit to real data.
+ Variations in average abundances and amplitudes at the community- and taxon
+ levels for the last 2 years of simulations are the major diagnostics for
+ the sensitivity of the model.
 \end_layout
 
 \begin_layout Subsection*
-Scenarios
+Scenarii
 \end_layout
 
 \begin_layout Standard
@@ -2155,7 +2194,7 @@ Maintenance of biodiversity by exchanges between compartments can be gauged
 \end_layout
 
 \begin_layout Enumerate
-modifying the storage of cysts in seed bank (by setting seed mortality/burial
+modifying the storage by the cyst bank (by setting seed mortality/burial
  to 1)
 \end_layout
 
@@ -2181,7 +2220,7 @@ Might be too dangerous to try and talk about increase in temperature and
 
 \begin_layout Standard
 We can make 2 a-priori ecological hypotheses.
- First, removing the seed bank would increase the sensitivity to competition,
+ First, removing the cyst bank would increase the sensitivity to competition,
  i.e.
  decrease the maximum sustainable interspecific competition strength, and
  decrease the resilience of the community confronted to changes in the environme
@@ -2199,7 +2238,7 @@ noprefix "false"
 
 ).
  Under high competition, variability in final richness may increase because
- exclusion is more likely, especially without a seed bank.
+ exclusion is more likely, especially without a cyst bank.
  This is also true for higher temperatures.
 \end_layout
 
@@ -2225,9 +2264,9 @@ status open
 
 \begin_layout Plain Layout
 Expected changes in the model outputs in the ocean.
- Left panel, final richness with and without seed bank, with high (red)
+ Left panel, final richness with and without cyst bank, with high (red)
  and low (blue) interspecific competition.
- Right panel, final primary productivity with and without seed-bank, with
+ Right panel, final primary productivity with and without cyst bank, with
  a high (red) and low (blue) mean temperature.
  
 \begin_inset CommandInset label
@@ -2264,8 +2303,8 @@ noprefix "false"
 
 \end_inset
 
- gives a more precise view of the possible interactions of seed mortality
- and exchange between the coast and the ocean.
+ gives a more precise view of the expectation for possible interactions
+ of cyst mortality and exchange between the coast and the ocean.
  
 \end_layout
 
@@ -2291,7 +2330,7 @@ status open
 
 \begin_layout Plain Layout
 Expected changes in community richness in the ocean for different values
- of seed mortality/burial (=access to the seed compartment) and exchange
+ of cyst mortality/burial (=access to the seed compartment) and exchange
  with the ocean.
  Point color indicates final richness in the ocean, from low (blue) to high
  (red)
@@ -2323,6 +2362,10 @@ name "fig:Changes_seed_exchange"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+[[[[NO CORRECTION FROM HERE]]]
 \end_layout
 
 \begin_layout Section*
@@ -2405,7 +2448,23 @@ Scenarios
 \end_layout
 
 \begin_layout Standard
-Discussion
+Discussion 
+\end_layout
+
+\begin_layout Standard
+[[Need to compare our values to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "jewson_loss_1981"
+literal "false"
+
+\end_inset
+
+ who took into account most of the phenomena we describe here and the cyst
+ bank as well as the water column]]
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
