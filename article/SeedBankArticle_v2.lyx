@@ -376,8 +376,35 @@ literal "false"
 \end_inset
 
 .
- In a first step, we use linear interaction effects, then tweak the Beverton-Hol
-t model to introduce saturating interactions.
+ In a first step, we use linear interaction effects 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The word 
+\begin_inset Quotes eld
+\end_inset
+
+linear
+\begin_inset Quotes erd
+\end_inset
+
+ is not exact but I cannot find another one.
+ This will need to be changed in several places as I qualify model I as
+ 
+\begin_inset Quotes eld
+\end_inset
+
+linear interactions
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+, then tweak the Beverton-Holt model to introduce saturating interactions.
  With these different elements, we aim to examine the effect of exchanges
  between different compartments (ocean and coastal water column and the
  seed bank at the bottom of the water column) on coexistence.
@@ -678,8 +705,8 @@ noprefix "false"
 r_{i}(T) & = & E(T)f_{i}(T)\label{eq:growth_rate}\\
 \text{where }E(T) & = & d\times0.81e^{0.0631T_{°c}}\nonumber \\
 \textnormal{and }f_{i}(T) & = & \begin{cases}
-e^{-|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}}, & T_{K}\leq T_{K,i}^{opt}\\
-e^{-5|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}}, & T>T_{K,i}^{opt}
+\exp(-|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}), & T_{K}\leq T_{K,i}^{opt}\\
+\exp(-5|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}), & T>T_{K,i}^{opt}
 \end{cases}\nonumber 
 \end{eqnarray}
 

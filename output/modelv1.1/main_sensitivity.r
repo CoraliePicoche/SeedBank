@@ -174,6 +174,36 @@ for(param_to_move in rownames(free_param)){
 mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
 dev.off()
 
+pdf("mean_amplitude_sensitivity.pdf",width=15)
+analyses=rownames(list_simulation)
+plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(3.5,5.5),xaxt="n",ylab="Average amplitude of total community",xlab="")
+axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.8)
+abline(h=mean_tot_original)
+l=0
+val_text=c()
+at_val_text=c()
+for(param_to_move in rownames(free_param)){
+        l=l+1
+        id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        space=0.5/(2*length(id_param))
+        seq_space=seq(-space,space,length.out=length(id_param))
+        for(i in 1:length(id_param)){
+                mean_tot=mean(log10(apply(N_sensitivity[id,"coast",,id_param[i]],1,sum)))
+                print(mean_tot)
+                points(l+seq_space[i],mean_tot,t="p",pch=16,col="black")
+                if(tab_summary[id_param[i],4]==0){
+                        points(l+seq_space[i],mean_tot,t="p",pch=16,col="red")
+                }
+                at_val_text=c(at_val_text,l+seq_space[i])
+                tmp_text=strsplit(analyses[id_param[i]],"_")
+                val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        }
+}
+mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
+dev.off()
+
+
 pdf("summary_statistics_for_sensitivity.pdf",width=15)
 par(mfrow=c(2,2))
 analyses=rownames(list_simulation)

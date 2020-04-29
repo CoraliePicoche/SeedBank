@@ -101,46 +101,293 @@ Growth calibration
 \end_layout
 
 \begin_layout Standard
-This section is dedicated to the design of the growth function used in the
- first step of the models, to the phenology parameters meant to characterize
- the seasonal dynamics of the morphotypes we aim to mimick, and to the interacti
-ons that may reduce or enhance this growth.
+The growth function in our models can be decomposed in several elements:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{t',i,c}=\frac{\exp(r_{i}(T))N_{t,i,c}}{g(\alpha_{ij},N_{j,t})}-lN_{t,i,c}\label{eq:growth_rate}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $r_{i}(T)=E(T)f_{i}(T)$
+\end_inset
+
+, 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ being the metabolic part of the growth rate to compute the maximum achievable
+ growth rate while 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ is the niche part of the model, and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $g(\alpha_{ij},N_{j,t})$
+\end_inset
+
+ is the effect of interactions on the growth rate.
+ 
+\end_layout
+
+\begin_layout Standard
+This section is dedicated to the design of the growth function 
+\begin_inset Formula $E(T)$
+\end_inset
+
+, to the taxon-specific function 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ that characterizes differential response to temperature variations, and
+ to the estimation of interactions that may reduce or enhance this growth.
 \end_layout
 
 \begin_layout Subsection*
-Growth response to the environment
+Common response to temperature
 \end_layout
 
 \begin_layout Standard
-(need to rephrase entirely the parts belown beginning by Growth rate: variation
- with temperature)
-\end_layout
-
-\begin_layout Standard
-- intrinsic variability and need to take into account the effect of temperature
-\end_layout
-
-\begin_layout Standard
-- scranton and vasseur proposition (decomposition in niche and metabolism,
- this part being separated into Eppley and the Metabolic Theory of Ecology)
- and its failure to represent values previously found in the literature
-\end_layout
-
-\begin_layout Standard
-- introduction of the Bissinger equation: maybe put here the 
-\begin_inset Quotes eld
+Phytoplanktonic growth rates cover a large range of values: they range between
+ 0.2 and 1.78 day
+\begin_inset Formula $^{-1}$
 \end_inset
 
-issues
-\begin_inset Quotes erd
+ for diatoms in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "reynolds2006ecology"
+literal "false"
+
 \end_inset
 
- we have previously detected (i.e.
- variation in maximum growth rate due to the width of the niche)
+, even reaching 3 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ in the meta-analysis of 308 experiments by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_light_2015"
+literal "false"
+
+\end_inset
+
+.
+ These values are often computed from measurements on isolated species or
+ on limited communities in laboratory conditions, with constant environmental
+ conditions.
+ Gathering sets of data is therefore necessary to understand general responses
+ to changes in the environment 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bissinger_predicting_2008,edwards_phytoplankton_2016"
+literal "false"
+
+\end_inset
+
+.
+ While the shape of the response may vary between taxa, the equation by
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ on which we base our growth rate formulation was not able to reproduce
+ the observed patterns (see low values of the growth rate in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-of-growth-rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ a).
+ In this context, we decided to use the formula by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ to compute the maximum growth rate response to the temperature.
+ There are two reasons for this choice.
+ First, their model is a general function that can be applied to all species.
+ Second, it remains in line with the work by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+, as 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ is an update of the seminal work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+ that they use in addition to the metabolic theory of ecology.
+ The relationship between temperature and maximum growth rate, evaluated
+ on a large database
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1,501 data points from several studies
+\end_layout
+
+\end_inset
+
+, is then 
+\begin_inset Formula $E(T)=0.81\text{e}^{0.0631T_{°C}}$
+\end_inset
+
+, with 
+\begin_inset Formula $T_{°C}$
+\end_inset
+
+ in Celsius degrees.
+ In this case, growth rates vary between 0.81 and 3.9 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ for temperatures between 0 and 25°C, in line with previous observations.
+ However, these daily growth rates need to be proportional to the daylength
+ as no growth occurs at night: we therefore halve the Bissinger value in
+ our models.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../output/compare_growth_rate_rawBissinger.pdf
+	width 99text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decomposition of the 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ growth rate formula (a).
+ The black line indicates the final growth rate with their original model.
+ The blue line corresponds to the taxon-specific response to temperature
+ for a thermal optimum of 15°C and the green line is the maximum achievable
+ growth rate, a composite of the metabolic theory of ecology and the formula
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+.
+ This formula is shown by black crosses in (b) and compared to the simple
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+ curve in blue and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ formula in purple.
+ Finally, horizontal lines show limits found the literature 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "reynolds2006ecology"
+literal "false"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparison-of-growth-rate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
-Extraction of taxon phenology from field data
+Taxon-specific response to temperature
 \end_layout
 
 \begin_layout Standard
@@ -155,17 +402,34 @@ noprefix "false"
 
 \end_inset
 
-, the niche part of the growth rate is mainly defined by two parameters:
- the thermal optimum 
-\begin_inset Formula $T_{i}^{opt}$
+, the niche part of the growth rate 
+\begin_inset Formula $f_{i}(T)$
 \end_inset
 
- and a proxy of its niche width 
+ is mainly defined by two parameters: the thermal optimum 
+\begin_inset Formula $T_{K,i}^{opt}$
+\end_inset
+
+ in Kelvin and a proxy of its niche width 
 \begin_inset Formula $b_{i}$
 \end_inset
 
 , which drive the phenology of the taxon.
- Each year, the dynamics of phytoplanktonic organisms is characterized by
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{i}(T)=\begin{cases}
+\exp(-|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}), & T_{K}\leq T_{K,i}^{opt}\\
+\exp(-5|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}), & T>T_{K,i}^{opt}
+\end{cases}\label{eq:niche_part}
+\end{equation}
+
+\end_inset
+
+Each year, the dynamics of phytoplanktonic organisms is characterized by
  a blooming period and a lower concentration during the rest of the year.
  The bloom can be triggered by a combination of nutrient and light input,
  as well as a sufficient temperature.
@@ -191,20 +455,25 @@ We base estimates of
  the date where abundance falls below the median value.
  Taxa are then separated into two groups.
  In the field, generalists are characterized by one long bloom in the year
- or several blooms when the abundances oscillate around their median.
+ or several blooms during which the abundances oscillate around their median.
  Specialists tend to appear only once or twice in the year for shorter amounts
  of time.
- A genus is therefore defined as a generalist if its cumulated blooms last
- more than the average duration of all blooms (137 days) for at least 15
- years over the 20 years of the time series.
+ A genus is therefore defined as a generalist if its cumulated blooms over
+ a year last more than the average duration of all blooms (137 days) for
+ at least 15 years over the 20 years of the time series, and as a specialist
+ if they fall below this threshold.
 \end_layout
 
 \begin_layout Standard
-In the model, we assume that generalists have a niche width between 15 and
- 30°C and specialists, between 5 and 10°C.
+In the models, we assume that generalists have a niche width between 15
+ and 30°C and specialists, between 5 and 10°C.
  We assume that temperatures outside of this range leads to a growth rate
  at least 10 times inferior to the growth rate obtained at their thermal
- optimum.
+ optimum (
+\begin_inset Formula $\exp(-|15|^{3}/b_{i}=0.1$
+\end_inset
+
+ for a niche width of 15°C).
  This leads to values of 
 \begin_inset Formula $b_{i}$
 \end_inset
@@ -215,10 +484,10 @@ In the model, we assume that generalists have a niche width between 15 and
 \end_inset
 
  values is drawn from a uniform distribution with these boundaries.
- Meanwhile, taxa are ordered as a function of the mean sum of their bloom
- length, i.e.
+ Meanwhile, taxa are ordered as a function of the mean cumulated bloom length
+ and larger niche values are attributed to longer mean bloom length, i.e.
  
-\begin_inset Formula $\sum\overline{L}_{i,b}>\sum L_{j,b}\Rightarrow A_{i}>A_{j}$
+\begin_inset Formula $\sum\overline{L}_{i,b}>\sum L_{j,b}\Rightarrow b_{i}>b_{j}$
 \end_inset
 
  where 
@@ -239,20 +508,6 @@ In the model, we assume that generalists have a niche width between 15 and
 \end_inset
 
  is the mean over 20 years of the annual cumulated lengths of the bloom
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-.
- Larger niche values are attributed to longer mean bloom length.
 \end_layout
 
 \begin_layout Standard
@@ -260,14 +515,600 @@ The thermal optimum
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
- was first defined as the mean temperature at the beginning of the first
- annual bloom throughout the whole time series.
+ was first defined as the mean minimum temperature of the bloom throughout
+ the whole time series.
  However, this value led to blooms occuring mainly in the winter and needed
  to be increased by 5°C in order to simulate realistic phytoplankton cycles.
 \end_layout
 
+\begin_layout Standard
+It should be noted however that a variation in niche width also affects
+ the final shape of thermal preferences.
+ Indeed, when 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ increases, the niche term 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ only encounters small variations in values around the thermal optimum.
+ In this case, the final value of the growth rate is driven by the metabolism
+ part of the equation (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Growth_niche_metabolism"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../output/further_notes_on_SV.pdf
+	width 99text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relationship between daily growth rates and temperature with different values
+ of niche width 
+\begin_inset Formula $b$
+\end_inset
+
+ (which values are indicated in the legend, corresponding to specialist
+ and generalist taxa) and the same thermal optimum, 15°C, indicated by the
+ solid black (right).
+ On the left panel, only the two extreme values of 
+\begin_inset Formula $b$
+\end_inset
+
+ (10 and 1500) are shown in blue and red respectively.
+ Coloured lines then correspond to the final growth rate, points correspond
+ to 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ values (see eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ dotted lines correspond to 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ values.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Growth_niche_metabolism"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The shift of the maximum growth rate may lead to a deformation of the expected
+ thermal niche of each taxon.
+ We provide actual shapes of 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ for modeled taxa below (Fig XX, TO DO).
+\end_layout
+
 \begin_layout Subsection*
-Interaction computation
+Estimation of interactions
+\end_layout
+
+\begin_layout Subsubsection*
+Model I: linear interactions
+\end_layout
+
+\begin_layout Standard
+Interactions between taxa have previously been computed with a Multivariate
+ AutoRegressive model (eq.
+ XX, 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{n}_{t+1}=\mathbf{B}\mathbf{n}_{t}+\textbf{C}\textbf{u}_{t+1}+\mathbf{e}_{t},\mathbf{e}_{t}\thicksim\mathcal{{N_{S}}}(0,\mathbf{Q})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\mathbf{n}_{\ensuremath{t}}$
+\end_inset
+
+ is the 
+\begin_inset Formula $1\times S$
+\end_inset
+
+ vector of log-abundance of phytoplankton taxa, 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ is the 
+\begin_inset Formula $S\times S$
+\end_inset
+
+ interaction matrix with elements 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ is the 
+\begin_inset Formula $S\times V$
+\end_inset
+
+ environment matrix describing the effects of variables 
+\begin_inset Formula $\mathbf{u}_{t+1}$
+\end_inset
+
+ on growth rates and the noise 
+\begin_inset Formula $\mathbf{e}_{t}$
+\end_inset
+
+ is a 
+\begin_inset Formula $1\times S$
+\end_inset
+
+ noise vector following a multivariate normal distribution with a variance-covar
+iance matrix 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The interaction model we use in this paper is a Beverton-Holt model.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+N_{t+1,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\alpha_{ij}N_{t,j}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $N_{t,i}$
+\end_inset
+
+ is the abundance of taxon i at time t, 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+ is its growth rate and 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ is the interaction effect of 
+\begin_inset Formula $j$
+\end_inset
+
+ on 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "certain_how_2018"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Should we add: Corrected in the Appendices of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2019"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ showed that MAR and BH interaction coefficients, respectively 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+, could map once abundances at equilibrium 
+\begin_inset Formula $N_{i}^{*}$
+\end_inset
+
+ are defined.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}\\
+b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's define 
+\begin_inset Formula $\tilde{b_{ij}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\tilde{b_{ii}}=b_{ii}-1$
+\end_inset
+
+, and 
+\begin_inset Formula $f_{A}(i)=\sum_{l}\alpha_{ij}N_{l}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tilde{b_{ij}}(1+f_{A}(i))=-\alpha_{ij}N_{j}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We then sum on columns (on 
+\begin_inset Formula $j$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j}[\tilde{b_{ij}}(1+f_{A}(i))]=-f_{A}(i)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow-f_{A}(i)(1+\sum_{j}\tilde{b_{ij}})=\sum_{j}b_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow f_{A}(i)=-\frac{\sum_{j}\tilde{b_{ij}}}{(1+\sum_{j}\tilde{b_{ij}})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}\tilde{b_{ij}}(1-\frac{\sum_{j}\tilde{b_{ij}}}{1+\sum_{j}\tilde{b_{ij}}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}\frac{\tilde{b_{ij}}}{1+\sum_{j}\tilde{b_{ij}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives an exact correspondance between 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In this model, the presence of mutualistic interactions can lead to an orgy
+ of mutual benefaction [ref].
+ We impose a minimum value of 1 to the denominator of the BH formulation,
+ meaning that the growth rate cannot be higher than the maximum growth rate
+ calculated 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+.
+ We acknowledge the possibility of overyielding, i.e.
+ an increase in growth due to the presence of other species, but the phenomenon
+ seems quite rare for phytoplanktonic communities (see Schmidtke et al.
+ 2010 for underyielding and see Shurin et al.
+ 2014 for an observed but not frequent, and small, overyielding).
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Model II: saturating interactions
+\end_layout
+
+\begin_layout Standard
+We now move to a model with saturating interactions between taxa.
+ 
+\begin_inset Formula 
+\begin{equation}
+N_{t+1,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}\frac{a_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/a\in\mathbb{F}}\frac{a_{F}N_{t,j}}{H_{ij}+N_{t,j}}}\label{eq:saturation_h}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where coefficients 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+ are the maximum interaction strength for competition and facilitation respectiv
+ely, 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ coefficients are the abundance of species 
+\begin_inset Formula $j$
+\end_inset
+
+ to reach half of the maximum effect in the interaction of 
+\begin_inset Formula $j$
+\end_inset
+
+ on 
+\begin_inset Formula $i$
+\end_inset
+
+, and 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ are the sets of competitive and facilitative interactions.
+ This formula can be linked with the Unique Interaction Model by 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "qian_balance_2020"
+literal "false"
+
+\end_inset
+
+, i.e.
+ a model where each taxon provides a unique type of benefit or disadvantage
+ to the focus species.
+ 
+\end_layout
+
+\begin_layout Standard
+It is easy to see that there is no unique solution for the correspondence
+ between the 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ matrix of the MAR model and the new formulation including 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+.
+ We approximate the maximum interaction strength 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ as the average sum of all interactions 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ exerted on a given species if all interactions were competitive (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_C"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ To compute 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+, we can make two assumptions: a) there is 70% facilitation in our dataset
+ and b) the growth rate 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+ cannot be exceeded, as in model I (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\begin_inset Formula 
+\begin{eqnarray}
+a_{C} & = & \frac{1}{S}\sum_{i}|A|N_{i,max}\label{eq:a_C}\\
+(1-0.7)a_{C}+0.7a_{F} & = & 1\label{eq:a_F}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At low abundances, we can consider that interactions are far from saturation.
+ Taking the tangent of the function at this point, 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ can be approximated by 
+\begin_inset Formula $\frac{a_{C/F}}{\alpha_{ij}}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -683,898 +1524,6 @@ Finally, it should be noted that cyst burial, sinking rate and resuspension
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-[[[[END OF REFORMULATION]]]]
-\end_layout
-
-\begin_layout Subsubsection*
-Growth rate: variation with temperature
-\end_layout
-
-\begin_layout Standard
-Phytoplanktonic growth rates are highly variable, in situ or in experimental
- conditions.
- An example of such variability appears in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "balzano_effects_2011"
-literal "false"
-
-\end_inset
-
-.
- For ten strains of one genus only (
-\shape italic
-Skeletonema
-\shape default
-), and in the same experimental conditions, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "balzano_effects_2011"
-literal "false"
-
-\end_inset
-
- have been able to detect growth rates between 0.5 and 1.25 day
-\begin_inset Formula $^{-1}$
-\end_inset
-
-, which corresponds more generally to the values found in the literature
- (between 0.2 and 1.78 for diatoms in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "reynolds2006ecology"
-literal "false"
-
-\end_inset
-
-, even reaching 3 in the meta-analysis of 308 experiments by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "edwards_light_2015"
-literal "false"
-
-\end_inset
-
-; this can be much lower for dinoflagellates).
- These growth rates are maximum, fixed values for isolated species in laboratory
- conditions.
- Most of the time, they correspond to fixed temperature conditions, or to
- only a small set of values.
- These observations therefore cannot accomodate realistic, seasonal environment.
- 
-\end_layout
-
-\begin_layout Standard
-In this context, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "bissinger_predicting_2008"
-literal "false"
-
-\end_inset
-
- based their study on a seminal work by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "eppley_temperature_1972"
-literal "false"
-
-\end_inset
-
- to compute the maximum possible growth rate depending on the temperature.
- The relationship between temperature and maximum growth rate, evaluated
- on a large database
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-1,501 data points from several studies
-\end_layout
-
-\end_inset
-
-, is then 
-\begin_inset Formula $r(T)=0.81\text{e}^{0.0631T},$
-\end_inset
-
-with 
-\begin_inset Formula $T$
-\end_inset
-
- in °C.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Previously: 
-\begin_inset Quotes eld
-\end_inset
-
-This represents the daily growth rate under a continuous irradiance and
- can therefore be at least halved because mean daylight is around 12 hours.
-\begin_inset Quotes erd
-\end_inset
-
- Actually, this was the case for the Eppley curve but Bissinger is based
- mostly on the LPD dataset, which was not always taken in maximum growth
- condition - replete nutrient and light.
- So the correction was not right.
-\end_layout
-
-\end_inset
-
-In this case, growth rates vary between 0.81 and 3.9 day
-\begin_inset Formula $^{-1}$
-\end_inset
-
- for temperatures between 0 and 25°C, in line with previous observations.
- However, these values only illustrate a maximum, exponential growth which
- cannot be realistic for species with different niche temperatures.
-\end_layout
-
-\begin_layout Standard
-The equation of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
- distinguishes different niches based on optimal temperature.
- However, it needed to be modified to be closer to the shape in other works
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "eppley_temperature_1972,bissinger_predicting_2008,edwards_phytoplankton_2016"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../output/compare_growth_rate_rawBissinger.pdf
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Comparison of growth rate formula.
- The SV solid grey line corresponds to the original Scranton and Vasseur
- (2016) formula.
- The solid black line includes both a new niche area and a gain in growth
- rate, and the shape of the growth rate as a function of temperature is
- given for a low (blue) and high (red) values of thermal optimum with dotted
- lines.
- The Bissinger and Eppley lines correspond to the formula of maximum growth
- rates in the studies from eponymous authors.
- Finally, horizontal lines show limits taken in the literature.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Comparison-of-growth-rate"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Growth rate: generalists vs specialists
-\end_layout
-
-\begin_layout Standard
-From eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:growth_rate"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, let us note 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $r_{i}(T)=a_{r}(\tau_{0})e^{E_{r}\frac{(T-\tau_{\text{0}})}{kT\tau_{0}}}f_{i}(T)=E(T)f_{i}(T)$
-\end_inset
-
-.
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- Hereafter, we will call 
-\begin_inset Formula $f_{i}(T)$
-\end_inset
-
- the niche part of the equation and 
-\begin_inset Formula $E(T)$
-\end_inset
-
- the metabolism part.
- The metabolism part is driven by both metabolism theory ecology and by
- observations in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "eppley_temperature_1972"
-literal "false"
-
-\end_inset
-
- study of maximum growth rates for phytoplankton.
- 
-\end_layout
-
-\begin_layout Standard
-The simplest way to define generalists and specialists is to remove the
- constraint on the fixed niche area A.
- In this case, the only parameter that defines the niche width is 
-\begin_inset Formula $b$
-\end_inset
-
-.
- However, increasing 
-\begin_inset Formula $b$
-\end_inset
-
- does not only lead to increases in niche width, but also to a shift towards
- larger values to attain the maximum growth rate.
- This means that for the same theoretical 
-\begin_inset Formula $T_{i}^{opt}$
-\end_inset
-
-, the observed thermal optimum is higher.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../output/further_notes_on_SV.pdf
-	width 99text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Relationship between daily growth rates and temperature with different values
- of niche width 
-\begin_inset Formula $b$
-\end_inset
-
- (whose values are indicated in the legend) and the same thermal optimum,
- 15°C, indicated by the solid black.
- In the left panel, only the two extreme values of 
-\begin_inset Formula $b$
-\end_inset
-
- (200 and 20 000) are shown in blue and red respectively.
- Coloured lines then correspond to the final growth rate, dashed lines correspon
-d to 
-\begin_inset Formula $f_{i}(T)$
-\end_inset
-
- values (see eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:growth_rate"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-) and
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- dotted lines correspond to 
-\begin_inset Formula $E(T)$
-\end_inset
-
- values.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Growth_niche_metabolism"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-When 
-\begin_inset Formula $b$
-\end_inset
-
- increases, the niche term 
-\begin_inset Formula $f_{i}$
-\end_inset
-
- shows smaller variations in values around the thermal optimum and the final
- value of the growth rate is driven by the metabolism part of the equation.
- This can lead to confusions on the observed thermal optimum that we wish
- to obtain.
-\end_layout
-
-\begin_layout Standard
-Even if we only keep the maximum growth rate computed in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "bissinger_predicting_2008"
-literal "false"
-
-\end_inset
-
- (as an update of Eppley's curve), we obtain slightly higher growth rate
- values but the same shift.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../output/Eppley_Bissinger.pdf
-	width 60text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Relationship between daily growth rates and temperature with different values
- of niche width b (legend for the values of b is give in the figure above).
- Dashed lines correspond to the original formulation of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
- while solid lines correspond to a formulation of the temperature-dependent
- maximum growth computed in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "bissinger_predicting_2008"
-literal "false"
-
-\end_inset
-
-.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Niche_area_Bissinger"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-If that's 
-\emph on
-our 
-\emph default
-reformulation of Bissinger et al.
- we should say so – is the formula in Bissinger et al.
- (2008).
-
-\emph on
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Community matrix: correspondence between Multivariate Autoregressive and
- Beverton-Holt models
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "certain_how_2018"
-literal "false"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Should we add: Corrected in the Appendices of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "picoche_strong_2019"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- showed that MAR and BH interaction coefficients, respectively 
-\begin_inset Formula $b_{ij}$
-\end_inset
-
- and 
-\begin_inset Formula $\alpha_{ij}$
-\end_inset
-
-, could map once abundances at equilibrium 
-\begin_inset Formula $N_{i}^{*}$
-\end_inset
-
- are defined.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\begin{cases}
-b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{ij}N_{l}^{*}}\\
-b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}
-\end{cases}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Let's define 
-\begin_inset Formula $\tilde{b_{ij}}$
-\end_inset
-
- with 
-\begin_inset Formula $\tilde{b_{ii}}=b_{ii}-1$
-\end_inset
-
-, and 
-\begin_inset Formula $f_{A}(i)=\sum_{l}\alpha_{ij}N_{l}^{*}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-b_{ij}(1+f_{A}(i))=-\alpha_{ij}N_{j}^{*}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We then sum on columns (on j).
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\sum_{j}[b_{ij}(1+f_{A}(i))]=-f_{A}(i)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\Leftrightarrow-f_{A}(i)(1+\sum_{j}b_{ij})=\sum_{j}b_{ij}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\Leftrightarrow f_{A}(i)=-\frac{\sum_{j}b_{ij}}{(1+\sum_{j}b_{ij})}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}b_{ij}(1-\frac{\sum_{j}b_{ij}}{1+\sum_{j}b_{ij}})
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}\frac{b_{ij}}{1+\sum_{j}b_{ij}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This gives an exact correspondance between 
-\begin_inset Formula $\alpha_{ij}$
-\end_inset
-
- and 
-\begin_inset Formula $b_{ij}.$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Quadratic programming
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "maynard_reconciling_2019"
-literal "false"
-
-\end_inset
-
- recently applied quadratic programming 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bazaraa2013nonlinear"
-literal "false"
-
-\end_inset
-
- to ecological data, which improved the calibration of certain parameters
- and led to more realistic simulations.
- Even though we could directly use the values obtained in the literature
- and in previous studies 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "picoche_strong_2019"
-literal "false"
-
-\end_inset
-
-, the switch from a fifteen-day MAR model to a daily BH-model and the high
- uncertainty for all parameters due to the use of proxies, and high variability
- in phytoplanktonic genera on their own, are motivations to calibrate the
- model more precisely.
- Following the example of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "maynard_reconciling_2019"
-literal "false"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Actually, Maynard et al.
- 2019 uses a Least Square Inverse Problem solver, with a package (limSolve::lsei
-) that also offers quadratic programming
-\end_layout
-
-\end_inset
-
- with the package limSolve in R [ref, version], we intend
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-I use this term because I am really not sure this is what we want to keep.
- I need to know how this method can be applied to cycles.
- You mean, whether it can handle something else than a fixed point equilibrium?
- I'm pretty sure it can.
- 
-\end_layout
-
-\end_inset
-
- to apply quadratic programming to our interaction matrices.
- Contrary to 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "maynard_reconciling_2019"
-literal "false"
-
-\end_inset
-
-, we do not broaden the calibration process to growth rates as ours are
- not fixed values in a linear model
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-However, it just occurred to me that, using a mean temperature, we may be
- able to retrieve 
-\begin_inset Formula $b_{i}$
-\end_inset
-
-.
- But would that be really useful? For now, when we try to calibrate interactions
- and keep B, the model may crash because there is no test on the feasability
- when calibrating.
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-In the following, I am basically copying the package documentation to make
- the code understandable for later.
- Would maybe be better with a Rmarkdown file, but would that be useful?.
-\end_layout
-
-\end_inset
-
-The quadratic programming algorithm aims at finding 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- that minimizes 
-\begin_inset Formula $||\mathbf{Cx}-\mathbf{d}||^{2}$
-\end_inset
-
- under the constraints 
-\begin_inset Formula $\mathbf{Ex}=\mathbf{f}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{Gx}>=\mathbf{h}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Here, 
-\begin_inset Formula $\mathbf{C}=\mathbf{I}$
-\end_inset
-
-, 
-\begin_inset Formula $\mathbf{d}=[\text{vec(\ensuremath{\mathbf{A}^{T})}}^{\frown}\mathbf{r'}]$
-\end_inset
-
- where 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- is the interaction matrix, 
-\begin_inset Formula $\mathbf{r'}=-(\text{e}^{\mathbf{r}}-\mathbb{\mathbb{\mathbf{1}}})$
-\end_inset
-
- is the vector of growth rates, 
-\begin_inset Formula $\mathbf{E}$
-\end_inset
-
- is built so that we verify the equality 
-\begin_inset Formula $\mathbf{AN^{*}+r'}=0$
-\end_inset
-
- where 
-\begin_inset Formula $\mathbf{N}^{*}$
-\end_inset
-
-is the vector of abundance at equilibrium (more precisely, here, average
- abundance values over the whole time series), and 
-\begin_inset Formula $\mathbf{G},\mathbf{h}$
-\end_inset
-
- so that 
-\begin_inset Formula $\mathbf{r}>0$
-\end_inset
-
- (genera have a positive growth rate when taken in isolation) and 
-\begin_inset Formula $\forall i,a_{ii}>0$
-\end_inset
-
- (negative density-dependence, individuals from the same genus compete with
- each other).
- 
-\end_layout
-
-\begin_layout Standard
-NOTE: This may not be useful as only the mean growth rate can be used to
- adjust the model (due to its dependence on the temperature), and the calibratio
-n of the interaction matrix tends to lead to a stable community, that is
- not able to represent the yearly cycles due to seasonality.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-Calibration
-\end_layout
-
-\begin_layout Standard
-In addition to quadratric programming which aims to get closer to observed
- average abundances, calibration is necessary to approximate other features
- of the system.
- Several indicators can be used:
-\end_layout
-
-\begin_layout Itemize
-species-abundance distribution within each month/each semester/each season
- (see SAD in output/modelev1.1/)
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Maybe not this one
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-phenology can be checked with the date of the beginning of the bloom for
- each year (and its duration, just to check that it doesn't last the whole
- year)
-\end_layout
-
-\begin_layout Itemize
-dynamics themselves can be used.
- To avoid artefacts created by average abundances over the year, an idea
- would be stabilize the model on synthetic temperatures, then use the actual
- observed temperature to observe the simulated dynamics year after year.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-OR just average abundances and amplitude of variation (min-max) 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In all cases, a simple measure of |obs-sim|
-\begin_inset space ~
-\end_inset
-
-might be enough.
- Calibration would then be a multi-criterion process.
 \end_layout
 
 \begin_layout Standard

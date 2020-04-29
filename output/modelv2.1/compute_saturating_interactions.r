@@ -1,4 +1,5 @@
 #### CP 08/04/2020 Compute saturating interactions 
+#### CP 29/04/2020 Corrected a bug in computing the maximum competitive coefficients: before, took the sum of all competition effects on all species. Should actually be the mean of the maximum effect on any species
 
 library(lubridate)
 source("../../script/infer_interaction_matrix_growth_rate.r")
@@ -12,7 +13,8 @@ MAR2saturation=function(B,N_mean,N_max,O_y,ratio_pos){
 	name_spp=colnames(A)
 	#Step 2: compute maximum competition strength and maximum facilitation strength
 	#Competition
-	a_C=sum(abs(A)%*%N_max)
+#	a_C=sum(abs(A)%*%N_max)
+	a_C=mean(abs(A)%*%N_max)
 
 	#Facilitation
 	#Compute max growth rate
