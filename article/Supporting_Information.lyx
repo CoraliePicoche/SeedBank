@@ -101,13 +101,13 @@ Growth calibration
 \end_layout
 
 \begin_layout Standard
-The growth function in our models can be decomposed in several elements:
+The growth function in our models can be separated in three elements:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-N_{t',i,c}=\frac{\exp(r_{i}(T))N_{t,i,c}}{g(\alpha_{ij},N_{j,t})}-lN_{t,i,c}\label{eq:growth_rate}
+N_{t',i}=\frac{\exp(E(T)f_{i}(T))N_{t,i}}{g(\alpha_{ij},N_{t,j})}\label{eq:growth_rate}
 \end{equation}
 
 \end_inset
@@ -117,19 +117,14 @@ N_{t',i,c}=\frac{\exp(r_{i}(T))N_{t,i,c}}{g(\alpha_{ij},N_{j,t})}-lN_{t,i,c}\lab
 
 \begin_layout Standard
 with 
-\begin_inset Formula $r_{i}(T)=E(T)f_{i}(T)$
-\end_inset
-
-, 
 \begin_inset Formula $E(T)$
 \end_inset
 
- being the metabolic part of the growth rate to compute the maximum achievable
- growth rate while 
+ being the maximum achievable growth rate, 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- is the niche part of the model, and 
+, the niche part of the model, and 
 \family roman
 \series medium
 \shape up
@@ -146,7 +141,7 @@ with
 \begin_inset Formula $g(\alpha_{ij},N_{j,t})$
 \end_inset
 
- is the effect of interactions on the growth rate.
+, the effect of interactions on the growth rate.
  
 \end_layout
 
@@ -155,12 +150,12 @@ This section is dedicated to the design of the growth function
 \begin_inset Formula $E(T)$
 \end_inset
 
-, to the taxon-specific function 
+, the taxon-specific function 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
  that characterizes differential response to temperature variations, and
- to the estimation of interactions that may reduce or enhance this growth.
+ the estimation of interactions that may reduce it.
 \end_layout
 
 \begin_layout Subsection*
@@ -168,8 +163,8 @@ Common response to temperature
 \end_layout
 
 \begin_layout Standard
-Phytoplanktonic growth rates cover a large range of values: they range between
- 0.2 and 1.78 day
+Phytoplanktonic growth rates cover a large range of values: between 0.2 and
+ 1.78 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
@@ -216,8 +211,8 @@ literal "false"
 
 \end_inset
 
- on which we base our growth rate formulation was not able to reproduce
- the observed patterns (see low values of the growth rate in Fig.
+ on which we base our growth rate formulation is not able to reproduce the
+ observed patterns (see low values of the growth rate in Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -240,15 +235,7 @@ literal "false"
  to compute the maximum growth rate response to the temperature.
  There are two reasons for this choice.
  First, their model is a general function that can be applied to all species.
- Second, it remains in line with the work by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
-, as 
+ Second, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bissinger_predicting_2008"
@@ -264,20 +251,21 @@ literal "false"
 
 \end_inset
 
- that they use in addition to the metabolic theory of ecology.
- The relationship between temperature and maximum growth rate, evaluated
- on a large database
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-1,501 data points from several studies
-\end_layout
+ used in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
 
 \end_inset
 
-, is then 
-\begin_inset Formula $E(T)=0.81\text{e}^{0.0631T_{°C}}$
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The relationship between temperature and growth rate is then 
+\begin_inset Formula $E(T)\thinspace=\thinspace0.81\text{e}^{0.0631T_{°C}}$
 \end_inset
 
 , with 
@@ -326,7 +314,7 @@ literal "false"
 \end_inset
 
  growth rate formula (a).
- The black line indicates the final growth rate with their original model.
+ The black line indicates the final growth rate with their model.
  The blue line corresponds to the taxon-specific response to temperature
  for a thermal optimum of 15°C and the green line is the maximum achievable
  growth rate, a composite of the metabolic theory of ecology and the formula
@@ -339,8 +327,7 @@ literal "false"
 \end_inset
 
 .
- This formula is shown by black crosses in (b) and compared to the simple
- 
+ This formula is shown by black crosses in (b) and compared to the 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "eppley_temperature_1972"
@@ -357,7 +344,7 @@ literal "false"
 \end_inset
 
  formula in purple.
- Finally, horizontal lines show limits found the literature 
+ Horizontal lines show limits found the literature 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "reynolds2006ecology"
@@ -391,18 +378,7 @@ Taxon-specific response to temperature
 \end_layout
 
 \begin_layout Standard
-In eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:growth_rate"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, the niche part of the growth rate 
+The niche part of the growth rate 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
@@ -410,11 +386,22 @@ noprefix "false"
 \begin_inset Formula $T_{K,i}^{opt}$
 \end_inset
 
- in Kelvin and a proxy of its niche width 
+ in Kelvin and a proxy of the niche width 
 \begin_inset Formula $b_{i}$
 \end_inset
 
-, which drive the phenology of the taxon.
+, which drive the phenology of the taxon (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:niche_part"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  
 \end_layout
 
@@ -440,7 +427,7 @@ Each year, the dynamics of phytoplanktonic organisms is characterized by
 
 \begin_layout Standard
 We base estimates of 
-\begin_inset Formula $T_{i}^{opt}$
+\begin_inset Formula $T_{K,i}^{opt}$
 \end_inset
 
  and 
@@ -467,10 +454,10 @@ We base estimates of
 \begin_layout Standard
 In the models, we assume that generalists have a niche width between 15
  and 30°C and specialists, between 5 and 10°C.
- We assume that temperatures outside of this range leads to a growth rate
+ We assume that temperatures outside of this range lead to a growth rate
  at least 10 times inferior to the growth rate obtained at their thermal
  optimum (
-\begin_inset Formula $\exp(-|15|^{3}/b_{i}=0.1$
+\begin_inset Formula $\exp(-|7.5|^{3}/b_{i}=0.1$
 \end_inset
 
  for a niche width of 15°C).
@@ -576,7 +563,7 @@ Relationship between daily growth rates and temperature with different values
 
  (which values are indicated in the legend, corresponding to specialist
  and generalist taxa) and the same thermal optimum, 15°C, indicated by the
- solid black (right).
+ solid black line (right).
  On the left panel, only the two extreme values of 
 \begin_inset Formula $b$
 \end_inset
@@ -656,7 +643,17 @@ Model I: linear interactions
 \begin_layout Standard
 Interactions between taxa have previously been computed with a Multivariate
  AutoRegressive model (eq.
- XX, 
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:MAR_equation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "picoche_strong_2019"
@@ -670,9 +667,9 @@ literal "false"
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\mathbf{n}_{t+1}=\mathbf{B}\mathbf{n}_{t}+\textbf{C}\textbf{u}_{t+1}+\mathbf{e}_{t},\mathbf{e}_{t}\thicksim\mathcal{{N_{S}}}(0,\mathbf{Q})
-\]
+\begin{equation}
+\mathbf{n}_{t+1}=\mathbf{B}\mathbf{n}_{t}+\textbf{C}\textbf{u}_{t+1}+\mathbf{e}_{t},\mathbf{e}_{t}\thicksim\mathcal{{N_{S}}}(0,\mathbf{Q})\label{eq:MAR_equation}
+\end{equation}
 
 \end_inset
 
@@ -730,57 +727,18 @@ iance matrix
 \end_layout
 
 \begin_layout Standard
-The interaction model we use in this paper is a Beverton-Holt model.
+The interaction model we use in this paper is a Beverton-Holt model (eq.
  
-\end_layout
-
-\begin_layout Standard
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula 
-\[
-N_{t+1,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\alpha_{ij}N_{t,j}}
-\]
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where 
-\begin_inset Formula $N_{t,i}$
-\end_inset
-
- is the abundance of taxon i at time t, 
-\begin_inset Formula $r_{i}(T)$
-\end_inset
-
- is its growth rate and 
-\begin_inset Formula $\alpha_{ij}$
-\end_inset
-
- is the interaction effect of 
-\begin_inset Formula $j$
-\end_inset
-
- on 
-\begin_inset Formula $i$
-\end_inset
-
-.
- 
+).
 \end_layout
 
 \begin_layout Standard
@@ -1088,7 +1046,7 @@ noprefix "false"
  
 \begin_inset Formula 
 \begin{eqnarray}
-a_{C} & = & \frac{1}{S}\sum_{i}|A|N_{i,max}\label{eq:a_C}\\
+a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}\alpha_{ij}N_{j,max}\right)\label{eq:a_C}\\
 (1-0.7)a_{C}+0.7a_{F} & = & 1\label{eq:a_F}
 \end{eqnarray}
 
@@ -1171,7 +1129,8 @@ literal "false"
  grazing only, 0.13 being potentially due to cell autolysis (in the absence
  of nutrients, or because of viral charge).
  From this overview, the reference values for the models, 0.2, is a trade-off
- between sometimes high level of mortality and the maintenance of the model.
+ between sometimes high level of mortality and richness conservation in
+ the model.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1180,8 +1139,9 @@ Sinking rate
 
 \begin_layout Standard
 Among the hydrodynamics processes that drive sinking rate, turbulence and
- eddies can retain the cells at the top of the water column, themselves
- driven by tidal currents, shape of the estuary or wind conditions.
+ eddies, themselves driven by tidal currents, shape of the estuary or wind
+ conditions, can retain the cells at the top of the water column [ref to
+ Sourisseau?].
  This is why lab experiments on sinking rates are not sufficient to calibrate
  a field-based model.
  Credible values for sinking rates are therefore taken from field studies.
@@ -1238,6 +1198,16 @@ literal "false"
 \end_inset
 
  in an estuary (mouth of Adventfjorden).
+ Variations of the sinking rate over time give values between 4 and 50%
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jewson_loss_1981"
+literal "false"
+
+\end_inset
+
+.
  The chosen beta-distribution (Fig.
  S
 \begin_inset CommandInset ref
@@ -1261,18 +1231,6 @@ Thalassiosira
 \shape default
 (THP)
 \shape italic
-.
-
-\shape default
- Variations of the sinking rate over time give values between 4 and 50%
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "jewson_loss_1981"
-literal "false"
-
-\end_inset
-
 .
 \end_layout
 

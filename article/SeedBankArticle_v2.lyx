@@ -531,17 +531,27 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-The BH formulation is the Lotka-Volterra equivalent for discrete-time models
- and is often used to represent terrestrial plant growths.
- where the maximum achievable growth rate is modified by positive and negative
- interactions 
+The BH formulation of growth is the Lotka-Volterra equivalent for discrete-time
+ models and is often used to represent terrestrial plant growths.
+ In this model, the maximum achievable growth rate is modified by positive
+ (competitive) and negative (facilitative) interactions 
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
 .
- In the most classical formulation of the BH competition model, which is
- also our first model, interaction effects increase linearly with the abundances
- (model I, eq.
+ In the most classical formulation of the BH model, which is also our first
+ model, interaction effects increase linearly
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I'm having trouble defining this model as the effect of interactions is
+ not exactly linear
+\end_layout
+
+\end_inset
+
+ with the abundances (model I, eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -600,7 +610,7 @@ noprefix "false"
 
 \end_inset
 
-) 
+)
 \begin_inset Note Note
 status open
 
@@ -646,16 +656,6 @@ literal "false"
 
  is applied to competitive interactions.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-and facilitation is removed from the oceanic interaction matrices.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -665,6 +665,8 @@ status open
 \begin_layout Plain Layout
 CP: Question remains on what we do for mutualistic interactions but I am
  not even sur I talk about that -> FB: One problem at the time...
+ CP: Also, I think we could drop this coefficient at once; or we need to
+ add it in the saturating interaction model - just multiplying a_C ?
 \end_layout
 
 \end_inset
@@ -760,17 +762,21 @@ literal "false"
 \end_inset
 
  as no growth occurs at night.
- The niche part describes the decrease in growth rate due to the distance
- from the taxon-specific thermal optimum 
+ The niche part 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ describes the decrease in growth rate due to the difference between the
+ temperature in the environment and the taxon-specific thermal optimum 
 \begin_inset Formula $T_{K,i}^{opt}$
 \end_inset
 
- to the observed temperature, and its specific thermal decay 
+, and is controlled by the specific thermal decay 
 \begin_inset Formula $b_{i}$
 \end_inset
 
- which can be understood as a measure of the niche width.
- Parameterisations of equations are detailed in the SI.
+ which depends of the niche width.
+ Parameterisation is detailed in the SI.
 \end_layout
 
 \begin_layout Standard
@@ -962,7 +968,7 @@ Status
 \begin_inset Text
 
 \begin_layout Plain Layout
-Abundances of taxon 
+Abundance of taxon 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1082,10 +1088,10 @@ Dynamic
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $r_{i}$
+\begin_inset Formula $r_{i}(T)$
 \end_inset
 
-(T)
+
 \end_layout
 
 \end_inset
@@ -1294,7 +1300,7 @@ Interaction strength of taxon
 \begin_inset Text
 
 \begin_layout Plain Layout
-Field-based, taxa-specific (Cells
+Field-based, taxon-specific (Cells
 \begin_inset Formula $^{-1})$
 \end_inset
 
@@ -1383,11 +1389,7 @@ Maximum competitive/facilitative interaction strength in model II
 \begin_inset Text
 
 \begin_layout Plain Layout
-Field-based, taxa-specific (Cells
-\begin_inset Formula $^{-1})$
-\end_inset
-
-
+Field-based, taxon-specific (NA)
 \end_layout
 
 \end_inset
@@ -1436,7 +1438,7 @@ Half-saturation for the interaction strength of taxon
 \begin_inset Text
 
 \begin_layout Plain Layout
-Field-based, taxa-specific (Cells
+Field-based, taxon-specific (Cells
 \begin_inset Formula $)$
 \end_inset
 
@@ -1756,16 +1758,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Definition of main state variables and parameters of the model.
- Calibrated parameters are parameters for which initial estimates exist,
- but need to be improved through calibration.
+Definition of main state variables and parameters of the models.
+ Calibrated parameters are either directly estimated on data for this study
+ or parameters for which initial estimates exist, but are improved through
+ calibration.
  Fixed values or distributions are estimated from the literature and references
  are given in the main text.
- When a set or a range of values is given, the bold numbers indicate the
- reference values while the others are used to test the sensitivity of the
- model to changes in parameters.
+ When a range of values is given, the bold numbers indicate the reference
+ values while the others are used to test the sensitivity of the model.
  Scenario parameters are the parameters which are used to build ecological
- scenarii (see text).
+ scenarii.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1885,7 +1887,7 @@ literal "false"
 .
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Paragraph*
 Exchange rate
 \end_layout
 
@@ -1936,7 +1938,7 @@ literal "false"
 
  are given in the SI).
  However, cyst burial by sedimentation
-\begin_inset Foot
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -2141,7 +2143,7 @@ average abundance:
 
 \begin_layout Itemize
 amplitude of the cycles: 
-\begin_inset Formula $f_{2}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left(\left(\max(N_{i,obs})-\min(N_{i,obs}\right)-\left(\max(N_{i,sim})-\min(N_{i,sim})\right)\right){}^{2}}$
+\begin_inset Formula $f_{2}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left[\left(\max(N_{i,obs})-\min(N_{i,obs})\right)-\left(\max(N_{i,sim})-\min(N_{i,sim})\right)\right]{}^{2}}$
 \end_inset
 
 
@@ -2152,7 +2154,7 @@ beginning of the bloom: the year is divided in 3 periods, i.e.
  summer, winter and the spring/autumn group (as taxa blooming in these periods
  can appear in either or both seasons).
  We give a score of 0 if the taxon blooms in the same period as its observed
- counterpart and 1otherwise.
+ counterpart and 1 otherwise.
 \end_layout
 
 \begin_layout Standard
@@ -2206,8 +2208,7 @@ noprefix "false"
 
 .
  Variations in average abundances and amplitudes at the community- and taxon
- levels for the last 2 years of simulations are the major diagnostics for
- the sensitivity of the model.
+ levels for the last 2 years of simulations are the major diagnostics.
 \end_layout
 
 \begin_layout Subsection*
@@ -2216,12 +2217,11 @@ Scenarii
 
 \begin_layout Standard
 Maintenance of biodiversity by exchanges between compartments can be gauged
- with two main scenarios.
- 
+ with two main scenarios:
 \end_layout
 
 \begin_layout Enumerate
-modifying the storage by the cyst bank (by setting seed mortality/burial
+modifying the storage by the cyst bank (by setting cyst mortality/burial
  to 1)
 \end_layout
 
@@ -2316,9 +2316,10 @@ name "fig:Changes-compet-temperature"
 \end_layout
 
 \begin_layout Standard
-Second, by reducing the exchange with the ocean might end up depleting the
- ocean biomass and richness as it loses species by sinking but cannot regain
- them thanks to coastal production fueled by a seed bank.
+Second, reducing the exchange with the ocean might lead to depletion of
+ the ocean biomass and richness.
+ In the ocean, individuals disappear through sinking and cannot reappear
+ thanks to coastal production fueled by a cyst bank.
  Fig.
  
 \begin_inset CommandInset ref
@@ -2474,8 +2475,12 @@ Find a way to represent the variation in total abundances in the models
 Scenarios
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section*
 Discussion 
+\end_layout
+
+\begin_layout Standard
+[[See outline]]
 \end_layout
 
 \begin_layout Standard
