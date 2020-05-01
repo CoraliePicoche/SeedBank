@@ -1665,12 +1665,13 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1588330619
-You don't comment on burial here? Why not? When the cysts are below 1m of
- sediment that's harder (I mean, impossible!) to get them...
- We need to take into account that - most of the time - only the top of
- the sediment gets resuspended.
- 
+\change_inserted -666822487 1588331270
+You don't comment on burial here? Why not? We do take this into account
+ so I would talk about here as well: it will be intuitive to most people
+ that the cysts are below 1m of sediment that's harder (I mean, impossible!)
+ to get them...
+ so it is better to talk explicitely about it so that people do not have
+ the feeling that we neglected it (I think).
 \change_unchanged
 
 \end_layout
