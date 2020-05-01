@@ -77,11 +77,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -633,11 +634,43 @@ The shift of the maximum growth rate may lead to a deformation of the expected
 \end_layout
 
 \begin_layout Subsection*
-Estimation of interactions
+Estimation of interaction
+\change_deleted -666822487 1588329241
+s
+\change_unchanged
+
 \end_layout
 
 \begin_layout Subsubsection*
-Model I: linear interactions
+Model I
+\change_deleted -666822487 1588329243
+: linear interactions
+\change_inserted -666822487 1588329358
+: Lotka-Volterra interactions
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588329405
+\begin_inset Quotes eld
+\end_inset
+
+mass action
+\begin_inset Quotes erd
+\end_inset
+
+ works as well, I think.
+ Or nothing!
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -762,6 +795,18 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -666822487 1588329315
+ Yes.
+ Perhaps just write 
+\begin_inset Quotes eld
+\end_inset
+
+multispecies version in Picoche & Barraquand (2020)'s Supporting Information
+ [btw, in Certain et al.
+ it is also in the SI].
+ 
+\change_unchanged
 
 \end_layout
 
@@ -901,7 +946,11 @@ This gives an exact correspondance between
 
 \begin_layout Standard
 In this model, the presence of mutualistic interactions can lead to an orgy
- of mutual benefaction [ref].
+ of mutual benefaction [ref]
+\change_inserted -666822487 1588329331
+ (May's book)
+\change_unchanged
+.
  We impose a minimum value of 1 to the denominator of the BH formulation,
  meaning that the growth rate cannot be higher than the maximum growth rate
  calculated 
@@ -984,8 +1033,19 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-It is easy to see that there is no unique solution for the correspondence
- between the 
+
+\change_deleted -666822487 1588329451
+It is easy to see that t
+\change_inserted -666822487 1588329451
+T
+\change_unchanged
+here is no unique solution for 
+\change_deleted -666822487 1588329454
+the
+\change_inserted -666822487 1588329457
+making a
+\change_unchanged
+ correspondence between the 
 \begin_inset Formula $\mathbf{B}$
 \end_inset
 
@@ -1006,8 +1066,14 @@ It is easy to see that there is no unique solution for the correspondence
 \begin_inset Formula $a_{C}$
 \end_inset
 
- as the average sum of all interactions 
-\begin_inset Formula $\alpha_{ij}$
+ as the average sum of all 
+\change_deleted -666822487 1588329604
+interactions
+\change_inserted -666822487 1588329606
+species effects
+\change_unchanged
+ 
+\begin_inset Formula $\alpha_{ij}N_{i}$
 \end_inset
 
  exerted on a given species if all interactions were competitive (eq.
@@ -1056,6 +1122,31 @@ a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}\alpha_{ij}N_{j,max}\right)\label{e
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted -666822487 1588329666
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588329766
+I'm not sure about the second equation: the fact that we have facilitation
+ 70% of the time does not mean that the maximum effect is 70% that of the
+ total.
+ But, perhaps here, you meant that relationships that apply to individual
+ interaction coefficients must apply to their saturation point.
+ In which case, you are correct; but this needs to be said to help the reader!
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 At low abundances, we can consider that interactions are far from saturation.
  Taking the tangent of the function at this point, 
 \begin_inset Formula $H_{ij}$
@@ -1065,6 +1156,28 @@ At low abundances, we can consider that interactions are far from saturation.
 \begin_inset Formula $\frac{a_{C/F}}{\alpha_{ij}}$
 \end_inset
 
+
+\change_inserted -666822487 1588329791
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588329884
+Have you considered the correction factor we have been discussing? Accounting
+ for the fact that when fitting to data, the slope at origin for the type
+ II response is likely higher (like, twice higher) than the slope for the
+ linear interaction coeff.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 .
  
 \end_layout
@@ -1086,6 +1199,10 @@ Loss rate
 \begin_layout Standard
 The loss rate corresponds to multiple mortality processes.
  
+\change_inserted -666822487 1588330100
+The model of 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -1093,7 +1210,13 @@ literal "false"
 
 \end_inset
 
- set this rate around 0.04 day
+ 
+\change_deleted -666822487 1588330106
+set this
+\change_inserted -666822487 1588330108
+considered a
+\change_unchanged
+ rate around 0.04 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
@@ -1106,8 +1229,43 @@ literal "false"
 
 \end_inset
 
-, washout (0.5%), parasitism (4% of infested cells) and grazing still remained
- low when compared to growth rates.
+, washout (0.5%), parasitism (4% of infested cells
+\change_inserted -666822487 1588330203
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588330226
+do you mean that only 4% of infested cells die of it?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+) and grazing still remained low 
+\change_inserted -666822487 1588330072
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588330076
+make that quantitative?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+when compared to growth rates.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1116,8 +1274,15 @@ literal "false"
 
 \end_inset
 
- found values between 0.02 and 0.1 for natural mortality only, while a review
- by 
+ found values between 0.02 and 0.1 
+\change_inserted -666822487 1588329967
+day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ 
+\change_unchanged
+for natural mortality only, while a review by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "sarthou_growth_2005"
@@ -1128,9 +1293,44 @@ literal "false"
  indicates a loss of daily primary productivity between 0.45 and 1.1 due to
  grazing only, 0.13 being potentially due to cell autolysis (in the absence
  of nutrients, or because of viral charge).
- From this overview, the reference values for the models, 0.2, is a trade-off
- between sometimes high level of mortality and richness conservation in
- the model.
+ 
+\change_deleted -666822487 1588329990
+From this overview
+\change_inserted -666822487 1588330126
+Considering all the literature above
+\change_unchanged
+, 
+\change_inserted -666822487 1588330135
+we set as the 
+\change_deleted -666822487 1588330003
+the 
+\change_unchanged
+reference value
+\change_deleted -666822487 1588330005
+s
+\change_unchanged
+ 
+\change_deleted -666822487 1588330008
+for the models, 
+\change_inserted -666822487 1588330140
+to 
+\change_unchanged
+0.2
+\change_inserted -666822487 1588330263
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+\change_deleted -666822487 1588330243
+, 
+\change_inserted -666822487 1588330237
+ 
+\change_deleted -666822487 1588330176
+is a trade-off between sometimes high level of mortality and richness conservati
+on in the model
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1139,11 +1339,46 @@ Sinking rate
 
 \begin_layout Standard
 Among the hydrodynamics processes that drive sinking rate, turbulence and
- eddies, themselves driven by tidal currents, shape of the estuary or wind
- conditions, can retain the cells at the top of the water column [ref to
- Sourisseau?].
- This is why lab experiments on sinking rates are not sufficient to calibrate
- a field-based model.
+ eddies
+\change_deleted -666822487 1588330298
+,
+\change_unchanged
+ 
+\change_inserted -666822487 1588330300
+– 
+\change_unchanged
+themselves driven by tidal currents, 
+\change_inserted -666822487 1588330285
+the 
+\change_unchanged
+shape of the 
+\change_deleted -666822487 1588330279
+estuary
+\change_inserted -666822487 1588330280
+coast
+\change_unchanged
+ or wind conditions
+\change_inserted -666822487 1588330303
+ –
+\change_deleted -666822487 1588330302
+,
+\change_unchanged
+ can retain the cells at the top of the water column [ref to Sourisseau?].
+ 
+\change_deleted -666822487 1588330319
+This is why 
+\change_inserted -666822487 1588330321
+For that reason, 
+\change_unchanged
+lab
+\change_inserted -666822487 1588330324
+oratory
+\change_unchanged
+ experiments on sinking rates are not sufficient
+\change_inserted -666822487 1588330339
+ly informative
+\change_unchanged
+ to calibrate a field-based model.
  Credible values for sinking rates are therefore taken from field studies.
  In the Gotland Basin (central Baltic Sea), 
 \begin_inset CommandInset citation
@@ -1239,10 +1474,32 @@ However, it should be noted that the sinking rate measured in these articles
  represent the sinking of all cells, therefore including dead cells.
  In our model, it should represent the exchange of live cells between the
  coast and the seed bank, or a loss of cells in the ocean.
- The maximum sinking rate used in this model might therefore need to be
- decreased to avoid modeling dead cells already taken into account in the
- loss term.
+ The maximum sinking rate used in this model 
+\change_deleted -666822487 1588330389
+might 
+\change_unchanged
+therefore need to be decreased to avoid modeling dead cells already taken
+ into account in the loss term.
  
+\change_inserted -666822487 1588330407
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588330419
+Conclusion on the values considered to include here.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1298,8 +1555,12 @@ literal "false"
 
 \end_inset
 
- present maximum and mean depth at which germination of diatoms and dinoflagella
-tes could still occur when incubated.
+ present maximum and mean depth 
+\change_inserted -666822487 1588330451
+(of sediment) 
+\change_unchanged
+at which germination of diatoms and dinoflagellates could still occur when
+ incubated.
  The authors also present sediment datation according to depth.
  Depth can therefore be related to maximum and mean age of phytoplankton
  cysts before death.
@@ -1397,6 +1658,28 @@ In both cases,
 \noun default
 \color inherit
  
+\change_inserted -666822487 1588330476
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588330619
+You don't comment on burial here? Why not? When the cysts are below 1m of
+ sediment that's harder (I mean, impossible!) to get them...
+ We need to take into account that - most of the time - only the top of
+ the sediment gets resuspended.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -1475,6 +1758,24 @@ literal "false"
 Finally, it should be noted that cyst burial, sinking rate and resuspension
  are all dependent on the hydrodynamics of the place and are therefore,
  at least in biological terms, not identifiable.
+\change_inserted -666822487 1588330554
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1588330584
+A bit unclear: not identifiable from what data? 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
