@@ -82,6 +82,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \author -666822487 "frederic"
 \end_header
 
@@ -635,10 +636,6 @@ The shift of the maximum growth rate may lead to a deformation of the expected
 
 \begin_layout Subsection*
 Estimation of interaction
-\change_deleted -666822487 1588329241
-s
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1274,15 +1271,11 @@ literal "false"
 
 \end_inset
 
- found values between 0.02 and 0.1 
-\change_inserted -666822487 1588329967
-day
+ found values between 0.02 and 0.1 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
- 
-\change_unchanged
-for natural mortality only, while a review by 
+ for natural mortality only, while a review by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "sarthou_growth_2005"
@@ -1293,43 +1286,11 @@ literal "false"
  indicates a loss of daily primary productivity between 0.45 and 1.1 due to
  grazing only, 0.13 being potentially due to cell autolysis (in the absence
  of nutrients, or because of viral charge).
- 
-\change_deleted -666822487 1588329990
-From this overview
-\change_inserted -666822487 1588330126
-Considering all the literature above
-\change_unchanged
-, 
-\change_inserted -666822487 1588330135
-we set as the 
-\change_deleted -666822487 1588330003
-the 
-\change_unchanged
-reference value
-\change_deleted -666822487 1588330005
-s
-\change_unchanged
- 
-\change_deleted -666822487 1588330008
-for the models, 
-\change_inserted -666822487 1588330140
-to 
-\change_unchanged
-0.2
-\change_inserted -666822487 1588330263
- day
+ Considering all the literature above, we set as the reference value to
+ 0.2 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
-.
-\change_deleted -666822487 1588330243
-, 
-\change_inserted -666822487 1588330237
- 
-\change_deleted -666822487 1588330176
-is a trade-off between sometimes high level of mortality and richness conservati
-on in the model
-\change_unchanged
 .
 \end_layout
 
@@ -1339,46 +1300,11 @@ Sinking rate
 
 \begin_layout Standard
 Among the hydrodynamics processes that drive sinking rate, turbulence and
- eddies
-\change_deleted -666822487 1588330298
-,
-\change_unchanged
- 
-\change_inserted -666822487 1588330300
-– 
-\change_unchanged
-themselves driven by tidal currents, 
-\change_inserted -666822487 1588330285
-the 
-\change_unchanged
-shape of the 
-\change_deleted -666822487 1588330279
-estuary
-\change_inserted -666822487 1588330280
-coast
-\change_unchanged
- or wind conditions
-\change_inserted -666822487 1588330303
- –
-\change_deleted -666822487 1588330302
-,
-\change_unchanged
- can retain the cells at the top of the water column [ref to Sourisseau?].
- 
-\change_deleted -666822487 1588330319
-This is why 
-\change_inserted -666822487 1588330321
-For that reason, 
-\change_unchanged
-lab
-\change_inserted -666822487 1588330324
-oratory
-\change_unchanged
- experiments on sinking rates are not sufficient
-\change_inserted -666822487 1588330339
-ly informative
-\change_unchanged
- to calibrate a field-based model.
+ eddies – themselves driven by tidal currents, the shape of the coast or
+ wind conditions – can retain the cells at the top of the water column [ref
+ to Sourisseau?].
+ For that reason, laboratory experiments on sinking rates are not sufficiently
+ informative to calibrate a field-based model.
  Credible values for sinking rates are therefore taken from field studies.
  In the Gotland Basin (central Baltic Sea), 
 \begin_inset CommandInset citation
@@ -1474,12 +1400,8 @@ However, it should be noted that the sinking rate measured in these articles
  represent the sinking of all cells, therefore including dead cells.
  In our model, it should represent the exchange of live cells between the
  coast and the seed bank, or a loss of cells in the ocean.
- The maximum sinking rate used in this model 
-\change_deleted -666822487 1588330389
-might 
-\change_unchanged
-therefore need to be decreased to avoid modeling dead cells already taken
- into account in the loss term.
+ The maximum sinking rate used in this model therefore needs to be decreased
+ to avoid modeling dead cells already taken into account in the loss term.
  
 \change_inserted -666822487 1588330407
 
@@ -1555,16 +1477,16 @@ literal "false"
 
 \end_inset
 
- present maximum and mean depth 
-\change_inserted -666822487 1588330451
-(of sediment) 
-\change_unchanged
-at which germination of diatoms and dinoflagellates could still occur when
- incubated.
+ present maximum and mean depth of sediment at which germination of diatoms
+ and dinoflagellates could still occur when incubated.
  The authors also present sediment datation according to depth.
  Depth can therefore be related to maximum and mean age of phytoplankton
  cysts before death.
+
+\change_deleted -2100369821 1588610447
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
