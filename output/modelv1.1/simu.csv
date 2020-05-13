@@ -1,5 +1,5 @@
 Param;Value
-k_coast2ocean;1.5
+k_coast2ocean;1.0
 loss_rate;0.2
 max_sinking;0.3
 exchange;0.4

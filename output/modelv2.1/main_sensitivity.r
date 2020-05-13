@@ -49,6 +49,7 @@ temp_germin=as.numeric(as.character(tab[tab[,1]=="germin_threshold",2]))
 a_d=as.numeric(as.character(tab[tab[,1]=="daylength",2]))
 O_y=as.numeric(as.character(tab[tab[,1]=="overyielding",2]))
 ratio_pos=as.numeric(as.character(tab[tab[,1]=="ratio_pos",2]))
+coeff_Hij=as.numeric(as.character(tab[tab[,1]=="coeff_Hij",2]))
 
 #Sinking rates and T_opt
 tab=read.table(paste("../../param/species_specific_parameters.txt",sep=""),sep=";",dec=".",header=T)

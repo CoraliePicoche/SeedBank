@@ -14,3 +14,4 @@ germin_threshold;15
 daylength;0.5
 ratio_pos;0.7
 overyielding;1
+coeff_Hij;2

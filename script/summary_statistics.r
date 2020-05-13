@@ -1,6 +1,7 @@
 #### CP 15/04/20 Diagnostics on different simulations / summary statistics
 #### CP 16/04/20 Turns into a function
 #### CP 23/04/20 From abs(error) to (error)^2 (sqrt(mean) is done in the main calibration file) + return a vector instead of a final number to keep track of the species-specific indicator
+#### CP 08/05/20 Use error to classify model 
 
 summary_statistics=function(tab_mean,tab_pheno,tab_coast,nb_year){
 #Simulation
@@ -70,3 +71,23 @@ for(s in 1:length(name_spp)){
 return(list(vec_diff_abundances,vec_diff_amplitude,vec_diff_season))
 #return(c(diff_abundances,diff_amplitude,diff_season))
       }
+
+#Function which gives the rank of each model, starting with the one that minimizes the fit criteria as much as possible
+classify_model=function(mat_diff_abundances,mat_diff_amplitude,mat_diff_season){
+	nspp=ncol(mat_diff_abundances)
+	error_abundances=translate(mat_diff_abundances)
+	error_amplitude=translate(mat_diff_amplitude)
+	error_pheno=translate(mat_diff_season)
+	order_abundances=rank(error_abundances)
+	order_amplitude=rank(error_amplitude)
+	order_pheno=rank(error_pheno)
+	order_total=rank(order_abundances+order_amplitude+order_pheno)
+
+	return(order_total)
+}
+
+translate=function(mat){
+	nspp=ncol(mat)
+	tmp=sqrt(apply(mat,1,sum)/nspp)
+	return(tmp)
+}

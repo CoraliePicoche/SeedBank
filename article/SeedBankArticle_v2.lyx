@@ -684,6 +684,39 @@ CP: Question remains on what we do for mutualistic interactions but I am
  not even sur I talk about that -> FB: One problem at the time...
  CP: Also, I think we could drop this coefficient at once; or we need to
  add it in the saturating interaction model - just multiplying a_C ?
+\change_inserted -2100369821 1589385516
+ I can find no reference for the assumption of a stronger competition in
+ the ocean.
+ It is certain that nutrients are scarcer, but can we necessarily conclude
+ that competition is stronger? Differential responses to nutrients, stoichiometr
+y/nutrient ratio (Sakshaug & Olsen 1986), nonlinear responses to nutrients
+ (Marinov et al.
+ 2010), other elements such as competition or hydrodynamics (Hulburt et
+ al.
+ 1970) seem too important to be able to find a satisfactory value out of
+ nowhere for 
+\begin_inset Formula $k_{c}2o$
+\end_inset
+
+.
+ Insemination by metals are not satisfactory either (Mackey et al.
+ 2012) as increases in growth rates are not simply stronger in the ocean.
+ Griffiths et al.
+ (2015) could not find a stronger competition (actually found lower interactions
+ between individuals).
+ Moreover, if we want to talk about the effect of the seed bank, it might
+ appear like 
+\begin_inset Quotes eld
+\end_inset
+
+cheating
+\begin_inset Quotes erd
+\end_inset
+
+ to also add a stronger competition in the ocean.
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1888,6 +1921,94 @@ Parameterisation
 
 \begin_layout Subsubsection*
 Empirical dataset used for calibration
+\change_inserted -2100369821 1589372610
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589372612
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589375413
+About the time-series themselves: as we know, phytoplankton time-series
+ contain many gaps.
+ We can build different reference datasets: a raw dataset, with lots of
+ missing values, and an interpolated dataset.
+ Interpolation itself can be done in two ways: the crudest one is to use
+ a direct interpolation, where all missing values, even for the longer gaps,
+ are linearly interpolated.
+ A more elaborate way, previously used with MAR models, is to only interpolate
+ for a maximum of a month-gap, and to replace other missing values by a
+ random value uniformly distributed between 0 and half the minimum value
+ of the time-series.
+ The raw dataset, and, more importantly, the crudely interpolated one, tend
+ to overestimate the final abundances as the the smallest values are not
+ observed while the second reconstructed dataset may underestimate them
+ as it only attributes missing values as low, closer to 0 than observed,
+ values.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589375426
+In this manuscript, we use time-series to (a) extract the main patterns
+ in the phenology of each species, including their bloom period and amplitude
+ of their dynamics, (b) compute BH coefficients from the MAR coefficients,
+ based on the 'equilibrium' value, i.e.
+ the mean value over the time-series, and the maximum value for the saturating
+ interactions and (c) compare the mean and amplitude of the simulated values
+ to the observed ones.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589375494
+Phenology (a) is based on a crudely interpolated dataset for each year (which
+ means that there is no interpolation from one year to another.
+ There are often many missing values at the boundaries of the year, due
+ to abundance decrease and storms which do not allow monitoring).
+ As we focus on blooming periods, high values are the most important.
+ We must acknowledge the fact that we certainly miss oscillations in the
+ bloom.
+ Amplitudes (b and c) are also computed on this dataset to remain close
+ to what is actually observed even though we can assume that actual lowest
+ values are even lower than observed.
+ Maximum values (b) are also extracted from the raw dataset.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589375563
+Mean values (b and c) are based on the reconstructed time-series from Picoche
+ et al.
+ 2020.
+ We consider that the underestimation this could induce is smaller than
+ the overestimation that would be due to using the average values from the
+ raw dataset.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589375689
+This needs to be discussed as this also means we have choices to make for
+ graphics: do we show the interpolated values or insist on the variability
+ and show the raw dataset? IN this specific context, I would advocate for
+ the second option.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

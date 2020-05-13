@@ -1,6 +1,7 @@
 ## 11/03/2020 CP: phenology of species
 #21/03/2020 Corrected a bug on the beginning of the time series and added histogram per species, and overall plots
 #15/04/20 Added mean amplitude and season of the first bloom
+#13/05/20 Uses community_matrix.csv instead of the .RData in order to avoid compatibility issue
 
 rm(list=ls())
 graphics.off()
@@ -98,8 +99,8 @@ start_duration_bloom_new=function(time_series_interp,date_bis,hydro_interp,thres
 }
 
 
-load("param/Auger_pencen_null_regular_common_MO.RData")
-name_spp=colnames(cis$call$model$B)
+tab_com_matrix=read.table("param/community_matrix_B_Auger.csv",sep=";",dec=".")
+name_spp=colnames(tab_com_matrix)
 
 abundances_tab=read.table(paste("param/","raw_abundances_Auger.txt",sep=""),sep=";",header=T)
 dates=as.Date(abundances_tab$Date)

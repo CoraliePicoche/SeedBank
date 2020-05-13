@@ -1,8 +1,10 @@
 #################
 ###CP 18/02/2020: Clean version of the main function 
 ###CP 08/04/2020: Main function for the saturating interaction model
-###CP 16/04/20202: Added calibration on H_ij
-###CP 22/04/20202: Corrected lots of bugs, moved to RMSE and kept track of species-specific statistics
+###CP 16/04/2020: Added calibration on H_ij
+###CP 22/04/2020: Corrected lots of bugs, moved to RMSE and kept track of species-specific statistics
+###CP 12/05/2020: Implemented the rank-based choice of model instead of using direct values of summary statistics
+###CP 13/05/2020: Added a coefficient to increase Hij
 #################
 
 rm(list=ls())
@@ -40,6 +42,7 @@ a_d=as.numeric(as.character(tab[tab[,1]=="daylength",2]))
 #threshold=as.numeric(as.character(tab[tab[,1]=="threshold",2]))
 O_y=as.numeric(as.character(tab[tab[,1]=="overyielding",2]))
 ratio_pos=as.numeric(as.character(tab[tab[,1]=="ratio_pos",2]))
+coeff_Hij=as.numeric(as.character(tab[tab[,1]=="coeff_Hij",2]))
 
 #Data to use (Auger)
 a=as.matrix(read.table("../../param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
@@ -74,7 +77,7 @@ names(N_mean)=name_spp
 inter_mat=MAR2saturation(B_matrix,N_mean,N_max,O_y,ratio_pos)
 print("For now, interactions on the coast and in the ocean are the same")
 type_inter=list(inter_mat[[1]],inter_mat[[1]])
-list_H=list(inter_mat[[2]],inter_mat[[2]])
+list_H=list(inter_mat[[2]]*coeff_Hij,inter_mat[[2]]*coeff_Hij)
 
 #Sinking rates and T_opt
 tab=read.table(paste("../../param/species_specific_parameters.txt",sep=""),sep=";",dec=".",header=T)
@@ -108,9 +111,7 @@ tab_simu=matrix(NA,nrow=nb_simu,ncol=nb_link)
 rownames(tab_simu)=1:nb_simu
 colnames(tab_simu)=name_links
 
-tab_summary=matrix(NA,nrow=nb_simu,ncol=5)
-rownames(tab_summary)=1:nb_simu
-colnames(tab_summary)=c("Abundance","Amplitude","Phenology","Diff","Persistence")
+tab_summary=array(NA,dim=c(nb_simu,5,nspp),dimnames=list(1:nb_simu,c("Abundance","Amplitude","Phenology","Diff","Persistence"),name_spp))
 
 size_subset=floor(nb_link/(length(value)+1))
 
@@ -137,7 +138,7 @@ for(t in 1:(n_iter-1)){
 tab_coast=N[,1,]
 #Statistics per species
 final_summary_tmp=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
-final_summary=matrix(sqrt(unlist(final_summary_tmp)),ncol=3)
+final_summary=matrix(sqrt(unlist(final_summary_tmp)),ncol=3) #We take the square root because all errors are squared in the function
 rownames(final_summary)=names(final_summary_tmp[[1]])
 colnames(final_summary)=colnames(tab_summary)[1:3]
 write.table(final_summary,"summary_statistics_per_species_before_calibration.txt",dec=".",sep=";")
@@ -180,14 +181,19 @@ for(t in 1:(n_iter-1)){
 ,silent=T)
 tab_coast=N[,1,]
 if(sum(is.na(tab_coast)>0)){
-tab_summary[sim,1:3]=100
+        tab_summary[sim,1:3,]=100
 }else{
-final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
-tab_summary[sim,1:3]=c(sqrt(sum(final_summary[[1]])/nspp),sqrt(sum(final_summary[[2]])/nspp),sqrt(sum(final_summary[[3]])/nspp))
+        final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
+#       tab_summary[sim,1:3]=c(sqrt(sum(final_summary[[1]])/nspp),sqrt(sum(final_summary[[2]])/nspp),sqrt(sum(final_summary[[3]])/nspp))
+        tab_summary[sim,'Abundance',]=final_summary[[1]]
+        tab_summary[sim,'Amplitude',]=final_summary[[2]]
+        tab_summary[sim,'Phenology',]=final_summary[[3]]
 }
-tab_summary[sim,4]=sum(tab_summary[sim,1:3])
-tab_summary[sim,5]=sum(tab_coast>0,na.rm=T)
-if(tab_summary[sim,5]<ncol(tab_coast)){tab_summary[,4]=tab_summary[,4]*2} #We can't have a model with a missing species
+#tab_summary[sim,4]=sum(tab_summary[sim,1:3])
+tab_summary[sim,"Diff",]=apply(tab_summary[sim,1:3,],2,sum)
+tab_summary[sim,"Persistence",]=tab_coast[nrow(tab_coast),]>0
+
+
 
 }
 
@@ -195,10 +201,22 @@ print(Sys.time()-t1)
 
 #Write simulations
 write.table(tab_simu,paste("list_simulation_calibration.csv",sep=""),sep=";",dec=".")
-write.table(tab_summary,paste("list_statistics_calibration.csv",sep=""),sep=";",dec=".")
+tab_summary_sum_species=apply(tab_summary[,1:3,],2,translate)
+persistence=apply(tab_summary[,"Persistence",],1,sum)
+diff_sum=apply(tab_summary_sum_species,1,sum)
+tab_summary_tmp=cbind(tab_summary_sum_species,diff_sum,persistence)
+write.table(tab_summary_tmp,paste("list_statistics_calibration.csv",sep=""),sep=";",dec=".")
 
 
-best=which(tab_summary[,4]==min(tab_summary[,4],na.rm=T))
+#best=which(tab_summary[,4]==min(tab_summary[,4],na.rm=T)) Before: we added all RMSE for each interaction model and then the best model was the one which minimized the sum.
+
+#Now we rank each model for each criterion and then choose the one which balances everything
+compare_ranks=classify_model(tab_summary[,"Abundance",],tab_summary[,"Amplitude",],tab_summary[,'Phenology',])
+#Now, we ensure that a model with at least one missing species is at the end of the ranking
+max_rank=max(compare_ranks)+1
+id_model_death=which(apply(tab_summary[,"Persistence",],1,sum)<nspp)
+compare_ranks[id_model_death]=max_rank
+best=which(compare_ranks==min(compare_ranks))[1] #Just in case two models have the same score. We arbitrarily choose the first one.
 
 best_line_inter=tab_simu[best,]
 

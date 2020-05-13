@@ -1,7 +1,11 @@
 ###################
 #19/02/2020 CP: diagnostics and plots for the model
 #22/04/2020 CP: improved diagnostic figure for single species with summary statistics
+#12/05/2020 CP: Replaced average observed values by examples of years for phytoplankton dynamics
+#13/05/2020 CP: Improved the zoom
 ###################
+
+library(lubridate)
 
 colo=c(rep(c("red","orange","green","blue"),2),"red","orange","orchid")
 apch=c(rep(16,4),rep(17,4),rep(18,2))
@@ -59,7 +63,13 @@ for(i in 1:ncol(after_A)){
 }
 
 #plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=c(min(c(before_A)),10^-4),ylim=c(min(c(after_A)),10^-4),main="Zoom")
-plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=c(-5*10^-5,5*10^-5),ylim=c(-7.5*10^(-5),7.5*10^-5),main="Zoom")
+before_A_no0=before_A
+before_A_no0[before_A==0]=NA
+after_A_no0=after_A
+after_A_no0[after_A==0]=NA
+axlim=c(min(c(before_A)),quantile(c(before_A_no0),na.rm=T)[4])
+aylim=c(min(c(after_A)),quantile(c(after_A_no0),na.rm=T)[4])
+plot(c(before_A),c(after_A),pch=16,col="black",xlab="Before calibration",ylab="After calibration",xlim=axlim,ylim=aylim,main="Zoom")
 abline(a=0,b=1)
 abline(h=0,lty=2)
 abline(v=0,lty=2)
@@ -114,7 +124,9 @@ rownames(pop_table)=pop_table$sp
 x_obs=pop_table[name_spp,"Mean_abundances"]
 names(x_obs)=name_spp
 
-pdf(paste("timeseries_one_by_one.pdf",sep=""),width=10)
+
+####Compare observed average monthly abundance to simulation
+pdf(paste("timeseries_one_by_one_average_obs.pdf",sep=""),width=10)
 par(mfrow=c(1,1))
 
 id_observed=seq(13,12*30.5,length.out=12)+min(id)
@@ -122,20 +134,20 @@ id_observed=seq(13,12*30.5,length.out=12)+min(id)
 tab_pheno=read.table("../../param/generalist_specialist_spp_added_amplitude_season.csv",sep=";",dec=".",header=T,row.names=1)
 
 for(i in 1:length(sp)){
-        aylim=range(c(transfo_N_coast[id,i]),c(transfo_N_ocean[id,i]),c(log10(tab_mean[,i]+10^(-5))))
-        plot(id,transfo_N_coast[id,i],main=sp[i],col="lightblue",t="o",pch=16,lty=1,xlab="time",ylab="abundance",ylim=aylim,xaxt="n")
+        aylim=range(c(transfo_N_coast[id,sp[i]]),c(transfo_N_ocean[id,sp[i]]),c(log10(tab_mean[,sp[i]]+10^(-5))))
+        plot(id,transfo_N_coast[id,sp[i]],main=sp[i],col="lightblue",t="o",pch=16,lty=1,xlab="time",ylab="abundance",ylim=aylim,xaxt="n")
 	axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
-        lines(id,transfo_N_ocean[id,i],col="darkblue",t="o",pch=16,lty=1)
+        lines(id,transfo_N_ocean[id,sp[i]],col="darkblue",t="o",pch=16,lty=1)
 #        lines(id,transfo_N_seed[id,i],col="brown",t="o",pch=16,lty=1)
 	abline(h=log10(x_obs[sp[i]]))
 	#points(id_observed,log10(tab_mean[,i]+10^(-5)),pch=17,col="red",cex=2)
-	points(id_observed,log10(tab_mean[,i]+10^(-5)),pch="*",col="red")
+	points(id_observed,log10(tab_mean[,sp[i]]+10^(-5)),pch="*",col="red")
 	if(i==1){
 		#legend("right",c("coast","ocean","seed","mean obs"),col=c("lightblue","darkblue","brown","red"),pch=c(16,16,16,17))
 		legend("right",c("coast","ocean"),col=c("lightblue","darkblue"),pch=c(16,16,16),bty="n")
 	}
-	mtext(paste("Mean abundance sim",format(mean(transfo_N_coast[id,i]),digits=2),"obs",format(log10(x_obs[sp[i]]),digits=2),sep=" "),cex=0.75,side=3,line=3,adj=0)
-	mtext(paste("Mean amplitude sim",format(diff(range(transfo_N_coast[id,i])),digits=2),"obs",format(tab_pheno[sp[i],"Mean_amplitude"],digits=2),sep=" "),cex=0.75,side=3,line=2,adj=0)
+	mtext(paste("Mean abundance sim",format(mean(transfo_N_coast[id,sp[i]]),digits=2),"obs",format(log10(x_obs[sp[i]]),digits=2),sep=" "),cex=0.75,side=3,line=3,adj=0)
+	mtext(paste("Mean amplitude sim",format(diff(range(transfo_N_coast[id,sp[i]])),digits=2),"obs",format(tab_pheno[sp[i],"Mean_amplitude"],digits=2),sep=" "),cex=0.75,side=3,line=2,adj=0)
 	tt=tab_pheno[sp[i],"Season"]
 	if(tt==0){
 		text_to_write="Bloom winter"
@@ -145,6 +157,55 @@ for(i in 1:length(sp)){
 		text_to_write="Late bloom"
 	}
 	mtext(text_to_write,cex=0.75,side=3,line=1,adj=0)
+}
+dev.off()
+
+#Compare real time series to simulation
+abundances_raw=read.table(paste("../../param/","raw_abundances_Auger.txt",sep=""),sep=";",header=T)
+dates=as.Date(abundances_raw$Date)
+abundances_raw=log10(abundances_raw[year(dates)>=1996,name_spp]+10^(-5))#Using data from 1996
+dates=dates[year(dates)>=1996]
+
+#We use only a subset of possible years for the sake of clarity
+years_to_show=c(2000,2005,2015)
+col_yy=c("red","orange","darkred")
+
+pdf(paste("timeseries_one_by_one_real_obs.pdf",sep=""),width=10)
+par(mfrow=c(1,1))
+
+for(i in 1:length(sp)){
+	subset_abundance=abundances_raw[,sp[i]]
+        aylim=range(c(transfo_N_coast[id,sp[i]]),c(transfo_N_ocean[id,sp[i]]),subset_abundance,na.rm=T)
+        plot(id,transfo_N_coast[id,sp[i]],main=sp[i],col="lightblue",t="o",pch=16,lty=1,xlab="time",ylab="abundance",ylim=aylim,xaxt="n",lwd=1.25,cex=1.25)
+        axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
+        lines(id,transfo_N_ocean[id,sp[i]],col="darkblue",t="o",pch=16,lty=1)
+        
+	for(id_y in 1:length(years_to_show)){
+		yy=years_to_show[id_y]
+		subset_abundance_yy=subset_abundance[year(dates)==yy]
+		dates_subset=dates[year(dates)==yy]
+		dates_subset=dates_subset-as.Date(paste(yy,"-01-01",sep=""))+id[1]
+		points(dates_subset,subset_abundance_yy,col=col_yy[id_y],pch=16,cex=0.75)
+		lines(dates_subset,subset_abundance_yy,col=col_yy[id_y],lty=2,cex=0.75)
+	}
+
+
+	if(i==1){
+                #legend("right",c("coast","ocean","seed","mean obs"),col=c("lightblue","darkblue","brown","red"),pch=c(16,16,16,17))
+                legend("topright",c("coast","ocean"),col=c("lightblue","darkblue"),pch=16,lty=1,bty="n")
+                legend("topleft",as.character(years_to_show),col=col_yy,pch=16,lty=2,,bty="n")
+        }
+        mtext(paste("Mean abundance sim",format(mean(transfo_N_coast[id,sp[i]]),digits=2),"obs",format(log10(x_obs[sp[i]]),digits=2),sep=" "),cex=0.75,side=3,line=3,adj=0)
+        mtext(paste("Mean amplitude sim",format(diff(range(transfo_N_coast[id,sp[i]])),digits=2),"obs",format(tab_pheno[sp[i],"Mean_amplitude"],digits=2),sep=" "),cex=0.75,side=3,line=2,adj=0)
+        tt=tab_pheno[sp[i],"Season"]
+        if(tt==0){
+                text_to_write="Bloom winter"
+        }else if(tt==1){
+                text_to_write="Early bloom"
+        }else{
+                text_to_write="Late bloom"
+        }
+        mtext(text_to_write,cex=0.75,side=3,line=1,adj=0)
 }
 dev.off()
 
