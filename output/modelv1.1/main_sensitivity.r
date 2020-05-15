@@ -1,6 +1,7 @@
 #################
 ###CP 18/02/2020: Clean version of the main function
 ###CP 21/04/2020: Version for main sensitivity
+###CP 15/05/2020: Corrected a bug in amplitude plot (plotted abundance instead) + corrected the way average and amplitude were taken into account (before, was highly dependent on only the most abundant species)
 #################
 
 rm(list=ls())
@@ -77,7 +78,7 @@ for(t in 1:(n_iter-1)){
 }
 
 #Parameters to move
-free_param=read.table("sensitivity_parameters.txt",sep=";",dec=".",header=T,row.names=1)
+free_param=read.table("sensitivity_parameters_woutcystmortality.txt",sep=";",dec=".",header=T,row.names=1)
 list_simulation=matrix(NA,nrow=(ncol(free_param)-1)*nrow(free_param),ncol=nrow(free_param))
 colnames(list_simulation)=rownames(free_param)
 rownames(list_simulation)=1:nrow(list_simulation)
@@ -145,7 +146,7 @@ for(t in 1:(n_iter-1)){
 id=seq(n_iter-365,n_iter)
 mean_tot_original=mean(log10(apply(N_original_set[id,"coast",],1,sum)))
 
-pdf("mean_abundance_sensitivity.pdf",width=15)
+pdf("mean_abundance_sensitivity_v1.pdf",width=15)
 analyses=rownames(list_simulation)
 plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(3.5,5.5),xaxt="n",ylab="Average total abundance",xlab="")
 axis(1,labels=rownames(free_param),at=1:nrow(free_param))
@@ -174,9 +175,150 @@ for(param_to_move in rownames(free_param)){
 mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
 dev.off()
 
-pdf("mean_amplitude_sensitivity.pdf",width=15)
+mean_tot_original=log10(apply(N_original_set[id,"coast",],2,mean))
+amplitude_tot_original=apply(log10(apply(N_original_set[id,"coast",],2,range)),2,diff)
 analyses=rownames(list_simulation)
-plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(3.5,5.5),xaxt="n",ylab="Average amplitude of total community",xlab="")
+
+
+####WARNING: this code is not flexible enough to take into account more than 2 values per parameter (min and max). If we want to try other values, we will need to increase the 2nd dimension of the two matrices
+matrix_mean=array(NA,dim=c(nrow(free_param),2,length(mean_tot_original)),dimnames=list(rownames(free_param),c("min","max"),names(mean_tot_original)))
+matrix_amplitude=array(NA,dim=c(nrow(free_param),2,length(amplitude_tot_original)),dimnames=list(rownames(free_param),c("min","max"),names(amplitude_tot_original)))
+
+for(param_to_move in rownames(free_param)){
+        id_param=grep(paste("^",param_to_move,sep=""),analyses) #This will help issue an error if we have more than 2 values per parameter
+        for(i in 1:length(id_param)){
+                mean_sens=log10(apply(N_sensitivity[id,"coast",,id_param[i]],2,mean))
+                tmp_mean=100*(mean_tot_original-mean_sens)/mean_tot_original
+		matrix_mean[param_to_move,i,]=tmp_mean
+		amp_sens=apply(log10(apply(N_sensitivity[id,"coast",,id_param[[i]]],2,range)),2,diff)
+		tmp_amplitude=100*(amplitude_tot_original-amp_sens)/amplitude_tot_original
+		matrix_amplitude[param_to_move,i,]=tmp_amplitude
+	}
+}
+
+pdf("mean_abundance_amplitude_sensitivity.pdf",width=17)
+par(mfrow=c(1,2))
+plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=c(-10,5),xaxt="n",ylab="%Change in average abundance",xlab="")
+axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+abline(h=0)
+mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.9)
+l=0
+val_text=c()
+at_val_text=c()
+for(param_to_move in rownames(free_param)){
+        l=l+1
+        id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        space=0.5/(2*length(id_param))
+        seq_space=seq(-space,space,length.out=length(id_param))
+        for(i in 1:length(id_param)){
+		per_change=mean(matrix_mean[param_to_move,i,]*is.finite(matrix_mean[param_to_move,i,]),na.rm=T)
+               	rect(l+0.75*seq_space[i],min(c(0,per_change)),l+1.25*seq_space[i],max(c(per_change,0)),pch=16,col="grey")
+                if(tab_summary[id_param[i],4]==0){
+                        points(l+seq_space[i],per_change+1*sign(per_change),t="p",pch=16,col="red")
+                }
+                at_val_text=c(at_val_text,l+seq_space[i])
+                tmp_text=strsplit(analyses[id_param[i]],"_")
+                val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        }
+}
+mtext(val_text,1,line=2,at=at_val_text,cex=0.9)
+
+plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(-40,25),xaxt="n",ylab="%Change in average amplitude",xlab="")
+axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+abline(h=0)
+mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.8)
+l=0
+val_text=c()
+at_val_text=c()
+for(param_to_move in rownames(free_param)){
+        l=l+1
+        id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        space=0.5/(2*length(id_param))
+        seq_space=seq(-space,space,length.out=length(id_param))
+        for(i in 1:length(id_param)){
+                per_change=mean(matrix_amplitude[param_to_move,i,],na.rm=T)
+                rect(l+0.75*seq_space[i],min(c(0,per_change)),l+1.25*seq_space[i],max(c(per_change,0)),pch=16,col="grey")
+                if(tab_summary[id_param[i],4]==0){
+                        points(l+seq_space[i],per_change+1*sign(per_change),t="p",pch=16,col="red")
+                }
+                at_val_text=c(at_val_text,l+seq_space[i])
+                tmp_text=strsplit(analyses[id_param[i]],"_")
+                val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        }
+}
+mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
+dev.off()
+
+ydelim_mean=range(c(matrix_mean*is.finite(matrix_mean)),na.rm=T)
+ydelim_amp=range(c(matrix_amplitude*is.finite(matrix_amplitude)),na.rm=T)
+
+pdf("species_abundance_amplitude_sensitivity.pdf",width=12,height=10)
+dim=c(4,4,3)
+s=0
+for(d in 1:length(dim)){
+par(mfrow=c(dim[d],2),mar=c(5,4,2,1))
+sp=s+1
+for(s in seq(sp,sp+dim[d]-1)){
+	plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=ydelim_mean,xaxt="n",ylab="%Change in abundance",xlab="",main=dimnames(matrix_mean)[[3]][s])
+	if((s-sp+1)==dim[d]){
+	axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+	mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.6)
+	mtext(val_text,1,line=2,at=at_val_text,cex=0.6)
+	}
+	abline(h=0)
+	l=0
+	val_text=c()
+	at_val_text=c()
+	for(param_to_move in rownames(free_param)){
+        	l=l+1
+	        id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        	space=0.5/(2*length(id_param))
+	        seq_space=seq(-space,space,length.out=length(id_param))
+        	for(i in 1:length(id_param)){
+                	per_change=matrix_mean[param_to_move,i,s]
+	                rect(l+0.75*seq_space[i],min(c(0,per_change),na.rm=T),l+1.25*seq_space[i],max(c(per_change,0),na.rm=T),pch=16,col="grey")
+	                if(is.infinite(per_change)|is.na(per_change)){
+        	                points(l+seq_space[i],0,t="p",pch=16,col="red")
+                	}
+                at_val_text=c(at_val_text,l+seq_space[i])
+                tmp_text=strsplit(analyses[id_param[i]],"_")
+                val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        }
+	}
+	plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=ydelim_amp,xaxt="n",ylab="%Change in amplitude",xlab="",main=dimnames(matrix_mean)[[3]][s])
+	if((s-sp+1)==dim[d]){
+	axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+	mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.6)
+	mtext(val_text,1,line=2,at=at_val_text,cex=0.6)
+	}
+	abline(h=0)
+	l=0
+	val_text=c()
+	at_val_text=c()
+	for(param_to_move in rownames(free_param)){
+        	l=l+1
+      	 	id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        	space=0.5/(2*length(id_param))
+        	seq_space=seq(-space,space,length.out=length(id_param))
+        	for(i in 1:length(id_param)){
+                	per_change=matrix_amplitude[param_to_move,i,s]
+                	rect(l+0.75*seq_space[i],min(c(0,per_change),na.rm=T),l+1.25*seq_space[i],max(c(per_change,0),na.rm=T),pch=16,col="grey")
+                	if(is.infinite(per_change)|is.na(per_change)){
+                        	points(l+seq_space[i],0,t="p",pch=16,col="red")
+                	}
+                	at_val_text=c(at_val_text,l+seq_space[i])
+                	tmp_text=strsplit(analyses[id_param[i]],"_")
+                	val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        	}
+	}
+}
+
+}
+dev.off()
+
+pdf("mean_amplitude_sensitivity_v1.pdf",width=15)
+analyses=rownames(list_simulation)
+plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(1,2),xaxt="n",ylab="Average amplitude of total community",xlab="")
 axis(1,labels=rownames(free_param),at=1:nrow(free_param))
 mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.8)
 abline(h=mean_tot_original)
@@ -189,7 +331,7 @@ for(param_to_move in rownames(free_param)){
         space=0.5/(2*length(id_param))
         seq_space=seq(-space,space,length.out=length(id_param))
         for(i in 1:length(id_param)){
-                mean_tot=mean(log10(apply(N_sensitivity[id,"coast",,id_param[i]],1,sum)))
+                mean_tot=diff(range(log10(apply(N_sensitivity[id,"coast",,id_param[i]],1,sum))))
                 print(mean_tot)
                 points(l+seq_space[i],mean_tot,t="p",pch=16,col="black")
                 if(tab_summary[id_param[i],4]==0){
@@ -202,7 +344,6 @@ for(param_to_move in rownames(free_param)){
 }
 mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
 dev.off()
-
 
 pdf("summary_statistics_for_sensitivity.pdf",width=15)
 par(mfrow=c(2,2))

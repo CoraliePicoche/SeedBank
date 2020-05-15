@@ -209,3 +209,52 @@ for(i in 1:length(sp)){
 }
 dev.off()
 
+#We only show simulations
+#Abundance classes: let's use 3 categories depending on the maximum: CHA, LEP, SKE, THP can reach nearly 5; GUI PSE PRO PRP can reach 4;  DIT, NIT PLE are the others (around 3)
+high_ab=c("CHA","LEP","SKE","THP")
+middle_ab=c("GUI","PSE","PRO","PRP")
+low_ab=c("DIT","NIT","PLE")
+#OR I can use the modules that interact with each other 
+cen=c("CHA","DIT","GUI","LEP","SKE","THP")
+pen=c("NIT","PLE","PSE")
+din=c("PRO","PRP")
+
+list_to_show=list(cen,pen,din)
+
+colo=c("lightblue","blue","darkblue","orchid","lightslateblue","lightblue4")
+
+pdf("time_series_simulation_per_cluster.pdf",width=7,height=15)
+name_groupe=c("Centric diatoms","Pennate diatoms","Dinoflagellates")
+par(mfrow=c(3,1))
+for(tt in 1:length(list_to_show)){
+	if(tt==3){
+		xl="time"
+	}else{
+		xl=""
+	}
+	plot(id,rep(NA,length(id)),t="n",ylim=range(c(transfo_N_coast[id,list_to_show[[tt]]])),xlab=xl,ylab="abundance",xaxt="n",main=name_groupe[tt])
+        axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
+	for(s in 1:length(list_to_show[[tt]])){
+        	lines(id,transfo_N_coast[id,list_to_show[[tt]][s]],col=colo[s],t="o",pch=16,lty=1)
+	}
+	legend("bottomright",list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n")
+}
+dev.off()
+
+list_to_show=list(high_ab,middle_ab,low_ab)
+pdf("time_series_simulation_per_ab.pdf",width=7,height=15)
+par(mfrow=c(3,1))
+for(tt in 1:length(list_to_show)){
+        if(tt==3){
+                xl="time"
+        }else{
+                xl=""
+        }
+        plot(id,rep(NA,length(id)),t="n",ylim=range(c(transfo_N_coast[id,list_to_show[[tt]]])),xlab=xl,ylab="abundance",xaxt="n")
+        axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
+        for(s in 1:length(list_to_show[[tt]])){
+                lines(id,transfo_N_coast[id,list_to_show[[tt]][s]],col=colo[s],t="o",pch=16,lty=1)
+        }
+        legend("bottomright",list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n")
+}
+dev.off()

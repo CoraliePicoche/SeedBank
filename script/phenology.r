@@ -8,9 +8,11 @@ graphics.off()
 library(lubridate)
 library(zoo)
 
+Sys.setlocale("LC_TIME", "C") #to have months in English
+
 threshold=0.5
 
-doyouplot=F
+doyouplot=T
 
 start_duration_bloom_new=function(time_series_interp,date_bis,hydro_interp,threshold){ #This function takes interpolated time series (abundance and temperature here) with corresponding dates to detect blooming beginning and end (and thus duration) and temperature for bloom. Beginning of the bloom is defined as the date when abundances goes above a certain threshold
         gradient=diff(time_series_interp)
@@ -192,7 +194,7 @@ for(sp in name_spp){
 		if(is.null(x[[4]])){
 			x[[4]]=NA
 		}
-		legend("topleft",c(paste("Deb",month(as.Date((x[[1]][1])),label=T)),paste("Nb:",length(x[[1]])),paste("Dur:",min(x[[2]]),max(x[[2]])),paste("Temp:",format(min(x[[4]]),digits=1),"/",format(max(x[[4]]),digits=1))),pch=NA,bty="n",col="black",inset=c(0.,0))
+		legend("topleft",c(paste("Beg",month(as.Date((x[[1]][1])),label=T)),paste("Nb:",length(x[[1]])),paste("Dur:",min(x[[2]]),max(x[[2]])),paste("Temp:",format(min(x[[4]]),digits=1),"/",format(max(x[[4]]),digits=1))),pch=NA,bty="n",col="black",inset=c(0.,0))
 		abline(v=x[[1]],col="black",lty=2)
 		abline(v=x[[3]],col="black",lty=3)
 		

@@ -2327,7 +2327,25 @@ ized by a specific set of interaction coefficients.
  or decreased by 10%, or being halved or doubled.
  The abundances of the coastal compartment are then extracted over the last
  2 years of the simulation and compared to observations to compute the following
- summary statistics:
+ summary statistics
+\change_inserted -2100369821 1589446632
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589446638
+Do we mention ABC?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+:
 \end_layout
 
 \begin_layout Itemize
@@ -2357,13 +2375,26 @@ period of the bloom.
  can appear in either or both seasons).
  We give a score of 0 if the taxon blooms in the same period as its observed
  counterpart and 1 otherwise.
+\change_inserted -2100369821 1589446152
+
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted -2100369821 1589446613
+Simulations with taxon extinction are discarded.
+ Models are ranked according to their performance for each summary statistic
+ and the set of interactions with the best rank in every category is kept
+ throughout the rest of the simulation.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -2100369821 1589446623
 These summary statistics are summed up to compute an objective function
  that needs to be minimized
-\change_inserted -666822487 1588328454
-
 \begin_inset Note Note
 status open
 
@@ -2386,8 +2417,6 @@ period
 
 \end_inset
 
-
-\change_unchanged
 .
  Simulations with taxon extinction are discarded.
  The parameter set corresponding to the lowest value of the objective function
@@ -2459,10 +2488,13 @@ Maintenance of biodiversity by exchanges between compartments can be gauged
 \end_layout
 
 \begin_layout Enumerate
-modifying the storage by the cyst bank (by setting cyst mortality/burial
- to 1)
-\change_inserted -666822487 1588328570
-
+modifying the storage by 
+\change_inserted -2100369821 1589446651
+removing 
+\change_unchanged
+the cyst bank
+\change_deleted -2100369821 1589446654
+ (by setting cyst mortality/burial to 1)
 \begin_inset Note Note
 status open
 
@@ -2790,9 +2822,25 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1589465941
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/time_series_simulation_per_cluster.pdf
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\change_deleted -2100369821 1589466252
 Examples of phytoplankton dynamics (
 \shape italic
 Chaetoceros
@@ -2810,6 +2858,19 @@ name "fig:Phytoplankton-abundances"
 
 \end_inset
 
+
+\change_inserted -2100369821 1589466329
+ Simulated phytoplankton dynamics for a year in model I.
+ Each panel corresponds to a cluster of interactions.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:-Simulated-phytoplankton"
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
