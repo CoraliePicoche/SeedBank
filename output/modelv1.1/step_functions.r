@@ -55,6 +55,10 @@ step2=function(n_t,S,Gamma,e){
 	tmp[1,]=n_t[1,]*(1-S-e)+Gamma*n_t[3,]+e*n_t[2,]
 	tmp[2,]=n_t[2,]*(1-S-e)+e*n_t[1,]
 	tmp[3,]=n_t[3,]*(1-Gamma)+S*n_t[1,]
+
+	#I want to know the flux from seed to coast
+#	print(Gamma*n_t[3,1])
+
 	extinction=which(tmp[,]<0.001,arr.ind=T)
 	if(length(extinction)>1){
 			tmp[extinction]=0
