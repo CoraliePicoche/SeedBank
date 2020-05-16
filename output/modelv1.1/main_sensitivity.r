@@ -193,12 +193,17 @@ for(param_to_move in rownames(free_param)){
 		amp_sens=apply(log10(apply(N_sensitivity[id,"coast",,id_param[[i]]],2,range)),2,diff)
 		tmp_amplitude=100*(amplitude_tot_original-amp_sens)/amplitude_tot_original
 		matrix_amplitude[param_to_move,i,]=tmp_amplitude
+
+                #Now, if the species disappeared, we set their stats to 0
+                matrix_mean[param_to_move,i,N_sensitivity[id[length(id)],"coast",,id_param[i]]==0]=NA
+                matrix_amplitude[param_to_move,i,N_sensitivity[id[length(id)],"coast",,id_param[i]]==0]=NA
+
 	}
 }
 
 pdf("mean_abundance_amplitude_sensitivity.pdf",width=17)
 par(mfrow=c(1,2))
-plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=c(-10,5),xaxt="n",ylab="%Change in average abundance",xlab="")
+plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=c(-7,4),xaxt="n",ylab="%Change in average abundance",xlab="")
 axis(1,labels=rownames(free_param),at=1:nrow(free_param))
 abline(h=0)
 mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.9)
@@ -214,7 +219,7 @@ for(param_to_move in rownames(free_param)){
 		per_change=mean(matrix_mean[param_to_move,i,]*is.finite(matrix_mean[param_to_move,i,]),na.rm=T)
                	rect(l+0.75*seq_space[i],min(c(0,per_change)),l+1.25*seq_space[i],max(c(per_change,0)),pch=16,col="grey")
                 if(tab_summary[id_param[i],4]==0){
-                        points(l+seq_space[i],per_change+1*sign(per_change),t="p",pch=16,col="red")
+                        points(l+seq_space[i],per_change+(0.1*11)*sign(per_change),t="p",pch=16,col="red")
                 }
                 at_val_text=c(at_val_text,l+seq_space[i])
                 tmp_text=strsplit(analyses[id_param[i]],"_")
@@ -223,7 +228,7 @@ for(param_to_move in rownames(free_param)){
 }
 mtext(val_text,1,line=2,at=at_val_text,cex=0.9)
 
-plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(-40,25),xaxt="n",ylab="%Change in average amplitude",xlab="")
+plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=c(-40,25),xaxt="n",ylab="%Change in average amplitude",xlab="")
 axis(1,labels=rownames(free_param),at=1:nrow(free_param))
 abline(h=0)
 mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.8)
@@ -239,7 +244,7 @@ for(param_to_move in rownames(free_param)){
                 per_change=mean(matrix_amplitude[param_to_move,i,],na.rm=T)
                 rect(l+0.75*seq_space[i],min(c(0,per_change)),l+1.25*seq_space[i],max(c(per_change,0)),pch=16,col="grey")
                 if(tab_summary[id_param[i],4]==0){
-                        points(l+seq_space[i],per_change+1*sign(per_change),t="p",pch=16,col="red")
+                        points(l+seq_space[i],per_change+(0.1*65)*sign(per_change),t="p",pch=16,col="red")
                 }
                 at_val_text=c(at_val_text,l+seq_space[i])
                 tmp_text=strsplit(analyses[id_param[i]],"_")
@@ -249,8 +254,8 @@ for(param_to_move in rownames(free_param)){
 mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
 dev.off()
 
-ydelim_mean=range(c(matrix_mean*is.finite(matrix_mean)),na.rm=T)
-ydelim_amp=range(c(matrix_amplitude*is.finite(matrix_amplitude)),na.rm=T)
+#ydelim_mean=range(c(matrix_mean*is.finite(matrix_mean)),na.rm=T)
+#ydelim_amp=range(c(matrix_amplitude*is.finite(matrix_amplitude)),na.rm=T)
 
 pdf("species_abundance_amplitude_sensitivity.pdf",width=12,height=10)
 dim=c(4,4,3)
@@ -259,6 +264,7 @@ for(d in 1:length(dim)){
 par(mfrow=c(dim[d],2),mar=c(5,4,2,1))
 sp=s+1
 for(s in seq(sp,sp+dim[d]-1)){
+	ydelim_mean=range(c(matrix_mean[,,s]*is.finite(matrix_mean[,,s])),na.rm=T)
 	plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=ydelim_mean,xaxt="n",ylab="%Change in abundance",xlab="",main=dimnames(matrix_mean)[[3]][s])
 	if((s-sp+1)==dim[d]){
 	axis(1,labels=rownames(free_param),at=1:nrow(free_param))
@@ -285,6 +291,7 @@ for(s in seq(sp,sp+dim[d]-1)){
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
 	}
+	ydelim_amp=range(c(matrix_amplitude[,,s]*is.finite(matrix_amplitude[,,s])),na.rm=T)
 	plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=ydelim_amp,xaxt="n",ylab="%Change in amplitude",xlab="",main=dimnames(matrix_mean)[[3]][s])
 	if((s-sp+1)==dim[d]){
 	axis(1,labels=rownames(free_param),at=1:nrow(free_param))

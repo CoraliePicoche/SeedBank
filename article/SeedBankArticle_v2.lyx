@@ -2885,7 +2885,11 @@ name "fig:-Simulated-phytoplankton"
 \end_layout
 
 \begin_layout Subsubsection*
-Sensitivity analysis to fixed parameterst
+Sensitivity analysis to fixed parameters
+\change_inserted -2100369821 1589636269
+e
+\change_unchanged
+t
 \end_layout
 
 \begin_layout Standard
@@ -2909,7 +2913,81 @@ Yes barplots are good for that.
 \end_inset
 
 
+\change_inserted -2100369821 1589636272
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589636321
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1589636347
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/mean_abundance_amplitude_sensitivity.pdf
+	width 95text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1589636366
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv2.1/mean_abundance_amplitude_sensitivity.pdf
+	width 95text%
+
+\end_inset
+
+
 \change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589636321
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589637523
+Sensitivity of the model to variation in parameters, measured as the mean
+ difference in average abundance and amplitude in model I (top row) and
+ model II (bottom row).
+ Red dots correspond to simulations in which at least one species disappeared.
+  
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sensitivity"
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

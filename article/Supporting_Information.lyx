@@ -632,6 +632,63 @@ The shift of the maximum growth rate may lead to a deformation of the expected
 \end_inset
 
  for modeled taxa below (Fig XX, TO DO).
+\change_inserted -2100369821 1589636539
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589636543
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1589636567
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/thermal_niche.pdf
+	width 95text%
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589636543
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589636585
+Growth rate as a function of temperature for the taxa used in the model
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1177,6 +1234,8 @@ Have you considered the correction factor we have been discussing? Accounting
 \change_unchanged
 .
  
+\change_inserted -2100369821 1589636694
+
 \end_layout
 
 \begin_layout Section*
@@ -1697,7 +1756,7 @@ A bit unclear: not identifiable from what data?
 \end_inset
 
 
-\change_unchanged
+\change_inserted -2100369821 1589637437
 
 \end_layout
 
