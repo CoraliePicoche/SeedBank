@@ -63,7 +63,9 @@ N_original_test_coast=read.table("out_coast.csv",sep=";",row.names=1,header=T)
 N_original_test_ocean=read.table("out_ocean.csv",sep=";",row.names=1,header=T)
 n_iter=nrow(N_original_test_coast)
 id=(n_iter-365):n_iter
-mean_val=apply(N_original_test_coast[id,],2,mean)
+mean_val=log10(apply(N_original_test_coast[id,],2,mean))
+min_val=log10(apply(N_original_test_coast[id,],2,min))
+range_val=log10(apply(apply(N_original_test_coast[id,],2,range),2,diff))
 ####First test, only removing seed bank
 M=1
 #Initialize
@@ -109,7 +111,7 @@ surviv=rep(0,nspp)
 names(surviv)=name_spp
 
 nb_simu=100
-lower_simu=seq(0,1,length.out=nb_simu)
+lower_simu=seq(0.1,1,length.out=nb_simu)
 higher_simu=seq(1,10,length.out=nb_simu)
 
 N_no_seed_lower_compet=array(NA,dim=c(n_iter,3,nspp,nb_simu,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,format(lower_simu,digits=1),c("Inc. self-reg","Not inc. self-reg")))
@@ -241,20 +243,28 @@ plot(higher_simu,richness_higher[,"Coast"],col="cyan",pch=16)
 points(higher_simu,richness_higher[,"Ocean"],col="darkblue",pch=16)
 dev.off()
 
+pdf("species_no_seed_bank.pdf",width=10)
 par(mfrow=c(3,4))
 
 for(s in 1:nspp){
-	plot(1:nb_simu,apply(log10(N_no_seed_lower_compet[id,"ocean",s,,1]+10^-5),2,mean),pch=1,ylim=c(-2,7),main=name_spp[s],col="lightblue",lwd=2,cex=2)
+	plot(1:nb_simu,apply(log10(N_no_seed_lower_compet[id,"ocean",s,,1]+10^-5),2,mean),pch=1,ylim=c(-2,7),main=name_spp[s],col="lightblue",cex=2)
 	points(1:nb_simu,apply(log10(N_no_seed_lower_compet[id,"ocean",s,,2]+10^-5),2,mean),pch=16,col="lightblue",cex=2)
 	points(1:nb_simu,apply(log10(N_no_seed_higher_compet[id,"ocean",s,,1]+10^-5),2,mean),pch=1,col="darkblue",cex=2)
 	points(1:nb_simu,apply(log10(N_no_seed_higher_compet[id,"ocean",s,,2]+10^-5),2,mean),pch=16,col="darkblue",cex=2)
 	points(1:nb_simu,apply(log10(N_no_seed_lower_mutual[id,"ocean",s,]+10^-5),2,mean),pch=16,col="orange",cex=2)
 	points(1:nb_simu,apply(log10(N_no_seed_higher_mutual[id,"ocean",s,]+10^-5),2,mean),pch=16,col="darkred",cex=2)
 	abline(h=log10(mean_val[s]))
-
-
 }
+dev.off()
 
-par(mfrow=c(1,1))
-plot(log10(surviv+0.1),log10(mean_val))
-text(log10(surviv+0.1),log10(mean_val),name_spp)
+pdf("dynamics_vs_survival_no_seed_bank.pdf")
+par(mfrow=c(1,3))
+plot(log10(surviv+0.1),mean_val)
+text(log10(surviv+0.1),mean_val,name_spp,pos=2)
+
+plot(log10(surviv+0.1),range_val)
+text(log10(surviv+0.1),range_val,name_spp,pos=2)
+
+plot(log10(surviv+0.1),min_val)
+text(log10(surviv+0.1),min_val,name_spp,pos=2)
+dev.off()
