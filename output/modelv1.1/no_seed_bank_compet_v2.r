@@ -56,7 +56,10 @@ N_original_test_coast=read.table("out_coast.csv",sep=";",row.names=1,header=T)
 N_original_test_ocean=read.table("out_ocean.csv",sep=";",row.names=1,header=T)
 n_iter=nrow(N_original_test_coast)
 id=(n_iter-365):n_iter
-mean_val=apply(N_original_test_coast[id,],2,mean)
+mean_val=log10(apply(N_original_test_coast[id,],2,mean))
+min_val=log10(apply(N_original_test_coast[id,],2,min))
+range_val=log10(apply(apply(N_original_test_coast[id,],2,range),2,diff))
+
 
 ######################Param changed when using seed_bank
 M_orig=M
@@ -117,16 +120,17 @@ for(fac in 1:length(fac_simu)){
 		}
 }
 
+pdf("no_seed_bank_compet.pdf")
 par(mfrow=c(2,2))
-plot(1:length(fac_simu),apply(N_array[n_iter,'ocean',,,'compet']>0,2,sum),xaxt="n",ylim=c(0,11.5))
-lines(1:length(fac_simu),apply(N_orig[n_iter,'ocean',,,'compet']>0,2,sum))
-abline(v=which(fac_simu==1))
-axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+plot(fac_simu,apply(N_array[n_iter,'ocean',,,'compet']>0,2,sum),ylim=c(0,11.5),ylab="Richness",xlab="",main="Competition",log="x")
+lines(fac_simu,apply(N_orig[n_iter,'ocean',,,'compet']>0,2,sum))
+#abline(v=1)
+#axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 
-plot(1:length(fac_simu),apply(N_array[n_iter,'ocean',,,'facil']>0,2,sum),ylim=c(0,11.5),xaxt="n")
-lines(1:length(fac_simu),apply(N_orig[n_iter,'ocean',,,'facil']>0,2,sum))
-abline(v=which(fac_simu==1))
-axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+plot(fac_simu,apply(N_array[n_iter,'ocean',,,'facil']>0,2,sum),ylim=c(0,11.5),main="Facilitation",log="x",xlab="",ylab="")
+lines(fac_simu,apply(N_orig[n_iter,'ocean',,,'facil']>0,2,sum))
+#abline(v=which(fac_simu==1))
+#axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 
 N_tot=rep(NA,length(fac_simu))
 N_tot_orig=rep(NA,length(fac_simu))
@@ -136,10 +140,10 @@ for(f in 1:length(fac_simu)){
 	tmp=apply(N_orig[id,'ocean',,f,'compet'],1,sum)
 	N_tot_orig[f]=log10(mean(tmp))	
 }
-plot(1:length(fac_simu),N_tot,xaxt="n",ylim=range(c(N_tot,N_tot_orig)))
-lines(1:length(fac_simu),N_tot_orig)
-abline(v=which(fac_simu==1))
-axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+plot(fac_simu,N_tot,ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(abundance)",xlab="Multiplying factor",log="x")
+lines(fac_simu,N_tot_orig)
+#abline(v=which(fac_simu==1))
+#axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 
 N_tot=rep(NA,length(fac_simu))
 N_tot_orig=rep(NA,length(fac_simu))
@@ -149,8 +153,43 @@ for(f in 1:length(fac_simu)){
         tmp=apply(N_orig[id,'ocean',,f,'facil'],1,sum)
         N_tot_orig[f]=log10(mean(tmp))
 }
-plot(1:length(fac_simu),N_tot,xaxt="n",ylim=range(c(N_tot,N_tot_orig)))
-lines(1:length(fac_simu),N_tot_orig)
-abline(v=which(fac_simu==1))
-axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+plot(fac_simu,N_tot,ylim=range(c(N_tot,N_tot_orig)),log="x",ylab="",xlab="Multiplying factor")
+lines(fac_simu,N_tot_orig)
+legend("topleft",c("W bank","W/o bank"),pch=c(NA,1),lty=c(1,NA),bty="n")
+#abline(v=which(fac_simu==1))
+#axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+dev.off()
+
+surviv_compet=apply(N_array[1000,"ocean",,,"compet"]>0,1,sum)/200
+surviv_facil=apply(N_array[1000,"ocean",,,"facil"]>0,1,sum)/200
+pdf("dynamics_vs_survival_no_seed_bank.pdf",width=12)
+par(mfrow=c(1,3))
+plot(surviv_compet,mean_val,pch=16,col="red",xlim=c(-0.2,1.2),ylab="Average abundance",xlab="Nb survival")
+points(surviv_facil,mean_val,pch=16,col="blue")
+text(surviv_compet,mean_val,name_spp,pos=2)
+legend("topleft",c("Competition","Facilitation"),col=c("red","blue"),pch=16,bty="n")
+
+plot(surviv_compet,range_val,pch=16,col="red",xlim=c(-0.2,1.2),ylab="Average amplitude",xlab="Nb survival")
+points(surviv_facil,range_val,pch=16,col="blue")
+text(surviv_compet,range_val,name_spp,pos=2)
+
+plot(surviv_compet,min_val,pch=16,col="red",xlim=c(-0.2,1.2),ylab="Min amplitude",xlab="Nb survival")
+points(surviv_facil,min_val,pch=16,col="blue")
+text(surviv_compet,min_val,name_spp,pos=2)
+dev.off()
+
+pdf("species_no_seed_bank.pdf",width=10)
+par(mfrow=c(3,4))
+
+for(s in 1:nspp){
+	ydelim=c(-3,max(log10(c(N_array[id,"ocean",s,,],N_orig[id,"ocean",s,,]))))
+        plot(fac_simu,log10(apply(N_array[id,"ocean",s,,'compet'],2,mean)+10^(-5)),pch=1,ylim=ydelim,main=name_spp[s],col="red",log="x",ylab="Log10(abundance)",xlab="")
+        points(fac_simu,log10(apply(N_array[id,"ocean",s,,'facil'],2,mean)+10^(-5)),pch=1,col="blue")
+        lines(fac_simu,log10(apply(N_orig[id,"ocean",s,,'compet'],2,mean)+10^(-5)),col="red")
+        lines(fac_simu,log10(apply(N_orig[id,"ocean",s,,'facil'],2,mean)+10^(-5)),col="blue")
+        abline(h=mean_val[s])
+}
+plot(0,0,t="n")
+legend("top",c("Compet w/o bank","Facil w/o bank","Compet w bank","Facil w bank"),col=c("red","blue"),pch=c(1,1,NA,NA),lty=c(NA,NA,1,1),bty="n")
+dev.off()
 

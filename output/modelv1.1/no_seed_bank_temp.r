@@ -64,7 +64,7 @@ mean_val=apply(N_original_test_coast[id,],2,mean)
 M_orig=M
 M=1
 nb_simu=100
-mean_tmp=c(0,1,2) #Temperature increases
+mean_tmp=c(0,2,5,7) #Temperature increases
 vari_tmp=c(1,0.75,1.25) #Not sure variance increases in all climate models
 
 ###Initialize
@@ -99,7 +99,8 @@ for(m in 1:length(mean_tmp)){
 
 pdf("no_seed_bank_temp.pdf")
 par(mfrow=c(2,2))
-plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(0,11.5),main="mean")
+plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(0,11.5),main="mean",xaxt="n",ylab="Richness",xlab="")
+axis(1,at=1:length(mean_tmp),labels=NA)
 for(i in 1:length(mean_tmp)){
 	tmp_value=rep(NA,length(nb_simu))
 	tmp_value_orig=rep(NA,length(nb_simu))
@@ -108,13 +109,15 @@ for(i in 1:length(mean_tmp)){
 		tmp_value_orig[j]=sum(N_orig[n_iter,'ocean',,j,i,1]>0)
 	}
 	points(i,mean(tmp_value),pch=16,col="grey")
-	arrows(i,mean(tmp_value)-sd(tmp_value)*1.96,i,mean(tmp_value)+sd(tmp_value)*1.96,code=3,angle=0)
+	arrows(i,mean(tmp_value)-sd(tmp_value)*1.96,i,mean(tmp_value)+sd(tmp_value)*1.96,code=3,angle=0,col="grey")
 	points(i,mean(tmp_value_orig),pch=16,col="black")
 	arrows(i,mean(tmp_value_orig)-sd(tmp_value_orig)*1.96,i,mean(tmp_value_orig)+sd(tmp_value_orig)*1.96,code=3,angle=0)
 }
+legend("bottomright",c("W/o seed bank","W seed bank"),col=c("grey","black",pch=16))
 
-plot(1:length(vari_tmp),rep(NA,length(vari_tmp)),ylim=c(0,11.5),main="var")
-for(i in 1:length(mean_tmp)){
+plot(1:length(vari_tmp),rep(NA,length(vari_tmp)),ylim=c(0,11.5),main="var",xaxt="n",xlab="",ylab="")
+axis(1,at=1:length(vari_tmp),labels=NA)
+for(i in 1:length(vari_tmp)){
         tmp_value=rep(NA,length(nb_simu))
         tmp_valuei_orig=rep(NA,length(nb_simu))
         for(j in 1:nb_simu){
@@ -127,7 +130,8 @@ for(i in 1:length(mean_tmp)){
 	arrows(i,mean(tmp_value_orig)-sd(tmp_value_orig)*1.96,i,mean(tmp_value_orig)+sd(tmp_value_orig)*1.96,code=3,angle=0)
 }
 
-plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(-3,8))
+plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(-3,8),ylab="Log10(abundance)",xlab="Increase in mean temp",xaxt="n")
+axis(1,at=1:length(mean_tmp),labels=mean_tmp)
 for(i in 1:length(mean_tmp)){
         tmp_value=rep(NA,length(nb_simu))
         tmp_value_orig=rep(NA,length(nb_simu))
@@ -143,7 +147,8 @@ for(i in 1:length(mean_tmp)){
 	arrows(i,mean(tmp_value_orig)-sd(tmp_value_orig)*1.96,i,mean(tmp_value_orig)+sd(tmp_value_orig)*1.96,code=3,angle=0)
 }
 
-plot(1:length(vari_tmp),rep(NA,length(vari_tmp)),ylim=c(-3,8))
+plot(1:length(vari_tmp),rep(NA,length(vari_tmp)),ylim=c(-3,8),ylab="",xlab="Multiplying variance",xaxt="n")
+axis(1,at=1:length(vari_tmp),labels=vari_tmp)
 for(i in 1:length(vari_tmp)){
         tmp_value=rep(NA,length(nb_simu))
         tmp_value_orig=rep(NA,length(nb_simu))
