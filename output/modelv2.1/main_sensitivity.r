@@ -138,7 +138,7 @@ for(t in 1:(n_iter-1)){
 		N_sensitivity[,,,nb_simu]=N_simu[,,]
                 tab_coast=N_simu[,1,]
 		print(tab_coast[nrow(tab_coast),])
-		if(sum(tab_coast==0)){ #One species has died
+		if(sum(tab_coast==0)>0){ #One species has died
 	        	tab_summary[nb_simu,1:3]=NA
                         tab_summary[nb_simu,4]=0
 		}else{
@@ -305,7 +305,7 @@ for(s in seq(sp,sp+dim[d]-1)){
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
         }
-	ydelim_amp=range(c(matrix_amplitude[,,s])*is.finite(matrix_amplitude[,,s]),na.rm=T)
+	ydelim_amp=range(c(matrix_amplitude[,,s]*is.finite(matrix_amplitude[,,s])),na.rm=T)
         plot(0,0,t="n",xlim=c(0.5,nrow(free_param)+0.5),ylim=ydelim_amp+c(-1,1),xaxt="n",ylab="%Change in amplitude",xlab="",main=dimnames(matrix_mean)[[3]][s])
         if((s-sp+1)==dim[d]){
         axis(1,labels=rownames(free_param),at=1:nrow(free_param))

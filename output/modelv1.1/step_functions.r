@@ -58,6 +58,9 @@ step2=function(n_t,S,Gamma,e){
 
 	#I want to know the flux from seed to coast
 #	print(Gamma*n_t[3,1])
+	#I want to know the flux from ocean to coast
+#	print(paste("Coast to ocean",e*n_t[1,"NIT"]))
+#	print(paste("Ocean to coast",e*n_t[2,"NIT"]))
 
 	extinction=which(tmp[,]<0.001,arr.ind=T)
 	if(length(extinction)>1){

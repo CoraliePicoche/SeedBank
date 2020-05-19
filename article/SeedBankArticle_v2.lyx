@@ -2517,6 +2517,32 @@ does that remove the seed bank effectively? If so, you can just state that
 
 \begin_layout Enumerate
 changing the exchanges between the coast and the ocean (e=0)
+\change_inserted -2100369821 1589910360
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589910362
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589910404
+NOTE: I keep that here but we can see in the sensitivity analysis that e
+ has nearly no effect on abundance.
+ It's the same when excluding the seed bank, so it may not be useful to
+ follow this way.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2962,12 +2988,14 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1589637523
+\change_inserted -2100369821 1589910239
 Sensitivity of the model to variation in parameters, measured as the mean
  difference in average abundance and amplitude in model I (top row) and
  model II (bottom row).
  Red dots correspond to simulations in which at least one species disappeared.
-  
+ Variation in abundance with a maximum exchange rate cannot be seen as it
+ is nly 0.02%.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sensitivity"
@@ -2993,6 +3021,209 @@ name "fig:Sensitivity"
 
 \begin_layout Subsubsection*
 Scenarios
+\change_inserted -2100369821 1589901735
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\change_inserted -2100369821 1589906823
+Seed bank removal
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589906833
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1589914693
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/no_seed_bank_compet.pdf
+	width 49text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv2.1/no_seed_bank_compet.pdf
+	width 49text%
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589906833
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589910006
+Variation in the total number of species still present at the end of the
+ simulation (richness) and average total abundance with (line) and without
+ (circles) a seed bank as a function of the strength of competition and
+ facilitation for model I (left) and model II (right).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Seed_bank_compet"
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589910062
+Species which disappear are always the same and can be related to the minimum
+ abundance they can reach.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589908239
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1589908240
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/dynamics_vs_survival_no_seed_bank.pdf
+	width 95text%
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589908239
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589910524
+Probability of survival of species with variation in competition and facilitatio
+n as a function of their dynamics in the reference parameter set 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Probability-of-survival"
+
+\end_inset
+
+.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589908148
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1589914461
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/no_seed_bank_temp.pdf
+	width 49text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv2.1/no_seed_bank_temp.pdf
+	width 49text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589908148
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589914601
+Variation in richness and total abundance with and without a seed bank as
+ a function of the mean and variance of the temperature of competition and
+ facilitation for model I (left) and model II (right).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Seed_bank_temp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*

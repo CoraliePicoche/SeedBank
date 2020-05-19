@@ -132,14 +132,15 @@ for(t in 1:(n_iter-1)){
 }
 		N_sensitivity[,,,nb_simu]=N_simu[,,]
 		tab_coast=N_simu[,1,]
-		final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
-		tab_summary[nb_simu,1:3]=c(sqrt(sum(final_summary[[1]])/nspp),sqrt(sum(final_summary[[2]])/nspp),sqrt(sum(final_summary[[3]])/nspp))
 		if(sum(tab_coast==0)>0){ #One species has died
+                        tab_summary[nb_simu,1:3]=NA
 			tab_summary[nb_simu,4]=0
 		}else{
-			tab_summary[nb_simu,4]=sum(tab_summary[nb_simu,1:3])
+	                final_summary=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
+        	        tab_summary[nb_simu,1:3]=c(sqrt(sum(final_summary[[1]])/nspp),sqrt(sum(final_summary[[2]])/nspp),sqrt(sum(final_summary[[3]])/nspp))
+                	tab_summary[nb_simu,4]=sum(tab_summary[nb_simu,1:3])
 		}
-		tab_summary[nb_simu,5]=sum(tab_coast[nrow(tab_coast),]>0)
+		tab_summary[nb_simu,5]=sum(tab_coast[nrow(tab_coast),]>0,na.rm=T)
 }
 }
 
@@ -190,7 +191,7 @@ for(param_to_move in rownames(free_param)){
                 mean_sens=log10(apply(N_sensitivity[id,"coast",,id_param[i]],2,mean))
                 tmp_mean=100*(mean_tot_original-mean_sens)/mean_tot_original
 		matrix_mean[param_to_move,i,]=tmp_mean
-		amp_sens=apply(log10(apply(N_sensitivity[id,"coast",,id_param[[i]]],2,range)),2,diff)
+		amp_sens=apply(log10(apply(N_sensitivity[id,"coast",,id_param[[i]]],2,range)+10^(-5)),2,diff)
 		tmp_amplitude=100*(amplitude_tot_original-amp_sens)/amplitude_tot_original
 		matrix_amplitude[param_to_move,i,]=tmp_amplitude
 
@@ -356,7 +357,7 @@ pdf("summary_statistics_for_sensitivity.pdf",width=15)
 par(mfrow=c(2,2))
 analyses=rownames(list_simulation)
 for(summary in 1:(ncol(tab_summary)-1)){
-	plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=range(tab_summary[,summary]),xaxt="n",ylab=colnames(tab_summary)[summary],xlab="")
+	plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=range(tab_summary[,summary],na.rm=T),xaxt="n",ylab=colnames(tab_summary)[summary],xlab="")
 	axis(1,labels=rownames(free_param),at=1:nrow(free_param))
 	mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.8)
 	abline(h=tab_summary[nrow(tab_summary),summary])
@@ -370,7 +371,7 @@ for(summary in 1:(ncol(tab_summary)-1)){
 	        seq_space=seq(-space,space,length.out=length(id_param))
         	for(i in 1:length(id_param)){
 			if(tab_summary[id_param[i],4]==0){
-				text(l+seq_space[i],tab_summary[id_param[i],summary],labels=tab_summary[id_param[i],5],col="red")
+				text(l+seq_space[i],tab_summary[nrow(tab_summary),summary],labels=tab_summary[id_param[i],5],col="red")
 			}else{
                 		points(l+seq_space[i],tab_summary[id_param[i],summary],col="black",t="p",pch=16)
 			}

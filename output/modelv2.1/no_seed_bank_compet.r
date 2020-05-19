@@ -10,12 +10,11 @@ source("step_functions.r")
 
 
 #######################Param used in every simulations
-#Fixed parameters
+#Fixed parameters: golden parameter set
 tab=read.table("simu.csv",sep=";",dec=".",header=T)
 cyst_mortality=as.numeric(as.character(tab[tab[,1]=="cyst_mortality",2]))
 cyst_burial=as.numeric(as.character(tab[tab[,1]=="cyst_burial",2]))
-M=cyst_mortality+cyst_burial
-#k_coast2ocean=as.numeric(as.character(tab[tab[,1]=="k_coast2ocean",2])) #Not used anymore
+M=cyst_burial+cyst_mortality
 morta=as.numeric(as.character(tab[tab[,1]=="loss_rate",2]))
 e=as.numeric(as.character(tab[tab[,1]=="exchange",2]))
 germination=as.numeric(as.character(tab[tab[,1]=="germination",2]))
@@ -28,14 +27,18 @@ quad_prog=tab[tab[,1]=="quad_prog",2]
 n_iter=as.numeric(as.character(tab[tab[,1]=="n_iter",2]))
 temp_germin=as.numeric(as.character(tab[tab[,1]=="germin_threshold",2]))
 a_d=as.numeric(as.character(tab[tab[,1]=="daylength",2]))
-threshold=as.numeric(as.character(tab[tab[,1]=="threshold",2]))
+O_y=as.numeric(as.character(tab[tab[,1]=="overyielding",2]))
+ratio_pos=as.numeric(as.character(tab[tab[,1]=="ratio_pos",2]))
+coeff_Hij=as.numeric(as.character(tab[tab[,1]=="coeff_Hij",2]))
 
 #Interaction
-tmp_inter=read.table("interaction_matrix_after_calibration.csv",sep=";",dec=".")
-tmp_inter=as.matrix(tmp_inter)
-name_spp=rownames(tmp_inter)
+list_H_tmp=read.table("interaction_matrix_after_calibration.csv",sep=";",dec=".")
+list_H=list(list_H_tmp,list_H_tmp)
+type_inter_tmp=read.table("facilitation_and_competition.csv",sep=";",dec=".")
+type_inter=list(type_inter_tmp,type_inter_tmp)
+
+name_spp=rownames(list_H_tmp)
 nspp=length(name_spp)
-list_inter=list(tmp_inter,tmp_inter) #Interaction list contains coastal and oceanic interactions
 
 #Data to use (Auger)
 a=as.matrix(read.table("../../param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
@@ -77,36 +80,35 @@ N_orig[1,,,,]=10^3
 for(fac in 1:length(fac_simu)){
 	print(fac_simu[fac])
 	#Compet
-	tmp_inter_compet=tmp_inter
-	tmp_inter_compet[which(tmp_inter>0,arr.ind=T)]=tmp_inter[which(tmp_inter>0,arr.ind=T)]*fac_simu[fac]
-	list_inter_compet=list(tmp_inter_compet,tmp_inter_compet)
+	tmp_inter_compet=type_inter_tmp
+	tmp_inter_compet[which(type_inter_tmp>0,arr.ind=T)]=type_inter_tmp[which(type_inter_tmp>0,arr.ind=T)]*fac_simu[fac]
+	type_inter_compet=list(tmp_inter_compet,tmp_inter_compet)
 
 	#Facilitation
-	tmp_inter_facil=tmp_inter
-	tmp_inter_facil[which(tmp_inter<0,arr.ind=T)]=tmp_inter[which(tmp_inter<0,arr.ind=T)]*fac_simu[fac]
-	list_inter_facil=list(tmp_inter_facil,tmp_inter_facil)
+	tmp_inter_facil=type_inter_tmp
+	tmp_inter_facil[which(type_inter_tmp<0,arr.ind=T)]=type_inter_tmp[which(type_inter_tmp<0,arr.ind=T)]*fac_simu[fac]
+	type_inter_facil=list(tmp_inter_facil,tmp_inter_facil)
 
 	for(t in 1:(n_iter-1)){
-
 		#Without Seed Bank
 		#Compet
-                var_tmp=step1(N_array[t,,,fac,"compet"],list_inter_compet,temp_model[t],M,morta,a_d,T_opt,B,threshold)
+                var_tmp=step1(N_array[t,,,fac,"compet"],list_H,type_inter_compet,temp_model[t],M,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
                 N_array[t+1,,,fac,"compet"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
                 
 		#Facil
-		var_tmp=step1(N_array[t,,,fac,"facil"],list_inter_facil,temp_model[t],M,morta,a_d,T_opt,B,threshold)
+                var_tmp=step1(N_array[t,,,fac,"facil"],list_H,type_inter_facil,temp_model[t],M,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
                 N_array[t+1,,,fac,"facil"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 		
 		#With Seed Bank
 		#Compet
-                var_tmp=step1(N_orig[t,,,fac,"compet"],list_inter_compet,temp_model[t],M_orig,morta,a_d,T_opt,B,threshold)
+                var_tmp=step1(N_orig[t,,,fac,"compet"],list_H,type_inter_compet,temp_model[t],M_orig,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
                 N_orig[t+1,,,fac,"compet"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
                 
 		#Facil
-		var_tmp=step1(N_orig[t,,,fac,"facil"],list_inter_facil,temp_model[t],M_orig,morta,a_d,T_opt,B,threshold)
+                var_tmp=step1(N_orig[t,,,fac,"facil"],list_H,type_inter_facil,temp_model[t],M_orig,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
                 N_orig[t+1,,,fac,"facil"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
 
@@ -135,23 +137,38 @@ lines(fac_simu,apply(N_orig[n_iter,'ocean',,,'facil']>0,2,sum))
 N_tot=rep(NA,length(fac_simu))
 N_tot_orig=rep(NA,length(fac_simu))
 for(f in 1:length(fac_simu)){
+#There are several ways to look at the variation of abundance. The most evident one would be use log(abundance total). However, this is mostly driven by species such as CHA and THP and do not really give information about the others. Another to look at it is to look at the sum of log abundances.
+#Log(sum abundance)
 	tmp=apply(N_array[id,'ocean',,f,'compet'],1,sum)
 	N_tot[f]=log10(mean(tmp))	
 	tmp=apply(N_orig[id,'ocean',,f,'compet'],1,sum)
 	N_tot_orig[f]=log10(mean(tmp))	
+#Sum(log abundance)
+#        tmp=apply(log10(N_array[id,'ocean',,f,'compet']+10^(-5)),1,sum)
+#        N_tot[f]=mean(tmp)
+#        tmp=apply(log10(N_orig[id,'ocean',,f,'compet']+10^(-5)),1,sum)
+#	N_tot_orig[f]=mean(tmp)
 }
 plot(fac_simu,N_tot,ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(abundance)",xlab="Multiplying factor",log="x")
 lines(fac_simu,N_tot_orig)
 #abline(v=which(fac_simu==1))
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 
+
 N_tot=rep(NA,length(fac_simu))
 N_tot_orig=rep(NA,length(fac_simu))
 for(f in 1:length(fac_simu)){
+#There are several ways to look at the variation of abundance. The most evident one would be use log(abundance total). However, this is mostly driven by species such as CHA and THP and do not really give information about the others. Another to look at it is to look at the sum of log abundances.
+#Log(sum abundance)
         tmp=apply(N_array[id,'ocean',,f,'facil'],1,sum)
         N_tot[f]=log10(mean(tmp))
         tmp=apply(N_orig[id,'ocean',,f,'facil'],1,sum)
         N_tot_orig[f]=log10(mean(tmp))
+#Sum(log abundance)
+#        tmp=apply(log10(N_array[id,'ocean',,f,'facil']+10^(-5)),1,sum)
+#        N_tot[f]=mean(tmp)
+#        tmp=apply(log10(N_orig[id,'ocean',,f,'facil']+10^(-5)),1,sum)
+#        N_tot_orig[f]=mean(tmp)
 }
 plot(fac_simu,N_tot,ylim=range(c(N_tot,N_tot_orig)),log="x",ylab="",xlab="Multiplying factor")
 lines(fac_simu,N_tot_orig)
@@ -173,7 +190,7 @@ plot(surviv_compet,range_val,pch=16,col="red",xlim=c(-0.2,1.2),ylab="Average amp
 points(surviv_facil,range_val,pch=16,col="blue")
 text(surviv_compet,range_val,name_spp,pos=2)
 
-plot(surviv_compet,min_val,pch=16,col="red",xlim=c(-0.2,1.2),ylab="Min amplitude",xlab="Nb survival")
+plot(surviv_compet,min_val,pch=16,col="red",xlim=c(-0.2,1.2),ylab="Min abundance",xlab="Nb survival")
 points(surviv_facil,min_val,pch=16,col="blue")
 text(surviv_compet,min_val,name_spp,pos=2)
 dev.off()
