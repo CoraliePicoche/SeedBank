@@ -2597,7 +2597,7 @@ nt
 \change_deleted -666822487 1588328697
 .
 
-\change_unchanged
+\change_deleted -2100369821 1589967458
  (Fig.
  
 \begin_inset CommandInset ref
@@ -2613,9 +2613,13 @@ noprefix "false"
  Under high competition, variability in final richness may increase because
  exclusion is more likely, especially without a cyst bank.
  This is also true for higher temperatures.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1589960581
 \begin_inset Float figure
 wide false
 sideways false
@@ -2677,6 +2681,8 @@ name "fig:Changes-compet-temperature"
 \end_inset
 
 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2684,6 +2690,8 @@ Second, reducing the exchange with the ocean might lead to depletion of
  the ocean biomass and richness.
  In the ocean, individuals disappear through sinking and cannot reappear
  thanks to coastal production fueled by a cyst bank.
+
+\change_deleted -2100369821 1589967436
  Fig.
  
 \begin_inset CommandInset ref
@@ -2698,9 +2706,13 @@ noprefix "false"
  gives a more precise view of the expectation for possible interactions
  of cyst mortality and exchange between the coast and the ocean.
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1589967428
 \begin_inset Float figure
 wide false
 sideways false
@@ -2759,10 +2771,16 @@ name "fig:Changes_seed_exchange"
 \end_inset
 
 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1589960593
 [[[[NO CORRECTION FROM HERE]]]
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section*
@@ -2789,8 +2807,24 @@ Why do you start with defaults? Start with the good news ;)
 
 \end_inset
 
- Mean abundance of the various taxa is well reproduced (Fig.
- XXX) and the phenology is overall reproduced as well.
+ Mean abundance of the various taxa 
+\change_deleted -2100369821 1589963052
+is
+\change_inserted -2100369821 1589963053
+was
+\change_inserted -666822487 1588328969
+ well reproduced 
+\change_deleted -2100369821 1589960667
+(Fig.
+ XXX) 
+\change_inserted -666822487 1588328969
+and the phenology 
+\change_deleted -2100369821 1589963057
+is
+\change_inserted -2100369821 1589963058
+was
+\change_inserted -666822487 1588328969
+ overall reproduced as well.
  
 \change_deleted -666822487 1588328975
 There are still issues in the calibration of the model:
@@ -2799,12 +2833,24 @@ There are still issues in the calibration of the model:
 \change_inserted -666822487 1588328983
 That said, in some cases 
 \change_unchanged
-abundances can be lower than expected and the variation in abundances due
- to seasonality is, for now, underestimated (Fig.
+abundances 
+\change_deleted -2100369821 1589963062
+can
+\change_inserted -2100369821 1589963063
+could
+\change_unchanged
+ be lower than expected and the variation in abundances due to seasonality
+ 
+\change_deleted -2100369821 1589963071
+is, for now,
+\change_inserted -2100369821 1589963071
+was
+\change_unchanged
+ underestimated (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Phytoplankton-abundances"
+reference "fig:-Simulated-phytoplankton"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2854,7 +2900,7 @@ status open
 \change_inserted -2100369821 1589465941
 \begin_inset Graphics
 	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/time_series_simulation_per_cluster.pdf
-	width 75text%
+	height 95theight%
 
 \end_inset
 
@@ -2911,7 +2957,11 @@ name "fig:-Simulated-phytoplankton"
 \end_layout
 
 \begin_layout Subsubsection*
-Sensitivity analysis to fixed parameters
+Sensitivity analysis to fixed parameter
+\change_inserted -2100369821 1589960731
+ 
+\change_unchanged
+s
 \change_inserted -2100369821 1589636269
 e
 \change_unchanged
@@ -2919,11 +2969,11 @@ t
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1589960612
 Find a way to represent the variation in total abundances in the models
  (Fig.
- 2) (mostly bar plots?)
-\change_inserted -666822487 1588329062
- 
+ 2) (mostly bar plots?) 
 \begin_inset Note Note
 status open
 
@@ -2939,8 +2989,78 @@ Yes barplots are good for that.
 \end_inset
 
 
-\change_inserted -2100369821 1589636272
+\change_inserted -2100369821 1589960848
 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589963153
+Total phytoplankton dynamics were not overwhelmingly affected by changes
+ to other plausible values in the parameter set in both models (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sensitivity"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The average change in abundance varied between -6.5 and 3% 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589961456
+XXXX Check precise values, I'm reading this on the fig
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ for model I and between -6 and 2% for model II.
+ The range of abundance over a year, however, could be modified by -40 to
+ 20%.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589963371
+The change in abundance was most important with a decrease in mortality,
+ while amplitudes were mostly affected by resuspension.
+ Interestingly enough, while the vertical movement implied by the sinking
+ and resuspension rates had similar effects on the amplitude (around +/2%),
+ the resuspension rate could lower the amplitude by nearly 40%.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589963402
+In two cases, however, changes in parameters led to a loss of species: when
+ cyst burial was increased (only 5 species remaining in the two models)
+ and when resuspension was decreased (6 species remaining in model I, 7
+ species remaining model II).
+ DIT, SKE, PRO and PRP always disappeared.
+ GUI perished in all simulations, but the one with a decrease in resuspension
+ in model II.
+ LEP only went missing in model I, not in model II.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589963234
+We can note that there is a trade-off between average change in abundance
+ and average change in amplitude, as, most of the time, an increase in the
+ first one led to a decrease in the second one.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2988,13 +3108,18 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1589910239
+\change_inserted -2100369821 1589963477
 Sensitivity of the model to variation in parameters, measured as the mean
- difference in average abundance and amplitude in model I (top row) and
- model II (bottom row).
+ difference in average abundance and amplitude of the coastal phytoplanktonic
+ community in model I (top row) and model II (bottom row).
+ Values used in all other simulations are in the third row of the x-axis
+ while values tried in the sensitivity analysis are in the second row.
+ Note that values use in the sensitivity analysis are not necessarily bounds
+ around the usual values (i.e.
+ tested mortality rates are both below the value used in other simulations).
  Red dots correspond to simulations in which at least one species disappeared.
  Variation in abundance with a maximum exchange rate cannot be seen as it
- is nly 0.02%.
+ is only 0.02%.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3019,6 +3144,15 @@ name "fig:Sensitivity"
 
 \end_layout
 
+\begin_layout Standard
+
+\change_inserted -2100369821 1589963461
+Finally, it appeared that the exchange rate, that is the flow of phytoplankton
+ from the coast to the ocean, had a low, if not insignificant effect on
+ the overall dynamics of the community.
+ 
+\end_layout
+
 \begin_layout Subsubsection*
 Scenarios
 \change_inserted -2100369821 1589901735
@@ -3027,8 +3161,82 @@ Scenarios
 
 \begin_layout Paragraph*
 
-\change_inserted -2100369821 1589906823
+\change_inserted -2100369821 1589963828
 Seed bank removal
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589965069
+In both model, the removal of the seed bank significantly decreased the
+ number of species in the community.
+ DIT, LEP, SKE, GUI and PRP always disappeared.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589966823
+Our first hypothesis was that the absence of the seed bank would cause the
+ community to be less able to sustain competition.
+ This proved to be only partially true as the relationship between richness
+ and the strength of competition or facilitation was more of a dome-shaped
+ one (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Seed_bank_compet"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The relation was especially clear for model I, whose responses to a change
+ in the interaction matrix were more stable: when competition was too high
+ or facilitation was too low, the community richness decreased from 5 to
+ 4.
+ However, it should be noted that the poorer communities (3 taxa) are a
+ result of a lack of competition or an abundance of facilitation.
+ In model II, this relationship is more complex.
+ The community richness was decreased, even halved, in the presence of a
+ seed bank when cumulated effects from other taxa were too low (competition
+ too low or facilitation too high).
+ When removing the seed bank, the community composition remains stable even
+ for a large amount of competition.
+ On the other hand, it reaches a peak in biodiversity when halving the competiti
+on strength 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1589966184
+XXXX Check precise values, I'm reading this on the fig
+\end_layout
+
+\end_inset
+
+, then decreases to an even lower richness.
+ 
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589965698
+In this context, facilitation and competition seemd to play a nearly symmetric
+ role, even though they are not present in the same proportions.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1589966235
+The abundance [[XXXX: For now, DRIVEN BY CHA]] of the total community, on
+ the contrary, clearly decreases with competition strength in both models.[[We
+ should investigate what happens for high facilitation in model I and even
+ more in model II)]]
 \end_layout
 
 \begin_layout Standard
@@ -3069,12 +3277,13 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1589910006
-Variation in the total number of species still present at the end of the
- simulation (richness) and average total abundance with (line) and without
- (circles) a seed bank as a function of the strength of competition and
- facilitation for model I (left) and model II (right).
- 
+\change_inserted -2100369821 1589966111
+Variation in the total number of taxa still present at the end of the simulation
+ (richness) and average total abundance with (line) and without (circles)
+ a seed bank as a function of the strength of competition and facilitation
+ for model I (left) and model II (right).
+ The x-axis shows the factor by which each interaction was multiplied (note
+ the logairthmic scale) 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Seed_bank_compet"
@@ -3100,9 +3309,21 @@ name "fig:Seed_bank_compet"
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1589910062
+\change_inserted -2100369821 1589966842
 Species which disappear are always the same and can be related to the minimum
- abundance they can reach.
+ abundance they can reach (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Probability-of-survival"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3168,6 +3389,33 @@ name "fig:Probability-of-survival"
 
 \begin_layout Standard
 
+\change_inserted -2100369821 1589967318
+Our second hypothesis was that the absence of a seed bank would reduce the
+ ability of a community to buffer changes in the environment, here represented
+ as the temperature.
+ As can be seen on Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Seed_bank_temp"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, this was true for both models as the communities without seed bank could
+ not remain with an increase in temperature above 2°, as opposed to communities
+ with a seed bank which could only be affected by a 7°C increase (scenario
+ SSP5 8.5).
+ Even though the effects were less visible, a change (increase or decrease)
+ in variance of the temperature also decreased the total number of species.
+ In all cases however, the total abundances was not strongly affected.
+ 
+\end_layout
+
+\begin_layout Standard
+
 \change_inserted -2100369821 1589908148
 \begin_inset Float figure
 wide false
@@ -3202,7 +3450,7 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1589914601
+\change_inserted -2100369821 1589967361
 Variation in richness and total abundance with and without a seed bank as
  a function of the mean and variance of the temperature of competition and
  facilitation for model I (left) and model II (right).
