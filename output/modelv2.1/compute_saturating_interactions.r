@@ -1,9 +1,9 @@
 #### CP 08/04/2020 Compute saturating interactions 
 #### CP 29/04/2020 Corrected a bug in computing the maximum competitive coefficients: before, took the sum of all competition effects on all species. Should actually be the mean of the maximum effect on any species
+#### CP 25/05/2020 Removed the path to step functions
 
 library(lubridate)
 source("../../script/infer_interaction_matrix_growth_rate.r")
-source("step_functions.r")
 source("../../script/matrix_MAR_clean.r")
 
 

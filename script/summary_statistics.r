@@ -2,6 +2,7 @@
 #### CP 16/04/20 Turns into a function
 #### CP 23/04/20 From abs(error) to (error)^2 (sqrt(mean) is done in the main calibration file) + return a vector instead of a final number to keep track of the species-specific indicator
 #### CP 08/05/20 Use error to classify model 
+#### CP 20/05/20 Use log10(mean) for both obs and sim  + now outputs only a vector of error. The choice of absolute error or squared error is made out of this script.
 
 summary_statistics=function(tab_mean,tab_pheno,tab_coast,nb_year){
 #Simulation
@@ -9,19 +10,19 @@ name_spp=colnames(tab_coast)
 n_iter=nrow(tab_coast)
 id=(n_iter-365*nb_year):n_iter
 
-transfo_N_coast=log10(tab_coast[id,]+10^(-5))
 
 #Average abundance
-mean_sim=apply(transfo_N_coast,2,mean)
-vec_diff_abundances=(mean_sim-log10(tab_mean[,2]+10^(-5)))^2
+mean_sim=apply(tab_coast[id,],2,mean)
+vec_diff_abundances=log10(mean_sim+10^(-5))-log10(tab_mean[,2]+10^(-5))
 #diff_abundances=sum(vec_diff_abundances)
 
 #table_summary_per_species[name_spp,"Abundances"]=vec_diff_abundances[name_spp]
 #table_summary_all_models[m,"Abundances"]=diff_abundances
 
+transfo_N_coast=log10(tab_coast[id,]+10^(-5))
 #Amplitude
 amplitude=apply(transfo_N_coast,2,max)-apply(transfo_N_coast,2,min)
-vec_diff_amplitude=(amplitude-tab_pheno[,"Mean_amplitude"])^2
+vec_diff_amplitude=amplitude-tab_pheno[,"Mean_amplitude"]
 #diff_amplitude=sum(vec_diff_amplitude)
 
 #table_summary_per_species[name_spp,"Amplitude"]=vec_diff_abundances[name_spp]
@@ -88,6 +89,6 @@ classify_model=function(mat_diff_abundances,mat_diff_amplitude,mat_diff_season){
 
 translate=function(mat){
 	nspp=ncol(mat)
-	tmp=sqrt(apply(mat,1,sum)/nspp)
+	tmp=sqrt(apply(mat^2,1,sum)/nspp)
 	return(tmp)
 }

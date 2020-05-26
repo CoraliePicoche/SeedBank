@@ -226,18 +226,26 @@ colo=c("lightblue","blue","darkblue","orchid","lightslateblue","lightblue4")
 pdf("time_series_simulation_per_cluster.pdf",width=7,height=15)
 name_groupe=c("Centric diatoms","Pennate diatoms","Dinoflagellates")
 par(mfrow=c(3,1))
+ydelim=range(c(transfo_N_coast[id,list_to_show[[tt]]]))
 for(tt in 1:length(list_to_show)){
 	if(tt==3){
 		xl="time"
+		pos_legend="bottomleft"
 	}else{
 		xl=""
+		if(tt==1){
+		pos_legend=list(x=id[1]+30,y=(ydelim[2]-ydelim[1])*0.35+ydelim[1])
+		}else{
+		pos_legend="bottomleft"
+		}
 	}
-	plot(id,rep(NA,length(id)),t="n",ylim=range(c(transfo_N_coast[id,list_to_show[[tt]]])),xlab=xl,ylab="abundance",xaxt="n",main=name_groupe[tt])
-        axis(1,at=seq(id[1],id[length(id)],by=30),labels=seq(1,366,by=30))
+	plot(id,rep(NA,length(id)),t="n",ylim=ydelim,xlab=xl,ylab="abundance",xaxt="n",main=name_groupe[tt],cex.lab=1.75,cex.main=1.75,cex.axis=1.75)
+        axis(1,at=seq(id[1],id[length(id)],by=60),labels=seq(1,366,by=60),cex.axis=1.75)
 	for(s in 1:length(list_to_show[[tt]])){
         	lines(id,transfo_N_coast[id,list_to_show[[tt]][s]],col=colo[s],t="o",pch=16,lty=1)
 	}
-	legend("bottomright",list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n")
+#	legend(x=id[1]+30,y=(ydelim[2]-ydelim[1])*0.35+ydelim[1],list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n",pt.cex=1.75,cex=1.5)
+	legend(pos_legend,list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n",pt.cex=1.75,cex=1.5)
 }
 dev.off()
 

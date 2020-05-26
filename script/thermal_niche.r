@@ -8,7 +8,7 @@ graphics.off()
 growth_rate_noMTE_Bissinger=function(temp,T_opt,B,d){ 
         ftmp=rep(NA,length(T_opt))
         rtmp=rep(NA,length(T_opt))
-        metabolism=0.81*exp(0.0631*(temp-273))*d
+        metabolism=0.81*exp(0.0631*(temp-273.15))*d
         for(i in 1:length(T_opt)){
                 if(temp<=T_opt[i]){
                         ftmp[i]=exp(-(abs(temp-T_opt[i]))^3/B[i])
@@ -20,10 +20,10 @@ growth_rate_noMTE_Bissinger=function(temp,T_opt,B,d){
         return(rtmp)
 }
 
-temp=seq(0,30,length.out=1000)+273
+temp=seq(0,30,length.out=1000)+273.15
 
 tab=read.table(paste("param/species_specific_parameters.txt",sep=""),sep=";",dec=".",header=T)
-T_opt=tab$T_opt+273+5
+T_opt=tab$T_opt+273.15+5
 B=tab$Val_b
 sp=rownames(tab)
 
@@ -49,7 +49,7 @@ for(s in 1:length(sp)){
 	}else{
 		xl=""
 	}
-	plot(temp-273,mat_val[,s],t="l",main=sp[s],xlab=xl,ylab=yl,ylim=aylim)
+	plot(temp-273.15,mat_val[,s],t="l",main=sp[s],xlab=xl,ylab=yl,ylim=aylim)
 }
 dev.off()
 

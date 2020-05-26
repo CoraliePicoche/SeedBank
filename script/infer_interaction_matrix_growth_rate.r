@@ -4,7 +4,7 @@
 
 library(limSolve)
 library(Matrix)
-source("step_functions.r")
+#source("step_functions.r")
 #source("../../script/step_functions.r")
 
 #compute b parameter in Scranton & Vasseur model

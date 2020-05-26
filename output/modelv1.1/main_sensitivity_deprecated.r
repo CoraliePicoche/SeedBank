@@ -147,6 +147,7 @@ for(t in 1:(n_iter-1)){
 id=seq(n_iter-365,n_iter)
 mean_tot_original=mean(log10(apply(N_original_set[id,"coast",],1,sum)))
 
+if(1==0){
 pdf("mean_abundance_sensitivity_v1.pdf",width=15)
 analyses=rownames(list_simulation)
 plot(0,0,t="n",xlim=c(1,nrow(free_param)),ylim=c(3.5,5.5),xaxt="n",ylab="Average total abundance",xlab="")
@@ -175,6 +176,8 @@ for(param_to_move in rownames(free_param)){
 }	
 mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
 dev.off()
+}
+
 
 mean_tot_original=log10(apply(N_original_set[id,"coast",],2,mean))
 amplitude_tot_original=apply(log10(apply(N_original_set[id,"coast",],2,range)),2,diff)
@@ -201,6 +204,8 @@ for(param_to_move in rownames(free_param)){
 
 	}
 }
+
+stop()
 
 pdf("mean_abundance_amplitude_sensitivity.pdf",width=17)
 par(mfrow=c(1,2))

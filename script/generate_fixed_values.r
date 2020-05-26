@@ -59,7 +59,7 @@ max_temp=max(temp,na.rm=T)
 sd_temp=sd(temp,na.rm=T)
 mean_temp=mean(temp,na.rm=T)
 theta=1.3
-temp_model=273+mean_temp+theta*sd_temp*sin(2*pi*1:n_iter/365.25)+rnorm(n_iter,0,sd_temp*sqrt(1-theta^2/2))
+temp_model=273.15+mean_temp+theta*sd_temp*sin(2*pi*1:n_iter/365)+rnorm(n_iter,0,sd_temp*sqrt(1-theta^2/2))
 
 write.table(temp_model,"param/reconstructed_temperature_Auger.txt",sep=";",dec=".")
 

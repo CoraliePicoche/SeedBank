@@ -47,7 +47,7 @@ temp_model=a[1:n_iter]
 tab=read.table(paste("../../param/species_specific_parameters.txt",sep=""),sep=";",dec=".",header=T)
 tab=tab[name_spp,]
 S=S_max*tab$S
-T_opt=tab$T_opt+273+5
+T_opt=tab$T_opt+273.15+5
 names(S)=name_spp
 names(T_opt)=name_spp
 B=tab$Val_b
