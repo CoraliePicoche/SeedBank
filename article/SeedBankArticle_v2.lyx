@@ -89,14 +89,19 @@
 \begin_body
 
 \begin_layout Title
+
+\change_deleted -2100369821 1590475056
 Seed-bank contribution in maintaining phytoplanktonic biodiversity
-\change_inserted -666822487 1588318770
+\change_inserted -2100369821 1590475056
+A metacommunity model for phytoplankton biodiversity maintenance with a
+ seed bank and facilitative interactions 
+\change_unchanged
 
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -666822487 1588318772
+\change_deleted -2100369821 1590475050
 \begin_inset Note Note
 status open
 
@@ -3031,7 +3036,19 @@ XXXX Check precise values, I'm reading this on the fig
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1589963371
+\change_inserted -2100369821 1590487316
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1590487325
+XXXXXXXXX Re-read that !!
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1590487316
 The change in abundance was most important with a decrease in mortality,
  while amplitudes were mostly affected by resuspension.
  Interestingly enough, while the vertical movement implied by the sinking
@@ -3040,9 +3057,9 @@ The change in abundance was most important with a decrease in mortality,
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
-\change_inserted -2100369821 1589963402
+\change_inserted -2100369821 1590487316
 In two cases, however, changes in parameters led to a loss of species: when
  cyst burial was increased (only 5 species remaining in the two models)
  and when resuspension was decreased (6 species remaining in model I, 7
@@ -3054,13 +3071,20 @@ In two cases, however, changes in parameters led to a loss of species: when
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
-\change_inserted -2100369821 1589963234
+\change_inserted -2100369821 1590487316
 We can note that there is a trade-off between average change in abundance
  and average change in amplitude, as, most of the time, an increase in the
  first one led to a decrease in the second one.
  
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3075,24 +3099,10 @@ status open
 \noindent
 \align center
 
-\change_inserted -2100369821 1589636347
+\change_inserted -2100369821 1590487283
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/mean_abundance_amplitude_sensitivity.pdf
-	width 95text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-
-\change_inserted -2100369821 1589636366
-\begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv2.1/mean_abundance_amplitude_sensitivity.pdf
-	width 95text%
+	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/mean_abundance_amplitude_sensitivity.pdf
+	width 99text%
 
 \end_inset
 
@@ -3108,16 +3118,17 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1589963477
+\change_inserted -2100369821 1590487403
 Sensitivity of the model to variation in parameters, measured as the mean
  difference in average abundance and amplitude of the coastal phytoplanktonic
- community in model I (top row) and model II (bottom row).
+ community .
  Values used in all other simulations are in the third row of the x-axis
  while values tried in the sensitivity analysis are in the second row.
  Note that values use in the sensitivity analysis are not necessarily bounds
  around the usual values (i.e.
  tested mortality rates are both below the value used in other simulations).
- Red dots correspond to simulations in which at least one species disappeared.
+ Numbers in red are the final number of species and dots correspond to simulatio
+ns in which at least one species reached 0 at one point.
  Variation in abundance with a maximum exchange rate cannot be seen as it
  is only 0.02%.
  
@@ -3251,17 +3262,9 @@ status open
 \noindent
 \align center
 
-\change_inserted -2100369821 1589914693
+\change_inserted -2100369821 1590487365
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/no_seed_bank_compet.pdf
-	width 49text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv2.1/no_seed_bank_compet.pdf
-	width 49text%
+	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/no_seed_bank_compet.pdf
 
 \end_inset
 
@@ -3277,11 +3280,11 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1589966111
+\change_inserted -2100369821 1590487584
 Variation in the total number of taxa still present at the end of the simulation
- (richness) and average total abundance with (line) and without (circles)
- a seed bank as a function of the strength of competition and facilitation
- for model I (left) and model II (right).
+ (richness) and the geometric mean abundance with (dashed line) and without
+ (solid line) a seed bank as a function of the strength of competition and
+ facilitation for model I (black) and model II (grey).
  The x-axis shows the factor by which each interaction was multiplied (note
  the logairthmic scale) 
 \begin_inset CommandInset label
@@ -3338,10 +3341,10 @@ status open
 \noindent
 \align center
 
-\change_inserted -2100369821 1589908240
+\change_inserted -2100369821 1590487650
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/dynamics_vs_survival_no_seed_bank.pdf
-	width 95text%
+	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/dynamics_vs_survival_no_seed_bank.pdf
+	width 99text%
 
 \end_inset
 
@@ -3427,19 +3430,6 @@ status open
 \align center
 
 \change_inserted -2100369821 1589914461
-\begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv1.1/no_seed_bank_temp.pdf
-	width 49text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv2.1/no_seed_bank_temp.pdf
-	width 49text%
-
-\end_inset
-
 
 \end_layout
 
