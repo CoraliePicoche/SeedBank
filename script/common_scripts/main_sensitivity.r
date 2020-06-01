@@ -4,7 +4,7 @@
 
 graphics.off()
 
-if(1==0){
+#if(1==0){
 rm(list=ls())
 
 source("step_functions.r")
@@ -35,7 +35,7 @@ id=seq(n_iter-365*nb_year+1,n_iter)
 
 
 #Data to use (Auger)
-a=as.matrix(read.table("../../param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
+a=as.matrix(read.table("../../param/reconstructed_temperature_Auger_with_corrected_phase_and_amplitude.txt", row.names=1,header=T,sep=";",dec="."))
 temp_model=a[1:n_iter]
 #Used for summary statistics
 tab_pheno=read.table("../../param/generalist_specialist_spp_added_amplitude_season.csv",sep=";",dec=".",header=T,row.names=1)
@@ -176,7 +176,7 @@ for(t in 1:(n_iter-1)){
 analyses=rownames(list_simulation)
 
 save(list = ls(all.names = TRUE), file = "main_sensitivity_simu.RData", envir = .GlobalEnv)
-} #end 1==0
+#} #end 1==0
 
 
 #Difference between abundance on the coast and on the ocean
@@ -222,12 +222,12 @@ for(param_to_move in rownames(free_param)){
         }
 }
 
-pdf(paste("mean_abundance_amplitude_sensitivity.pdf",sep=""),width=17)
+pdf(paste("mean_abundance_amplitude_sensitivity.pdf",sep=""),width=22)
 par(mfrow=c(1,2))
-plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-9,4),xaxt="n",ylab="Average %change in log10(average abundance)",xlab="")
-axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-9,4),xaxt="n",ylab="Average %change in log10(average abundance)",xlab="",cex.lab=1.5,cex.axis=1.5)
+axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.5)
 abline(h=0)
-mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.9)
+mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=1.25)
 l=0
 val_text=c()
 at_val_text=c()
@@ -267,13 +267,13 @@ for(param_to_move in rownames(free_param)){
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
 }
-mtext(val_text,1,line=2,at=at_val_text,cex=0.9)
-legend("bottomleft",c("Model I","Model II"),col=c("lightgrey","darkgrey"),pch=16,bty="n")
+mtext(val_text,1,line=2,at=at_val_text,cex=1.1)
+legend("bottomleft",c("Model I","Model II"),col=c("lightgrey","darkgrey"),pch=16,bty="n",cex=1.75)
 
-plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="Average %change in log.amplitude",xlab="")
-axis(1,labels=rownames(free_param),at=1:nrow(free_param))
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="Average %change in log.amplitude",xlab="",cex.axis=1.5,cex.lab=1.5)
+axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.5)
 abline(h=0)
-mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=0.8)
+mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=1.25)
 l=0
 val_text=c()
 at_val_text=c()
@@ -310,7 +310,7 @@ for(param_to_move in rownames(free_param)){
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
 }
-mtext(val_text,1,line=2,at=at_val_text,cex=0.8)
+mtext(val_text,1,line=2,at=at_val_text,cex=1.1)
 }
 dev.off()
 

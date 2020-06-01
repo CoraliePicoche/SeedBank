@@ -11,7 +11,7 @@ colo=c(rep(c("red","orange","green","blue"),2),"red","orange","orchid")
 apch=c(rep(16,4),rep(17,4),rep(18,2))
 alty=c(rep(1,4),rep(2,4),rep(3,2))
 
-tab=read.table(paste("simu.csv",sep=""),sep=";",dec=".",header=T)
+tab=read.table(paste("../../param/simu.csv",sep=""),sep=";",dec=".",header=T)
 dataset=as.character(tab[tab[,1]=="dataset",2])
 
 #Simulation
@@ -246,6 +246,8 @@ for(tt in 1:length(list_to_show)){
 	}
 #	legend(x=id[1]+30,y=(ydelim[2]-ydelim[1])*0.35+ydelim[1],list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n",pt.cex=1.75,cex=1.5)
 	legend(pos_legend,list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n",pt.cex=1.75,cex=1.5)
+#	par(new = TRUE) #########ZZZ
+#plot(id, temp_model[id], type = "l", axes = FALSE, bty = "n", xlab = "", ylab = "") ######ZZZ
 }
 dev.off()
 

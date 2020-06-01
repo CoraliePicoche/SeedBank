@@ -8,7 +8,7 @@ cyst_burial;0.01
 germination;0.01
 resuspension;0.1
 quad_prog;0
-n_iter;10000
+n_iter;10950
 germin_threshold;15
 daylength;0.5
 threshold;1

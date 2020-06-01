@@ -8,6 +8,7 @@ summary_statistics=function(tab_mean,tab_pheno,tab_coast,nb_year){
 #Simulation
 name_spp=colnames(tab_coast)
 n_iter=nrow(tab_coast)
+#id=seq(1+floor(n_iter/365)*365-365*nb_year,floor(n_iter/365)*365)
 id=(n_iter-365*nb_year):n_iter
 
 

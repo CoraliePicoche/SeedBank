@@ -41,7 +41,7 @@ a_d=as.numeric(as.character(tab[tab[,1]=="daylength",2]))
 threshold=as.numeric(as.character(tab[tab[,1]=="threshold",2]))
 
 #Data to use (Auger)
-a=as.matrix(read.table("../../param/reconstructed_temperature_Auger.txt", row.names=1,header=T,sep=";",dec="."))
+a=as.matrix(read.table("../../param/reconstructed_temperature_Auger_with_corrected_phase_and_amplitude.txt", row.names=1,header=T,sep=";",dec="."))
 temp_model=a[1:n_iter]
 
 
