@@ -2993,13 +2993,20 @@ name "fig:-Simulated-phytoplankton"
 
 \end_layout
 
+\begin_layout Standard
+
+\change_inserted -2100369821 1594817033
+Dynamics following model II consistently led to higher abundances.
+ 
+\end_layout
+
 \begin_layout Subsubsection*
 Sensitivity analysis to fixed parameter
-\change_inserted -2100369821 1589960731
+\change_inserted -2100369821 1594816997
  
 \change_unchanged
 s
-\change_inserted -2100369821 1589636269
+\change_inserted -2100369821 1594816997
 e
 \change_unchanged
 t
@@ -3192,12 +3199,17 @@ Scenarios
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594739025
+\change_inserted -2100369821 1594814168
 The first step towards assessing the buffering effect of the seed bank against
  disruption consisted in removing the seed bank by setting seed mortality
  to 100%.
  Without disturbing the system otherwise, this led to a decrease in species
  richness from 11 to 4 species at the end of the simulation.
+ Taking into account the extinct species, the geometric mean abundance of
+ the community was around 0.01 while it was around 1000 with a seed bank.
+ The average abundance of extant species only was around 30 without a seed
+ bank.
+ 
 \end_layout
 
 \begin_layout Paragraph*
@@ -3208,10 +3220,10 @@ Biotic effects
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594739322
+\change_inserted -2100369821 1594813499
 Our first hypothesis was that the absence of the seed bank would cause the
  community to be less able to sustain competition.
- Our results (Fig.
+ Counter-intuitively, Our results (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3222,47 +3234,30 @@ noprefix "false"
 
 \end_inset
 
-) were counter-intuitive as an increase in competition was only negative
- with model I and for high competition values (5 times the reference ones),
+) showed that an increase in competition only had negative effect with model
+ I and for high competition values (6 times the reference ones at least),
  shifting from 4 species to 3 species in a community without seed bank.
- On the contrary, a decrease in competition or an increase in faciliation
- led to much smaller communities in model II, sometimes with a total competitive
- exclusion.
- 
+ On the contrary, a decrease in competition (even when only halved) or an
+ increase in faciliation (starting from a factor 2) led to much smaller
+ communities in model II, sometimes with a total competitive exclusion.
+ Richness was lowest when competition was divided by 6 or when facilitation
+ was multiplied by 8.
+ The same pattern (richness stability with model II, sensitivity to a decrease
+ in competition or an increase in facilitation with model II) was observed
+ in a community with a seed bank, but for larger disturbances.
+ Indeed competition needs to be at least divided by 6 or facilitation needs
+ to be multiplied by 7 for richness to decrease.
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594742752
-The same pattern was observed in a community with a seed bank, but for larger
- disturbances.
- [[[[START HERE]]]]
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1594741289
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1594741289
-####For Model I, community is 3 species when competition is multiplied by
- 6 or above.
- For Model II, richness is lowest (2) when competition divided by 6 and
- oscillates up to a factor 1.
- With a seed bank, model II begins to decrease when divided by 6.
- Regarding facilitation, model II sees a reduction to 3 species from a factor
- 2 , reaches 0 for a factor 8 (???).
- With a seed bank, it decreases from a factor 7.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
+\change_inserted -2100369821 1594816163
+The geometric mean abundance was also affected by such biotic changes.
+ The average abundance without a seed bank varied between -1.4 and -2.8 with
+ model I and between -1.3 and -3.3 with model II, while it was between 34.4
+ and 1.4 for model I and between 0.7 and 3.3 for model II with a seed bank.
+ It should be noted that model I seems to allow for very high abundances
+ when competition is low.
 \end_layout
 
 \begin_layout Standard
@@ -3303,8 +3298,13 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1594742520
-Should I only include extant species?
+\change_inserted -2100369821 1594816274
+Should I only include extant species? On the one hand, averaging over all
+ species, including the ones which were absent, insists on the fact that
+ abundances really drops; but on the other hand, it is kind of redundant
+ with the richness information and hides the information about each extant
+ species.
+ 
 \change_unchanged
 
 \end_layout
@@ -3341,9 +3341,9 @@ name "fig:Seed_bank_compet"
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1589966842
-Species which disappear are always the same and can be related to the minimum
- abundance they can reach (Fig.
+\change_inserted -2100369821 1594816365
+Species which disappear are always the same and can be related to a lower
+ minimum abundance of a species, a high amplitude and a small niche (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3428,7 +3428,7 @@ Abiotic effects
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594741396
+\change_inserted -2100369821 1594816676
 Our second hypothesis was that the absence of a seed bank would reduce the
  ability of a community to buffer changes in the environment, here represented
  as the temperature.
@@ -3448,6 +3448,19 @@ noprefix "false"
  opposed to communities with a seed bank which could only be affected by
  a 7°C increase (scenario SSP5 8.5).
  In all cases however, the total abundances was not strongly affected.
+ This can be explained by the fact that the total abundance of a community
+ is driven by a very small number of species which do not disappear.
+ High total abundances tend to correspond to the abundance of only one or
+ two species.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1594816985
+The variability of the temperature did not affect richness nor total abundance
+ of communities with and without a seed bank.
+ Model II consistenly led to higher abundances.
  
 \end_layout
 
