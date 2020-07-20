@@ -643,11 +643,23 @@ I wrote exp(r_i) instead of e^r_i because e is also the exchange rate (was
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
- are the strength of the effect of species 
+ are the strength of the effect of 
+\change_deleted -2100369821 1595235841
+species
+\change_inserted -2100369821 1595235841
+taxon
+\change_unchanged
+ 
 \begin_inset Formula $j$
 \end_inset
 
- on species 
+ on 
+\change_deleted -2100369821 1595235843
+species
+\change_inserted -2100369821 1595235843
+taxon
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -894,15 +906,27 @@ literal "false"
 
 \end_inset
 
-, but have different parameters that vary between species.
+, but have different parameters that vary between 
+\change_deleted -2100369821 1595235884
+species
+\change_inserted -2100369821 1595235884
+taxa
+\change_unchanged
+.
  Indeed, the half-saturation coefficients 
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- are here variable between species, since it did not make sense biologically
- for this quantity to be fixed (e.g., in a resource competition context, different
- species are expected to feel resource limitations at different concentrations
- of nutrients and at different number of competitors).
+ are here variable between 
+\change_deleted -2100369821 1595235880
+species
+\change_inserted -2100369821 1595235880
+taxa
+\change_unchanged
+, since it did not make sense biologically for this quantity to be fixed
+ (e.g., in a resource competition context, different species are expected
+ to feel resource limitations at different concentrations of nutrients and
+ at different number of competitors).
  .
  How to use parameter estimates from model I to specify model II is described
  in the SI.
@@ -2826,10 +2850,15 @@ Why do you start with defaults? Start with the good news ;)
 \end_inset
 
  
-\change_inserted -2100369821 1594731548
-The model was able to reprduce the main characteristics of phytoplanktonic
- dynamics, that is the presence of one or two blooms during the year, which
- begins in spring in the site we monitored.
+\change_inserted -2100369821 1595231869
+The classical Beverton-Holt (model I) and saturating interaction (model
+ II) formulations led to similar satisfactory results.
+ They both reproduced the main characteristics of phytoplanktonic dynamics,
+ that is the presence of one or two blooms during the year with a range
+ of abundances covering several orders of magnitude and the timing of these
+ blooms.
+ At the Auger site, abundances increase in spring and can last over part
+ of summer, or start in autumn, which is what we obtained in the models.
  
 \change_deleted -2100369821 1594731553
 Mea
@@ -2856,12 +2885,13 @@ also
 \change_inserted -2100369821 1594731611
 well 
 \change_inserted -666822487 1588328969
-reproduced 
-\change_deleted -2100369821 1594731615
-(Fig.
- XXX) and the phenology is overall reproduced as wel
-\change_inserted -666822487 1588328969
-l.
+reproduced
+\change_inserted -2100369821 1595231947
+.
+
+\change_deleted -2100369821 1595231953
+ (Fig.
+ XXX) and the phenology is overall reproduced as well.
  
 \change_deleted -666822487 1588328975
 There are still issues in the calibration of the model:
@@ -2894,7 +2924,29 @@ noprefix "false"
 
 \end_inset
 
-).
+)
+\change_inserted -2100369821 1595232180
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1595232208
+I could also say that the presence of certain organisms throughout the whole
+ year, as CHA, could correspond to groups such as 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
+
+\change_inserted -2100369821 1595232000
+ 
 \change_inserted -666822487 1588329003
 
 \begin_inset Note Note
@@ -2920,6 +2972,25 @@ in some cases
 \end_inset
 
 
+\change_inserted -2100369821 1595233174
+ In all cases, saturating interactions led to higher abundances than mass-action
+ interactions 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1595233164
+Depends on the journal we submit to, but this might be a bit technical for
+ a part of the readership?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ throughout the year (Fig.
+ SXXX).
 \change_unchanged
 
 \end_layout
@@ -2993,13 +3064,6 @@ name "fig:-Simulated-phytoplankton"
 
 \end_layout
 
-\begin_layout Standard
-
-\change_inserted -2100369821 1594817033
-Dynamics following model II consistently led to higher abundances.
- 
-\end_layout
-
 \begin_layout Subsubsection*
 Sensitivity analysis to fixed parameter
 \change_inserted -2100369821 1594816997
@@ -3039,9 +3103,9 @@ Yes barplots are good for that.
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594733855
-Total phytoplankton dynamics were not overwhelmingly affected by changes
- to other plausible values in the parameter set in both models (Fig.
+\change_inserted -2100369821 1595235931
+Total phytoplankton dynamics were not strongly affected by changes in the
+ parameter values (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3053,21 +3117,35 @@ noprefix "false"
 \end_inset
 
 ).
- The average change in abundance on the coast between the reference simulation
- and the simulations with a different parameter value varied between -4.6
- and 1.9% for model I and between -4.2 and 1.1% for model II, with similar
- deviations (same sign and magnitude) in the two models.
+ As values varied in a plausible range, the average change in abundance
+ on the coast between the reference simulation and the simulations varied
+ between -4.6 and 1.9% for model I and between -4.2 and 1.1% for model II, with
+ similar deviations (same sign and magnitude) in the two models.
  The only parameter that led to a substantially different result between
- the two models was the resuspension parameter which, when decreased, led
- to an increase in abundance of approximately 1.9% while it was only 0.9%
- in the second model.
- In the two models, the decrease in mortality rate of vegetative species
+ the two models was the resuspension parameter (leading to a different value
+ of the parameter 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ in Eq.
  
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_step2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) which, when decreased, led to an increase in abundance of approximately
+ 1.9% in model I while it was only 0.9% in model II.
+ In the two models, the decrease in mortality rate of vegetative cells 
 \begin_inset Formula $m$
 \end_inset
 
  had the more impact of the final average abundance, leading to an increase
- in abundance with the new parameter set.
+ in abundances.
  The exchange rate between the ocean and the coast had much less effect
  on the coastal average abundance.
  
@@ -3075,11 +3153,11 @@ noprefix "false"
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594734308
+\change_inserted -2100369821 1595235937
 On the other hand, the decimal logarithm of the maximum to minimum ratio
- of abundance (i.e., the order of magnitude of the change in abundance) was
- more affected by changes in parameters and could vary by -39.4 to 18.6% in
- model I, and between -41.2% and 23.02% in model II.
+ of abundance (i.e., the order of magnitude of the range of abundances for
+ each taxa) was more affected by changes in parameters and could vary by
+ -39.4 to 18.6% in model I, and between -41.2% and 23.02% in model II.
  Results were qualitatively the same in the two models, with a decrease
  in cyst burial being the main driver of the decrease in amplitude, and
  a decrease in resuspension leading to an increase in amplitude.
@@ -3087,17 +3165,16 @@ On the other hand, the decimal logarithm of the maximum to minimum ratio
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594734726
-In three cases (cyst burial rate set at 0.1, resuspension at 10
+\change_inserted -2100369821 1595235946
+In three cases (cyst burial rate set to 0.1, resuspension to 10
 \begin_inset Formula $^{-5}$
 \end_inset
 
  or the exchange rate set to 0), the final richness of the community decreased
  from 11 to 4.
- Extant species were always the same in all simulations (CHA, THP, NIT,
- PSE).
- In a specific case (resuspension=0.001), a species periodically disappeared
- from the ocean, then re-seeded by the coast.
+ Extant taxa were the same in all simulations (CHA, THP, NIT, PSE).
+ In a specific case (resuspension set to 0.001), a taxon periodically disappeared
+ from the ocean, to be subsequently re-seeded by the coastal population.
 \end_layout
 
 \begin_layout Standard
@@ -3152,21 +3229,20 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1594735082
+\change_inserted -2100369821 1595235955
 Sensitivity of the model to variation in parameters, measured as the difference
  between the reference simulation and the simulation with a change in parameter.
  The two metrics used were the average decimal log abundance (a) and the
  decimal logarithm of the ratio between maximum and minimum abundance (b)
  of the coastal phytoplanktonic community.
- Values used in the reference simulation are shown in the third row of the
- x-axis while values used in the sensitivity analysis are in the second
- row.
- Note that values use in the sensitivity analysis are not necessarily bounds
- around the reference values (i.e.
+ Values used in the sensitivity analysis are in the second row of the x-axis
+ while values used in the reference simulation are shown in the third row.
+ Note that the reference value is not necessarily inside the range of values
+ used in the sensitivity analysis (e.g.
  mortality rates in the sensitivity analysis are both below the value used
  in other simulations).
- Numbers in red are the final number of species and dots correspond to simulatio
-ns in which at least one species reached 0 at one point.
+ Numbers in red are the final number of taxa and dots correspond to simulations
+ in which at least one taxon reached 0 at one point but did not disappear.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3199,15 +3275,37 @@ Scenarios
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594814168
-The first step towards assessing the buffering effect of the seed bank against
- disruption consisted in removing the seed bank by setting seed mortality
- to 100%.
- Without disturbing the system otherwise, this led to a decrease in species
- richness from 11 to 4 species at the end of the simulation.
- Taking into account the extinct species, the geometric mean abundance of
- the community was around 0.01 while it was around 1000 with a seed bank.
- The average abundance of extant species only was around 30 without a seed
+\change_inserted -2100369821 1595235974
+Two scenarios were designed to test the buffering effect of the seed bank
+ against disruption.
+ In both cases, it consisted in removing the seed bank by setting seed mortality
+ to 100% per day
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1595234709
+I know this is M&M stuff, but this is just a reminder of what was done
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ Without disturbing the system otherwise, this led to a decrease in taxon
+ richness from 11 to 4 taxa at the end of the simulation.
+ Taking into account the extinct taxa, the geometric mean abundance of the
+ community was around 10
+\begin_inset Formula $^{-2}$
+\end_inset
+
+ while it was around 
+\begin_inset Formula $10^{3}$
+\end_inset
+
+ with a seed bank.
+ The average abundance of extant taxa only was around 30 without a seed
  bank.
  
 \end_layout
@@ -3220,10 +3318,10 @@ Biotic effects
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594813499
+\change_inserted -2100369821 1595236000
 Our first hypothesis was that the absence of the seed bank would cause the
- community to be less able to sustain competition.
- Counter-intuitively, Our results (Fig.
+ community to be more affected by higher competition.
+ Counter-intuitively, our results (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3236,28 +3334,47 @@ noprefix "false"
 
 ) showed that an increase in competition only had negative effect with model
  I and for high competition values (6 times the reference ones at least),
- shifting from 4 species to 3 species in a community without seed bank.
- On the contrary, a decrease in competition (even when only halved) or an
- increase in faciliation (starting from a factor 2) led to much smaller
- communities in model II, sometimes with a total competitive exclusion.
+ shifting from 4 taxa to 3 taxa in the oceanic compartment of a community
+ without seed bank while it did not affect the richness of a community with
+ a seed bank.
+ On the contrary, a decrease in competition (from a factor 0.5 and lower)
+ or an increase in facilitation (starting from a factor 2 and higher) led
+ to much smaller communities in model II, sometimes with a total competitive
+ exclusion
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1595235993
+still have to check that
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
  Richness was lowest when competition was divided by 6 or when facilitation
- was multiplied by 8.
- The same pattern (richness stability with model II, sensitivity to a decrease
+ was multiplied by 8 in model II.
+ The same pattern (richness stability with model I, sensitivity to a decrease
  in competition or an increase in facilitation with model II) was observed
  in a community with a seed bank, but for larger disturbances.
- Indeed competition needs to be at least divided by 6 or facilitation needs
- to be multiplied by 7 for richness to decrease.
+ Competition indeed jad to be at least divided by 6 or facilitation, to
+ be multiplied by 7 for richness to decrease to 9 taxa.
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594816163
+\change_inserted -2100369821 1595235173
 The geometric mean abundance was also affected by such biotic changes.
- The average abundance without a seed bank varied between -1.4 and -2.8 with
- model I and between -1.3 and -3.3 with model II, while it was between 34.4
- and 1.4 for model I and between 0.7 and 3.3 for model II with a seed bank.
- It should be noted that model I seems to allow for very high abundances
- when competition is low.
+ The order of magnitude of the average abundance without a seed bank varied
+ between a -1.4 and -2.8 with model I and between -1.3 and -3.3 with model II,
+ while it was between 34.4 and 1.4 for model I and between 0.7 and 3.3 for model
+ II with a seed bank.
+ It should be noted that model I was able to sustain much high abundances
+ when competition was low, which can be related to the presence of a hard
+ threshold on the amplifying effect of the interactions on the growth rate.
 \end_layout
 
 \begin_layout Standard
@@ -3290,7 +3407,7 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1594742492
+\change_inserted -2100369821 1595236578
 Variation in the total number of taxa still present at the end of the simulation
  (richness) and the geometric mean abundance, including extinct 
 \begin_inset Note Note
@@ -3298,12 +3415,11 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1594816274
-Should I only include extant species? On the one hand, averaging over all
- species, including the ones which were absent, insists on the fact that
- abundances really drops; but on the other hand, it is kind of redundant
- with the richness information and hides the information about each extant
- species.
+\change_inserted -2100369821 1595236019
+Should I only include extant taxa? On the one hand, averaging over all taxa,
+ including the ones which were absent, insists on the fact that abundances
+ really drop; but on the other hand, it is kind of redundant with the richness
+ information and hides the information about each extant taxa.
  
 \change_unchanged
 
@@ -3311,9 +3427,9 @@ Should I only include extant species? On the one hand, averaging over all
 
 \end_inset
 
- species, with (dashed line) and without (solid line) a seed bank, as a
- function of the strength of competition and facilitation for model I (black)
- and model II (grey).
+ taxa, with (dashed line) and without (solid line) a seed bank, as a function
+ of the strength of competition and facilitation with a classical Beverton-Holt
+ (black lines) or a saturating interaction (grey lines) formulation.
  The x-axis shows the factor by which each interaction was multiplied (note
  the logarithmic scale) 
 \begin_inset CommandInset label
@@ -3341,9 +3457,9 @@ name "fig:Seed_bank_compet"
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594816365
-Species which disappear are always the same and can be related to a lower
- minimum abundance of a species, a high amplitude and a small niche (Fig.
+\change_inserted -2100369821 1595236120
+Taxa which disappear were always the same and were characterized by a lower
+ minimum abundance, a higher amplitude and a small niche (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3355,7 +3471,24 @@ noprefix "false"
 \end_inset
 
 ).
- 
+ In contrast, their interactions were not qualitatively different from the
+ other taxa
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1595236152
+What I mean here is that they don't have more positive interactions, nor
+ a higher impact of vulnerability.
+ Do I say it at all?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3389,10 +3522,10 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1594729980
-Probability of survival of species with variation in competition and facilitatio
-n as a function of their dynamics in the reference parameter set #########TO
- DO 
+\change_inserted -2100369821 1595236195
+Probability of survival of taxa when the strength of interactions varies,
+ as a function of their dynamics characteristics in the reference parameter
+ set #########TO (RE)DO 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Probability-of-survival"
@@ -3428,10 +3561,10 @@ Abiotic effects
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594816676
+\change_inserted -2100369821 1595236482
 Our second hypothesis was that the absence of a seed bank would reduce the
  ability of a community to buffer changes in the environment, here represented
- as the temperature.
+ by variation in the temperature.
  As can be seen on Fig.
  
 \begin_inset CommandInset ref
@@ -3443,24 +3576,26 @@ noprefix "false"
 
 \end_inset
 
-, this was true for both models as the communities without seed bank could
+, this was true for both models as the communities without a seed bank could
  not maintain their richness with an increase in temperature above 2°, as
  opposed to communities with a seed bank which could only be affected by
  a 7°C increase (scenario SSP5 8.5).
  In all cases however, the total abundances was not strongly affected.
- This can be explained by the fact that the total abundance of a community
- is driven by a very small number of species which do not disappear.
+ Indeed, the total abundance of a community is driven by a small number
+ of species which do not disappear.
  High total abundances tend to correspond to the abundance of only one or
  two species.
- 
+ Model II consistenly led to higher abundances, as was already the case
+ in the reference simulations.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594816985
-The variability of the temperature did not affect richness nor total abundance
+\change_inserted -2100369821 1595236462
+The variance of the temperature did not affect richness nor total abundance
  of communities with and without a seed bank.
- Model II consistenly led to higher abundances.
  
 \end_layout
 
@@ -3492,10 +3627,10 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1589967361
+\change_inserted -2100369821 1595236543
 Variation in richness and total abundance with and without a seed bank as
- a function of the mean and variance of the temperature of competition and
- facilitation for model I (left) and model II (right).
+ a function of the mean and variance of the temperature with a classical
+ Beverton-Holt (left) or a saturating interaction (right) formulation.
  
 \begin_inset CommandInset label
 LatexCommand label
