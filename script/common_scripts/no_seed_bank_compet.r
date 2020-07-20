@@ -3,7 +3,7 @@
 # 21/05/2020 CP: Wrote the code so that it could be applied to both models at the same time
 ###
 
-#if(1==0){
+if(1==0){
 rm(list=ls())
 graphics.off()
 set.seed(42)
@@ -99,7 +99,7 @@ range_val=apply(log10(apply(N_original_set[id,"ocean",,],c(2,3),range)),c(2,3),d
 ######################Param changed when using seed_bank
 M_orig=M
 M=1
-nb_div=20
+nb_div=10
 simu=seq(1,10,length.out=nb_div)
 fac_simu=unique(c(rev(1/simu),simu))
 
@@ -191,25 +191,33 @@ for(fac in 1:length(fac_simu)){
 }
 
 save(N_array, N_orig, mean_val,min_val,range_val,fac_simu,nb_persistence,id,file = "no_seed_compet_simu_light.RData", envir = .GlobalEnv)
-#}#1==0
+}#1==0
 
+load("no_seed_compet_simu_light.RData")
+
+if(1==0){
 pdf("no_seed_bank_compet.pdf")
-par(mfrow=c(2,2),mar=c(4,4,1,1))
+par(mfrow=c(2,2),mar=c(1,4.5,3,0))
+ #Final richness, taking into account the last months, instead of only the end of the simulation
 id_persistence=seq(length(id)-nb_persistence+1,length(id)) 
-plot(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="Richness",xlab="",main="Competition",log="x",col="black",lty=1,t="l")
-lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="black",lty=2)
-lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=1)
-lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=2)
+plot(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="Richness",xlab="",main="Competition",log="x",col="black",lty=1,t="l",xaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2,cex.main=1.75) 
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="black",lty=2,lwd=2)
+lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=1,lwd=2)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=2,lwd=2)
 #abline(v=1)
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 
-plot(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="",xlab="",main="Facilitation",log="x",col="black",lty=1,t="l")
-lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="black",lty=2)
-lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=1)
-lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=2)
+par(mar=c(1,2.5,3,2))
+
+plot(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="",xlab="",main="Facilitation",log="x",col="black",lty=1,t="l",xaxt="n",yaxt="n",lwd=2,cex.axis=1.5,cex.lab=1.5,cex.main=1.75)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="black",lty=2,lwd=2)
+lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=1,lwd=2)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=2,lwd=2)
 
 #abline(v=which(fac_simu==1))
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+
+par(mar=c(4,4.5,0,0))
 
 N_tot=matrix(NA,length(fac_simu),2)
 N_tot_orig=matrix(NA,length(fac_simu),2)
@@ -225,16 +233,22 @@ for(m in 1:2){
         N_tot[f,m]=mean(tmp)
         tmp=apply(log10(N_orig[,'ocean',,f,'compet',m]+10^(-5)),1,sum,na.rm=T)/nspp
 	N_tot_orig[f,m]=mean(tmp)
+#        tmp=apply(log10(N_array[,'ocean',,f,'compet',m]+10^(-5)),1,sum,na.rm=T)/sum(apply(N_array[id_persistence,"ocean",,f,'compet',m]==0,c(2),sum)<nb_persistence)
+#        N_tot[f,m]=mean(tmp)
+#        tmp=apply(log10(N_orig[,'ocean',,f,'compet',m]+10^(-5)),1,sum,na.rm=T)/sum(apply(N_orig[id_persistence,"ocean",,f,'compet',m]==0,c(2),sum)<nb_persistence)
+#	N_tot_orig[f,m]=mean(tmp)
 }
 }
-plot(fac_simu,N_tot[,1],ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(mean(abundance))",xlab="Multiplying factor",log="x",col="black",t="l",lty=1)
-lines(fac_simu,N_tot_orig[,1],col="black",lty=2)
-lines(fac_simu,N_tot[,2],col="grey",lty=1)
-lines(fac_simu,N_tot_orig[,2],col="grey",lty=2)
+#plot(fac_simu,N_tot[,1],ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(mean(abundance))",xlab="Multiplying factor",log="x",col="black",t="l",lty=1)
+plot(fac_simu,N_tot[,1],ylim=c(-5,40),ylab="Mean(log10(abundance))",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),log="x",col="black",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+lines(fac_simu,N_tot_orig[,1],col="black",lty=2,lwd=2)
+lines(fac_simu,N_tot[,2],col="grey",lty=1,lwd=2)
+lines(fac_simu,N_tot_orig[,2],col="grey",lty=2,lwd=2)
 #abline(v=which(fac_simu==1))
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 
 
+par(mar=c(4,2.5,0,2))
 N_tot=matrix(NA,length(fac_simu),2)
 N_tot_orig=matrix(NA,length(fac_simu),2)
 for(f in 1:length(fac_simu)){
@@ -251,33 +265,49 @@ for(f in 1:length(fac_simu)){
         N_tot_orig[f,m]=mean(tmp)
 	}
 }
-plot(fac_simu,N_tot[,1],ylim=range(c(N_tot,N_tot_orig)),log="x",ylab="",xlab="Multiplying factor",lty=1,t="l",col="black")
-lines(fac_simu,N_tot_orig[,1],lty=2,col="black")
-lines(fac_simu,N_tot[,2],lty=1,col="grey")
-lines(fac_simu,N_tot_orig[,2],lty=2,col="grey")
-legend("bottomleft",c("W bank","W/o bank","Model I","Model II"),lty=c(2,1,1,1),col=c("black","black","black","grey"),bty="n")
+plot(fac_simu,N_tot[,1],ylim=c(-5,40),log="x",ylab="",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),lty=1,t="l",col="black",yaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2)
+lines(fac_simu,N_tot_orig[,1],lty=2,col="black",lwd=2)
+lines(fac_simu,N_tot[,2],lty=1,col="grey",lwd=2)
+lines(fac_simu,N_tot_orig[,2],lty=2,col="grey",lwd=2)
+legend("topleft",c("W bank","W/o bank","Model I","Model II"),lty=c(2,1,1,1),col=c("black","black","black","grey"),bty="n",cex=1.5,lwd=2)
 #abline(v=which(fac_simu==1))
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 dev.off()
+}
 
 surviv_compet=apply(apply(N_array[id_persistence,"ocean",,,'compet',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/(length(fac_simu))
 surviv_facil=apply(apply(N_array[id_persistence,"ocean",,,'facil',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/length(fac_simu)
-pdf("dynamics_vs_survival_no_seed_bank.pdf",width=12)
-par(mfrow=c(2,3))
+
+pdf("dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf",width=9,height=3)
+set.seed(42)
+par(mfrow=c(1,3),oma=c(1,1,1,1),mar=c(4,4,1,1))
+plot(jitter(min_val[,1],amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Log10(min abundance)",pch=16,ylim=c(0,1),ylab="Prob survival",cex=1.5,xlim=range(c(min_val))+c(-0.1,0.1))
+mtext("a)",line=-1,side=2,at=0.96,outer=T,las=2)
+#points(jitter(min_val[,1],amount=0.5),surviv_facil[,1],col="blue",pch=16)
+points(jitter(min_val[,2],amount=0.1),surviv_compet[,2],col="grey",pch=17,cex=1.5)
+#points(jitter(min_val[,2],amount=0.5),surviv_facil[,2],col="blue",pch=17)
+
+plot(jitter(range_val[,1],amount=0.5),surviv_compet[,1],t="p",col="black",pch=16,xlab="Log. amplitude",ylab="",ylim=c(0,1),cex=1.5)
+mtext("b)",line=-1,at=0.96,side=2,outer=T)
+#points(range_val[,1],surviv_facil[,1],col="blue",pch=16)
+points(jitter(range_val[,2],amount=0.5),surviv_compet[,2],col="grey",pch=17,cex=1.5)
+#points(range_val[,2],surviv_facil[,2],col="blue",pch=17)
+
+plot(jitter(B,amount=0.5),surviv_compet[,1],t="p",col="black",pch=16,xlab="Proxy niche width",ylab="",ylim=c(0,1),cex=1.5)
+mtext("c)",line=0,at=1,side=2,outer=T,las=2)
+#points(B,surviv_facil[,1],col="blue",pch=16)
+points(jitter(B,amount=0.5),surviv_compet[,2],col="grey",pch=17,cex=1.5)
+#points(B,surviv_facil[,2],col="blue",pch=17)
+
+legend("bottomright",c("Model I","Model II"),pch=c(16,17),col=c("black","grey"),pt.lwd=c(1,1,1.5,1.5),bty="n")
+dev.off()
+
+pdf("dynamics_vs_survival_no_seed_bank_meanab_sinking_temperature.pdf",width=9)
+par(mfrow=c(1,3))
 plot(mean_val[,1],surviv_compet[,1],t="p",col="red",xlab="Log10(mean abundance)",ylab="Prob survival",pch=16,ylim=c(0,1))
 points(mean_val[,1],surviv_facil[,1],col="blue",pch=16)
 points(mean_val[,2],surviv_compet[,2],col="red",pch=17)
 points(mean_val[,2],surviv_facil[,2],col="blue",pch=17)
-
-plot(min_val[,1],surviv_compet[,1],t="p",col="red",xlab="Log10(min abundance)",ylab="",pch=16,ylim=c(0,1))
-points(min_val[,1],surviv_facil[,1],col="blue",pch=16)
-points(min_val[,2],surviv_compet[,2],col="red",pch=17)
-points(min_val[,2],surviv_facil[,2],col="blue",pch=17)
-
-plot(range_val[,1],surviv_compet[,1],t="p",col="red",pch=16,xlab="Log. amplitude",ylab="",ylim=c(0,1))
-points(range_val[,1],surviv_facil[,1],col="blue",pch=16)
-points(range_val[,2],surviv_compet[,2],col="red",pch=17)
-points(range_val[,2],surviv_facil[,2],col="blue",pch=17)
 
 plot(S,surviv_compet[,1],t="p",col="red",pch=16,xlab="Sinking rate",ylab="Prob survival",ylim=c(0,1))
 points(S,surviv_facil[,1],col="blue",pch=16)
@@ -289,14 +319,9 @@ points(T_opt,surviv_facil[,1],col="blue",pch=16)
 points(T_opt,surviv_compet[,2],col="red",pch=17)
 points(T_opt,surviv_facil[,2],col="blue",pch=17)
 
-plot(B,surviv_compet[,1],t="p",col="red",pch=16,xlab="Proxy niche width",ylab="",ylim=c(0,1))
-points(B,surviv_facil[,1],col="blue",pch=16)
-points(B,surviv_compet[,2],col="red",pch=17)
-points(B,surviv_facil[,2],col="blue",pch=17)
-
 legend("bottomright",c("Model I","Model II","Compet","Facilitation"),pch=c(16,17,1,1),col=c("black","black","red","blue"),pt.lwd=c(1,1,1.5,1.5),bty="n")
 dev.off()
-
+stop()
 
 pdf("species_no_seed_bank.pdf",width=10)
 par(mfrow=c(3,4))

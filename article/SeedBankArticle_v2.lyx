@@ -3346,8 +3346,12 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1595235993
-still have to check that
+\change_inserted -2100369821 1595258216
+confirmed.
+ Everyone disappears.
+ By step 7 or 9 for centric diatoms.
+ Step 99 for pennate diatoms except PSE (227).
+ Step 57 for dinoflagellates
 \change_unchanged
 
 \end_layout
@@ -3407,9 +3411,10 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1595236578
-Variation in the total number of taxa still present at the end of the simulation
- (richness) and the geometric mean abundance, including extinct 
+\change_inserted -2100369821 1595259052
+Variation in the total number of taxa still present in the ocean at the
+ end of the simulation (richness) and the geometric mean abundance, including
+ extinct 
 \begin_inset Note Note
 status open
 
@@ -3503,9 +3508,9 @@ status open
 \noindent
 \align center
 
-\change_inserted -2100369821 1590487650
+\change_inserted -2100369821 1595261279
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/dynamics_vs_survival_no_seed_bank.pdf
+	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf
 	width 99text%
 
 \end_inset
