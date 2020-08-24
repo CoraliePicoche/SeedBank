@@ -1,14 +1,16 @@
-##############
+#############
 # 20/05/20 CP: attempt at a general sensitivity script
 ##############
 
 graphics.off()
-
-#if(1==0){
 rm(list=ls())
 
 source("step_functions.r")
 source("../summary_statistics.r")
+
+doyouload=TRUE #TRUE if taking previous simulations to draw new plots, FALSE if we want to re-run the simulations
+
+if(!doyouload){
 
 nb_year=2
 cpt="ocean"
@@ -176,8 +178,9 @@ for(t in 1:(n_iter-1)){
 analyses=rownames(list_simulation)
 
 save(list = ls(all.names = TRUE), file = "main_sensitivity_simu.RData", envir = .GlobalEnv)
-#} #end 1==0
-
+}else{ #end if doyouload
+load("main_sensitivity_simu.RData")
+}
 
 #Difference between abundance on the coast and on the ocean
 tmp_var=N_original_set[id,c("coast"),,]-N_original_set[id,c("ocean"),,]
@@ -200,11 +203,11 @@ matrix_abundance_tot=array(NA,dim=c(nrow(free_param),2,ncol(amplitude_tot_origin
 for(param_to_move in rownames(free_param)){
         id_param=grep(paste("^",param_to_move,sep=""),analyses) #This will help issue an error if we have more than 2 values per parameter
         for(i in 1:length(id_param)){
-                mean_sens=log10(apply(N_sensitivity[,cpt,,id_param[i],],c(2,3),mean))
+                mean_sens=log10(apply(N_sensitivity[,cpt,,id_param[i],],c(2,3),mean)) #mean_sens contains the log10 of average abundance per species, per model
                 tmp_mean=100*(mean_tot_original-mean_sens)/mean_tot_original
                 matrix_mean[param_to_move,i,,]=tmp_mean
 
-                amp_sens=apply(log10(apply(N_sensitivity[,cpt,,id_param[i],],c(2,3),range)),2,diff)
+                amp_sens=apply(log10(apply(N_sensitivity[,cpt,,id_param[i],],c(2,3),range)),2,diff) #amp_sens contains the log-ratio maximum/minimum per species, per model
                 tmp_amplitude=100*(amplitude_tot_original-amp_sens)/amplitude_tot_original
                 matrix_amplitude[param_to_move,i,,]=t(tmp_amplitude)
 
@@ -222,12 +225,15 @@ for(param_to_move in rownames(free_param)){
         }
 }
 
-pdf(paste("mean_abundance_amplitude_sensitivity.pdf",sep=""),width=22)
-par(mfrow=c(1,2))
-plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-9,4),xaxt="n",ylab="Average %change in log10(average abundance)",xlab="",cex.lab=1.5,cex.axis=1.5)
-axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.5)
+let_panels=c("a","b")
+
+pdf(paste("mean_abundance_amplitude_sensitivity.pdf",sep=""),width=12,height=10)
+par(mfrow=c(2,1),mar=c(3,5,3,1))
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-5,2),xaxt="n",ylab="%Diff in log10(average abundance)",xlab="",cex.lab=1.65,cex.axis=1.65)
+#axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
 abline(h=0)
-mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=1.25)
+#mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.3)
+mtext("a)",3,line=1.25,at=0.5,cex=2)
 l=0
 val_text=c()
 at_val_text=c()
@@ -235,7 +241,9 @@ for(param_to_move in rownames(free_param)){
         l=l+1
         id_param=grep(paste("^",param_to_move,sep=""),analyses)
         space=0.5/(2*length(id_param))
+        space_txt=0.8/(2*length(id_param))
         seq_space=seq(-space,space,length.out=length(id_param))
+        seq_space_txt=seq(-space_txt,space_txt,length.out=length(id_param))
         for(i in 1:length(id_param)){
 
 		for(mod in 1:2){
@@ -254,26 +262,28 @@ for(param_to_move in rownames(free_param)){
                 if(tab_summary[id_param[i],4,mod]==0){
 			if((tab_summary[id_param[i],"Persistence_coast",mod]<nspp)|(tab_summary[id_param[i],"Persistence_ocean",mod]<nspp)){
                         #text(l+seq_space[i]+idplus,per_change+(0.1*9)*sign(per_change),tab_summary[id_param[i],"Persistence",mod],col="red")
-                        text(l+seq_space[i]+idplus,3,tab_summary[id_param[i],"Persistence_ocean",mod],col="red")
+                        text(l+seq_space[i]+idplus,2,tab_summary[id_param[i],"Persistence_ocean",mod],col="red",cex=1.5)
 #                        text(l+seq_space[i]+idplus_text,3-0.4,tab_summary[id_param[i],"Persistence_coast",mod],col="blue")
 			}else{
                         #points(l+seq_space[i]+idplus,per_change+(0.1*11)*sign(per_change),t="p",pch=16,col="red",cex=0.5)
-                        points(l+seq_space[i]+idplus,3,t="p",pch=16,col="red",cex=0.5)
+                        points(l+seq_space[i]+idplus,2,t="p",pch=16,col="red",cex=1)
 			}
                 }
 		}
-                at_val_text=c(at_val_text,l+seq_space[i])
+                at_val_text=c(at_val_text,l+seq_space_txt[i])
                 tmp_text=strsplit(analyses[id_param[i]],"_")
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
 }
-mtext(val_text,1,line=2,at=at_val_text,cex=1.1)
+#mtext(val_text,1,line=2.25,at=at_val_text,cex=1.3)
 legend("bottomleft",c("Model I","Model II"),col=c("lightgrey","darkgrey"),pch=16,bty="n",cex=1.75)
 
-plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="Average %change in log.amplitude",xlab="",cex.axis=1.5,cex.lab=1.5)
-axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.5)
+par(mar=c(4.5,5,1.5,1))
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="%Diff in log.amplitude",xlab="",cex.axis=1.65,cex.lab=1.65)
+axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
 abline(h=0)
-mtext(c(all_others),1,line=3,at=1:nrow(free_param),cex=1.25)
+mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.4)
+mtext("b)",3,line=1.25,at=0.5,cex=2)
 l=0
 val_text=c()
 at_val_text=c()
@@ -305,12 +315,12 @@ for(param_to_move in rownames(free_param)){
 			#}
                 #}
 		}
-                at_val_text=c(at_val_text,l+seq_space[i])
+                at_val_text=c(at_val_text,l+seq_space_txt[i])
                 tmp_text=strsplit(analyses[id_param[i]],"_")
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
 }
-mtext(val_text,1,line=2,at=at_val_text,cex=1.1)
+mtext(val_text,1,line=2.25,at=at_val_text,cex=1.3)
 }
 dev.off()
 

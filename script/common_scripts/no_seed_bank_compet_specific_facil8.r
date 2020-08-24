@@ -72,88 +72,19 @@ M=1
 fac_simu=8
 
 ###Initialize
-N_array=array(NA,dim=c(length(id),3,nspp,length(fac_simu),2,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,format(fac_simu,digits=3),c("compet","facil"),c("ModelI","ModelII")))
-N_orig=array(NA,dim=c(length(id),3,nspp,length(fac_simu),2,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,format(fac_simu,digits=3),c("compet","facil"),c("ModelI","ModelII")))
-for(fac in 1:length(fac_simu)){
-        print(fac_simu[fac])
-        ####ModelI
-        #Compet
-        tmp_inter_compet=tmp_inter_I
-        tmp_inter_compet[which(tmp_inter_I>0,arr.ind=T)]=tmp_inter_I[which(tmp_inter_I>0,arr.ind=T)]*fac_simu[fac]
-        list_inter_compet=list(tmp_inter_compet,tmp_inter_compet)
 
-        #Facilitation
-        tmp_inter_facil=tmp_inter_I
-        tmp_inter_facil[which(tmp_inter_I<0,arr.ind=T)]=tmp_inter_I[which(tmp_inter_I<0,arr.ind=T)]*fac_simu[fac]
-        list_inter_facil=list(tmp_inter_facil,tmp_inter_facil)
+fac_simu=8
+tmp_inter_facil=type_inter_tmp
+tmp_inter_facil[which(type_inter_tmp<0,arr.ind=T)]=type_inter_tmp[which(type_inter_tmp<0,arr.ind=T)]*fac_simu
+type_inter_facil=list(tmp_inter_facil,tmp_inter_facil)
 
+N_array_simu=array(NA,dim=c(n_iter,3,nspp),dimnames=list(NULL,c("coast","ocean","seed"),name_spp))
+N_array_simu[1,,]=10^3
 
-        ###ModelII
-        tmp_inter_compet=type_inter_tmp
-        tmp_inter_compet[which(type_inter_tmp>0,arr.ind=T)]=type_inter_tmp[which(type_inter_tmp>0,arr.ind=T)]*fac_simu[fac]
-        type_inter_compet=list(tmp_inter_compet,tmp_inter_compet)
-
-        #Facilitation
-        tmp_inter_facil=type_inter_tmp
-        tmp_inter_facil[which(type_inter_tmp<0,arr.ind=T)]=type_inter_tmp[which(type_inter_tmp<0,arr.ind=T)]*fac_simu[fac]
-        type_inter_facil=list(tmp_inter_facil,tmp_inter_facil)
-
-
-        N_array_simu=array(NA,dim=c(n_iter,3,nspp,2,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,c("compet","facil"),c("ModelI","ModelII")))
-        N_array_simu[1,,,,]=10^3
-        N_orig_simu=array(NA,dim=c(n_iter,3,nspp,2,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,c("compet","facil"),c("ModelI","ModelII")))
-        N_orig_simu[1,,,,]=10^3
         for(t in 1:(n_iter-1)){
-                #ModelI         
-                #Without Seed Bank
-                #Compet
-                var_tmp=step1_modelI(N_array_simu[t,,,"compet","ModelI"],list_inter_compet,temp_model[t],M,morta,a_d,T_opt,B,threshold)
-                Ntmp=var_tmp[[1]]
-                N_array_simu[t+1,,,"compet","ModelI"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
                 #Facil
-                var_tmp=step1_modelI(N_array_simu[t,,,"facil","ModelI"],list_inter_facil,temp_model[t],M,morta,a_d,T_opt,B,threshold)
+                var_tmp=step1_modelII(N_array_simu[t,,],list_H,type_inter_facil,temp_model[t],M,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
-                N_array_simu[t+1,,,"facil","ModelI"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
-                #With Seed Bank
-                #Compet
-                var_tmp=step1_modelI(N_orig_simu[t,,,"compet","ModelI"],list_inter_compet,temp_model[t],M_orig,morta,a_d,T_opt,B,threshold)
-                Ntmp=var_tmp[[1]]
-                N_orig_simu[t+1,,,"compet","ModelI"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
-                #Facil
-                var_tmp=step1_modelI(N_orig_simu[t,,,"facil","ModelI"],list_inter_facil,temp_model[t],M_orig,morta,a_d,T_opt,B,threshold)
-                Ntmp=var_tmp[[1]]
-                N_orig_simu[t+1,,,"facil","ModelI"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
-                ##ModelII
-                #Without Seed Bank
-                #Compet
-                var_tmp=step1_modelII(N_array_simu[t,,,"compet","ModelII"],list_H,type_inter_compet,temp_model[t],M,morta,a_d,T_opt,B)
-                Ntmp=var_tmp[[1]]
-                N_array_simu[t+1,,,"compet","ModelII"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
-                #Facil
-                var_tmp=step1_modelII(N_array_simu[t,,,"facil","ModelII"],list_H,type_inter_facil,temp_model[t],M,morta,a_d,T_opt,B)
-                Ntmp=var_tmp[[1]]
-                N_array_simu[t+1,,,"facil","ModelII"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
-                #With Seed Bank
-                #Compet
-                var_tmp=step1_modelII(N_orig_simu[t,,,"compet","ModelII"],list_H,type_inter_compet,temp_model[t],M_orig,morta,a_d,T_opt,B)
-                Ntmp=var_tmp[[1]]
-                N_orig_simu[t+1,,,"compet","ModelII"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
-                #Facil
-                var_tmp=step1_modelII(N_orig_simu[t,,,"facil","ModelII"],list_H,type_inter_facil,temp_model[t],M_orig,morta,a_d,T_opt,B)
-                Ntmp=var_tmp[[1]]
-                N_orig_simu[t+1,,,"facil","ModelII"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
-
-
-
+                N_array_simu[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
         }
-        N_array[,,,fac,,]=N_array_simu[id,,,,]
-        N_orig[,,,fac,,]=N_orig_simu[id,,,,]
-}
 
