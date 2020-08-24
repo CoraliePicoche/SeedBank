@@ -33,7 +33,7 @@
 \bibtex_command default
 \index_command default
 \float_placement H
-\paperfontsize default
+\paperfontsize 12
 \spacing onehalf
 \use_hyperref false
 \papersize default
@@ -142,6 +142,47 @@ c biodiversity
 
 \change_unchanged
 
+\end_layout
+
+\begin_layout Abstract
+
+\change_inserted -2100369821 1598285199
+Life histories of all species include different stages in which an individual
+ requirements and growth parameters differ, and contrasting growth strategies
+ may be able to maintain the coexistence of a high number of species for
+ long period of time.
+ In most plants, seed formation is part of the reproductive cycle, leading
+ to the establishment of seed banks in which individuals can resist harsher
+ environmental conditions than more mature conspecifics.
+ While the implications of this process on biodiversity have been studied
+ in terrestrial plants, modeling of seed (or cyst) banks for phytoplankton
+ has remained scarce and may prove useful in explaining the maintenance
+ of a high number of species in aquatic environments.
+ In this study, we build a metacommunity model of interacting phytoplankton
+ taxa in a coastal environment, with exchanges with the ocean and a cyst
+ bank.
+ The functioning of the phytoplankton community is based on a previously
+ analysed field data set, which include facilitative and competitive interaction
+s between taxa, and is calibrated for the specificity of the metacommunity
+ model.
+ Other parameters are based on field studies and the sensitivity of the
+ model on their varability is assessed.
+ We consider two type of growth models, i.e.
+ with and without a saturating effect of the interactions.
+ Results are consistent between models and reveal that the presence of a
+ cyst bank is necessary to maintain a high number of species in the community.
+ Indeed, different life strategies lead to a higher vulnerability of certain
+ taxa to extinction in specific moments of the year, which can only be buffered
+ by their survival in the cyst stage.
+ This may indicate the role of coastal environments in re-seeding oceanic
+ regions, as opposed to the more common view of the oceans providing most
+ individuals to the coast.
+ Moreover, the cyst bank enables taxa to tolerate stronger impacts of other
+ individuals as well as severe changes in the environment such as those
+ predicted in the climate change context.
+ This study therefore uncovers the importance of a cryptic life stage of
+ phytoplankton taxa, which can inspire further investigations on the specific
+ mechanisms governing this life stage.
 \end_layout
 
 \begin_layout Section*
@@ -3213,7 +3254,7 @@ status open
 \change_inserted -2100369821 1590487283
 \begin_inset Graphics
 	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/mean_abundance_amplitude_sensitivity.pdf
-	width 99text%
+	width 90text%
 
 \end_inset
 
@@ -3275,10 +3316,10 @@ Scenarios
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1595235974
-Two scenarios were designed to test the buffering effect of the seed bank
+\change_inserted -2100369821 1596720614
+Two scenarios were designed to test the buffering effect of the cyst bank
  against disruption.
- In both cases, it consisted in removing the seed bank by setting seed mortality
+ In both cases, it consisted in removing the cyst bank by setting cyst mortality
  to 100% per day
 \begin_inset Note Note
 status open
@@ -3304,8 +3345,8 @@ I know this is M&M stuff, but this is just a reminder of what was done
 \begin_inset Formula $10^{3}$
 \end_inset
 
- with a seed bank.
- The average abundance of extant taxa only was around 30 without a seed
+ with a cyst bank.
+ The average abundance of extant taxa only was around 30 without a cyst
  bank.
  
 \end_layout
@@ -3318,8 +3359,8 @@ Biotic effects
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1595236000
-Our first hypothesis was that the absence of the seed bank would cause the
+\change_inserted -2100369821 1596720647
+Our first hypothesis was that the absence of the cyst bank would cause the
  community to be more affected by higher competition.
  Counter-intuitively, our results (Fig.
  
@@ -3335,8 +3376,8 @@ noprefix "false"
 ) showed that an increase in competition only had negative effect with model
  I and for high competition values (6 times the reference ones at least),
  shifting from 4 taxa to 3 taxa in the oceanic compartment of a community
- without seed bank while it did not affect the richness of a community with
- a seed bank.
+ without cyst bank while it did not affect the richness of a community with
+ a cyst bank.
  On the contrary, a decrease in competition (from a factor 0.5 and lower)
  or an increase in facilitation (starting from a factor 2 and higher) led
  to much smaller communities in model II, sometimes with a total competitive
@@ -3363,19 +3404,19 @@ confirmed.
  was multiplied by 8 in model II.
  The same pattern (richness stability with model I, sensitivity to a decrease
  in competition or an increase in facilitation with model II) was observed
- in a community with a seed bank, but for larger disturbances.
- Competition indeed jad to be at least divided by 6 or facilitation, to
+ in a community with a cyst bank, but for larger disturbances.
+ Competition indeed had to be at least divided by 6 or facilitation, to
  be multiplied by 7 for richness to decrease to 9 taxa.
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1595235173
+\change_inserted -2100369821 1596720658
 The geometric mean abundance was also affected by such biotic changes.
- The order of magnitude of the average abundance without a seed bank varied
+ The order of magnitude of the average abundance without a cyst bank varied
  between a -1.4 and -2.8 with model I and between -1.3 and -3.3 with model II,
  while it was between 34.4 and 1.4 for model I and between 0.7 and 3.3 for model
- II with a seed bank.
+ II with a cyst bank.
  It should be noted that model I was able to sustain much high abundances
  when competition was low, which can be related to the presence of a hard
  threshold on the amplifying effect of the interactions on the growth rate.
@@ -3396,6 +3437,7 @@ status open
 \change_inserted -2100369821 1590487365
 \begin_inset Graphics
 	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/no_seed_bank_compet.pdf
+	width 70text%
 
 \end_inset
 
@@ -3527,10 +3569,10 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1595236195
-Probability of survival of taxa when the strength of interactions varies,
- as a function of their dynamics characteristics in the reference parameter
- set #########TO (RE)DO 
+\change_inserted -2100369821 1595322641
+Probability of survival of taxa when competition increases, as a function
+ of their dynamics characteristics (min abundance, logarithm of amplitude
+ and niche width) in the reference parameter set 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Probability-of-survival"
@@ -3566,8 +3608,8 @@ Abiotic effects
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1595236482
-Our second hypothesis was that the absence of a seed bank would reduce the
+\change_inserted -2100369821 1596720703
+Our second hypothesis was that the absence of a cyst bank would reduce the
  ability of a community to buffer changes in the environment, here represented
  by variation in the temperature.
  As can be seen on Fig.
@@ -3581,15 +3623,15 @@ noprefix "false"
 
 \end_inset
 
-, this was true for both models as the communities without a seed bank could
+, this was true for both models as the communities without a cyst bank could
  not maintain their richness with an increase in temperature above 2°, as
- opposed to communities with a seed bank which could only be affected by
+ opposed to communities with a cyst bank which could only be affected by
  a 7°C increase (scenario SSP5 8.5).
  In all cases however, the total abundances was not strongly affected.
  Indeed, the total abundance of a community is driven by a small number
- of species which do not disappear.
+ of cyst which do not disappear.
  High total abundances tend to correspond to the abundance of only one or
- two species.
+ two cysts.
  Model II consistenly led to higher abundances, as was already the case
  in the reference simulations.
 \change_unchanged
@@ -3598,9 +3640,9 @@ noprefix "false"
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1595236462
+\change_inserted -2100369821 1596720706
 The variance of the temperature did not affect richness nor total abundance
- of communities with and without a seed bank.
+ of communities with and without a cyst bank.
  
 \end_layout
 
@@ -3619,6 +3661,7 @@ status open
 \change_inserted -2100369821 1594730053
 \begin_inset Graphics
 	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/no_seed_bank_temp.pdf
+	width 70text%
 
 \end_inset
 
@@ -3632,8 +3675,8 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1595236543
-Variation in richness and total abundance with and without a seed bank as
+\change_inserted -2100369821 1596720712
+Variation in richness and total abundance with and without a cyst bank as
  a function of the mean and variance of the temperature with a classical
  Beverton-Holt (left) or a saturating interaction (right) formulation.
  
@@ -3658,6 +3701,69 @@ name "fig:Seed_bank_temp"
 
 \begin_layout Section*
 Discussion 
+\change_inserted -2100369821 1596720267
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1596722509
+Using a meta-community model which accounts for migrations between the ocean
+ and the coast, as well as migrations between the top and the bottom of
+ the coastal water column, we were able to show the way a specific life
+ stage, the cyst, can maintain biodiversity in different marine compartments.
+ With field-based parameters, we modeled the behaviour of phytoplanktonic
+ communities with and without a cyst bank.
+ Biodiversity decreased drastically in the absence of a storing compartment,
+ as well as the total abundance of the community.
+ Moreover, when faced with a biotic or abiotic perturbations, communities
+ that could divert part of their population to a dormant stage were less
+ prone to species loss and could maintain their biomass through the years.
+ These results were consistent in the two interaction models, with and without
+ saturating effects, that were compared.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1596728154
+The assessment of the cyst bank effect depends on the accuracy of the dynamics
+ described in the model.
+ Our model parameters were partly based on a specific field abundance dataset,
+ which allowed us to approximate the biotic interactions between phytoplanktonic
+ taxa and their phenology, and partly based on observations made at other
+ study sites.
+ The range of values found in the literature for certain parameters demonstrated
+ both the variability of the environment and phytoplanktonic reactions,
+ and the uncertainty one can have when measuring certain processes.
+ Hydrodynamics features are highly site-dependent and sometimes poorly defined:
+ cyst burial and resuspension, for instance, are functions of the shape
+ of the coastal site and its interface with the ocean, as well as stochastic
+ phenomena, such as gusts of wind, bioturbation or anthropogenic disturbances.
+ On the other hand, taxon specificities such as shape, buoyancy regulation
+ capacity or cyst formation rate can influence the rate of contribution
+ to the seed bank (which could be approximated by the variation in sinking
+ rate in our model).
+ [[[Here maybe discuss what we have in the literature for hydrodynamics
+ stuff]]] [[This would also be the place -as we are speaking of parameters
+ uncertainty for some words on niches]]] Our model proved quite resilient
+ to variations in these parameters, which makes our conclusions qualitatively
+ reliable.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1596729032
+The capacity of a seed bank to buffer disadvantageous environments to maintain
+ population over time is a staple in terrestrial plant literature [[refS]].
+ Both empirical [[ref]] and theoretical [[ref]]
+\begin_inset space ~
+\end_inset
+
+evidence show that investing part of the biomass of a population in stages
+ that will spread their growth over periods longer than the usual life cycle
+ of the organisms is a successful strategy to maintain over time.
+ This is the basis of bet-hedging 
 \end_layout
 
 \begin_layout Standard
