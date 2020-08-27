@@ -1167,7 +1167,7 @@ noprefix "false"
 \begin_inset Formula 
 \begin{eqnarray}
 a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}\alpha_{ij}N_{j,max}\right)\label{eq:a_C}\\
-(1-0.7)a_{C}+0.7a_{F} & = & 1\label{eq:a_F}
+(1-0.7)a_{C}+0.7a_{F} & = & 0\label{eq:a_F}
 \end{eqnarray}
 
 \end_inset
