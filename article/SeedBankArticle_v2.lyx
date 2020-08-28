@@ -146,7 +146,7 @@ c biodiversity
 
 \begin_layout Abstract
 
-\change_inserted -2100369821 1598559292
+\change_inserted -2100369821 1598601295
 Life histories of all species include different stages in which an individual
  requirements and growth characteristics vary.
  In most plants, seed formation is part of the reproductive cycle, leading
@@ -162,12 +162,14 @@ Life histories of all species include different stages in which an individual
  found in aquatic environments.
  In this study, we build a metacommunity model of interacting phytoplankton
  taxa along a coast exchanging with a cyst bank and with the ocean.
- The functioning of the phytoplankton community based on a previously analysed
- field data-set, which includes facilitative and competitive interactions
- between taxa, while exchanges between compartments are controlled by mostly
- hydrodynamical parameters for which the sensitivity of the model is assessed.
- We consider two type of growth models, i.e.
- with and without a saturating effect of the interactions.
+ The functioning of the phytoplankton community is based on a previously
+ analysed field data-set, which includes facilitative and competitive interactio
+ns between taxa, while exchanges between compartments are controlled by
+ mostly hydrodynamical parameters for which the sensitivity of the model
+ is assessed.
+ We consider two models, i.e.
+ with and without a saturating effect of the interactions on the growth
+ rates.
  Results are consistent between models and confirm that a cyst bank is necessary
  to maintain all species in the community.
  Indeed, the life strategies of certain taxa make them more vulnerable to
@@ -175,10 +177,24 @@ Life histories of all species include different stages in which an individual
  by their survival in the coastal cyst bank, thus highlighting the possible
  role of coastal environments in re-seeding oceanic regions, as opposed
  to the more common view of the oceans providing most individuals to the
- coast.
+ coast
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1598601279
+Maybe we should remove the last proposition
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
  Moreover, the cyst bank enables populations to tolerate stronger interactions
- as well as severe changes in the environment such as those predicted within
- the climate change context.
+ within the community as well as severe changes in the environment such
+ as those predicted within the climate change context.
  This study therefore uncovers the importance of phytoplanktonic cyst, which
  can inspire further investigations on the specific mechanisms governing
  this life stage.
@@ -298,7 +314,7 @@ long-term coexistence
 \change_unchanged
 .
 
-\change_inserted -2100369821 1598559671
+\change_inserted -2100369821 1598601422
  The storage effect, a major paradigm in the modern coexistence theory (Chesson
  2000, 2018), has first been defined by the presence of a long-lived life
  stage and temporal variation in recruitment from this stage that helps
@@ -312,7 +328,7 @@ literal "false"
 
 .
  Furthermore, the structure and strengths of interactions between organisms
- differ between these life stages (Kinlock 2020
+ may differ between these life stages (Kinlock 2020
 \begin_inset Note Note
 status open
 
@@ -328,7 +344,7 @@ see Gallien 2017 if necessary, but that is not what we cover here
 
 ).
  The seed stage itself constrasts with other parts of the life cycle as
- organisms enter a dormant phase
+ organisms can enter a dormant phase
 \begin_inset Note Note
 status open
 
@@ -344,11 +360,12 @@ Is it always the case, though?
 
  which allows them to sustain harsher environmental conditions for longer
  periods of time than later stages [ref].
- These two mechanisms suggest that neglecting the explicit modeling of the
- seed stage can alter the understanding we have of the dynamics of organisms,
+ These mechanisms suggest that neglecting the explicit modeling of the seed
+ stage can alter the understanding we have of the dynamics of organisms,
  both at the individual (Nguyen et al 2019) and community level (Wisnoski
  et al.
- 2019)
+ 2019).
+
 \change_unchanged
  
 \change_deleted -2100369821 1598357811
@@ -476,7 +493,15 @@ s
  Although ecologists have proposed for a long time that the blooms (peaks
  in abundances that can cover several orders of magnitude) may initiate
  after the resuspension and germination of phytoplanktonic resting cells,
- cysts, 
+ 
+\change_inserted -2100369821 1598601463
+or 
+\change_unchanged
+cysts
+\change_deleted -2100369821 1598601545
+,
+\change_unchanged
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "patrick_factors_1948,marcus_minireview:_1998"
@@ -495,8 +520,31 @@ literal "false"
 ).
  The classical view behind phytoplankton dynamics is that bloom formation
  is mostly seasonal, due to the variation in light and temperature, assuming
- vegetative cells remaining in the environment can duplicate enough to attain
- bloom amplitude.
+ vegetative cells remaining in the environment can duplicate enough to 
+\change_deleted -2100369821 1598601498
+attain 
+\change_unchanged
+bloom
+\change_deleted -2100369821 1598601531
+ amplitude
+\change_inserted -2100369821 1598601513
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1598601517
+Maybe cite Huisman here?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  However, a recent review 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -549,9 +597,12 @@ Phytoplankton communities in coastal environments may benefit from seed
  (hereafter called cyst banks to remain consistent with phytoplankton terminolog
 y)
 \change_unchanged
- even more than the oceanic communities [REF-find back], as the distance
- to the sea bottom is smaller allowing recolonization of the pelagic environment
- from the shallow sea bottom.
+ even more than the oceanic communities
+\change_deleted -2100369821 1598601611
+ [REF-find back]
+\change_unchanged
+, as the distance to the sea bottom is smaller allowing recolonization of
+ the pelagic environment from the shallow sea bottom.
  In the open sea, cysts might arrive together with animals, but such events
  might be rarer in comparison.
  Also, and similarly to the seed bank approach in the terrestrial plant
@@ -621,7 +672,7 @@ XXX [and we describe a little less the models and a little more what we
 \change_unchanged
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Not sure whether we should keep this paragraph after that intro sentence
@@ -715,6 +766,8 @@ cyst
 \change_deleted -2100369821 1588608444
  (hereafter called a cyst bank to remain consistent with phytoplankton terminolo
 gy)
+\change_inserted -2100369821 1598601731
+,
 \change_unchanged
  and the ocean.
  Only oceanic and coastal pelagic cells are subject to BH-density dependence.
@@ -778,7 +831,11 @@ noprefix "false"
 \end_inset
 
 ).
- We subsequently defined saturating interactions (model II, eq.
+ We subsequently define
+\change_deleted -2100369821 1598601778
+d
+\change_unchanged
+ saturating interactions (model II, eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -840,7 +897,13 @@ I wrote exp(r_i) instead of e^r_i because e is also the exchange rate (was
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
- are the strength of the effect of 
+ 
+\change_deleted -2100369821 1598601798
+are
+\change_inserted -2100369821 1598601799
+is
+\change_unchanged
+ the strength of the effect of 
 \change_deleted -2100369821 1595235841
 species
 \change_inserted -2100369821 1595235841
@@ -865,8 +928,23 @@ taxon
 \end_inset
 
  accounts for lethal processes such a natural mortality, predation or parasitism.
- First estimate of interaction coefficients are inferred from our previous
- work on coastal data with Multivariate AutoRegressive (MAR) models 
+ First estimate of interaction coefficients are inferred from 
+\change_deleted -2100369821 1598601871
+our
+\change_inserted -2100369821 1598601871
+a
+\change_unchanged
+ previous work on
+\change_inserted -2100369821 1598601892
+ a specific
+\change_unchanged
+ coastal 
+\change_deleted -2100369821 1598601894
+data
+\change_inserted -2100369821 1598601895
+community
+\change_unchanged
+ with Multivariate AutoRegressive (MAR) models 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "picoche_strong_2019"
@@ -876,11 +954,18 @@ literal "false"
 
 .
  How to shift from MAR- to BH-interaction matrices is described in the SI.
- We later calibrate this coefficient to an empirical dataset, since MAR
- models were applied at a different timescale.
+ We later calibrate this coefficient 
+\change_deleted -2100369821 1598601933
+to an empirical dataset, 
+\change_inserted -2100369821 1598601937
+for this model, 
+\change_unchanged
+since MAR models were applied at a different timescale.
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1598601968
 In model I, we assume that competition for nutrients is stronger in the
  ocean than along the coast [ref], thus a coefficient 
 \begin_inset Formula $k_{c2o}>1$
@@ -1124,8 +1209,12 @@ taxa
  (e.g., in a resource competition context, different species are expected
  to feel resource limitations at different concentrations of nutrients and
  at different number of competitors).
- .
- How to use parameter estimates from model I to specify model II is described
+ 
+\change_deleted -2100369821 1598602053
+.
+ 
+\change_unchanged
+How to use parameter estimates from model I to specify model II is described
  in the SI.
 \end_layout
 
@@ -2119,9 +2208,9 @@ and
 \change_unchanged
 .
 
-\change_inserted -2100369821 1598560092
- We mimick the temperature input as a sinusoidal signal with the same mean
- and variance as the empirical data set described below.
+\change_inserted -2100369821 1598602126
+ We mimick the temperature input as a noisy sinusoidal signal with the same
+ mean and variance as the empirical data set described below.
 
 \change_deleted -2100369821 1598560075
  
@@ -2349,14 +2438,24 @@ Sinking rate
 
 \begin_layout Standard
 Phytoplanktonic particles have a higher density than water and cannot swim
- to prevent sinking (although see 
+ to prevent sinking (although 
+\change_inserted -2100369821 1598602323
+they are able to regulate their buoyancy, 
+\change_deleted -2100369821 1598602324
+see 
+\change_unchanged
+
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citealt
 key "reynolds2006ecology"
 literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1598602336
+)
+\change_deleted -2100369821 1598602333
  for a discussion on the settling of phytoplanktonic cells compared to inorganic
  particles)
 \begin_inset Note Note
@@ -2368,10 +2467,23 @@ Remove the part in parentheses?
 
 \end_inset
 
+
+\change_unchanged
 .
  Sinking is mostly affected by hydrodynamics, but at the species-level,
- size, shape and colony-formation capacity are key determinants of the particle
- floatation.
+ size, shape
+\change_inserted -2100369821 1598602489
+, density-regulation 
+\change_deleted -2100369821 1598602492
+ 
+\change_unchanged
+and colony-formation 
+\change_deleted -2100369821 1598602494
+capacity
+\change_inserted -2100369821 1598602498
+capabilities
+\change_unchanged
+ are key determinants of the particle floatation.
  In this model, the sinking rate of each taxon is drawn from a beta distribution
  with a mean value of 9%, and a maximum around 30%, that is 
 \begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
@@ -2463,7 +2575,13 @@ Any idea for a better way to call it than burial?
 
  might be a prevailing phenomenum in driving phytoplanktonic dynamics.
  Once cysts have been buried, they are not accessible for resuspension even
- if they could have germinated if put in an accessible location.
+ if they could have germinated
+\change_deleted -2100369821 1598602570
+ if put in
+\change_inserted -2100369821 1598602571
+ from
+\change_unchanged
+ an accessible location.
  Burial depends on the hydrodynamics of the site, but also on biotic processes
  (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
  activities (e.g., jet skiing).
@@ -2670,7 +2788,47 @@ average abundance
 \begin_inset Formula $S$
 \end_inset
 
- is the number of taxa.
+ is the number of taxa
+\change_inserted -2100369821 1598602872
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\bar{N_{i}}$
+\end_inset
+
+ is the logarithm of the mean abundance of 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+taxon 
+\begin_inset Formula $i$
+\end_inset
+
+
+\change_deleted -2100369821 1598602686
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -2678,6 +2836,18 @@ amplitude of the cycles
 \begin_inset Formula $f_{2}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left[\left(\max(N_{i,obs})-\min(N_{i,obs})\right)-\left(\max(N_{i,sim})-\min(N_{i,sim})\right)\right]{}^{2}}$
 \end_inset
 
+
+\change_inserted -2100369821 1598602874
+ where 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+ is the logarithm of the abundance of taxon 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\change_unchanged
 
 \end_layout
 
@@ -2694,11 +2864,11 @@ period of the bloom.
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1589446613
+\change_inserted -2100369821 1598603109
 Simulations with taxon extinction are discarded.
  Models are ranked according to their performance for each summary statistic
  and the set of interactions with the best rank in every category is kept
- throughout the rest of the simulation.
+ throughout the rest of the simulations.
 \change_unchanged
 
 \end_layout
@@ -2797,9 +2967,9 @@ Scenarii
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1594737746
-The effect of the seed bank on biodiversity and community dynamics can be
- evaluated through the response to disturbance with and without the seed
+\change_inserted -2100369821 1598603125
+The effect of the cyst bank on biodiversity and community dynamics can be
+ evaluated through the response to disturbance with and without the cyst
  compartment.
  
 \change_deleted -2100369821 1594737751
@@ -3356,7 +3526,7 @@ Yes barplots are good for that.
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1595235931
+\change_inserted -2100369821 1598603299
 Total phytoplankton dynamics were not strongly affected by changes in the
  parameter values (Fig.
  
@@ -3371,9 +3541,9 @@ noprefix "false"
 
 ).
  As values varied in a plausible range, the average change in abundance
- on the coast between the reference simulation and the simulations varied
- between -4.6 and 1.9% for model I and between -4.2 and 1.1% for model II, with
- similar deviations (same sign and magnitude) in the two models.
+ on the coast between the reference simulation and the sensitivity simulations
+ varied between -4.6 and 1.9% for model I and between -4.2 and 1.1% for model
+ II, with similar deviations (same sign and magnitude) in the two models.
  The only parameter that led to a substantially different result between
  the two models was the resuspension parameter (leading to a different value
  of the parameter 
@@ -3410,7 +3580,7 @@ noprefix "false"
 On the other hand, the decimal logarithm of the maximum to minimum ratio
  of abundance (i.e., the order of magnitude of the range of abundances for
  each taxa) was more affected by changes in parameters and could vary by
- -39.4 to 18.6% in model I, and between -41.2% and 23.02% in model II.
+ -39.4 to 18.6% in model I, and between -41.2% and 23% in model II.
  Results were qualitatively the same in the two models, with a decrease
  in cyst burial being the main driver of the decrease in amplitude, and
  a decrease in resuspension leading to an increase in amplitude.
@@ -3623,13 +3793,13 @@ confirmed.
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1596720658
+\change_inserted -2100369821 1598603612
 The geometric mean abundance was also affected by such biotic changes.
  The order of magnitude of the average abundance without a cyst bank varied
  between a -1.4 and -2.8 with model I and between -1.3 and -3.3 with model II,
  while it was between 34.4 and 1.4 for model I and between 0.7 and 3.3 for model
  II with a cyst bank.
- It should be noted that model I was able to sustain much high abundances
+ It should be noted that model I was able to produce much higher abundances
  when competition was low, which can be related to the presence of a hard
  threshold on the amplifying effect of the interactions on the growth rate.
 \end_layout
@@ -3820,7 +3990,7 @@ Abiotic effects
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1596720703
+\change_inserted -2100369821 1598603697
 Our second hypothesis was that the absence of a cyst bank would reduce the
  ability of a community to buffer changes in the environment, here represented
  by variation in the temperature.
@@ -3836,14 +4006,14 @@ noprefix "false"
 \end_inset
 
 , this was true for both models as the communities without a cyst bank could
- not maintain their richness with an increase in temperature above 2°, as
- opposed to communities with a cyst bank which could only be affected by
- a 7°C increase (scenario SSP5 8.5).
+ not maintain their richness with an increase in temperature above 2°C,
+ as opposed to communities with a cyst bank which could only be affected
+ by a 7°C increase (scenario SSP5 8.5).
  In all cases however, the total abundances was not strongly affected.
  Indeed, the total abundance of a community is driven by a small number
- of cyst which do not disappear.
+ of taxa which do not disappear.
  High total abundances tend to correspond to the abundance of only one or
- two cysts.
+ two taxa.
  Model II consistenly led to higher abundances, as was already the case
  in the reference simulations.
 \change_unchanged
@@ -3919,11 +4089,12 @@ Discussion
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1596722509
+\change_inserted -2100369821 1598603733
 Using a meta-community model which accounts for migrations between the ocean
  and the coast, as well as migrations between the top and the bottom of
  the coastal water column, we were able to show the way a specific life
- stage, the cyst, can maintain biodiversity in different marine compartments.
+ stage, the cyst stage, can help maintain biodiversity in different marine
+ compartments.
  With field-based parameters, we modeled the behaviour of phytoplanktonic
  communities with and without a cyst bank.
  Biodiversity decreased drastically in the absence of a storing compartment,
@@ -3985,9 +4156,11 @@ Effect of interactions on the model : setting of a threshold in model I,
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1598555542
-The capacity of a seed bank to buffer disadvantageous environments to maintain
- population over time is a staple in terrestrial plant literature [[refS]].
+\change_inserted -2100369821 1598603995
+Seed bank buffering effect in terrestrial plant literature for interation
+ and environment: The capacity of a seed bank to buffer disadvantageous
+ environments to maintain population over time is a staple in terrestrial
+ plant literature [[refS]].
  Both empirical [[ref]] and theoretical [[ref]] evidence show that investing
  part of the biomass of a population in stages that will spread their growth
  over periods longer than the usual life cycle of the organisms is a successful
@@ -3995,21 +4168,19 @@ The capacity of a seed bank to buffer disadvantageous environments to maintain
  This is the basis of bet-hedging 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 
-\change_inserted -2100369821 1598555496
-Seed bank : first analysis in contrast with other existing model or observation
- papers (3 models I know + Nguyen et al., for example).
- 
+\change_inserted -2100369821 1598604053
+What this adds to phytoplanktonic studies (a few words on models already
+ existing, such as Dalelio and Hinners?).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 
-\change_inserted -2100369821 1598555496
-Conclue on possible changes in actual communities.
- 
-\change_unchanged
-
+\change_inserted -2100369821 1598604097
+What needs to be explored now (specific cyst formation and regulation, parameter
+s regulating the dynamics of the cyst bank itself -burial and resuspension,
+ for instance)
 \end_layout
 
 \begin_layout Standard
