@@ -94,203 +94,43 @@ A metacommunity model for phytoplankton biodiversity maintenance with a
 \end_layout
 
 \begin_layout Abstract
-
-\change_deleted -666822487 1600931582
-Life histories of all species include different stages in which an individual
- requirements and growth characteristics vary.
- In most plants, s
-\change_inserted -666822487 1600931582
-S
-\change_unchanged
-eed formation is part of the reproductive cycle, leading to the 
-\change_deleted -666822487 1600931593
-establishment
-\change_inserted -666822487 1600931595
-accumulation
-\change_unchanged
- of 
-\change_deleted -666822487 1600931601
-seed banks
-\change_inserted -666822487 1600931603
-resistance stages
-\change_unchanged
- 
-\change_deleted -666822487 1600931620
-in which individuals
-\change_inserted -666822487 1600931620
-that
-\change_unchanged
- can 
-\change_deleted -666822487 1600931608
-resist
-\change_inserted -666822487 1600931609
-withstand
-\change_unchanged
- harsher environmental conditions
-\change_deleted -666822487 1600931629
- than more mature conspecifics,
-\change_unchanged
- for 
-\change_deleted -666822487 1600931631
-a 
-\change_unchanged
-long period
-\change_inserted -666822487 1600931635
-s
-\change_unchanged
- of time.
- At the community scale, multiple species with 
-\change_inserted -666822487 1600931657
-such 
-\change_unchanged
-long-lasting life stages 
-\change_deleted -666822487 1600931661
-are
-\change_inserted -666822487 1600931661
-can be
-\change_unchanged
- more likely to coexist thanks to seeds
-\change_inserted -666822487 1600931667
-'
-\change_unchanged
- buffering effect.
- While the implications of this process 
-\change_deleted -666822487 1600931674
-on
-\change_inserted -666822487 1600931675
-for
-\change_unchanged
- biodiversity have been studied in terrestrial plants, seed (or cyst) banks
- are usually neglected in phytoplankton multispecies models
-\change_inserted -666822487 1600931688
-,
-\change_unchanged
- 
-\change_deleted -666822487 1600931693
-but may prove useful to explain phytoplankton high biodiversity
-\change_inserted -666822487 1600931756
-in spite of widespread empirical evidence for such cyst banks
-\change_unchanged
-.
+Seed formation is part of the reproductive cycle, leading to the accumulation
+ of resistance stages that can withstand harsher environmental conditions
+ for long periods of time.
+ At the community scale, multiple species with such long-lasting life stages
+ can be more likely to coexist thanks to seeds' buffering effect.
+ While the implications of this process for biodiversity have been studied
+ in terrestrial plants, seed (or cyst) banks are usually neglected in phytoplank
+ton multispecies models, in spite of widespread empirical evidence for such
+ cyst banks.
  In this study, we build a metacommunity model of interacting phytoplankton
  species with a cyst bank.
- The model is parameterized with empirically-driven 
-\change_deleted -666822487 1600931775
-modelling of 
+ The model is parameterized with empirically-driven growth rates functions
+\change_deleted -2100369821 1601370715
+,
+\change_inserted -2100369821 1601370715
+ and
 \change_unchanged
-growth rates
-\change_inserted -666822487 1600931780
- functions
-\change_unchanged
-, field-based interaction estimates (which include both facilitative and
- competitive interactions)
-\change_deleted -666822487 1600931795
-, while e
-\change_inserted -666822487 1600931796
-.
- E
-\change_unchanged
-xchanges between compartments 
-\change_inserted -666822487 1600931879
-(coastal pelagic individuals, the cyst bank, and open ocean pelagic individuals)
- 
-\change_unchanged
-are controlled by 
-\change_deleted -666822487 1600931887
-mostly 
-\change_unchanged
-hydrodynamical parameters 
-\change_deleted -666822487 1600931891
-for
-\change_inserted -666822487 1600931891
-to
-\change_unchanged
- which the sensitivity of the model is assessed.
+ field-based interaction estimates (which include both facilitative and
+ competitive interactions).
+ Exchanges between compartments (coastal pelagic individuals, the cyst bank,
+ and open ocean pelagic individuals) are controlled by hydrodynamical parameters
+ to which the sensitivity of the model is assessed.
  We consider two models, i.e., with and without a saturating effect of the
  interactions on the growth rates.
- 
-\change_deleted -666822487 1600931957
-R
-\change_inserted -666822487 1600931957
-Our r
-\change_unchanged
-esults are consistent between models
-\change_inserted -666822487 1600931960
-,
-\change_unchanged
- and 
-\change_deleted -666822487 1600931963
-confirm
-\change_inserted -666822487 1600931963
-show
-\change_unchanged
- that a cyst bank is necessary to maintain all species in the community
- 
-\change_deleted -666822487 1600931974
-for
-\change_inserted -666822487 1600931969
-over
-\change_unchanged
- 30 years.
+ Our results are consistent between models, and show that a cyst bank is
+ necessary to maintain all species in the community over 30 years.
  Indeed, the life histories of certain species make them more vulnerable
- to extinction 
-\change_deleted -666822487 1600931988
-during
-\change_inserted -666822487 1600931988
-at
-\change_unchanged
- specific 
-\change_deleted -666822487 1600931990
-periods
-\change_inserted -666822487 1600931994
-times within a
-\change_deleted -666822487 1600931995
- of the
-\change_unchanged
- year, 
-\change_deleted -666822487 1600932015
-which can only
-\change_inserted -666822487 1600932019
-but this process is
-\change_deleted -666822487 1600932020
- be
-\change_unchanged
- buffered by their survival in the coastal cyst bank
-\change_inserted -666822487 1600932039
- and re-invasion of the community.
- We
-\change_deleted -666822487 1600932038
-,
-\change_unchanged
- thus highlight
-\change_deleted -666822487 1600932043
-ing
-\change_unchanged
- the possible role of coastal environments in re-seeding oceanic regions.
+ to extinction at specific times within a year, but this process is buffered
+ by their survival in the coastal cyst bank and re-invasion of the community.
+ We thus highlight the possible role of coastal environments in re-seeding
+ oceanic regions.
  Moreover, the cyst bank enables populations to tolerate stronger interactions
  within the community as well as more severe changes in the environment,
  such as those predicted within a climate change context.
- This study therefore uncovers the importance of 
-\change_inserted -666822487 1600932068
-the 
-\change_unchanged
-phytoplanktonic cyst
-\change_inserted -666822487 1600932105
- stage for diversity maintenance
-\change_unchanged
-, which 
-\change_deleted -666822487 1600932079
-can
-\change_inserted -666822487 1600932079
-should
-\change_unchanged
- inspire further investigations o
-\change_deleted -666822487 1600932087
-n the specific mechanisms governing
-\change_inserted -666822487 1600932087
-f
-\change_unchanged
- this life stage.
+ This study therefore uncovers the importance of the phytoplanktonic cyst
+ stage for diversity maintenance, which should inspire further investigations
+ of this life stage.
 \end_layout
 
 \begin_layout Section*
@@ -298,59 +138,15 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-How the high biodiversity of 
-\change_deleted -666822487 1600932114
-plant communities
-\change_inserted -666822487 1600932117
-primary produces
+How the high biodiversity of primary produce
+\change_inserted -2100369821 1601370735
+r
 \change_unchanged
- maintains is still an unresolved question for both experimental and theoretical
- ecology.
+s maintains is still an unresolved question for both experimental and theoretica
+l ecology.
  Terrestrial plants and phytoplanktonic communities can present hundreds
  of species relying on similar resources.
- 
-\change_deleted -666822487 1600932152
-Early theory has proposed that environmental fluctuations 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "hutchinson_paradox_1961"
-literal "false"
-
-\end_inset
-
- could sustain non-equilibrium coexistence but further research showed that
- this hypothesis did require rather specific mechanisms 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "chesson_roles_1997,fox_intermediate_2013"
-literal "false"
-
-\end_inset
-
-.
-\change_inserted -666822487 1600932156
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1600932637
-This statetement was awkward as right after this the storage effect is highlight
-ed as likely with seed banks.So I deleted
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- Some degree of niche differentiation 
-\change_inserted -666822487 1600932204
-is generally expected 
-\change_unchanged
-
+ Some degree of niche differentiation is generally expected 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "chesson_mechanisms_2000"
@@ -358,14 +154,8 @@ literal "false"
 
 \end_inset
 
-, 
-\change_inserted -666822487 1600932262
-but complex life-history structure can further increase the likelihood of
- coexistence 
-\change_deleted -666822487 1600932267
-demographic processes
-\change_unchanged
- 
+, but complex life-history structure can further increase the likelihood
+ of coexistence 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "loreau_competitive_1994,moll_competition_2008,fujiwara_coexistence_2011,chu_large_2015"
@@ -373,15 +163,8 @@ literal "false"
 
 \end_inset
 
- and 
-\change_deleted -666822487 1600932366
-life history traits of the species forming the community
-\change_inserted -666822487 1600932385
-so does the response of life history traits to variation in the environment
-\change_unchanged
+ and so does the response of life history traits to variation in the environment
  
-\change_inserted -2100369821 1600265605
-
 \begin_inset CommandInset citation
 LatexCommand citep
 key "chesson_community_1988,rees_long-term_2001,huang_contribution_2016"
@@ -390,38 +173,22 @@ literal "false"
 \end_inset
 
 
-\change_inserted -666822487 1598856605
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1598856772
-Again, do they talk about life-history mostly?
-\change_inserted -2100369821 1600258350
- In 'Community consequences of life-history traits in a variable environment'
- , Chesson & Huntly predict nonadditive growth rates with 'life history
- traits' such as iteroparity, maturation over several years, diapause, storage
- of resources and of course seed bank formation with dormance.
+Again, do they talk about life-history mostly? In 'Community consequences
+ of life-history traits in a variable environment' , Chesson & Huntly predict
+ nonadditive growth rates with 'life history traits' such as iteroparity,
+ maturation over several years, diapause, storage of resources and of course
+ seed bank formation with dormance.
  They then turn to a general model with two examples: lottery model and
  seed bank model
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_deleted -2100369821 1600265678
- 
-\change_deleted -666822487 1600932400
- have to be considered in addition to stochastic environmental variations
- to understand biodiversity persistence
-\change_unchanged
 .
-\change_inserted -2100369821 1598445237
-
 \end_layout
 
 \begin_layout Standard
@@ -430,7 +197,7 @@ Analyses of coexistence in terrestrial plant communities sometimes take
 \begin_inset CommandInset citation
 LatexCommand citep
 before "e.g.,"
-key "aikio_seed_2002,comita_asymmetric_2010,adler_coexistence_2010,chu_large_2015"
+key "aikio_seed_2002,comita_asymmetric_2010,chu_large_2015"
 literal "false"
 
 \end_inset
@@ -439,7 +206,7 @@ literal "false"
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see, among others,"
-key "ellner_alternate_1987,levine_effects_2004,martorell_testing_2014,godoy_intransitivity_2017,adler_competition_2018"
+key "ellner_alternate_1987,levine_effects_2004,martorell_testing_2014,adler_competition_2018"
 literal "false"
 
 \end_inset
@@ -447,6 +214,14 @@ literal "false"
 
 \begin_inset Note Note
 status collapsed
+
+\begin_layout Plain Layout
+CP:
+\change_deleted -2100369821 1601370942
+ 
+\change_unchanged
+
+\end_layout
 
 \begin_layout Plain Layout
 Actually, Levine and Rees model two species, 1 seedling forb compartment
@@ -461,25 +236,19 @@ Actually, Levine and Rees model two species, 1 seedling forb compartment
 status collapsed
 
 \begin_layout Plain Layout
-The Nguyen et al.
+FB: The Nguyen et al.
  paper is interesting but only account for populations
 \end_layout
 
 \end_inset
 
 .
- Considering at least two stages, seeds/seedlings and adults, 
-\change_deleted -666822487 1600932547
-different models have uncovered mechanisms
-\change_inserted -666822487 1600932553
-several mechanisms
+ Considering at least two stages, seeds/seedlings and adults, several mechanisms
+ that can contribute to long-term coexistence in 
+\change_inserted -2100369821 1601631723
+spatially and/or temporally 
 \change_unchanged
- that can contribute to long-term coexistence in fluctuating environment
- 
-\change_inserted -666822487 1600932565
-have been uncovered 
-\change_unchanged
-
+fluctuating environment have been uncovered 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "shmida_coexistence_1985,chu_large_2015"
@@ -487,6 +256,25 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1601631947
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1601632040
+Should I elaborate here? As I don't, there might be no need for citation
+ here
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 .
  The storage effect, a major paradigm in the modern coexistence theory 
 \begin_inset CommandInset citation
@@ -496,9 +284,14 @@ literal "false"
 
 \end_inset
 
-, has first been defined by the presence of a long-lived life stage and
- temporal variation in recruitment from this stage that helps escape interspecif
-ic competition 
+,
+\change_inserted -2100369821 1601631492
+ is one of them.
+ It
+\change_unchanged
+ has first been defined by the presence of a long-lived life stage and temporal
+ variation in recruitment from this stage that helps escape interspecific
+ competition 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "chesson1986environmental,caceres_temporal_1997,ellner_how_2016"
@@ -506,18 +299,27 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1601632932
+, and has often been discussed in the presence of a seed bank (Aikio et
+ al.
+ 2002, Angert et al.
+ 2009, Chu and Adler 2015).
+\change_deleted -2100369821 1601632171
 .
- 
-\change_deleted -666822487 1600932586
-Furthermore, the structure and strengths of 
+
 \change_unchanged
- The seed stage itself contrasts with other parts of the life cycle as organisms
+ 
+\change_deleted -2100369821 1601370942
+ 
+\change_unchanged
+The seed stage itself contrasts with other parts of the life cycle as organisms
  can enter a dormant phase
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-Is it always the case, though? For seeds, it is common.
+CP: Is it always the case, though? FB: For seeds, it is common.
 \end_layout
 
 \end_inset
@@ -526,37 +328,49 @@ Is it always the case, though? For seeds, it is common.
  periods of time than later stages 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "aikio_seed_2002,wisnoski_dormancy_2019"
+key "aikio_seed_2002"
 literal "false"
 
 \end_inset
 
 .
-\change_inserted -666822487 1600932620
+
+\change_inserted -2100369821 1601567737
+ In a meta-community model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+, dormancy interacts with dispersal and tends to increase local diversity
+ in temporally fluctuating environments.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1601567736
+Here you should report what Winoski et al.
+ found! Did they find more coexistence with a dormant stage even without
+ resorting to a storage effect? That would be interesting! They do have
+ a storage effect in their density dependence formulation.
+ Maybe we should talk about it?
+\end_layout
+
+\end_inset
+
 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1600932688
-Here you should report what Winoski et al.
- found! Did they find more coexistence with a dormant stage even without
- resorting to a storage effect? That would be interesting!
-\change_unchanged
-
-\end_layout
-
+\change_inserted -2100369821 1601567736
+\begin_inset Quotes eld
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -666822487 1600932597
- 
-\change_inserted -2100369821 1600265860
 Trade-offs between seed and adult functional traits are also found in field
  and experimental observations 
 \begin_inset CommandInset citation
@@ -568,35 +382,21 @@ literal "false"
 
 , which suggests that they are necessary to maintain communities.
  
-\change_inserted -666822487 1600932716
+\begin_inset Quotes eld
+\end_inset
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1600932739
-These sentence on trade-off would have to be made more precise enough.
- 
-\change_unchanged
-
+ : FB: These sentence on trade-off would have to be made more precise enough.
+ CP: Is the sentence necessary, though? It is true that it comes out of
+ the blue and the thought is not pursued
 \end_layout
 
 \end_inset
 
-
+ 
 \change_unchanged
 These mechanisms suggest that neglecting the explicit modeling of the seed
  stage can alter the understanding we have of the dynamics of organisms,
- both at the 
-\change_deleted -2100369821 1600245444
-individual
-\change_inserted -2100369821 1600245444
-population
-\change_unchanged
- 
-\change_inserted -2100369821 1600266027
-
+ both at the population 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "nguyen_consequences_2019"
@@ -604,11 +404,7 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
  and community level 
-\change_inserted -2100369821 1600266159
-
 \begin_inset CommandInset citation
 LatexCommand citep
 key "manna_disentangling_2017,wisnoski_dormancy_2019"
@@ -616,70 +412,137 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 .
-
-\change_deleted -2100369821 1600245444
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
+\noindent
+
+\change_inserted -2100369821 1601567851
 Even though different coexistence mechanisms have been unveiled through
  the use of several life stages and a focus on the youngest stage (seeds)
- for terrestrial plants, the life cycle
-\change_inserted -2100369821 1598357993
-s
-\change_unchanged
- of aquatic plants, and more specifically that of phytoplanktonic algae
-\change_inserted -2100369821 1600246915
+ for terrestrial plants, the effect of life cycles on aquatic plants communities
+, and more specifically that of phytoplanktonic algae, is often ignored.
+ The classical view behind phytoplankton dynamics is that blooms (peaks
+ in abundances that can cover several orders of magnitude) are due to seasonal
+ variation in light, temperature and nutrients, as well as hydrodynamics
+ processes (Reynolds 2006).
+ In this scenario, differential responses to environmental signals ensure
+ the coexistence of multiple species (Margalef 1978, Smayda and Reynolds
+ 2001), assuming that vegetative cells are already present in the environment
+ and can duplicate enough to reach high abundances.
+ However, a complementary hypothesis suggests that resuspension and germination
+ of phytoplanktonic resting cells, or cysts 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "patrick_factors_1948,marcus_minireview:_1998"
+literal "false"
 
+\end_inset
+
+, is another major player.
+ This long-standing hypothesis is supported by recent reviews 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "azanza_role_2018,ellegaard_long-term_2018"
+literal "false"
+
+\end_inset
+
+ which confirm that life history strategies including dormant cysts are
+ widespread in phytoplankton.
+ A variety models have endeavoured to explain and predict amplitude, timing
+ and/or spatial distribution of blooms by explicitly modeling multiple stages
+ in the life cycle of a particular species, without interactions with other
+ organisms (see for example McGillicuddy et al.
+ 2005, Yniguez et al.
+ 2012, Hense & Beckmann 2006, Hellweger et al.
+ 2008).
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1600246943
-There is some literature for models of cyanobacteria life stages too
-\change_inserted -666822487 1600932754
- – cite it!
-\change_unchanged
-
+\change_inserted -2100369821 1601567840
+I realize here that I have much more references than I previously thought,
+ but all focusing on only species/groups of species such as cyanobacteria,
+ without interactions.
+ I guess this list is already too long, but articles are cited here when
+ I intend to go back to them in the discussion or in the rest of the intro
 \end_layout
 
 \end_inset
 
+ Two-to-four species 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "estrada_role_2010,yamamoto_modelling_2002"
+literal "false"
 
-\change_unchanged
-, 
-\change_deleted -666822487 1600932805
-often misses life cycle description
-\change_inserted -666822487 1600932817
-are often poorly resolved (but see XXXX).
-\change_deleted -2100369821 1600266921
-have not been modeled with the same attention 
-\change_inserted -666822487 1598856899
+\end_inset
 
+ 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
+\change_inserted -2100369821 1601567837
+Actually groups of species, such as 
+\begin_inset Quotes eld
+\end_inset
+
+Alexandrium/Skeletonema/Other Flagellates/Other Diatoms
+\begin_inset Quotes erd
+\end_inset
+
+, but I guess I don't need to enter in this level of details
+\end_layout
+
+\end_inset
+
+ models also exist, but they focus on explaining the dynamics of a single
+ cyst-forming species interacting with vegetative-only groups.
+ We have therefore no clear understanding of how the cyst stage may help
+ maintain biodiversity in species-rich communities.
+ We endeavour to demonstrate this here with a multispecies phytoplankton
+ model including a cyst bank.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -2100369821 1601567187
+Even though different coexistence mechanisms have been unveiled through
+ the use of several life stages and a focus on the youngest stage (seeds)
+ for terrestrial plants, the life cycles of aquatic plants, and more specificall
+y that of phytoplanktonic algae, 
+\change_deleted -666822487 1600932805
+often misses life cycle description
+\change_deleted -2100369821 1601567187
+are often poorly resolved (but see XXXX).have not been modeled with the same
+ attention 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1601372821
+FB: 
 \change_inserted -666822487 1598856922
 Again, caution: you have to reference well the plant lit with seeds to say
  that
-\change_inserted -2100369821 1600178025
+\change_inserted -2100369821 1601374913
 .
+ CP: Is it ok now? Should I remove the first part of the sentence to avoid
+ emphasizing the comparison?
 \change_unchanged
 
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  Although ecologists have proposed for a long time that the blooms (peaks
  in abundances that can cover several orders of magnitude) may initiate
@@ -693,11 +556,9 @@ literal "false"
 \end_inset
 
 , it is unusal to see an explicit model of such process
-\change_inserted -2100369821 1600245756
- for phytoplanktonic communities
 \change_deleted -666822487 1600932838
  
-\change_deleted -2100369821 1600245762
+\change_deleted -2100369821 1601567187
 (but see 
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -706,9 +567,7 @@ literal "false"
 
 \end_inset
 
-)
-\change_unchanged
-.
+).
  The classical view behind phytoplankton dynamics is that bloom formation
  is mostly seasonal, due to the variation in light and temperature, assuming
  vegetative cells remaining in the environment can duplicate enough to bloom
@@ -716,56 +575,18 @@ literal "false"
 status collapsed
 
 \begin_layout Plain Layout
-Maybe cite Huisman here?
-\change_inserted -2100369821 1600266176
- Too specific for a very wide assumption, I guess reviews would be better.
-\change_unchanged
-
+FB: Maybe cite Huisman here? CP: Too specific for a very wide assumption,
+ I guess reviews would be better.
 \end_layout
 
 \end_inset
 
 .
  
-\change_deleted -666822487 1600932869
-However, single-species models, often focused on toxic species, have taken
- into account several life stages to explain persistence and timing of blooms
- through reproduction, encystment and germination rates 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "anderson_alexandrium_2005,dalelio_time_2010,estrada_role_2010,nguyen_consequences_2019,hinners_modelling_2019"
-literal "false"
-
-\end_inset
-
-.
- Other models consider similar groups of individuals (
-\begin_inset CommandInset citation
-LatexCommand citet
-key "eilertsen_phytoplankton_2000"
-literal "false"
-
-\end_inset
-
- differentiate between the general group of diatoms and Alexandrium with
- no competition, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "hense_approaches_2010"
-literal "false"
-
-\end_inset
-
- only reviews models of a single phytoplankton compartment).
- 
-\change_inserted -666822487 1600932869
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1600932893
 However, single-species models, often focused on toxic species, have taken
  into account several life stages to explain persistence and timing of blooms
  through reproduction, encystment and germination rates 
@@ -796,6 +617,8 @@ literal "false"
 
  only reviews models of a single phytoplankton compartment).
  [F: peripheral -> possibly move to discussion or outside document].
+
+\change_deleted -2100369821 1601371140
  
 \change_unchanged
 
@@ -803,17 +626,7 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
-However, 
-\change_deleted -666822487 1600933012
-a 
-\change_unchanged
-recent review
-\change_inserted -2100369821 1600248808
-s
-\change_unchanged
- 
+However, recent reviews 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "azanza_role_2018,ellegaard_long-term_2018"
@@ -821,61 +634,26 @@ literal "false"
 
 \end_inset
 
+ confirm that life history strategies including dormant cysts are widespread
+ in phytoplankton, suggesting important adaptive roles for such stage.
+ .
  
-\change_deleted -2100369821 1600248837
-suggests
-\change_inserted -2100369821 1600248838
-confirm
-\change_unchanged
- that
-\change_deleted -666822487 1600933345
- multiple
-\change_inserted -2100369821 1600248852
- life history strategies including
-\change_unchanged
- 
-\change_inserted -666822487 1600933299
-dormant 
-\change_unchanged
-cysts 
-\change_deleted -2100369821 1600248856
-might be another player
-\change_inserted -2100369821 1600248857
-are 
-\change_inserted -666822487 1600933367
-widespread in phytoplankton, suggesting important adaptive roles for such
- stage.
- 
-\change_deleted -666822487 1600933309
-at play 
-\change_unchanged
-.
-
-\change_deleted -666822487 1600932937
- Yet, the only model we know of for the coexistence of several species is
- the work from 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "yamamoto_modelling_2002,yamamoto_modelling_2003"
-literal "false"
-
-\end_inset
-
- which show the coexistence of two species, assuming that dinoflagellates
- are the only groups that can form cysts.
-
-\change_inserted -2100369821 1600266323
- 
-\change_inserted -666822487 1600933440
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1600933186
+\change_inserted -2100369821 1601375217
+FB: 
+\change_unchanged
 I suggest instead to end the paragraph saying that we have to consider those
- banks 
+ banks
+\change_inserted -2100369821 1601375231
+.
+ So should we finish here, or is it enough we the last sentence you have
+ added?
+\change_deleted -2100369821 1601374509
+ 
 \change_unchanged
 
 \end_layout
@@ -890,13 +668,13 @@ While some phytoplankton populations models with cysts have been formulated
  model including a cyst bank.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1600933460
 I add this here because afterwards you introduce the metacommunity aspect
  of the model.
+
+\change_deleted -2100369821 1601374515
  
 \change_unchanged
 
@@ -912,9 +690,7 @@ I add this here because afterwards you introduce the metacommunity aspect
 \begin_layout Standard
 Phytoplankton communities in coastal environments may benefit from seed
  banks (hereafter called cyst banks to remain consistent with phytoplankton
- terminology) even more than the oceanic communities
-\change_inserted -2100369821 1600266341
- 
+ terminology) even more than the oceanic communities 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see for example"
@@ -923,20 +699,8 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
-, as the distance to the sea bottom is smaller
-\change_inserted -2100369821 1600246769
-,
-\change_unchanged
- allowing recolonization of the pelagic environment from the shallow sea
- bottom.
- 
-\change_deleted -2100369821 1600267160
-In the open sea, cysts might arrive together with animals, but such events
- might be rarer in comparison.
-
-\change_unchanged
+, as the distance to the sea bottom is smaller, allowing recolonization
+ of the pelagic environment from the shallow sea bottom.
  Also, and similarly to the seed bank approach in the terrestrial plant
  literature, 
 \begin_inset CommandInset citation
@@ -955,9 +719,7 @@ pelagic seed bank
 \end_inset
 
  to characterize the contribution of the ocean to coastal communities.
- This has been noticed for dinoflagellates especially 
-\change_inserted -2100369821 1600266395
-(
+ This has been noticed for dinoflagellates especially (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "tester_gymnodinium_1997,batifoulier_distribution_2013"
@@ -965,6 +727,8 @@ literal "false"
 
 \end_inset
 
+
+\change_deleted -2100369821 1601539108
 , however see 
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -973,11 +737,9 @@ literal "false"
 
 \end_inset
 
-)
-\change_deleted -2100369821 1600248910
-[[ref Dinophysis, check what we have on diatoms]]
+
 \change_unchanged
-.
+).
  Conversely, in many other bloom-forming species the nutrient-rich coastal
  areas might function as a reservoir for the biodiversity in the ocean,
  especially in the long run.
@@ -999,100 +761,27 @@ literal "false"
 
  of dormancy, so they can have a long-term effect on biodiversity in both
  oceanic and coastal environments.
-
-\change_inserted -666822487 1600933606
  Therefore, we consider in this study three interlinked compartements: the
  coastal pelagic environment, the seed (cyst) bank, and the pelagic open
  ocean.
  The coastal pelagic environment acts as a bridge between the cyst bank
  and the open ocean.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1600933625
-Here we build on multiple studies in plant and plankton ecology to investigate
- the effects of cyst banks on phytoplankton community dynamics.
-\change_inserted -666822487 1600933630
-Our model
-\change_unchanged
- 
-\change_deleted -666822487 1600933649
-To do so, we change
-\change_inserted -666822487 1600933672
-is parameterized from field data (growth and interaction rates), and includes
-\change_unchanged
- 
-\change_deleted -666822487 1600933658
-the
-\change_unchanged
- biotic and abiotic constraints
-\change_deleted -666822487 1600933682
- on a field-based metacommunity mode
-\change_inserted -666822487 1600933693
- (e.g., particle sinking).
- 
-\change_deleted -666822487 1600933698
-l
-\change_inserted -666822487 1600933700
-In our analyses,
-\change_unchanged
- 
-\change_deleted -666822487 1600933703
-in which 
-\change_unchanged
-we either add or remove 
-\change_inserted -666822487 1600933707
-the
-\change_deleted -666822487 1600933706
-a
-\change_unchanged
- dormant compartment
-\change_inserted -666822487 1600933726
-, which allows to pinpoint its contribution to coexistence
-\change_unchanged
-.
- We find that the presence of cysts prevents the 
-\change_deleted -666822487 1598857017
-global 
-\change_unchanged
-extinction of 
-\change_deleted -666822487 1598857023
-certain
-\change_inserted -666822487 1598857025
-several
-\change_unchanged
- species
-\change_deleted -666822487 1598857062
- even though they are only transient in a compartment
-\change_unchanged
-.
+Our model is parameterized from field data (growth and interaction rates),
+ and includes biotic and abiotic constraints (e.g., particle sinking).
+ In our analyses, we either add or remove the dormant compartment, which
+ allows to pinpoint its contribution to coexistence.
+ We find that the presence of cysts prevents the extinction of several species.
  Cyst banks also allow a community to maintain its richness even with strong
  disturbances of its interaction network, unless facilitative interactions
  completely eclipse competitive interactions.
  Changes in the environment, here represented by an increase in the mean
- temperature
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-in mean, variance?
-\end_layout
-
-\end_inset
-
-, can also be buffered by cysts banks.
+ temperature, can also be buffered by cysts banks.
  Finally, we discuss the importance of this often ignored life stage in
  phytoplanktonic demography and the information that would be required to
  further more accurate modeling of the cyst dynamics.
-
-\change_deleted -2100369821 1599550819
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section*
@@ -1177,7 +866,7 @@ In this paper, individuals are phytoplanktonic cells that move between the
  the most frequent genera observed along the French coast 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "picoche_strong_2019"
+key "picoche_strong_2020"
 literal "false"
 
 \end_inset
@@ -3042,7 +2731,11 @@ period of the bloom.
 \end_layout
 
 \begin_layout Standard
-Simulations with taxon extinction are discarded.
+Simulations with taxon extinction
+\change_inserted -2100369821 1601565915
+ (i.e., taxon is absent for more than 6 month in a compartment)
+\change_unchanged
+ are discarded.
  Models are ranked according to their performance for each summary statistic
  and the set of interactions with the best rank for each summary statistics
  is kept throughout the rest of the simulations.
@@ -3280,6 +2973,8 @@ interaction strength variation
 
 \begin_layout Enumerate
 temperature change, either in mean value or variability
+\change_inserted -2100369821 1601565767
+
 \end_layout
 
 \begin_layout Standard
@@ -3287,8 +2982,42 @@ temperature change, either in mean value or variability
 \change_deleted -2100369821 1599555096
 [[Explain more what this could account for in real life, what is varied
  and how]]
-\change_inserted -2100369821 1599555096
-TO DO
+\change_inserted -2100369821 1601565986
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1601633478
+In the first scenario, interaction strengths were multiplied or divided
+ by a factor ranging between 1 and 10.
+ In order to differentiate the effects of facilitative and competitive interacti
+ons on coexistence, only one type of interactions was subject to this change.
+ For each value of the multiplicative factor, we therefore ran 4 simulations
+ for each growth model: one where positive (respectively, negative) interactions
+ were multiplied by the factor and one where positive (respectively, negative)
+ interactions were divided by the same factor.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1601568061
+In the second scenario, five different climate change cases were assessed.
+ In the first three, the average temperature was increased by 2, 5, or 7°C.
+ In the next two, keeping the reference average temperature, the total variance
+ of the temperature, including seasonality and noise, was either decreased
+ or increased by 25%.
+ To acknowledge the stochasticity induced by the noise, the model was ran
+ with five different time signals in each case.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1601633522
+In both scenarios, simulations were ran for 30 years for both growth models,
+ with and without a cyst compartment, and only the last 2 years were considered.
+ 
 \change_unchanged
 
 \end_layout
