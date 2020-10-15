@@ -145,7 +145,12 @@ r
 s maintains is still an unresolved question for both experimental and theoretica
 l ecology.
  Terrestrial plants and phytoplanktonic communities can present hundreds
- of species relying on similar resources.
+ of species relying on similar resources
+\change_inserted -2100369821 1602692969
+, where Gause's principle implies that the best competitor for resource
+ should be able to exclude all other species from the community
+\change_unchanged
+.
  Some degree of niche differentiation is generally expected 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -192,6 +197,45 @@ Again, do they talk about life-history mostly? In 'Community consequences
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted -2100369821 1602777155
+Models of coexistence in plant communities often acknowledge the effect
+ of demographic processes at several life stages, whether it is explicit
+ or not.
+ Even models considering a single life-stage may need to account for processes
+ taking place in another : this can be the case for seed dispersal and germinati
+on, which impacts the spatial distribution of adult plants (Martorell and
+ Freckleton 2014), or for density-dependent reproduction for models focusing
+ on seeds (Levine and Rees 2004).
+ The seed stage stands out as a unique stage during which organisms can
+ be dispersed, accumulate in seed banks, enter dormancy for several generations,
+ and germinate to invade the environment later on.
+ Species-specific reproduction strategies (e.g., high numbers of seeds and
+ low survivorship vs low reproduction investment and high survivorship)
+ introduce niche differences which can stabilize coexistence (Ellner 1987,
+ Chesson et al.
+ 2000, 2018).
+ At the local scale, dormancy is especially important as organisms can endure
+ harsher environmental conditions than they would as adults.
+ This can stabilize the population dynamics of a species (Pacala 1986, Nguyen
+ et al.
+ 2019) and allow more fragile, or less adapted, species to remain present
+ and to re-invade communities later (Aikio et al.
+ 2002, Angert et al.
+ 2009).
+ At the meta-community-level, dispersal, environmental buffering and colonizatio
+n can maintain diversity by spatially segregating species (Shmida and Ellner
+ 1984) by maintening a regional diversity that may go extinct at the local
+ scale (Lennon and Jones 2011).
+ In a non-plant specific setting, Wisknoski et al.
+ show that adding a dormant stage to a metacommunity level could increase
+ the final diversity, both at the local and regional scales.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -2100369821 1602777182
 Analyses of coexistence in terrestrial plant communities sometimes take
  into account several life stages 
 \begin_inset CommandInset citation
@@ -244,11 +288,8 @@ FB: The Nguyen et al.
 
 .
  Considering at least two stages, seeds/seedlings and adults, several mechanisms
- that can contribute to long-term coexistence in 
-\change_inserted -2100369821 1601631723
-spatially and/or temporally 
-\change_unchanged
-fluctuating environment have been uncovered 
+ that can contribute to long-term coexistence in fluctuating environment
+ have been uncovered 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "shmida_coexistence_1985,chu_large_2015"
@@ -256,25 +297,6 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1601631947
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1601632040
-Should I elaborate here? As I don't, there might be no need for citation
- here
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 .
  The storage effect, a major paradigm in the modern coexistence theory 
 \begin_inset CommandInset citation
@@ -284,14 +306,9 @@ literal "false"
 
 \end_inset
 
-,
-\change_inserted -2100369821 1601631492
- is one of them.
- It
-\change_unchanged
- has first been defined by the presence of a long-lived life stage and temporal
- variation in recruitment from this stage that helps escape interspecific
- competition 
+, has first been defined by the presence of a long-lived life stage and
+ temporal variation in recruitment from this stage that helps escape interspecif
+ic competition 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "chesson1986environmental,caceres_temporal_1997,ellner_how_2016"
@@ -299,22 +316,9 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1601632932
-, and has often been discussed in the presence of a seed bank (Aikio et
- al.
- 2002, Angert et al.
- 2009, Chu and Adler 2015).
-\change_deleted -2100369821 1601632171
 .
-
-\change_unchanged
- 
-\change_deleted -2100369821 1601370942
- 
-\change_unchanged
-The seed stage itself contrasts with other parts of the life cycle as organisms
- can enter a dormant phase
+  The seed stage itself contrasts with other parts of the life cycle as
+ organisms can enter a dormant phase
 \begin_inset Note Note
 status collapsed
 
@@ -333,9 +337,156 @@ literal "false"
 
 \end_inset
 
-.
+.These mechanisms suggest that neglecting the explicit modeling of the seed
+ stage can alter the understanding we have of the dynamics of organisms,
+ both at the population 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nguyen_consequences_2019"
+literal "false"
 
-\change_inserted -2100369821 1601567737
+\end_inset
+
+ and community level 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "manna_disentangling_2017,wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+.
+\change_inserted -2100369821 1602777182
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602777182
+Analyses of coexistence in terrestrial plant communities sometimes take
+ into account several life stages 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "aikio_seed_2002,comita_asymmetric_2010,chu_large_2015"
+literal "false"
+
+\end_inset
+
+ though many consider only a single life-stage 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "see, among others,"
+key "ellner_alternate_1987,levine_effects_2004,martorell_testing_2014,adler_competition_2018"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602777182
+CP:
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602777182
+Actually, Levine and Rees model two species, 1 seedling forb compartment
+ and 1 adult grass compartment; I'm not sure whether I discuss this more,
+ or not.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602777182
+FB: The Nguyen et al.
+ paper is interesting but only account for populations
+\end_layout
+
+\end_inset
+
+.
+ Considering at least two stages, seeds/seedlings and adults, several mechanisms
+ that can contribute to long-term coexistence in spatially and/or temporally
+ fluctuating environment have been uncovered 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "shmida_coexistence_1985,chu_large_2015"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602777182
+Should I elaborate here? As I don't, there might be no need for citation
+ here
+\end_layout
+
+\end_inset
+
+.
+ The storage effect, a major paradigm in the modern coexistence theory 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chesson_mechanisms_2000,chesson_updates_2018"
+literal "false"
+
+\end_inset
+
+, is one of them.
+ It has first been defined by the presence of a long-lived life stage and
+ temporal variation in recruitment from this stage that helps escape interspecif
+ic competition 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chesson1986environmental,caceres_temporal_1997,ellner_how_2016"
+literal "false"
+
+\end_inset
+
+, and has often been discussed in the presence of a seed bank (Aikio et
+ al.
+ 2002, Angert et al.
+ 2009, Chu and Adler 2015).
+ The seed stage itself contrasts with other parts of the life cycle as organisms
+ can enter a dormant phase
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602777182
+CP: Is it always the case, though? FB: For seeds, it is common.
+\end_layout
+
+\end_inset
+
+ which allows them to sustain harsher environmental conditions for longer
+ periods of time than later stages 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "aikio_seed_2002"
+literal "false"
+
+\end_inset
+
+.
  In a meta-community model 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -351,7 +502,7 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1601567736
+\change_inserted -2100369821 1602777182
 Here you should report what Winoski et al.
  found! Did they find more coexistence with a dormant stage even without
  resorting to a storage effect? That would be interesting! They do have
@@ -367,7 +518,7 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1601567736
+\change_inserted -2100369821 1602777182
 \begin_inset Quotes eld
 \end_inset
 
@@ -392,9 +543,7 @@ literal "false"
 
 \end_inset
 
- 
-\change_unchanged
-These mechanisms suggest that neglecting the explicit modeling of the seed
+ These mechanisms suggest that neglecting the explicit modeling of the seed
  stage can alter the understanding we have of the dynamics of organisms,
  both at the population 
 \begin_inset CommandInset citation
@@ -413,6 +562,15 @@ literal "false"
 \end_inset
 
 .
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
