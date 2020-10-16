@@ -146,9 +146,9 @@ s maintains is still an unresolved question for both experimental and theoretica
 l ecology.
  Terrestrial plants and phytoplanktonic communities can present hundreds
  of species relying on similar resources
-\change_inserted -2100369821 1602692969
-, where Gause's principle implies that the best competitor for resource
- should be able to exclude all other species from the community
+\change_inserted -2100369821 1602867763
+, where Gause's principle assumes that one species should outcompete the
+ others
 \change_unchanged
 .
  Some degree of niche differentiation is generally expected 
@@ -198,38 +198,80 @@ Again, do they talk about life-history mostly? In 'Community consequences
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1602777155
+\change_inserted -2100369821 1602868269
 Models of coexistence in plant communities often acknowledge the effect
- of demographic processes at several life stages, whether it is explicit
- or not.
+ of demographic processes at several life stages.
  Even models considering a single life-stage may need to account for processes
- taking place in another : this can be the case for seed dispersal and germinati
-on, which impacts the spatial distribution of adult plants (Martorell and
- Freckleton 2014), or for density-dependent reproduction for models focusing
- on seeds (Levine and Rees 2004).
- The seed stage stands out as a unique stage during which organisms can
- be dispersed, accumulate in seed banks, enter dormancy for several generations,
- and germinate to invade the environment later on.
+ taking place in another: this can be the case for seed dispersal and germinatio
+n, which impacts the spatial distribution of adult plants (Martorell and
+ Freckleton 2014), or for density-dependent adult reproduction for seed
+ models (Levine and Rees 2004).
+ The seed stage stands out as organisms can be dispersed, accumulate in
+ seed banks, enter dormancy for several generations, and germinate to invade
+ the environment later on.
  Species-specific reproduction strategies (e.g., high numbers of seeds and
  low survivorship vs low reproduction investment and high survivorship)
  introduce niche differences which can stabilize coexistence (Ellner 1987,
  Chesson et al.
- 2000, 2018).
- At the local scale, dormancy is especially important as organisms can endure
- harsher environmental conditions than they would as adults.
- This can stabilize the population dynamics of a species (Pacala 1986, Nguyen
- et al.
+ 2000, 2018
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602868027
+Check that though
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+).
+ At the local scale, dormancy enables organisms to endure harsher environmental
+ conditions than they would as adults.
+ This can impact the population dynamics of a species (by stabilizing it
+ , as in Pacala 1986, or modifying its growth rate, as sown in Nguyen et
+ al.
  2019) and allow more fragile, or less adapted, species to remain present
  and to re-invade communities later (Aikio et al.
  2002, Angert et al.
  2009).
  At the meta-community-level, dispersal, environmental buffering and colonizatio
 n can maintain diversity by spatially segregating species (Shmida and Ellner
- 1984) by maintening a regional diversity that may go extinct at the local
- scale (Lennon and Jones 2011).
+ 1984
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602868256
+Find a more recent reference
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+) or by maintening a regional diversity that may go extinct at the local
+ scale (Lennon and Jones 2011
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1602868243
+Find a better reference
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+).
  In a non-plant specific setting, Wisknoski et al.
- show that adding a dormant stage to a metacommunity level could increase
- the final diversity, both at the local and regional scales.
+ (2019) show that adding a dormant stage to a metacommunity level could
+ increase species diversity both at the local and regional scales.
  
 \end_layout
 
