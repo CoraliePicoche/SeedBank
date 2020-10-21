@@ -147,11 +147,36 @@ l ecology.
  Terrestrial plants and phytoplanktonic communities can present hundreds
  of species relying on similar resources
 \change_inserted -2100369821 1602867763
-, where Gause's principle assumes that one species should outcompete the
- others
+, 
+\change_deleted -666822487 1603266643
+where
+\change_inserted -666822487 1603266650
+a situation where
+\change_inserted -2100369821 1602867763
+ Gause's principle 
+\change_deleted -666822487 1603266621
+assumes
+\change_inserted -666822487 1603266622
+implies
+\change_inserted -2100369821 1602867763
+ that 
+\change_deleted -666822487 1603266629
+one
+\change_inserted -666822487 1603266631
+a handful of
+\change_inserted -2100369821 1602867763
+ species should outcompete the others
 \change_unchanged
 .
- Some degree of niche differentiation is generally expected 
+ Some degree of niche differentiation
+\change_inserted -666822487 1603266708
+, perhaps hidden to the human observer,
+\change_unchanged
+ is generally expected
+\change_inserted -666822487 1603266607
+ for coexistence to maintain
+\change_unchanged
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "chesson_mechanisms_2000"
@@ -159,8 +184,20 @@ literal "false"
 
 \end_inset
 
-, but complex life-history structure can further increase the likelihood
- of coexistence 
+
+\change_inserted -666822487 1603266691
+.
+\change_deleted -666822487 1603266675
+,
+\change_unchanged
+ 
+\change_deleted -666822487 1603266715
+but
+\change_inserted -666822487 1603266716
+However,
+\change_unchanged
+ complex life-history structure can further increase the likelihood of coexisten
+ce 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "loreau_competitive_1994,moll_competition_2008,fujiwara_coexistence_2011,chu_large_2015"
@@ -200,15 +237,73 @@ Again, do they talk about life-history mostly? In 'Community consequences
 
 \change_inserted -2100369821 1602868269
 Models of coexistence in plant communities often acknowledge the effect
- of demographic processes at several life stages.
- Even models considering a single life-stage may need to account for processes
- taking place in another: this can be the case for seed dispersal and germinatio
-n, which impacts the spatial distribution of adult plants (Martorell and
- Freckleton 2014), or for density-dependent adult reproduction for seed
- models (Levine and Rees 2004).
- The seed stage stands out as organisms can be dispersed, accumulate in
- seed banks, enter dormancy for several generations, and germinate to invade
- the environment later on.
+ of demographic processes 
+\change_deleted -666822487 1603266826
+at
+\change_inserted -666822487 1603266826
+on
+\change_inserted -2100369821 1602868269
+ several 
+\change_inserted -666822487 1603266831
+distinct 
+\change_inserted -2100369821 1602868269
+life stages.
+ Even models considering a single life-stage may need to account 
+\change_inserted -666822487 1603266850
+implicitly 
+\change_inserted -2100369821 1602868269
+for processes taking place in another: 
+\change_deleted -666822487 1603266888
+this can be the case for 
+\change_inserted -2100369821 1602868269
+seed dispersal and germination, 
+\change_deleted -666822487 1603266893
+which impacts
+\change_inserted -666822487 1603266894
+in models of
+\change_inserted -2100369821 1602868269
+ the spatial distribution of adult plants (
+\change_inserted -666822487 1603266900
+e.g., 
+\change_inserted -2100369821 1602868269
+Martorell and Freckleton 2014), or 
+\change_deleted -666822487 1603266876
+for 
+\change_inserted -2100369821 1602868269
+density-dependent adult reproduction for seed models (Levine and Rees 2004).
+ The seed stage stands out as 
+\change_deleted -666822487 1603266992
+organisms can be dispersed
+\change_inserted -666822487 1603266999
+it is instrumental to dispersal
+\change_inserted -2100369821 1602868269
+, accumulat
+\change_inserted -666822487 1603267002
+ion
+\change_deleted -666822487 1603267002
+e
+\change_inserted -2100369821 1602868269
+ in seed banks, enter
+\change_inserted -666822487 1603267009
+ing
+\change_inserted -2100369821 1602868269
+ dormancy for several generations, and germinat
+\change_inserted -666822487 1603267016
+ion
+\change_deleted -666822487 1603267015
+e
+\change_inserted -2100369821 1602868269
+ to 
+\change_inserted -666822487 1603267024
+re-
+\change_inserted -2100369821 1602868269
+invade the environment 
+\change_inserted -666822487 1603267032
+when favorable conditions returns
+\change_deleted -666822487 1603267020
+later on
+\change_inserted -2100369821 1602868269
+.
  Species-specific reproduction strategies (e.g., high numbers of seeds and
  low survivorship vs low reproduction investment and high survivorship)
  introduce niche differences which can stabilize coexistence (Ellner 1987,
@@ -221,6 +316,10 @@ status open
 
 \change_inserted -2100369821 1602868027
 Check that though
+\change_inserted -666822487 1603267072
+.
+ Yes - do check.
+ 
 \change_unchanged
 
 \end_layout
@@ -231,10 +330,28 @@ Check that though
  At the local scale, dormancy enables organisms to endure harsher environmental
  conditions than they would as adults.
  This can impact the population dynamics of a species (by stabilizing it
- , as in Pacala 1986, or modifying its growth rate, as sown in Nguyen et
- al.
- 2019) and allow more fragile, or less adapted, species to remain present
- and to re-invade communities later (Aikio et al.
+ , as in Pacala 1986, or modifying its growth rate, as s
+\change_inserted -666822487 1603267091
+h
+\change_inserted -2100369821 1602868269
+own in Nguyen et al.
+ 2019) and allow 
+\change_inserted -666822487 1603267115
+species with
+\change_deleted -666822487 1603267369
+more
+\change_inserted -2100369821 1602868269
+ fragile
+\change_inserted -666822487 1603267120
+ vegetative states
+\change_deleted -666822487 1603267105
+, or less adapted, species
+\change_inserted -2100369821 1602868269
+ to remain present and to re-invade communities
+\change_deleted -666822487 1603267145
+ later
+\change_inserted -2100369821 1602868269
+ (Aikio et al.
  2002, Angert et al.
  2009).
  At the meta-community-level, dispersal, environmental buffering and colonizatio
@@ -272,140 +389,18 @@ Find a better reference
  In a non-plant specific setting, Wisknoski et al.
  (2019) show that adding a dormant stage to a metacommunity level could
  increase species diversity both at the local and regional scales.
- 
-\end_layout
 
-\begin_layout Standard
-
-\change_deleted -2100369821 1602777182
-Analyses of coexistence in terrestrial plant communities sometimes take
- into account several life stages 
-\begin_inset CommandInset citation
-LatexCommand citep
-before "e.g.,"
-key "aikio_seed_2002,comita_asymmetric_2010,chu_large_2015"
-literal "false"
-
-\end_inset
-
- though many consider only a single life-stage 
-\begin_inset CommandInset citation
-LatexCommand citep
-before "see, among others,"
-key "ellner_alternate_1987,levine_effects_2004,martorell_testing_2014,adler_competition_2018"
-literal "false"
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-CP:
-\change_deleted -2100369821 1601370942
+\change_deleted -666822487 1603266957
  
 \change_unchanged
 
 \end_layout
 
-\begin_layout Plain Layout
-Actually, Levine and Rees model two species, 1 seedling forb compartment
- and 1 adult grass compartment; I'm not sure whether I discuss this more,
- or not.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-FB: The Nguyen et al.
- paper is interesting but only account for populations
-\end_layout
-
-\end_inset
-
-.
- Considering at least two stages, seeds/seedlings and adults, several mechanisms
- that can contribute to long-term coexistence in fluctuating environment
- have been uncovered 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "shmida_coexistence_1985,chu_large_2015"
-literal "false"
-
-\end_inset
-
-.
- The storage effect, a major paradigm in the modern coexistence theory 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "chesson_mechanisms_2000,chesson_updates_2018"
-literal "false"
-
-\end_inset
-
-, has first been defined by the presence of a long-lived life stage and
- temporal variation in recruitment from this stage that helps escape interspecif
-ic competition 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "chesson1986environmental,caceres_temporal_1997,ellner_how_2016"
-literal "false"
-
-\end_inset
-
-.
-  The seed stage itself contrasts with other parts of the life cycle as
- organisms can enter a dormant phase
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-CP: Is it always the case, though? FB: For seeds, it is common.
-\end_layout
-
-\end_inset
-
- which allows them to sustain harsher environmental conditions for longer
- periods of time than later stages 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "aikio_seed_2002"
-literal "false"
-
-\end_inset
-
-.These mechanisms suggest that neglecting the explicit modeling of the seed
- stage can alter the understanding we have of the dynamics of organisms,
- both at the population 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "nguyen_consequences_2019"
-literal "false"
-
-\end_inset
-
- and community level 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "manna_disentangling_2017,wisnoski_dormancy_2019"
-literal "false"
-
-\end_inset
-
-.
-\change_inserted -2100369821 1602777182
-
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 Analyses of coexistence in terrestrial plant communities sometimes take
  into account several life stages 
 \begin_inset CommandInset citation
@@ -430,14 +425,10 @@ literal "false"
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 CP:
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 Actually, Levine and Rees model two species, 1 seedling forb compartment
  and 1 adult grass compartment; I'm not sure whether I discuss this more,
  or not.
@@ -450,8 +441,6 @@ Actually, Levine and Rees model two species, 1 seedling forb compartment
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 FB: The Nguyen et al.
  paper is interesting but only account for populations
 \end_layout
@@ -474,8 +463,6 @@ literal "false"
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 Should I elaborate here? As I don't, there might be no need for citation
  here
 \end_layout
@@ -512,8 +499,6 @@ literal "false"
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 CP: Is it always the case, though? FB: For seeds, it is common.
 \end_layout
 
@@ -543,8 +528,6 @@ literal "false"
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 Here you should report what Winoski et al.
  found! Did they find more coexistence with a dormant stage even without
  resorting to a storage effect? That would be interesting! They do have
@@ -559,8 +542,6 @@ Here you should report what Winoski et al.
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602777182
 \begin_inset Quotes eld
 \end_inset
 
@@ -604,14 +585,10 @@ literal "false"
 \end_inset
 
 .
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
