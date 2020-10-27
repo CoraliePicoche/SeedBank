@@ -585,10 +585,10 @@ We do have a strong increase in diversity when there is dormancy and dispersal.
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603730046
+\change_inserted -2100369821 1603786122
 However, our model is slightly different as we do not allow for seed dispersal
  (we are in the case gamma=0) nor asynchronous environmental variability
- or one-time dispersion.
+ or one-time disturbance.
  We also test propositions (effect of the interactions or permanent change
  in the environment) that they do not consider in their analysis.
 \end_layout
@@ -604,8 +604,8 @@ On the impact of dispersal/dormancy covariation: could we maybe discuss
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603731864
-Finally, different types of interactions in our model...
+\change_inserted -2100369821 1603786144
+Finally, we also test another type of interactions in our model.
 \end_layout
 
 \end_deeper
@@ -628,8 +628,9 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1603731299
-have a look at Fukami 2015 and Schwenter and Richter 2015, cited in Wisnoski
+\change_inserted -2100369821 1603786160
+have a look at Fukami 2015 and Schwenter and Richter 2015, cited in Wisnoski.
+ Maybe ghost of competition present?
 \change_unchanged
 
 \end_layout
@@ -642,27 +643,21 @@ have a look at Fukami 2015 and Schwenter and Richter 2015, cited in Wisnoski
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603732032
+\change_inserted -2100369821 1603786261
 However, the strongest effect, by far, is the impact of facilitation.
  Facilitation is often mentioned (apparent facilitation in observations,
  see for instance: de Ruiter and Gaedke 2017; for models, Chu and Ellner
  mention its possible importance but do not model it, Martorell and Freckleton
  use it but emphasize on the fact that during growth, intraspecific interactions
- dominate the others: that is why we have such strong effects when facilitation
- increases).
- However, the imbalance intra/inter is not the only explanation as a decrease
- in competition without an increase in facilitation has similar effects
- to increase in facilitation without a decrease in competition; but not
- the inverse (i.e.
- changes are not as strong when competition increases).
+ dominate the others).
+ The imbalance intra/inter is, as usual, of importance.
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603732092
+\change_inserted -2100369821 1603786270
 Orgy of mutual benefaction (May 1981) is possible in model II even if we
- have tried to decrease its plausibility and is one of the most likely explanati
-on.
+ have tried to decrease its plausibility and is also a likely explanation.
  Discuss Qian and Akçay.
  
 \end_layout
@@ -671,7 +666,7 @@ on.
 
 \change_inserted -2100369821 1603732102
 However, species most likely to be excluded are not necessarily the ones
- most affected by either positive or negative interactions...
+ most affected by either positive or negative interactions.
 \end_layout
 
 \end_deeper
@@ -749,7 +744,7 @@ I, of course, have lots of other ideas on limits, but we may stop there?
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603733186
+\change_inserted -2100369821 1603786313
 Moving forwards: do we *need* to model the seed bank ? there are *a lot*
  of coexistence models on phytoplankton (even though models with >2/3 species
  are just a bit less frequent).
@@ -760,7 +755,8 @@ Moving forwards: do we *need* to model the seed bank ? there are *a lot*
  Plant models show that ignoring this stage can still give interesting results
  but new mechanisms can emerge from seed modeling? (i.e.
  storage effect, which we do not have here) + A really interesting feature
- would be adding reproduction vs 
+ would be adding reproduction vs resistance of seed (but does that also
+ exist for phytoplankton?)
 \change_unchanged
 
 \end_layout
