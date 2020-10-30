@@ -528,39 +528,9 @@ Conclue on possible changes in actual communities.
 
 \end_layout
 
-\begin_layout Standard
-
-\change_inserted -2100369821 1603733302
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1603733327
-About real data: wondering if I do a paragraph or try to insert it in the
- different topics 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1603733331
-Need to check that again
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603709753
+\change_inserted -2100369821 1603814058
 FIrst paragraph: reminder of results.
  Basically: higher richness and biomass with seed bank.
  Better resistance to interaction change.
@@ -571,55 +541,164 @@ FIrst paragraph: reminder of results.
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603726478
-Our results are similar to Wisknoski et al.
+\change_inserted -2100369821 1603814074
+Our results confirm those obtained by Wisknoski et al.
+ and illustrate once again the importance of seed bank for microbes in general
+ (Locey 2010, Lennon and Jones 2011).
  
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603729636
-We do have a strong increase in diversity when there is dormancy and dispersal.
+\change_inserted -2100369821 1604054657
+Dormancy is a stage that increases notably diversity, and can do so without
+ storage effect (but see real data with arguments for storage effect such
+ as Bonis et al.
+ 1995, Facelli et al.
+ 2005, Angert al.
+ 2009, all in plants however)
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603786122
-However, our model is slightly different as we do not allow for seed dispersal
- (we are in the case gamma=0) nor asynchronous environmental variability
- or one-time disturbance.
- We also test propositions (effect of the interactions or permanent change
- in the environment) that they do not consider in their analysis.
+\change_inserted -2100369821 1603813898
+However, the model we develop is slightly different from the Wisnoski paper
+ as we do not allow for seed dispersal (we are in the case gamma=0) nor
+ asynchronous environmental variability or one-time disturbance.
+ As we focus on phytoplankton in environments with strongly seasonal variations,
+ we considered that both types of environmental fluctuations could not represent
+ the actual environment.
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603731856
-On the impact of dispersal/dormancy covariation: could we maybe discuss
- the fact that they do not actually have a real covariation? (even though
- we could not test that either - would maybe be a gratuitous criticism?)
- 
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted -2100369821 1603786144
-Finally, we also test another type of interactions in our model.
+\change_inserted -2100369821 1604054686
+Another difference is the way interactions are modeled.
+ When there is a seed bank, there is only a low effect of facilitation increase.
+ Our results are robust to interaction strength when interactions are weak
+ or stronger than what is observed in the field.
+ Thus, even though we do not have exactly the same interactions as the ones
+ we had in the JEcol paper, our results are robust to this change.
+ Surprisingly, facilitation can still have a destabilizing effect even in
+ model II (few lines on Qian and Akçay?).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603731329
-The importance of interaction.
- There are two things to consider: 
+\change_inserted -2100369821 1604054699
+Above all, some life history traits are specific to species that are rescued
+ by the seed bank (Guittar et al.
+ 2020 -> locally transient species): 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603731347
+\change_inserted -2100369821 1604054731
+high amplitude of variation, which may be linked, in this case, to the temperatu
+re sensitivity.
+ However, this can be extended to a lot of other traits that are not described
+ here (nutrients, predation, etc.)
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1604054761
+Interestingly, neither sinking (but maybe because we miss more hydrodynamics
+ descriptors - a spatial model- and are only using a proxy for sinking -
+ maybe cite Yamamoto who highlight hydrodynamics in their model, Yniguez
+ et al.
+ 2012 with a complex physical model, or McGillicudy who explain plankton
+ repartition mostly with hydrodynamics) nor growth rates are really good
+ predictors of the survival (however, lower growth rates tend to be associated
+ to higher probability of survival).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1604054836
+In field data, trait trade-offs can be found between growth and low-resource
+ nutrients (Angert et al.
+ 2009), see also Huang et al.
+ 2016 for observations of trade-offs between high demographic variability
+ and other traits in plants.
+ There are also data for trade-offs between number of seeds and survival
+ in plants.
+ In phytoplankton, analyses of such trade-offs are missing but at least
+ some traits are available: cyst germination (Anderson et al.
+ 2005), comparison between sediment and vegetative communities (Montresor
+ et al.
+ 2013)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted -2100369821 1604054896
+Moving forwards: do we *need* to model the seed bank ?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted -2100369821 1604054901
+there are *a lot* of coexistence models on phytoplankton (even though models
+ with >2/3 species are just a bit less frequent), but some models also show
+ that species can disappear without seed bank (Hellweger et al.
+ 2008 for cyano) 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1604054908
+It would be interesting to have seed bank models, focusing on hydrodynamical
+ features interacting with species shape characteristics which may impact
+ the exchanges, as well as characteristic growth traits.
+ Plant models show that ignoring this stage can still give interesting results
+ but new mechanisms can emerge from seed modeling? (i.e.
+ storage effect, which we do not have here) + A really interesting feature
+ would be adding reproduction vs resistance of seed (but does that also
+ exist for phytoplankton) 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted -2100369821 1604054867
+Conclude by saying that we explain diversity much better with a seed bank.
+ We have shown that with a model that is parameterized on real data.
+ To represent coexistence on long-term, it is important, so we may want
+ this parameter -immigration- in long-term models (Stock et al.
+ 2005), as for flower plant, for the same reasons.
+ More and more research on these forms of resistance, and we may need more
+ data to know to which point and frequency we can consider seed bank reinvasion
+ –return to empirical observations–
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1603806608
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1603806609
+The importance of interaction.
+ There are two things to consider: [[]]
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted -2100369821 1603806609
 the expected effect: increased competition does diminish biodiversity because
  better competitors can exclude weaker species and prevent reestablishment
  
@@ -628,11 +707,9 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1603786160
+\change_inserted -2100369821 1603806609
 have a look at Fukami 2015 and Schwenter and Richter 2015, cited in Wisnoski.
  Maybe ghost of competition present?
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -643,7 +720,7 @@ have a look at Fukami 2015 and Schwenter and Richter 2015, cited in Wisnoski.
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603786261
+\change_inserted -2100369821 1603806609
 However, the strongest effect, by far, is the impact of facilitation.
  Facilitation is often mentioned (apparent facilitation in observations,
  see for instance: de Ruiter and Gaedke 2017; for models, Chu and Ellner
@@ -655,7 +732,7 @@ However, the strongest effect, by far, is the impact of facilitation.
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603786270
+\change_inserted -2100369821 1603806609
 Orgy of mutual benefaction (May 1981) is possible in model II even if we
  have tried to decrease its plausibility and is also a likely explanation.
  Discuss Qian and Akçay.
@@ -664,7 +741,7 @@ Orgy of mutual benefaction (May 1981) is possible in model II even if we
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603732102
+\change_inserted -2100369821 1603806621
 However, species most likely to be excluded are not necessarily the ones
  most affected by either positive or negative interactions.
 \end_layout
@@ -672,49 +749,7 @@ However, species most likely to be excluded are not necessarily the ones
 \end_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603733264
-The most important life history traits that explain sensitivity to exclusion:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\change_inserted -2100369821 1603733268
-high amplitude of variation, which may be linked, in this case, to the temperatu
-re sensitivity.
- However, this can be extended to a lot of other traits that are not described
- here (nutrients, predation, etc.) 
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted -2100369821 1603733289
-It is notable that neither sinking (but maybe because we miss fine hydrodynamics
- descriptors and are only using a proxy for sinking) nor growth rates are
- really good predictors of the survival (however, lower growth rates tend
- to be associated to higher probability of survival).
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1603733226
-Missing arguments here.Should we mention r/K trade-offs?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\change_inserted -2100369821 1603732583
+\change_inserted -2100369821 1603806752
 At one point, we will need to discuss potential limits.
  Comparison with the JEcol paper, saying that we do not have exactly the
  same interactions (We had another argument, I cannot remember it right
@@ -731,8 +766,16 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1603732582
+\change_inserted -2100369821 1603806621
 I, of course, have lots of other ideas on limits, but we may stop there?
+\end_layout
+
+\end_inset
+
+ => To predict dynamics, we should have better defined/calibrated parameters.
+ We di a sensivitiy analysis that show our results are robust but if we
+ wanter to better predict the dynamics of species, we would need those parameter
+s
 \change_unchanged
 
 \end_layout
@@ -740,29 +783,14 @@ I, of course, have lots of other ideas on limits, but we may stop there?
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted -2100369821 1603786313
-Moving forwards: do we *need* to model the seed bank ? there are *a lot*
- of coexistence models on phytoplankton (even though models with >2/3 species
- are just a bit less frequent).
- However, seed bank models are quite rare.
- It would be interesting to have both, focusing on hydrodynamical features
- interacting with species shape characteristics which may impact the exchanges,
- as well as characteristic growth traits.
- Plant models show that ignoring this stage can still give interesting results
- but new mechanisms can emerge from seed modeling? (i.e.
- storage effect, which we do not have here) + A really interesting feature
- would be adding reproduction vs resistance of seed (but does that also
- exist for phytoplankton?)
 \change_unchanged
 
 \end_layout
 
 \begin_layout Section*
 Supplementary Information
+\change_inserted -2100369821 1603806602
+
 \end_layout
 
 \begin_layout Subsubsection*
