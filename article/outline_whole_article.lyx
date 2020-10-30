@@ -80,7 +80,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2100369821 "cpicoche"
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -102,27 +102,18 @@ Classical paragraph on plant biodiversity / the phytoplankton paradox
 \end_layout
 
 \begin_layout Itemize
-Importance of the seedling/juvenile stage
-\change_inserted -2100369821 1602514923
- in theoretical model
-\change_unchanged
- to explain terrestrial plant biodiversity (definition of some of the mechanisms
- that can sustain biodiversity)
-\change_inserted -2100369821 1602682186
-
+Importance of the seedling/juvenile stage in theoretical model to explain
+ terrestrial plant biodiversity (definition of some of the mechanisms that
+ can sustain biodiversity)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603709383
 Modeling several life stages allow the detection of mechanisms such as storage
  effect.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603709412
 However, storage effect is not needed.
  For instance, Wisknoski find that dormancy and dispersal alone can explain
  higher diversity.
@@ -130,36 +121,22 @@ However, storage effect is not needed.
 
 \end_deeper
 \begin_layout Itemize
-Low occurrence of the seed stage in phytoplankton models
-\change_inserted -2100369821 1602514134
- focusing on coexistence, even though we know cyst banks are important.
-
-\change_unchanged
- 
-\change_deleted -2100369821 1602514111
-(defined as cyst later on), even though they do exist in the field.
-\change_inserted -2100369821 1602515555
-
+Low occurrence of the seed stage in phytoplankton models focusing on coexistence
+, even though we know cyst banks are important.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted -2100369821 1602515682
 cyst banks are rarely modeled because phytoplankton dynamics are assumed
  to be explained by environmental variation
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1602515711
 however, cyst banks do exist and data seem to prove they are important for
  species persistence
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1602515597
 they have been modeled for species-specific model or, in the best-case scenario,
  2-species models
 \end_layout
@@ -175,30 +152,28 @@ Outline of the model (with details on what features of which model we take
  from whom) and the main hypotheses on the effect of the seed bank (maintenance
  of biodiversity and production in harsher conditions + effect of exchanges
  and seed bank on the ocean richness)
-\change_inserted -2100369821 1602514925
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1602514927
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1602515006
 The introduction is,until now, very focused on models.
  There will also be a part/comments on field observations in the Discussion.
  However, that can still be modified to include more field-based info.
+
+\change_inserted -666822487 1604064937
+ -> No need to change.
+ It's a paper with a model.
+ You can probably delete this note.
+ 
 \change_unchanged
 
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -245,7 +220,7 @@ Classical BH model: Type I functional response, with a threshold
 \begin_layout Itemize
 Saturating interaction model (type II functional response)
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Itemize
 Model with delay (could be related to virus- or copepod- exploitation)
@@ -472,110 +447,148 @@ Proposed Fig.
 
 \begin_layout Section*
 Discussion
-\change_deleted -2100369821 1603733256
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -2100369821 1603733256
-Waiting for at least a few results to beef up the structure, but:
 \end_layout
 
 \begin_layout Itemize
-
-\change_deleted -2100369821 1603733256
-First paragraph as usual, to remind model and main results
-\end_layout
-
-\begin_layout Itemize
-
-\change_deleted -2100369821 1603733256
-Second paragraph on the functioning of the model.
- Would maybe lead to a discussion of the lack of information on certain
- key parameters and the comparison to other field observations (Jewson et
- al.
- 1981).
- Among others, but wouldn't be the first point: discussion of the impact
- of the niches, or at least the fact that our definition of the niche/generalist
- vs specialist could be different in other papers.
- See Hernandez, Karasiewicz...
-\end_layout
-
-\begin_layout Itemize
-
-\change_deleted -2100369821 1603733256
-Effect of interactions on the model : setting of a threshold in model I,
- saturating interaction effect, positive interaction effect more destabilizing
- (+ justify it, as it does exist in nature?).
+F
+\change_inserted -666822487 1604064985
+i
+\change_deleted -666822487 1604064984
+I
+\change_unchanged
+rst paragraph: reminder of results.
  
-\end_layout
-
-\begin_layout Itemize
-
-\change_deleted -2100369821 1603733256
-Seed bank : first analysis in contrast with other existing model or observation
- papers (3 models I know + Nguyen et al., for example, + a number of others).
+\change_deleted -666822487 1604064997
+Basically:
+\change_inserted -666822487 1604064999
+We obtain
+\change_unchanged
+ higher richness
+\change_inserted -666822487 1604065015
+, with complete coexistence of all species,
+\change_deleted -666822487 1604065031
+ and biomass with
+\change_inserted -666822487 1604065032
+ when a
+\change_unchanged
+ seed bank
+\change_inserted -666822487 1604065040
+ is included
+\change_unchanged
+.
  
-\end_layout
-
-\begin_layout Itemize
-
-\change_deleted -2100369821 1603733256
-Conclue on possible changes in actual communities.
+\change_deleted -666822487 1604065392
+Better
+\change_inserted -666822487 1604065392
+Higher
+\change_unchanged
+ resistance to interaction change.
  
-\change_inserted -2100369821 1603709564
+\change_deleted -666822487 1604065395
+Better
+\change_inserted -666822487 1604065396
+Higher
+\change_unchanged
+ resistance to changes in the environment.
+ May be due to the abundance variation of certain species
+\change_inserted -666822487 1604065411
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_layout Itemize
+\begin_layout Plain Layout
 
-\change_inserted -2100369821 1603814058
-FIrst paragraph: reminder of results.
- Basically: higher richness and biomass with seed bank.
- Better resistance to interaction change.
- Better resistance to changes in the environment.
- May be due to the abundance variation of certain species.
+\change_inserted -666822487 1604065452
+Would need to be made more precise if you include the latter point in the
+ first paragraph.
+ I perhaps would not, unless we can be more affirmative.
  
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603814074
-Our results confirm those obtained by Wisknoski et al.
- and illustrate once again the importance of seed bank for microbes in general
+Our results confirm
+\change_inserted -666822487 1604065668
+ the importance of seed banks and dormancy for phytoplankton, as highlighted
+ by theoretical models
+\change_unchanged
+ 
+\change_inserted -666822487 1604065861
+designed for other taxa such as invertebrates ( Wisnoski et al.) or other
+ kinds of microbes 
+\change_deleted -666822487 1604065505
+those obtained by 
+\change_inserted -666822487 1604065849
+(Jones and Lennon 2010) ,
+\change_deleted -666822487 1604065847
+Wisknoski et al.
+\change_inserted -666822487 1604065849
+)
+\change_deleted -666822487 1604065681
+ and
+\change_inserted -666822487 1604065849
+.
+ Dormancy has long been thought to be an important and neglected process
+ in the microbiology literature
+\change_unchanged
+ 
+\change_deleted -666822487 1604065722
+illustrate once again the importance of seed bank for microbes in general
+\change_unchanged
  (Locey 2010, Lennon and Jones 2011).
- 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted -2100369821 1604054657
 Dormancy is a stage that increases notably diversity, and can do so without
  storage effect (but see real data with arguments for storage effect such
  as Bonis et al.
  1995, Facelli et al.
  2005, Angert al.
  2009, all in plants however)
+\end_layout
+
+\begin_layout Itemize
+
+\change_deleted -666822487 1604065879
+However, the model we develop is slightly different from the Wisnoski paper
+ as we do not allow for seed dispersal (we are in the case gamma=0) nor
+ asynchronous environmental variability or one-time disturbance.
+ As w
+\change_inserted -666822487 1604065879
+W
+\change_unchanged
+e focus on phytoplankton in environments with strongly seasonal variations,
+ 
+\change_inserted -666822487 1604065889
+hence 
+\change_unchanged
+we considered 
+\change_deleted -666822487 1604065894
+that both types of environmental fluctuations could not represent the actual
+ environment.
+\change_inserted -666822487 1604065993
+a strongly synchronous environment.
+ Seeds/cysts are presumed in our case to disperse little ...
+ Other models, by XXX, have made differing assumptions but came to the same
+ general conclusion: the combination of seed banks and long dormancy helps
+ greatly biodiversity maintenance.
+ 
 \change_unchanged
 
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1603813898
-However, the model we develop is slightly different from the Wisnoski paper
- as we do not allow for seed dispersal (we are in the case gamma=0) nor
- asynchronous environmental variability or one-time disturbance.
- As we focus on phytoplankton in environments with strongly seasonal variations,
- we considered that both types of environmental fluctuations could not represent
- the actual environment.
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted -2100369821 1604054686
+\change_deleted -666822487 1604066015
 Another difference is the way interactions are modeled.
  When there is a seed bank, there is only a low effect of facilitation increase.
  Our results are robust to interaction strength when interactions are weak
@@ -584,32 +597,63 @@ Another difference is the way interactions are modeled.
  we had in the JEcol paper, our results are robust to this change.
  Surprisingly, facilitation can still have a destabilizing effect even in
  model II (few lines on Qian and Akçay?).
+\change_inserted -666822487 1604066194
+We showed that our results on the diversity-enhancing effects of seed banks
+ are robust to changes in mean interaction values.
+ Hence, possible small differences between our model and true field-based
+ interactions (even after the detailed calibration process used here) are
+ unlikely to change any of the main results.
+ 
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1604054699
-Above all, some life history traits are specific to species that are rescued
- by the seed bank (Guittar et al.
- 2020 -> locally transient species): 
+\change_deleted -666822487 1604066216
+Above all, some life history traits are specific to s
+\change_inserted -666822487 1604066213
+S
+\change_unchanged
+pecies that are rescued by the seed bank (Guittar et al.
+ 2020 -> locally transient species)
+\change_inserted -666822487 1604066235
+ may have some specific life-history traits 
+\change_unchanged
+:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1604054731
-high amplitude of variation, which may be linked, in this case, to the temperatu
-re sensitivity.
- However, this can be extended to a lot of other traits that are not described
- here (nutrients, predation, etc.)
+\change_deleted -666822487 1604066329
+h
+\change_inserted -666822487 1604066329
+H
 \change_unchanged
-
+igh amplitude of 
+\change_inserted -666822487 1604066244
+abundance 
+\change_unchanged
+variation, which may be linked, in this case, to the temperature sensitivity.
+ However, this can be extended to a lot of other traits that are not described
+ here (
+\change_inserted -666822487 1604066256
+sensitivity to 
+\change_unchanged
+nutrient
+\change_inserted -666822487 1604066263
+s
+\change_deleted -666822487 1604066259
+s
+\change_unchanged
+, predation, etc.)
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1604054761
+\change_deleted -666822487 1604066464
 Interestingly, neither sinking (but maybe because we miss more hydrodynamics
  descriptors - a spatial model- and are only using a proxy for sinking -
  maybe cite Yamamoto who highlight hydrodynamics in their model, Yniguez
@@ -618,12 +662,11 @@ Interestingly, neither sinking (but maybe because we miss more hydrodynamics
  repartition mostly with hydrodynamics) nor growth rates are really good
  predictors of the survival (however, lower growth rates tend to be associated
  to higher probability of survival).
- 
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1604054836
+\change_deleted -666822487 1604066464
 In field data, trait trade-offs can be found between growth and low-resource
  nutrients (Angert et al.
  2009), see also Huang et al.
@@ -636,28 +679,87 @@ In field data, trait trade-offs can be found between growth and low-resource
  2005), comparison between sediment and vegetative communities (Montresor
  et al.
  2013)
+\change_inserted -666822487 1604066468
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1604067097
+These last two items are a bit peripheral and currently unclear.
+ I would suggest suppression unless you can clarify.
+ Regarding the 1st point, you first write that growth rates do not predict
+ survival without a seed bank and then that lower growth rates (max growth
+ rates, I assume) are associated to a higher probabity of survival -> both
+ cannot be true simultaneously.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1604067167
+Regarding the 2nd point, of course there are trade-offs between traits.
+ Nobody will dispute that.
+ But what is the conclusion that we draw from the existence of these trade-offs?
+ I don't get it.
+ If you want to keep it, start by the main point.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1604054896
+\change_deleted -666822487 1604066591
 Moving forwards: do we *need* to model the seed bank ?
+\change_inserted -666822487 1604066594
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1604067294
+We talked about suppressing this paragraph, which reshashes a bit stuff
+ said above.
+ Parts of this can be reinserted in the conclusion though, which I tried
+ to do below.
+ Perhaps Hellweger et al.
+ 2008 should be cited earlier with the microbial literature then.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted -666822487 1604066591
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 
-\change_inserted -2100369821 1604054901
+\change_deleted -666822487 1604066591
 there are *a lot* of coexistence models on phytoplankton (even though models
  with >2/3 species are just a bit less frequent), but some models also show
  that species can disappear without seed bank (Hellweger et al.
- 2008 for cyano) 
+ 2008 for cyano)
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1604054908
+\change_deleted -666822487 1604066591
 It would be interesting to have seed bank models, focusing on hydrodynamical
  features interacting with species shape characteristics which may impact
  the exchanges, as well as characteristic growth traits.
@@ -665,40 +767,114 @@ It would be interesting to have seed bank models, focusing on hydrodynamical
  but new mechanisms can emerge from seed modeling? (i.e.
  storage effect, which we do not have here) + A really interesting feature
  would be adding reproduction vs resistance of seed (but does that also
- exist for phytoplankton) 
+ exist for phytoplankton)
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-
-\change_inserted -2100369821 1604054867
 Conclude by saying that we explain diversity much better with a seed bank.
  We have shown that with a model that is parameterized on real data.
- To represent coexistence on long-term, it is important, so we may want
- this parameter -immigration- in long-term models (Stock et al.
- 2005), as for flower plant, for the same reasons.
- More and more research on these forms of resistance, and we may need more
- data to know to which point and frequency we can consider seed bank reinvasion
- –return to empirical observations–
-\end_layout
+ To represent coexistence 
+\change_deleted -666822487 1604066674
+on long-term
+\change_inserted -666822487 1604066678
+in the long run
+\change_unchanged
+, 
+\change_deleted -666822487 1604066684
+it
+\change_inserted -666822487 1604066702
+taking into account this possibility of spontaneous re-colonization
+\change_unchanged
+ is important, so we may want this 
+\change_deleted -666822487 1604066710
+parameter
+\change_inserted -666822487 1604066713
+process
+\change_unchanged
+ 
+\change_deleted -666822487 1604066718
+-immigration-
+\change_unchanged
+ in long-term models
+\change_inserted -666822487 1604066727
+ for the coexistence of species
+\change_unchanged
+ (Stock et al.
+ 2005
+\change_inserted -666822487 1604066731
 
-\begin_layout Standard
-
-\change_inserted -2100369821 1603806608
 \begin_inset Note Note
 status open
 
-\begin_layout Itemize
+\begin_layout Plain Layout
 
-\change_inserted -2100369821 1603806609
+\change_inserted -666822487 1604066738
+Is this a model for the coexistence of species?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+), as for flower plant
+\change_inserted -666822487 1604066744
+s
+\change_unchanged
+, for
+\change_deleted -666822487 1604066748
+ the same
+\change_inserted -666822487 1604066749
+ similar
+\change_unchanged
+ reasons.
+ 
+\change_inserted -666822487 1604066784
+When modelling the full life cycle as done here is impractical, it could
+ perhaps be simplified as a stochastic immigration term.
+ 
+\change_unchanged
+More 
+\change_deleted -666822487 1604066794
+and more 
+\change_unchanged
+research on these forms of resistance
+\change_inserted -666822487 1604066885
+ may be needed to parameterize truly predictive mechanistic models
+\change_unchanged
+, 
+\change_inserted -666822487 1604066865
+in particular to inform parameters XXX, XXX, XXX
+\change_deleted -666822487 1604066874
+and we
+\change_inserted -666822487 1604066895
+.
+ In simpler, phenomenological models, we
+\change_unchanged
+ may need more data to 
+\change_deleted -666822487 1604066904
+know to which point and frequency 
+\change_inserted -666822487 1604066911
+better pinpoint at which frequency 
+\change_unchanged
+we can consider seed bank reinvasion –return to empirical observations–
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
 The importance of interaction.
  There are two things to consider: [[]]
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603806609
 the expected effect: increased competition does diminish biodiversity because
  better competitors can exclude weaker species and prevent reestablishment
  
@@ -706,8 +882,6 @@ the expected effect: increased competition does diminish biodiversity because
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1603806609
 have a look at Fukami 2015 and Schwenter and Richter 2015, cited in Wisnoski.
  Maybe ghost of competition present?
 \end_layout
@@ -715,12 +889,9 @@ have a look at Fukami 2015 and Schwenter and Richter 2015, cited in Wisnoski.
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603806609
 However, the strongest effect, by far, is the impact of facilitation.
  Facilitation is often mentioned (apparent facilitation in observations,
  see for instance: de Ruiter and Gaedke 2017; for models, Chu and Ellner
@@ -731,25 +902,18 @@ However, the strongest effect, by far, is the impact of facilitation.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603806609
 Orgy of mutual benefaction (May 1981) is possible in model II even if we
  have tried to decrease its plausibility and is also a likely explanation.
  Discuss Qian and Akçay.
- 
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603806621
 However, species most likely to be excluded are not necessarily the ones
  most affected by either positive or negative interactions.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-
-\change_inserted -2100369821 1603806752
 At one point, we will need to discuss potential limits.
  Comparison with the JEcol paper, saying that we do not have exactly the
  same interactions (We had another argument, I cannot remember it right
@@ -765,8 +929,6 @@ At one point, we will need to discuss potential limits.
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1603806621
 I, of course, have lots of other ideas on limits, but we may stop there?
 \end_layout
 
@@ -776,21 +938,15 @@ I, of course, have lots of other ideas on limits, but we may stop there?
  We di a sensivitiy analysis that show our results are robust but if we
  wanter to better predict the dynamics of species, we would need those parameter
 s
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section*
 Supplementary Information
-\change_inserted -2100369821 1603806602
-
 \end_layout
 
 \begin_layout Subsubsection*
