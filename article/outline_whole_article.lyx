@@ -80,7 +80,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2100369821 "cpicoche"
 \author -666822487 "frederic"
 \end_header
 
@@ -457,10 +456,6 @@ First paragraph: reminder of results.
  Higher resistance to interaction change.
  Higher resistance to changes in the environment.
  
-\change_deleted -2100369821 1604068984
-May be due to the abundance variation of certain species
-\change_unchanged
-
 \begin_inset Note Note
 status collapsed
 
@@ -473,16 +468,32 @@ FB: Would need to be made more precise if you include the latter point in
 \end_inset
 
 .
-\change_inserted -2100369821 1604072015
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1604076531
 Maybe include here the fact that we have both facilitation and competition
  (but could we mention it in passing?)
+\change_inserted -666822487 1604084594
+-> In a way this is a reminder of the model, which you can even do before
+ the reminder of the results.
+ You can insert a sentence after 
+\begin_inset Quotes eld
+\end_inset
+
+Using literature-derived and field-calibrated parameters, we modeled the
+ behaviour
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1604084598
+of phytoplanktonic communities with and without a cyst bank.
+\begin_inset Quotes erd
+\end_inset
+
+ for instance.
+ 
 \change_unchanged
 
 \end_layout
@@ -490,33 +501,16 @@ Maybe include here the fact that we have both facilitation and competition
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
 Our results confirm the importance of seed banks and dormancy for phytoplankton,
  as highlighted by theoretical models designed for other taxa such as invertebra
-tes ( Wisnoski et al.) or other kinds of microbes (
-\change_inserted -2100369821 1604070043
-Hellweger et al.
- 2008, 
-\change_unchanged
-Jones and Lennon 2010
-\change_deleted -2100369821 1604070041
-) ,
-\change_unchanged
-).
+tes ( Wisnoski et al.) or other kinds of microbes (Hellweger et al.
+ 2008, Jones and Lennon 2010).
  Dormancy has long been thought to be an important and neglected process
- in the microbiology literature 
-\change_deleted -2100369821 1604069005
- 
-\change_unchanged
-(
-\change_inserted -2100369821 1604070085
-Eilersten and Wyatt 2000, 
-\change_unchanged
-Locey 2010, Lennon and Jones 2011).
+ in the microbiology literature (Eilersten and Wyatt 2000, Locey 2010, Lennon
+ and Jones 2011).
 \end_layout
 
 \begin_deeper
@@ -533,19 +527,11 @@ Dormancy is a stage that increases notably diversity, and can do so without
 We focus on phytoplankton in environments with strongly seasonal variations,
  hence we considered a strongly synchronous environment.
  Seeds/cysts are presumed in our case to disperse little ...
- 
-\change_inserted -666822487 1604065993
-Other models, by 
-\change_deleted -2100369821 1604076556
-XXX
-\change_inserted -2100369821 1604076980
-Wisnoski, Aikio et al.
+ Other models, by Wisnoski, Aikio et al.
  2002, Levine and Rees 2003 (both previous model assuming one species without
- and one species with seed bank, and both coexist)
-\change_unchanged
-, have made differing assumptions but came to the same general conclusion:
- the combination of seed banks and long dormancy helps greatly biodiversity
- maintenance.
+ and one species with seed bank, and both coexist), have made differing
+ assumptions but came to the same general conclusion: the combination of
+ seed banks and long dormancy helps greatly biodiversity maintenance.
 \end_layout
 
 \begin_layout Itemize
@@ -554,11 +540,6 @@ We showed that our results on the diversity-enhancing effects of seed banks
  Hence, possible small differences between our model and true field-based
  interactions (even after the calibration process used here) are unlikely
  to change any of the main results.
-
-\change_deleted -2100369821 1604077012
- 
-\change_inserted -2100369821 1604072004
-
 \end_layout
 
 \end_deeper
@@ -577,14 +558,10 @@ High amplitude of abundance variation, which may be linked, in this case,
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -666822487 1604066468
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1604077230
 CP: Interestingly, neither sinking (but maybe because we miss more hydrodynamics
  descriptors - a spatial model- and are only using a proxy for sinking -
  maybe cite Yamamoto who highlight hydrodynamics in their model, Yniguez
@@ -596,8 +573,6 @@ CP: Interestingly, neither sinking (but maybe because we miss more hydrodynamics
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1604077216
 In field data, trait trade-offs can be found between growth and low-resource
  nutrients (Angert et al.
  2009), see also Huang et al.
@@ -613,32 +588,22 @@ In field data, trait trade-offs can be found between growth and low-resource
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1604077233
-FB: 
-\change_inserted -666822487 1604067097
-These last two items are a bit peripheral and currently unclear.
+FB: These last two items are a bit peripheral and currently unclear.
  I would suggest suppression unless you can clarify.
  Regarding the 1st point, you first write that growth rates do not predict
  survival without a seed bank and then that lower growth rates (max growth
  rates, I assume) are associated to a higher probabity of survival -> both
  cannot be true simultaneously.
  
-\change_inserted -2100369821 1604070277
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1604077239
 CP: For now, even though we can note that higher probability of survival
  can be related to lower optimal temperature, i.e.
  lower maximum intrisinc growth rate, we will not go further into this point
  as this would require much more justification.
  We may want to consider that later, though
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -647,18 +612,13 @@ CP: For now, even though we can note that higher probability of survival
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1604067167
 Regarding the 2nd point, of course there are trade-offs between traits.
  Nobody will dispute that.
  But what is the conclusion that we draw from the existence of these trade-offs?
  I don't get it.
- If you want to keep it, start by the main point.
+ If you want to keep it, start by the main point.CP: Ok, removed.
 
-\change_deleted -2100369821 1604077198
- 
-\change_inserted -2100369821 1604077204
-CP: Ok, removed.
+\change_deleted -666822487 1604084623
  
 \change_unchanged
 
@@ -667,71 +627,42 @@ CP: Ok, removed.
 \end_inset
 
 
-\change_deleted -2100369821 1604077284
-
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-
-\end_layout
-
 \begin_layout Itemize
 Conclude by saying that we explain diversity much better with a seed bank.
  We have shown that with a model that is parameterized on real data.
  To represent coexistence in the long run, taking into account this possibility
  of spontaneous re-colonization is important, so we may want this process
- 
-\change_deleted -2100369821 1604077317
- 
-\change_unchanged
-in long-term models for the coexistence of species), as for flower plants,
+ in long-term models for the coexistence of species), as for flower plants,
  for similar reasons.
- When modelling 
-\change_deleted -2100369821 1604077339
-the full
-\change_inserted -2100369821 1604077341
-different stages of the
-\change_unchanged
- life cycle as done here is impractical
-\change_deleted -2100369821 1604077345
- 
-\change_unchanged
-, it could perhaps be simplified as a stochastic immigration term.
+ When modelling different stages of the life cycle as done here is impractical,
+ it could perhaps be simplified as a stochastic immigration term.
  More research on these forms of resistance may be needed to parameterize
  truly predictive mechanistic models, in particular to inform parameters
-\change_inserted -666822487 1604066865
+ sinking rate of resting cells
+\change_deleted -666822487 1604084679
+ only
+\change_unchanged
+, burial, resuspension
+\change_deleted -666822487 1604084682
  
-\change_deleted -2100369821 1604070557
-XXX
-\change_inserted -2100369821 1604070609
-sinking rate of resting cells only
-\change_inserted -666822487 1604066865
-, 
-\change_deleted -2100369821 1604070565
-XXX
-\change_inserted -2100369821 1604070565
-burial
-\change_inserted -666822487 1604066865
-, 
-\change_deleted -2100369821 1604070569
-XXX
-\change_inserted -2100369821 1604070571
-resuspension 
-\change_deleted -666822487 1604066874
-and we
 \change_unchanged
 .
  In simpler, phenomenological models, we may need more data to better pinpoint
- at which frequency we can consider seed bank reinvasion
-\change_inserted -2100369821 1604077388
- with field or experimental data 
+ at which frequency we can consider seed bank reinvasion with field or experimen
+tal data 
+\change_inserted -666822487 1604084730
+– currently the only parameter that is measured is the rate of survival
+ of the cells found in the sediment.
+ 
+\change_unchanged
+
 \begin_inset Note Note
 status open
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1604077469
 i.e., qu'est-ce qu'on doit mesurer? Sur le terrain, simplement un taux de
  ré-invasion.
  L'une des façons de calculer/représenter ce taux d'immigration, c'est le
@@ -739,15 +670,11 @@ i.e., qu'est-ce qu'on doit mesurer? Sur le terrain, simplement un taux de
  Mais on peut aussi faire des expériences (fausse graine ayant les mêmes
  propriétés hydrodynamiques - densité, taille - , on peut calculer en combien
  de temps on observe une remise en suspension)
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 .
-
-\change_unchanged
  –return to empirical observations–
 \end_layout
 
