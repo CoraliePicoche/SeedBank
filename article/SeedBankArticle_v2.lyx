@@ -3709,7 +3709,13 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Using a meta-community model which accounts for movements
+Using a meta-community model which accounts for 
+\change_deleted -2100369821 1604505911
+movements
+\change_inserted -2100369821 1604505913
+exchanges
+\change_unchanged
+
 \begin_inset Note Note
 status open
 
@@ -3724,35 +3730,115 @@ F: migration has a very specific meaning in biology.
  the bottom of the coastal water column, we were able to show that a specific
  life stage, the cyst stage, can help maintain biodiversity in different
  marine compartments.
- Using literature-derived and field-calibrated parameters, we modeled the
- behaviour of phytoplanktonic communities with and without a cyst bank.
- Biodiversity decreased drastically in the absence of a cyst bank, and so
- did the total abundance of the community.
+
+\change_inserted -2100369821 1604573700
+ This stage was integrated to a phytoplanktonic community model based on
+ literature-derived and field-calibrated parameters in a fluctuating environment
+ that was able to simulate realistic population dynamics 
+\change_deleted -2100369821 1604569491
+ Using literature-derived and field-calibrated parameters
+\change_inserted -2100369821 1604569573
+, including both positive and negative interactions.
+\change_deleted -2100369821 1604569579
+, we modeled the behaviour of phytoplanktonic communities with and without
+ a cyst bank.
+\change_inserted -2100369821 1604569584
+When removing the cyst bank,
+\change_unchanged
+ 
+\change_deleted -2100369821 1604569585
+B
+\change_inserted -2100369821 1604569585
+b
+\change_unchanged
+iodiversity decreased drastically
+\change_deleted -2100369821 1604569590
+ in the absence of a cyst bank
+\change_unchanged
+, and so did the total abundance of the community.
  Moreover, when faced with a biotic or abiotic perturbation, communities
  that could divert part of their population to a dormant stage were less
  prone to species loss and could maintain their biomass through the years.
  These results were consistent for the two interaction models that we considered
 , with and without saturation in interaction strengths.
+\change_inserted -2100369821 1604569493
+
 \end_layout
 
 \begin_layout Standard
-Our assessment of cyst bank effects is somehow contingent upon how realistic
- is our modelling of community dynamics.
- Our model parameters were partly based on calibration of a specific field
- abundance dataset, which allowed us to represent realistic biotic interactions
- between phytoplanktonic taxa and phenology, and partly based on literature-deri
-ved estimates.
- 
-\change_inserted -666822487 1598860970
 
+\change_inserted -2100369821 1604573851
+Our results demonstrate the major role of phytoplanktonic cyst banks in
+ maintaining biodiversity, as has already been evidenced by theoretical
+ models for other taxa such as plants (Levine and Rees 2004), invertebrates
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+ or microbes (Jones and Lennon 2010).
+ Dormancy has been observed in field and experimental data, including for
+ phytoplanktonic organisms (Eilersten and Wyatt 2000), and has long been
+ thought to be an important and neglected process in the wider microbiology
+ literature (Locey 2010, Lennon and Jones 2011).
+ Processes behind diversity maintenance by the seed stage include the storage
+ effect (Bonis et al.
+ 1995, Facelli et al.
+ 2005, Angert et al.
+ 2009) but may also depend on other mechanisms such as niche differentiation
+ through alternative life strategies (Ellner et al.
+ 1987, [[Find a more recent pper]]) or resistance to fluctuating environments
+ (Brink et al.
+ 2020).
+ This is especially true when organisms are also able to disperse between
+ patches in addition to dormancy (Shmida and Ellner 1984, XXX).
+ In our case, phytoplanktonic organisms moved between the coast and the
+ ocean which were subject to synchronous environments.
+ Contrary to most dormancy/dispersal literature (but see Wisknoski et al.
+ 2019), only vegetative organisms were able to disperse.
+ Differing assumptions however did not change the same general conclusion:
+ the combination of seed banks, dispersal and dormancy helps greatly biodiversit
+y maintenance.
+ Such results are also robust to changes in exchange parameters and mean
+ interaction values in the community.
+ Hence, possible small differences between our model and true field-based
+ interactions (even after the calibration process used here) are unlikely
+ to change any of the main results regarding the diversity and composition
+ of the community.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1604575361
+Species present in the community had different survival probabilities in
+ the absence of a seed bank.
+ Some species could only survive with a seed bank (which confirms conclusions
+ from Hellweger et al.
+ 2008 for single species).
+ Others periodically disappeared from the community in the ocean, while
+ being able to reinvade the coast from the seed bank, which could be linked
+ to the notion of locally transient species which are filtered out from
+ certain patches but can reinvade the environment (Guittar et al.
+ 2020).
+ The same life history traits could explain species extinction, whether
+ definitive or only temporary: higher amplitudes of variation were the most
+ prominent one.
+ In our model, the sensitivity of the growth rate, and therefore variation
+ in biomasses, is due to a higher sensitivity to temperature variation.
+ Species are more prone to crash, and sometimes do so before being able
+ to build a seed bank sufficient for them to reinvade.
+ More generally, smaller niche width (due to, e.g., sensitivity to nutrient
+ availability, tolerance to predation) can explain such rapid extinction.
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1598861001
-F: I stopped there but the following should be edited similarly having a
- reader in mind.
+\change_inserted -2100369821 1604574853
+Missing a transition here
 \change_unchanged
 
 \end_layout
@@ -3760,7 +3846,76 @@ F: I stopped there but the following should be edited similarly having a
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1604576367
+Phytoplanktonic community models often lack a seed bank compartment.
+ However, we showed that we explain diversity much better with a seed bank
+ in a model calibrated on real data.
+ Taking into account the possibility of spontaneous re-colonization from
+ the coast to the ocean may be as important as accounting for re-seeding
+ of vegetative organisms by the ocean.
+ Therefore, we may want to add this process in more long-term models for
+ the coexistence of phytoplanktonic species, as done more frequently for
+ flower plants.
+ When modelling different stages of the life cycle as done here is impractical,
+ it could perhaps be simplified as a stochastic immigration term (as done
+ in Stock et al.
+ 2005, who focus on a single species).
+ More research on dormant stages may be needed to parameterize truly predictive
+ mechanistic models, in particular to inform parameters such as the sinking
+ rate of resting cells, burial, resuspension.
+ These parameters are all linked to the hydrodynamics processes (Yamamoto
+ et al.
+ 2002, 2003, Yniguez et al.
+ 2012) and may need to be calibrated for each modeled site.
+ In simpler, phenomenological models, we may need more data to better pinpoint
+ at which frequency we can consider seed bank reinvasion with field or experimen
+tal data – currently one of the only parameters measured is the rate of
+ survival of the cells found in the sediment (Montresor et al.
+ 2013, Solow et al.
+ 2014).
+ Other parameters such as transition rates are however missing (Estrada
+ et al.
+ 2010).
+ We therefore encourage both experiments and field observation to follow
+ seed trajectories to inform models with biological and physical forcing
+ to explain cyst bank dynamics, therefore also explaining part of diversity
+ maintenance.
 \change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1604570201
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1604570201
+Our assessment of cyst bank effects is somehow contingent upon how realistic
+ is our modelling of community dynamics.
+ Our model parameters were partly based on calibration of a specific field
+ abundance dataset, whih allowed us to represent realistic biotic interactions
+ between phytoplanktonic taxa and phenology, and partly based on literature-deri
+ved estimates.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1604570201
+F: I stopped there but the following should be edited similarly having a
+ reader in mind.
+\end_layout
+
+\end_inset
+
 The range of values found in the literature for certain parameters demonstrated
  both the variability of the environment and phytoplanktonic reactions,
  and the uncertainty one can have when measuring certain processes.
@@ -3773,27 +3928,12 @@ The range of values found in the literature for certain parameters demonstrated
  to the seed bank (which could be approximated by the variation in sinking
  rate in our model).
  
-\change_deleted -2100369821 1599552393
-[[[Here maybe discuss what we have in the literature for hydrodynamics stuff]]]
- [[Need to compare our values to 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "jewson_loss_1981"
-literal "false"
-
-\end_inset
-
- who took into account most of the phenomena we describe here and the cyst
- bank as well as the water column]] [[This would also be the place -as we
- are speaking of parameters uncertainty for some words on niches]]]
-\change_inserted -2100369821 1599552394
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1599552417
+\change_inserted -2100369821 1604570201
 [[[Here maybe discuss what we have in the literature for hydrodynamics stuff]]]
  [[Need to compare our values to 
 \begin_inset CommandInset citation
@@ -3808,6 +3948,49 @@ literal "false"
  are speaking of parameters uncertainty for some words on niches]]].
  Fred, maybe I do not need to say all that if we don't want to focus on
  the potential issues?
+\end_layout
+
+\end_inset
+
+ Our model proved quite resilient to variations in these parameters, which
+ makes our conclusions qualitatively reliable.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1604570201
+Effect of interactions on the model : setting of a threshold in model I,
+ saturating interaction effect, positive interaction effect more destabilizing
+ (+ justify it, as it does exist in nature?).
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1604570201
+Seed bank buffering effect in terrestrial plant literature for interation
+ and environment: The capacity of a seed bank to buffer disadvantageous
+ environments to maintain population over time is a staple in terrestrial
+ plant literature [[refS]].
+ Both empirical [[ref]] and theoretical [[ref]] evidence show that investing
+ part of the biomass of a population in stages that will spread their growth
+ over periods longer than the usual life cycle of the organisms is a successful
+ strategy to maintain over time.
+ This is the basis of bet-hedging
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1604570201
+What this adds to phytoplanktonic studies (a few words on models already
+ existing, such as Dalelio and Hinners?).
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1604570201
+What needs to be explored now (specific cyst formation and regulation, parameter
+s regulating the dynamics of the cyst bank itself -burial and resuspension,
+ for instance)
 \change_unchanged
 
 \end_layout
@@ -3815,28 +3998,76 @@ literal "false"
 \end_inset
 
 
-\change_unchanged
- Our model proved quite resilient to variations in these parameters, which
- makes our conclusions qualitatively reliable.
-
-\change_deleted -666822487 1598859652
+\change_deleted -2100369821 1604570200
+Our assessment of cyst bank effects is somehow contingent upon how realistic
+ is our modelling of community dynamics.
+ Our model parameters were partly based on calibration of a specific field
+ abundance dataset, which allowed us to represent realistic biotic interactions
+ between phytoplanktonic taxa and phenology, and partly based on literature-deri
+ved estimates.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1598861001
+F: I stopped there but the following should be edited similarly having a
+ reader in mind.
 \change_unchanged
 
 \end_layout
 
+\end_inset
+
+The range of values found in the literature for certain parameters demonstrated
+ both the variability of the environment and phytoplanktonic reactions,
+ and the uncertainty one can have when measuring certain processes.
+ Hydrodynamics features are highly site-dependent and sometimes poorly defined:
+ cyst burial and resuspension, for instance, are functions of the shape
+ of the coastal site and its interface with the ocean, as well as stochastic
+ phenomena, such as gusts of wind, bioturbation or anthropogenic disturbances.
+ On the other hand, taxon specificities such as shape, buoyancy regulation
+ capacity or cyst formation rate can influence the rate of contribution
+ to the seed bank (which could be approximated by the variation in sinking
+ rate in our model).
+ [[[Here maybe discuss what we have in the literature for hydrodynamics
+ stuff]]] [[Need to compare our values to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "jewson_loss_1981"
+literal "false"
+
+\end_inset
+
+ who took into account most of the phenomena we describe here and the cyst
+ bank as well as the water column]] [[This would also be the place -as we
+ are speaking of parameters uncertainty for some words on niches]]] Our
+ model proved quite resilient to variations in these parameters, which makes
+ our conclusions qualitatively reliable.
+
+\change_deleted -666822487 1598859652
+ 
+\change_deleted -2100369821 1604570200
+
+\end_layout
+
 \begin_layout Standard
+
+\change_deleted -2100369821 1604570200
 Effect of interactions on the model : setting of a threshold in model I,
  saturating interaction effect, positive interaction effect more destabilizing
  (+ justify it, as it does exist in nature?).
 
 \change_deleted -666822487 1598859652
  
-\change_unchanged
+\change_deleted -2100369821 1604570200
 
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1604570200
 Seed bank buffering effect in terrestrial plant literature for interation
  and environment: The capacity of a seed bank to buffer disadvantageous
  environments to maintain population over time is a staple in terrestrial
@@ -3848,19 +4079,25 @@ Seed bank buffering effect in terrestrial plant literature for interation
  This is the basis of bet-hedging
 \change_deleted -666822487 1598859652
  
-\change_unchanged
+\change_deleted -2100369821 1604570200
 
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1604570200
 What this adds to phytoplanktonic studies (a few words on models already
  existing, such as Dalelio and Hinners?).
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -2100369821 1604570200
 What needs to be explored now (specific cyst formation and regulation, parameter
 s regulating the dynamics of the cyst bank itself -burial and resuspension,
  for instance)
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

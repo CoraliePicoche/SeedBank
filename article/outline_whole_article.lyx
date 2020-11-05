@@ -80,6 +80,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \author -666822487 "frederic"
 \end_header
 
@@ -493,6 +494,8 @@ of phytoplanktonic communities with and without a cyst bank.
 \end_inset
 
  for instance.
+
+\change_deleted -2100369821 1604508753
  
 \change_unchanged
 
