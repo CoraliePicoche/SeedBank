@@ -88,25 +88,7 @@
 
 \begin_body
 
-\begin_layout Title
-
-\change_deleted -666822487 1605081760
-Supporting Information
-\end_layout
-
-\begin_layout Title
-
-\change_deleted -666822487 1605081760
-
-\size larger
-Seed-bank contribution in maintaining phytoplanktonic biodiversity
-\change_inserted -666822487 1605081763
-
-\end_layout
-
 \begin_layout Standard
-
-\change_inserted -666822487 1605081820
 
 \series bold
 Supporting Information
@@ -119,57 +101,20 @@ A metacommunity model for phytoplankton biodiversity maintenance with a
 by C.
  Picoche & F.
  Barraquand.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
-Growth 
-\change_inserted -666822487 1605081828
-function 
-\change_unchanged
-calibration
+Intrinsic growth rate modeling
 \end_layout
 
 \begin_layout Standard
-The growth function in our models
-\change_deleted -666822487 1605081908
-, based on 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
-
-\change_inserted -666822487 1605081865
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605081919
-Don't think that's accurate when written as below
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted -666822487 1605081913
-,
-\change_unchanged
- can be separated in three elements:
+The intrinsic growth rate can be decomposed in 2 elements:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-N_{t',i}=\frac{\exp(E(T)f_{i}(T))N_{t,i}}{g(\{\alpha_{ij}\}_{j},\{N_{j,t}\}_{j})}\label{eq:growth_rate}
+r_{i}(T)=E(T)f_{i}(T)\label{eq:growth_rate}
 \end{equation}
 
 \end_inset
@@ -182,59 +127,11 @@ with
 \begin_inset Formula $E(T)$
 \end_inset
 
- being the 
-\change_deleted -666822487 1605082068
-maximum achievable growth rate
-\change_inserted -666822487 1605082078
-response to temperature common to all species
-\change_deleted -666822487 1605082068
- in the absence of density-dependence
-\change_inserted -666822487 1605081940
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605081953
-the max achievable growth rate includes f_i(T)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-, 
+ being the response to temperature common to all species and 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
-, the niche part of the model, and 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $g(\{\alpha_{ij}\}_{j},\{N_{j,t}\}_{j})$
-\end_inset
-
-, the effect of 
-\change_deleted -666822487 1605082009
-interactions
-\change_inserted -666822487 1605082023
-all species densities
-\change_unchanged
- on the growth rate.
- 
+, the niche part of the model
 \end_layout
 
 \begin_layout Standard
@@ -247,16 +144,8 @@ This section is dedicated to the design of the growth function
 \end_inset
 
  that characterizes differential response to temperature variations, and
- the estimation of interactions that may 
-\change_deleted -2100369821 1604934354
-reduce
-\change_inserted -2100369821 1604934377
-affect the growth rate of phytoplanktonic organisms in a community.
-
-\change_deleted -2100369821 1604934378
- it.
-\change_unchanged
-
+ the estimation of interactions that may affect the growth rate of phytoplankton
+ic organisms in a community.
 \end_layout
 
 \begin_layout Subsection*
@@ -313,11 +202,7 @@ literal "false"
 \end_inset
 
  on which we base our growth rate formulation is not able to reproduce the
- observed 
-\change_deleted -2100369821 1604934697
-patterns
-\change_inserted -2100369821 1604934707
-values found in 
+ observed values found in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "edwards_light_2015"
@@ -325,8 +210,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
  (see low values of the growth rate in Fig.
  
 \begin_inset CommandInset ref
@@ -375,7 +258,6 @@ literal "false"
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -396,7 +278,6 @@ The relationship between temperature and growth rate is then
  However, these daily growth rates need to be proportional to the daylength
  as no growth occurs at night: we therefore halve the Bissinger value in
  our models.
- 
 \end_layout
 
 \begin_layout Standard
@@ -745,8 +626,6 @@ The shift of the maximum growth rate may lead to a deformation of the expected
 \end_inset
 
  for modeled taxa below (Fig 
-\change_inserted -2100369821 1604936391
-
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Thermal_niche"
@@ -756,18 +635,10 @@ noprefix "false"
 
 \end_inset
 
-
-\change_deleted -2100369821 1604936383
-XX, TO DO
-\change_unchanged
 ).
-\change_inserted -2100369821 1589636539
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1589636543
 \begin_inset Float figure
 wide false
 sideways false
@@ -776,8 +647,6 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
-
-\change_inserted -2100369821 1589636567
 \begin_inset Graphics
 	filename /home/cpicoche/Documents/Thesis/SeedBank/output/thermal_niche.pdf
 	width 95text%
@@ -785,18 +654,12 @@ status open
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1589636543
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1604936380
 Growth rate as a function of temperature for the taxa used in the model
  
 \begin_inset CommandInset label
@@ -806,62 +669,24 @@ name "fig:Thermal_niche"
 \end_inset
 
 
-\change_unchanged
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Subsection*
-Estimation of interaction
+\begin_layout Section
+Initial estimation of interaction values
 \end_layout
 
 \begin_layout Subsubsection*
-Model I
-\change_deleted -666822487 1588329243
-: linear interactions
-\change_inserted -666822487 1588329358
-: Lotka-Volterra interactions
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588329405
-\begin_inset Quotes eld
-\end_inset
-
-mass action
-\begin_inset Quotes erd
-\end_inset
-
- works as well, I think.
- Or nothing!
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+Model I: Lotka-Volterra interactions
 \end_layout
 
 \begin_layout Standard
@@ -886,7 +711,6 @@ literal "false"
 \end_inset
 
 ).
- 
 \end_layout
 
 \begin_layout Standard
@@ -947,7 +771,6 @@ iance matrix
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -963,49 +786,27 @@ noprefix "false"
 \end_inset
 
 ).
+
+\change_inserted -2100369821 1605092438
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+ supporting information, we 
+\change_deleted -2100369821 1605092436
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "certain_how_2018"
-literal "false"
 
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Should we add: Corrected in the Appendices of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "picoche_strong_2019"
-literal "false"
-
-\end_inset
-
-
-\change_inserted -666822487 1588329315
- Yes.
- Perhaps just write 
-\begin_inset Quotes eld
-\end_inset
-
-multispecies version in Picoche & Barraquand (2020)'s Supporting Information
- [btw, in Certain et al.
- it is also in the SI].
+\change_deleted -2100369821 1605092435
  
-\change_inserted -2100369821 1604936643
-I guess we can also leave it as is.
 \change_unchanged
-
-\end_layout
-
-\end_inset
-
- showed that MAR and BH interaction coefficients, respectively 
+showed that MAR and BH interaction coefficients, respectively 
 \begin_inset Formula $b_{ij}$
 \end_inset
 
@@ -1140,10 +941,6 @@ This gives an exact correspondance between
 \begin_layout Standard
 In this model, the presence of mutualistic interactions can lead to an orgy
  of mutual benefaction 
-\change_deleted -2100369821 1604941239
-[ref] (May's book)
-\change_inserted -2100369821 1604941239
-
 \begin_inset CommandInset citation
 LatexCommand citep
 key "may_1981_theoretical"
@@ -1151,8 +948,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 .
  We impose a minimum value of 1 to the denominator of the BH formulation,
  meaning that the growth rate cannot be higher than the maximum growth rate
@@ -1166,7 +961,6 @@ literal "false"
  seems quite rare for phytoplanktonic communities (see Schmidtke et al.
  2010 for underyielding and see Shurin et al.
  2014 for an observed but not frequent, and small, overyielding).
- 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1232,23 +1026,10 @@ literal "false"
 , i.e.
  a model where each taxon provides a unique type of benefit or disadvantage
  to the focus species.
- 
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1588329451
-It is easy to see that t
-\change_inserted -666822487 1588329451
-T
-\change_unchanged
-here is no unique solution for 
-\change_deleted -666822487 1588329454
-the
-\change_inserted -666822487 1588329457
-making a
-\change_unchanged
- correspondence between the 
+There is no unique solution for making a correspondence between the 
 \begin_inset Formula $\mathbf{B}$
 \end_inset
 
@@ -1269,13 +1050,7 @@ making a
 \begin_inset Formula $a_{C}$
 \end_inset
 
- as the average sum of all 
-\change_deleted -666822487 1588329604
-interactions
-\change_inserted -666822487 1588329606
-species effects
-\change_unchanged
- 
+ as the average sum of all species effects 
 \begin_inset Formula $\alpha_{ij}N_{i}$
 \end_inset
 
@@ -1295,47 +1070,13 @@ noprefix "false"
 \begin_inset Formula $a_{F}$
 \end_inset
 
-, we can make two assumptions:
-\change_inserted -2100369821 1604937529
- on average,
-\change_unchanged
- a) there is 70% facilitation in our dataset and b) the growth rate 
+, we can make two assumptions: on average, a) there is 70% facilitation
+ in our dataset and b) the growth rate 
 \begin_inset Formula $r_{i}(T)$
 \end_inset
 
- 
-\change_deleted -2100369821 1604936801
-cannot
-\change_inserted -2100369821 1604936804
-should not
-\change_unchanged
- 
-\change_deleted -2100369821 1604937257
-be 
-\change_unchanged
-exceed
-\change_deleted -2100369821 1604937259
-ed
-\change_unchanged
-, as in model I
-\change_deleted -2100369821 1604937324
- (eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:a_F"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-)
-\change_unchanged
-.
- 
-\change_inserted -2100369821 1604937326
-We consider that the relationships that apply to individual interactions
+ should not exceed, as in model I.
+ We consider that the relationships that apply to individual interactions
  
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
@@ -1352,38 +1093,11 @@ noprefix "false"
 \end_inset
 
 ).
-\change_unchanged
-
 \begin_inset Formula 
 \begin{eqnarray}
 a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}\alpha_{ij}N_{j,max}\right)\label{eq:a_C}\\
 (1-0.7)a_{C}+0.7a_{F} & = & 0\label{eq:a_F}
 \end{eqnarray}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -666822487 1588329666
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588329766
-I'm not sure about the second equation: the fact that we have facilitation
- 70% of the time does not mean that the maximum effect is 70% that of the
- total.
- But, perhaps here, you meant that relationships that apply to individual
- interaction coefficients must apply to their saturation point.
- In which case, you are correct; but this needs to be said to help the reader!
- 
-\change_unchanged
-
-\end_layout
 
 \end_inset
 
@@ -1401,44 +1115,22 @@ At low abundances, we can consider that interactions are far from saturation.
 \end_inset
 
 
-\change_inserted -2100369821 1604937844
+\change_inserted -2100369821 1605092622
 , where 
 \begin_inset Formula $f=2$
 \end_inset
 
  is a correction factor that takes into account the fact that the slope
- at origin for the type II response is likely higher than the slope for
- the linear interaction coefficient.
- 
-\change_deleted -2100369821 1604937432
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588329884
-Have you considered the correction factor we have been discussing? Accounting
- for the fact that when fitting to data, the slope at origin for the type
- II response is likely higher (like, twice higher) than the slope for the
- linear interaction coeff.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
+ at origin for the type II response, before saturation, is likely higher
+ than the slope for the linear interaction coefficient
 \change_unchanged
 .
- 
 \change_inserted -2100369821 1604937422
 
 \end_layout
 
-\begin_layout Section*
-Fixed parameters
+\begin_layout Section
+Choice of fixed parameters
 \end_layout
 
 \begin_layout Standard
@@ -1453,11 +1145,7 @@ Loss rate
 
 \begin_layout Standard
 The loss rate corresponds to multiple mortality processes.
- 
-\change_inserted -666822487 1588330100
-The model of 
-\change_unchanged
-
+ The model of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -1465,13 +1153,7 @@ literal "false"
 
 \end_inset
 
- 
-\change_deleted -666822487 1588330106
-set this
-\change_inserted -666822487 1588330108
-considered a
-\change_unchanged
- rate around 0.04 day
+ considered a rate around 0.04 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
@@ -1484,31 +1166,8 @@ literal "false"
 
 \end_inset
 
-, washout (0.5%), parasitism (4% of 
-\change_deleted -2100369821 1604937467
-infested 
-\change_unchanged
-cells
-\change_inserted -2100369821 1604937471
- are infested and die
-\change_deleted -2100369821 1604938112
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588330226
-do you mean that only 4% of infested cells die of it?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-) and grazing still remained low 
+, washout (0.5%), parasitism (4% of cells are infested and die) and grazing
+ still remained low 
 \change_inserted -666822487 1588330072
 
 \begin_inset Note Note
@@ -1567,19 +1226,8 @@ Sinking rate
 \begin_layout Standard
 Among the hydrodynamics processes that drive sinking rate, turbulence and
  eddies – themselves driven by tidal currents, the shape of the coast or
- wind conditions – can retain the cells at the top of the water column
-\change_deleted -2100369821 1604938195
- [ref to Sourisseau?]
-\change_unchanged
-.
- For that reason, laboratory experiments on sinking rates are not 
-\change_deleted -2100369821 1604938200
-sufficiently
-\change_inserted -2100369821 1604938201
-sufficient
-\change_deleted -2100369821 1604938205
- informative
-\change_unchanged
+ wind conditions – can retain the cells at the top of the water column.
+ For that reason, laboratory experiments on sinking rates are not sufficient
  to calibrate a field-based model.
  Credible values for sinking rates are therefore taken from field studies.
  In the Gotland Basin (central Baltic Sea), 
@@ -1616,21 +1264,7 @@ literal "false"
 
 \end_inset
 
- in a river
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-So we may want to remove this one
-\change_inserted -2100369821 1604938117
-??
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
- and 
+ in a river and 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wiedmann_seasonality_2016"
@@ -1673,45 +1307,6 @@ Thalassiosira
 (THP)
 \shape italic
 .
-\change_deleted -2100369821 1604938236
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -2100369821 1604938234
-However, it should be noted that the sinking rate measured in these articles
- represent the sinking of all cells, therefore including dead cells.
- In our model, it should represent the exchange of live cells between the
- coast and the seed bank, or a loss of cells in the ocean.
- The maximum sinking rate used in this model therefore needs to be decreased
- to avoid modeling dead cells already taken into account in the loss term.
-
-\change_unchanged
- 
-\change_inserted -666822487 1588330407
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588330419
-Conclusion on the values considered to include here.
-
-\change_inserted -2100369821 1604939088
- What do you mean?
-\change_deleted -2100369821 1604938241
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1736,10 +1331,6 @@ status open
 
 \begin_layout Plain Layout
 Possible beta-distribution of sinking rates
-\change_deleted -2100369821 1604939092
- 
-\change_unchanged
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sinking-distribution"
@@ -1776,11 +1367,6 @@ literal "false"
  The authors also present sediment datation according to depth.
  Depth can therefore be related to maximum and mean age of phytoplankton
  cysts before death.
-
-\change_deleted -2100369821 1588610447
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1838,7 +1424,6 @@ With maximum values, we can arbitrarily choose that for these values
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -1927,17 +1512,8 @@ literal "false"
 \begin_inset Formula $^{-1}$
 \end_inset
 
- in winter and decreases in summer
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-no value is given
-\end_layout
-
-\end_inset
-
-, with a link between resuspension and light extinction coefficient.
+ in winter and decreases in summer, with a link between resuspension and
+ light extinction coefficient.
  In 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1977,48 +1553,16 @@ literal "false"
 
 \begin_layout Standard
 Finally, it should be noted that cyst burial, sinking rate and resuspension
- are all dependent on the hydrodynamics of the place and 
-\change_deleted -2100369821 1604939261
-are
-\change_inserted -2100369821 1604939262
-represent
-\change_unchanged
- therefore, at least in biological terms, 
-\change_inserted -2100369821 1604939286
-mingled processes that are difficult to disentangle.
-\change_deleted -2100369821 1604939237
-not identifiable
-\change_unchanged
-.
-\change_inserted -666822487 1588330554
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588330584
-A bit unclear: not identifiable from what data? 
-\change_unchanged
-
+ are all dependent on the hydrodynamics of the place and represent therefore,
+ at least in biological terms, mingled processes that are difficult to disentang
+le.
 \end_layout
 
-\end_inset
-
-
-\change_inserted -2100369821 1604939859
-
-\end_layout
-
-\begin_layout Section*
-
-\change_inserted -2100369821 1604939892
-Phytoplankton dynamics with model II
+\begin_layout Section
+Phytoplankton time series with model II
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1604939896
 \begin_inset Float figure
 wide false
 sideways false
@@ -2027,8 +1571,6 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
-
-\change_inserted -2100369821 1604939957
 \begin_inset Graphics
 	filename /home/cpicoche/Documents/Thesis/SeedBank/output/modelv2.1/time_series_simulation_per_cluster.pdf
 	height 95theight%
@@ -2036,33 +1578,19 @@ status open
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1604939896
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1604939987
-Simulated phytoplankton dynamics for a year in model II (with saturating
+Simulated phytoplankton time series for a year in model II (with saturating
  interactions).
  Each panel corresponds to a cluster of interactions.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

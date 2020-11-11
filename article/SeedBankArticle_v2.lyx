@@ -626,7 +626,8 @@ literal "false"
 \end_inset
 
 .
- How to shift from MAR- to BH-interaction matrices is described in the SI.
+ How to shift from MAR- to BH-interaction matrices is described in Section
+ 2 of the SI.
  We later calibrate these coefficients for model I, since MAR models were
  applied at a different timescale.
 \end_layout
@@ -732,7 +733,7 @@ literal "false"
 \end_inset
 
 , which depends of the niche width.
- Parameterisation is further detailed in the SI.
+ Parameterisation is further detailed in Section 1 of the SI.
 \end_layout
 
 \begin_layout Standard
@@ -827,7 +828,7 @@ literal "false"
  expected to feel resource limitations at different concentrations of nutrients
  and at different number of competitors).
  How we used parameter estimates from model I to specify parameters in model
- II is described in the SI.
+ II is described in Section 2 of the SI.
 \end_layout
 
 \begin_layout Standard
@@ -885,43 +886,6 @@ textwidth}{!}{%
 
 \end_inset
 
-
-\change_inserted -666822487 1588331052
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588331059
-You can add units in there.
-
-\change_inserted -2100369821 1599550968
- 
-\change_deleted -666822487 1605087168
-Stupid question: do we use .day^-1 for rate? Then, we would have populations
- in nb of cells.day^-1, which does not seem right.
- That's why I have not added units for the rate.
- 
-\change_deleted -2100369821 1599550901
- 
-\change_inserted -666822487 1605087210
- r is in day^{-1}, because we use in fact exp(r_i(T) 
-\backslash
-times 
-\backslash
-Delta) where 
-\backslash
-Delta = 1 day).
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
@@ -1134,7 +1098,11 @@ Growth rate of taxon
 \begin_inset Text
 
 \begin_layout Plain Layout
-NA
+day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1511,7 +1479,11 @@ Sinking rate of taxon
 \begin_inset Formula $\{0.1;\mathbf{0.3};0.5\}\beta(0.55,1.25)$
 \end_inset
 
+
+\change_deleted -2100369821 1605094077
  
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1779,22 +1751,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Definition of main state variables and 
-\change_inserted -666822487 1605087226
-model 
-\change_unchanged
-parameters
-\change_deleted -666822487 1605087230
- of the models
-\change_unchanged
-.
- 
-\change_deleted -666822487 1605087521
-Calibrated parameters are either directly estimated on data for this study
- or parameters for which initial estimates exist, but are improved through
- calibration.
-
-\change_inserted -666822487 1605087912
+Definition of main state variables and model parameters.
  State variables and fluctuating parameters are indicated in the last column
  as 
 \begin_inset Quotes eld
@@ -1823,31 +1780,10 @@ Calibrated
 
  (obtained through model fitting, with initial values arising previous studies
  at the study site).
-
-\change_unchanged
- 
-\change_deleted -666822487 1605087656
-Fixed values or distributions are estimated from the literature and references
- are given in the main text.
- 
-\change_unchanged
-When a range of values is given, the bold numbers indicate the reference
- values while the others are used 
-\change_deleted -666822487 1605087936
-to test the sensitivity of the model
-\change_inserted -666822487 1605087939
-for sensitivity analysis
-\change_unchanged
-.
- Scenario parameters are the parameters which are used to build 
-\change_inserted -666822487 1605087980
-the 
-\change_unchanged
-ecological scenarii
-\change_inserted -666822487 1605087989
- considered in this article
-\change_unchanged
-.
+ When a range of values is given, the bold numbers indicate the reference
+ values while the others are used for sensitivity analysis.
+ Scenario parameters are the parameters which are used to build the ecological
+ scenarii considered in this article.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1930,7 +1866,7 @@ literal "false"
 \end_inset
 
  (in the absence of nutrients, or because of viral charge).
- A maximum value of 0.2 is fixed for the model (see SI).
+ A maximum value of 0.2 is fixed for the model (see Section 3 of the SI).
 \end_layout
 
 \begin_layout Paragraph*
@@ -2069,11 +2005,8 @@ literal "false"
  As actual rates of germination are not easily deduced from the literature,
  a set of credible values has been tested (1%, 0.1%, 0.01%).
  Similarly, resuspension values are seldom computed for phytoplanktonic
- cells, but models for inorganic particles 
-\change_deleted -2100369821 1605086244
- 
-\change_unchanged
-can be used (see SI for literature and details).
+ cells, but models for inorganic particles can be used (see Section 3 of
+ the SI for literature and details).
  In this paper, we explore values between 
 \begin_inset Formula $10^{-5}$
 \end_inset
@@ -2094,8 +2027,8 @@ Parameter calibration
 
 \begin_layout Standard
 In addition to phenology parameters, whose estimation process is described
- in the SI, the 49 non-zero interactions that form the community matrix
- of the model are calibrated from field data.
+ in Section 1 of the SI, the 49 non-zero interactions that form the community
+ matrix of the model are calibrated from field data.
  We used initial interaction estimates from a previous time series modelling
  study 
 \begin_inset CommandInset citation
@@ -2131,16 +2064,10 @@ ized by a specific set of interaction coefficients.
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- in model II) has 
-\change_deleted -666822487 1605088665
-equal probabilities
-\change_inserted -666822487 1605088721
-probability 
+ in model II) has probability 
 \begin_inset Formula $\frac{1}{5}$
 \end_inset
 
-
-\change_unchanged
  to keep its present value, being increased or decreased by 10%, or being
  halved or doubled.
  The numbers of coastal pelagic cells (which are the ones measured empirically)
@@ -2323,7 +2250,7 @@ literal "false"
 \begin_inset Formula $b_{i}$
 \end_inset
 
-), is described in the SI.
+), is described in Section 1 of the SI.
  The interactions between model taxa have already been inferred from a MAR
  model 
 \begin_inset CommandInset citation
@@ -2357,10 +2284,6 @@ The effect of the cyst bank on biodiversity and community dynamics can be
 
 \begin_layout Enumerate
 increase or decrease in interaction strength
-\change_deleted -2100369821 1605086267
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Enumerate
@@ -2386,13 +2309,7 @@ In the second scenario, five different climate change scenarios were assessed.
  of the temperature, including seasonality and noise, was either decreased
  or increased by 25%.
  To acknowledge the stochasticity induced by the noise, the model was ran
- with five different 
-\change_deleted -666822487 1605088812
-time
-\change_inserted -666822487 1605088816
-temperature
-\change_unchanged
- signals in each case.
+ with five different temperature signals in each case.
 \end_layout
 
 \begin_layout Standard
@@ -2929,18 +2846,9 @@ noprefix "false"
 
 \begin_layout Standard
 The variance of the temperature did not affect richness nor total abundance
- of communities with 
-\change_deleted -666822487 1605089772
-and without 
-\change_unchanged
-a cyst bank.
-
-\change_inserted -666822487 1605089830
+ of communities with a cyst bank.
  This is also true without a cyst bank.
  The presence of the cyst bank did increase total abundance though.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
