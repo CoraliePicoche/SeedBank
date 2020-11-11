@@ -355,10 +355,6 @@ literal "false"
  Exchanges between oceanic and coastal phytoplanktonic communities are usually
  observed.
  
-\change_deleted -2100369821 1605086205
- 
-\change_unchanged
-
 \begin_inset CommandInset citation
 LatexCommand citet
 key "smayda_turbulence_2002"
@@ -620,12 +616,8 @@ noprefix "false"
 
  accounts for lethal processes such a natural mortality, predation or parasitism.
  First estimates of interaction coefficients are inferred from a previous
- study of 
-\change_deleted -2100369821 1605086223
- 
-\change_unchanged
-coastal community dynamics with Multivariate AutoRegressive (MAR) models
- 
+ study of coastal community dynamics with Multivariate AutoRegressive (MAR)
+ models 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "picoche_strong_2020"
@@ -676,10 +668,6 @@ noprefix "false"
 \end_inset
 
 :
-\change_deleted -2100369821 1605086223
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -909,16 +897,22 @@ status open
 You can add units in there.
 
 \change_inserted -2100369821 1599550968
- Stupid question: do we use .day^-1 for rate? Then, we would have populations
+ 
+\change_deleted -666822487 1605087168
+Stupid question: do we use .day^-1 for rate? Then, we would have populations
  in nb of cells.day^-1, which does not seem right.
  That's why I have not added units for the rate.
  
 \change_deleted -2100369821 1599550901
  
-\change_inserted -666822487 1605017841
-F: That is not possible I believe.
- If r is in day^{-1}, then you could mention the unit.
- Let's talk about this.
+\change_inserted -666822487 1605087210
+ r is in day^{-1}, because we use in fact exp(r_i(T) 
+\backslash
+times 
+\backslash
+Delta) where 
+\backslash
+Delta = 1 day).
  
 \change_unchanged
 
@@ -1785,40 +1779,75 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Definition of main state variables and parameters of the models.
- Calibrated parameters are either directly estimated 
-\change_deleted -666822487 1605017856
-on
-\change_inserted -666822487 1605017856
-from
+Definition of main state variables and 
+\change_inserted -666822487 1605087226
+model 
 \change_unchanged
- data for this study or parameters for which initial estimates exist, but
- are improved through calibration
-\change_inserted -666822487 1605017913
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605017953
-F: not sure what you mean, I'd like to simplify here.
- I suggest we do joint editing - through skype - of this legend.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
+parameters
+\change_deleted -666822487 1605087230
+ of the models
 \change_unchanged
 .
- Fixed values or distributions are estimated from the literature and references
+ 
+\change_deleted -666822487 1605087521
+Calibrated parameters are either directly estimated on data for this study
+ or parameters for which initial estimates exist, but are improved through
+ calibration.
+
+\change_inserted -666822487 1605087912
+ State variables and fluctuating parameters are indicated in the last column
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+Dynamic
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Parameters that are constant through time are either 
+\begin_inset Quotes eld
+\end_inset
+
+Fixed
+\begin_inset Quotes erd
+\end_inset
+
+ (directly obtained from literature) or 
+\begin_inset Quotes eld
+\end_inset
+
+Calibrated
+\begin_inset Quotes erd
+\end_inset
+
+ (obtained through model fitting, with initial values arising previous studies
+ at the study site).
+
+\change_unchanged
+ 
+\change_deleted -666822487 1605087656
+Fixed values or distributions are estimated from the literature and references
  are given in the main text.
- When a range of values is given, the bold numbers indicate the reference
- values while the others are used to test the sensitivity of the model.
- Scenario parameters are the parameters which are used to build ecological
- scenarii.
+ 
+\change_unchanged
+When a range of values is given, the bold numbers indicate the reference
+ values while the others are used 
+\change_deleted -666822487 1605087936
+to test the sensitivity of the model
+\change_inserted -666822487 1605087939
+for sensitivity analysis
+\change_unchanged
+.
+ Scenario parameters are the parameters which are used to build 
+\change_inserted -666822487 1605087980
+the 
+\change_unchanged
+ecological scenarii
+\change_inserted -666822487 1605087989
+ considered in this article
+\change_unchanged
+.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2102,39 +2131,26 @@ ized by a specific set of interaction coefficients.
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- in model II) has equal probabilities to keep its present value, being increased
- or decreased by 10%, or being halved or doubled
-\change_inserted -666822487 1605018988
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605018999
-F: This is unclear, we need to talk about it.
- 
-\change_unchanged
-
-\end_layout
-
+ in model II) has 
+\change_deleted -666822487 1605088665
+equal probabilities
+\change_inserted -666822487 1605088721
+probability 
+\begin_inset Formula $\frac{1}{5}$
 \end_inset
 
 
 \change_unchanged
-.
- The numbers of coastal pelagic cells 
-\change_deleted -2100369821 1605086252
- 
-\change_unchanged
-(which are the ones measured empirically) are then extracted over the last
- 2 years of the simulation, and compared to observations using the following
- summary statistics:
+ to keep its present value, being increased or decreased by 10%, or being
+ halved or doubled.
+ The numbers of coastal pelagic cells (which are the ones measured empirically)
+ are then extracted over the last 2 years of the simulation, and compared
+ to observations using the following summary statistics:
 \end_layout
 
 \begin_layout Itemize
 average abundance 
-\begin_inset Formula $f_{1}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left(\bar{N}_{i,obs}-\bar{N}_{i,sim}\right){}^{2}}$
+\begin_inset Formula $f_{1}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left(\bar{n}_{i,obs}-\bar{n}_{i,sim}\right){}^{2}}$
 \end_inset
 
  where 
@@ -2155,7 +2171,7 @@ average abundance
 \noun off
 \color none
 
-\begin_inset Formula $\bar{N_{i}}$
+\begin_inset Formula $\bar{n_{i}}$
 \end_inset
 
  is the logarithm of the mean abundance of 
@@ -2176,34 +2192,15 @@ taxon
 \end_inset
 
 
-\change_inserted -666822487 1605019102
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605019124
-F: somewhat problematic to use the exact same notation, let's discuss of
- an alternative.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
 amplitude of the cycles 
-\begin_inset Formula $f_{2}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left[\left(\max(N_{i,obs})-\min(N_{i,obs})\right)-\left(\max(N_{i,sim})-\min(N_{i,sim})\right)\right]{}^{2}}$
+\begin_inset Formula $f_{2}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left[\left(\max(n_{i,obs})-\min(n_{i,obs})\right)-\left(\max(n_{i,sim})-\min(n_{i,sim})\right)\right]{}^{2}}$
 \end_inset
 
  where 
-\begin_inset Formula $N_{i}$
+\begin_inset Formula $n_{i}$
 \end_inset
 
  is the logarithm of the abundance of taxon 
@@ -2389,33 +2386,13 @@ In the second scenario, five different climate change scenarios were assessed.
  of the temperature, including seasonality and noise, was either decreased
  or increased by 25%.
  To acknowledge the stochasticity induced by the noise, the model was ran
- with five different time signals
-\change_inserted -666822487 1605019601
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605019610
-what is a 
-\begin_inset Quotes eld
-\end_inset
-
-time signal
-\begin_inset Quotes erd
-\end_inset
-
-?
+ with five different 
+\change_deleted -666822487 1605088812
+time
+\change_inserted -666822487 1605088816
+temperature
 \change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- in each case.
+ signals in each case.
 \end_layout
 
 \begin_layout Standard
@@ -2598,27 +2575,7 @@ In three cases (cyst burial rate set to 0.1, resuspension to 10
 
 \begin_layout Standard
 With all parameters, except the sinking rate, an increase in mean abundance
- was linked to a decrease in amplitude
-\change_inserted -666822487 1605020034
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605020043
-F: check my edit of that sentence is correct.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted -2100369821 1604940473
- 
-\change_unchanged
-
+ was linked to a decrease in amplitude.
 \end_layout
 
 \begin_layout Standard
@@ -2713,8 +2670,11 @@ F: not sure how you can do a geometric mean with extinct taxa?
  and use only the abundance of present taxa - in this case, do this in the
  results too.
  What do you think?
-\change_inserted -666822487 1604653917
+\change_inserted -666822487 1605089616
  –> F: We can talk about this.
+ We can also put the threshold to 1 cell per liter if better.
+ see papers using geometric mean abundance in a monitoring context.
+ 
 \change_unchanged
 
 \end_layout
@@ -2969,25 +2929,16 @@ noprefix "false"
 
 \begin_layout Standard
 The variance of the temperature did not affect richness nor total abundance
- of communities with and without a cyst bank.
-\change_inserted -666822487 1605020647
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605020681
-Je ne comprends pas ce que tu veux dire ici, la richesse ne varie pas mais
- par contre la log-totale abondance est fortement affectée par la présence
- d'une seed bank? 
+ of communities with 
+\change_deleted -666822487 1605089772
+and without 
 \change_unchanged
+a cyst bank.
 
-\end_layout
-
-\end_inset
-
-
+\change_inserted -666822487 1605089830
+ This is also true without a cyst bank.
+ The presence of the cyst bank did increase total abundance though.
+ 
 \change_unchanged
 
 \end_layout
@@ -3138,11 +3089,6 @@ nts.
  Spatial recolonization was therefore less important than temporal recolonizatio
 n; the relative importance of the two processes may vary depending on the
  organisms and their environment.
-
-\change_deleted -2100369821 1604940498
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
