@@ -89,22 +89,52 @@
 \begin_body
 
 \begin_layout Title
+
+\change_deleted -666822487 1605081760
 Supporting Information
 \end_layout
 
 \begin_layout Title
 
+\change_deleted -666822487 1605081760
+
 \size larger
 Seed-bank contribution in maintaining phytoplanktonic biodiversity
+\change_inserted -666822487 1605081763
+
 \end_layout
 
-\begin_layout Section*
-Growth calibration
+\begin_layout Standard
+
+\change_inserted -666822487 1605081820
+
+\series bold
+Supporting Information
+\series default
+ for 
+\emph on
+A metacommunity model for phytoplankton biodiversity maintenance with a
+ seed bank and facilitative interactions 
+\emph default
+by C.
+ Picoche & F.
+ Barraquand.
+ 
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Growth 
+\change_inserted -666822487 1605081828
+function 
+\change_unchanged
+calibration
 \end_layout
 
 \begin_layout Standard
 The growth function in our models
-\change_inserted -2100369821 1604934564
+\change_deleted -666822487 1605081908
 , based on 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -113,6 +143,24 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -666822487 1605081865
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1605081919
+Don't think that's accurate when written as below
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted -666822487 1605081913
 ,
 \change_unchanged
  can be separated in three elements:
@@ -121,7 +169,7 @@ literal "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-N_{t',i}=\frac{\exp(E(T)f_{i}(T))N_{t,i}}{g(\alpha_{ij},N_{t,j})}\label{eq:growth_rate}
+N_{t',i}=\frac{\exp(E(T)f_{i}(T))N_{t,i}}{g(\{\alpha_{ij}\}_{j},\{N_{j,t}\}_{j})}\label{eq:growth_rate}
 \end{equation}
 
 \end_inset
@@ -134,9 +182,29 @@ with
 \begin_inset Formula $E(T)$
 \end_inset
 
- being the maximum achievable growth rate
-\change_inserted -2100369821 1604934389
+ being the 
+\change_deleted -666822487 1605082068
+maximum achievable growth rate
+\change_inserted -666822487 1605082078
+response to temperature common to all species
+\change_deleted -666822487 1605082068
  in the absence of density-dependence
+\change_inserted -666822487 1605081940
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1605081953
+the max achievable growth rate includes f_i(T)
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \change_unchanged
 , 
 \begin_inset Formula $f_{i}(T)$
@@ -156,10 +224,16 @@ with
 \noun off
 \color none
 
-\begin_inset Formula $g(\alpha_{ij},N_{j,t})$
+\begin_inset Formula $g(\{\alpha_{ij}\}_{j},\{N_{j,t}\}_{j})$
 \end_inset
 
-, the effect of interactions on the growth rate.
+, the effect of 
+\change_deleted -666822487 1605082009
+interactions
+\change_inserted -666822487 1605082023
+all species densities
+\change_unchanged
+ on the growth rate.
  
 \end_layout
 
