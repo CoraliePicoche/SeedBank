@@ -627,7 +627,11 @@ literal "false"
 
 .
  How to shift from MAR- to BH-interaction matrices is described in Section
- 2 of the SI.
+ 
+\change_inserted -666822487 1605170625
+S
+\change_unchanged
+2 of the SI.
  We later calibrate these coefficients for model I, since MAR models were
  applied at a different timescale.
 \end_layout
@@ -733,7 +737,11 @@ literal "false"
 \end_inset
 
 , which depends of the niche width.
- Parameterisation is further detailed in Section 1 of the SI.
+ Parameterisation is further detailed in Section 
+\change_inserted -666822487 1605170661
+S
+\change_unchanged
+1 of the SI.
 \end_layout
 
 \begin_layout Standard
@@ -828,7 +836,11 @@ literal "false"
  expected to feel resource limitations at different concentrations of nutrients
  and at different number of competitors).
  How we used parameter estimates from model I to specify parameters in model
- II is described in Section 2 of the SI.
+ II is described in Section 
+\change_inserted -666822487 1605170667
+S
+\change_unchanged
+2 of the SI.
 \end_layout
 
 \begin_layout Standard
@@ -1866,7 +1878,11 @@ literal "false"
 \end_inset
 
  (in the absence of nutrients, or because of viral charge).
- A maximum value of 0.2 is fixed for the model (see Section 3 of the SI).
+ A maximum value of 0.2 is fixed for the model (see Section 
+\change_inserted -666822487 1605170674
+S
+\change_unchanged
+3 of the SI).
 \end_layout
 
 \begin_layout Paragraph*
@@ -2005,8 +2021,11 @@ literal "false"
  As actual rates of germination are not easily deduced from the literature,
  a set of credible values has been tested (1%, 0.1%, 0.01%).
  Similarly, resuspension values are seldom computed for phytoplanktonic
- cells, but models for inorganic particles can be used (see Section 3 of
- the SI for literature and details).
+ cells, but models for inorganic particles can be used (see Section 
+\change_inserted -666822487 1605170684
+S
+\change_unchanged
+3 of the SI for literature and details).
  In this paper, we explore values between 
 \begin_inset Formula $10^{-5}$
 \end_inset
@@ -2027,8 +2046,12 @@ Parameter calibration
 
 \begin_layout Standard
 In addition to phenology parameters, whose estimation process is described
- in Section 1 of the SI, the 49 non-zero interactions that form the community
- matrix of the model are calibrated from field data.
+ in Section 
+\change_inserted -666822487 1605170689
+S
+\change_unchanged
+1 of the SI, the 49 non-zero interactions that form the community matrix
+ of the model are calibrated from field data.
  We used initial interaction estimates from a previous time series modelling
  study 
 \begin_inset CommandInset citation
