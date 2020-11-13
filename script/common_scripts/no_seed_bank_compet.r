@@ -224,6 +224,12 @@ par(mar=c(4,4.5,1.25,0))
 
 N_tot=matrix(NA,length(fac_simu),2)
 N_tot_orig=matrix(NA,length(fac_simu),2)
+
+
+####This code is for geometric mean. We switch to 1/Simpson
+if(1==0){
+N_tot=matrix(NA,length(fac_simu),2)
+N_tot_orig=matrix(NA,length(fac_simu),2)
 for(f in 1:length(fac_simu)){
 #Log(sum abundance) - arithmetic mean
 #	tmp=apply(N_array[id,'ocean',,f,'compet'],1,sum)
@@ -250,8 +256,32 @@ lines(fac_simu,N_tot[,2],col="grey",lty=1,lwd=2)
 lines(fac_simu,N_tot_orig[,2],col="grey",lty=2,lwd=2)
 #abline(v=which(fac_simu==1))
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+}#End of 1==0 for geometric mean
 
+#SIMPSON
+simpson=matrix(NA,length(fac_simu),2)
+simpson_orig=matrix(NA,length(fac_simu),2)
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+	abundance_tot=mean(apply(N_array[,'ocean',,f,'compet',m],1,sum,na.rm=T))
+	abundance_per_species=apply(N_array[,'ocean',,f,'compet',m],2,mean,na.rm=T)
+	proportion=abundance_per_species/abundance_tot
+	simpson[f,m]=sum(proportion^2)
+	abundance_tot_orig=mean(apply(N_orig[,'ocean',,f,'compet',m],1,sum,na.rm=T))
+	abundance_per_species_orig=apply(N_orig[,'ocean',,f,'compet',m],2,mean,na.rm=T)
+	proportion_orig=abundance_per_species_orig/abundance_tot_orig
+	simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+#plot(fac_simu,N_tot[,1],ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(mean(abundance))",xlab="Multiplying factor",log="x",col="black",t="l",lty=1)
+plot(fac_simu,1/simpson[,1],ylim=c(0,5),ylab="1/Simpson",log="x",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),col="black",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+mtext("c)",3,line=0.5,at=0.07,cex=1.25)
+lines(fac_simu,1/simpson_orig[,1],col="black",lty=2,lwd=2)
+lines(fac_simu,1/simpson[,2],col="grey",lty=1,lwd=2)
+lines(fac_simu,1/simpson_orig[,2],col="grey",lty=2,lwd=2)
 
+###Geometric mean
+if(1==0){
 par(mar=c(4,2.5,1.25,2))
 N_tot=matrix(NA,length(fac_simu),2)
 N_tot_orig=matrix(NA,length(fac_simu),2)
@@ -269,15 +299,43 @@ for(f in 1:length(fac_simu)){
         N_tot_orig[f,m]=mean(tmp)
 	}
 }
-plot(fac_simu,N_tot[,1],ylim=c(-5,40),log="x",ylab="",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),lty=1,t="l",col="black",yaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2)
+plot(fac_simu,N_tot[,1],ylim=c(0,1),ylab="",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),lty=1,t="l",col="black",yaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2)
 mtext("d)",3,line=0.5,at=0.07,cex=1.25)
 lines(fac_simu,N_tot_orig[,1],lty=2,col="black",lwd=2)
 lines(fac_simu,N_tot[,2],lty=1,col="grey",lwd=2)
 lines(fac_simu,N_tot_orig[,2],lty=2,col="grey",lwd=2)
-legend("topleft",c("W bank","W/o bank","Model I","Model II"),lty=c(2,1,1,1),col=c("black","black","black","grey"),bty="n",cex=1.5,lwd=2)
+} #End 1==0 for geometric mean
+
+#SIMPSON
+par(mar=c(4,2.5,1.25,2))
+simpson=matrix(NA,length(fac_simu),2)
+simpson_orig=matrix(NA,length(fac_simu),2)
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+        abundance_tot=mean(apply(N_array[,'ocean',,f,'facil',m],1,sum,na.rm=T))
+        abundance_per_species=apply(N_array[,'ocean',,f,'facil',m],2,mean,na.rm=T)
+        proportion=abundance_per_species/abundance_tot
+        simpson[f,m]=sum(proportion^2)
+        abundance_tot_orig=mean(apply(N_orig[,'ocean',,f,'facil',m],1,sum,na.rm=T))
+        abundance_per_species_orig=apply(N_orig[,'ocean',,f,'facil',m],2,mean,na.rm=T)
+        proportion_orig=abundance_per_species_orig/abundance_tot_orig
+        simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+#plot(fac_simu,N_tot[,1],ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(mean(abundance))",xlab="Multiplying factor",log="x",col="black",t="l",lty=1)
+###plot(fac_simu,1/simpson[,1],ylim=c(-5,40),ylab="Mean(log10(abundance))",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),log="x",col="black",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+plot(fac_simu,1/simpson[,1],ylim=c(0,5),ylab="",log="x",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),col="black",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2,yaxt="n")
+mtext("d)",3,line=0.5,at=0.07,cex=1.25)
+lines(fac_simu,1/simpson_orig[,1],col="black",lty=2,lwd=2)
+lines(fac_simu,1/simpson[,2],col="grey",lty=1,lwd=2)
+lines(fac_simu,1/simpson_orig[,2],col="grey",lty=2,lwd=2)
+
+
+legend("topleft",c("W bank","W/o bank","Model I","Model II"),lty=c(2,1,1,1),col=c("black","black","black","grey"),bty="n",cex=1.25,lwd=2)
 #abline(v=which(fac_simu==1))
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 dev.off()
+stop()
 
 
 surviv_compet=apply(apply(N_array[id_persistence,"ocean",,,'compet',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/(length(fac_simu))
@@ -330,7 +388,6 @@ points(jitter(T_opt,amount=0.5),surviv_compet[,2],col="grey",pch=17,cex=1.5)
 
 legend("topright",c("Model I","Model II"),pch=c(16,17),col=c("black","grey"),pt.lwd=c(1,1,1.5,1.5),bty="n")
 dev.off()
-stop()
 
 pdf("species_no_seed_bank.pdf",width=10)
 par(mfrow=c(3,4))
