@@ -101,19 +101,13 @@ A metacommunity model for phytoplankton biodiversity maintenance with a
 by C.
  Picoche & F.
  Barraquand.
-\change_inserted -666822487 1605170392
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1605170393
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1605170473
 
 
 \backslash
@@ -126,13 +120,9 @@ arabic{section}}
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1605170473
-
 
 \backslash
 setcounter{section}{0}
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -164,72 +154,23 @@ with
 \begin_inset Formula $E(T)$
 \end_inset
 
- 
-\change_deleted -666822487 1605168014
-being 
-\change_unchanged
-the response to temperature common to all species and 
+ the response to temperature common to all species and 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
-
-\change_deleted -666822487 1605168017
-,
-\change_unchanged
- the niche part of the model
-\change_inserted -666822487 1605168020
-.
+ the niche part of the model.
+ This section provides detailed information regarding the growth function
  
-\change_deleted -666822487 1605168023
-
-\end_layout
-
-\begin_layout Standard
-This section 
-\change_deleted -666822487 1605168200
-is dedicated to the design of
-\change_inserted -666822487 1605168211
-provide detailed information regarding
-\change_unchanged
- the growth function 
 \begin_inset Formula $E(T)$
 \end_inset
 
-, the taxon-specific function
-\change_inserted -666822487 1605168217
-s
-\change_unchanged
- 
+, the taxon-specific functions 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- that characterize
-\change_deleted -666822487 1605168222
-s
-\change_unchanged
- 
-\change_inserted -666822487 1605168064
-species' 
-\change_unchanged
-differential response
-\change_inserted -666822487 1605168066
-s
-\change_unchanged
- to temperature variations, and 
-\change_deleted -666822487 1605168242
-the estimation of interactions
-\change_inserted -666822487 1605168279
-species interaction estimates
-\change_unchanged
- that 
-\change_deleted -666822487 1605168251
-may 
-\change_unchanged
-affect the
-\change_inserted -666822487 1605168254
- realized
-\change_unchanged
- growth rate of phytoplanktonic organisms in a community.
+ that characterize species' differential responses to temperature variations,
+ and species interaction estimates that affect the realized growth rate
+ of phytoplanktonic organisms in a community.
 \end_layout
 
 \begin_layout Subsection*
@@ -237,13 +178,8 @@ Common response to temperature
 \end_layout
 
 \begin_layout Standard
-Phytoplanktonic growth rates cover a 
-\change_deleted -666822487 1605168301
-large
-\change_inserted -666822487 1605168302
-broad
-\change_unchanged
- range of values: between 0.2 and 1.78 day
+Phytoplanktonic growth rates cover a broad range of values: between 0.2 and
+ 1.78 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
@@ -269,35 +205,9 @@ literal "false"
 
 .
  These values are often computed from measurements on isolated species or
- on 
-\change_deleted -666822487 1605168324
-limited
-\change_inserted -666822487 1605168325
-small
-\change_unchanged
- communities in laboratory conditions, 
-\change_deleted -666822487 1605168339
-with
-\change_inserted -666822487 1605168339
-in
-\change_unchanged
- 
-\change_inserted -666822487 1605168337
-a 
-\change_unchanged
-constant environment
-\change_deleted -666822487 1605168334
-al conditions
-\change_unchanged
-.
- 
-\change_deleted -666822487 1605168367
-Gathering sets of data
-\change_inserted -666822487 1605168371
-A broader perspective
-\change_unchanged
- is therefore necessary to understand general responses to changes in the
- environment 
+ on small communities in laboratory conditions, in a constant environment.
+ A broader perspective is therefore necessary to understand general responses
+ to changes in the environment 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bissinger_predicting_2008,edwards_phytoplankton_2016"
@@ -305,24 +215,11 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -666822487 1605168401
-, especially temperature
-\change_unchanged
-.
- 
-\change_inserted -666822487 1605168464
-
+, especially temperature.
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1605168468
-While the shape of the response may vary between taxa, t
-\change_inserted -666822487 1605168470
-We used t
-\change_unchanged
-he equation by 
+We used the equation by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -330,15 +227,8 @@ literal "false"
 
 \end_inset
 
- 
-\change_deleted -666822487 1605168476
-on which we base our growth rate formulation
-\change_inserted -666822487 1605168481
-as a starting point, but it was
-\change_deleted -666822487 1605168482
- is
-\change_unchanged
- not able to reproduce the observed values found in 
+ as a starting point, but it was not able to reproduce the observed values
+ found in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "edwards_light_2015"
@@ -368,6 +258,9 @@ status open
 \change_inserted -666822487 1605170548
 The fact that it does not match empirical data is not clear from the figure,
  at least with the current legend
+\change_inserted -2100369821 1605178326
+.
+ We should talk about it, then
 \change_unchanged
 
 \end_layout
@@ -404,11 +297,7 @@ literal "false"
 
 \end_inset
 
- 
-\change_inserted -666822487 1605168443
-that was 
-\change_unchanged
-used in 
+ that was used in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -545,11 +434,7 @@ The niche part of the growth rate
 \begin_inset Formula $b_{i}$
 \end_inset
 
-, which drive
-\change_inserted -666822487 1605168571
-s
-\change_unchanged
- the phenology of the taxon (eq.
+, which drives the phenology of the taxon (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -561,7 +446,6 @@ noprefix "false"
 \end_inset
 
 ).
- 
 \end_layout
 
 \begin_layout Standard
@@ -575,35 +459,16 @@ f_{i}(T)=\begin{cases}
 
 \end_inset
 
-
-\change_deleted -666822487 1605168586
-Each year, t
-\change_inserted -666822487 1605168586
-T
-\change_unchanged
-he 
-\change_inserted -666822487 1605168589
-annual 
-\change_unchanged
-dynamics of phytoplanktonic organisms is 
-\change_inserted -666822487 1605168595
-usually 
-\change_unchanged
-characterized by a blooming period and a lower concentration during the
- rest of the year.
+The annual dynamics of phytoplanktonic organisms is usually characterized
+ by a blooming period and a lower concentration during the rest of the year.
  The bloom can be triggered by a combination of nutrient and light input,
  as well as a sufficient temperature.
  All parameters being more or less dependent on seasonality, it is reasonable
  to restrain this study to the effect of temperature.
- 
 \end_layout
 
 \begin_layout Standard
-We base
-\change_inserted -666822487 1605168711
- our
-\change_unchanged
- estimates of 
+We base our estimates of 
 \begin_inset Formula $T_{K,i}^{opt}$
 \end_inset
 
@@ -632,7 +497,25 @@ We base
 In the models, we assume that generalists have a niche width between 15
  and 30°C and 
 \change_inserted -666822487 1605168648
-(coldwater) 
+(coldwater)
+\change_inserted -2100369821 1605178349
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1605178356
+I do not understand why you added that
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_inserted -666822487 1605168648
+ 
 \change_unchanged
 specialists, between 5 and 10°C.
  We assume that temperatures outside of this range lead to a growth rate
@@ -651,11 +534,7 @@ specialists, between 5 and 10°C.
 \begin_inset Formula $b$
 \end_inset
 
- values is drawn from a uniform distribution with
-\change_inserted -666822487 1605169660
-in
-\change_unchanged
- these boundaries.
+ values is drawn from a uniform distribution within these boundaries.
  Meanwhile, taxa are ordered as a function of the mean cumulated bloom length
  and larger niche values are attributed to longer mean bloom length, i.e.
  
@@ -694,12 +573,8 @@ The thermal optimum
 \end_layout
 
 \begin_layout Standard
-It should be noted 
-\change_deleted -666822487 1605168744
-however 
-\change_unchanged
-that a variation in niche width also affects the final shape of thermal
- preferences.
+It should be noted that a variation in niche width also affects the final
+ shape of thermal preferences.
  Indeed, when 
 \begin_inset Formula $b_{i}$
 \end_inset
@@ -708,21 +583,7 @@ that a variation in niche width also affects the final shape of thermal
 \begin_inset Formula $f_{i}$
 \end_inset
 
- 
-\change_deleted -666822487 1605168777
-only encounters
-\change_inserted -666822487 1605168777
-has
-\change_unchanged
- small
-\change_inserted -666822487 1605168779
-er
-\change_unchanged
- variation
-\change_deleted -666822487 1605168781
-s
-\change_unchanged
- in values around the thermal optimum.
+ has smaller variation in values around the thermal optimum.
  In this case, the final value of the growth rate is driven by the metabolism
  part of the equation (Fig.
  
@@ -978,17 +839,8 @@ iance matrix
 \end_inset
 
 .
- The interaction model we use in 
-\change_deleted -666822487 1605168983
-this
-\change_inserted -666822487 1605168984
-the present
-\change_unchanged
- paper is a Beverton-Holt 
-\change_inserted -666822487 1605168989
-multispecies 
-\change_unchanged
-model (eq.
+ The interaction model we use in the present paper is a Beverton-Holt multispeci
+es model (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -999,11 +851,7 @@ noprefix "false"
 
 \end_inset
 
-)
-\change_inserted -666822487 1605169003
-, also called at times Leslie-Gower
-\change_unchanged
-.
+), also called at times Leslie-Gower.
  In 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1012,17 +860,7 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -666822487 1605168962
-'s
-\change_unchanged
- 
-\change_inserted -666822487 1605168965
-S
-\change_deleted -666822487 1605168964
-s
-\change_unchanged
-upporting information, we showed that MAR and BH interaction coefficients,
+'s Supporting information, we showed that MAR and BH interaction coefficients,
  respectively 
 \begin_inset Formula $b_{ij}$
 \end_inset
@@ -1153,14 +991,8 @@ This gives an exact correspondance between
 \end_inset
 
 .
- In 
-\change_deleted -666822487 1605169028
-this
-\change_inserted -666822487 1605169033
-the multispecies BH
-\change_unchanged
- model, the presence of mutualistic interactions can lead to an orgy of
- mutual benefaction 
+ In the multispecies BH model, the presence of mutualistic interactions
+ can lead to an orgy of mutual benefaction 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "may_1981_theoretical"
@@ -1190,6 +1022,8 @@ status open
 
 \change_inserted -666822487 1605169061
 Add references!
+\change_inserted -2100369821 1606224217
+ Isn't it enough?
 \change_unchanged
 
 \end_layout
@@ -1357,45 +1191,16 @@ At low abundances, we can consider that interactions are far from saturation.
 \end_inset
 
  is a correction factor that takes into account the fact that the slope
- at origin for the type II response
-\change_deleted -666822487 1605169130
-,
-\change_unchanged
- 
-\change_deleted -666822487 1605169127
-before saturation,
-\change_unchanged
- is likely higher than the slope for 
-\change_deleted -666822487 1605169143
-the
-\change_inserted -666822487 1605169143
-a
-\change_unchanged
- linear 
-\change_deleted -666822487 1605169114
-interaction coefficient
-\change_inserted -666822487 1605169117
-effect of density
-\change_unchanged
-.
+ at origin for the type II response is likely higher than the slope for
+ a linear effect of density.
 \end_layout
 
 \begin_layout Section
-Choice of 
-\change_deleted -666822487 1605169179
-fixed 
-\change_unchanged
-parameters
-\change_inserted -666822487 1605169183
- derived from literature 
-\change_unchanged
-
+Choice of parameters derived from literature
 \end_layout
 
 \begin_layout Standard
-This section contains additional information o
-\change_inserted -666822487 1605169195
-n 
+This section contains additional information on 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1403,35 +1208,8 @@ fixed
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_deleted -666822487 1605169190
-f
-\change_unchanged
- parameter
-\change_inserted -666822487 1605169204
-s
-\change_unchanged
- definition
-\change_inserted -666822487 1605169207
-s
-\change_deleted -666822487 1605169212
-, estimation
-\change_unchanged
- and 
-\change_inserted -666822487 1605169216
-chosen 
-\change_unchanged
-value
-\change_inserted -666822487 1605169217
-s
-\change_unchanged
-.
- 
-\change_inserted -666822487 1605169335
-Note that these values are then subjected to sensitivity analysis.
- 
-\change_unchanged
-
+ parameters definitions and chosen values.
+ Note that these values are then subjected to sensitivity analysis.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1440,11 +1218,7 @@ Loss rate
 
 \begin_layout Standard
 The loss rate corresponds to multiple mortality processes.
- The 
-\change_inserted -666822487 1605169236
-Lotka-Volterra 
-\change_unchanged
-model of 
+ The Lotka-Volterra model of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -1466,7 +1240,11 @@ literal "false"
 \end_inset
 
 , washout (0.5%), parasitism (4% of cells are infested and die) and grazing
- still remained low 
+ still remained low
+\change_inserted -2100369821 1606225018
+ (about 0.05%)
+\change_unchanged
+ 
 \change_inserted -666822487 1588330072
 
 \begin_inset Note Note
@@ -1480,8 +1258,9 @@ make that quantitative?
  I don't have values
 \change_inserted -666822487 1605169267
  -> you can always intuit from figures
-\change_inserted -2100369821 1604938106
+\change_inserted -2100369821 1606225027
 .
+ Still seems surprinsingly low
 \change_unchanged
 
 \end_layout
@@ -1511,22 +1290,11 @@ literal "false"
 
 \end_inset
 
- indicate
-\change_deleted -666822487 1605169282
-s
-\change_inserted -666822487 1605169282
-d
-\change_unchanged
- a loss of daily primary productivity between 0.45 and 1.1 due to grazing
- only, 0.13 being potentially due to cell autolysis (in the absence of nutrients,
- or because of viral charge).
- 
-\change_deleted -666822487 1605169294
-Considering all
-\change_inserted -666822487 1605169307
-Trying to make a compromise emerge from
-\change_unchanged
- the literature above, we set as the reference value to 0.2 day
+ indicated a loss of daily primary productivity between 0.45 and 1.1 due to
+ grazing only, 0.13 being potentially due to cell autolysis (in the absence
+ of nutrients, or because of viral charge).
+ Trying to make a compromise emerge from the literature above, we set as
+ the reference value to 0.2 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
@@ -1540,30 +1308,11 @@ Sinking rate
 \begin_layout Standard
 Among the hydrodynamics processes that drive sinking rate, turbulence and
  eddies – themselves driven by tidal currents, the shape of the coast or
- wind conditions – 
-\change_deleted -666822487 1605169362
-can retain
-\change_inserted -666822487 1605169368
-are influential in keeping
-\change_unchanged
- the cells at the top of the water column.
+ wind conditions – are influential in keeping the cells at the top of the
+ water column.
  For that reason, laboratory experiments on sinking rates are not sufficient
  to calibrate a field-based model.
- 
-\change_deleted -666822487 1605169395
-Credible values for
-\change_inserted -666822487 1605169398
-We therefore chose
-\change_unchanged
- sinking rate
-\change_inserted -666822487 1605169411
- value
-\change_unchanged
-s 
-\change_deleted -666822487 1605169403
-are therefore taken 
-\change_unchanged
-from field studies.
+ We therefore chose sinking rate values from field studies.
  In the Gotland Basin (central Baltic Sea), 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1578,38 +1327,9 @@ literal "false"
 Chaetoceros
 \shape default
  spp.).
- However, a pattern could be 
-\change_deleted -666822487 1605169456
-distinguished
-\change_inserted -666822487 1605169458
-highlighted
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605169452
-tout ça c'est des faux-amis hein...
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-, with a small number of genera that 
-\change_deleted -666822487 1605169464
-sinked
-\change_inserted -666822487 1605169499
-sank
-\change_unchanged
- more than the rest of the community.
- The mean
-\change_inserted -666822487 1605169508
- sinking
-\change_unchanged
- rate for 
+ However, a pattern could be highlighted, with a small number of genera
+ that sank more than the rest of the community.
+ The mean sinking rate for 
 \shape italic
 Chaetoceros
 \shape default
@@ -1618,13 +1338,7 @@ Chaetoceros
 Thalassiosira
 \shape default
  was around 10% while it was around 1% for the other species.
- Sinking rate values around 10% are consistent with the loss rate
-\change_deleted -666822487 1605169522
- values
-\change_inserted -666822487 1605169522
-s
-\change_unchanged
- in 
+ Sinking rate values around 10% are consistent with the loss rates in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "kowe_modelling_1998"
@@ -1641,23 +1355,8 @@ literal "false"
 \end_inset
 
  in an estuary (mouth of Adventfjorden).
- 
-\change_deleted -666822487 1605169539
-Variations
-\change_inserted -666822487 1605169542
-When estimating changes
-\change_unchanged
- of the sinking rate over time
-\change_inserted -666822487 1605169546
-, 
-\change_deleted -666822487 1605169550
- give 
-\change_unchanged
-values between 4 and 50%
-\change_inserted -666822487 1605169555
- were obtained
-\change_unchanged
- 
+ When estimating changes of the sinking rate over time, values between 4
+ and 50% were obtained 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "jewson_loss_1981"
@@ -1666,19 +1365,8 @@ literal "false"
 \end_inset
 
 .
- 
-\change_deleted -666822487 1605169560
-The chosen
-\change_inserted -666822487 1605169573
-We therefore chose to represent the sinking values with a
-\change_unchanged
- 
-\change_inserted -666822487 1605169576
-B
-\change_deleted -666822487 1605169575
-b
-\change_unchanged
-eta-distribution (Fig.
+ We therefore chose to represent the sinking values with a Beta-distribution
+ (Fig.
  S
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1689,32 +1377,9 @@ noprefix "false"
 
 \end_inset
 
-) 
-\change_deleted -666822487 1605169582
-therefore
-\change_inserted -666822487 1605169582
-which
-\change_unchanged
- accounts for 
-\change_deleted -666822487 1605169598
-both
-\change_inserted -666822487 1605169599
-observed
-\change_unchanged
- maximum and mean values, while still allowing a highly skewed distribution
-\change_deleted -666822487 1605169606
-s
-\change_inserted -666822487 1605169615
- of sinking rates between species
-\change_unchanged
-.
- High sinking rates are 
-\change_deleted -666822487 1605169619
-kept for
-\change_inserted -666822487 1605169622
-attributed to
-\change_unchanged
- the morphotypes corresponding to 
+) which accounts for observed maximum and mean values, while still allowing
+ a highly skewed distribution of sinking rates between species.
+ High sinking rates are attributed to the morphotypes corresponding to 
 \shape italic
 Chaetoceros
 \shape default
@@ -1723,28 +1388,7 @@ Chaetoceros
 Thalassiosira 
 \shape default
 (THP)
-\change_inserted -666822487 1605169631
-
 \shape italic
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605169637
-
-\shape italic
-check this last sentence is correct.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 .
 \end_layout
 
@@ -1790,11 +1434,7 @@ name "fig:Sinking-distribution"
 \end_layout
 
 \begin_layout Paragraph*
-Cyst mortality
-\change_inserted -666822487 1605170020
- and burial
-\change_unchanged
-
+Cyst mortality and burial
 \end_layout
 
 \begin_layout Standard
@@ -1817,39 +1457,8 @@ Assuming
 \begin_inset Formula $m$
 \end_inset
 
- is the probability of mortality
-\change_deleted -666822487 1605169745
-, 
-\begin_inset Formula $m$
-\end_inset
-
- 
-\change_inserted -666822487 1605169806
- and the survival 
-\change_unchanged
-follows a geometric law
-\change_deleted -666822487 1605169764
-, i.e., 
-\begin_inset Formula $m$
-\end_inset
-
- is the probability distribution of the number of days needed for a phytoplankon
- cyst to die.
- T
-\change_inserted -666822487 1605169765
-, t
-\change_unchanged
-he 
-\change_inserted -666822487 1605169767
-life 
-\change_unchanged
-expectancy 
-\change_inserted -666822487 1605169778
-of a cyst
-\change_deleted -666822487 1605169773
-for the life duration (the number of days without dying)
-\change_unchanged
- is 
+ is the probability of mortality and the survival follows a geometric law,
+ the life expectancy of a cyst is 
 \begin_inset Formula $\frac{\ensuremath{1}}{m}\Leftrightarrow m=\frac{1}{L_{mean}}$
 \end_inset
 
@@ -1857,15 +1466,7 @@ where
 \begin_inset Formula $L_{mean}$
 \end_inset
 
- is the average 
-\change_deleted -666822487 1605169838
-life 
-\change_unchanged
-duration
-\change_inserted -666822487 1605169846
- of cyst viability
-\change_unchanged
-.
+ is the average duration of cyst viability.
 \end_layout
 
 \begin_layout Standard
@@ -1904,75 +1505,15 @@ With maximum values, we can arbitrarily choose that for these values
 \end_inset
 
 .
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- 
-\change_inserted -666822487 1605170022
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1605170207
 As we highlight in the main text, burial is a very important process that
  controls the availability of cysts, conditional to their survival in the
  sediment.
  However, burial rate will be almost entirely context-dependent on the local
  sedimentation and no generally applicable literature could be found.
  We varied it between 0.001 and 0.1 per day.
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -666822487 1588330476
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588331270
-You don't comment on burial here? Why not? We do take this into account
- so I would talk about here as well: it will be intuitive to most people
- that the cysts are below 1m of sediment that's harder (I mean, impossible!)
- to get them...
- so it is better to talk explicitely about it so that people do not have
- the feeling that we neglected it (I think).
-
-\change_inserted -2100369821 1604939221
- I agree, but I have nothing to cite.
- It is already described in main text.
-
-\change_inserted -666822487 1605170225
- F: this is highly confusing –> we 
-\series bold
-need 
-\series default
-to at least say that info about burial is provided in the main text!! Let's
- chat about this if there's any doubt over why.
- I tried to write something above; I think that's enough.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Paragraph*
@@ -1981,16 +1522,8 @@ Resuspension
 
 \begin_layout Standard
 As mentioned in the main text, resuspension values are mostly taken from
- model
-\change_inserted -666822487 1605170232
-s
-\change_unchanged
- or data for inorganic particles.
- Rates vary
-\change_inserted -666822487 1605170242
- greatly
-\change_unchanged
- from one publication to another: in 
+ models or data for inorganic particles.
+ Rates vary greatly from one publication to another: in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "fransz_modelling_1985"
@@ -1998,11 +1531,7 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -666822487 1605170249
-,
-\change_unchanged
- in a coastal area, the resuspension rate of sediments is evaluated around
+, in a coastal area, the resuspension rate of sediments is evaluated around
  
 \begin_inset Formula $5\times10^{-5}$
 \end_inset
@@ -2012,11 +1541,7 @@ literal "false"
 \end_inset
 
  in winter and decreases in summer, with a link between resuspension and
- 
-\change_inserted -666822487 1605170257
-the 
-\change_unchanged
-light extinction coefficient.
+ the light extinction coefficient.
  In 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -2056,37 +1581,8 @@ literal "false"
 
 \begin_layout Standard
 Finally, it should be noted that cyst burial, sinking rate and resuspension
- are all 
-\change_deleted -666822487 1605170301
-dependent
-\change_inserted -666822487 1605170307
-highly contingent upon
-\change_deleted -666822487 1605170309
- on
-\change_unchanged
- the 
-\change_inserted -666822487 1605170298
-local 
-\change_unchanged
-hydrodynamics 
-\change_deleted -666822487 1605170312
-of the place 
-\change_unchanged
-and 
-\change_inserted -666822487 1605170317
-therefore 
-\change_unchanged
-represent 
-\change_deleted -666822487 1605170324
-therefore, at least in biological terms, 
-\change_inserted -666822487 1605170330
-inter
-\change_unchanged
-mingled processes
-\change_deleted -666822487 1605170336
- that are difficult to disentangle
-\change_unchanged
-.
+ are all highly contingent upon the local hydrodynamics and therefore represent
+ intermingled processes.
 \end_layout
 
 \begin_layout Section
@@ -2117,13 +1613,7 @@ status open
 \begin_layout Plain Layout
 Simulated phytoplankton time series for a year in model II (with saturating
  interactions).
- Each panel corresponds to a cluster of 
-\change_deleted -666822487 1605170351
-interactions
-\change_inserted -666822487 1605170354
-interacting species
-\change_unchanged
-.
+ Each panel corresponds to a cluster of interacting species.
 \end_layout
 
 \end_inset

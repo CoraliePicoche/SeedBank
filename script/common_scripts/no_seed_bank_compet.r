@@ -335,28 +335,32 @@ legend("topleft",c("W bank","W/o bank","Model I","Model II"),lty=c(2,1,1,1),col=
 #abline(v=which(fac_simu==1))
 #axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
 dev.off()
-stop()
-
 
 surviv_compet=apply(apply(N_array[id_persistence,"ocean",,,'compet',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/(length(fac_simu))
 surviv_facil=apply(apply(N_array[id_persistence,"ocean",,,'facil',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/length(fac_simu)
-
-pdf("dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf",width=7.5,height=2.3)
+#pdf("dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf",width=7.5,height=2.3)
+pdf("dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf",width=15,height=5)
 set.seed(42)
 par(mfrow=c(1,3),oma=c(1,1,1,1),mar=c(4.5,4.5,1,1))
-plot(jitter(min_val[,1],amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Log10(min abundance)",pch=16,ylim=c(0,1),ylab="Prob survival",cex=1.5,xlim=range(c(min_val))+c(-0.1,0.1),cex.lab=1.5,cex.axis=1.5)
+a=jitter(min_val[,1],amount=0.1)
+plot(a,surviv_compet[,1],t="p",col="black",xlab="Log10(min abundance)",pch=16,ylim=c(0,1),ylab="Prob survival",cex=1.5,xlim=range(c(min_val))+c(-0.1,0.1),cex.lab=1.5,cex.axis=1.5)
+#text(a,surviv_compet[,1],labels=rownames(surviv_compet),pos=3)
 text(min(c(min_val))-0.1-diff(range(c(min_val))+c(-0.1,0.1))*0.3,1.1,"a)",las=2,xpd=NA,cex=1.5)
 #points(jitter(min_val[,1],amount=0.5),surviv_facil[,1],col="blue",pch=16)
 points(jitter(min_val[,2],amount=0.1),surviv_compet[,2],col="grey",pch=17,cex=1.75)
 #points(jitter(min_val[,2],amount=0.5),surviv_facil[,2],col="blue",pch=17)
 
-plot(jitter(range_val[,1],amount=0.5),surviv_compet[,1],t="p",col="black",pch=16,xlab="Log. amplitude",ylab="",ylim=c(0,1),cex=1.5,cex.axis=1.5,cex.lab=1.5)
+a=jitter(range_val[,1],amount=0.5)
+plot(a,surviv_compet[,1],t="p",col="black",pch=16,xlab="Log. amplitude",ylab="",ylim=c(0,1),cex=1.5,cex.axis=1.5,cex.lab=1.5)
+#text(a,surviv_compet[,1],labels=rownames(surviv_compet),pos=3)
 text(min(c(range_val))-diff(range(c(range_val)))*0.3,1.1,"b)",las=2,xpd=NA,cex=1.5)
 #points(range_val[,1],surviv_facil[,1],col="blue",pch=16)
 points(jitter(range_val[,2],amount=0.5),surviv_compet[,2],col="grey",pch=17,cex=1.5)
 #points(range_val[,2],surviv_facil[,2],col="blue",pch=17)
 
-plot(jitter(log10(B),amount=0.5),surviv_compet[,1],t="p",col="black",pch=16,xlab="Proxy niche width",ylab="",ylim=c(0,1),cex=1.5,xlim=range(c(log10(B)))+c(-0.1,0.5),cex.lab=1.5,cex.axis=1.5)
+a=jitter(log10(B),amount=0.5)
+plot(a,surviv_compet[,1],t="p",col="black",pch=16,xlab="Proxy niche width",ylab="",ylim=c(0,1),cex=1.5,xlim=range(c(log10(B)))+c(-0.1,0.5),cex.lab=1.5,cex.axis=1.5)
+#text(a,surviv_compet[,1],labels=rownames(surviv_compet),pos=3)
 text(min(c(log10(B)))-0.1-diff(range(c(log10(B)))+c(-0.1,0.5))*0.3,1.1,"c)",las=2,xpd=NA,cex=1.5)
 #points(B,surviv_facil[,1],col="blue",pch=16)
 points(jitter(log10(B),amount=0.5),surviv_compet[,2],col="grey",pch=17,cex=1.5)
@@ -364,6 +368,8 @@ points(jitter(log10(B),amount=0.5),surviv_compet[,2],col="grey",pch=17,cex=1.5)
 
 legend("bottomright",c("Model I","Model II"),pch=c(16,17),col=c("black","grey"),pt.lwd=c(1,1,1.5,1.5),bty="n",cex=1.25)
 dev.off()
+
+stop()
 
 pdf("dynamics_vs_survival_no_seed_bank_meanab_sinking_temperature.pdf",width=9,height=3)
 set.seed(42)
