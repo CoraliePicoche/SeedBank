@@ -79,6 +79,7 @@ gr_max_lit=1.78
 pdf("output/compare_growth_rate_rawBissinger.pdf",width=10,height=5)
 par(mfrow=c(1,2),mar=c(4,4.5,1,1))
 plot(0,0,xlim=range(seq_temp)-273.15,ylim=c(0,1.25),ylab=expression(paste("Growth rate (day"^"-1",")",sep="")),xlab="Temperature",t="n")
+text(-0.9,1.335,"a",las=2,xpd=NA,font=2)
 lines(seq_temp-273.15,val_growth_SV_init,col="black",lty=1,lwd=1.5)
 lines(seq_temp-273.15,val_growth_SV_meta,col="blue",lty=1)
 lines(seq_temp-273.15,val_growth_SV_niche,col="aquamarine3",lty=1,lwd=1.1)
@@ -89,7 +90,7 @@ legend("topleft",legend=c("Growth rate","Niche part","Metabolism part"),col=c("b
 
 id=seq(1,1000,length.out=20)
 plot(seq_temp[id]-273.15,val_growth_SV_meta[id],ylim=c(0.25,2.0),t="p",xlab="Temperature",ylab="",xlim=c(0,30),col="black",pch="+")
-
+text(-0.9,2.125,"b",las=2,xpd=NA,font=2)
 lines(seq_temp-273.15,val_growth_Biss,lty=1,col="orchid")
 lines(seq_temp-273.15,val_growth_Eppley,lty=1,col="steelblue1")
 abline(h=gr_min_lit,lty=2)
@@ -105,6 +106,7 @@ acol=rainbow(nspp,start=0.7,end=0.025)
 pdf("output/further_notes_on_SV.pdf",width=10,height=5)
 par(mfrow=c(1,2),mar=c(4,4.5,1,1))
 plot(0,0,xlim=range(seq_temp)-273.15,ylim=c(0,1.25),ylab=expression(paste("Growth rate (day"^"-1",")",sep="")),xlab="Temperature",t="n")
+text(-1,1.335,"a",las=2,xpd=NA,font=2)
 abline(v=T_opt-273)
 for(a in 1:nspp){
         rtmp_temp=rep(NA,length(seq_temp))
@@ -120,6 +122,7 @@ legend("topleft",legend=B,col=acol,lty=1,bty="n",lwd=2)
 
 id=seq(1,1000,length.out=75)
 plot(0,0,xlim=range(seq_temp)-273.15,ylim=c(0,1.25),ylab="",xlab="Temperature",t="n")
+text(-1,1.335,"b",las=2,xpd=NA,font=2)
 abline(v=T_opt-273.15)
 for(a in c(nspp,1)){
         ftmp_temp=rep(NA,length(seq_temp))

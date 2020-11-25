@@ -229,11 +229,11 @@ let_panels=c("a","b")
 
 pdf(paste("mean_abundance_amplitude_sensitivity.pdf",sep=""),width=12,height=10)
 par(mfrow=c(2,1),mar=c(3,5,3,1))
-plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-5,2),xaxt="n",ylab="%Diff in log10(average abundance)",xlab="",cex.lab=1.65,cex.axis=1.65)
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-5,2),xaxt="n",ylab="%Diff log10(mean abundance)",xlab="",cex.lab=1.65,cex.axis=1.65)
 #axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
 abline(h=0)
 #mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.3)
-mtext("a)",3,line=1.25,at=0.5,cex=2)
+mtext("a",3,line=0.5,at=0.6,cex=1.75,font=2)
 l=0
 val_text=c()
 at_val_text=c()
@@ -279,11 +279,11 @@ for(param_to_move in rownames(free_param)){
 legend("bottomleft",c("Model I","Model II"),col=c("lightgrey","darkgrey"),pch=16,bty="n",cex=1.75)
 
 par(mar=c(4.5,5,1.5,1))
-plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="%Diff in log.amplitude",xlab="",cex.axis=1.65,cex.lab=1.65)
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="%Diff log.amplitude",xlab="",cex.axis=1.65,cex.lab=1.65)
 axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
 abline(h=0)
 mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.4)
-mtext("b)",3,line=1.25,at=0.5,cex=2)
+mtext("b",3,line=0.5,at=0.6,cex=1.75,font=2)
 l=0
 val_text=c()
 at_val_text=c()

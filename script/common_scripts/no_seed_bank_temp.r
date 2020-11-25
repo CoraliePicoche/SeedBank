@@ -139,7 +139,7 @@ id_persistence=seq(length(id)-nb_persistence+1,length(id))
 pdf("no_seed_bank_temp.pdf")
 par(mfrow=c(2,2),mar=c(2,4.5,2,0))
 plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(0,11.5),xaxt="n",ylab="Richness",xlab="",xlim=c(0.8,length(mean_tmp)+0.5),cex.axis=1.5,cex.lab=1.5)
-mtext("a)",line=0.5,at=0.55,cex=1.3)
+mtext("a",line=0.2,at=.75,cex=1.3,font=2)
 #axis(1,at=1:length(mean_tmp),labels=NA)
 for(m in 1:2){
 	if(m==1){
@@ -168,7 +168,7 @@ for(i in 1:length(mean_tmp)){
 par(mar=c(2,2.5,2,2))
 
 plot(1:length(vari_tmp),rep(NA,length(vari_tmp)),ylim=c(0,11.5),xaxt="n",xlab="",ylab="",xlim=c(0.8,length(vari_tmp)+0.5),cex.axis=1.5,cex.lab=1.5,yaxt="n")
-mtext("b)",line=0.5,at=0.6,cex=1.3)
+mtext("b",line=0.2,at=0.75,cex=1.3,font=2)
 
 #axis(1,at=1:length(vari_tmp),labels=NA)
 for(m in 1:2){
@@ -198,7 +198,7 @@ legend("bottomleft",c("W/o seed bank","W seed bank","Model I","Model II"),col=c(
 
 par(mar=c(4,4.5,0,0))
 plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(4,6),ylab="Log10(total abundance)",xlab="Increase in mean(T)",xaxt="n",xlim=c(0.8,length(mean_tmp)+0.5),cex.axis=1.5,cex.lab=1.5)
-mtext("c)",line=0.5,at=0.55,cex=1.3)
+mtext("c",line=0.2,at=.75,cex=1.3,font=2)
 axis(1,at=1:length(mean_tmp),labels=mean_tmp,cex.axis=1.5,cex.lab=1.5)
 for(m in 1:2){
 	if(m==1){
@@ -227,7 +227,7 @@ for(i in 1:length(mean_tmp)){
 par(mar=c(4,2.5,0,2))
 
 plot(1:length(vari_tmp),rep(NA,length(vari_tmp)),ylim=c(4,6),ylab="",xlab=expression("Var(T)"["sim"]/"Var(T)"["init"]),xaxt="n",xlim=c(0.8,length(vari_tmp)+0.5),yaxt="n",cex.lab=1.5,cex.axis=1.5)
-mtext("d)",line=0.5,at=0.6,cex=1.3)
+mtext("d",line=0.2,at=0.75,cex=1.3,font=2)
 axis(1,at=1:length(vari_tmp),labels=vari_tmp,cex.axis=1.5,cex.lab=1.5)
 for(m in 1:2){
 	if(m==1){
@@ -246,6 +246,12 @@ for(i in 1:length(vari_tmp)){
                 tmp_val=apply(N_orig[,'ocean',,j,1,i,m],1,sum,na.rm=T)
 		tmp_value_orig[j]=log10(mean(tmp_val))
         }
+	if(i==1){
+		print("Total abundance with seed bank)")
+		print(mean(tmp_value_orig))
+		print("Total abundance without seed bank")
+		print(mean(tmp_value))
+	}
         points(i+shift,mean(tmp_value),pch=16,col=acol,cex=2)
         arrows(i+shift,mean(tmp_value)-sd(tmp_value)*1.96,i+shift,mean(tmp_value)+sd(tmp_value)*1.96,code=3,angle=0,col=acol,lwd=1.5)
 	points(i+shift+0.1,mean(tmp_value_orig),pch=17,col=acol,cex=2)

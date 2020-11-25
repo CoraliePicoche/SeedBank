@@ -23,6 +23,23 @@ name_spp=colnames(tab_coast)
 #Observations
 tab_mean=read.table("../../param/mean_monthly_abundance.txt",sep=";",dec=".",header=T)
 
+#####Comparing mean abundances
+pop_table=read.table("../../param/mean_interpolated_abundances_Auger.txt",sep=",",dec=".",header=T)
+rownames(pop_table)=pop_table[,1]
+pop_table=pop_table[name_spp,]
+x_obs=pop_table[name_spp,"Mean_abundances"]
+names(x_obs)=name_spp
+n_iter=nrow(tab_coast)
+id=(n_iter-365*nb_year):n_iter
+#Average abundance
+mean_sim=apply(tab_coast[id,],2,mean)
+vec_diff_abundances_minus5=log10(mean_sim+10^(-5))-log10(x_obs+10^(-5))
+vec_diff_abundances_plus1=log10(mean_sim+1)-log10(x_obs+1)
+
+vec_diff_raw_values=(mean_sim-x_obs)/x_obs*100
+
+sum(vec_diff_raw_values^2)
+
 #Variation due to quadratic programming
 before=as.matrix(read.table(paste("interaction_matrix_before_calibration.csv",sep=""),sep=";",dec=".",header=T))
 before_A=before[,1:(ncol(before)-1)]
@@ -225,7 +242,7 @@ colo=c("lightblue","blue","darkblue","orchid","lightslateblue","lightblue4")
 
 pdf("time_series_simulation_per_cluster.pdf",width=7,height=15)
 name_groupe=c("Centric diatoms","Pennate diatoms","Dinoflagellates")
-let=c("a)","b)","c)")
+let=c("a","b","c")
 par(mfrow=c(3,1))
 for(tt in 1:length(list_to_show)){
 ydelim=range(c(transfo_N_coast[id,list_to_show[[tt]]]))
@@ -245,6 +262,7 @@ ydelim=range(c(transfo_N_coast[id,list_to_show[[tt]]]))
 		}
 	}
 	plot(id,rep(NA,length(id)),t="n",ylim=ydelim,xlab=xl,ylab="Log10(abundance)",xaxt="n",main=name_groupe[tt],cex.lab=1.75,cex.main=1.75,cex.axis=1.75)
+	text(id[1]-8,ydelim[1]+diff(ydelim)*1.07,let[tt],las=2,xpd=NA,cex=1.75,font=2)
 	if(tt==3){
         axis(1,at=seq(id[1],id[length(id)],by=60),labels=seq(1,366,by=60),cex.axis=1.75)
 	}else{

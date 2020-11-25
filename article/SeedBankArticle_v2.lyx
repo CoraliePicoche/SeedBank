@@ -287,11 +287,38 @@ Although some awareness of the role of cryptic life stages on terrestrial
  The classical view behind phytoplankton dynamics is that their blooms (peaks
  in abundances several orders of magnitude above their baseline level) are
  due to seasonal variation in light, temperature and nutrients, as well
- as hydrodynamics processes (Reynolds 2006).
+ as hydrodynamics processes 
+\change_deleted -2100369821 1606321328
+(Reynolds 2006)
+\change_inserted -2100369821 1606321328
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "reynolds2006ecology"
+literal "false"
+
+\end_inset
+
+
+\change_unchanged
+.
  In this mindset, differential responses to environmental signals ensure
- the coexistence of multiple species (Margalef 1978, Smayda and Reynolds
- 2001), while always assuming that vegetative cells are already present
- in the environment.
+ the coexistence of multiple species 
+\change_inserted -2100369821 1606321315
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "margalef_life-forms_1978,smayda_community_2001"
+literal "false"
+
+\end_inset
+
+
+\change_deleted -2100369821 1606321318
+(Margalef 1978, Smayda and Reynolds 2001)
+\change_unchanged
+, while always assuming that vegetative cells are already present in the
+ environment.
  Momentary disappearances of a species are viewed as sampling issues at
  low density.
  However, a complementary hypothesis suggests that resuspension and germination
@@ -318,10 +345,24 @@ literal "false"
  A variety of models have endeavoured to explain and predict amplitude,
  timing and/or spatial distribution of blooms by explicitly modeling multiple
  stages in the life cycle of a particular species, but without interactions
- with other organisms (see for example McGillicuddy et al.
+ with other organisms (see for example 
+\change_inserted -2100369821 1606321127
+
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "mcgillicuddy_mechanisms_2005,hense_towards_2006,hellweger_agent-based_2008,yniguez_investigating_2012"
+literal "false"
+
+\end_inset
+
+
+\change_deleted -2100369821 1606321133
+McGillicuddy et al.
  2005, Yniguez et al.
  2012, Hense & Beckmann 2006, Hellweger et al.
- 2008).
+ 2008
+\change_unchanged
+).
  Two-to-four species 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1664,7 +1705,7 @@ Germination
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula ${10^{-3},\mathbf{10^{-2}},10^{-1}}\times{10^{-5},10^{-3},\mathbf{10^{-1}}}$
+\begin_inset Formula $(10^{-3},\mathbf{10^{-2}},10^{-1})\times(10^{-5},10^{-3},\mathbf{10^{-1}})$
 \end_inset
 
 
@@ -1738,7 +1779,17 @@ Calibrated
  at the study site).
  When a range of values is given, the bold numbers indicate the reference
  values while the others are used for sensitivity analysis.
- Scenario parameters are the parameters which are used to build the ecological
+ 
+\change_inserted -2100369821 1606292200
+For 
+\begin_inset Formula $\gamma,$
+\end_inset
+
+ germination values for sensivity analysis were multiplied by the reference
+ value for resuspensation, and conversely.
+ 
+\change_unchanged
+Scenario parameters are the parameters which are used to build the ecological
  scenarii considered in this article.
  
 \begin_inset CommandInset label
@@ -2303,6 +2354,11 @@ status open
 
 \change_inserted -666822487 1605019820
 how much?
+\change_inserted -2100369821 1606309795
+ Mean raw abundance differences is -11% between simulated and obs (so, underesti
+mation) ; when taking the absolute values of the differences: 54% for model
+ I ; 84% and 93% respectively for model II.
+ 
 \change_unchanged
 
 \end_layout
@@ -2517,9 +2573,18 @@ Two scenarios were designed to test the buffering effect of the cyst bank
  In both cases, it consisted in removing the cyst bank by setting cyst mortality
  to 100% per day.
  Without any other disturbance to the system, this led to a decrease in
- taxon richness from 11 to 4 taxa at the end of the simulation.
+ taxon richness from 11 to 4 taxa at the end of the simulation
+\change_inserted -2100369821 1606322841
+ while the total abundance of phytoplankton was not strongly affected (around
  
-\change_deleted -2100369821 1606230537
+\begin_inset Formula $10^{5}$
+\end_inset
+
+ in all cases)
+\change_unchanged
+.
+ 
+\change_deleted -2100369821 1606322530
 Taking into account the extinct taxa, the geometric mean abundance of the
  community was around 10
 \begin_inset Formula $^{-2}$
@@ -2555,10 +2620,10 @@ F: not sure how you can do a geometric mean with extinct taxa?
 \end_inset
 
 .
-
-\change_unchanged
  The average abundance of extant taxa only was around 30 without a cyst
  bank.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2626,10 +2691,23 @@ The geometric mean abundance was also affected by such biotic changes.
 \change_unchanged
 .
 
-\change_inserted -2100369821 1606230691
- [[Simpson index]]
-\change_unchanged
-
+\change_inserted -2100369821 1606324535
+ Another diversity index, the inverse of the Simpson index, was also affected
+ by the changes in interaction strengths.
+ In the presence of a cyst bank, this index varied between 1.5 and 3.2 with
+ model I, with a reference value of 3.0 without changing the interaction
+ strengths and a maximum reached when competition was divided by 3 or facilitati
+on was multiplied by 3.
+ In model II, the inverse of the Simpson index varied between 1.7 and 4.1
+ when varying competition and between 2.4 and 3.9 when varying facilitation,
+ with a reference value of 3.3 and a maximum value obtained when competition
+ was divided by 4 or facilitation was multiplied by 3.
+ The index remained a little above 1 for the two models without a cyst bank.
+ While it was not sensitive to changes in interaction strengths in model
+ I (remaining between 1.3 and 1.4), it was much more variable in the seccond
+ model, where dividing competition by 3, or by numbers higher than 7, or
+ multiplying facilitation by 4, led to values around 2.
+ In all cases, this diversity index remained higher with the cyst bank.
 \end_layout
 
 \begin_layout Standard
@@ -2953,7 +3031,7 @@ literal "false"
  microbiology literature 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "locey_synthesizing_2010,lennon_microbial_2011"
+key "locey_synthesizing_2010,lennon_microbial_2011,wisnoski_stabilizing_2020"
 literal "false"
 
 \end_inset
@@ -2970,8 +3048,11 @@ literal "false"
 
  but are not limited to it.
  This is because dormancy alone can allow recolonization in the future.
- This colonization in the future may combine with present recolonizationfrom
- other spatial areas 
+ This colonization in the future may combine with present recolonization
+\change_inserted -2100369821 1606320852
+ 
+\change_unchanged
+from other spatial areas 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "shmida_coexistence_1985"
@@ -3091,7 +3172,7 @@ literal "false"
 
 .
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Maybe hint at evolution, too,if we'retalking many many generation.

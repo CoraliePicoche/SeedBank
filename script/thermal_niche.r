@@ -38,6 +38,7 @@ aylim=c(0,max(c(mat_val)))
 
 pdf("output/thermal_niche.pdf",width=10,height=8)
 par(mfrow=c(3,4),mar=c(4,4.5,2,1))
+let=c("a","b","c","d","e","f","g","h","i","j","k")
 for(s in 1:length(sp)){
 	if(s%%4==1){
 		yl=expression(paste("Growth rate (d"^"-1",")",sep=""))
@@ -50,6 +51,7 @@ for(s in 1:length(sp)){
 		xl=""
 	}
 	plot(temp-273.15,mat_val[,s],t="l",main=sp[s],xlab=xl,ylab=yl,ylim=aylim)
+	text(-1,diff(aylim)*1.1,let[s],las=2,xpd=NA,font=2)
 }
 dev.off()
 

@@ -1624,6 +1624,74 @@ Simulated phytoplankton time series for a year in model II (with saturating
 \end_inset
 
 
+\change_inserted -2100369821 1606309611
+
+\end_layout
+
+\begin_layout Section
+
+\change_inserted -2100369821 1606309631
+Growth rates and survival without a cyst bank
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1606309634
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1606309675
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/survival_vs_growth_rates.pdf
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1606309634
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1606309938
+Probability of survival in the absence of a cyst bank as a function of the
+ growth rate in different conditions (mean temperature and low densities,
+ i.e., all species density are 1 C/L, or average densities, i.e., all species
+ are at their simulated average density values; or average densities and
+ optimal temperature for each species, or suboptimal temperatures - here,
+ 30°C).
+ It seems that opportunistic species are the ones with the highest probability
+ of survival.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

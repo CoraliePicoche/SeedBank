@@ -37,7 +37,7 @@ temp=15+273.15
 growth_low_density_modelI=rep(NA,nspp)
 growth_low_density_modelII=rep(NA,nspp)
 for (s in 1:nspp){
-	n_t=rep(0,nspp)
+	n_t=rep(1,nspp)
 	n_t[s]=1
 
 	growth=growth_rate_noMTE_Bissinger(temp,T_opt,B,0.5)
@@ -138,30 +138,30 @@ id_persistence=seq(length(id)-nb_persistence+1,length(id))
 surviv_compet=apply(apply(N_array[id_persistence,"ocean",,,'compet',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/(length(fac_simu))
 surviv_facil=apply(apply(N_array[id_persistence,"ocean",,,'facil',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/length(fac_simu)
 
-pdf("survival_vs_growth_rates.pdf",width=9,height=9)
+pdf("survival_vs_growth_rates.pdf",width=6,height=6)
 set.seed(42)
 par(mfrow=c(2,2),oma=c(1,1,1,1),mar=c(4,4,1,1))
 limits=range(c(growth_low_density_modelI,growth_low_density_modelII))
 plot(jitter(growth_low_density_modelI,amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Growth low density",pch=16,ylim=c(0,1),ylab="Prob survival",cex=1.5,xlim=limits+c(-0.1,0.1))
-text(min(limits)-0.1-diff(limits+c(-0.1,0.1))*0.2,1.1,"a)",las=2,xpd=NA)
+text(min(limits)-0.1,1.1,"a",las=2,xpd=NA,font=2)
 points(jitter(growth_low_density_modelII,amount=0.1),surviv_compet[,2],col="grey",pch=17,cex=1.5)
+legend("topleft",c("Model I","Model II"),pch=c(16,17),col=c("black","grey"),pt.lwd=c(1,1,1.5,1.5),bty="n")
 
 limits=range(c(growth_average_density_modelI,growth_average_density_modelII))
-plot(jitter(growth_average_density_modelI,amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Growth average density",pch=16,ylim=c(0,1),ylab="Prob survival",cex=1.5,xlim=limits+c(-0.1,0.1))
-text(min(limits)-0.1-diff(limits+c(-0.1,0.1))*0.2,1.1,"b)",las=2,xpd=NA)
+plot(jitter(growth_average_density_modelI,amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Growth average density",pch=16,ylim=c(0,1),ylab="",cex=1.5,xlim=limits+c(-0.1,0.1))
+text(min(limits)-0.1,1.1,"b",las=2,xpd=NA,font=2)
 points(jitter(growth_average_density_modelII,amount=0.1),surviv_compet[,2],col="grey",pch=17,cex=1.5)
 
 limits=range(c(growth_optimal_temperature_modelI,growth_optimal_temperature_modelII))
 plot(jitter(growth_optimal_temperature_modelI,amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Growth optimal temperature",pch=16,ylim=c(0,1),ylab="Prob survival",cex=1.5,xlim=limits+c(-0.1,0.1))
-text(min(limits)-0.1-diff(limits+c(-0.1,0.1))*0.2,1.1,"c)",las=2,xpd=NA)
+text(min(limits)-0.1,1.1,"c",las=2,xpd=NA,font=2)
 points(jitter(growth_optimal_temperature_modelII,amount=0.1),surviv_compet[,2],col="grey",pch=17,cex=1.5)
 
 limits=range(c(growth_bad_temperature_modelI,growth_bad_temperature_modelII))
-plot(jitter(growth_bad_temperature_modelI,amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Growth bad temperature",pch=16,ylim=c(0,1),ylab="Prob survival",cex=1.5,xlim=limits+c(-0.1,0.1))
-text(min(limits)-0.1-diff(limits+c(-0.1,0.1))*0.2,1.1,"d)",las=2,xpd=NA)
+plot(jitter(growth_bad_temperature_modelI,amount=0.1),surviv_compet[,1],t="p",col="black",xlab="Growth bad temperature",pch=16,ylim=c(0,1),ylab="",cex=1.5,xlim=limits+c(-0.1,0.1))
+text(min(limits)-0.1,1.1,"d",las=2,xpd=NA,font=2)
 points(jitter(growth_bad_temperature_modelII,amount=0.1),surviv_compet[,2],col="grey",pch=17,cex=1.5)
 
-legend("topright",c("Model I","Model II"),pch=c(16,17),col=c("black","grey"),pt.lwd=c(1,1,1.5,1.5),bty="n")
 
 dev.off()
 
