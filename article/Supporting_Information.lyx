@@ -1630,7 +1630,88 @@ Simulated phytoplankton time series for a year in model II (with saturating
 
 \begin_layout Section
 
-\change_inserted -2100369821 1606309631
+\change_inserted -2100369821 1606488160
+Scenario: changing interspecific interactions but not intraspecific interactions
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1606488163
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1606488182
+\begin_inset Graphics
+	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/no_seed_bank_compet_keeping_intra.pdf
+	width 95text%
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1606488163
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1606488210
+Measures of biodiversity in the ocean at the end of the simulation: a-b)
+ richness and c-d) inverse of the Simspon index, with (dashed line) and
+ without (solid line) a seed bank, as a function of the strength of competition
+ and facilitation with a classical Beverton-Holt (black lines) or a saturating
+ interaction (grey lines) formulation, keeping the same values for the intraspec
+ific interaction strengths.
+ The x-axis shows the factor by which each interaction was multiplied (note
+ the logarithmic scale) 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Seed_bank_compet"
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1606488466
+When the intraspecific interaction strengths does not change, reducing the
+ values of interspecific competition has very little effect on both richness
+ and the inverse of the Simpson index.
+ Increasing facilitation finally destabilizes the ratio of intra- to interspecif
+ic interaction strengths, which destabilizes the community and leads to
+ the observed diversity decrease.
+ 
+\end_layout
+
+\begin_layout Section
+
+\change_inserted -2100369821 1606488155
 Growth rates and survival without a cyst bank
 \end_layout
 
@@ -1663,15 +1744,15 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1606309938
+\change_inserted -2100369821 1606488857
 Probability of survival in the absence of a cyst bank as a function of the
- growth rate in different conditions (mean temperature and low densities,
- i.e., all species density are 1 C/L, or average densities, i.e., all species
- are at their simulated average density values; or average densities and
- optimal temperature for each species, or suboptimal temperatures - here,
- 30°C).
- It seems that opportunistic species are the ones with the highest probability
- of survival.
+ realized per capita growth rates of each species in different conditions
+ (mean temperature and low densities, i.e., all species density are 1 C/L,
+ or average densities, i.e., all species are at their simulated average density
+ values; or average densities and optimal temperature for each species,
+ or suboptimal temperatures - here, 30°C).
+ Red points correspond to species which have a high growth grate at low
+ density but still goes extinct.
 \change_unchanged
 
 \end_layout
@@ -1683,15 +1764,20 @@ Probability of survival in the absence of a cyst bank as a function of the
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \change_unchanged
 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1606488999
+Extinction can be explained by both a low growth rate at low density and
+ average temperature and a low growth rate at average density despite being
+ at optimal temperature.
+ 
 \end_layout
 
 \begin_layout Standard
