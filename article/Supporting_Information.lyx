@@ -1631,7 +1631,19 @@ Simulated phytoplankton time series for a year in model II (with saturating
 \begin_layout Section
 
 \change_inserted -2100369821 1606488160
-Scenario: changing interspecific interactions but not intraspecific interactions
+Scenario: changing interspecific interaction
+\change_inserted -666822487 1606822301
+ strengths
+\change_deleted -666822487 1606822287
+s
+\change_inserted -2100369821 1606488160
+ but not intraspecific interaction
+\change_inserted -666822487 1606822302
+ strengths
+\change_deleted -666822487 1606822296
+s
+\change_inserted -2100369821 1606488160
+
 \end_layout
 
 \begin_layout Standard
@@ -1645,35 +1657,27 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
-
-\change_inserted -2100369821 1606488182
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/no_seed_bank_compet_keeping_intra.pdf
+	filename ../script/common_scripts/no_seed_bank_compet_keeping_intra.pdf
 	width 95text%
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1606488163
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1606488210
 Measures of biodiversity in the ocean at the end of the simulation: a-b)
  richness and c-d) inverse of the Simspon index, with (dashed line) and
  without (solid line) a seed bank, as a function of the strength of competition
  and facilitation with a classical Beverton-Holt (black lines) or a saturating
  interaction (grey lines) formulation, keeping the same values for the intraspec
 ific interaction strengths.
- The x-axis shows the factor by which each interaction was multiplied (note
- the logarithmic scale) 
+ The x-axis shows the factor by which each interaction coefficient was multiplie
+d (note the logarithmic scale) 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Seed_bank_compet"
@@ -1681,14 +1685,10 @@ name "fig:Seed_bank_compet"
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1698,26 +1698,28 @@ name "fig:Seed_bank_compet"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1606488466
-When the intraspecific interaction strengths does not change, reducing the
- values of interspecific competition has very little effect on both richness
- and the inverse of the Simpson index.
+When intraspecific interaction strengths do not change, reducing the values
+ of interspecific competition has very little effect on both richness and
+ the inverse of the Simpson index.
  Increasing facilitation finally destabilizes the ratio of intra- to interspecif
 ic interaction strengths, which destabilizes the community and leads to
- the observed diversity decrease.
+ the observed diversity decrease
+\change_inserted -666822487 1606822385
+ in absence of a seed bank
+\change_unchanged
+.
+
+\change_deleted -666822487 1606822375
  
+\change_inserted -2100369821 1606488466
+
 \end_layout
 
 \begin_layout Section
-
-\change_inserted -2100369821 1606488155
 Growth rates and survival without a cyst bank
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1606309634
 \begin_inset Float figure
 wide false
 sideways false
@@ -1726,10 +1728,8 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
-
-\change_inserted -2100369821 1606309675
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/script/common_scripts/survival_vs_growth_rates.pdf
+	filename ../script/common_scripts/survival_vs_growth_rates.pdf
 	width 80text%
 
 \end_inset
@@ -1738,46 +1738,79 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1606309634
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1606488857
 Probability of survival in the absence of a cyst bank as a function of the
- realized per capita growth rates of each species in different conditions
- (mean temperature and low densities, i.e., all species density are 1 C/L,
- or average densities, i.e., all species are at their simulated average density
- values; or average densities and optimal temperature for each species,
- or suboptimal temperatures - here, 30°C).
+ realized per capita growth rates
+\change_inserted -666822487 1606822414
+ (PGCR)
+\change_unchanged
+ of each species in different conditions
+\change_inserted -666822487 1606822791
+.
+ We consider
+\change_unchanged
+ 
+\change_deleted -666822487 1606822801
+(
+\change_unchanged
+mean temperature and low densities
+\change_inserted -666822487 1606823096
+ (a)
+\change_unchanged
+, i.e., all species density are 1 C/L, or average densities
+\change_inserted -666822487 1606823104
+ (b)
+\change_unchanged
+, i.e., all species are at their simulated average density values; or average
+ densities and optimal temperature for each species
+\change_inserted -666822487 1606823118
+ (c)
+\change_unchanged
+, or suboptimal temperatures
+\change_inserted -666822487 1606823123
+ (d)
+\change_unchanged
+ - here, 30°C
+\change_deleted -666822487 1606823125
+)
+\change_unchanged
+.
  Red points correspond to species which have a high growth grate at low
  density but still goes extinct.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
 \begin_layout Standard
+Extinction 
+\change_inserted -666822487 1606823288
+in absence of the cyst bank 
+\change_unchanged
+can be explained by both a low growth rate at low density and average temperatur
+e
+\change_inserted -666822487 1606823274
+ (affecting specialists with a narrow niche)
+\change_unchanged
+ and a low growth rate at average density despite being at optimal temperature
+\change_inserted -666822487 1606823262
+ (i.e., species strongly affected by interactions)
+\change_unchanged
+.
 
-\change_inserted -2100369821 1606488999
-Extinction can be explained by both a low growth rate at low density and
- average temperature and a low growth rate at average density despite being
- at optimal temperature.
+\change_deleted -666822487 1606822390
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
