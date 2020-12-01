@@ -101,8 +101,11 @@ Seed formation is part of the reproductive cycle, leading to the accumulation
  can be more likely to coexist thanks to seeds' buffering effect.
  While the implications of this process for biodiversity have been studied
  in terrestrial plants, seed (or cyst) banks are usually neglected in phytoplank
-ton multispecies models, in spite of widespread empirical evidence for such
- cyst banks.
+ton multispecies
+\change_inserted -666822487 1606813917
+ dynamic
+\change_unchanged
+ models, in spite of widespread empirical evidence for such cyst banks.
  In this study, we build a metacommunity model of interacting phytoplankton
  species with a cyst bank.
  The model is parameterized with empirically-driven growth rates functions
@@ -124,8 +127,11 @@ ton multispecies models, in spite of widespread empirical evidence for such
  Moreover, the cyst bank enables populations to tolerate stronger interactions
  within the community as well as more severe changes in the environment,
  such as those predicted within a climate change context.
- This study therefore uncovers the importance of the phytoplanktonic cyst
- stage for diversity maintenance.
+ This study therefore uncovers the
+\change_inserted -666822487 1606813969
+ potential
+\change_unchanged
+ importance of the phytoplanktonic cyst stage for diversity maintenance.
 \end_layout
 
 \begin_layout Section*
@@ -148,8 +154,12 @@ literal "false"
 \end_inset
 
 .
- However, complex life-history structure can further increase the likelihood
- of coexistence 
+ However, 
+\change_inserted -666822487 1606814013
+a 
+\change_unchanged
+complex life-history structure can further increase the likelihood of coexistenc
+e 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "loreau_competitive_1994,moll_competition_2008,fujiwara_coexistence_2011,chu_large_2015"
@@ -235,7 +245,15 @@ literal "false"
  their potential contribution to the storage effect.
  The seed stage itself contrasts with other parts of the life cycle as organisms
  can enter a dormant phase which allows them to sustain harsh environmental
- conditions for longer periods of time than later stages 
+ conditions for long
+\change_deleted -666822487 1606814125
+er
+\change_unchanged
+ periods of time
+\change_deleted -666822487 1606814154
+ than later stages
+\change_unchanged
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "aikio_seed_2002"
@@ -259,7 +277,11 @@ literal "false"
  In their model, adding a dormant stage could increase species diversity
  both at the local and regional scales.
  These results suggest that considering a seed stage in dynamical models
- can profoundly alter our understandingof population 
+ can profoundly alter our understanding
+\change_inserted -666822487 1606814180
+ 
+\change_unchanged
+of population 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "nguyen_consequences_2019"
@@ -280,18 +302,26 @@ literal "false"
 
 \begin_layout Standard
 \noindent
-Although some awareness of the role of cryptic life stages on terrestrial
- pant coexistence exists, the effect of such dormant life stages on aquatic
- plant communities, and more specifically that of phytoplanktonic algae,
- is often ignored.
+Although 
+\change_inserted -666822487 1606814202
+there is 
+\change_unchanged
+some awareness of the role of cryptic life stages 
+\change_deleted -666822487 1606814214
+on
+\change_inserted -666822487 1606814215
+in shaping
+\change_unchanged
+ terrestrial pant coexistence
+\change_deleted -666822487 1606814210
+ exists
+\change_unchanged
+, the effect of such dormant life stages on aquatic plant communities, and
+ more specifically that of phytoplanktonic algae, is often ignored.
  The classical view behind phytoplankton dynamics is that their blooms (peaks
  in abundances several orders of magnitude above their baseline level) are
  due to seasonal variation in light, temperature and nutrients, as well
  as hydrodynamics processes 
-\change_deleted -2100369821 1606321328
-(Reynolds 2006)
-\change_inserted -2100369821 1606321328
-
 \begin_inset CommandInset citation
 LatexCommand citep
 key "reynolds2006ecology"
@@ -299,13 +329,9 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 .
  In this mindset, differential responses to environmental signals ensure
  the coexistence of multiple species 
-\change_inserted -2100369821 1606321315
-
 \begin_inset CommandInset citation
 LatexCommand citep
 key "margalef_life-forms_1978,smayda_community_2001"
@@ -313,10 +339,6 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted -2100369821 1606321318
-(Margalef 1978, Smayda and Reynolds 2001)
-\change_unchanged
 , while always assuming that vegetative cells are already present in the
  environment.
  Momentary disappearances of a species are viewed as sampling issues at
@@ -346,8 +368,6 @@ literal "false"
  timing and/or spatial distribution of blooms by explicitly modeling multiple
  stages in the life cycle of a particular species, but without interactions
  with other organisms (see for example 
-\change_inserted -2100369821 1606321127
-
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "mcgillicuddy_mechanisms_2005,hense_towards_2006,hellweger_agent-based_2008,yniguez_investigating_2012"
@@ -355,13 +375,6 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted -2100369821 1606321133
-McGillicuddy et al.
- 2005, Yniguez et al.
- 2012, Hense & Beckmann 2006, Hellweger et al.
- 2008
-\change_unchanged
 ).
  Two-to-four species 
 \begin_inset CommandInset citation
@@ -373,11 +386,29 @@ literal "false"
 
  models also exist, but they focus on explaining the dynamics of a single
  cyst-forming species interacting with vegetative-only groups.
- This state of affaires means that we currently have no clear understanding
- of how the cyst stage may help maintain biodiversity in species-rich communitie
-s.
- In the present paper, we demonstrate this using a multispecies phytoplankton
- model including a cyst bank.
+ This state of affairs means that we currently have no clear understanding
+ of how the cyst stage 
+\change_deleted -666822487 1606814286
+may
+\change_inserted -666822487 1606814288
+might
+\change_unchanged
+ help maintain biodiversity in species-rich communities.
+ In the present paper, we demonstrate 
+\change_deleted -666822487 1606814296
+this
+\change_inserted -666822487 1606814303
+the potential role of cyst banks
+\change_unchanged
+ using a
+\change_deleted -666822487 1606814322
+ multispecies
+\change_unchanged
+ phytoplankton 
+\change_inserted -666822487 1606814330
+community dynamics 
+\change_unchanged
+model including a cyst bank.
 \end_layout
 
 \begin_layout Standard
@@ -392,9 +423,23 @@ literal "false"
 
 \end_inset
 
-, as the distance to the sea bottom is smaller.
- Exchanges between oceanic and coastal phytoplanktonic communities are usually
- observed.
+, as the distance to the sea bottom is smaller
+\change_inserted -666822487 1606814424
+, which favours recolonization from the sea bottom, something that is impossible
+ in the deep ocean
+\change_unchanged
+.
+ 
+\change_deleted -666822487 1606814436
+E
+\change_inserted -666822487 1606814454
+Moreover, 'horizontal' e
+\change_unchanged
+xchanges between oceanic and coastal 
+\change_inserted -666822487 1606814458
+pelagic 
+\change_unchanged
+phytoplanktonic communities are usually observed.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -496,7 +541,11 @@ literal "false"
  interacting populations.
  Any discrete-time model requires an ordering of events; in our models,
  these unfold as follows: first, populations grow or decline according to
- a Beverton-Holt multispecies density-dependence (eqs.
+ a Beverton-Holt 
+\change_inserted -666822487 1606814967
+(BH) 
+\change_unchanged
+multispecies density-dependence (eqs.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -570,9 +619,20 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-The Beverton-Holt (BH) formulation of multispecies population dynamics is
- a Lotka-Volterra competition equivalent for discrete-time models, and is
- often used to represent terrestrial plant population/community dynamics.
+The Beverton-Holt (BH) formulation of multispecies population dynamics
+\change_inserted -666822487 1606815112
+, sometimes called Leslie-Gower 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "cushing2004some"
+literal "false"
+
+\end_inset
+
+,
+\change_unchanged
+ is a Lotka-Volterra competition equivalent for discrete-time models, and
+ is often used to represent terrestrial plant population/community dynamics.
  In this model, the maximum achievable growth rate is modified by both competiti
 ve and facilitative interactions, which translates into positive and negative
  
@@ -697,7 +757,11 @@ noprefix "false"
 
 \end_inset
 
-), which classically decomposes the growth rate 
+), which classically decomposes the
+\change_inserted -666822487 1606815300
+ intrinsic
+\change_unchanged
+ growth rate 
 \begin_inset Formula $r_{i}(T)$
 \end_inset
 
@@ -729,8 +793,11 @@ r_{i}(T) & = & E(T)f_{i}(T)\label{eq:growth_rate}\\
 \end_layout
 
 \begin_layout Standard
-The metabolism part describes the maximum achievable growth rate based on
- 
+The metabolism part describes the maximum achievable 
+\change_inserted -666822487 1606815308
+intrinsic 
+\change_unchanged
+growth rate based on 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bissinger_predicting_2008"
@@ -755,7 +822,11 @@ literal "false"
 \end_inset
 
 .
- This maximum daily growth rate is weighted by the daylength 
+ This maximum daily 
+\change_inserted -666822487 1606815321
+intrinsic 
+\change_unchanged
+growth rate is weighted by the daylength 
 \begin_inset Formula $d$
 \end_inset
 
@@ -1779,17 +1850,17 @@ Calibrated
  at the study site).
  When a range of values is given, the bold numbers indicate the reference
  values while the others are used for sensitivity analysis.
- 
-\change_inserted -2100369821 1606292200
-For 
+ For 
 \begin_inset Formula $\gamma,$
 \end_inset
 
  germination values for sensivity analysis were multiplied by the reference
- value for resuspensation, and conversely.
- 
+ value for resuspens
+\change_deleted -666822487 1606815390
+at
 \change_unchanged
-Scenario parameters are the parameters which are used to build the ecological
+ion, and conversely.
+ Scenario parameters are the parameters which are used to build the ecological
  scenarii considered in this article.
  
 \begin_inset CommandInset label
@@ -1825,12 +1896,24 @@ Each compartment (ocean, coast, seed bank) contains
 
  cells at the beginning of the simulation, and the dynamics are run for
  30 years with a daily time step.
- We mimick the temperature input as a noisy sinusoidal signal with the same
- mean and variance as the empirical data set described below.
+ We 
+\change_deleted -666822487 1606815451
+mimick
+\change_inserted -666822487 1606815451
+model
+\change_unchanged
+ the temperature input as a noisy sinusoidal signal with the same mean and
+ variance as the empirical data set described below.
 \end_layout
 
 \begin_layout Subsection*
-Parameterisation of the models
+Parameteri
+\change_deleted -666822487 1606815462
+s
+\change_inserted -666822487 1606815462
+z
+\change_unchanged
+ation of the models
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1873,7 +1956,11 @@ literal "false"
 \end_inset
 
  (in the absence of nutrients, or because of viral charge).
- A maximum value of 0.2 is fixed for the model (see Section S3 of the SI).
+ A maximum value of 0.2 is fixed for the model (see Section S3 of the SI
+\change_inserted -666822487 1606815506
+ for more details
+\change_unchanged
+).
 \end_layout
 
 \begin_layout Paragraph*
@@ -1897,10 +1984,29 @@ literal "false"
  determinants of the particle floatation.
  In this model, the sinking rate of each taxon is drawn from a beta distribution
  with a mean value of 9%, and a maximum around 30%, that is 
-\begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
+\begin_inset Formula $s\backsim0.09+0.3\beta(0.55,1.25)$
 \end_inset
 
- (see Fig.
+ 
+\change_inserted -666822487 1606815582
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1606815603
+F: I added 0.09 to the formula based on the description, check that it is
+ correct.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+(see Fig.
  S4), adapted from observations by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1936,7 +2042,11 @@ literal "false"
 
 \end_inset
 
-, which corresponds to a daily rate between 40 and 100 %.
+, which corresponds to a daily
+\change_inserted -666822487 1606815620
+ exchange
+\change_unchanged
+ rate between 40 and 100 %.
 \end_layout
 
 \begin_layout Paragraph*
@@ -2047,9 +2157,12 @@ literal "false"
 \end_inset
 
 .
- These initial interaction estimates were thencalibrated, to take into account
- the differences in model structure and timescale between this study and
+ These initial interaction estimates were then
+\change_inserted -666822487 1606815705
  
+\change_unchanged
+calibrated, to take into account the differences in model structure and
+ timescale between this study and 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "picoche_strong_2020"
@@ -2307,6 +2420,14 @@ ons on coexistence, only one type of interactions was subject to this change
  for each growth model: one where positive (respectively, negative) interactions
  were multiplied by the factor and one where positive (respectively, negative)
  interactions were divided by the same factor.
+
+\change_inserted -666822487 1606815895
+ Here, both intraspecific and interspecific interactions were changed; we
+ present in the SI additional simulations with a change in interspecific
+ interactions only.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2359,6 +2480,8 @@ how much?
 mation) ; when taking the absolute values of the differences: 54% for model
  I ; 84% and 93% respectively for model II.
  
+\change_inserted -666822487 1606815978
+F: you mean in untransformed or log scale? 
 \change_unchanged
 
 \end_layout
@@ -2565,6 +2688,10 @@ name "fig:Sensitivity"
 
 \begin_layout Subsection*
 Scenarios
+\change_inserted -666822487 1606816157
+ of environmental change
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2573,55 +2700,33 @@ Two scenarios were designed to test the buffering effect of the cyst bank
  In both cases, it consisted in removing the cyst bank by setting cyst mortality
  to 100% per day.
  Without any other disturbance to the system, this led to a decrease in
- taxon richness from 11 to 4 taxa at the end of the simulation
-\change_inserted -2100369821 1606322841
- while the total abundance of phytoplankton was not strongly affected (around
+ taxon richness from 11 to 4 taxa at the end of the simulation 
+\change_inserted -666822487 1606816354
+(Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Seed_bank_compet"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
+\change_unchanged
+while the total abundance of phytoplankton was not strongly affected (around
  
 \begin_inset Formula $10^{5}$
 \end_inset
 
- in all cases)
-\change_unchanged
-.
+ in all cases).
+
+\change_inserted -666822487 1606816778
+ The inverse of the Simpson index (the second Hill number) decreased from
+ approximately 3 to 1, showing that the disappearance of the cyst bank does
+ not affect only the rarest species.
  
-\change_deleted -2100369821 1606322530
-Taking into account the extinct taxa, the geometric mean abundance of the
- community was around 10
-\begin_inset Formula $^{-2}$
-\end_inset
-
- while it was around 
-\begin_inset Formula $10^{3}$
-\end_inset
-
- with a cyst bank
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1598860553
-F: not sure how you can do a geometric mean with extinct taxa?
-\change_inserted -2100369821 1599555111
- Indeed.
- I used (abundances of extinct)+10^-5) but I guess we can remove this sentence
- and use only the abundance of present taxa - in this case, do this in the
- results too.
- What do you think?
-\change_inserted -666822487 1605089616
- –> F: We can talk about this.
- We can also put the threshold to 1 cell per liter if better.
- see papers using geometric mean abundance in a monitoring context.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-.
- The average abundance of extant taxa only was around 30 without a cyst
- bank.
 \change_unchanged
 
 \end_layout
@@ -2632,7 +2737,11 @@ Biotic effects
 
 \begin_layout Standard
 Our first hypothesis was that the absence of the cyst bank would cause the
- community to be more affected by higher competition strength.
+ community to be more affected by
+\change_inserted -666822487 1606816181
+ a
+\change_unchanged
+ higher competition strength.
  Counter-intuitively, our results (Fig.
  
 \begin_inset CommandInset ref
@@ -2679,21 +2788,37 @@ confirmed.
 
 \begin_layout Standard
 
-\change_deleted -2100369821 1606230685
-The geometric mean abundance was also affected by such biotic changes.
- The order of magnitude of the average abundance without a cyst bank varied
- between a -1.4 and -2.8 with model I and between -1.3 and -3.3 with model II,
- while it was between 34.4 and 1.4 for model I and between 0.7 and 3.3 for model
- II with a cyst bank.
- It should be noted that model I was able to produce much higher abundances
- when competition was low, which can be related to the presence of a hard
- threshold on the amplifying effect of the interactions on the growth rate
-\change_unchanged
+\change_deleted -666822487 1606816539
 .
+ Another diversity index,
+\change_unchanged
+The inverse of the Simpson index
+\change_deleted -666822487 1606816547
+,
+\change_unchanged
+ was also affected by the changes in interaction strengths
+\change_inserted -666822487 1606816726
+, with similar patterns to richness, as it was lowest for high facilitation
+ or low competition.
+ Presumably some species reach very high growth rates in these scenarios,
+ which then has feed backs unto community dynamics, generating in fine lower
+ diversity
+\begin_inset Note Note
+status open
 
-\change_inserted -2100369821 1606324535
- Another diversity index, the inverse of the Simpson index, was also affected
- by the changes in interaction strengths.
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1606816744
+F: Can we confirm this with the figures at the end of the SI?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
+\change_deleted -666822487 1606816602
+.
  In the presence of a cyst bank, this index varied between 1.5 and 3.2 with
  model I, with a reference value of 3.0 without changing the interaction
  strengths and a maximum reached when competition was divided by 3 or facilitati
@@ -2708,6 +2833,8 @@ on was multiplied by 3.
  model, where dividing competition by 3, or by numbers higher than 7, or
  multiplying facilitation by 4, led to values around 2.
  In all cases, this diversity index remained higher with the cyst bank.
+\change_inserted -2100369821 1606324535
+
 \end_layout
 
 \begin_layout Standard
@@ -2732,53 +2859,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -2100369821 1605286669
-Variation in the total number of taxa
-\change_inserted -2100369821 1605286672
-Measures of biodiversity
-\change_deleted -2100369821 1605286674
- still present
-\change_unchanged
- in the ocean at the end of the simulation
-\change_inserted -2100369821 1605286755
-: a-b)
-\change_unchanged
- 
-\change_deleted -2100369821 1605286703
-(
-\change_unchanged
-richness
-\change_deleted -2100369821 1605286705
-)
-\change_unchanged
- and 
-\change_inserted -2100369821 1605286757
-c-d) inverse of the Simspon index
-\change_deleted -2100369821 1605286727
-the geometric mean abundance, including extinct 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Should I only include extant taxa? On the one hand, averaging over all taxa,
- including the ones which were absent, insists on the fact that abundances
- really drop; but on the other hand, it is kind of redundant with the richness
- information and hides the information about each extant taxa.
-
-\change_deleted -666822487 1598859569
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
- taxa
-\change_unchanged
-, with (dashed line) and without (solid line) a seed bank, as a function
- of the strength of competition and facilitation with a classical Beverton-Holt
- (black lines) or a saturating interaction (grey lines) formulation.
+Measures of biodiversity in the ocean at the end of the simulation: a-b)
+ richness and c-d) inverse of the Simspon index, with (dashed line) and
+ without (solid line) a seed bank, as a function of the strength of competition
+ and facilitation with a classical Beverton-Holt (black lines) or a saturating
+ interaction (grey lines) formulation.
  The x-axis shows the factor by which each interaction was multiplied (note
  the logarithmic scale) 
 \begin_inset CommandInset label
@@ -2885,8 +2970,19 @@ Abiotic effects
 
 \begin_layout Standard
 Our second hypothesis was that the absence of a cyst bank would reduce the
- ability of a community to buffer changes in the environment, here represented
- by variation in the temperature.
+ ability of a community to 
+\change_deleted -666822487 1606816795
+buffer
+\change_inserted -666822487 1606816796
+withstand
+\change_unchanged
+ changes 
+\change_deleted -666822487 1606816802
+in the
+\change_inserted -666822487 1606816808
+to its abiotic
+\change_unchanged
+ environment, here represented by variation in the temperature.
  As can be seen on Fig.
  
 \begin_inset CommandInset ref
