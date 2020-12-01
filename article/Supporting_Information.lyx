@@ -248,23 +248,9 @@ noprefix "false"
 \end_inset
 
  a
-\change_inserted -666822487 1605170528
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605170548
-The fact that it does not match empirical data is not clear from the figure,
- at least with the current legend
-\change_inserted -2100369821 1605178326
-.
- We should talk about it, then
-\change_unchanged
-
-\end_layout
-
+\change_inserted -666822487 1606828233
+, between 0.05 and 0.8, in place of values between XX and 3 day
+\begin_inset Formula $^{-1}$
 \end_inset
 
 
@@ -297,7 +283,25 @@ literal "false"
 
 \end_inset
 
- that was used in 
+
+\change_inserted -666822487 1606828271
+;
+\change_unchanged
+ 
+\change_inserted -666822487 1606828280
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+
+\change_deleted -666822487 1606828285
+that
+\change_unchanged
+ was used in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -305,6 +309,10 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -666822487 1606828338
+, but might be outdated
+\change_unchanged
 .
 \end_layout
 
@@ -496,12 +504,10 @@ We base our estimates of
 \begin_layout Standard
 In the models, we assume that generalists have a niche width between 15
  and 30°C and 
-\change_inserted -666822487 1605168648
-(coldwater)
-\change_inserted -2100369821 1605178349
+\change_deleted -666822487 1606828476
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1024,6 +1030,9 @@ status open
 Add references!
 \change_inserted -2100369821 1606224217
  Isn't it enough?
+\change_inserted -666822487 1606828500
+ In the ref.
+ list ;)
 \change_unchanged
 
 \end_layout
@@ -1244,32 +1253,7 @@ literal "false"
 \change_inserted -2100369821 1606225018
  (about 0.05%)
 \change_unchanged
- 
-\change_inserted -666822487 1588330072
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1588330076
-make that quantitative?
-\change_inserted -2100369821 1604938106
- I don't have values
-\change_inserted -666822487 1605169267
- -> you can always intuit from figures
-\change_inserted -2100369821 1606225027
-.
- Still seems surprinsingly low
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-when compared to growth rates.
+ when compared to growth rates.
  
 \begin_inset CommandInset citation
 LatexCommand citet
