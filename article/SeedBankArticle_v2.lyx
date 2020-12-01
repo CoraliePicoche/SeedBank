@@ -8,6 +8,9 @@
 \begin_preamble
 \usepackage{ae,aecompl}
 \usepackage{graphicx}
+\usepackage{lineno}
+
+\date{}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -132,6 +135,56 @@ ton multispecies
  potential
 \change_unchanged
  importance of the phytoplanktonic cyst stage for diversity maintenance.
+\change_inserted -666822487 1606828918
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -666822487 1606829163
+
+\series bold
+Keywords
+\series default
+: phytoplankton; seed bank; dormancy; cyst; coexistence; facilitation
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -666822487 1606829163
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1606829193
+
+
+\backslash
+linenumbers
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1606829198
+
+
+\backslash
+doublespacing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -666822487 1606829052
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1016,6 +1069,10 @@ textwidth}{!}{%
 
 \begin_layout Plain Layout
 Param
+\change_inserted -666822487 1606829333
+eter
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1049,7 +1106,7 @@ Status
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1061,7 +1118,7 @@ Status
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1090,7 +1147,7 @@ Abundance of taxon
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1099,7 +1156,7 @@ NA (Number of cells)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1110,7 +1167,7 @@ Dynamic
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1122,7 +1179,7 @@ Dynamic
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1131,7 +1188,7 @@ Temperature
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1170,7 +1227,7 @@ NA (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1181,7 +1238,7 @@ Dynamic
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1193,7 +1250,7 @@ Dynamic
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1206,7 +1263,7 @@ Growth rate of taxon
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1219,7 +1276,7 @@ day
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1230,7 +1287,7 @@ Dynamic
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1242,7 +1299,7 @@ Dynamic
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1251,7 +1308,7 @@ Thermal decay
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1264,7 +1321,7 @@ Field-based, taxon-specific (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1275,7 +1332,7 @@ Calibrated
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1287,7 +1344,7 @@ Calibrated
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1300,7 +1357,7 @@ Optimal temperature for taxon
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1313,7 +1370,7 @@ Field-based, taxon-specific (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1324,7 +1381,7 @@ Calibrated
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1336,7 +1393,7 @@ Calibrated
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1345,7 +1402,7 @@ Daylength
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1357,7 +1414,7 @@ Daylength
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1368,7 +1425,7 @@ Fixed
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1380,7 +1437,7 @@ Fixed
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1397,7 +1454,7 @@ Interaction strength of taxon
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1410,7 +1467,7 @@ Field-based, taxon-specific (Cells
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1421,7 +1478,7 @@ Calibrated
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1433,7 +1490,7 @@ Calibrated
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1442,7 +1499,7 @@ Maximum competitive/facilitative interaction strength in model II
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1451,7 +1508,7 @@ Field-based, taxon-specific (NA)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1462,7 +1519,7 @@ Calibrated
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1474,7 +1531,7 @@ Calibrated
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1491,7 +1548,7 @@ Half-saturation for the interaction strength of taxon
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1504,7 +1561,7 @@ Field-based, taxon-specific (Cells
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1515,7 +1572,7 @@ Calibrated
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1527,7 +1584,7 @@ Calibrated
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1540,7 +1597,7 @@ Sinking rate of taxon
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1556,7 +1613,7 @@ Sinking rate of taxon
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1567,7 +1624,7 @@ Fixed
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1579,7 +1636,7 @@ Fixed
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1588,7 +1645,7 @@ Exchange rate between ocean and coast
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1600,7 +1657,7 @@ Exchange rate between ocean and coast
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1611,7 +1668,7 @@ Scenario
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1623,7 +1680,7 @@ Scenario
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1632,7 +1689,7 @@ Loss rate of vegetative phytoplanktonic cells
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1644,7 +1701,7 @@ Loss rate of vegetative phytoplanktonic cells
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1655,7 +1712,7 @@ Fixed
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1667,7 +1724,7 @@ Fixed
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1676,7 +1733,7 @@ Cyst mortality rate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1692,7 +1749,7 @@ Cyst mortality rate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1703,7 +1760,7 @@ Scenario
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1715,7 +1772,7 @@ Scenario
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1724,7 +1781,7 @@ Cyst burial rate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1736,7 +1793,7 @@ Cyst burial rate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1747,7 +1804,7 @@ Fixed
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1759,7 +1816,7 @@ Fixed
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1772,7 +1829,7 @@ Germination
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1784,7 +1841,7 @@ Germination
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2466,30 +2523,22 @@ ics of observed phytoplankton dynamics.
  which is what we observed as well in the models.
  Annual mean abundance of the various taxa was also well reproduced.
  That said, in some cases, abundances could be lower than expected
-\change_inserted -666822487 1605019815
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1605019820
-how much?
-\change_inserted -2100369821 1606309795
- Mean raw abundance differences is -11% between simulated and obs (so, underesti
-mation) ; when taking the absolute values of the differences: 54% for model
- I ; 84% and 93% respectively for model II.
+how much? Mean raw abundance differences is -11% between simulated and obs
+ (so, underestimation) ; when taking the absolute values of the differences:
+ 54% for model I ; 84% and 93% respectively for model II.
+ F: you mean in untransformed or log scale?
+\change_deleted -666822487 1606828767
  
-\change_inserted -666822487 1606815978
-F: you mean in untransformed or log scale? 
 \change_unchanged
 
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
  and the variation in abundances due to seasonality was underestimated (Fig.
  
 \begin_inset CommandInset ref
@@ -2797,26 +2846,12 @@ The inverse of the Simpson index
 ,
 \change_unchanged
  was also affected by the changes in interaction strengths
-\change_inserted -666822487 1606816726
+\change_inserted -666822487 1606829491
 , with similar patterns to richness, as it was lowest for high facilitation
  or low competition.
  Presumably some species reach very high growth rates in these scenarios,
- which then has feed backs unto community dynamics, generating in fine lower
- diversity
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1606816744
-F: Can we confirm this with the figures at the end of the SI?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-.
+ which then feed backs onto community dynamics, generating lower diversity
+ in the end.
 \change_deleted -666822487 1606816602
 .
  In the presence of a cyst bank, this index varied between 1.5 and 3.2 with
@@ -3068,17 +3103,84 @@ Using a meta-community model which accounts for exchanges between the ocean
  and the coast, as well as movements between the top and the bottom of the
  coastal water column, we were able to show that a specific life stage,
  the seed or cyst stage, can help maintain biodiversity.
- This stage was integrated to a phytoplanktonic community dynamics model,
- which was parameterized based on lirerature and field data, and further
+ This
+\change_inserted -666822487 1606830668
+ dormant
+\change_unchanged
+ stage was integrated to a phytoplanktonic community dynamics model, which
+ was parameterized based on li
+\change_deleted -666822487 1606830580
+r
+\change_inserted -666822487 1606830580
+t
+\change_unchanged
+erature and field
+\change_inserted -666822487 1606830593
+-based
+\change_unchanged
+ 
+\change_deleted -666822487 1606830597
+data
+\change_inserted -666822487 1606830686
+phenology and interaction strength estimates.
+ The model was
+\change_deleted -666822487 1606830692
+, and further
+\change_inserted -666822487 1606830693
+ then
+\change_unchanged
  calibrated on phytoplankton community time series.
- The model was able to simulate realistic community dynamics, while including
- the effects of both positive and negative interactions on community dynamics.
- When removing the cyst bank, biodiversity decreased drastically as its
- buffering effect on species interactions disappeared.
+ 
+\change_deleted -666822487 1606830740
+The
+\change_inserted -666822487 1606830741
+Our
+\change_unchanged
+ model was able to simulate realistic community dynamics
+\change_inserted -666822487 1606830763
+ (both mean abundances and temporal patterns)
+\change_unchanged
+, while including the effects of both positive and negative interactions
+ on community dynamics.
+ When removing the cyst bank, biodiversity decreased drastically as 
+\change_deleted -666822487 1606830810
+its
+\change_inserted -666822487 1606830815
+the cyst bank's
+\change_unchanged
+ buffering 
+\change_deleted -666822487 1606830785
+effect
+\change_inserted -666822487 1606830790
+influence on effects
+\change_unchanged
+ o
+\change_inserted -666822487 1606830792
+f
+\change_deleted -666822487 1606830791
+n
+\change_unchanged
+ species interactions 
+\change_inserted -666822487 1606830797
+and environmental forcing 
+\change_unchanged
+disappeared.
  The total abundance of the community decreased as well.
- Moreover, when faced with a biotic or abiotic perturbation, communities
- that could divert part of their population to a dormant stage were less
- prone to species loss and could maintain their biomass through the years.
+ Moreover, when faced with a biotic or abiotic 
+\change_inserted -666822487 1606830917
+
+\begin_inset Quotes eld
+\end_inset
+
+press
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\change_unchanged
+perturbation, communities that could divert part of their population to
+ a dormant stage were less prone to species loss and could maintain their
+ biomass through the years.
  These results were consistent for the two interaction models that we considered
 , with and without saturation in interaction strengths.
  Our results therefore demonstrate the major potential role of phytoplanktonic
@@ -3143,12 +3245,33 @@ literal "false"
 \end_inset
 
  but are not limited to it.
- This is because dormancy alone can allow recolonization in the future.
- This colonization in the future may combine with present recolonization
-\change_inserted -2100369821 1606320852
- 
+ This is because 
+\change_inserted -666822487 1606830992
+a long 
 \change_unchanged
-from other spatial areas 
+dormancy alone can allow 
+\change_inserted -666822487 1606830997
+future 
+\change_unchanged
+recolonization 
+\change_deleted -666822487 1606831005
+in the future
+\change_inserted -666822487 1606831047
+of a community where counts of pelagic cells alone would suggest that some
+ species have gone extinct
+\change_unchanged
+.
+ This colonization
+\change_deleted -666822487 1606831056
+ in the future
+\change_inserted -666822487 1606831058
+-in-time
+\change_unchanged
+ may 
+\change_inserted -666822487 1606831067
+of course 
+\change_unchanged
+combine with present recolonization from other spatial areas 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "shmida_coexistence_1985"
@@ -3189,17 +3312,44 @@ literal "false"
  This would be true for most plants too (and perhaps some phytoplankters
  in situations where they are transported by animals).
  However, the restriction about which stage can move did not change the
- general conclusion: the combination of seed banks, dispersal and dormancy
+ general conclusion: the combination of 
+\change_inserted -666822487 1606831177
+spatial
+\change_deleted -666822487 1606831174
+seed banks, 
+\change_unchanged
+dispersal and dormancy
+\change_inserted -666822487 1606831182
+ through seed banks
+\change_unchanged
  greatly helps biodiversity maintenance.
- This main result is also robust to changes in exchange parameters and mean
- interaction values in the community.
+ 
+\change_deleted -666822487 1606831157
+This
+\change_inserted -666822487 1606831160
+In our study, this
+\change_unchanged
+ main result 
+\change_deleted -666822487 1606831188
+is
+\change_inserted -666822487 1606831188
+was
+\change_unchanged
+ also robust to changes in exchange parameters and mean interaction values
+ in the community.
 \end_layout
 
 \begin_layout Standard
 The various species present in the community had different survival probabilitie
 s in the absence of a seed bank.
- Some species could survive without a seed bank while others could not (which
- confirms conclusions from 
+ Some species could 
+\change_deleted -666822487 1606831210
+survive
+\change_inserted -666822487 1606831211
+persist
+\change_unchanged
+ without a seed bank while others could not (which confirms conclusions
+ from 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "hellweger_agent-based_2008"
@@ -3208,7 +3358,13 @@ literal "false"
 \end_inset
 
  for single species).
- Some species periodically disappeared from the community in the open ocean,
+ 
+\change_deleted -666822487 1606831234
+Some
+\change_inserted -666822487 1606831234
+Other
+\change_unchanged
+ species periodically disappeared from the community in the open ocean,
  while being able to reinvade the coast which connected to the seed bank.
  This suggests that some species may be locally transient: they are filtered
  out from certain patches, but can reinvade more or less periodically the
@@ -3222,16 +3378,50 @@ literal "false"
 
 .
  Certain species characteristics could explain species extinction, whether
- definitive or only temporary: higher amplitudes of variation were the most
- prominent one.
- In our model, the sensitivity of the growth rate, and therefore variation
+ definitive or only temporary: higher amplitudes of 
+\change_inserted -666822487 1606831308
+population 
+\change_unchanged
+variation were
+\change_deleted -666822487 1606831299
+ the most prominent one
+\change_inserted -666822487 1606831326
+ typically associated with extinctions
+\change_unchanged
+.
+ 
+\change_deleted -666822487 1606831362
+In our model, the sensitivity of the growth rate, and therefore variation
  in biomasses, is due to a higher sensitivity to temperature variation.
  Temperature-sensitive species are more prone to crash, and sometimes do
  so before being able to build a seed bank sufficient for them to reinvade.
- More generally, smaller niche width (due to, e.g., sensitivity to nutrient
- availability, tolerance to predation) can explain such rapid extinction.
+ More generally,
+\change_unchanged
+ 
+\change_inserted -666822487 1606831393
+We identified, by studying realised population growth rates (Fig.
+ S6 in SI), that a 
+\change_unchanged
+smaller niche width 
+\change_inserted -666822487 1606831458
+(i.e., being a specialist)
+\change_deleted -666822487 1606831401
+(due to, e.g., sensitivity to nutrient availability, tolerance to predation)
+ 
+\change_inserted -666822487 1606831427
+ or being strongly affect by species interactions 
+\change_unchanged
+can explain 
+\change_deleted -666822487 1606831435
+such 
+\change_unchanged
+rapid extinction
+\change_inserted -666822487 1606831441
+ without a cyst bank
+\change_unchanged
+.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Missing a transition here – F: we can talk about this later // remember
@@ -3252,13 +3442,53 @@ Despite the evidence for seed bank effects that we and others uncovered,
  at the coast (at very low densities initially), which can then spill to
  the open ocean by progressive dispersal by the currents.
  If the goal of a community-level model is very short-term prediction (days,
- weeks), this re-colonization may perhaps be neglected.
- However, as in flower plants, ignoring cryptic stages allowing re-colonization
- over long timescales strongly biases our view of long-term coexistence.
- Long-term coexistence modelling (over multiple years) certainly requires
- that we take into account cysts, whose influence may become only more important
- as the timescale increases, due to the very long possible dormancies that
- have been evidenced 
+ weeks), this re-colonization 
+\change_deleted -666822487 1606831528
+may
+\change_inserted -666822487 1606831532
+can probably
+\change_deleted -666822487 1606831528
+ perhaps
+\change_unchanged
+ be neglected.
+ However, 
+\change_inserted -666822487 1606831554
+over multiple years, 
+\change_deleted -666822487 1606831559
+as in flower plants, 
+\change_unchanged
+ignoring cryptic stages allowing re-colonization
+\change_deleted -666822487 1606831572
+ over long timescales
+\change_unchanged
+ 
+\change_inserted -666822487 1606831577
+could 
+\change_unchanged
+strongly bias
+\change_deleted -666822487 1606831580
+es
+\change_unchanged
+ our view of long-term coexistence.
+ Long-term 
+\change_inserted -666822487 1606831630
+phytoplankton 
+\change_unchanged
+coexistence modelling (over multiple
+\change_deleted -666822487 1606831648
+ years
+\change_inserted -666822487 1606831644
+ decades or more
+\change_unchanged
+) 
+\change_deleted -666822487 1606831604
+certainly
+\change_inserted -666822487 1606831605
+likely
+\change_unchanged
+ requires that we take into account cysts, whose influence may become only
+ more important as the timescale increases, due to the very long possible
+ dormancies that have been evidenced 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ellegaard_long-term_2018"
@@ -3278,9 +3508,25 @@ Maybe hint at evolution, too,if we'retalking many many generation.
 
 \end_inset
 
- When modelling different stages of the life cycle in a detailed manner,
- as done here, is impractical, the recolonization could perhaps be simplified
- as a stochastic immigration term (as done in 
+ When modelling different stages of the life cycle in a detailed manner
+\change_inserted -666822487 1606831674
+ —
+\change_deleted -666822487 1606831672
+,
+\change_unchanged
+ as done here
+\change_inserted -666822487 1606831677
+ —
+\change_deleted -666822487 1606831676
+,
+\change_unchanged
+ is impractical, the recolonization could perhaps be simplified 
+\change_deleted -666822487 1606831687
+as
+\change_inserted -666822487 1606831687
+to
+\change_unchanged
+ a stochastic immigration term (as done in 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "stock_evaluating_2005"
@@ -3289,12 +3535,23 @@ literal "false"
 \end_inset
 
 , who do this in a single-species context).
+
+\change_inserted -666822487 1606831763
+ This suggestion certainly extends to models of (terrestrial) plant community
+ dynamics.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 More research on dormant stages may be needed to parameterize truly predictive
- mechanistic models with multiple life stages, in particular to inform parameter
-s such as the sinking rate of resting cells, as well as burial and resuspension
+ mechanistic 
+\change_inserted -666822487 1606831774
+phytoplankton 
+\change_unchanged
+models with multiple life stages, in particular to inform parameters such
+ as the sinking rate of resting cells, as well as burial and resuspension
  parameters.
  These parameters are all linked to hydrodynamics 
 \begin_inset CommandInset citation
@@ -3305,9 +3562,16 @@ literal "false"
 \end_inset
 
  and may locally vary.
- The potential idiosyncratic nature of recolonization by cysts - due to
- the contingency on local hydrodynamics - means that experimentation might
- be the only manner in which the frequency of reinvasion can be assessed.
+ The potential idiosyncratic nature of recolonization by cysts 
+\change_inserted -666822487 1606831792
+–
+\change_unchanged
+- due to the contingency on local hydrodynamics 
+\change_inserted -666822487 1606831794
+–
+\change_unchanged
+- means that experimentation might be the only manner in which the frequency
+ of reinvasion can be assessed.
  Currently, one of the only parameters measured is the rate of survival
  of the cells found in the sediment 
 \begin_inset CommandInset citation
@@ -3320,9 +3584,16 @@ literal "false"
 .
  While very important, this parameter is a necessary not sufficient condition
  for re-invasion of the population at future times.
- We need more more information about the abilities of cysts buried in the
- sediment to come up to the pelagic zone for recolonization to actually
- occur.
+ We need
+\change_deleted -666822487 1606831816
+ more
+\change_unchanged
+ more information about the abilities of cysts buried in the sediment to
+ come up to the pelagic zone
+\change_inserted -666822487 1606831842
+, which is required
+\change_unchanged
+ for recolonization to actually occur.
  We therefore encourage both experiments and field observation to follow
  actual seed trajectories, in order to help us understanding this cryptic
  part of the diversity maintenance process.
