@@ -219,7 +219,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-We used the equation by 
+We 
+\change_inserted -2100369821 1608219670
+first 
+\change_unchanged
+used the equation by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "scranton_coexistence_2016"
@@ -249,12 +253,12 @@ noprefix "false"
 
  a
 \change_inserted -666822487 1606828233
-, between 0.05 and 0.8, in place of values between XX and 3 day
+, between 0.05 and 0.8, in place of v
+\change_unchanged
+alues between 0.2 and 3 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
-
-\change_unchanged
 ).
  In this context, we decided to use the formula by 
 \begin_inset CommandInset citation
@@ -284,12 +288,8 @@ literal "false"
 \end_inset
 
 
-\change_inserted -666822487 1606828271
-;
-\change_unchanged
- 
-\change_inserted -666822487 1606828280
-
+\change_deleted -2100369821 1608219701
+; 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "eppley_temperature_1972"
@@ -298,8 +298,8 @@ literal "false"
 \end_inset
 
 
-\change_deleted -666822487 1606828285
-that
+\change_inserted -2100369821 1608219701
+which
 \change_unchanged
  was used in 
 \begin_inset CommandInset citation
@@ -309,11 +309,7 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -666822487 1606828338
-, but might be outdated
-\change_unchanged
-.
+, but might be outdated.
 \end_layout
 
 \begin_layout Standard
@@ -495,9 +491,14 @@ We base our estimates of
  or several blooms during which the abundances oscillate around their median.
  Specialists tend to appear only once or twice in the year for shorter amounts
  of time.
- A genus is therefore defined as a generalist if its cumulated blooms over
- a year last more than the average duration of all blooms (137 days) for
- at least 15 years over the 20 years of the time series, and as a specialist
+ A genus is therefore defined as a generalist if its cumulated bloom
+\change_deleted -2100369821 1608219774
+s
+\change_inserted -2100369821 1608219775
+ days
+\change_unchanged
+ over a year last more than the average duration of all blooms (137 days)
+ for at least 15 years over the 20 years of the time series, and as a specialist
  if they fall below this threshold.
 \end_layout
 
@@ -544,7 +545,7 @@ specialists, between 5 and 10°C.
  Meanwhile, taxa are ordered as a function of the mean cumulated bloom length
  and larger niche values are attributed to longer mean bloom length, i.e.
  
-\begin_inset Formula $\sum\overline{L}_{i,b}>\sum L_{j,b}\Rightarrow b_{i}>b_{j}$
+\begin_inset Formula $\sum\overline{L}_{i,b}>\sum\overline{L}_{j,b}\Rightarrow b_{i}>b_{j}$
 \end_inset
 
  where 
@@ -631,9 +632,15 @@ Relationship between daily growth rates and temperature with different values
 \begin_inset Formula $b$
 \end_inset
 
- (which values are indicated in the legend, corresponding to specialist
- and generalist taxa) and the same thermal optimum, 15°C, indicated by the
- solid black line (right).
+ (
+\change_deleted -2100369821 1608219808
+which
+\change_inserted -2100369821 1608219808
+whose
+\change_unchanged
+ values are indicated in the legend, corresponding to specialist and generalist
+ taxa) and the same thermal optimum, 15°C, indicated by the solid black
+ line (right).
  On the left panel, only the two extreme values of 
 \begin_inset Formula $b$
 \end_inset
@@ -693,8 +700,13 @@ name "fig:Growth_niche_metabolism"
 \end_layout
 
 \begin_layout Standard
-The shift of the maximum growth rate may lead to a deformation of the expected
- thermal niche of each taxon.
+The shift of the maximum growth rate may lead to a 
+\change_deleted -2100369821 1608219831
+deformation
+\change_inserted -2100369821 1608219837
+distortion
+\change_unchanged
+ of the expected thermal niche of each taxon.
  We provide actual shapes of 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
@@ -735,6 +747,10 @@ status open
 
 \begin_layout Plain Layout
 Growth rate as a function of temperature for the taxa used in the model
+\change_inserted -2100369821 1608219847
+.
+
+\change_unchanged
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -756,7 +772,25 @@ name "fig:Thermal_niche"
 \end_layout
 
 \begin_layout Section
-Initial estimation of interaction values
+Initial estimation
+\change_inserted -2100369821 1608219856
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1608219864
+estimates?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ of interaction values
 \end_layout
 
 \begin_layout Subsubsection*
@@ -819,6 +853,18 @@ where
 \begin_inset Formula $b_{ij}$
 \end_inset
 
+
+\change_inserted -2100369821 1608219890
+ being the effect of species 
+\begin_inset Formula $j$
+\end_inset
+
+ on species 
+\begin_inset Formula $i$
+\end_inset
+
+
+\change_unchanged
 , 
 \begin_inset Formula $\mathbf{C}$
 \end_inset
@@ -866,7 +912,11 @@ literal "false"
 
 \end_inset
 
-'s Supporting information, we showed that MAR and BH interaction coefficients,
+
+\change_deleted -2100369821 1608219896
+'s
+\change_unchanged
+ Supporting information, we showed that MAR and BH interaction coefficients,
  respectively 
 \begin_inset Formula $b_{ij}$
 \end_inset
@@ -946,7 +996,7 @@ We then sum on columns (on
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\Leftrightarrow-f_{A}(i)(1+\sum_{j}\tilde{b_{ij}})=\sum_{j}b_{ij}
+\Leftrightarrow-f_{A}(i)(1+\sum_{j}\tilde{b_{ij}})=\sum_{j}\tilde{b}_{ij}
 \]
 
 \end_inset
@@ -1009,39 +1059,34 @@ literal "false"
 .
  We impose a minimum value of 1 to the denominator of the BH formulation,
  meaning that the growth rate cannot be higher than the maximum growth rate
- calculated 
+ calculated
+\change_inserted -2100369821 1608219930
+,
+\change_unchanged
+ 
 \begin_inset Formula $r_{i}(T)$
 \end_inset
 
 .
  We acknowledge the possibility of overyielding, i.e.
  an increase in growth due to the presence of other species, but the phenomenon
- seems quite rare for phytoplanktonic communities (see Schmidtke et al.
- 2010 for underyielding and see Shurin et al.
- 2014 for an observed but not frequent, and small, overyielding)
-\change_inserted -666822487 1605169056
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1605169061
-Add references!
-\change_inserted -2100369821 1606224217
- Isn't it enough?
-\change_inserted -666822487 1606828500
- In the ref.
- list ;)
-\change_unchanged
-
-\end_layout
+ seems quite rare for phytoplanktonic communities (see 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "schmidtke_mechanistic_2010"
+literal "false"
 
 \end_inset
 
+ for underyielding and see 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "shurin_trait_2014"
+literal "false"
 
-\change_unchanged
-.
+\end_inset
+
+ for an observed but not frequent, and small, overyielding).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1079,7 +1124,13 @@ ely,
 \begin_inset Formula $j$
 \end_inset
 
- to reach half of the maximum effect in the interaction of 
+ to reach half of the maximum effect 
+\change_deleted -2100369821 1608219938
+in
+\change_inserted -2100369821 1608219938
+of
+\change_unchanged
+ the interaction of 
 \begin_inset Formula $j$
 \end_inset
 
@@ -1096,9 +1147,15 @@ ely,
 \end_inset
 
  are the sets of competitive and facilitative interactions.
- This formula can be linked with the Unique Interaction Model by 
+ This formula can be linked 
+\change_deleted -2100369821 1608219944
+with
+\change_inserted -2100369821 1608219944
+to
+\change_unchanged
+ the Unique Interaction Model by 
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "qian_balance_2020"
 literal "false"
 
@@ -1249,11 +1306,7 @@ literal "false"
 \end_inset
 
 , washout (0.5%), parasitism (4% of cells are infested and die) and grazing
- still remained low
-\change_inserted -2100369821 1606225018
- (about 0.05%)
-\change_unchanged
- when compared to growth rates.
+ still remained low (about 0.05%) when compared to growth rates.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1274,9 +1327,32 @@ literal "false"
 
 \end_inset
 
- indicated a loss of daily primary productivity between 0.45 and 1.1 due to
- grazing only, 0.13 being potentially due to cell autolysis (in the absence
- of nutrients, or because of viral charge).
+ indicated a loss of daily primary productivity 
+\change_deleted -2100369821 1608220121
+between
+\change_inserted -2100369821 1608220121
+aroung
+\change_unchanged
+ 
+\change_deleted -2100369821 1608220123
+0.
+\change_unchanged
+45
+\change_inserted -2100369821 1608220125
+%
+\change_deleted -2100369821 1608220127
+ and 1.1
+\change_unchanged
+ due to grazing only, 0.13
+\change_inserted -2100369821 1608220153
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+
+\change_unchanged
+ being potentially due to cell autolysis (in the absence of nutrients, or
+ because of viral charge).
  Trying to make a compromise emerge from the literature above, we set as
  the reference value to 0.2 day
 \begin_inset Formula $^{-1}$
@@ -1397,7 +1473,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Possible beta-distribution of sinking rates
+Possible 
+\change_deleted -2100369821 1608220233
+b
+\change_inserted -2100369821 1608220233
+B
+\change_unchanged
+eta-distribution of sinking rates
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sinking-distribution"
@@ -1485,7 +1567,7 @@ With maximum values, we can arbitrarily choose that for these values
 \end_inset
 
 .In both cases, 
-\begin_inset Formula $m\propto10^{-4}\text{\text{d}}^{-1}$
+\begin_inset Formula $m\approx10^{-4}\text{\text{d}}^{-1}$
 \end_inset
 
 .
@@ -1524,8 +1606,13 @@ literal "false"
 \begin_inset Formula $^{-1}$
 \end_inset
 
- in winter and decreases in summer, with a link between resuspension and
- the light extinction coefficient.
+ in winter and decreases in summer, with a 
+\change_deleted -2100369821 1608220280
+link
+\change_inserted -2100369821 1608220283
+relationship
+\change_unchanged
+ between resuspension and the light extinction coefficient.
  In 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1613,26 +1700,11 @@ Simulated phytoplankton time series for a year in model II (with saturating
 \end_layout
 
 \begin_layout Section
-
-\change_inserted -2100369821 1606488160
-Scenario: changing interspecific interaction
-\change_inserted -666822487 1606822301
- strengths
-\change_deleted -666822487 1606822287
-s
-\change_inserted -2100369821 1606488160
- but not intraspecific interaction
-\change_inserted -666822487 1606822302
- strengths
-\change_deleted -666822487 1606822296
-s
-\change_inserted -2100369821 1606488160
-
+Scenario: changing interspecific interaction strengths but not intraspecific
+ interaction strengths
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1606488163
 \begin_inset Float figure
 wide false
 sideways false
@@ -1643,7 +1715,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../script/common_scripts/no_seed_bank_compet_keeping_intra.pdf
-	width 95text%
+	width 74text%
 
 \end_inset
 
@@ -1655,11 +1727,22 @@ status open
 
 \begin_layout Plain Layout
 Measures of biodiversity in the ocean at the end of the simulation: a-b)
- richness and c-d) inverse of the Simspon index, with (dashed line) and
- without (solid line) a seed bank, as a function of the strength of competition
- and facilitation with a classical Beverton-Holt (black lines) or a saturating
- interaction (grey lines) formulation, keeping the same values for the intraspec
-ific interaction strengths.
+ richness and c-d) inverse of the Sim
+\change_inserted -2100369821 1608220305
+ps
+\change_deleted -2100369821 1608220305
+sp
+\change_unchanged
+on index, with (dashed line) and without (solid line) a 
+\change_deleted -2100369821 1608220310
+seed
+\change_inserted -2100369821 1608220310
+cyst
+\change_unchanged
+ bank, as a function of the strength of competition and facilitation with
+ a classical Beverton-Holt (black lines) or a saturating interaction (grey
+ lines) formulation, keeping the same values for the intraspecific interaction
+ strengths.
  The x-axis shows the factor by which each interaction coefficient was multiplie
 d (note the logarithmic scale) 
 \begin_inset CommandInset label
@@ -1687,16 +1770,13 @@ When intraspecific interaction strengths do not change, reducing the values
  the inverse of the Simpson index.
  Increasing facilitation finally destabilizes the ratio of intra- to interspecif
 ic interaction strengths, which destabilizes the community and leads to
- the observed diversity decrease
-\change_inserted -666822487 1606822385
- in absence of a seed bank
+ the observed diversity decrease in absence of a 
+\change_deleted -2100369821 1608220324
+seed
+\change_inserted -2100369821 1608220324
+cyst
 \change_unchanged
-.
-
-\change_deleted -666822487 1606822375
- 
-\change_inserted -2100369821 1606488466
-
+ bank.
 \end_layout
 
 \begin_layout Section
@@ -1726,43 +1806,16 @@ status open
 
 \begin_layout Plain Layout
 Probability of survival in the absence of a cyst bank as a function of the
- realized per capita growth rates
-\change_inserted -666822487 1606822414
- (PGCR)
+ realized per capita growth rates (PGCR) of each species in different conditions.
+ We consider mean temperature and low densities (a), i.e., all species density
+ are 1 C/L, or average densities (b), i.e., all species are at their simulated
+ average density values; or average densities and optimal temperature for
+ each species (c), or suboptimal temperatures (d) - here, 30°C.
+ Red points correspond to species which have a high growth 
+\change_deleted -2100369821 1608220334
+g
 \change_unchanged
- of each species in different conditions
-\change_inserted -666822487 1606822791
-.
- We consider
-\change_unchanged
- 
-\change_deleted -666822487 1606822801
-(
-\change_unchanged
-mean temperature and low densities
-\change_inserted -666822487 1606823096
- (a)
-\change_unchanged
-, i.e., all species density are 1 C/L, or average densities
-\change_inserted -666822487 1606823104
- (b)
-\change_unchanged
-, i.e., all species are at their simulated average density values; or average
- densities and optimal temperature for each species
-\change_inserted -666822487 1606823118
- (c)
-\change_unchanged
-, or suboptimal temperatures
-\change_inserted -666822487 1606823123
- (d)
-\change_unchanged
- - here, 30°C
-\change_deleted -666822487 1606823125
-)
-\change_unchanged
-.
- Red points correspond to species which have a high growth grate at low
- density but still goes extinct.
+rate at low density but still goes extinct.
 \end_layout
 
 \end_inset
@@ -1776,25 +1829,10 @@ mean temperature and low densities
 \end_layout
 
 \begin_layout Standard
-Extinction 
-\change_inserted -666822487 1606823288
-in absence of the cyst bank 
-\change_unchanged
-can be explained by both a low growth rate at low density and average temperatur
-e
-\change_inserted -666822487 1606823274
- (affecting specialists with a narrow niche)
-\change_unchanged
- and a low growth rate at average density despite being at optimal temperature
-\change_inserted -666822487 1606823262
- (i.e., species strongly affected by interactions)
-\change_unchanged
-.
-
-\change_deleted -666822487 1606822390
- 
-\change_unchanged
-
+Extinction in absence of the cyst bank can be explained by both a low growth
+ rate at low density and average temperature (affecting specialists with
+ a narrow niche) and a low growth rate at average density despite being
+ at optimal temperature (i.e., species strongly affected by interactions).
 \end_layout
 
 \begin_layout Standard
