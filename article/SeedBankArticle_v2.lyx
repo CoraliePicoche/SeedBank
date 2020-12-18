@@ -92,10 +92,7 @@
 \begin_body
 
 \begin_layout Title
-Why seed banks can help maintaining the diversity of interacting phytoplankton
-\change_inserted -2100369821 1608272479
-ic
-\change_unchanged
+Why seed banks can help maintaining the diversity of interacting phytoplanktonic
  species
 \end_layout
 
@@ -1687,14 +1684,6 @@ Cyst mortality rate
 \end_inset
 
 
-\change_deleted -2100369821 1608272492
-; 
-\begin_inset Formula $1-\zeta$
-\end_inset
-
- in scenario
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -1703,13 +1692,7 @@ Cyst mortality rate
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_deleted -2100369821 1608272973
-Scenario
-\change_inserted -2100369821 1608272974
 Fixed
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -1870,12 +1853,6 @@ Calibrated
  germination values for sensivity analysis were multiplied by the reference
  value for resuspension, and conversely.
  
-\change_deleted -2100369821 1608272987
-Scenario parameters are the parameters which are used to build the ecological
- scenarii considered in this article.
- 
-\change_unchanged
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:State_Parameter"
@@ -2083,13 +2060,7 @@ literal "false"
 \end_inset
 
  are given in Section 3 of the SI).
- However, cyst burial by sedimentation 
-\change_deleted -2100369821 1608272701
-might be
-\change_inserted -2100369821 1608272701
-is
-\change_unchanged
- the prevailing phenomenon.
+ However, cyst burial by sedimentation is the prevailing phenomenon.
  Indeed, once cysts have been buried, they are not accessible for resuspension
  even if they could have germinated from an accessible location.
  Burial depends on the hydrodynamics of the site, but also on biotic processes

@@ -92,21 +92,10 @@
 \series bold
 Supporting Information
 \series default
- for
-\change_deleted -2100369821 1608272573
- 
+ for 
 \emph on
-A metacommunity model for phytoplankton biodiversity maintenance with a
- seed bank and facilitative interactions
-\change_inserted -2100369821 1608272573
-
-\emph default
 Why seed banks can help maintaining the diversity of interacting phytoplanktonic
- species
-\change_unchanged
-
-\emph on
- 
+ species 
 \emph default
 by C.
  Picoche & F.
@@ -1401,10 +1390,7 @@ literal "false"
  The authors also present sediment datation according to depth.
  Depth can therefore be related to maximum and mean age of phytoplankton
  cysts before death.
-\end_layout
-
-\begin_layout Standard
-Assuming 
+ Assuming 
 \begin_inset Formula $m$
 \end_inset
 
@@ -1418,10 +1404,7 @@ where
 \end_inset
 
  is the average duration of cyst viability.
-\end_layout
-
-\begin_layout Standard
-Another way to look at the process is that life expectancy 
+ Another way to look at the process is that life expectancy 
 \begin_inset Formula $L$
 \end_inset
 
@@ -1452,19 +1435,15 @@ With maximum values, we can arbitrarily choose that for these values
 \end_inset
 
 .
+ In both cases, 
+\begin_inset Formula $m$
+\end_inset
 
-\change_inserted -2100369821 1608272620
- 
-\change_unchanged
-In both cases, 
-\change_inserted -2100369821 1608273029
-m varies between 
+ varies between 
 \begin_inset Formula $10^{-5}\text{\text{d}}^{-1}$
 \end_inset
 
  and 
-\change_unchanged
-
 \begin_inset Formula $10^{-4}\text{\text{d}}^{-1}$
 \end_inset
 
@@ -1587,8 +1566,6 @@ Simulated phytoplankton time series for a year in model II (with saturating
 
 \end_inset
 
-
-\change_inserted -2100369821 1606309611
 
 \end_layout
 
