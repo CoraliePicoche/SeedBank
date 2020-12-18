@@ -83,7 +83,6 @@
 \html_css_as_file 0
 \html_be_strict false
 \author -2100369821 "cpicoche"
-\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -93,10 +92,21 @@
 \series bold
 Supporting Information
 \series default
- for 
+ for
+\change_deleted -2100369821 1608272573
+ 
 \emph on
 A metacommunity model for phytoplankton biodiversity maintenance with a
- seed bank and facilitative interactions 
+ seed bank and facilitative interactions
+\change_inserted -2100369821 1608272573
+
+\emph default
+Why seed banks can help maintaining the diversity of interacting phytoplanktonic
+ species
+\change_unchanged
+
+\emph on
+ 
 \emph default
 by C.
  Picoche & F.
@@ -1036,23 +1046,11 @@ ely,
 \begin_inset Formula $j$
 \end_inset
 
- to reach half of the maximum effect of
-\change_deleted -666822487 1608221001
- the interaction of
-\change_unchanged
- 
-\change_inserted -666822487 1608221014
-species 
-\change_unchanged
-
+ to reach half of the maximum effect of species 
 \begin_inset Formula $j$
 \end_inset
 
- on
-\change_inserted -666822487 1608221017
- species
-\change_unchanged
- 
+ on species 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1453,8 +1451,21 @@ With maximum values, we can arbitrarily choose that for these values
 \begin_inset Formula $m=-\frac{ln(p(L>l_{max}))}{l_{max}}$
 \end_inset
 
-.In both cases, 
-\begin_inset Formula $m\approx10^{-4}\text{\text{d}}^{-1}$
+.
+
+\change_inserted -2100369821 1608272620
+ 
+\change_unchanged
+In both cases, 
+\change_inserted -2100369821 1608273029
+m varies between 
+\begin_inset Formula $10^{-5}\text{\text{d}}^{-1}$
+\end_inset
+
+ and 
+\change_unchanged
+
+\begin_inset Formula $10^{-4}\text{\text{d}}^{-1}$
 \end_inset
 
 .

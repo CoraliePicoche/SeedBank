@@ -92,29 +92,21 @@
 \begin_body
 
 \begin_layout Title
-
-\change_deleted -666822487 1608235481
-A metacommunity model for phytoplankton biodiversity maintenance with a
- seed bank and facilitative interactions
-\change_inserted -666822487 1608235640
 Why seed banks can help maintaining the diversity of interacting phytoplankton
+\change_inserted -2100369821 1608272479
+ic
+\change_unchanged
  species
 \end_layout
 
 \begin_layout Author
-
-\change_inserted -666822487 1608235656
 Coralie Picoche & Frédéric Barraquand
 \end_layout
 
 \begin_layout Address
 \noindent
 \align center
-
-\change_inserted -666822487 1608235701
 Institute of Mathematics of Bordeaux, University of Bordeaux and CNRS, France
-\change_inserted -2100369821 1606990766
-
 \end_layout
 
 \begin_layout Abstract
@@ -130,39 +122,11 @@ ton multispecies dynamic models, in spite of widespread empirical evidence
  In this study, we build a metacommunity model of interacting phytoplankton
  species with a cyst bank.
  The model is parameterized with empirically-driven growth rates functions
- and field-based interaction estimates
-\change_deleted -666822487 1608235846
- (
-\change_inserted -666822487 1608235846
-, 
-\change_unchanged
-which include both facilitative and competitive interactions
-\change_deleted -666822487 1608235850
-)
-\change_unchanged
-.
- Exchanges between compartments (coastal pelagic 
-\change_deleted -666822487 1608235622
-individuals
-\change_inserted -666822487 1608235622
-cells
-\change_unchanged
-, 
-\change_inserted -666822487 1608235810
-coastal 
-\change_unchanged
-cysts
-\change_inserted -666822487 1608235891
- on the seabed
-\change_unchanged
-, and open ocean pelagic 
-\change_deleted -666822487 1608235629
-individuals
-\change_inserted -666822487 1608235630
-cells
-\change_unchanged
-) are controlled by hydrodynamical parameters to which the sensitivity of
- the model is assessed.
+ and field-based interaction estimates, which include both facilitative
+ and competitive interactions.
+ Exchanges between compartments (coastal pelagic cells, coastal cysts on
+ the seabed, and open ocean pelagic cells) are controlled by hydrodynamical
+ parameters to which the sensitivity of the model is assessed.
  We consider two models, i.e., with and without a saturating effect of the
  interactions on the growth rates.
  Our results are consistent between models, and show that a cyst bank is
@@ -178,26 +142,15 @@ cells
  such as those predicted within a climate change context.
  This study therefore uncovers the potential importance of the phytoplanktonic
  cyst stage for diversity maintenance.
-
-\change_deleted -666822487 1608235776
- 289 words
-\change_inserted -666822487 1608235776
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1608235776
 289 words
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -207,31 +160,18 @@ status open
 Keywords
 \series default
 : phytoplankton; seed bank; dormancy; cyst; coexistence; facilitation
-\change_inserted -2100369821 1608219561
-
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1608235780
-Article: 5509
-\change_inserted -666822487 1608235780
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1608235780
 Article: 5509
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1746,11 +1686,15 @@ Cyst mortality rate
 \begin_inset Formula $\mathbf{10^{-5}}$
 \end_inset
 
+
+\change_deleted -2100369821 1608272492
 ; 
 \begin_inset Formula $1-\zeta$
 \end_inset
 
  in scenario
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1759,7 +1703,13 @@ Cyst mortality rate
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\change_deleted -2100369821 1608272973
 Scenario
+\change_inserted -2100369821 1608272974
+Fixed
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1919,9 +1869,13 @@ Calibrated
 
  germination values for sensivity analysis were multiplied by the reference
  value for resuspension, and conversely.
- Scenario parameters are the parameters which are used to build the ecological
+ 
+\change_deleted -2100369821 1608272987
+Scenario parameters are the parameters which are used to build the ecological
  scenarii considered in this article.
  
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:State_Parameter"
@@ -2129,7 +2083,13 @@ literal "false"
 \end_inset
 
  are given in Section 3 of the SI).
- However, cyst burial by sedimentation might be the prevailing phenomenon.
+ However, cyst burial by sedimentation 
+\change_deleted -2100369821 1608272701
+might be
+\change_inserted -2100369821 1608272701
+is
+\change_unchanged
+ the prevailing phenomenon.
  Indeed, once cysts have been buried, they are not accessible for resuspension
  even if they could have germinated from an accessible location.
  Burial depends on the hydrodynamics of the site, but also on biotic processes
@@ -2433,19 +2393,11 @@ literal "false"
 \begin_inset Formula $\approx70\%$
 \end_inset
 
-) and a strong self-regulation
-\change_deleted -666822487 1608236276
- (about 10 times higher than interspecific interaction strengths)
-\change_unchanged
-.
-\change_inserted -666822487 1608236279
-
+) and a strong self-regulation.
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1608236355
 (about 10 times higher than interspecific interaction strengths) -> F: I
  removed that sentence because first we would need to talk about 
 \begin_inset Quotes eld
@@ -2457,6 +2409,8 @@ intraspecific interaction strengths 10 times higher than
 
  and second if they want these details they will read the earlier paper,
  at least the abstract.
+
+\change_deleted -2100369821 1608272372
  
 \change_unchanged
 
@@ -2464,8 +2418,6 @@ intraspecific interaction strengths 10 times higher than
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -3076,36 +3028,10 @@ Using a meta-community model which accounts for exchanges between the ocean
  Our model was able to simulate realistic community dynamics (both mean
  abundances and temporal patterns), while including the effects of both
  positive and negative interactions on community dynamics.
- When removing the cyst bank, biodiversity decreased drastically
-\change_inserted -666822487 1608236522
-.
- This was true for the reference parameter values, as well as
-\change_unchanged
- 
-\change_deleted -666822487 1608236580
-with changes in
-\change_inserted -666822487 1608236583
-when
-\change_inserted -2100369821 1608218245
- species interaction strength
-\change_deleted -666822487 1608236435
-s
-\change_inserted -2100369821 1608218245
-s and environmental fluctuation
-\change_inserted -666822487 1608236602
- levels where altered
-\change_deleted -666822487 1608236597
-s as
-\change_inserted -666822487 1608236535
-, in which case
-\change_unchanged
- the cyst bank's buffering 
-\change_inserted -666822487 1608236556
-influence 
-\change_deleted -2100369821 1608218255
-influence on effects of species interactions and environmental forcing 
-\change_unchanged
-disappeared.
+ When removing the cyst bank, biodiversity decreased drastically.
+ This was true for the reference parameter values, as well as when species
+ interaction strengths and environmental fluctuation levels where altered,
+ in which case the cyst bank's buffering influence disappeared.
  The total abundance of the community decreased as well.
  Moreover, when faced with a biotic or abiotic 
 \begin_inset Quotes eld
@@ -3115,44 +3041,15 @@ press
 \begin_inset Quotes erd
 \end_inset
 
- perturbation, communities 
-\change_deleted -666822487 1608236656
-that
-\change_inserted -666822487 1608236658
-where species
-\change_unchanged
- could divert part of their population to a dormant stage were less prone
- to species loss and could maintain their biomass through the years.
+ perturbation, communities where species could divert part of their population
+ to a dormant stage were less prone to species loss and could maintain their
+ biomass through the years.
  These results were consistent for the two interaction models that we considered
 , with and without saturation in interaction strengths.
  Our results therefore demonstrate the major potential role of phytoplanktonic
- cyst banks in maintaining biodiversity
-\change_deleted -666822487 1608236720
-, which some
-\change_inserted -666822487 1608236733
-.
- These results align with the findings of previous
-\change_unchanged
- theoretical studies
-\change_inserted -666822487 1608236745
-, that
-\change_unchanged
- have put forward 
-\change_deleted -666822487 1608236750
-previously
-\change_inserted -666822487 1608236764
-similar effects of dormant stages
-\change_unchanged
- 
-\change_deleted -666822487 1608236779
-for
-\change_inserted -666822487 1608236779
-in
-\change_unchanged
- other taxa
-\change_inserted -666822487 1608236769
-,
-\change_unchanged
+ cyst banks in maintaining biodiversity.
+ These results align with the findings of previous theoretical studies,
+ that have put forward similar effects of dormant stages in other taxa,
  such as plants 
 \begin_inset CommandInset citation
 LatexCommand citep
