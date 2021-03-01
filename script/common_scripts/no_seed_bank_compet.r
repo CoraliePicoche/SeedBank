@@ -1,6 +1,8 @@
 ####
 # 18/05/2020 CP: Effect of competition on communities with and without seed bank
 # 21/05/2020 CP: Wrote the code so that it could be applied to both models at the same time
+# 25/02/2021 CP: Same code, but adding the cyst bank in the figure
+# 01/03/2021 CP: Bray Curtis seed bank vs ocean coast
 ###
 
 rm(list=ls())
@@ -8,6 +10,7 @@ graphics.off()
 set.seed(42)
 
 source("step_functions.r")
+source("Bray_Curtis.r")
 nb_year=2
 cpt="ocean"
 nb_persistence=6*30
@@ -199,7 +202,7 @@ load("no_seed_compet_simu_light.RData")
 
 id_persistence=seq(length(id)-nb_persistence+1,length(id)) 
 
-pdf("no_seed_bank_compet.pdf")
+#pdf("no_seed_bank_compet.pdf")
 par(mfrow=c(2,2),mar=c(1.75,4.5,3,0))
  #Final richness, taking into account the last months, instead of only the end of the simulation
 plot(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="Richness",xlab="",main="Competition",log="x",col="black",lty=1,t="l",xaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2,cex.main=1.75) 
@@ -215,7 +218,6 @@ par(mar=c(1.75,2.5,3,2))
 plot(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="",xlab="",main="Facilitation",log="x",col="black",lty=1,t="l",xaxt="n",yaxt="n",lwd=2,cex.axis=1.5,cex.lab=1.5,cex.main=1.75)
 #mtext("b)",3,line=0.5,at=0.07,cex=1.25)
 mtext("b",2,line=-0.6,at=12.6,cex=1.25,las=2,font=2)
-lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="black",lty=2,lwd=2)
 lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="black",lty=2,lwd=2)
 lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=1,lwd=2)
 lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=2,lwd=2)
@@ -375,7 +377,7 @@ surviv_compet=apply(apply(N_array[id_persistence,"ocean",,,'compet',]==0,c(2,3,4
 surviv_facil=apply(apply(N_array[id_persistence,"ocean",,,'facil',]==0,c(2,3,4),sum)<nb_persistence,c(1,3),sum)/length(fac_simu)
 #pdf("dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf",width=7.5,height=2.3)
 questionning=c(2,3,9,11) ####"questionning" indicates species that have a high growth rate at low density but still go extinct. I do not show them on the article figure, but I still think it can be used for further references. Lines are commented
-pdf("dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf",width=9,height=3)
+#pdf("dynamics_vs_survival_no_seed_bank_minab_amplitude_niche.pdf",width=9,height=3)
 set.seed(42)
 par(mfrow=c(1,3),oma=c(1,1,1,1),mar=c(4.5,4.5,1,1))
 a=jitter(min_val[,1],amount=0.1)
@@ -417,7 +419,7 @@ points(b,surviv_compet[,2],col="grey",pch=17,cex=1.5)
 legend("bottomright",c("Model I","Model II"),pch=c(16,17),col=c("black","grey"),pt.lwd=c(1,1,1.5,1.5),bty="n",cex=1.25)
 dev.off()
 
-pdf("dynamics_vs_survival_no_seed_bank_meanab_sinking_temperature.pdf",width=9,height=3)
+#pdf("dynamics_vs_survival_no_seed_bank_meanab_sinking_temperature.pdf",width=9,height=3)
 set.seed(42)
 par(mfrow=c(1,3),oma=c(1,1,1,1),mar=c(4.5,4.5,1,1))
 
@@ -446,9 +448,193 @@ points(a,surviv_compet[,2],col="grey",pch=17,cex=1.75)
 legend("topright",c("Model I","Model II"),pch=c(16,17),col=c("black","grey"),pt.lwd=c(1,1,1.5,1.5),bty="n")
 dev.off()
 
-stop()
 
-pdf("species_no_seed_bank.pdf",width=10)
+##Assessing diversity in the cyst bank
+#pdf("cyst_bank_effect_compet.pdf")
+par(mfrow=c(2,2),mar=c(1.75,4.5,3,0))
+ #Final richness, taking into account the last months, instead of only the end of the simulation
+plot(fac_simu,apply(apply(N_orig[id_persistence,"seed",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="Richness",xlab="",main="Competition",log="x",col="black",lty=2,t="l",xaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2,cex.main=1.75)
+#mtext("a)",3,line=0.5,at=0.07,cex=1.25)
+mtext("a",2,line=-0.6,at=12.6,cex=1.25,las=2,font=2)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"seed",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=2,lwd=2)
+
+lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkblue",lty=1,t="l",xaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2,cex.main=1.75)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkblue",lty=2,lwd=2)
+lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightblue",lty=1,lwd=2)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightblue",lty=2,lwd=2)
+
+#lines(fac_simu,apply(apply(N_array[id_persistence,"coast",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkgreen",lty=1,t="l",xaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2,cex.main=1.75)
+#lines(fac_simu,apply(apply(N_orig[id_persistence,"coast",,,'compet','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkgreen",lty=2,lwd=2)
+#lines(fac_simu,apply(apply(N_array[id_persistence,"coast",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightgreen",lty=1,lwd=2)
+#lines(fac_simu,apply(apply(N_orig[id_persistence,"coast",,,'compet','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightgreen",lty=2,lwd=2)
+
+
+#abline(v=1)
+#axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+
+par(mar=c(1.75,2.5,3,2))
+plot(fac_simu,apply(apply(N_orig[id_persistence,"seed",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),ylim=c(0,11.5),ylab="",xlab="",main="Facilitation",log="x",col="black",lty=2,t="l",xaxt="n",yaxt="n",lwd=2,cex.axis=1.5,cex.lab=1.5,cex.main=1.75)
+#mtext("b)",3,line=0.5,at=0.07,cex=1.25)
+mtext("b",2,line=-0.6,at=12.6,cex=1.25,las=2,font=2)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"seed",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="grey",lty=2,lwd=2)
+
+lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkblue",lty=1,t="l",xaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2,cex.main=1.75)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkblue",lty=2,lwd=2)
+lines(fac_simu,apply(apply(N_array[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightblue",lty=1,lwd=2)
+lines(fac_simu,apply(apply(N_orig[id_persistence,"ocean",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightblue",lty=2,lwd=2)
+
+#lines(fac_simu,apply(apply(N_array[id_persistence,"coast",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkgreen",lty=1,t="l",xaxt="n",cex.axis=1.5,cex.lab=1.5,lwd=2,cex.main=1.75)
+#lines(fac_simu,apply(apply(N_orig[id_persistence,"coast",,,'facil','ModelI']==0,c(2,3),sum)<nb_persistence,2,sum),col="darkgreen",lty=2,lwd=2)
+#lines(fac_simu,apply(apply(N_array[id_persistence,"coast",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightgreen",lty=1,lwd=2)
+#lines(fac_simu,apply(apply(N_orig[id_persistence,"coast",,,'facil','ModelII']==0,c(2,3),sum)<nb_persistence,2,sum),col="lightgreen",lty=2,lwd=2)
+
+
+#abline(v=which(fac_simu==1))
+#axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+
+par(mar=c(4,4.5,1.25,0))
+
+N_tot=matrix(NA,length(fac_simu),2)
+N_tot_orig=matrix(NA,length(fac_simu),2)
+
+#SIMPSON
+simpson=matrix(NA,length(fac_simu),2)
+simpson_orig=matrix(NA,length(fac_simu),2)
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+        #abundance_tot=mean(apply(N_array[,'seed',,f,'compet',m],1,sum,na.rm=T)) #No interest in considering the seed bank when M=1 (total mortality in the cyst bank)
+        #abundance_per_species=apply(N_array[,'seed',,f,'compet',m],2,mean,na.rm=T)
+        #proportion=abundance_per_species/abundance_tot
+        #simpson[f,m]=sum(proportion^2)
+        abundance_tot_orig=mean(apply(N_orig[,'seed',,f,'compet',m],1,sum,na.rm=T))
+        abundance_per_species_orig=apply(N_orig[,'seed',,f,'compet',m],2,mean,na.rm=T)
+        proportion_orig=abundance_per_species_orig/abundance_tot_orig
+        simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+#plot(fac_simu,N_tot[,1],ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(mean(abundance))",xlab="Multiplying factor",log="x",col="black",t="l",lty=1)
+plot(fac_simu,1/simpson_orig[,1],ylim=c(0,5),ylab="1/Simpson",log="x",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),col="black",t="l",lty=2,cex.axis=1.5,cex.lab=1.5,lwd=2)
+
+lines(fac_simu,1/simpson_orig[,1],col="black",lty=2,lwd=2)
+lines(fac_simu,1/simpson_orig[,2],col="grey",lty=2,lwd=2)
+mtext("c",2,line=-0.6,at=5.5,cex=1.25,las=2,font=2)
+
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+        abundance_tot=mean(apply(N_array[,'ocean',,f,'compet',m],1,sum,na.rm=T))
+        abundance_per_species=apply(N_array[,'ocean',,f,'compet',m],2,mean,na.rm=T)
+        proportion=abundance_per_species/abundance_tot
+        simpson[f,m]=sum(proportion^2)
+        abundance_tot_orig=mean(apply(N_orig[,'ocean',,f,'compet',m],1,sum,na.rm=T))
+        abundance_per_species_orig=apply(N_orig[,'ocean',,f,'compet',m],2,mean,na.rm=T)
+        proportion_orig=abundance_per_species_orig/abundance_tot_orig
+        simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+lines(fac_simu,1/simpson[,1],col="darkblue",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+lines(fac_simu,1/simpson_orig[,1],col="darkblue",lty=2,lwd=2)
+lines(fac_simu,1/simpson[,2],col="lightblue",lty=1,lwd=2)
+lines(fac_simu,1/simpson_orig[,2],col="lightblue",lty=2,lwd=2)
+
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+        abundance_tot=mean(apply(N_array[,'coast',,f,'compet',m],1,sum,na.rm=T))
+        abundance_per_species=apply(N_array[,'coast',,f,'compet',m],2,mean,na.rm=T)
+        proportion=abundance_per_species/abundance_tot
+        simpson[f,m]=sum(proportion^2)
+        abundance_tot_orig=mean(apply(N_orig[,'coast',,f,'compet',m],1,sum,na.rm=T))
+        abundance_per_species_orig=apply(N_orig[,'coast',,f,'compet',m],2,mean,na.rm=T)
+        proportion_orig=abundance_per_species_orig/abundance_tot_orig
+        simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+#lines(fac_simu,1/simpson[,1],col="darkgreen",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+#lines(fac_simu,1/simpson_orig[,1],col="darkgreen",lty=2,lwd=2)
+#lines(fac_simu,1/simpson[,2],col="lightgreen",lty=1,lwd=2)
+#lines(fac_simu,1/simpson_orig[,2],col="lightgreen",lty=2,lwd=2)
+legend("topleft",c("Cyst","Ocean"),lty=c(1,1),col=c("black","darkblue"),bty="n",cex=1.25,lwd=2)
+
+
+
+#SIMPSON
+par(mar=c(4,2.5,1.25,2))
+simpson=matrix(NA,length(fac_simu),2)
+simpson_orig=matrix(NA,length(fac_simu),2)
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+        #abundance_tot=mean(apply(N_array[,'seed',,f,'facil',m],1,sum,na.rm=T))
+        #abundance_per_species=apply(N_array[,'seed',,f,'facil',m],2,mean,na.rm=T)
+        #proportion=abundance_per_species/abundance_tot
+        #simpson[f,m]=sum(proportion^2)
+        abundance_tot_orig=mean(apply(N_orig[,'seed',,f,'facil',m],1,sum,na.rm=T))
+        abundance_per_species_orig=apply(N_orig[,'seed',,f,'facil',m],2,mean,na.rm=T)
+        proportion_orig=abundance_per_species_orig/abundance_tot_orig
+        simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+#plot(fac_simu,N_tot[,1],ylim=range(c(N_tot,N_tot_orig)),ylab="Log10(mean(abundance))",xlab="Multiplying factor",log="x",col="black",t="l",lty=1)
+###plot(fac_simu,1/simpson[,1],ylim=c(-5,40),ylab="Mean(log10(abundance))",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),log="x",col="black",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+plot(fac_simu,1/simpson_orig[,1],ylim=c(0,5),ylab="",log="x",xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),col="black",t="l",lty=2,cex.axis=1.5,cex.lab=1.5,lwd=2,yaxt="n")
+#mtext("(d)",3,line=0.5,at=0.07,cex=1.25)
+text(0.16,5.5,"d",3,las=2,xpd=NA,cex=1.5,font=2)
+lines(fac_simu,1/simpson_orig[,2],col="grey",lty=2,lwd=2)
+
+
+
+
+print("Facilitation, modelI, no cyst bank")
+print(range(1/simpson[,1]))
+print("Facilitation, modelI, WITH cyst bank")
+print(range(1/simpson_orig[,1]))
+print("Facilitation, modelII, no cyst bank")
+print(range(1/simpson[,2],na.rm=T))
+print("Facilitation, modelII, WITH cyst bank")
+print(range(1/simpson_orig[,2]))
+
+
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+        abundance_tot=mean(apply(N_array[,'ocean',,f,'facil',m],1,sum,na.rm=T))
+        abundance_per_species=apply(N_array[,'ocean',,f,'facil',m],2,mean,na.rm=T)
+        proportion=abundance_per_species/abundance_tot
+        simpson[f,m]=sum(proportion^2)
+        abundance_tot_orig=mean(apply(N_orig[,'ocean',,f,'facil',m],1,sum,na.rm=T))
+        abundance_per_species_orig=apply(N_orig[,'ocean',,f,'facil',m],2,mean,na.rm=T)
+        proportion_orig=abundance_per_species_orig/abundance_tot_orig
+        simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+lines(fac_simu,1/simpson[,1],col="darkblue",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+lines(fac_simu,1/simpson_orig[,1],col="darkblue",lty=2,lwd=2)
+lines(fac_simu,1/simpson[,2],col="lightblue",lty=1,lwd=2)
+lines(fac_simu,1/simpson_orig[,2],col="lightblue",lty=2,lwd=2)
+
+for(f in 1:length(fac_simu)){
+for(m in 1:2){
+        abundance_tot=mean(apply(N_array[,'coast',,f,'facil',m],1,sum,na.rm=T))
+        abundance_per_species=apply(N_array[,'coast',,f,'facil',m],2,mean,na.rm=T)
+        proportion=abundance_per_species/abundance_tot
+        simpson[f,m]=sum(proportion^2)
+        abundance_tot_orig=mean(apply(N_orig[,'coast',,f,'facil',m],1,sum,na.rm=T))
+        abundance_per_species_orig=apply(N_orig[,'coast',,f,'facil',m],2,mean,na.rm=T)
+        proportion_orig=abundance_per_species_orig/abundance_tot_orig
+        simpson_orig[f,m]=sum(proportion_orig^2)
+}
+}
+#lines(fac_simu,1/simpson[,1],col="darkgreen",t="l",lty=1,cex.axis=1.5,cex.lab=1.5,lwd=2)
+#lines(fac_simu,1/simpson_orig[,1],col="darkgreen",lty=2,lwd=2)
+#lines(fac_simu,1/simpson[,2],col="lightgreen",lty=1,lwd=2)
+#lines(fac_simu,1/simpson_orig[,2],col="lightgreen",lty=2,lwd=2)
+
+
+
+legend("topleft",c("W bank","W/o bank","Model I","Model II"),lty=c(2,1,1,1),col=c("black","black","black","grey"),bty="n",cex=1.25,lwd=2)
+#abline(v=which(fac_simu==1))
+#axis(1,at=floor(seq(1,length(fac_simu),length.out=10)),format(fac_simu[floor(seq(1,length(fac_simu),length.out=10))],digits=2))
+dev.off()
+
+
+#pdf("species_no_seed_bank.pdf",width=10)
 par(mfrow=c(3,4))
 for(m in 1:2){
 for(s in 1:nspp){
@@ -464,3 +650,54 @@ legend("top",c("Compet w/o bank","Facil w/o bank","Compet w bank","Facil w bank"
 }
 dev.off()
 
+
+##### Bray Curtis for cyst/ ocean or coast
+matrix_bc=array(NA,dim=c(2,2,length(fac_simu),2,2),dimnames=list(c("origin","disturbed"),c("ocean","coast"),fac_simu,c("compet","facil"),1:2))
+for (cpt in c("ocean","coast")){
+	for (f in 1:length(fac_simu)){
+		for (type in c("compet","facil")){
+			for(m in 1:2){
+				matrix_bc["origin",cpt,f,type,m]=BC_index(N_orig[,"seed",,f,type,m],N_orig[,cpt,,f,type,m])
+				matrix_bc["disturbed",cpt,f,type,m]=BC_index(N_array[,"seed",,f,type,m],N_array[,cpt,,f,type,m])
+			}
+		}
+	}
+}
+
+pdf("bray_curtis_index_compet.pdf")
+par(mfrow=c(2,2))
+plot(fac_simu,rep(1,length(fac_simu)),t="n",ylim=c(0.6,1),xlab="",ylab="Bray-Curtis index",main="Compet ocean",log="x")
+type="compet"
+cpt="ocean"
+lines(fac_simu,matrix_bc["origin",cpt,,type,1],lty=2,col="black")
+lines(fac_simu,matrix_bc["origin",cpt,,type,2],lty=2,col="grey")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,1],lty=1,col="black")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,2],lty=1,col="grey")
+legend("topright",c("W bank","W/o bank","Model I","Model II"),lty=c(2,1,1,1),col=c("black","black","black","grey"),bty="n",cex=1.,lwd=2)
+
+
+plot(fac_simu,rep(1,length(fac_simu)),t="n",ylim=c(0.6,1),xlab="",ylab="",main="Facil ocean",log="x")
+type="facil"
+cpt="ocean"
+lines(fac_simu,matrix_bc["origin",cpt,,type,1],lty=2,col="black")
+lines(fac_simu,matrix_bc["origin",cpt,,type,2],lty=2,col="grey")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,1],lty=1,col="black")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,2],lty=1,col="grey")
+
+plot(fac_simu,rep(1,length(fac_simu)),t="n",ylim=c(0.6,1),xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),ylab="Bray-Curtis index",main="Compet coast",log="x")
+type="compet"
+cpt="coast"
+lines(fac_simu,matrix_bc["origin",cpt,,type,1],lty=2,col="black")
+lines(fac_simu,matrix_bc["origin",cpt,,type,2],lty=2,col="grey")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,1],lty=1,col="black")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,2],lty=1,col="grey")
+
+
+plot(fac_simu,rep(1,length(fac_simu)),t="n",ylim=c(0.6,1),xlab=expression("a"["ij,sim"]/"a"["ij,ref"]),main="Facil coast",log="x")
+type="facil"
+cpt="coast"
+lines(fac_simu,matrix_bc["origin",cpt,,type,1],lty=2,col="black")
+lines(fac_simu,matrix_bc["origin",cpt,,type,2],lty=2,col="grey")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,1],lty=1,col="black")
+lines(fac_simu,matrix_bc["disturbed",cpt,,type,2],lty=1,col="grey")
+dev.off()
