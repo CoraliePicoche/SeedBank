@@ -321,8 +321,8 @@ for(param_to_move in rownames(free_param)){
         }
 }
 mtext(val_text,1,line=2.25,at=at_val_text,cex=1.3)
-}
 dev.off()
+} #end of  cpt="coast
 
 pdf("sensitivity_totabundance_ocean_diff_with_coast.pdf",width=13)
 par(mfrow=c(1,2))
@@ -400,4 +400,111 @@ for(param_to_move in rownames(free_param)){
 }
 mtext(val_text,1,line=2,at=at_val_text,cex=0.9)
 
+dev.off()
+
+#######################################################################
+#Now, same thing for the seed bank
+cpt="seed"
+mean_tot_original=log10(apply(N_original_set[id,cpt,,],c(2,3),mean))
+amplitude_tot_original=apply(log10(apply(N_original_set[id,cpt,,],c(2,3),range)),2,diff)
+
+####WARNING: this code is not flexible enough to take into account more than 2 values per parameter (min and max). If we want to try other values, we will need to increase the 2nd dimension of the two matrices
+matrix_mean=array(NA,dim=c(nrow(free_param),2,nrow(mean_tot_original),2),dimnames=list(rownames(free_param),c("min","max"),rownames(mean_tot_original),c("modelI","modelII")))
+matrix_amplitude=array(NA,dim=c(nrow(free_param),2,ncol(amplitude_tot_original),2),dimnames=list(rownames(free_param),c("min","max"),colnames(amplitude_tot_original),c("modelI","modelII")))
+
+for(param_to_move in rownames(free_param)){
+        id_param=grep(paste("^",param_to_move,sep=""),analyses) #This will help issue an error if we have more than 2 values per parameter
+        for(i in 1:length(id_param)){
+                mean_sens=log10(apply(N_sensitivity[,cpt,,id_param[i],],c(2,3),mean)) #mean_sens contains the log10 of average abundance per species, per model
+                tmp_mean=100*(mean_tot_original-mean_sens)/mean_tot_original
+                matrix_mean[param_to_move,i,,]=tmp_mean
+
+                amp_sens=apply(log10(apply(N_sensitivity[,cpt,,id_param[i],],c(2,3),range)),2,diff) #amp_sens contains the log-ratio maximum/minimum per species, per model
+                tmp_amplitude=100*(amplitude_tot_original-amp_sens)/amplitude_tot_original
+                matrix_amplitude[param_to_move,i,,]=t(tmp_amplitude)
+
+        }
+}
+
+pdf(paste("mean_abundance_amplitude_sensitivity_seed.pdf",sep=""),width=12,height=10)
+par(mfrow=c(2,1),mar=c(3,5,3,1))
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-22,28),xaxt="n",ylab="%Diff log10(mean abundance)",xlab="",cex.lab=1.65,cex.axis=1.65)
+abline(h=0)
+mtext("a",3,line=0.5,at=0.6,cex=1.75,font=2)
+l=0
+val_text=c()
+at_val_text=c()
+for(param_to_move in rownames(free_param)){
+        l=l+1
+        id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        space=0.5/(2*length(id_param))
+        space_txt=0.8/(2*length(id_param))
+        seq_space=seq(-space,space,length.out=length(id_param))
+        seq_space_txt=seq(-space_txt,space_txt,length.out=length(id_param))
+        for(i in 1:length(id_param)){
+
+                for(mod in 1:2){
+                per_change=mean(matrix_mean[param_to_move,i,,mod]*is.finite(matrix_mean[param_to_move,i,,mod]),na.rm=T)
+                if(mod==1){
+                        colm="lightgrey"
+                        idplus=idplus_text=0
+                }else{
+                        colm="darkgrey"
+                        idplus=0.08
+                        idplus_text=0.
+                }
+                rect(l+0.75*seq_space[i]+idplus,min(c(0,per_change)),l+1.25*seq_space[i]+idplus,max(c(per_change,0)),col=colm)
+                print(analyses[i])
+                print(tab_summary[id_param[i],,mod])
+                if(tab_summary[id_param[i],4,mod]==0){
+                        if((tab_summary[id_param[i],"Persistence_coast",mod]<nspp)|(tab_summary[id_param[i],"Persistence_ocean",mod]<nspp)){
+                        text(l+seq_space[i]+idplus,27,tab_summary[id_param[i],"Persistence_ocean",mod],col="red",cex=1.5)
+                        }else{
+                        points(l+seq_space[i]+idplus,27,t="p",pch=16,col="red",cex=1)
+                        }
+                }
+                }
+                at_val_text=c(at_val_text,l+seq_space_txt[i])
+                tmp_text=strsplit(analyses[id_param[i]],"_")
+                val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        }
+}
+legend("bottomleft",c("Model I","Model II"),col=c("lightgrey","darkgrey"),pch=16,bty="n",cex=1.75)
+par(mar=c(4.5,5,1.5,1))
+plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-85,85),xaxt="n",ylab="%Diff log.amplitude",xlab="",cex.axis=1.65,cex.lab=1.65)
+axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
+abline(h=0)
+mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.4)
+mtext("b",3,line=0.5,at=0.6,cex=1.75,font=2)
+l=0
+val_text=c()
+at_val_text=c()
+for(param_to_move in rownames(free_param)){
+        l=l+1
+        id_param=grep(paste("^",param_to_move,sep=""),analyses)
+        space=0.5/(2*length(id_param))
+        seq_space=seq(-space,space,length.out=length(id_param))
+        for(i in 1:length(id_param)){
+                for(mod in 1:2){
+                print(paste(analyses[id_param],mod))
+                per_change=mean(matrix_amplitude[param_to_move,i,,mod]*is.finite(matrix_mean[param_to_move,i,,mod]),na.rm=T)
+                print(per_change)
+                if(mod==1){
+                        colm="lightgrey"
+                        idplus=0
+                }else{
+                        colm="darkgrey"
+                        idplus=0.08
+                }
+                rect(l+0.75*seq_space[i]+idplus,min(c(0,per_change)),l+1.25*seq_space[i]+idplus,max(c(per_change,0)),col=colm)
+		if(abs(per_change)>85){
+			text(l+0.75*seq_space[i]+idplus,sign(per_change)*79+idplus*100,paste(format(per_change,digits=2),"%"))
+		}
+                }
+                at_val_text=c(at_val_text,l+seq_space_txt[i])
+                tmp_text=strsplit(analyses[id_param[i]],"_")
+                val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
+        }
+}
+mtext(val_text,1,line=2.25,at=at_val_text,cex=1.3)
 dev.off()
