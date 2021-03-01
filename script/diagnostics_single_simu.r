@@ -24,6 +24,8 @@ name_spp=colnames(tab_coast)
 tab_mean=read.table("../../param/mean_monthly_abundance.txt",sep=";",dec=".",header=T)
 
 #####Comparing mean abundances
+nb_year=2
+
 pop_table=read.table("../../param/mean_interpolated_abundances_Auger.txt",sep=",",dec=".",header=T)
 rownames(pop_table)=pop_table[,1]
 pop_table=pop_table[name_spp,]
@@ -53,7 +55,7 @@ diag(after_A_nodiag)=NA
 ratio_after=mean(abs(diag(after_A)))/mean(abs(after_A_nodiag))
 ratio_before=mean(abs(diag(before_A)))/mean(abs(before_A_nodiag))
 
-pdf(paste("calibration_interaction_matrix.pdf",sep=""),width=7.5,height=10)
+#pdf(paste("calibration_interaction_matrix.pdf",sep=""),width=7.5,height=10)
 par(mfrow=c(3,1),mar=c(4,4,1,1))
 plot(c(before_A),c(after_A),pch=16,col="black",xlab="",ylab="After calibration")
 abline(a=0,b=1)
@@ -143,7 +145,7 @@ names(x_obs)=name_spp
 
 
 ####Compare observed average monthly abundance to simulation
-pdf(paste("timeseries_one_by_one_average_obs.pdf",sep=""),width=10)
+#pdf(paste("timeseries_one_by_one_average_obs.pdf",sep=""),width=10)
 par(mfrow=c(1,1))
 
 id_observed=seq(13,12*30.5,length.out=12)+min(id)
@@ -187,7 +189,7 @@ dates=dates[year(dates)>=1996]
 years_to_show=c(2000,2005,2015)
 col_yy=c("red","orange","darkred")
 
-pdf(paste("timeseries_one_by_one_real_obs.pdf",sep=""),width=10)
+#pdf(paste("timeseries_one_by_one_real_obs.pdf",sep=""),width=10)
 par(mfrow=c(1,1))
 
 for(i in 1:length(sp)){
@@ -240,18 +242,21 @@ list_to_show=list(cen,pen,din)
 
 colo=c("lightblue","blue","darkblue","orchid","lightslateblue","lightblue4")
 
-pdf("time_series_simulation_per_cluster.pdf",width=7,height=15)
+pdf("time_series_simulation_per_cluster_with_temperature.pdf",width=7,height=15)
+temp_model=as.matrix(read.table("../../param/reconstructed_temperature_Auger_with_corrected_phase_and_amplitude.txt", row.names=1,header=T,sep=";",dec="."))-273.15
 name_groupe=c("Centric diatoms","Pennate diatoms","Dinoflagellates")
 let=c("a","b","c")
 par(mfrow=c(3,1))
 for(tt in 1:length(list_to_show)){
 ydelim=range(c(transfo_N_coast[id,list_to_show[[tt]]]))
 	if(tt==3){
-		par(mar=c(4,4.5,3.5,1))
+		#par(mar=c(4,4.5,3.5,1)) #Not including temperature
+		par(mar=c(4,4.5,3.5,4)) #Including temperature, therefore yaxis on the right
 		xl="time"
 		pos_legend="topleft"
 	}else{
-		par(mar=c(3,4.5,4.5,1))
+		#par(mar=c(3,4.5,4.5,1)) #Not including temperature
+		par(mar=c(3,4.5,4.5,4)) #Including temperature (and therefore, yaxis on the right)
 		xl=""
 		if(tt==1){
 		#pos_legend=list(x=id[1]+30,y=(ydelim[2]-ydelim[1])*0.35+ydelim[1])
@@ -273,13 +278,17 @@ ydelim=range(c(transfo_N_coast[id,list_to_show[[tt]]]))
 	}
 #	legend(x=id[1]+30,y=(ydelim[2]-ydelim[1])*0.35+ydelim[1],list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n",pt.cex=1.75,cex=1.5)
 	legend(pos_legend,list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n",pt.cex=1.75,cex=1.5)
-#	par(new = TRUE) #########ZZZ
-#plot(id, temp_model[id], type = "l", axes = FALSE, bty = "n", xlab = "", ylab = "") ######ZZZ
+	if(tt==3){
+	par(new = TRUE)
+	plot(id, temp_model[id], type = "l", axes = FALSE, bty = "n", xlab = "",ylab="")
+	axis(side=4,cex.axis=1.75)
+	mtext("Temperature",side=4,line=3,cex=1.25)
+	}
 }
 dev.off()
 
 list_to_show=list(high_ab,middle_ab,low_ab)
-pdf("time_series_simulation_per_ab.pdf",width=7,height=15)
+#pdf("time_series_simulation_per_ab.pdf",width=7,height=15)
 par(mfrow=c(3,1))
 for(tt in 1:length(list_to_show)){
         if(tt==3){
