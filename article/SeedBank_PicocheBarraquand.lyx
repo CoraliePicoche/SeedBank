@@ -81,7 +81,7 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes true
-\output_changes false
+\output_changes true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -404,10 +404,25 @@ literal "false"
 
  which confirm that life history strategies including dormant cysts are
  widespread in phytoplankton.
- A variety of models have endeavoured to explain and predict amplitude,
- timing and/or spatial distribution of blooms by explicitly modeling multiple
- stages in the life cycle of a particular species, but without interactions
- with other organisms (see for example 
+ 
+\change_inserted -2100369821 1614767330
+Cyst formation can either be part of the lifecycle of phytoplankton species
+ and result from sexual reproduction or be triggered by specific environmental
+ conditions leading to asexual resting stages 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ellegaard_long-term_2018"
+literal "false"
+
+\end_inset
+
+.
+ 
+\change_unchanged
+A variety of models have endeavoured to explain and predict amplitude, timing
+ and/or spatial distribution of blooms by explicitly modeling multiple stages
+ in the life cycle of a particular species, but without interactions with
+ other organisms (see for example 
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "mcgillicuddy_mechanisms_2005,hense_towards_2006,hellweger_agent-based_2008,yniguez_investigating_2012"
@@ -506,8 +521,18 @@ literal "false"
 \begin_layout Standard
 Our model is parameterized from field data (growth and interaction rates),
  and includes biotic and abiotic constraints (e.g., particle sinking).
- In our analyses, we either add or remove the dormant compartment, which
- allows to pinpoint its contribution to coexistence.
+ In our analyses, 
+\change_inserted -2100369821 1614767039
+we examine how cyst banks may influence the maintenance of biodiversity
+ under changing biotic interactions or changing environmental conditions.
+ 
+\change_deleted -2100369821 1614767047
+w
+\change_inserted -2100369821 1614767047
+W
+\change_unchanged
+e either add or remove the dormant compartment, which allows to pinpoint
+ its contribution to coexistence.
  We find that the presence of cysts prevents the extinction of several species.
  Cyst banks also allow a community to maintain its richness even with strong
  disturbances of its interaction network, unless facilitative interactions
@@ -550,7 +575,25 @@ literal "false"
  interacting populations.
  Any discrete-time model requires an ordering of events; in our models,
  these unfold as follows: first, populations grow or decline according to
- a Beverton-Holt (BH) multispecies density-dependence (eqs.
+ a Beverton-Holt (BH)
+\change_inserted -2100369821 1614769653
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1614769676
+Doesn't this sentence imply that the second model should also be BH?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ multispecies density-dependence (eqs.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -584,12 +627,83 @@ noprefix "false"
 \end_inset
 
 ).
+\change_inserted -2100369821 1614766436
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1614766445
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted -2100369821 1614766477
+\begin_inset Graphics
+	filename model_compartment.png
+	width 99line%
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1614766445
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1614795392
+Conceptual model of the exchanges between compartments in the metacommunity
+ (states and parameters are defined in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:State_Parameter"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 In this paper, individuals are phytoplanktonic cells that move between the
  upper layer of coastal water, its bottom layer where a cyst bank accumulates
- in the sediment, and the ocean.
+ in the sediment, 
+\change_deleted -2100369821 1614767418
+and the ocean.
+\change_inserted -2100369821 1614767422
+and the oceanic zone surrounding the coastal water masses (hereafter "the
+ ocean").
+
+\change_unchanged
  Only oceanic and coastal pelagic cells are subject to BH-density dependence.
  Cysts are only affected by mortality 
 \begin_inset Formula $m$
@@ -642,7 +756,12 @@ ve and facilitative interactions, which translates into positive and negative
 \end_inset
 
  coefficients respectively.
- We first use the classical multispecies BH model (model I, eq.
+ 
+\change_inserted -2100369821 1614769707
+We present two different interaction models.
+ 
+\change_unchanged
+We first use the classical multispecies BH model (model I, eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -653,7 +772,39 @@ noprefix "false"
 
 \end_inset
 
-).
+)
+\change_deleted -2100369821 1614769221
+.
+\change_inserted -2100369821 1614769472
+, which is also used in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "shoemaker_linking_2016"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+.
+ However, the rate of facilitative interactions, which we found to be rather
+ when high compared to common assumptions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+, could destabilize the community.
+
+\change_unchanged
  We subsequently define saturating interactions (model II, eq.
  
 \begin_inset CommandInset ref
@@ -665,9 +816,27 @@ noprefix "false"
 
 \end_inset
 
-).
- More specifically, in our case, the first step of the model I can be written
- as
+)
+\change_inserted -2100369821 1614769747
+ based on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "qian_balance_2020"
+literal "false"
+
+\end_inset
+
+ who showed that mutualist interactions could stabilize communities when
+ saturation was included
+\change_unchanged
+.
+ 
+\change_deleted -2100369821 1614769759
+More specifically, i
+\change_inserted -2100369821 1614769759
+I
+\change_unchanged
+n our case, the first step of the model I can be written as
 \end_layout
 
 \begin_layout Standard
@@ -1846,7 +2015,16 @@ Calibrated
  studies at the study site).
  When a range of values is given, the bold numbers indicate the reference
  values while the others are used for sensitivity analysis.
- For 
+ 
+\change_inserted -2100369821 1614767541
+
+\begin_inset Formula $\beta(0.55,1.25)$
+\end_inset
+
+ indicates the Beta distribution with parameters 0.55 and 1.25.
+ 
+\change_unchanged
+For 
 \begin_inset Formula $\gamma,$
 \end_inset
 
@@ -1887,7 +2065,13 @@ Each compartment (ocean, coast, cyst bank) contains
  cells at the beginning of the simulation, and the dynamics are run for
  30 years with a daily time step.
  We model the temperature input as a noisy sinusoidal signal with the same
- mean and variance as the empirical data set described below.
+ mean and variance as the empirical data set described below
+\change_inserted -2100369821 1614767611
+, i.e.
+ the amplitude of the sinusoid is 12.4°C and the standard deviation of the
+ noise SD is 0.25
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -2017,8 +2201,10 @@ Exchange rate
 \begin_layout Standard
 The exchange rate between the ocean and the coast depends on the shape and
  location of the coast (estuary, cape, ...).
- At our calibration site (see below), the renewal time ranges between 1
- and 2.5 days 
+ 
+\change_deleted -2100369821 1614767649
+At our calibration site (see below), the renewal time ranges between 1 and
+ 2.5 days 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ascione_kenov_water_2015"
@@ -2026,7 +2212,14 @@ literal "false"
 
 \end_inset
 
-, which corresponds to a daily exchange rate between 40 and 100 %.
+, which corresponds to a daily exchange rate between 40 and 100 %
+\change_inserted -2100369821 1614767649
+Our calibration site is located at an inlet linking the ocean and the coast.
+ The flow at the inlet leads to a renewal time of the coastal area water
+ evaluated between 1 and 2.5 days (Ascione Kenov et al., 2015), which corresponds
+ to a daily exchange rate between 40 and 100 %
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Paragraph*
@@ -2125,7 +2318,34 @@ Parameter calibration
 \begin_layout Standard
 In addition to phenology parameters, whose estimation process is described
  in Section S1 of the SI, the 49 non-zero interactions that form the community
- matrix of the model are calibrated from field data.
+ matrix of the model are calibrated from field data
+\change_inserted -2100369821 1614767717
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1614767736
+We use this ref in the sentence just after, should we keep the two of them
+ or remove this one or the following one?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  We used initial interaction estimates from a previous time series modelling
  study 
 \begin_inset CommandInset citation
@@ -2247,9 +2467,22 @@ period of the bloom.
 Simulations with taxon extinction (i.e., the taxon is absent for more than
  6 months in a compartment) are discarded, as extinctions are not observed
  in the field data.
- Models are then ranked according to their performance for each summary
- statistic, and the set of interactions with the best rank for each summary
- statistics is selected.
+ 
+\change_deleted -2100369821 1614767812
+Models
+\change_inserted -2100369821 1614767814
+Parameter sets
+\change_unchanged
+ are then ranked according to their performance for each summary statistic,
+ and
+\change_deleted -2100369821 1614767841
+ the set of interactions with the best rank for each summary statistics
+ is selected
+\change_inserted -2100369821 1614767847
+ we selected the set of interactions optimizing the sum of the ranks correspondi
+ng to each summary statistics
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Paragraph*
@@ -2326,8 +2559,12 @@ literal "false"
 .
  The Auger sampling site is characterized by a high phytoplanktonic biodiversity
 , even by regional standards, sustained by the joint influences of the Atlantic
- Ocean and terrestrial inputs from the Seudre River, with a possible important
- contribution of the benthic environment 
+ Ocean and terrestrial 
+\change_inserted -2100369821 1614767757
+(nutrient) 
+\change_unchanged
+inputs from the Seudre River, with a possible important contribution of
+ the benthic environment 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "guarini_benthic_2004"
@@ -2429,12 +2666,31 @@ ons on coexistence, only one type of interactions was subject to this change
 
 \begin_layout Standard
 In the second scenario, five different climate change scenarios were assessed.
- In the first three, the average temperature was increased by 2, 5, or 7°C.
+ In the first three, the average temperature was increased by 2, 5, or 7°C
+\change_inserted -2100369821 1614791604
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "boucher_presentation_2020"
+literal "false"
+
+\end_inset
+
+
+\change_unchanged
+.
  In the next two, keeping the reference average temperature, the total variance
  of the temperature, including seasonality and noise, was either decreased
  or increased by 25%.
- To acknowledge the stochasticity induced by the noise, the model was ran
+ 
+\change_deleted -2100369821 1614768178
+To acknowledge the stochasticity induced by the noise, the model was ran
  with five different temperature signals in each case.
+\change_inserted -2100369821 1614768178
+Each climate change scenario was run 5 times to account for the intrinsic
+ stochasticity of the temperature signal.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2502,7 +2758,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../output/modelv1.1/time_series_simulation_per_cluster.pdf
+	filename ../output/modelv1.1/time_series_simulation_per_cluster_with_temperature.pdf
 	height 95theight%
 
 \end_inset
@@ -2649,8 +2905,12 @@ Sensitivity of the model to variation in parameters, measured as the difference
  used in the sensitivity analysis (e.g.
  mortality rates in the sensitivity analysis are both below the value used
  in other simulations).
- Numbers in red are the final number of taxa and dots correspond to simulations
- in which at least one taxon reached 0 at one point but did not disappear.
+ Numbers in red are the final number of taxa 
+\change_inserted -2100369821 1614768212
+in the ocean 
+\change_unchanged
+and dots correspond to simulations in which at least one taxon reached 0
+ at one point but did not disappear.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3242,9 +3502,28 @@ literal "false"
 \end_inset
 
  and may locally vary.
- The potential idiosyncratic nature of recolonization by cysts – due to
- the contingency on local hydrodynamics – means that experimentation might
- be the only manner in which the frequency of reinvasion can be assessed.
+
+\change_inserted -2100369821 1614794652
+ Sinking rates are especially worthy of interest as they have opposed effects
+ on community dynamics in different compartments.
+ In coastal areas, sinking cells contribute to the cyst bank, increasing
+ species long-term survival and buffering ability, while sinking cells are
+ lost in the ocean.
+ Different coast/ocean mixing rates or resuspension rates may therefore
+ lead to diverging effects of sinking on community diversity and stability.
+
+\change_unchanged
+ 
+\change_inserted -2100369821 1614794707
+In the opposite direction, 
+\change_deleted -2100369821 1614794708
+T
+\change_inserted -2100369821 1614794708
+t
+\change_unchanged
+he potential idiosyncratic nature of recolonization by cysts – due to the
+ contingency on local hydrodynamics – means that experimentation might be
+ the only manner in which the frequency of reinvasion can be assessed.
  Currently, one of the only parameters measured is the rate of survival
  of the cells found in the sediment 
 \begin_inset CommandInset citation
