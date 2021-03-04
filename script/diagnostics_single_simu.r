@@ -280,7 +280,7 @@ ydelim=range(c(transfo_N_coast[id,list_to_show[[tt]]]))
 	legend(pos_legend,list_to_show[[tt]],col=colo[1:length(list_to_show[[tt]])],pch=16,bty="n",pt.cex=1.75,cex=1.5)
 	if(tt==3){
 	par(new = TRUE)
-	plot(id, temp_model[id], type = "l", axes = FALSE, bty = "n", xlab = "",ylab="")
+	plot(id, temp_model[id], type = "l", axes = FALSE, bty = "n", xlab = "",ylab="",col="orange")
 	axis(side=4,cex.axis=1.75)
 	mtext("Temperature",side=4,line=3,cex=1.25)
 	}

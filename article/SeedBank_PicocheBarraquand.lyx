@@ -553,7 +553,22 @@ Models
 \end_layout
 
 \begin_layout Standard
-Our models build atop recent models developed by 
+Our models
+\change_inserted -2100369821 1614849493
+ (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Conceptual-model-"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\change_unchanged
+ build atop recent models developed by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "shoemaker_linking_2016"
@@ -662,9 +677,9 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1614795392
+\change_inserted -2100369821 1614849482
 Conceptual model of the exchanges between compartments in the metacommunity
- (states and parameters are defined in Table 
+ (state variables and parameters are defined in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:State_Parameter"
@@ -675,6 +690,13 @@ noprefix "false"
 \end_inset
 
 )
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Conceptual-model-"
+
+\end_inset
+
+
 \change_unchanged
 
 \end_layout
@@ -699,8 +721,8 @@ In this paper, individuals are phytoplanktonic cells that move between the
  in the sediment, 
 \change_deleted -2100369821 1614767418
 and the ocean.
-\change_inserted -2100369821 1614767422
-and the oceanic zone surrounding the coastal water masses (hereafter "the
+\change_inserted -2100369821 1614849537
+and the oceanic zone surrounding the coastal water masses (hereafter ``the
  ocean").
 
 \change_unchanged
@@ -775,8 +797,8 @@ noprefix "false"
 )
 \change_deleted -2100369821 1614769221
 .
-\change_inserted -2100369821 1614769472
-, which is also used in 
+\change_inserted -2100369821 1614850955
+, also present in the original model of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "shoemaker_linking_2016"
@@ -793,8 +815,8 @@ literal "false"
 \end_inset
 
 .
- However, the rate of facilitative interactions, which we found to be rather
- when high compared to common assumptions 
+ However, the high number of facilitative interactions characterizing the
+ modeled community 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "picoche_strong_2020"
@@ -802,10 +824,22 @@ literal "false"
 
 \end_inset
 
-, could destabilize the community.
+ could have destabilizing effects 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "may_1981_theoretical"
+literal "false"
+
+\end_inset
+
+.
+ In model I, we therefore impose a fixed threshold, i.e.
+ a minimum value of 1 to the denominator of the BH formulation.
 
 \change_unchanged
- We subsequently define saturating interactions (model II, eq.
+ We subsequently define saturating interactions 
+\change_deleted -2100369821 1614850993
+(model II, eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -817,8 +851,8 @@ noprefix "false"
 \end_inset
 
 )
-\change_inserted -2100369821 1614769747
- based on 
+\change_inserted -2100369821 1614850977
+based on 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "qian_balance_2020"
@@ -826,14 +860,24 @@ literal "false"
 
 \end_inset
 
- who showed that mutualist interactions could stabilize communities when
- saturation was included
+ in model II (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model_stepI_saturating"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
 \change_unchanged
 .
  
 \change_deleted -2100369821 1614769759
 More specifically, i
-\change_inserted -2100369821 1614769759
+\change_inserted -2100369821 1614850604
 I
 \change_unchanged
 n our case, the first step of the model I can be written as
@@ -2016,12 +2060,12 @@ Calibrated
  When a range of values is given, the bold numbers indicate the reference
  values while the others are used for sensitivity analysis.
  
-\change_inserted -2100369821 1614767541
+\change_inserted -2100369821 1614851040
 
 \begin_inset Formula $\beta(0.55,1.25)$
 \end_inset
 
- indicates the Beta distribution with parameters 0.55 and 1.25.
+ is the Beta distribution with parameters 0.55 and 1.25.
  
 \change_unchanged
 For 
@@ -2066,10 +2110,9 @@ Each compartment (ocean, coast, cyst bank) contains
  30 years with a daily time step.
  We model the temperature input as a noisy sinusoidal signal with the same
  mean and variance as the empirical data set described below
-\change_inserted -2100369821 1614767611
-, i.e.
- the amplitude of the sinusoid is 12.4°C and the standard deviation of the
- noise SD is 0.25
+\change_inserted -2100369821 1614851172
+: the amplitude of the sinusoid is 12.4°C and the standard deviation of the
+ noise is 0.25°C
 \change_unchanged
 .
 \end_layout
@@ -2214,7 +2257,7 @@ literal "false"
 
 , which corresponds to a daily exchange rate between 40 and 100 %
 \change_inserted -2100369821 1614767649
-Our calibration site is located at an inlet linking the ocean and the coast.
+Our calibration site is located at an inlet.
  The flow at the inlet leads to a renewal time of the coastal area water
  evaluated between 1 and 2.5 days (Ascione Kenov et al., 2015), which corresponds
  to a daily exchange rate between 40 and 100 %
@@ -2318,8 +2361,8 @@ Parameter calibration
 \begin_layout Standard
 In addition to phenology parameters, whose estimation process is described
  in Section S1 of the SI, the 49 non-zero interactions that form the community
- matrix of the model are calibrated from field data
-\change_inserted -2100369821 1614767717
+ matrix
+\change_inserted -2100369821 1614851308
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -2334,18 +2377,16 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1614767736
+\change_inserted -2100369821 1614851308
 We use this ref in the sentence just after, should we keep the two of them
  or remove this one or the following one?
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
 \change_unchanged
-.
+ of the model are calibrated from field data.
  We used initial interaction estimates from a previous time series modelling
  study 
 \begin_inset CommandInset citation
@@ -2479,8 +2520,8 @@ Parameter sets
  the set of interactions with the best rank for each summary statistics
  is selected
 \change_inserted -2100369821 1614767847
- we selected the set of interactions optimizing the sum of the ranks correspondi
-ng to each summary statistics
+ we select the set of interactions optimizing the sum of the ranks corresponding
+ to each summary statistics
 \change_unchanged
 .
 \end_layout
@@ -2772,6 +2813,11 @@ status open
 \begin_layout Plain Layout
 Simulated phytoplankton dynamics for a year in model I.
  Each panel corresponds to a cluster of interacting taxa.
+
+\change_inserted -2100369821 1614852348
+ The orange line in the third panel indicates the temperature.
+
+\change_unchanged
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3503,19 +3549,18 @@ literal "false"
 
  and may locally vary.
 
-\change_inserted -2100369821 1614794652
+\change_inserted -2100369821 1614851990
  Sinking rates are especially worthy of interest as they have opposed effects
  on community dynamics in different compartments.
  In coastal areas, sinking cells contribute to the cyst bank, increasing
- species long-term survival and buffering ability, while sinking cells are
- lost in the ocean.
- Different coast/ocean mixing rates or resuspension rates may therefore
- lead to diverging effects of sinking on community diversity and stability.
+ species long-term survival, while they are lost in the ocean.
+ Different coast/ocean mixing rates may therefore lead to diverging effects
+ of sinking on community diversity and stability.
 
-\change_unchanged
+\change_deleted -2100369821 1614851911
  
-\change_inserted -2100369821 1614794707
-In the opposite direction, 
+\change_inserted -2100369821 1614852028
+Similarly, 
 \change_deleted -2100369821 1614794708
 T
 \change_inserted -2100369821 1614794708
