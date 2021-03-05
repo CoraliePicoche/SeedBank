@@ -30,10 +30,10 @@
    \node [circle,draw=white,fill=white,minimum size=6mm,right of=sp2_v,node distance=1in](sp_etc){\Huge ...}; %all other species
 
     %Interactions
-               \path[->]          (sp2_v)  edge   [bend left=20]   node [below] {$\alpha_{12}$} (sp1_v);
+               \path[->]          (sp2_v)  edge   [bend left=20]   node [above] {$\alpha_{12}$} (sp1_v);
        \path[->]          (sp1_v)  edge   [bend left=20]   node [above] {$\alpha_{21}$} (sp2_v);
        
-               \path[->]          (sp2_sea)  edge   [bend left=20]   node [below] {$\alpha_{12}$} (sp1_sea);
+               \path[->]          (sp2_sea)  edge   [bend left=20]   node [above] {$\alpha_{12}$} (sp1_sea);
        \path[->]          (sp1_sea)  edge   [bend left=20]   node [above] {$\alpha_{21}$} (sp2_sea);
  
 
@@ -41,11 +41,11 @@
       \draw[black,thick,->,postaction={decorate,decoration={text along path,raise=5pt,text={{$r_{1}(T)$}{}},text align=center, reverse path}}] (sp1_v.90) arc (-0:264:5mm);
   \draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$r_{2}(T)$}{}},text align=center}}] (sp2_v) to [looseness=4, out=90,in=0] (sp2_v);
      \draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$r_{2}(T)$}{}},text align=center}}] (sp2_sea) to [looseness=4, out=90,in=0] (sp2_sea);
-          \draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$r_{1}(T)$}{}},text align=center}}] (sp1_sea) to [looseness=4, out=270,in=180] (sp1_sea);
+          \draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$r_{1}(T)$}{}},text align=center,reverse path}}] (sp1_sea) to [looseness=4, out=270,in=180] (sp1_sea);
           
        %cyst mortality   
-\draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$(1-m)$}{}},text align=center, reverse path}}] (sp1_r) to [looseness=4, out=180,in=270] (sp1_r);
-\draw[thick,->,postaction={decorate,decoration={text along path, raise=5pt,text={{$(1-m)$}{}},text align=center}}] (sp2_r) to [looseness=4, out=0,in=270] (sp2_r);
+\draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$(1-m)$}{}},text align=center}}] (sp1_r) to [looseness=4, out=180,in=270] (sp1_r);
+\draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$(1-m)$}{}},text align=center,reverse path}}] (sp2_r) to [looseness=4, out=0,in=270] (sp2_r);
             
        %sinking      
        \path[->]          (sp1_v)  edge   [bend left=20]   node [right] {$s_1$} (sp1_r); 
@@ -61,8 +61,10 @@
               \path[->]          (sp2_v)  edge   [bend right=40]   node [above] {$e$} (sp2_sea);
                             \path[<-]          (sp2_v)  edge   [bend right=60]   node [above] {$e$} (sp2_sea);
      %vegetative mortality
-       \path [->]      (sp1_v)  edge node [above] {$l$}  (-1.2,-0.6);                   
-       \path [->]      (sp2_sea)  edge node [above] {$l$}  (14,-0.6);                              
+       \path [->]      (sp1_v)  edge node [above] {$l$}  (-1.2,-0.7); 
+       \path [->]      (sp2_v)  edge node [below] {$l$}  (1.4,-0.7); 
+       \path [->]      (sp2_sea)  edge node [above] {$l$}  (14,-0.7);                              
+       \path [->]      (sp1_sea)  edge node [below] {$l$}  (11.4,-0.7);    
        
        \end{scope}
     
