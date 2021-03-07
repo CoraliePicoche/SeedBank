@@ -1,16 +1,6 @@
-\documentclass[a4paper,10pt]{article}
-\usepackage[utf8]{inputenc}
+\documentclass{standalone}
 \usepackage{tikz}
-\usetikzlibrary{decorations.text}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{geometry}
-\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
-
-
-%opening
-\title{}
-\author{}
+ \usetikzlibrary{decorations.text}
 
 \begin{document}
 
@@ -22,9 +12,9 @@
 \begin{scope}
     % Populations
     \node [place](sp1_v){$N_{1,c}$};
-    \node [place,node distance=1in,below of=sp1_v](sp1_r){$N_{1,s}$};
+    \node [place,node distance=1in,below of=sp1_v](sp1_r){$N_{1,b}$};
     \node [place,right of=sp1_v,node distance=1in](sp2_v){$N_{2,c}$};
-    \node [place,node distance=1in,below of=sp2_v](sp2_r){$N_{2,s}$};
+    \node [place,node distance=1in,below of=sp2_v](sp2_r){$N_{2,b}$};
     \node [place,right of=sp1_v,node distance=4in](sp1_sea){$N_{1,o}$};
     \node [place,right of=sp1_sea,node distance=1in](sp2_sea){$N_{2,o}$};
    \node [circle,draw=white,fill=white,minimum size=6mm,right of=sp2_v,node distance=1in](sp_etc){\Huge ...}; %all other species
@@ -44,8 +34,8 @@
           \draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$r_{1}(T)$}{}},text align=center,reverse path}}] (sp1_sea) to [looseness=4, out=270,in=180] (sp1_sea);
           
        %cyst mortality   
-\draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$(1-m)$}{}},text align=center}}] (sp1_r) to [looseness=4, out=180,in=270] (sp1_r);
-\draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$(1-m)$}{}},text align=center,reverse path}}] (sp2_r) to [looseness=4, out=0,in=270] (sp2_r);
+\draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$(1-m-\zeta)$}{}},text align=center}}] (sp1_r) to [looseness=4, out=180,in=270] (sp1_r);
+\draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$(1-m-\zeta)$}{}},text align=center,reverse path}}] (sp2_r) to [looseness=4, out=0,in=270] (sp2_r);
             
        %sinking      
        \path[->]          (sp1_v)  edge   [bend left=20]   node [right] {$s_1$} (sp1_r); 
