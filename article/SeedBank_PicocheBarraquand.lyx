@@ -65,10 +65,10 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2cm
-\topmargin 2cm
-\rightmargin 2cm
-\bottommargin 2cm
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
@@ -404,16 +404,9 @@ literal "false"
 
  which confirm that life history strategies including dormant cysts are
  widespread in phytoplankton.
- Cyst formation can either be part of the life
-\change_inserted -666822487 1614877416
- 
-\change_unchanged
-cycle of phytoplankton species and result from sexual reproduction or be
- triggered by specific environmental conditions
-\change_inserted -666822487 1614877421
-,
-\change_unchanged
- leading to asexual resting stages 
+ Cyst formation can either be part of the life cycle of phytoplankton species
+ and result from sexual reproduction or be triggered by specific environmental
+ conditions, leading to asexual resting stages 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ellegaard_long-term_2018"
@@ -442,22 +435,8 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1614963753
- 
-\change_deleted -2100369821 1614963750
- 
-\change_unchanged
-models also exist, but they focus on explaining the dynamics of a single
- cyst-forming species
-\change_inserted -2100369821 1614963786
- or group
-\change_unchanged
- interacting 
-\change_inserted -2100369821 1614963776
-mostly 
-\change_unchanged
-with vegetative-only groups.
+ models also exist, but they focus on explaining the dynamics of a single
+ cyst-forming species or group interacting mostly with vegetative-only groups.
  This state of affairs means that we currently have no clear understanding
  of how the cyst stage might help maintain biodiversity in species-rich
  communities.
@@ -601,9 +580,10 @@ literal "false"
 status collapsed
 
 \begin_layout Plain Layout
-Doesn't this sentence imply that the second model should also be BH?
-\change_inserted -666822487 1614877489
- It is.
+Doesn't this sentence imply that the second model should also be BH? It
+ is.
+
+\change_deleted -666822487 1615192822
  
 \change_unchanged
 
@@ -657,7 +637,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/cpicoche/Documents/Thesis/SeedBank/exploratory/model_visu.pdf
+	filename ../exploratory/model_visu.pdf
 	width 99line%
 	clip
 
@@ -670,32 +650,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1614965424
-Structure of the 
-\change_deleted -2100369821 1614965438
-Conceptual 
-\change_unchanged
-model
-\change_inserted -2100369821 1615129289
-.
- Phytoplanktonic species
-\change_unchanged
- 
-\change_inserted -2100369821 1615129138
-(represented by circles) 
-\change_deleted -2100369821 1615129061
-of 
-\change_inserted -2100369821 1615129245
-are present the coast (subscript c), the ocean (o) and the cyst bank (b).
+Structure of the model.
+ Phytoplanktonic species (represented by circles) are present the coast
+ (subscript c), the ocean (o) and the cyst bank (b).
  Parameters governing demography, interactions between organisms and exchanges
- between compartments are defined in Table
-\change_unchanged
- 
-\change_deleted -2100369821 1615129180
- 
-\change_unchanged
-
+ between compartments are defined in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:State_Parameter"
@@ -705,40 +664,16 @@ noprefix "false"
 
 \end_inset
 
-)
-\change_inserted -2100369821 1615129310
-.
+).
  Only two species are represented here for the sake of simplicity but 11
  species are present in the model.
  
-\change_unchanged
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Conceptual-model-"
 
 \end_inset
 
-
-\change_inserted -666822487 1614877500
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1614877543
-Expand a little bit the legend! c is coast, s is for seed, o is for ocean;
- we represent only two species for simplicity, ....
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
@@ -868,16 +803,18 @@ literal "false"
 
 \end_inset
 
-, where populations grow to infinity because there is no saturation of beneficia
-l effects when density increases.
+
+\change_deleted -666822487 1615192897
+, where
+\change_inserted -666822487 1615192897
+:
+\change_unchanged
+ populations grow to infinity because there is no saturation of beneficial
+ effects when density increases.
  In model I, we therefore forbid the realized growth rate to go above the
  intrinsic growth rate (its theoretical limit), by setting a minimum value
  of 1 to the denominator of the BH formulation.
- We subsequently define saturating interactions
-\change_deleted -2100369821 1614965491
- 
-\change_unchanged
-, inspired by 
+ We subsequently define saturating interactions, inspired by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "qian_balance_2020"
@@ -896,8 +833,15 @@ noprefix "false"
 
 \end_inset
 
-), which provides a more process-orientated solution to the issue of excessive
- mutual benefaction (but to the cost of added parameters).
+)
+\change_deleted -666822487 1615192918
+, which
+\change_inserted -666822487 1615192919
+.
+ Model II
+\change_unchanged
+ provides a more process-orientated solution to the issue of excessive mutual
+ benefaction (but to the cost of added parameters).
  
 \begin_inset Note Note
 status collapsed
@@ -2892,13 +2836,8 @@ noprefix "false"
 \begin_inset Formula $m$
 \end_inset
 
- had the more impact o
-\change_deleted -2100369821 1615131380
-f
-\change_inserted -2100369821 1615131380
-n
-\change_unchanged
- the final average abundance, leading to an increase in abundances.
+ had the more impact on the final average abundance, leading to an increase
+ in abundances.
  The exchange rate between the ocean and the coast had much less effect
  on the coastal average abundance.
 \end_layout
@@ -2918,11 +2857,8 @@ In three cases (cyst burial rate set to 0.1, resuspension to 10
 \begin_inset Formula $^{-5}$
 \end_inset
 
- or the exchange rate set to 0), the final richness of the
-\change_inserted -2100369821 1615131413
- oceanic
-\change_unchanged
- community decreased from 11 to 4.
+ or the exchange rate set to 0), the final richness of the oceanic community
+ decreased from 11 to 4.
  Extant taxa were the same in all simulations (CHA, THP, NIT, PSE).
  When resuspension was set to 0.001, a taxon periodically disappeared from
  the ocean, to be subsequently re-seeded by the coastal population.
@@ -3018,12 +2954,7 @@ noprefix "false"
 
  in all cases).
  The inverse of the Simpson index (the second Hill number) decreased from
- approximately 3 to 1, showing that the disappearance of the cyst bank 
-\change_deleted -2100369821 1615131499
-does
-\change_inserted -2100369821 1615131500
-did
-\change_unchanged
+ approximately 3 to 1, showing that the disappearance of the cyst bank did
  not affect only the rarest species.
 \end_layout
 
@@ -3237,9 +3168,7 @@ noprefix "false"
 ), as the communities without a cyst bank could not maintain their richness
  with an increase in temperature above 2°C, as opposed to communities with
  a cyst bank, which could only be affected by a 7°C increase (scenario SSP5
- 8.5
-\change_inserted -2100369821 1615131608
-, 
+ 8.5, 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "boucher_presentation_2020"
@@ -3247,8 +3176,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 ).
  In all cases however, the total abundances were not strongly affected.
  Indeed, the total abundance of a community is driven by a small number
@@ -3289,27 +3216,9 @@ status open
 
 \begin_layout Plain Layout
 Variation in richness and total abundance with and without a cyst bank as
- a function of the mean 
-\change_inserted -2100369821 1615131675
-(left) 
-\change_unchanged
-and variance
-\change_inserted -2100369821 1615131679
- (right)
-\change_unchanged
- of the temperature with a classical Beverton-Holt 
-\change_deleted -2100369821 1615131671
-(left)
-\change_inserted -2100369821 1615131706
-(black line, model I)
-\change_unchanged
- or a saturating interaction (
-\change_deleted -2100369821 1615131690
-right
-\change_inserted -2100369821 1615131712
-grey line, model II
-\change_unchanged
-) formulation.
+ a function of the mean (left) and variance (right) of the temperature with
+ a classical Beverton-Holt (black line, model I) or a saturating interaction
+ (grey line, model II) formulation.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3510,11 +3419,8 @@ literal "false"
  were typically associated with extinctions.
  We identified, by studying realised population growth rates (Fig.
  S7 in SI), that a smaller niche width (i.e., being a specialist) or being
- strongly affect
-\change_inserted -2100369821 1615131886
-ed
-\change_unchanged
- by species interactions can explain rapid extinction without a cyst bank.
+ strongly affected by species interactions can explain rapid extinction
+ without a cyst bank.
 \begin_inset Note Note
 status collapsed
 
@@ -3564,7 +3470,7 @@ Maybe hint at evolution, too,if we'retalking many many generation.
 \end_inset
 
  When modelling different stages of the life cycle in a detailed manner
- — as done here — is impractical, the recolonization could perhaps be simplified
+ – as done here – is impractical, the recolonization could perhaps be simplified
  to a stochastic immigration term (as done in 
 \begin_inset CommandInset citation
 LatexCommand citealt
@@ -3573,10 +3479,6 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted -2100369821 1615131949
-, who do this
-\change_unchanged
  in a single-species context).
  This suggestion certainly extends to models of (terrestrial) plant community
  dynamics.
@@ -3597,13 +3499,9 @@ literal "false"
 
  and may locally vary.
  Sinking rates show an interesting conflict between short- and long-term
- survival: 
-\change_deleted -2100369821 1615129544
- 
-\change_unchanged
-in coastal areas, a fraction of sinking cells contribute to the cyst bank,
- increasing the odds of species long-term survival at the cost of short-term
- individual cell survival.
+ survival: in coastal areas, a fraction of sinking cells contribute to the
+ cyst bank, increasing the odds of species long-term survival at the cost
+ of short-term individual cell survival.
  But high sinking rates are essentially 
 \begin_inset Quotes eld
 \end_inset
@@ -3614,27 +3512,17 @@ wasted
 
  in the open ocean – whether different sinking rates can be selected, to
  some degree, by such different environments could be quite revealing
-\change_inserted -666822487 1614940955
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1614940969
 Seems there is some plasticity as well, right ? https://academic.oup.com/plankt/ar
-ticle-abstract/6/1/1/1440122 
-\change_inserted -2100369821 1615129398
-Yes.
+ticle-abstract/6/1/1/1440122 Yes.
  Organisms are able to regulate their buoyancy.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  How cells get up rather than down in water column might be as interesting
  but more difficult to study.
@@ -3660,28 +3548,21 @@ literal "false"
  We therefore encourage both experiments and field observations to follow
  actual seed trajectories, in order to help us understanding this cryptic
  part of the diversity maintenance process.
-\change_inserted -666822487 1614865628
-
 \end_layout
 
 \begin_layout Subsubsection*
-
-\change_inserted -666822487 1614865642
 Acknowledgements
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1614865732
 We thank Nathan Wisnoski and Frank Jabot for useful feedback.
- CP was supported by a PhD grant from 
-\change_inserted -2100369821 1615129515
-the French minister of Research
-\change_inserted -666822487 1614865732
-.
-
-\change_deleted -2100369821 1615132034
- 
+ CP was supported by a PhD grant from the French minist
+\change_deleted -666822487 1615192986
+er
+\change_inserted -666822487 1615192988
+ry
+\change_unchanged
+ of Research.
 \change_inserted -666822487 1614865732
 
 \end_layout
