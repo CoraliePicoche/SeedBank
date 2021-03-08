@@ -82,7 +82,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2100369821 "cpicoche"
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -126,8 +126,6 @@ setcounter{section}{0}
 
 \end_inset
 
-
-\change_deleted -2100369821 1614875510
 
 \end_layout
 
@@ -371,11 +369,7 @@ literal "false"
 \end_inset
 
  formula in purple.
- Horizontal lines show limits found
-\change_inserted -2100369821 1614875866
- in
-\change_unchanged
- the literature 
+ Horizontal lines show limits found in the literature 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "reynolds2006ecology"
@@ -464,25 +458,8 @@ We base our estimates of
 \end_inset
 
  on field observations.
- For each taxon and each year, the beginning of the bloom 
-\change_deleted -2100369821 1614875962
-of a given taxon 
-\change_unchanged
-is 
-\change_deleted -2100369821 1614875970
-defined by 
-\change_unchanged
-the date 
-\change_deleted -2100369821 1614875979
-at which 
-\change_inserted -2100369821 1614875997
-when 
-\change_deleted -2100369821 1614876023
-its
-\change_inserted -2100369821 1614876029
-the taxon
-\change_unchanged
- abundance exceeds its median abundance over the year.
+ For each taxon and each year, the beginning of the bloom is the date when
+ the taxon abundance exceeds its median abundance over the year.
  The duration of the bloom is the number of days between the beginning and
  the date where abundance falls below the median value.
  Taxa are then separated into two groups.
@@ -608,31 +585,14 @@ Relationship between daily growth rates and temperature with different values
 
  (whose values are indicated in the legend, corresponding to specialist
  and generalist taxa) and the same thermal optimum, 15°C, indicated by the
- solid black line (
-\change_deleted -2100369821 1614876247
-right
-\change_inserted -2100369821 1614876251
-a
-\change_unchanged
-).
- On the 
-\change_deleted -2100369821 1614876275
-left
-\change_inserted -2100369821 1614876278
-right
-\change_unchanged
- panel, only the two extreme values of 
+ solid black line (a).
+ On the right panel, only the two extreme values of 
 \begin_inset Formula $b$
 \end_inset
 
  (10 and 1500) are shown in blue and red respectively.
- 
-\change_deleted -2100369821 1614876957
-Coloured
-\change_inserted -2100369821 1614876959
-Solid
-\change_unchanged
- lines then correspond to the final growth rate, points correspond to 
+ Solid lines then correspond to the final growth rate, points correspond
+ to 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
@@ -660,15 +620,7 @@ noprefix "false"
 \uwave off
 \noun off
 \color none
- 
-\change_inserted -2100369821 1614876975
-the 
-\change_unchanged
-dotted line
-\change_deleted -2100369821 1614876977
-s
-\change_unchanged
- correspond to 
+ the dotted line correspond to 
 \begin_inset Formula $E(T)$
 \end_inset
 
@@ -735,7 +687,6 @@ status open
 
 \begin_layout Plain Layout
 Growth rate as a function of temperature for the taxa used in the model
-\change_inserted -2100369821 1614875616
  (names are defined in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -746,9 +697,7 @@ noprefix "false"
 
 \end_inset
 
-)
-\change_unchanged
-.
+).
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -951,7 +900,6 @@ We then sum on columns (on
 \end_inset
 
 ).
- 
 \end_layout
 
 \begin_layout Standard
@@ -1010,13 +958,7 @@ We then sum on columns (on
 \end_layout
 
 \begin_layout Standard
-This gives an exact correspond
-\change_deleted -2100369821 1614877160
-a
-\change_inserted -2100369821 1614877160
-e
-\change_unchanged
-nce between 
+This gives an exact correspondence between 
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
@@ -1094,13 +1036,7 @@ ely,
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- 
-\change_deleted -2100369821 1614877118
-coefficients are
-\change_inserted -2100369821 1614877118
-is
-\change_unchanged
- the abundance of species 
+ is the abundance of species 
 \begin_inset Formula $j$
 \end_inset
 
@@ -1130,11 +1066,7 @@ literal "false"
 \end_inset
 
 , i.e.
- 
-\change_deleted -2100369821 1614877194
-a model where 
-\change_unchanged
-each taxon provides a unique type of benefit or disadvantage to the focus
+ each taxon provides a unique type of benefit or disadvantage to the focus
  species.
 \end_layout
 
@@ -1185,11 +1117,7 @@ noprefix "false"
 \begin_inset Formula $r_{i}(T)$
 \end_inset
 
- should not exceed
-\change_inserted -2100369821 1614877237
- 1
-\change_unchanged
-, as in model I.
+ should not exceed 1, as in model I.
  We consider that the relationships that apply to individual interactions
  
 \begin_inset Formula $\alpha_{ij}$
@@ -1310,11 +1238,8 @@ literal "false"
 
  being potentially due to cell autolysis (in the absence of nutrients, or
  because of viral charge).
- Trying to make a compromise emerge from the literature above, we set 
-\change_deleted -2100369821 1614877340
-as 
-\change_unchanged
-the reference value to 0.2 day
+ Trying to make a compromise emerge from the literature above, we set the
+ reference value to 0.2 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
@@ -1326,13 +1251,10 @@ Sinking rate
 \end_layout
 
 \begin_layout Standard
-Among the hydrodynamics processes that drive
-\change_inserted -2100369821 1614877369
- the
-\change_unchanged
- sinking rate, turbulence and eddies – themselves driven by tidal currents,
- the shape of the coast or wind conditions – are influential in keeping
- the cells at the top of the water column.
+Among the hydrodynamics processes that drive the sinking rate, turbulence
+ and eddies – themselves driven by tidal currents, the shape of the coast
+ or wind conditions – are influential in keeping the cells at the top of
+ the water column.
  For that reason, laboratory experiments on sinking rates are not sufficient
  to calibrate a field-based model.
  We therefore chose sinking rate values from field studies.
@@ -1388,13 +1310,8 @@ literal "false"
 \end_inset
 
 .
- We therefore chose to represent the sinking 
-\change_deleted -2100369821 1614877438
-values
-\change_inserted -2100369821 1614877439
-rates
-\change_unchanged
- with a Beta-distribution (Fig.
+ We therefore chose to represent the sinking rates with a Beta-distribution
+ (Fig.
  S
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1487,11 +1404,7 @@ literal "false"
 \begin_inset Formula $\frac{\ensuremath{1}}{m}\Leftrightarrow m=\frac{1}{L_{mean}}$
 \end_inset
 
-
-\change_inserted -2100369821 1614877514
- 
-\change_unchanged
-where 
+ where 
 \begin_inset Formula $L_{mean}$
 \end_inset
 
@@ -1504,21 +1417,8 @@ where
 \begin_inset Formula $p(L>l)=e^{-ml}.$
 \end_inset
 
-
-\change_inserted -2100369821 1614877539
- 
-\change_deleted -2100369821 1614877565
-With maximum values, w
-\change_inserted -2100369821 1614877565
-W
-\change_unchanged
-e can arbitrarily choose that for 
-\change_deleted -2100369821 1614877579
-these values
-\change_inserted -2100369821 1614877688
-the older cysts (i.e., the ones buried the deepest),
-\change_unchanged
- 
+ We can arbitrarily choose that for the older cysts (i.e., the ones buried
+ the deepest), 
 \family roman
 \series medium
 \shape up
@@ -1560,39 +1460,21 @@ the older cysts (i.e., the ones buried the deepest),
 As we highlight in the main text, burial is a very important process that
  controls the availability of cysts, conditional to their survival in the
  sediment.
- However, burial rate 
-\change_deleted -2100369821 1614877728
-will be
-\change_inserted -2100369821 1614877728
-is
-\change_unchanged
- almost entirely 
-\change_deleted -2100369821 1614877733
-context-
-\change_unchanged
-dependent on the local sedimentation and no generally applicable literature
- could be found.
+ However, burial rate is almost entirely dependent on the local sedimentation
+ and no generally applicable literature could be found.
  
-\change_inserted -2100369821 1615214297
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615214296
 Burial depends on the hydrodynamics of the site, but also on biotic processes
  (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
  activities (e.g., jet skiing).
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
- 
-\change_unchanged
-We varied it between 0.001 and 0.1 per day.
+ We varied it between 0.001 and 0.1 per day.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1662,19 +1544,13 @@ literal "false"
 Finally, it should be noted that cyst burial, sinking rate and resuspension
  are all highly contingent upon the local hydrodynamics and therefore represent
  intermingled processes.
-\change_inserted -2100369821 1615215468
-
 \end_layout
 
 \begin_layout Section
-
-\change_inserted -2100369821 1615215468
 Phytoplankton taxa at the calibration site
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1615215468
 \begin_inset Float table
 placement H
 wide false
@@ -1683,8 +1559,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-
-\change_inserted -2100369821 1615215468
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="2">
 <features tabularvalignment="middle">
@@ -1696,8 +1570,6 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -2100369821 1615215468
-
 \series bold
 Code
 \end_layout
@@ -1708,8 +1580,6 @@ Code
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \series bold
 Taxa
@@ -1723,8 +1593,6 @@ Taxa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 CHA
 \end_layout
 
@@ -1734,8 +1602,6 @@ CHA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Chaetoceros
@@ -1749,8 +1615,6 @@ Chaetoceros
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 DIT
 \end_layout
 
@@ -1760,8 +1624,6 @@ DIT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Ditylum
@@ -1775,8 +1637,6 @@ Ditylum
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 GUI
 \end_layout
 
@@ -1786,8 +1646,6 @@ GUI
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Guinardia
@@ -1801,8 +1659,6 @@ Guinardia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 LEP
 \end_layout
 
@@ -1812,8 +1668,6 @@ LEP
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Leptocylindrus
@@ -1827,8 +1681,6 @@ Leptocylindrus
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 NIT
 \end_layout
 
@@ -1838,8 +1690,6 @@ NIT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Nitzschia+Hantzschia
@@ -1853,8 +1703,6 @@ Nitzschia+Hantzschia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 PLE
 \end_layout
 
@@ -1864,8 +1712,6 @@ PLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Pleurosigma+Gyrosigma
@@ -1879,8 +1725,6 @@ Pleurosigma+Gyrosigma
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 PRO
 \end_layout
 
@@ -1890,8 +1734,6 @@ PRO
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Prorocentrum
@@ -1905,8 +1747,6 @@ Prorocentrum
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 PRP
 \end_layout
 
@@ -1916,8 +1756,6 @@ PRP
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Protoperidinium+Archaeperidinium+Peridinium
@@ -1931,8 +1769,6 @@ Protoperidinium+Archaeperidinium+Peridinium
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 PSE
 \end_layout
 
@@ -1942,8 +1778,6 @@ PSE
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Pseudo-nitzschia
@@ -1957,8 +1791,6 @@ Pseudo-nitzschia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 SKE
 \end_layout
 
@@ -1968,8 +1800,6 @@ SKE
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Skeletonema
@@ -1983,8 +1813,6 @@ Skeletonema
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 THP
 \end_layout
 
@@ -1994,8 +1822,6 @@ THP
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 
 \shape italic
 Thalassiosira+Porosira
@@ -2012,13 +1838,9 @@ Thalassiosira+Porosira
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615215468
 Name and composition of the phytoplanktonic groups used in main text
 \begin_inset CommandInset label
 LatexCommand label
@@ -2026,6 +1848,19 @@ name "tab:Group_definition"
 
 \end_inset
 
+
+\change_inserted -666822487 1615219798
+, see 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+ for more information on these taxa.
+ 
+\change_unchanged
 
 \end_layout
 
@@ -2140,11 +1975,7 @@ When intraspecific interaction strengths do not change, reducing the values
  the inverse of the Simpson index.
  Increasing facilitation finally destabilizes the ratio of intra- to interspecif
 ic interaction strengths, which destabilizes the community and leads to
- the observed diversity decrease in
-\change_inserted -2100369821 1614877961
- the
-\change_unchanged
- absence of a cyst bank.
+ the observed diversity decrease in the absence of a cyst bank.
 \end_layout
 
 \begin_layout Section
@@ -2194,14 +2025,10 @@ Probability of survival in the absence of a cyst bank as a function of the
 \end_layout
 
 \begin_layout Standard
-Extinction in
-\change_inserted -2100369821 1614878022
- the
-\change_unchanged
- absence of the cyst bank can be explained by both a low growth rate at
- low density and average temperature (affecting specialists with a narrow
- niche) and a low growth rate at average density despite being at optimal
- temperature (i.e., species strongly affected by interactions).
+Extinction in the absence of the cyst bank can be explained by both a low
+ growth rate at low density and average temperature (affecting specialists
+ with a narrow niche) and a low growth rate at average density despite being
+ at optimal temperature (i.e., species strongly affected by interactions).
 \end_layout
 
 \begin_layout Standard

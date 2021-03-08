@@ -226,29 +226,21 @@ literal "false"
  of coexistence 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "loreau_competitive_1994,moll_competition_2008,fujiwara_coexistence_2011,chu_large_2015"
+before "e.g."
+key "moll_competition_2008,fujiwara_coexistence_2011"
 literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1615212766
-[remove Loreau and Ebenhöh + Fujiwara?]
-\change_unchanged
 , and so does the response of life history traits to variation in the environmen
 t 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "chesson_community_1988,rees_long-term_2001,huang_contribution_2016"
+key "chesson_community_1988,huang_contribution_2016"
 literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1615197568
- [remove Rees et al.
- 2001]
-\change_unchanged
 .
 \end_layout
 
@@ -263,19 +255,15 @@ literal "false"
 
 \end_inset
 
- 
-\change_deleted -2100369821 1615212818
-though many consider only a single life-stage 
+ though many consider only a single life-stage 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see, among others,"
-key "ellner_alternate_1987,levine_effects_2004,martorell_testing_2014,adler_competition_2018"
+key "ellner_alternate_1987,levine_effects_2004,martorell_testing_2014"
 literal "false"
 
 \end_inset
 
-
-\change_unchanged
 .
  When considering at least two stages, seeds/seedlings and adults, several
  mechanisms that can contribute to long-term coexistence in spatially and/or
@@ -302,15 +290,11 @@ literal "false"
  interspecific competition 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "chesson1986environmental,caceres_temporal_1997,ellner_how_2016"
+key "chesson1986environmental"
 literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1615197601
-[remove Caceres 1997 and Ellner]
-\change_unchanged
 .
  The storage effect has often been discussed in the presence of a seed bank
  
@@ -476,35 +460,12 @@ literal "false"
 , as the distance to the sea bottom is smaller, which favours recolonization
  from the sea bottom, something that is impossible in the deep ocean.
  Moreover, `horizontal' exchanges between oceanic and coastal pelagic phytoplank
-tonic communities are usually observed.
- 
-\change_deleted -2100369821 1615213677
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "smayda_turbulence_2002"
-literal "false"
-
-\end_inset
-
- coined the term 
-\begin_inset Quotes eld
-\end_inset
-
-pelagic seed bank
-\begin_inset Quotes erd
-\end_inset
-
- to characterize t
-\change_inserted -2100369821 1615213677
-T
+tonic communities are usually observed, 
+\change_inserted -666822487 1615216329
+a flow from 
 \change_unchanged
-he contribution of the ocean to coastal communities
-\change_deleted -2100369821 1615213683
-.
- This
-\change_unchanged
- has been noticed for dinoflagellates especially (
+the ocean to coastal communities has been noticed for dinoflagellates especially
+ (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "tester_gymnodinium_1997,batifoulier_distribution_2013"
@@ -525,8 +486,6 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted -2100369821 1615198153
  or even thousands of years 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -535,9 +494,7 @@ literal "false"
 
 \end_inset
 
- 
-\change_unchanged
-of dormancy.
+ of dormancy.
  Therefore, we consider in this study three interlinked compartements: the
  coastal pelagic environment, the seed (cyst) bank, and the pelagic open
  ocean.
@@ -1004,26 +961,6 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted -2100369821 1615212030
-, as an update of the formula by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "eppley_temperature_1972"
-literal "false"
-
-\end_inset
-
- used by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "scranton_coexistence_2016"
-literal "false"
-
-\end_inset
-
-
-\change_unchanged
 .
  This maximum daily intrinsic growth rate is weighted by the daylength 
 \begin_inset Formula $d$
@@ -2149,11 +2086,8 @@ literal "false"
 \end_inset
 
  (in the absence of nutrients, or because of viral charge).
- A maximum value of 0.2 is fixed for the model (see Section 
-\change_deleted -2100369821 1615215777
-S
-\change_unchanged
-3 of the SI for more details).
+ A maximum value of 0.2 is fixed for the model (see Section 3 of the SI for
+ more details).
 \end_layout
 
 \begin_layout Paragraph*
@@ -2162,9 +2096,8 @@ Sinking rate
 
 \begin_layout Standard
 Phytoplanktonic particles have a higher density than water and cannot swim
- to prevent sinking
-\change_deleted -2100369821 1615214059
- (although they are able to regulate their buoyancy, 
+ to prevent sinking (although they are able to regulate their buoyancy,
+ 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "reynolds2006ecology"
@@ -2172,12 +2105,14 @@ literal "false"
 
 \end_inset
 
-)
-\change_unchanged
-.
+).
  Sinking is mostly affected by hydrodynamics, but at the species-level,
  size, shape, density-regulation and colony-formation capabilities are key
- determinants of the particle floatation.
+ determinants of the particle flo
+\change_deleted -666822487 1615219331
+a
+\change_unchanged
+tation.
  In this model, the sinking rate of each taxon is drawn from a Beta distribution
  with a mean value of 9%, and a maximum around 30%, that is 
 \begin_inset Formula $s\backsim0.3\beta(0.55,1.25)$
@@ -2223,17 +2158,8 @@ Exchange rate
 \end_layout
 
 \begin_layout Standard
-The exchange rate between the ocean and the coast depends on 
-\change_deleted -2100369821 1615214161
-the
-\change_inserted -2100369821 1615214161
-its
-\change_unchanged
- shape and location
-\change_deleted -2100369821 1615214166
- of the coast (estuary, cape, ...)
-\change_unchanged
-.
+The exchange rate between the ocean and the coast depends on the shape and
+ location of the coast (estuary, cape, ...).
  Our calibration site is located at an inlet.
  The flow at the inlet leads to a renewal time of the coastal area water
  evaluated between 1 and 2.5 days 
@@ -2244,14 +2170,7 @@ literal "false"
 
 \end_inset
 
-, 
-\change_deleted -2100369821 1615214184
-which corresponds to
-\change_inserted -2100369821 1615214184
-i.e.
-
-\change_unchanged
- a daily exchange rate between 40 and 100 %.
+, which corresponds to a daily exchange rate between 40 and 100 %.
 \end_layout
 
 \begin_layout Paragraph*
@@ -2285,24 +2204,12 @@ literal "false"
 \end_inset
 
  are given in Section 3 of the SI).
- However, cyst burial by sedimentation is the prevailing phenomenon
-\change_deleted -2100369821 1615214365
-.
- Indeed,
-\change_inserted -2100369821 1615214365
-:
-\change_unchanged
- once cysts have been buried, they are not accessible for resuspension even
- if they could have germinated from an accessible location.
- Burial depends on the hydrodynamics of the site, but also on biotic 
-\change_deleted -2100369821 1615214312
-processes (i.e., bioturbation)
-\change_unchanged
- and anthropogenic disturbances
-\change_deleted -2100369821 1615214318
- such as fishing or leisure activities (e.g., jet skiing)
-\change_unchanged
-.
+ However, cyst burial by sedimentation is the prevailing phenomenon.
+ Indeed, once cysts have been buried, they are not accessible for resuspension
+ even if they could have germinated from an accessible location.
+ Burial depends on the hydrodynamics of the site, but also on biotic processes
+ (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
+ activities (e.g., jet skiing).
  This parameter is thus heavily dependent on the environmental context and
  varies here between 0.001 and 0.1 per day.
 \end_layout
@@ -2340,11 +2247,7 @@ literal "false"
  a set of credible values has been tested (1%, 0.1%, 0.01%).
  Similarly, resuspension values are seldom computed for phytoplanktonic
  cells, but models for inorganic particles can be used (see Section S3 of
- the SI
-\change_deleted -2100369821 1615214420
- for literature and details
-\change_unchanged
-).
+ the SI for literature and details).
  In this paper, we explore values between 
 \begin_inset Formula $10^{-5}$
 \end_inset
@@ -2597,11 +2500,8 @@ literal "false"
 
 .
  We aim to approximate the population dynamics of the 11 most abundant and
- most frequent groups of genera (taxa
-\change_inserted -2100369821 1615215832
-, defined in Section 4 of the SI
-\change_unchanged
-) focusing on the amplitude of fluctuations and their timing (phenology).
+ most frequent groups of genera (taxa, defined in Section 4 of the SI) focusing
+ on the amplitude of fluctuations and their timing (phenology).
  The estimation of the parameters characterizing each taxon (
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
@@ -2681,14 +2581,8 @@ ons on coexistence, only one type of interactions was subject to this change
  were multiplied by the factor and one where positive (respectively, negative)
  interactions were divided by the same factor.
  Here, both intraspecific and interspecific interactions were changed; we
- present in Section 
-\change_deleted -2100369821 1615215697
-5
-\change_inserted -2100369821 1615215697
-6
-\change_unchanged
- of the SI additional simulations with a change in interspecific interactions
- only.
+ present in Section 6 of the SI additional simulations with a change in
+ interspecific interactions only.
 \end_layout
 
 \begin_layout Standard
@@ -2712,15 +2606,10 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In both scenarios, simulations were r
-\change_deleted -2100369821 1615131267
-a
-\change_inserted -2100369821 1615131267
-u
-\change_unchanged
-n for 30 years for both population growth models, with and without a cyst
- compartment, and only the last 2 years were considered for evaluating effects
- of change in parameters and in temperature.
+In both scenarios, simulations were run for 30 years for both population
+ growth models, with and without a cyst compartment, and only the last 2
+ years were considered for evaluating effects of change in parameters and
+ in temperature.
 \end_layout
 
 \begin_layout Section*
@@ -2782,7 +2671,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../output/modelv1.1/time_series_simulation_per_cluster_with_temperature.pdf
-	height 95theight%
+	height 80theight%
 
 \end_inset
 
@@ -3215,7 +3104,7 @@ literal "false"
 \begin_layout Standard
 The variance of the temperature did not affect richness nor total abundance
  of communities with a cyst bank.
- This is also true without a cyst bank.
+ This was also true without a cyst bank.
  The presence of the cyst bank did increase total abundance though.
 \end_layout
 
@@ -3347,30 +3236,22 @@ literal "false"
  microbiology literature 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "locey_synthesizing_2010,lennon_microbial_2011,wisnoski_stabilizing_2020"
+key "locey_synthesizing_2010,jones_dormancy_2010"
 literal "false"
 
 \end_inset
 
-
-\change_inserted -2100369821 1615197625
- [remove Wisnoski & Lennon 2020]
-\change_unchanged
 .
  Processes behind diversity maintenance by the seed stage include the storage
  effect 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "bonis_seed_1995,facelli_differences_2005,angert_functional_2009"
+key "facelli_differences_2005,angert_functional_2009,bonis_seed_1995"
 literal "false"
 
 \end_inset
 
- 
-\change_inserted -2100369821 1615197825
-[remove Bonis] 
-\change_unchanged
-but are not limited to it.
+ but are not limited to it.
  This is because a long dormancy alone can allow future recolonization of
  a community where counts of pelagic cells alone would suggest that some
  species have gone extinct.
@@ -3526,16 +3407,12 @@ More research on dormant stages may be needed to parameterize truly predictive
  These parameters are all linked to hydrodynamics 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "yamamoto_modelling_2002,yamamoto_modelling_2003,yniguez_investigating_2012"
+key "yamamoto_modelling_2002,yniguez_investigating_2012"
 literal "false"
 
 \end_inset
 
- 
-\change_inserted -2100369821 1615197554
-[remove Yamamoto and Seike 2003] 
-\change_unchanged
-and may locally vary.
+ and may locally vary.
  Sinking rates show an interesting conflict between short- and long-term
  survival: in coastal areas, a fraction of sinking cells contribute to the
  cyst bank, increasing the odds of species long-term survival at the cost
@@ -3594,15 +3471,7 @@ Acknowledgements
 
 \begin_layout Standard
 We thank Nathan Wisnoski and Frank Jabot for useful feedback.
- CP was supported by a PhD grant from the French minist
-\change_deleted -666822487 1615192986
-er
-\change_inserted -666822487 1615192988
-ry
-\change_unchanged
- of Research.
-\change_inserted -666822487 1614865732
-
+ CP was supported by a PhD grant from the French ministry of Research.
 \end_layout
 
 \begin_layout Standard
