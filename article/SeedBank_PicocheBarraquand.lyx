@@ -231,6 +231,10 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1615212766
+[remove Loreau and Ebenhöh + Fujiwara?]
+\change_unchanged
 , and so does the response of life history traits to variation in the environmen
 t 
 \begin_inset CommandInset citation
@@ -240,6 +244,11 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1615197568
+ [remove Rees et al.
+ 2001]
+\change_unchanged
 .
 \end_layout
 
@@ -254,7 +263,9 @@ literal "false"
 
 \end_inset
 
- though many consider only a single life-stage 
+ 
+\change_deleted -2100369821 1615212818
+though many consider only a single life-stage 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see, among others,"
@@ -263,6 +274,8 @@ literal "false"
 
 \end_inset
 
+
+\change_unchanged
 .
  When considering at least two stages, seeds/seedlings and adults, several
  mechanisms that can contribute to long-term coexistence in spatially and/or
@@ -294,6 +307,10 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1615197601
+[remove Caceres 1997 and Ellner]
+\change_unchanged
 .
  The storage effect has often been discussed in the presence of a seed bank
  
@@ -461,6 +478,8 @@ literal "false"
  Moreover, `horizontal' exchanges between oceanic and coastal pelagic phytoplank
 tonic communities are usually observed.
  
+\change_deleted -2100369821 1615213677
+
 \begin_inset CommandInset citation
 LatexCommand citet
 key "smayda_turbulence_2002"
@@ -476,8 +495,16 @@ pelagic seed bank
 \begin_inset Quotes erd
 \end_inset
 
- to characterize the contribution of the ocean to coastal communities.
- This has been noticed for dinoflagellates especially (
+ to characterize t
+\change_inserted -2100369821 1615213677
+T
+\change_unchanged
+he contribution of the ocean to coastal communities
+\change_deleted -2100369821 1615213683
+.
+ This
+\change_unchanged
+ has been noticed for dinoflagellates especially (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "tester_gymnodinium_1997,batifoulier_distribution_2013"
@@ -498,6 +525,8 @@ literal "false"
 
 \end_inset
 
+
+\change_deleted -2100369821 1615198153
  or even thousands of years 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -506,7 +535,9 @@ literal "false"
 
 \end_inset
 
- of dormancy.
+ 
+\change_unchanged
+of dormancy.
  Therefore, we consider in this study three interlinked compartements: the
  coastal pelagic environment, the seed (cyst) bank, and the pelagic open
  ocean.
@@ -711,11 +742,7 @@ literal "false"
 
 \end_inset
 
- and will hereafter be called taxa
-\change_inserted -2100369821 1615130313
- (defined in Section 1 of the SI)
-\change_unchanged
-.
+ and will hereafter be called taxa.
  Parameters and state variables are defined in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -803,13 +830,7 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted -666822487 1615192897
-, where
-\change_inserted -666822487 1615192897
-:
-\change_unchanged
- populations grow to infinity because there is no saturation of beneficial
+: populations grow to infinity because there is no saturation of beneficial
  effects when density increases.
  In model I, we therefore forbid the realized growth rate to go above the
  intrinsic growth rate (its theoretical limit), by setting a minimum value
@@ -833,15 +854,9 @@ noprefix "false"
 
 \end_inset
 
-)
-\change_deleted -666822487 1615192918
-, which
-\change_inserted -666822487 1615192919
-.
- Model II
-\change_unchanged
- provides a more process-orientated solution to the issue of excessive mutual
- benefaction (but to the cost of added parameters).
+).
+ Model II provides a more process-orientated solution to the issue of excessive
+ mutual benefaction (but to the cost of added parameters).
  
 \begin_inset Note Note
 status collapsed
@@ -989,6 +1004,8 @@ literal "false"
 
 \end_inset
 
+
+\change_deleted -2100369821 1615212030
 , as an update of the formula by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1005,6 +1022,8 @@ literal "false"
 
 \end_inset
 
+
+\change_unchanged
 .
  This maximum daily intrinsic growth rate is weighted by the daylength 
 \begin_inset Formula $d$
@@ -1025,13 +1044,7 @@ literal "false"
 \end_inset
 
 , which depends on the niche width.
- Parameterisation is further detailed in Section S
-\change_deleted -2100369821 1615130294
-1
-\change_inserted -2100369821 1615130294
-2
-\change_unchanged
- of the SI.
+ Parameterisation is further detailed in Section S1 of the SI.
 \end_layout
 
 \begin_layout Standard
@@ -1140,13 +1153,7 @@ literal "false"
 \color inherit
 How to shift from MAR- to BH-interaction matrices in model I, and to use
  the parameter estimates of model I to specify parameters in model II is
- described in Section S
-\change_deleted -2100369821 1615130483
-2
-\change_inserted -2100369821 1615130483
-3
-\change_unchanged
- of the SI.
+ described in Section S2 of the SI.
 \end_layout
 
 \begin_layout Standard
@@ -2142,13 +2149,11 @@ literal "false"
 \end_inset
 
  (in the absence of nutrients, or because of viral charge).
- A maximum value of 0.2 is fixed for the model (see Section S
-\change_deleted -2100369821 1615130794
-3
-\change_inserted -2100369821 1615130794
-4
+ A maximum value of 0.2 is fixed for the model (see Section 
+\change_deleted -2100369821 1615215777
+S
 \change_unchanged
- of the SI for more details).
+3 of the SI for more details).
 \end_layout
 
 \begin_layout Paragraph*
@@ -2157,8 +2162,9 @@ Sinking rate
 
 \begin_layout Standard
 Phytoplanktonic particles have a higher density than water and cannot swim
- to prevent sinking (although they are able to regulate their buoyancy,
- 
+ to prevent sinking
+\change_deleted -2100369821 1615214059
+ (although they are able to regulate their buoyancy, 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "reynolds2006ecology"
@@ -2166,7 +2172,9 @@ literal "false"
 
 \end_inset
 
-).
+)
+\change_unchanged
+.
  Sinking is mostly affected by hydrodynamics, but at the species-level,
  size, shape, density-regulation and colony-formation capabilities are key
  determinants of the particle floatation.
@@ -2215,8 +2223,17 @@ Exchange rate
 \end_layout
 
 \begin_layout Standard
-The exchange rate between the ocean and the coast depends on the shape and
- location of the coast (estuary, cape, ...).
+The exchange rate between the ocean and the coast depends on 
+\change_deleted -2100369821 1615214161
+the
+\change_inserted -2100369821 1615214161
+its
+\change_unchanged
+ shape and location
+\change_deleted -2100369821 1615214166
+ of the coast (estuary, cape, ...)
+\change_unchanged
+.
  Our calibration site is located at an inlet.
  The flow at the inlet leads to a renewal time of the coastal area water
  evaluated between 1 and 2.5 days 
@@ -2227,7 +2244,14 @@ literal "false"
 
 \end_inset
 
-, which corresponds to a daily exchange rate between 40 and 100 %.
+, 
+\change_deleted -2100369821 1615214184
+which corresponds to
+\change_inserted -2100369821 1615214184
+i.e.
+
+\change_unchanged
+ a daily exchange rate between 40 and 100 %.
 \end_layout
 
 \begin_layout Paragraph*
@@ -2260,19 +2284,25 @@ literal "false"
 
 \end_inset
 
- are given in Section 
-\change_deleted -2100369821 1615130874
-3
-\change_inserted -2100369821 1615130874
-4
+ are given in Section 3 of the SI).
+ However, cyst burial by sedimentation is the prevailing phenomenon
+\change_deleted -2100369821 1615214365
+.
+ Indeed,
+\change_inserted -2100369821 1615214365
+:
 \change_unchanged
- of the SI).
- However, cyst burial by sedimentation is the prevailing phenomenon.
- Indeed, once cysts have been buried, they are not accessible for resuspension
- even if they could have germinated from an accessible location.
- Burial depends on the hydrodynamics of the site, but also on biotic processes
- (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
- activities (e.g., jet skiing).
+ once cysts have been buried, they are not accessible for resuspension even
+ if they could have germinated from an accessible location.
+ Burial depends on the hydrodynamics of the site, but also on biotic 
+\change_deleted -2100369821 1615214312
+processes (i.e., bioturbation)
+\change_unchanged
+ and anthropogenic disturbances
+\change_deleted -2100369821 1615214318
+ such as fishing or leisure activities (e.g., jet skiing)
+\change_unchanged
+.
  This parameter is thus heavily dependent on the environmental context and
  varies here between 0.001 and 0.1 per day.
 \end_layout
@@ -2309,13 +2339,12 @@ literal "false"
  As actual rates of germination are not easily deduced from the literature,
  a set of credible values has been tested (1%, 0.1%, 0.01%).
  Similarly, resuspension values are seldom computed for phytoplanktonic
- cells, but models for inorganic particles can be used (see Section S
-\change_deleted -2100369821 1615130943
-3
-\change_inserted -2100369821 1615130943
-4
+ cells, but models for inorganic particles can be used (see Section S3 of
+ the SI
+\change_deleted -2100369821 1615214420
+ for literature and details
 \change_unchanged
- of the SI for literature and details).
+).
  In this paper, we explore values between 
 \begin_inset Formula $10^{-5}$
 \end_inset
@@ -2336,14 +2365,8 @@ Parameter calibration
 
 \begin_layout Standard
 In addition to phenology parameters, whose estimation process is described
- in Section S
-\change_deleted -2100369821 1615130989
-1
-\change_inserted -2100369821 1615130989
-2
-\change_unchanged
- of the SI, the 49 non-zero interactions that form the community matrix
- of the model are calibrated from field data.
+ in Section S1 of the SI, the 49 non-zero interactions that form the community
+ matrix of the model are calibrated from field data.
  We used initial interaction estimates from our previous time series modelling
  study 
 \begin_inset CommandInset citation
@@ -2574,8 +2597,11 @@ literal "false"
 
 .
  We aim to approximate the population dynamics of the 11 most abundant and
- most frequent groups of genera (taxa) focusing on the amplitude of fluctuations
- and their timing (phenology).
+ most frequent groups of genera (taxa
+\change_inserted -2100369821 1615215832
+, defined in Section 4 of the SI
+\change_unchanged
+) focusing on the amplitude of fluctuations and their timing (phenology).
  The estimation of the parameters characterizing each taxon (
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
@@ -2584,13 +2610,7 @@ literal "false"
 \begin_inset Formula $b_{i}$
 \end_inset
 
-), is described in Section 
-\change_deleted -2100369821 1615131174
-1
-\change_inserted -2100369821 1615131174
-2
-\change_unchanged
- of the SI.
+), is described in Section 1 of the SI.
  The interactions between model taxa have already been inferred from a MAR
  model 
 \begin_inset CommandInset citation
@@ -2661,8 +2681,14 @@ ons on coexistence, only one type of interactions was subject to this change
  were multiplied by the factor and one where positive (respectively, negative)
  interactions were divided by the same factor.
  Here, both intraspecific and interspecific interactions were changed; we
- present in Section 5 of the SI additional simulations with a change in
- interspecific interactions only.
+ present in Section 
+\change_deleted -2100369821 1615215697
+5
+\change_inserted -2100369821 1615215697
+6
+\change_unchanged
+ of the SI additional simulations with a change in interspecific interactions
+ only.
 \end_layout
 
 \begin_layout Standard
@@ -3326,6 +3352,10 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1615197625
+ [remove Wisnoski & Lennon 2020]
+\change_unchanged
 .
  Processes behind diversity maintenance by the seed stage include the storage
  effect 
@@ -3336,7 +3366,11 @@ literal "false"
 
 \end_inset
 
- but are not limited to it.
+ 
+\change_inserted -2100369821 1615197825
+[remove Bonis] 
+\change_unchanged
+but are not limited to it.
  This is because a long dormancy alone can allow future recolonization of
  a community where counts of pelagic cells alone would suggest that some
  species have gone extinct.
@@ -3497,7 +3531,11 @@ literal "false"
 
 \end_inset
 
- and may locally vary.
+ 
+\change_inserted -2100369821 1615197554
+[remove Yamamoto and Seike 2003] 
+\change_unchanged
+and may locally vary.
  Sinking rates show an interesting conflict between short- and long-term
  survival: in coastal areas, a fraction of sinking cells contribute to the
  cyst bank, increasing the odds of species long-term survival at the cost
