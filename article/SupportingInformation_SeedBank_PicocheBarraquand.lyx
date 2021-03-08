@@ -82,6 +82,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \author -666822487 "frederic"
 \end_header
 
@@ -291,14 +292,22 @@ literal "false"
 
 \begin_layout Standard
 The relationship between temperature and growth rate is then 
-\begin_inset Formula $E(T)\thinspace=\thinspace0.81\text{e}^{0.0631T_{°C}}$
+\begin_inset Formula $E(T)\thinspace=\thinspace0.81e^{0.0631(T-273.15)}$
 \end_inset
 
-, with 
+, 
+\change_deleted -2100369821 1615225353
+with
+\change_inserted -2100369821 1615225386
+where T, in Kelvin in the model, is converted to
+\change_deleted -2100369821 1615225388
+ 
 \begin_inset Formula $T_{°C}$
 \end_inset
 
- in Celsius degrees.
+ in
+\change_unchanged
+ Celsius degrees.
  In this case, growth rates vary between 0.81 and 3.9 day
 \begin_inset Formula $^{-1}$
 \end_inset
@@ -408,7 +417,7 @@ The niche part of the growth rate
 \end_inset
 
  is mainly defined by two parameters: the thermal optimum 
-\begin_inset Formula $T_{K,i}^{opt}$
+\begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
  in Kelvin and a proxy of the niche width 
@@ -433,8 +442,8 @@ noprefix "false"
 \begin_inset Formula 
 \begin{equation}
 f_{i}(T)=\begin{cases}
-\exp(-|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}), & T_{K}\leq T_{K,i}^{opt}\\
-\exp(-5|T_{K}-T_{K,i}^{opt}|^{3}/b_{i}), & T>T_{K,i}^{opt}
+\exp(-|T-T_{i}^{opt}|^{3}/b_{i}), & T\leq T_{i}^{opt}\\
+\exp(-5|T-T_{i}^{opt}|^{3}/b_{i}), & T>T_{i}^{opt}
 \end{cases}\label{eq:niche_part}
 \end{equation}
 
@@ -450,7 +459,7 @@ The annual dynamics of phytoplanktonic organisms is usually characterized
 
 \begin_layout Standard
 We base our estimates of 
-\begin_inset Formula $T_{K,i}^{opt}$
+\begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
  and 
