@@ -416,7 +416,13 @@ The niche part of the growth rate
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- is mainly defined by two parameters: the thermal optimum 
+ is mainly defined by two parameters
+\change_inserted -2100369821 1615293471
+ which drive the phenology of the taxon: 
+\change_deleted -2100369821 1615293453
+:
+\change_unchanged
+ the thermal optimum 
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
@@ -424,7 +430,21 @@ The niche part of the growth rate
 \begin_inset Formula $b_{i}$
 \end_inset
 
-, which drives the phenology of the taxon (eq.
+
+\change_inserted -2100369821 1615293490
+ in Kelvin
+\begin_inset Formula $^{3}$
+\end_inset
+
+
+\change_deleted -2100369821 1615293461
+,
+\change_unchanged
+ 
+\change_deleted -2100369821 1615293447
+which drives the phenology of the taxon 
+\change_unchanged
+(eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -629,7 +649,11 @@ noprefix "false"
 \uwave off
 \noun off
 \color none
- the dotted line correspond to 
+ the dotted line correspond
+\change_inserted -2100369821 1615293716
+s
+\change_unchanged
+ to 
 \begin_inset Formula $E(T)$
 \end_inset
 
@@ -771,7 +795,15 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-where 
+where
+\change_inserted -2100369821 1615293812
+ 
+\begin_inset Formula $S$
+\end_inset
+
+ is the number of taxa,
+\change_unchanged
+ 
 \begin_inset Formula $\mathbf{n}_{\ensuremath{t}}$
 \end_inset
 
@@ -791,11 +823,23 @@ where
 \begin_inset Formula $b_{ij}$
 \end_inset
 
- (the effect of species 
+ (the effect of 
+\change_deleted -2100369821 1615293816
+species
+\change_inserted -2100369821 1615293816
+taxon
+\change_unchanged
+ 
 \begin_inset Formula $j$
 \end_inset
 
- on species 
+ on 
+\change_deleted -2100369821 1615293818
+species
+\change_inserted -2100369821 1615293819
+taxon
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1102,7 +1146,7 @@ There is no unique solution for making a correspondence between the
 \end_inset
 
  as the average sum of all species effects 
-\begin_inset Formula $\alpha_{ij}N_{i}$
+\begin_inset Formula $\alpha_{ij}N_{j}$
 \end_inset
 
  exerted on a given species if all interactions were competitive (eq.
@@ -1455,11 +1499,11 @@ literal "false"
 \end_inset
 
  varies between 
-\begin_inset Formula $10^{-5}\text{\text{d}}^{-1}$
+\begin_inset Formula $10^{-5}\text{ \text{day}}^{-1}$
 \end_inset
 
  and 
-\begin_inset Formula $10^{-4}\text{\text{d}}^{-1}$
+\begin_inset Formula $10^{-4}\text{\text{ day}}^{-1}$
 \end_inset
 
 .
@@ -1551,7 +1595,12 @@ literal "false"
 
 \begin_layout Standard
 Finally, it should be noted that cyst burial, sinking rate and resuspension
- are all highly contingent upon the local hydrodynamics and therefore represent
+ are all highly contingent upon the local hydrodynamics and therefore 
+\change_deleted -2100369821 1615294646
+represent
+\change_inserted -2100369821 1615294646
+are
+\change_unchanged
  intermingled processes.
 \end_layout
 

@@ -1747,6 +1747,10 @@ Sinking rate of taxon
 \end_inset
 
 
+\change_inserted -2100369821 1615294829
+ cyst
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2222,8 +2226,11 @@ literal "false"
 a
 \change_unchanged
 tation.
- In this model, the sinking rate of each taxon is drawn from a Beta distribution
- with a mean value of 9%, and a maximum
+ In this model, the sinking rate of each taxon
+\change_inserted -2100369821 1615294865
+ cysts
+\change_unchanged
+ is drawn from a Beta distribution with a mean value of 9%, and a maximum
 \change_inserted -2100369821 1615289057
  (S_max)
 \change_unchanged
@@ -3109,9 +3116,9 @@ Sensitivity of the model to variation in parameters, measured as the difference
  decimal logarithm of the ratio between maximum and minimum abundance (b)
  of the coastal phytoplanktonic community.
  
-\change_inserted -2100369821 1615290575
-S_max is the maximum sinking rate and morta is the mortality of vegetative
- cells 
+\change_inserted -2100369821 1615294896
+S_max is the maximum sinking rate of cysts and morta is the mortality of
+ vegetative cells 
 \begin_inset Formula $l$
 \end_inset
 
