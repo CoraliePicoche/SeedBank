@@ -158,18 +158,34 @@ with
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- the niche part of the model.
- This section provides detailed information regarding the growth function
+ the 
+\change_deleted -666822487 1615885482
+niche part of the model
+\change_inserted -666822487 1615885518
+taxon-specific response
+\change_unchanged
+.
+ This section provides detailed information regarding 
+\change_deleted -666822487 1615885532
+the growth function
+\change_unchanged
  
 \begin_inset Formula $E(T)$
 \end_inset
 
-, the taxon-specific functions 
+,
+\change_deleted -666822487 1615885534
+ the taxon-specific functions
+\change_unchanged
+ 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- that characterize species' differential responses to temperature variations,
- and species interaction estimates that affect the realized growth rate
+
+\change_deleted -666822487 1615885558
+ that characterize species' differential responses to temperature variations
+\change_unchanged
+, and species interaction estimates that affect the realized growth rate
  of phytoplanktonic organisms in a community.
 \end_layout
 
@@ -247,7 +263,11 @@ noprefix "false"
 
 \end_inset
 
- a, between 0.05 and 0.8, in place of values between 0.2 and 3 day
+
+\change_deleted -666822487 1615885604
+ 
+\change_unchanged
+a, between 0.05 and 0.8, in place of values between 0.2 and 3 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
@@ -298,24 +318,57 @@ The relationship between temperature and growth rate is then
 , 
 \change_deleted -2100369821 1615225353
 with
+\change_deleted -666822487 1615885629
+where
+\change_inserted -666822487 1615885629
+with
 \change_inserted -2100369821 1615225386
-where T, in Kelvin in the model, is converted to
+ T
+\change_deleted -666822487 1615885633
+,
+\change_inserted -2100369821 1615225386
+ in Kelvin
+\change_inserted -666822487 1615885658
+ degrees
+\change_deleted -666822487 1615885641
+ in the model, is converted to
 \change_deleted -2100369821 1615225388
  
 \begin_inset Formula $T_{°C}$
 \end_inset
 
  in
+\change_deleted -666822487 1615885641
+ Celsius degrees
 \change_unchanged
- Celsius degrees.
+.
  In this case, growth rates vary between 0.81 and 3.9 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
  for temperatures between 0 and 25°C, in line with previous observations.
  However, these daily growth rates need to be proportional to the daylength
- as no growth occurs at night: we therefore halve the Bissinger value in
- our models.
+ as no growth occurs at night: we therefore 
+\change_deleted -666822487 1615885700
+halve the
+\change_inserted -666822487 1615885701
+divide
+\change_unchanged
+ 
+\change_deleted -666822487 1615885691
+Bissinger value
+\change_inserted -666822487 1615885695
+
+\begin_inset Formula $E(T)$
+\end_inset
+
+
+\change_unchanged
+ 
+\change_inserted -666822487 1615885705
+by two 
+\change_unchanged
+in our models.
 \end_layout
 
 \begin_layout Standard
@@ -426,13 +479,38 @@ The niche part of the growth rate
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
- in Kelvin and a proxy of the niche width 
+
+\change_deleted -666822487 1615885737
+ in Kelvin
+\change_inserted -666822487 1615885758
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1615885869
+You don't need to say this, especially as the degrees do not matter in a
+ difference, you said the model is in Kelvin for simpler notations, you
+ give values of T in Celsius in the text, period.
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ and a proxy of the niche width 
 \begin_inset Formula $b_{i}$
 \end_inset
 
 
 \change_inserted -2100369821 1615293490
- in Kelvin
+ 
+\change_deleted -666822487 1615885751
+in Kelvin
 \begin_inset Formula $^{3}$
 \end_inset
 
@@ -473,8 +551,17 @@ The annual dynamics of phytoplanktonic organisms is usually characterized
  by a blooming period and a lower concentration during the rest of the year.
  The bloom can be triggered by a combination of nutrient and light input,
  as well as a sufficient temperature.
- All parameters being more or less dependent on seasonality, it is reasonable
- to restrain this study to the effect of temperature.
+ All parameters being more or less 
+\change_deleted -666822487 1615885928
+dependent on seasonality
+\change_inserted -666822487 1615885933
+correlated to the seasonal rythm
+\change_unchanged
+, it is reasonable to restrain this study to the effect of 
+\change_inserted -666822487 1615885948
+one variable, 
+\change_unchanged
+temperature.
 \end_layout
 
 \begin_layout Standard
@@ -487,8 +574,18 @@ We base our estimates of
 \end_inset
 
  on field observations.
- For each taxon and each year, the beginning of the bloom is the date when
- the taxon abundance exceeds its median abundance over the year.
+ For each taxon and each year, 
+\change_inserted -666822487 1615885976
+we define 
+\change_unchanged
+the beginning of the bloom 
+\change_inserted -666822487 1615885979
+a
+\change_deleted -666822487 1615885979
+i
+\change_unchanged
+s the date when the taxon abundance exceeds its median abundance over the
+ year.
  The duration of the bloom is the number of days between the beginning and
  the date where abundance falls below the median value.
  Taxa are then separated into two groups.
@@ -678,9 +775,29 @@ name "fig:Growth_niche_metabolism"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -666822487 1615886092
 The shift of the maximum growth rate may lead to a distortion of the expected
  thermal niche of each taxon.
- We provide actual shapes of 
+ 
+\change_inserted -666822487 1615886095
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1615886105
+You say this more precisely above I think.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+We provide actual shapes of 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
@@ -795,15 +912,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-where
-\change_inserted -2100369821 1615293812
- 
+where 
 \begin_inset Formula $S$
 \end_inset
 
- is the number of taxa,
-\change_unchanged
- 
+ is the number of taxa, 
 \begin_inset Formula $\mathbf{n}_{\ensuremath{t}}$
 \end_inset
 
@@ -823,23 +936,11 @@ where
 \begin_inset Formula $b_{ij}$
 \end_inset
 
- (the effect of 
-\change_deleted -2100369821 1615293816
-species
-\change_inserted -2100369821 1615293816
-taxon
-\change_unchanged
- 
+ (the effect of taxon 
 \begin_inset Formula $j$
 \end_inset
 
- on 
-\change_deleted -2100369821 1615293818
-species
-\change_inserted -2100369821 1615293819
-taxon
-\change_unchanged
- 
+ on taxon 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1038,8 +1139,14 @@ literal "false"
 
 .
  We acknowledge the possibility of overyielding, i.e.
- an increase in growth due to the presence of other species, but the phenomenon
- seems quite rare for phytoplanktonic communities (see 
+ an increase in 
+\change_deleted -666822487 1615886192
+growth
+\change_inserted -666822487 1615886193
+biomass
+\change_unchanged
+ due to the presence of other species, but the phenomenon seems quite rare
+ for phytoplanktonic communities (see 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "schmidtke_mechanistic_2010"
@@ -1124,11 +1231,29 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-There is no unique solution for making a correspondence between the 
+There is no 
+\change_deleted -666822487 1615886223
+unique
+\change_inserted -666822487 1615886225
+single
+\change_unchanged
+ solution for 
+\change_deleted -666822487 1615886239
+making a correspondence between
+\change_inserted -666822487 1615886240
+matching
+\change_unchanged
+ the 
 \begin_inset Formula $\mathbf{B}$
 \end_inset
 
- matrix of the MAR model and the new formulation including 
+ matrix of the MAR model and 
+\change_deleted -666822487 1615886250
+the new formulation
+\change_inserted -666822487 1615886250
+model II
+\change_unchanged
+ including 
 \begin_inset Formula $H_{ij}$
 \end_inset
 
@@ -1517,7 +1642,7 @@ As we highlight in the main text, burial is a very important process that
  and no generally applicable literature could be found.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Burial depends on the hydrodynamics of the site, but also on biotic processes
@@ -1595,12 +1720,7 @@ literal "false"
 
 \begin_layout Standard
 Finally, it should be noted that cyst burial, sinking rate and resuspension
- are all highly contingent upon the local hydrodynamics and therefore 
-\change_deleted -2100369821 1615294646
-represent
-\change_inserted -2100369821 1615294646
-are
-\change_unchanged
+ are all highly contingent upon the local hydrodynamics and therefore are
  intermingled processes.
 \end_layout
 
@@ -1906,8 +2026,6 @@ name "tab:Group_definition"
 
 \end_inset
 
-
-\change_inserted -666822487 1615219798
 , see 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1917,9 +2035,6 @@ literal "false"
 \end_inset
 
  for more information on these taxa.
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
