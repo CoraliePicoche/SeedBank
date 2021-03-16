@@ -92,13 +92,8 @@
 \begin_body
 
 \begin_layout Title
-Why seed banks can help 
-\change_deleted -2100369821 1615908840
-maintaining
-\change_inserted -2100369821 1615909208
-to maintain
-\change_unchanged
- the diversity of interacting phytoplankton species
+Why seed banks can help to maintain the diversity of interacting phytoplankton
+ species
 \end_layout
 
 \begin_layout Author
@@ -175,22 +170,16 @@ Article: 5509
 \end_inset
 
 
-\change_inserted -666822487 1615836816
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615836822
 Note for us: Longer periods of time would be possible to consider than 30
  years
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -306,23 +295,40 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -666822487 1615927346
+ which involves covariances between competitive strengths and environmental
+ variation
+\change_unchanged
 , is one of them.
- It has first been 
-\change_deleted -2100369821 1615906301
-defined by
-\change_inserted -2100369821 1615915196
-equated to the result of
-\change_deleted -2100369821 1615915659
- the presence of
+ It has 
+\change_deleted -666822487 1615926716
+first 
 \change_unchanged
- a long-lived life stage combined with temporal variation in recruitment
- from this stage 
-\change_deleted -2100369821 1615914481
-that helps escape 
-\change_inserted -2100369821 1615914481
-and 
+b
+\change_deleted -666822487 1615926871
+een equated to the
+\change_inserted -666822487 1615927345
+een shown to arise 
+\change_deleted -666822487 1615926965
+ result of
+\change_inserted -666822487 1615927345
+when
 \change_unchanged
-interspecific competition 
+ a long-lived 
+\change_deleted -666822487 1615926883
+life
+\change_inserted -666822487 1615927345
+dormant
+\change_unchanged
+ stage combine
+\change_deleted -666822487 1615926975
+d
+\change_inserted -666822487 1615927345
+s
+\change_unchanged
+ with temporal variation in recruitment from this stage and interspecific
+ competition 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "caceres_temporal_1997"
@@ -331,14 +337,10 @@ literal "false"
 \end_inset
 
 
-\change_inserted -2100369821 1615914606
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -2100369821 1615915097
 I wondered if we should have a more recent/general definition, from Chesson
  2018 for instance, but this 
 \begin_inset Quotes eld
@@ -349,6 +351,14 @@ older
 \end_inset
 
  one has the merit to clearly apply to the seed bank.
+
+\change_inserted -666822487 1615927373
+ Let's not enter this rabbit hole if we don't have to.
+ And let's keep something for the referee to criticize given we need to
+ keep the text crisp and concise for now.
+ I just mentioned it involves covariance between competitive strengths and
+ environmental variation, this way we don't have to give the entire definition.
+ 
 \change_unchanged
 
 \end_layout
@@ -356,9 +366,20 @@ older
 \end_inset
 
 
-\change_unchanged
+\change_deleted -666822487 1615927057
 .
- The storage effect has often been discussed in the presence of a seed bank
+ The storage effect has often been discussed in the presence
+\change_inserted -666822487 1615927345
+ and is often discussed 
+\change_deleted -666822487 1615927068
+ of a
+\change_inserted -666822487 1615927345
+in connection to
+\change_unchanged
+ seed bank
+\change_inserted -666822487 1615927345
+s
+\change_unchanged
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -398,7 +419,9 @@ Aikio et al.
 .
  However, the contribution of seeds to coexistence may be much larger than
  their potential contribution to the storage effect.
- The seed stage itself contrasts with other parts of the life cycle as organisms
+ 
+\change_deleted -666822487 1615927228
+The seed stage itself contrasts with other parts of the life cycle as organisms
  can enter a dormant phase which allows them to sustain harsh environmental
  conditions for long periods of time 
 \begin_inset CommandInset citation
@@ -409,8 +432,11 @@ literal "false"
 \end_inset
 
 .
- Although this is favourable ground for a storage effect, a long-lived seed
- bank can help coexistence by other, simpler means.
+ Although this is favourable ground for a storage effect, a
+\change_inserted -666822487 1615927345
+A
+\change_unchanged
+ long-lived seed bank can help coexistence by other, simpler means.
  For instance, in the meta-community model of 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -651,23 +677,7 @@ literal "false"
  interacting populations.
  Any discrete-time model requires an ordering of events; in our models,
  these unfold as follows: first, populations grow or decline according to
- a Beverton-Holt (BH)
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Doesn't this sentence imply that the second model should also be BH? It
- is.
-
-\change_deleted -666822487 1615192822
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
- multispecies density-dependence (eqs.
+ a Beverton-Holt (BH) multispecies density-dependence (eqs.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2720,12 +2730,28 @@ In both scenarios, simulations are run for 30 years for both population
  growth models, with and without a cyst compartment, and only the last 2
  years are considered to evaluate effects of changes in parameters and in
  temperature.
+ The code for all simulations is to be found at 
+\change_deleted -666822487 1615927462
+https://github.com/CoraliePicoche/SeedBank
+\change_inserted -666822487 1615927462
 
-\change_inserted -2100369821 1615915829
- The code for all simulations is to be found at https://github.com/CoraliePicoche
-/SeedBank.
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1615927462
+
+https://github.com/CoraliePicoche/SeedBank
 \change_unchanged
 
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Section*
@@ -3131,11 +3157,7 @@ status collapsed
 \begin_layout Plain Layout
 What I mean here is that they don't have more positive interactions, nor
  a higher impact of vulnerability.
- Do I say it at all?
-\change_inserted -666822487 1605020475
-F: no that's OK.
-\change_unchanged
-
+ Do I say it at all?F: no that's OK.
 \end_layout
 
 \end_inset
@@ -3291,16 +3313,7 @@ Using a meta-community model which accounts for exchanges between the ocean
  coastal water column, we were able to show that a specific life stage,
  the seed – or cyst – stage, can help maintain biodiversity.
  This dormant stage was integrated to a phytoplanktonic community dynamics
- model, which was parameterized based on literature
-\change_deleted -666822487 1615838630
- and 
-\change_inserted -666822487 1615838630
-, 
-\change_unchanged
-field-based phenology
-\change_inserted -666822487 1615838634
-,
-\change_unchanged
+ model, which was parameterized based on literature, field-based phenology,
  and interaction strength estimates.
  The model was then calibrated on phytoplankton community time series.
  Our model was able to simulate realistic community dynamics (both mean
@@ -3332,11 +3345,6 @@ F/ I added this because technically model I has saturation too, just threshold
  sat.
  No need to change the wording elsewhere in the MS though, one understands
  through context too.
-
-\change_deleted -2100369821 1615883104
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -3406,23 +3414,15 @@ literal "false"
 \end_inset
 
 
-\change_inserted -666822487 1615838952
-
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615838957
 this time the wording is OK
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
  but are not limited to it.
  This is because a long dormancy alone can allow future recolonization of
  a community where counts of pelagic cells alone would suggest that some
