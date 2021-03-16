@@ -237,6 +237,8 @@ mtext("a",3,line=0.5,at=0.6,cex=1.75,font=2)
 l=0
 val_text=c()
 at_val_text=c()
+val_label=c(expression("S"["max"]),"",expression(zeta),"","germination","","resuspension","","l","","e")
+val_label=c(expression("S"["max"]),expression(zeta),"germination","resuspension","l","e")
 for(param_to_move in rownames(free_param)){
         l=l+1
         id_param=grep(paste("^",param_to_move,sep=""),analyses)
@@ -280,7 +282,8 @@ legend("bottomleft",c("Model I","Model II"),col=c("lightgrey","darkgrey"),pch=16
 
 par(mar=c(4.5,5,1.5,1))
 plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="%Diff log.amplitude",xlab="",cex.axis=1.65,cex.lab=1.65)
-axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
+#axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
+axis(1,labels=val_label,at=1:nrow(free_param),cex.axis=1.525)
 abline(h=0)
 mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.4)
 mtext("b",3,line=0.5,at=0.6,cex=1.75,font=2)
@@ -321,6 +324,7 @@ for(param_to_move in rownames(free_param)){
         }
 }
 mtext(val_text,1,line=2.25,at=at_val_text,cex=1.3)
+#mtext(val_label,1,line=2.25,at=at_val_text,cex=1.3)
 dev.off()
 } #end of  cpt="coast
 
