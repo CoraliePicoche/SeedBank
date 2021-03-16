@@ -82,8 +82,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2100369821 "cpicoche"
-\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -95,7 +93,7 @@ Supporting Information
 \series default
  for 
 \emph on
-Why seed banks can help maintaining the diversity of interacting phytoplankton
+Why seed banks can help to maintain the diversity of interacting phytoplankton
  species 
 \emph default
 by C.
@@ -158,33 +156,15 @@ with
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- the 
-\change_deleted -666822487 1615885482
-niche part of the model
-\change_inserted -666822487 1615885518
-taxon-specific response
-\change_unchanged
-.
+ the taxon-specific response.
  This section provides detailed information regarding 
-\change_deleted -666822487 1615885532
-the growth function
-\change_unchanged
- 
 \begin_inset Formula $E(T)$
 \end_inset
 
-,
-\change_deleted -666822487 1615885534
- the taxon-specific functions
-\change_unchanged
- 
+, 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
-
-\change_deleted -666822487 1615885558
- that characterize species' differential responses to temperature variations
-\change_unchanged
 , and species interaction estimates that affect the realized growth rate
  of phytoplanktonic organisms in a community.
 \end_layout
@@ -263,10 +243,6 @@ noprefix "false"
 
 \end_inset
 
-
-\change_deleted -666822487 1615885604
- 
-\change_unchanged
 a, between 0.05 and 0.8, in place of values between 0.2 and 3 day
 \begin_inset Formula $^{-1}$
 \end_inset
@@ -315,60 +291,18 @@ The relationship between temperature and growth rate is then
 \begin_inset Formula $E(T)\thinspace=\thinspace0.81e^{0.0631(T-273.15)}$
 \end_inset
 
-, 
-\change_deleted -2100369821 1615225353
-with
-\change_deleted -666822487 1615885629
-where
-\change_inserted -666822487 1615885629
-with
-\change_inserted -2100369821 1615225386
- T
-\change_deleted -666822487 1615885633
-,
-\change_inserted -2100369821 1615225386
- in Kelvin
-\change_inserted -666822487 1615885658
- degrees
-\change_deleted -666822487 1615885641
- in the model, is converted to
-\change_deleted -2100369821 1615225388
- 
-\begin_inset Formula $T_{°C}$
-\end_inset
-
- in
-\change_deleted -666822487 1615885641
- Celsius degrees
-\change_unchanged
-.
+, with T in Kelvin degrees.
  In this case, growth rates vary between 0.81 and 3.9 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
  for temperatures between 0 and 25°C, in line with previous observations.
  However, these daily growth rates need to be proportional to the daylength
- as no growth occurs at night: we therefore 
-\change_deleted -666822487 1615885700
-halve the
-\change_inserted -666822487 1615885701
-divide
-\change_unchanged
- 
-\change_deleted -666822487 1615885691
-Bissinger value
-\change_inserted -666822487 1615885695
-
+ as no growth occurs at night: we therefore divide 
 \begin_inset Formula $E(T)$
 \end_inset
 
-
-\change_unchanged
- 
-\change_inserted -666822487 1615885705
-by two 
-\change_unchanged
-in our models.
+ by two in our models.
 \end_layout
 
 \begin_layout Standard
@@ -469,60 +403,28 @@ The niche part of the growth rate
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- is mainly defined by two parameters
-\change_inserted -2100369821 1615293471
- which drive the phenology of the taxon: 
-\change_deleted -2100369821 1615293453
-:
-\change_unchanged
+ is mainly defined by two parameters which drive the phenology of the taxon:
  the thermal optimum 
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
 
-\change_deleted -666822487 1615885737
- in Kelvin
-\change_inserted -666822487 1615885758
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615885869
 You don't need to say this, especially as the degrees do not matter in a
  difference, you said the model is in Kelvin for simpler notations, you
  give values of T in Celsius in the text, period.
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
  and a proxy of the niche width 
 \begin_inset Formula $b_{i}$
 \end_inset
 
-
-\change_inserted -2100369821 1615293490
- 
-\change_deleted -666822487 1615885751
-in Kelvin
-\begin_inset Formula $^{3}$
-\end_inset
-
-
-\change_deleted -2100369821 1615293461
-,
-\change_unchanged
- 
-\change_deleted -2100369821 1615293447
-which drives the phenology of the taxon 
-\change_unchanged
-(eq.
+ (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -551,17 +453,8 @@ The annual dynamics of phytoplanktonic organisms is usually characterized
  by a blooming period and a lower concentration during the rest of the year.
  The bloom can be triggered by a combination of nutrient and light input,
  as well as a sufficient temperature.
- All parameters being more or less 
-\change_deleted -666822487 1615885928
-dependent on seasonality
-\change_inserted -666822487 1615885933
-correlated to the seasonal rythm
-\change_unchanged
-, it is reasonable to restrain this study to the effect of 
-\change_inserted -666822487 1615885948
-one variable, 
-\change_unchanged
-temperature.
+ All parameters being more or less correlated to the seasonal rythm, it
+ is reasonable to restrain this study to the effect of one variable, temperature.
 \end_layout
 
 \begin_layout Standard
@@ -574,18 +467,8 @@ We base our estimates of
 \end_inset
 
  on field observations.
- For each taxon and each year, 
-\change_inserted -666822487 1615885976
-we define 
-\change_unchanged
-the beginning of the bloom 
-\change_inserted -666822487 1615885979
-a
-\change_deleted -666822487 1615885979
-i
-\change_unchanged
-s the date when the taxon abundance exceeds its median abundance over the
- year.
+ For each taxon and each year, we define the beginning of the bloom as the
+ date when the taxon abundance exceeds its median abundance over the year.
  The duration of the bloom is the number of days between the beginning and
  the date where abundance falls below the median value.
  Taxa are then separated into two groups.
@@ -681,9 +564,6 @@ noprefix "false"
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -746,11 +626,7 @@ noprefix "false"
 \uwave off
 \noun off
 \color none
- the dotted line correspond
-\change_inserted -2100369821 1615293716
-s
-\change_unchanged
- to 
+ the dotted line corresponds to 
 \begin_inset Formula $E(T)$
 \end_inset
 
@@ -775,28 +651,6 @@ name "fig:Growth_niche_metabolism"
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1615886092
-The shift of the maximum growth rate may lead to a distortion of the expected
- thermal niche of each taxon.
- 
-\change_inserted -666822487 1615886095
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1615886105
-You say this more precisely above I think.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 We provide actual shapes of 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
@@ -1139,14 +993,8 @@ literal "false"
 
 .
  We acknowledge the possibility of overyielding, i.e.
- an increase in 
-\change_deleted -666822487 1615886192
-growth
-\change_inserted -666822487 1615886193
-biomass
-\change_unchanged
- due to the presence of other species, but the phenomenon seems quite rare
- for phytoplanktonic communities (see 
+ an increase in biomass due to the presence of other species, but the phenomenon
+ seems quite rare for phytoplanktonic communities (see 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "schmidtke_mechanistic_2010"
@@ -1231,29 +1079,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-There is no 
-\change_deleted -666822487 1615886223
-unique
-\change_inserted -666822487 1615886225
-single
-\change_unchanged
- solution for 
-\change_deleted -666822487 1615886239
-making a correspondence between
-\change_inserted -666822487 1615886240
-matching
-\change_unchanged
- the 
+There is no single solution for matching the 
 \begin_inset Formula $\mathbf{B}$
 \end_inset
 
- matrix of the MAR model and 
-\change_deleted -666822487 1615886250
-the new formulation
-\change_inserted -666822487 1615886250
-model II
-\change_unchanged
- including 
+ matrix of the MAR model and model II including 
 \begin_inset Formula $H_{ij}$
 \end_inset
 

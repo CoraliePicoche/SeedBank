@@ -92,8 +92,13 @@
 \begin_body
 
 \begin_layout Title
-Why seed banks can help maintaining the diversity of interacting phytoplankton
- species
+Why seed banks can help 
+\change_deleted -2100369821 1615908840
+maintaining
+\change_inserted -2100369821 1615909208
+to maintain
+\change_unchanged
+ the diversity of interacting phytoplankton species
 \end_layout
 
 \begin_layout Author
@@ -111,32 +116,11 @@ Seed formation is part of the reproductive cycle, leading to the accumulation
  of resistance stages that can withstand harsh environmental conditions
  for long periods of time.
  At the community scale, multiple species with such long-lasting life stages
- can be more likely to coexist thanks to 
-\change_deleted -666822487 1615836637
-seeds' 
-\change_inserted -666822487 1615836638
-the 
-\change_unchanged
-buffering effect
-\change_inserted -666822487 1615839621
- of seed banks
-\change_unchanged
-.
+ can be more likely to coexist thanks to the buffering effect of seed banks.
  While the implications of this process for biodiversity have been studied
- in terrestrial plants, seed
-\change_deleted -666822487 1615836709
- (or cyst)
-\change_unchanged
- banks are usually neglected in phytoplankton multispecies dynamic models,
- in spite of widespread empirical evidence for such
-\change_inserted -666822487 1615836725
- seed (or rather
-\change_unchanged
- cyst
-\change_inserted -666822487 1615836727
-)
-\change_unchanged
- banks.
+ in terrestrial plants, seed banks are usually neglected in phytoplankton
+ multispecies dynamic models, in spite of widespread empirical evidence
+ for such seed (or rather cyst) banks.
  In this study, we build a metacommunity model of interacting phytoplankton
  species with a cyst bank.
  The model is parameterized with empirically-driven growth rate functions
@@ -147,54 +131,19 @@ buffering effect
  parameters to which the sensitivity of the model is assessed.
  We consider two models, i.e., with and without a saturating effect of the
  interactions on the growth rates.
- Our results are consistent between models, and show that a cyst bank 
-\change_deleted -666822487 1615836753
-is necessary to 
-\change_inserted -666822487 1615836755
-allows to 
-\change_unchanged
-maintain all species in the community over 30 years.
+ Our results are consistent between models, and show that a cyst bank allows
+ to maintain all species in the community over 30 years.
  Indeed, a fraction of the species are vulnerable to extinction at specific
  times within the year, but this process is buffered by their survival in
  the coastal cyst bank.
- We thus highlight the 
-\change_inserted -666822487 1615836838
-potential 
-\change_unchanged
-role of the cyst bank in the recurrent re-invasion of the coastal community,
- and of coastal environments in re-seeding oceanic regions.
+ We thus highlight the potential role of the cyst bank in the recurrent
+ re-invasion of the coastal community, and of coastal environments in re-seeding
+ oceanic regions.
  Moreover, the cyst bank enables populations to tolerate stronger interactions
  within the community as well as more severe changes in the environment,
  such as those predicted within a climate change context.
- 
-\change_deleted -666822487 1615836888
-This
-\change_inserted -666822487 1615836888
-Our
-\change_unchanged
- study therefore 
-\change_deleted -666822487 1615836896
-uncovers
-\change_inserted -666822487 1615836897
-shows
-\change_unchanged
- 
-\change_deleted -666822487 1615836864
-the potential importance of the
-\change_inserted -666822487 1615836870
-how a
-\change_unchanged
- 
-\change_deleted -666822487 1615836874
-phytoplanktonic 
-\change_unchanged
-cyst stage 
-\change_inserted -666822487 1615836879
-may help phytoplanktonic
-\change_deleted -666822487 1615836876
-for
-\change_unchanged
- diversity maintenance.
+ Our study therefore shows how a cyst stage may help phytoplanktonic diversity
+ maintenance.
 \begin_inset Note Note
 status open
 
@@ -358,26 +307,48 @@ literal "false"
 \end_inset
 
 , is one of them.
- It has first been defined by the presence of a long-lived life stage combined
- with temporal variation in recruitment from this stage that helps escape
- interspecific competition 
+ It has first been 
+\change_deleted -2100369821 1615906301
+defined by
+\change_inserted -2100369821 1615915196
+equated to the result of
+\change_deleted -2100369821 1615915659
+ the presence of
+\change_unchanged
+ a long-lived life stage combined with temporal variation in recruitment
+ from this stage 
+\change_deleted -2100369821 1615914481
+that helps escape 
+\change_inserted -2100369821 1615914481
+and 
+\change_unchanged
+interspecific competition 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "chesson1986environmental"
+key "caceres_temporal_1997"
 literal "false"
 
 \end_inset
 
 
-\change_inserted -666822487 1615836935
+\change_inserted -2100369821 1615914606
 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1615836949
-F: I looked again and I do not see that definition.
+\change_inserted -2100369821 1615915097
+I wondered if we should have a more recent/general definition, from Chesson
+ 2018 for instance, but this 
+\begin_inset Quotes eld
+\end_inset
+
+older
+\begin_inset Quotes erd
+\end_inset
+
+ one has the merit to clearly apply to the seed bank.
 \change_unchanged
 
 \end_layout
@@ -391,16 +362,16 @@ F: I looked again and I do not see that definition.
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "aikio_seed_2002,angert_functional_2009,chu_large_2015"
+key "aikio_seed_2002,angert_functional_2009"
 literal "false"
 
 \end_inset
 
 
-\change_inserted -666822487 1615836960
+\change_deleted -2100369821 1615913677
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -409,6 +380,12 @@ In the presence of seeds or of a seed bank (with long term seed survival)?
  that is different.
  Upon checking, there's nothing in Chu and Adler about a seed bank, for
  instance.
+ 
+\change_inserted -2100369821 1615903205
+Aikio et al.
+ consider seeds from bankers with a 2-year delay for germination and Angert
+ also models dormancy.
+ Chu and Adler only take into account the previous timestep.
  
 \change_unchanged
 
@@ -447,21 +424,7 @@ literal "false"
  In their model, adding a dormant stage could increase species diversity
  both at the local and regional scales.
  These results suggest that considering a seed stage in dynamical models
- can profoundly alter our understanding of 
-\change_inserted -666822487 1615837222
-community persistence 
-\change_deleted -666822487 1615837236
-population 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "nguyen_consequences_2019"
-literal "false"
-
-\end_inset
-
- and community persistence
-\change_unchanged
- 
+ can profoundly alter our understanding of community persistence 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see also"
@@ -471,36 +434,6 @@ literal "false"
 \end_inset
 
 .
-\change_inserted -666822487 1615837239
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1615837298
-J'ai enlevé 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "nguyen_consequences_2019"
-literal "false"
-
-\end_inset
-
- and Manna et al.
- parce que ça n'allait pas à cet endroit -> on parle déjà de maintien de
- la diversité.
- On peut éventuellement les remettre plus haut.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -531,11 +464,7 @@ literal "false"
 \end_inset
 
 , while always assuming that vegetative cells are already present in the
- environment
-\change_inserted -666822487 1615837391
-, or immigrating from a nearby water mass
-\change_unchanged
-.
+ environment, or immigrating from a nearby water mass.
  Momentary disappearances of a species are viewed as sampling issues at
  low density.
  However, a complementary hypothesis suggests that resuspension and germination
@@ -625,38 +554,19 @@ literal "false"
 \end_inset
 
 ).
- Conversely, in many other bloom-forming species, the 
-\change_deleted -666822487 1615837517
-nutrient-rich 
-\change_inserted -666822487 1615837554
-shallower
+ Conversely, in many other bloom-forming species, the shallower
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615837604
 Given that lack of nutrient is a trigger for cyst production, the mention
  of nutrient-rich and cyst production together was a bit awkward.
  I simplified
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
- 
-\change_unchanged
-coastal areas might function as a reservoir for 
-\change_deleted -666822487 1615837450
-the 
-\change_unchanged
-biodiversity in the ocean
-\change_deleted -666822487 1615837504
-, given the more accessible cyst bank at the coast, especially in the long
- run
-\change_unchanged
-.
+ coastal areas might function as a reservoir for biodiversity in the ocean.
  Indeed, cysts are able to germinate again after dozens of years 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -695,18 +605,8 @@ Our model is parameterized from field data (growth and interaction rates),
  completely eclipse competitive interactions.
  Changes in the environment, here represented by an increase in the mean
  temperature, can also be buffered by cyst banks.
- Finally, we discuss 
-\change_deleted -666822487 1615837631
-the importance of this often ignored life stage in phytoplanktonic demography
- and the
-\change_inserted -666822487 1615837631
-what
-\change_unchanged
- information 
-\change_deleted -666822487 1615837638
-that 
-\change_unchanged
-would be required to further more accurate modeling of cyst bank dynamics.
+ Finally, we discuss what information would be required to further more
+ accurate modeling of cyst bank dynamics.
 \end_layout
 
 \begin_layout Section*
@@ -912,11 +812,7 @@ literal "false"
 \end_inset
 
 , is a Lotka-Volterra competition equivalent for discrete-time models, and
- is often used to represent terrestrial plant 
-\change_deleted -666822487 1615837665
-population/
-\change_unchanged
-community dynamics.
+ is often used to represent terrestrial plant community dynamics.
  In our implementation of the model, the maximum achievable growth rate
  is modified by both competitive and facilitative interactions, which translates
  into positive and negative 
@@ -2485,13 +2381,7 @@ Parameter calibration
 \begin_layout Standard
 In addition to phenology parameters, whose estimation process is described
  in Section S1 of the SI, the 49 non-zero interactions that form the community
- matrix of the model are 
-\change_deleted -666822487 1615837712
-calibrated
-\change_inserted -666822487 1615837713
-inferred
-\change_unchanged
- from field data.
+ matrix of the model are inferred from field data.
  We use initial interaction estimates from our previous time series modelling
  study 
 \begin_inset CommandInset citation
@@ -2503,12 +2393,9 @@ literal "false"
 \end_inset
 
 .
- These initial interaction estimates are then calibrated
-\change_inserted -666822487 1615837727
- to the time series
-\change_unchanged
-, to take into account the differences in model structure and timescale
- between this study and 
+ These initial interaction estimates are then calibrated to the time series,
+ to take into account the differences in model structure and timescale between
+ this study and 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "picoche_strong_2020"
@@ -2520,14 +2407,8 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-The calibration procedure consist
-\change_deleted -666822487 1615837743
-e
-\change_inserted -666822487 1615837743
-s
-\change_unchanged
- in lauching 1000 simulations, each characterized by a specific set of interacti
-on coefficients.
+The calibration procedure consists in lauching 1000 simulations, each characteri
+zed by a specific set of interaction coefficients.
  More precisely, for each simulation, an interaction coefficient (
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
@@ -2647,34 +2528,9 @@ Sensitivity analysis
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1615837758
-Certain p
-\change_inserted -666822487 1615837758
-P
-\change_unchanged
-arameters
-\change_deleted -666822487 1615837763
-, which were evaluated
-\change_inserted -666822487 1615837765
- taken
-\change_unchanged
- from the literature
-\change_deleted -666822487 1615837768
-,
-\change_unchanged
- may be site- or model- specific
-\change_deleted -666822487 1615837778
-.
- Some also
-\change_inserted -666822487 1615837779
-, or
-\change_unchanged
- vary over one order of magnitude in the literature, e.g.
-\change_inserted -666822487 1615837784
-,
-\change_unchanged
- rates of sinking 
+Parameters taken from the literature may be site- or model- specific, or
+ vary over one order of magnitude in the literature, e.g., rates of sinking
+ 
 \begin_inset Formula $s$
 \end_inset
 
@@ -2695,21 +2551,8 @@ arameters
 \end_inset
 
 .
- 
-\change_inserted -666822487 1615837803
-We therefore performed a 
-\change_deleted -666822487 1615837808
-Parameter value 
-\change_unchanged
-sensitivity 
-\change_inserted -666822487 1615837814
-analysis 
-\change_unchanged
-to these highly uncertain parameters
-\change_deleted -666822487 1615837823
- needs to be investigated before drawing conclusions
-\change_unchanged
-.
+ We therefore performed a sensitivity analysis to these highly uncertain
+ parameters.
  The set of tested values for each parameter is given in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2721,20 +2564,8 @@ noprefix "false"
 \end_inset
 
 .
- 
-\change_deleted -666822487 1615837841
-Variations in
-\change_inserted -666822487 1615837842
-We used
-\change_unchanged
- average abundances and amplitudes at the community and taxon levels for
- the last 2 years of simulations 
-\change_deleted -666822487 1615837846
-are
-\change_inserted -666822487 1615837846
-as
-\change_unchanged
- the major model diagnostics.
+ We used average abundances and amplitudes at the community and taxon levels
+ for the last 2 years of simulations as the major model diagnostics.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2751,15 +2582,9 @@ literal "false"
 \end_inset
 
 .
- 
-\change_deleted -666822487 1615837873
-W
-\change_inserted -666822487 1615837877
-For calibration, w
-\change_unchanged
-e use time series of phytoplanktonic abundances that have been monitored
- biweekly for 21 years in the Marennes-Oléron Bay, on the French Atlantic
- Coast 
+ For calibration, we use time series of phytoplanktonic abundances that
+ have been monitored biweekly for 21 years in the Marennes-Oléron Bay, on
+ the French Atlantic Coast 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "the Auger site analysed in"
@@ -2770,56 +2595,10 @@ literal "false"
 
 .
  
-\change_deleted -666822487 1615837890
-The Auger sampling site is characterized by a high phytoplanktonic biodiversity,
- even by regional standards, sustained by the joint influences of the Atlantic
- Ocean and terrestrial (nutrient) inputs from the Seudre River, with a possibly
- important contribution of the benthic environment 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "guarini_benthic_2004"
-literal "false"
-
-\end_inset
-
-.
- We aim to approximate the population dynamics of the 11 most abundant and
- most frequent groups of genera (hereafter taxa defined in Section 4 of
- the SI) focusing on the amplitude of fluctuations and their timing (phenology).
- The estimation of the parameters characterizing each taxon (
-\begin_inset Formula $T_{i}^{opt}$
-\end_inset
-
- and 
-\begin_inset Formula $b_{i}$
-\end_inset
-
-), is described in Section 1 of the SI.
- The interactions between model taxa have already been inferred from a MAR
- model 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "picoche_strong_2020"
-literal "false"
-
-\end_inset
-
-.
- The community matrix is characterized by a phylogeny-based modular structure
- which differentiates between centric and pennate diatoms and dinoflagellates,
- a high level of facilitative interactions (
-\begin_inset Formula $\approx70\%$
-\end_inset
-
-) and a strong self-regulation.
-\change_inserted -666822487 1615837890
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615837980
 The Auger sampling site is characterized by a high phytoplanktonic biodiversity,
  even by regional standards, sustained by the joint influences of the Atlantic
  Ocean and terrestrial (nutrient) inputs from the Seudre River, with a possibly
@@ -2866,36 +2645,10 @@ literal "false"
  interpret the results with respect to that site afterwards.
  Avoids further critic.
  ]
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_deleted -666822487 1615837897
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-(about 10 times higher than interspecific interaction strengths) -> F: I
- removed that sentence because first we would need to talk about 
-\begin_inset Quotes eld
-\end_inset
-
-intraspecific interaction strengths 10 times higher than
-\begin_inset Quotes erd
-\end_inset
-
- and second if they want these details they will read the earlier paper,
- at least the abstract.
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
@@ -2924,35 +2677,20 @@ In the first scenario, interaction strengths are multiplied or divided by
  a factor ranging between 1 and 10.
  In order to differentiate the effects of facilitative and competitive interacti
 ons on coexistence, we only vary only one type of interactions at a time.
-
-\change_deleted -666822487 1615838026
- For each value of the multiplicative factor, we therefore run 4 simulations
- for each growth model: one where positive (respectively, negative) interactions
- are multiplied by the factor and one where positive (respectively, negative)
- interactions are divided by the same factor.
- 
-\change_inserted -666822487 1615838026
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615838042
 For each value of the multiplicative factor, we therefore run 4 simulations
  for each growth model: one where positive (respectively, negative) interactions
  are multiplied by the factor and one where positive (respectively, negative)
  interactions are divided by the same factor.
  [F: this complexifies the explanation.
  ]
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 Here, both intra and intertaxa interactions are modified; we present in
  Section 6 of the SI additional simulations with a change in intertaxa interacti
 ons only.
@@ -3082,13 +2820,7 @@ Sensitivity to uncalibrated parameters
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1615838075
-Total p
-\change_inserted -666822487 1615838075
-P
-\change_unchanged
-hytoplankton dynamics were not strongly affected by changes in the parameter
+Phytoplankton dynamics were not strongly affected by changes in the parameter
  values (Fig.
  
 \begin_inset CommandInset ref
@@ -3101,46 +2833,16 @@ noprefix "false"
 \end_inset
 
 ).
- As 
-\change_deleted -666822487 1615838086
-values
-\change_inserted -666822487 1615838087
-parameters
-\change_unchanged
- were varied in their plausible range, the average change in mean abundance
- on the coast between the reference simulation and the sensitivity simulations
- varied between -4.6 and 1.9% for model I and between -4.2 and 1.1% for model
- II, with similar deviations (same sign and magnitude) in the two models.
+ As parameters were varied in their plausible range, the average change
+ in mean abundance on the coast between the reference simulation and the
+ sensitivity simulations varied between -4.6 and 1.9% for model I and between
+ -4.2 and 1.1% for model II, with similar deviations (same sign and magnitude)
+ in the two models.
  
-\change_deleted -666822487 1615838102
-The only parameter that led to a substantially different results between
- the two models was the resuspension parameter (leading to a different value
- of the parameter 
-\begin_inset Formula $\gamma$
-\end_inset
-
- in Eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:model_step2"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-) which, when decreased, led to an increase in abundance of approximately
- 1.9% in model I while it was only 0.9% in model II.
- 
-\change_inserted -666822487 1615838102
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615838117
 The only parameter that led to a substantially different results between
  the two models was the resuspension parameter (leading to a different value
  of the parameter 
@@ -3161,44 +2863,25 @@ noprefix "false"
 ) which, when decreased, led to an increase in abundance of approximately
  1.9% in model I while it was only 0.9% in model II.
  [F: this is really mostly detail, can be removed.]
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 In the two models, the decrease in mortality rate of vegetative cells 
 \begin_inset Formula $l$
 \end_inset
 
- had the 
-\change_deleted -666822487 1615838143
-more
-\change_inserted -666822487 1615838144
-highest
-\change_unchanged
- impact on the final average abundance, leading to an increase in abundances.
+ had the highest impact on the final average abundance, leading to an increase
+ in abundances.
  The exchange rate between the ocean and the coast had much less effect
  on the coastal average abundance.
 \end_layout
 
 \begin_layout Standard
-On the other hand, the 
-\change_deleted -666822487 1615838158
-decimal logarithm of the maximum to minimum ratio of abundance
-\change_inserted -666822487 1615838160
-amplitude
-\change_unchanged
- (i.e., 
-\change_deleted -666822487 1615838171
-the order of magnitude of the range of abundances for each taxa
-\change_inserted -666822487 1615838172
-decimal logarithm of the maximum to minimum ratio of abundance
-\change_unchanged
-) was more affected by changes in parameters and could vary by -39.4 to 18.6%
- in model I, and between -41.2% and 23% in model II.
+On the other hand, the amplitude (i.e., decimal logarithm of the maximum to
+ minimum ratio of abundance) was more affected by changes in parameters
+ and could vary by -39.4 to 18.6% in model I, and between -41.2% and 23% in
+ model II.
  Results were qualitatively the same in the two models, with a decrease
  in cyst burial being the main driver of the decrease in amplitude, and
  a decrease in resuspension leading to an increase in amplitude.
@@ -3217,20 +2900,8 @@ In three cases (cyst burial rate set to 0.1, resuspension to 10
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1615838185
-With
-\change_inserted -666822487 1615838186
-For
-\change_unchanged
- all parameters, except the sinking rate, an increase in mean abundance
- was 
-\change_deleted -666822487 1615838196
-linked
-\change_inserted -666822487 1615838197
-associated
-\change_unchanged
- to a decrease in amplitude.
+For all parameters, except the sinking rate, an increase in mean abundance
+ was associated to a decrease in amplitude.
 \end_layout
 
 \begin_layout Standard
@@ -3255,54 +2926,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615838231
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1615838278
-Possible to change morta -> mortality in the figure.
- Also S_max to 
-\begin_inset Formula $S_{\text{max}}$
-\end_inset
-
- if possible, if that's the notation we use above.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 Sensitivity of the model to variation in parameters, measured as the difference
  between the reference simulation metric and the metric for the simulation
  including a change in parameter.
  The two metrics used were the average decimal log abundance (a) and the
  decimal logarithm of the ratio between maximum and minimum abundance (b)
- of the coastal phytoplanktonic community.
- 
-\change_deleted -666822487 1615838218
-S_max
-\change_inserted -666822487 1615838218
-
-\begin_inset Formula $S_{\text{max}}$
-\end_inset
-
-
-\change_inserted -2100369821 1615294896
- 
-\change_unchanged
-is the maximum sinking rate of cysts and morta is the mortality of vegetative
- cells 
-\begin_inset Formula $l$
-\end_inset
-
-.
- Values used in the sensitivity analysis are in the second row of the x-axis
- while values used in the reference simulation are shown in the third row.
+ of the coastal phytoplanktonic community.Values used in the sensitivity
+ analysis are in the second row of the x-axis while values used in the reference
+ simulation are shown in the third row.
  Note that the reference value is not necessarily within the range of values
  used in the sensitivity analysis (e.g.
  mortality rates in the sensitivity analysis are both below the value used
@@ -3485,26 +3116,7 @@ noprefix "false"
 
 \end_inset
 
-)
-\change_inserted -666822487 1615838521
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1615838537
-Should we refer here or later to the additional analyses on that point in
- the SI?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+).
  In contrast, their interactions were not qualitatively different from the
  other taxa
 \begin_inset Note Note
@@ -3705,23 +3317,17 @@ press
  to a dormant stage were less prone to species loss and could maintain their
  biomass through the years.
  These results were consistent for the two interaction models that we considered
-, with and without 
-\change_inserted -666822487 1615838709
-progressive 
-\change_unchanged
-saturation in interaction strengths
-\change_inserted -666822487 1615838713
-
+, with and without progressive saturation in interaction strengths
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1615838766
 F/ I added this because technically model I has saturation too, just threshold
  sat.
  No need to change the wording elsewhere in the MS though, one understands
  through context too.
+
+\change_deleted -2100369821 1615883104
  
 \change_unchanged
 
@@ -3729,8 +3335,6 @@ F/ I added this because technically model I has saturation too, just threshold
 
 \end_inset
 
-
-\change_unchanged
 .
  Our results therefore demonstrate the major potential role of phytoplanktonic
  cyst banks in maintaining biodiversity.
@@ -3832,11 +3436,7 @@ literal "false"
 nts.
  Spatial recolonization was therefore less important than temporal recolonizatio
 n; the relative importance of the two processes may vary depending on the
- organisms and 
-\change_inserted -666822487 1615839059
-the degree of spatial synchrony of 
-\change_unchanged
-their environment.
+ organisms and the degree of spatial synchrony of their environment.
 \end_layout
 
 \begin_layout Standard
@@ -3863,9 +3463,7 @@ literal "false"
  This would be true for most plants too (and perhaps some phytoplankters
  in situations where they are transported by animals).
  However, the restriction about which stage can move did not change the
- general conclusion
-\change_inserted -666822487 1615839127
- when compared to 
+ general conclusion of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wisnoski_dormancy_2019"
@@ -3873,8 +3471,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 : the combination of spatial dispersal and dormancy through seed banks greatly
  helps biodiversity maintenance.
  In our study, this main result was also robust to changes in exchange parameter
@@ -3914,22 +3510,6 @@ literal "false"
  S7 in SI), that a smaller niche width (i.e., being a specialist) or being
  strongly affected by species interactions can explain rapid extinction
  without a cyst bank.
-\change_deleted -666822487 1615839199
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Missing a transition here – F: we can talk about this later // remember
- also what I said about finding *why* such extinction occurs.
- You mean doing further analyses?
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -3977,12 +3557,8 @@ literal "false"
 \end_inset
 
  in a single-species context).
- This
-\change_inserted -666822487 1615839275
- technical
-\change_unchanged
- suggestion certainly extends to models of (terrestrial) plant community
- dynamics.
+ This technical suggestion certainly extends to models of (terrestrial)
+ plant community dynamics.
 \end_layout
 
 \begin_layout Standard
@@ -4014,7 +3590,7 @@ wasted
  in the open ocean – whether different sinking rates can be selected, to
  some degree, by such different environments could be quite revealing
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Seems there is some plasticity as well, right ? https://academic.oup.com/plankt/ar
@@ -4057,13 +3633,7 @@ Acknowledgements
 
 \begin_layout Standard
 We thank Nathan Wisnoski and Frank Jabot for useful feedback.
- CP was supported by a PhD grant from the French 
-\change_deleted -666822487 1615839326
-m
-\change_inserted -666822487 1615839326
-M
-\change_unchanged
-inistry of Research.
+ CP was supported by a PhD grant from the French Ministry of Research.
 \end_layout
 
 \begin_layout Standard
