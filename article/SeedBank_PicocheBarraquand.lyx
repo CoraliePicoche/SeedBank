@@ -2720,6 +2720,12 @@ In both scenarios, simulations are run for 30 years for both population
  growth models, with and without a cyst compartment, and only the last 2
  years are considered to evaluate effects of changes in parameters and in
  temperature.
+
+\change_inserted -2100369821 1615915829
+ The code for all simulations is to be found at https://github.com/CoraliePicoche
+/SeedBank.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section*
