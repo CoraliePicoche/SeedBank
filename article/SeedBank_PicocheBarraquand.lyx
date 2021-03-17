@@ -86,7 +86,6 @@
 \html_css_as_file 0
 \html_be_strict false
 \author -2100369821 "cpicoche"
-\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -97,13 +96,51 @@ Why seed banks can help to maintain the diversity of interacting phytoplankton
 \end_layout
 
 \begin_layout Author
-Coralie Picoche & Frédéric Barraquand
+Coralie Picoche
+\change_inserted -2100369821 1616001532
+
+\begin_inset Formula $^{1,2,*}$
+\end_inset
+
+
+\change_unchanged
+ & Frédéric Barraquand
+\change_inserted -2100369821 1616001536
+
+\begin_inset Formula $^{1,2}$
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Address
 \noindent
 \align center
 Institute of Mathematics of Bordeaux, University of Bordeaux and CNRS, France
+\change_inserted -2100369821 1616001499
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1616001498
+
+
+\backslash
+
+\backslash
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ Integrative and Theoretical Ecology, LabEx COTE, University of Bordeaux,
+ Pessac, France
 \end_layout
 
 \begin_layout Abstract
@@ -180,6 +217,36 @@ Note for us: Longer periods of time would be possible to consider than 30
 
 \end_inset
 
+
+\change_inserted -2100369821 1616001611
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1616001680
+\begin_inset Formula $^{*}$
+\end_inset
+
+corresponding author: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1616001680
+
+
+\backslash
+verb|coralie.picoche@u-bordeaux.fr|
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -295,40 +362,11 @@ literal "false"
 
 \end_inset
 
-
-\change_inserted -666822487 1615927346
  which involves covariances between competitive strengths and environmental
- variation
-\change_unchanged
-, is one of them.
- It has 
-\change_deleted -666822487 1615926716
-first 
-\change_unchanged
-b
-\change_deleted -666822487 1615926871
-een equated to the
-\change_inserted -666822487 1615927345
-een shown to arise 
-\change_deleted -666822487 1615926965
- result of
-\change_inserted -666822487 1615927345
-when
-\change_unchanged
- a long-lived 
-\change_deleted -666822487 1615926883
-life
-\change_inserted -666822487 1615927345
-dormant
-\change_unchanged
- stage combine
-\change_deleted -666822487 1615926975
-d
-\change_inserted -666822487 1615927345
-s
-\change_unchanged
- with temporal variation in recruitment from this stage and interspecific
- competition 
+ variation, is one of them.
+ It has been shown to arise when a long-lived dormant stage combines with
+ temporal variation in recruitment from this stage and interspecific competition
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "caceres_temporal_1997"
@@ -351,36 +389,16 @@ older
 \end_inset
 
  one has the merit to clearly apply to the seed bank.
-
-\change_inserted -666822487 1615927373
  Let's not enter this rabbit hole if we don't have to.
  And let's keep something for the referee to criticize given we need to
  keep the text crisp and concise for now.
  I just mentioned it involves covariance between competitive strengths and
  environmental variation, this way we don't have to give the entire definition.
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_deleted -666822487 1615927057
-.
- The storage effect has often been discussed in the presence
-\change_inserted -666822487 1615927345
- and is often discussed 
-\change_deleted -666822487 1615927068
- of a
-\change_inserted -666822487 1615927345
-in connection to
-\change_unchanged
- seed bank
-\change_inserted -666822487 1615927345
-s
-\change_unchanged
- 
+ and is often discussed in connection to seed banks 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "aikio_seed_2002,angert_functional_2009"
@@ -388,55 +406,10 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted -2100369821 1615913677
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1615837033
-In the presence of seeds or of a seed bank (with long term seed survival)?
- that is different.
- Upon checking, there's nothing in Chu and Adler about a seed bank, for
- instance.
- 
-\change_inserted -2100369821 1615903205
-Aikio et al.
- consider seeds from bankers with a 2-year delay for germination and Angert
- also models dormancy.
- Chu and Adler only take into account the previous timestep.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 .
  However, the contribution of seeds to coexistence may be much larger than
  their potential contribution to the storage effect.
- 
-\change_deleted -666822487 1615927228
-The seed stage itself contrasts with other parts of the life cycle as organisms
- can enter a dormant phase which allows them to sustain harsh environmental
- conditions for long periods of time 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "aikio_seed_2002"
-literal "false"
-
-\end_inset
-
-.
- Although this is favourable ground for a storage effect, a
-\change_inserted -666822487 1615927345
-A
-\change_unchanged
- long-lived seed bank can help coexistence by other, simpler means.
+ A long-lived seed bank can help coexistence by other, simpler means.
  For instance, in the meta-community model of 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -611,8 +584,13 @@ literal "false"
 
  of dormancy.
  Therefore, we consider in this study three interlinked compartements: the
- coastal pelagic environment, the seed (cyst) bank, and the pelagic open
- ocean.
+ coastal pelagic environment, the 
+\change_deleted -2100369821 1615994796
+seed (cyst) 
+\change_inserted -2100369821 1615994797
+cyst 
+\change_unchanged
+bank, and the pelagic open ocean.
  The coastal pelagic environment acts as a bridge between the cyst bank
  and the open ocean.
 \end_layout
@@ -911,7 +889,13 @@ noprefix "false"
 
 ).
  Model II provides a more process-orientated solution to the issue of excessive
- mutual benefaction (but to the cost of added parameters).
+ mutual benefaction (but 
+\change_deleted -2100369821 1615998196
+to
+\change_inserted -2100369821 1615998196
+at
+\change_unchanged
+ the cost of added parameters).
  
 \begin_inset Note Note
 status collapsed
@@ -1074,7 +1058,13 @@ literal "false"
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
-, and is controlled by the species-specific thermal decay 
+, and is controlled by the 
+\change_deleted -2100369821 1615998693
+species
+\change_inserted -2100369821 1615998694
+taxon
+\change_unchanged
+-specific thermal decay 
 \begin_inset Formula $b_{i}$
 \end_inset
 
@@ -1152,12 +1142,24 @@ literal "false"
 
 \end_inset
 
-, but use different parameters that vary between species.
+, but use different parameters that vary between 
+\change_deleted -2100369821 1615998704
+species
+\change_inserted -2100369821 1615998704
+taxa
+\change_unchanged
+.
  Indeed, the half-saturation coefficients 
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- vary between species, as opposed to the maximum rates in 
+ vary between 
+\change_deleted -2100369821 1615998711
+species
+\change_inserted -2100369821 1615998711
+taxa
+\change_unchanged
+, as opposed to the maximum rates in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "qian_balance_2020"
@@ -1170,9 +1172,14 @@ literal "false"
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- to be fixed (e.g., in a resource competition context, different species are
- expected to feel resource limitations at different concentrations of nutrients
- and at different numbers of competitors).
+ to be fixed (e.g., in a resource competition context, different 
+\change_deleted -2100369821 1615998724
+species
+\change_inserted -2100369821 1615998724
+taxa
+\change_unchanged
+ are expected to feel resource limitations at different concentrations of
+ nutrients and at different numbers of competitors).
  
 \family default
 \series default
@@ -2208,8 +2215,11 @@ literal "false"
 \end_inset
 
  (in the absence of nutrients, or because of viral charge).
- A maximum value of 0.2 is fixed for the model (see Section 3 of the SI for
- more details).
+ A maximum value of 0.2 is fixed for the model (see Section 
+\change_inserted -2100369821 1616003833
+S
+\change_unchanged
+3 of the SI for more details).
 \end_layout
 
 \begin_layout Paragraph*
@@ -2325,7 +2335,11 @@ literal "false"
 
 \end_inset
 
- are given in Section 3 of the SI).
+ are given in Section 
+\change_inserted -2100369821 1616003834
+S
+\change_unchanged
+3 of the SI).
  However, cyst burial by sedimentation is the prevailing phenomenon.
  Indeed, once cysts have been buried, they are not accessible for resuspension
  even if they could still germinate.
@@ -2548,15 +2562,31 @@ Parameters taken from the literature may be site- or model- specific, or
 \begin_inset Formula $\gamma$
 \end_inset
 
-, cyst mortality 
+, cyst 
+\change_deleted -2100369821 1615994820
+mortality 
 \begin_inset Formula $m$
 \end_inset
 
- and burial 
+ and 
+\change_unchanged
+burial 
 \begin_inset Formula $\zeta$
 \end_inset
 
-, as well as the loss rate 
+, 
+\change_deleted -2100369821 1615999029
+as well as
+\change_inserted -2100369821 1615999029
+and
+\change_unchanged
+ 
+\change_deleted -2100369821 1616003721
+the loss rate
+\change_inserted -2100369821 1616003734
+loss of pelagic cells
+\change_unchanged
+ 
 \begin_inset Formula $l$
 \end_inset
 
@@ -2701,9 +2731,17 @@ For each value of the multiplicative factor, we therefore run 4 simulations
 
 \end_inset
 
+
+\change_inserted -2100369821 1616003779
+ 
+\change_unchanged
 Here, both intra and intertaxa interactions are modified; we present in
- Section 6 of the SI additional simulations with a change in intertaxa interacti
-ons only.
+ Section 
+\change_inserted -2100369821 1616003849
+S
+\change_unchanged
+6 of the SI additional simulations with a change in intertaxa interactions
+ only.
 \end_layout
 
 \begin_layout Standard
@@ -2731,26 +2769,16 @@ In both scenarios, simulations are run for 30 years for both population
  years are considered to evaluate effects of changes in parameters and in
  temperature.
  The code for all simulations is to be found at 
-\change_deleted -666822487 1615927462
-https://github.com/CoraliePicoche/SeedBank
-\change_inserted -666822487 1615927462
-
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1615927462
-
 https://github.com/CoraliePicoche/SeedBank
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
 \end_layout
 
@@ -2963,9 +2991,13 @@ Sensitivity of the model to variation in parameters, measured as the difference
  including a change in parameter.
  The two metrics used were the average decimal log abundance (a) and the
  decimal logarithm of the ratio between maximum and minimum abundance (b)
- of the coastal phytoplanktonic community.Values used in the sensitivity
- analysis are in the second row of the x-axis while values used in the reference
- simulation are shown in the third row.
+ of the coastal phytoplanktonic community.
+
+\change_inserted -2100369821 1615999151
+ 
+\change_unchanged
+Values used in the sensitivity analysis are in the second row of the x-axis
+ while values used in the reference simulation are shown in the third row.
  Note that the reference value is not necessarily within the range of values
  used in the sensitivity analysis (e.g.
  mortality rates in the sensitivity analysis are both below the value used
@@ -3022,7 +3054,13 @@ noprefix "false"
  in all cases).
  The inverse of the Simpson index (the second Hill number) decreased from
  approximately 3 to 1, showing that the disappearance of the cyst bank did
- not affect only the rarest species.
+ not affect only the rarest 
+\change_deleted -2100369821 1615999183
+species
+\change_inserted -2100369821 1615999184
+taxa
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3080,9 +3118,14 @@ confirmed.
 The inverse of the Simpson index was also affected by the changes in interaction
  strengths, with similar patterns to richness, as it was lowest for high
  facilitation or low competition.
- Presumably some species reach very high growth rates in these scenarios,
- which then feeds back onto community dynamics, generating lower diversity
- in the end.
+ Presumably some 
+\change_deleted -2100369821 1615999218
+species
+\change_inserted -2100369821 1615999218
+taxa
+\change_unchanged
+ reach very high growth rates in these scenarios, which then feeds back
+ onto community dynamics, generating lower diversity in the end.
 \end_layout
 
 \begin_layout Standard
@@ -3320,8 +3363,11 @@ Using a meta-community model which accounts for exchanges between the ocean
  abundances and temporal patterns), while including the effects of both
  positive and negative interactions on community dynamics.
  When removing the cyst bank, biodiversity decreased drastically.
- This was true for the reference parameter values, as well as when species
- interaction strengths and environmental fluctuation levels where altered,
+ This was true for the reference parameter values, as well as when 
+\change_deleted -2100369821 1615999653
+species 
+\change_unchanged
+interaction strengths and environmental fluctuation levels where altered,
  in which cases the cyst bank's buffering influence disappeared.
  The total abundance of the community decreased as well.
  Moreover, when faced with a biotic or abiotic 
@@ -3332,9 +3378,20 @@ press
 \begin_inset Quotes erd
 \end_inset
 
- perturbation, communities where species could divert part of their population
- to a dormant stage were less prone to species loss and could maintain their
- biomass through the years.
+ perturbation, communities where 
+\change_deleted -2100369821 1615999661
+species
+\change_inserted -2100369821 1615999662
+taxa
+\change_unchanged
+ could divert part of their population to a dormant stage were less prone
+ to 
+\change_deleted -2100369821 1615999668
+species
+\change_inserted -2100369821 1615999668
+taxon
+\change_unchanged
+ loss and could maintain their biomass through the years.
  These results were consistent for the two interaction models that we considered
 , with and without progressive saturation in interaction strengths
 \begin_inset Note Note
@@ -3353,8 +3410,13 @@ F/ I added this because technically model I has saturation too, just threshold
  Our results therefore demonstrate the major potential role of phytoplanktonic
  cyst banks in maintaining biodiversity.
  These results align with the findings of previous theoretical studies,
- that have put forward similar effects of dormant stages in other taxa,
- such as plants 
+ that have put forward similar effects of dormant stages in other 
+\change_deleted -2100369821 1615999686
+taxa
+\change_inserted -2100369821 1615999687
+systems
+\change_unchanged
+, such as plants 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "levine_effects_2004,jabot_macroecology_2017"
@@ -3415,7 +3477,7 @@ literal "false"
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 this time the wording is OK
@@ -3484,8 +3546,20 @@ s and mean interaction values in the community.
 \end_layout
 
 \begin_layout Standard
-The various species present in the community had different survival probabilitie
-s in the absence of a seed bank.
+The various 
+\change_deleted -2100369821 1615999728
+species
+\change_inserted -2100369821 1615999728
+taxa
+\change_unchanged
+ present in the community had different survival probabilities in the absence
+ of a 
+\change_deleted -2100369821 1615999734
+seed
+\change_inserted -2100369821 1615999735
+cyst
+\change_unchanged
+ bank.
  Some species could persist without a cyst bank while others could not (which
  confirms conclusions from 
 \begin_inset CommandInset citation
@@ -3496,11 +3570,22 @@ literal "false"
 \end_inset
 
  for single species).
- Other species periodically disappeared from the community in the open ocean,
- while being able to reinvade the coast which connected to the cyst bank.
- This suggests that some species may be locally transient: they are filtered
- out from certain patches, but can reinvade more or less periodically the
- environment 
+ Other 
+\change_deleted -2100369821 1615999760
+species
+\change_inserted -2100369821 1615999760
+taxa
+\change_unchanged
+ periodically disappeared from the community in the open ocean, while being
+ able to reinvade the coast which connected to the cyst bank.
+ This suggests that some 
+\change_deleted -2100369821 1615999768
+species
+\change_inserted -2100369821 1615999769
+taxa
+\change_unchanged
+ may be locally transient: they are filtered out from certain patches, but
+ can reinvade more or less periodically the environment 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "guittar_quantifying_2020"
@@ -3509,13 +3594,27 @@ literal "false"
 \end_inset
 
 .
- Certain species characteristics could explain species extinction, whether
- definitive or only temporary: higher amplitudes of population variation
- were typically associated with extinctions.
+ Certain 
+\change_deleted -2100369821 1615999775
+species
+\change_inserted -2100369821 1615999776
+taxon
+\change_unchanged
+ characteristics could explain 
+\change_deleted -2100369821 1615999779
+species
+\change_inserted -2100369821 1615999779
+their
+\change_unchanged
+ extinction, whether definitive or only temporary: higher amplitudes of
+ population variation were typically associated with extinctions.
  We identified, by studying realised population growth rates (Fig.
  S7 in SI), that a smaller niche width (i.e., being a specialist) or being
- strongly affected by species interactions can explain rapid extinction
- without a cyst bank.
+ strongly affected by 
+\change_deleted -2100369821 1615999880
+species 
+\change_unchanged
+interactions can explain rapid extinction without a cyst bank.
 \end_layout
 
 \begin_layout Standard
@@ -3639,7 +3738,12 @@ Acknowledgements
 
 \begin_layout Standard
 We thank Nathan Wisnoski and Frank Jabot for useful feedback.
- CP was supported by a PhD grant from the French Ministry of Research.
+ 
+\change_inserted -2100369821 1615997999
+FB and CP were supported by the French ANR through LabEx COTE (ANR-10-LABX-45).
+ 
+\change_unchanged
+CP was supported by a PhD grant from the French Ministry of Research.
 \end_layout
 
 \begin_layout Standard

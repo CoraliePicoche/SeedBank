@@ -38,18 +38,20 @@
 \draw[thick,->,postaction={decorate,decoration={text along path, raise=-8pt,text={{$(1-m-\zeta)$}{}},text align=center,reverse path}}] (sp2_r) to [looseness=4, out=0,in=270] (sp2_r);
             
        %sinking      
-       \path[->]          (sp1_v)  edge   [bend left=20]   node [right] {$s_1$} (sp1_r); 
-        \path[->]          (sp2_v)  edge   [bend left=20]   node [right] {$s_2$} (sp2_r);
-
+       \path[->]          (sp1_v)  edge   [bend left=20]   node [left] {$s_1$} (sp1_r); 
+       \path[->]          (sp2_v)  edge   [bend left=20]   node [left] {$s_2$} (sp2_r);
+       \path[->]          (sp1_sea)  edge  node [left] {$s_1$} (10.75,-1.75); 
+       \path[->]          (sp2_sea)  edge  node [left] {$s_2$} (13.5,-1.75);
+       
      %resuspension
        \path[->]          (sp2_r)  edge   [bend left=20]   node [left] {$\gamma$} (sp2_v);
        \path[->]          (sp1_r)  edge   [bend left=20]   node [left] {$\gamma$} (sp1_v);
        
     %exchange
-       \path[->]          (sp1_v)  edge   [bend left=40]   node [above] {$e$} (sp1_sea);
-                            \path[<-]          (sp1_v)  edge   [bend left=60]   node [above] {$e$} (sp1_sea);
-              \path[->]          (sp2_v)  edge   [bend right=40]   node [above] {$e$} (sp2_sea);
-                            \path[<-]          (sp2_v)  edge   [bend right=60]   node [above] {$e$} (sp2_sea);
+       \path[->]          (sp1_v)  edge   [bend left=54]   node [above] {$e$} (sp1_sea);
+                            \path[<-]          (sp1_v)  edge   [bend left=64]   node [above] {$e$} (sp1_sea);
+              \path[->]          (sp2_v)  edge   [bend right=54]   node [above] {$e$} (sp2_sea);
+                            \path[<-]          (sp2_v)  edge   [bend right=64]   node [above] {$e$} (sp2_sea);
      %vegetative mortality
        \path [->]      (sp1_v)  edge node [above] {$l$}  (-1.2,-0.7); 
        \path [->]      (sp2_v)  edge node [below] {$l$}  (1.4,-0.7); 

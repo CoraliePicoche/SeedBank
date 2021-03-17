@@ -82,6 +82,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \end_header
 
 \begin_body
@@ -121,6 +122,32 @@ arabic{section}}
 
 \backslash
 setcounter{section}{0}
+\change_inserted -2100369821 1615974412
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1615974421
+
+
+\backslash
+renewcommand
+\backslash
+thefigure{S
+\backslash
+arabic{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1615974458
+
+
+\backslash
+setcounter{figure}{0}
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -161,12 +188,22 @@ with
 \begin_inset Formula $E(T)$
 \end_inset
 
-, 
+
+\change_deleted -2100369821 1616004514
+,
+\change_inserted -2100369821 1616004515
+ and
+\change_unchanged
+ 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
-, and species interaction estimates that affect the realized growth rate
- of phytoplanktonic organisms in a community.
+
+\change_deleted -2100369821 1616004525
+, and species interaction
+\change_unchanged
+ estimates that affect the realized growth rate of phytoplanktonic organisms
+ in a community.
 \end_layout
 
 \begin_layout Subsection*
@@ -403,8 +440,13 @@ The niche part of the growth rate
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- is mainly defined by two parameters which drive the phenology of the taxon:
- the thermal optimum 
+ is mainly defined by two parameters which drive the phenology of 
+\change_deleted -2100369821 1616004569
+the
+\change_inserted -2100369821 1616004569
+a
+\change_unchanged
+ taxon: the thermal optimum 
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
@@ -1044,15 +1086,33 @@ ely,
 \begin_inset Formula $H_{ij}$
 \end_inset
 
- is the abundance of species 
+ is the abundance of 
+\change_deleted -2100369821 1616004650
+species
+\change_inserted -2100369821 1616004650
+taxon
+\change_unchanged
+ 
 \begin_inset Formula $j$
 \end_inset
 
- to reach half of the maximum effect of species 
+ to reach half of the maximum effect of 
+\change_deleted -2100369821 1616004653
+species
+\change_inserted -2100369821 1616004655
+taxon
+\change_unchanged
+ 
 \begin_inset Formula $j$
 \end_inset
 
- on species 
+ on 
+\change_deleted -2100369821 1616004657
+species
+\change_inserted -2100369821 1616004658
+taxon
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1075,7 +1135,13 @@ literal "false"
 
 , i.e.
  each taxon provides a unique type of benefit or disadvantage to the focus
- species.
+ 
+\change_deleted -2100369821 1616004676
+species
+\change_inserted -2100369821 1616004676
+taxon
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -1100,11 +1166,23 @@ There is no single solution for matching the
 \begin_inset Formula $a_{C}$
 \end_inset
 
- as the average sum of all species effects 
+ as the average sum of all 
+\change_deleted -2100369821 1616004684
+species
+\change_inserted -2100369821 1616004689
+taxon
+\change_unchanged
+ effects 
 \begin_inset Formula $\alpha_{ij}N_{j}$
 \end_inset
 
- exerted on a given species if all interactions were competitive (eq.
+ exerted on a given 
+\change_deleted -2100369821 1616004693
+species
+\change_inserted -2100369821 1616004694
+taxon
+\change_unchanged
+ if all interactions were competitive (eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1973,12 +2051,28 @@ name "fig:Seed_bank_compet"
 \end_layout
 
 \begin_layout Standard
-When intraspecific interaction strengths do not change, reducing the values
- of interspecific competition has very little effect on both richness and
- the inverse of the Simpson index.
- Increasing facilitation finally destabilizes the ratio of intra- to interspecif
-ic interaction strengths, which destabilizes the community and leads to
- the observed diversity decrease in the absence of a cyst bank.
+When 
+\change_deleted -2100369821 1616004779
+intraspecific
+\change_inserted -2100369821 1616004780
+intrataxon
+\change_unchanged
+ interaction strengths do not change, reducing the values of 
+\change_deleted -2100369821 1616004786
+interspecific
+\change_inserted -2100369821 1616004787
+intertaxa
+\change_unchanged
+ competition has very little effect on both richness and the inverse of
+ the Simpson index.
+ Increasing facilitation finally destabilizes the ratio of intra- to inter
+\change_deleted -2100369821 1616004822
+specific
+\change_inserted -2100369821 1616004822
+taxa
+\change_unchanged
+ interaction strengths, which destabilizes the community and leads to the
+ observed diversity decrease in the absence of a cyst bank.
 \end_layout
 
 \begin_layout Section
@@ -2008,13 +2102,46 @@ status open
 
 \begin_layout Plain Layout
 Probability of survival in the absence of a cyst bank as a function of the
- realized per capita growth rates (PGCR) of each species in different conditions.
- We consider mean temperature and low densities (a), i.e., all species density
- are 1 C/L, or average densities (b), i.e., all species are at their simulated
- average density values; or average densities and optimal temperature for
- each species (c), or suboptimal temperatures (d) - here, 30°C.
- Red points correspond to species which have a high growth rate at low density
- but still goes extinct.
+ realized per capita growth rates (PGCR) of each 
+\change_deleted -2100369821 1616004829
+species
+\change_inserted -2100369821 1616004830
+taxon
+\change_unchanged
+ in different conditions.
+ We consider mean temperature and low densities (a), i.e., all 
+\change_deleted -2100369821 1616004833
+species
+\change_inserted -2100369821 1616004835
+taxon
+\change_unchanged
+ densit
+\change_deleted -2100369821 1616004844
+y
+\change_inserted -2100369821 1616004844
+ies
+\change_unchanged
+ are 1 C/L, or average densities (b), i.e., all 
+\change_deleted -2100369821 1616004852
+species
+\change_inserted -2100369821 1616004853
+taxa
+\change_unchanged
+ are at their simulated average density values; or average densities and
+ optimal temperature for each 
+\change_deleted -2100369821 1616004860
+species
+\change_inserted -2100369821 1616004861
+taxon
+\change_unchanged
+ (c), or suboptimal temperatures (d) - here, 30°C.
+ Red points correspond to 
+\change_deleted -2100369821 1616004866
+species
+\change_inserted -2100369821 1616004866
+taxa
+\change_unchanged
+ which have a high growth rate at low density but still goes extinct.
 \end_layout
 
 \end_inset
@@ -2031,7 +2158,13 @@ Probability of survival in the absence of a cyst bank as a function of the
 Extinction in the absence of the cyst bank can be explained by both a low
  growth rate at low density and average temperature (affecting specialists
  with a narrow niche) and a low growth rate at average density despite being
- at optimal temperature (i.e., species strongly affected by interactions).
+ at optimal temperature (i.e., 
+\change_deleted -2100369821 1616004873
+species
+\change_inserted -2100369821 1616004874
+taxa
+\change_unchanged
+ strongly affected by interactions).
 \end_layout
 
 \begin_layout Standard
