@@ -701,7 +701,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../exploratory/model_visu.pdf
+	filename ../output/model_visu.pdf
 	width 99line%
 	clip
 
