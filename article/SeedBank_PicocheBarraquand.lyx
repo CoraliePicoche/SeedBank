@@ -766,7 +766,9 @@ In this paper, individuals are phytoplanktonic cells that move between the
 \end_inset
 
 .
- The different populations are field-inspired morphotypes accounting for
+ 
+\change_deleted -2100369821 1616062716
+The different populations are field-inspired morphotypes accounting for
  the most frequent genera observed along the French coast 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -776,7 +778,9 @@ literal "false"
 \end_inset
 
  and will hereafter be called taxa.
- Parameters and state variables are defined in Table 
+ 
+\change_unchanged
+Parameters and state variables are defined in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:State_Parameter"
@@ -934,7 +938,13 @@ where the intrinsic growth rate
 \begin_inset Formula $r_{i}(T)$
 \end_inset
 
- is a taxon-specific function of the temperature (see eq.
+ is a 
+\change_deleted -2100369821 1616062906
+taxon
+\change_inserted -2100369821 1616062907
+species
+\change_unchanged
+-specific function of the temperature (see eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -949,11 +959,23 @@ noprefix "false"
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
- are per capita effects of taxon 
+ are per capita effects of 
+\change_deleted -2100369821 1616062912
+taxon
+\change_inserted -2100369821 1616062912
+species
+\change_unchanged
+ 
 \begin_inset Formula $j$
 \end_inset
 
- on taxon 
+ on 
+\change_deleted -2100369821 1616062917
+taxon
+\change_inserted -2100369821 1616062917
+species
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1006,11 +1028,23 @@ noprefix "false"
 \begin_inset Formula $r_{i}(T)$
 \end_inset
 
- in two parts: the taxon-independent metabolism part 
+ in two parts: the 
+\change_deleted -2100369821 1616062936
+taxon
+\change_inserted -2100369821 1616062936
+species
+\change_unchanged
+-independent metabolism part 
 \begin_inset Formula $E(T)$
 \end_inset
 
- and the taxon-specific niche part 
+ and the 
+\change_deleted -2100369821 1616062941
+taxon
+\change_inserted -2100369821 1616062942
+species
+\change_unchanged
+-specific niche part 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
@@ -1054,15 +1088,21 @@ literal "false"
 \end_inset
 
  describes the decrease in growth rate due to the difference between the
- temperature in the environment and the taxon-specific thermal optimum 
+ temperature in the environment and the 
+\change_deleted -2100369821 1616062951
+taxon
+\change_inserted -2100369821 1616062951
+species
+\change_unchanged
+-specific thermal optimum 
 \begin_inset Formula $T_{i}^{opt}$
 \end_inset
 
 , and is controlled by the 
-\change_deleted -2100369821 1615998693
-species
-\change_inserted -2100369821 1615998694
+\change_deleted -2100369821 1616062958
 taxon
+\change_inserted -2100369821 1616062959
+species
 \change_unchanged
 -specific thermal decay 
 \begin_inset Formula $b_{i}$
@@ -1129,7 +1169,13 @@ where
 \begin_inset Formula $\mathbb{F}$
 \end_inset
 
- the sets of competitors and facilitators of taxon 
+ the sets of competitors and facilitators of 
+\change_deleted -2100369821 1616062969
+taxon
+\change_inserted -2100369821 1616062970
+species
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1143,10 +1189,10 @@ literal "false"
 \end_inset
 
 , but use different parameters that vary between 
-\change_deleted -2100369821 1615998704
-species
-\change_inserted -2100369821 1615998704
+\change_deleted -2100369821 1616063529
 taxa
+\change_inserted -2100369821 1616063530
+species
 \change_unchanged
 .
  Indeed, the half-saturation coefficients 
@@ -1154,10 +1200,10 @@ taxa
 \end_inset
 
  vary between 
-\change_deleted -2100369821 1615998711
-species
-\change_inserted -2100369821 1615998711
+\change_deleted -2100369821 1616063705
 taxa
+\change_inserted -2100369821 1616063706
+species
 \change_unchanged
 , as opposed to the maximum rates in 
 \begin_inset CommandInset citation
@@ -1173,10 +1219,10 @@ literal "false"
 \end_inset
 
  to be fixed (e.g., in a resource competition context, different 
-\change_deleted -2100369821 1615998724
-species
-\change_inserted -2100369821 1615998724
+\change_deleted -2100369821 1616063538
 taxa
+\change_inserted -2100369821 1616063539
+species
 \change_unchanged
  are expected to feel resource limitations at different concentrations of
  nutrients and at different numbers of competitors).
@@ -1320,7 +1366,13 @@ Status
 \begin_inset Text
 
 \begin_layout Plain Layout
-Abundance of taxon 
+Abundance of 
+\change_deleted -2100369821 1616062749
+taxon
+\change_inserted -2100369821 1616062750
+species
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1452,7 +1504,21 @@ Dynamic
 \begin_inset Text
 
 \begin_layout Plain Layout
-Growth rate of taxon 
+
+\change_inserted -2100369821 1616061253
+Intrinsic 
+\change_deleted -2100369821 1616062742
+G
+\change_inserted -2100369821 1616062742
+g
+\change_unchanged
+rowth rate of 
+\change_deleted -2100369821 1616062756
+taxon
+\change_inserted -2100369821 1616062757
+species
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1510,7 +1576,11 @@ Thermal decay
 \begin_inset Text
 
 \begin_layout Plain Layout
-Field-based, taxon-specific (
+Field-based
+\change_deleted -2100369821 1616062787
+, taxon-specific
+\change_unchanged
+ (
 \begin_inset Formula $K^{3}$
 \end_inset
 
@@ -1546,7 +1616,13 @@ Calibrated
 \begin_inset Text
 
 \begin_layout Plain Layout
-Optimal temperature for taxon 
+Optimal temperature for 
+\change_deleted -2100369821 1616062763
+taxon
+\change_inserted -2100369821 1616062764
+species
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1559,7 +1635,11 @@ Optimal temperature for taxon
 \begin_inset Text
 
 \begin_layout Plain Layout
-Field-based, taxon-specific (
+Field-based
+\change_deleted -2100369821 1616062812
+, taxon-specific
+\change_unchanged
+ (
 \begin_inset Formula $K$
 \end_inset
 
@@ -1639,7 +1719,13 @@ Fixed
 \begin_inset Text
 
 \begin_layout Plain Layout
-Interaction strength of taxon 
+Interaction strength of 
+\change_deleted -2100369821 1616062768
+taxon
+\change_inserted -2100369821 1616062769
+species
+\change_unchanged
+ 
 \begin_inset Formula $j$
 \end_inset
 
@@ -1656,7 +1742,11 @@ Interaction strength of taxon
 \begin_inset Text
 
 \begin_layout Plain Layout
-Field-based, taxon-specific (Cells
+Field-based
+\change_deleted -2100369821 1616062817
+, taxon-specific
+\change_unchanged
+ (Cells
 \begin_inset Formula $^{-1})$
 \end_inset
 
@@ -1733,7 +1823,13 @@ Calibrated
 \begin_inset Text
 
 \begin_layout Plain Layout
-Half-saturation for the interaction strength of taxon 
+Half-saturation for the interaction strength of 
+\change_deleted -2100369821 1616062773
+taxon
+\change_inserted -2100369821 1616062774
+species
+\change_unchanged
+ 
 \begin_inset Formula $j$
 \end_inset
 
@@ -1750,7 +1846,11 @@ Half-saturation for the interaction strength of taxon
 \begin_inset Text
 
 \begin_layout Plain Layout
-Field-based, taxon-specific (Cells
+Field-based
+\change_deleted -2100369821 1616062821
+, taxon-specific
+\change_unchanged
+ (Cells
 \begin_inset Formula $)$
 \end_inset
 
@@ -1786,7 +1886,13 @@ Calibrated
 \begin_inset Text
 
 \begin_layout Plain Layout
-Sinking rate of taxon 
+Sinking rate of 
+\change_deleted -2100369821 1616062780
+taxon
+\change_inserted -2100369821 1616062780
+species
+\change_unchanged
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -2241,8 +2347,14 @@ literal "false"
  Sinking is mostly affected by hydrodynamics, but at the species-level,
  size, shape, density-regulation and colony-formation capabilities are key
  determinants of the particle flotation.
- In this model, the sinking rate of each taxon cysts is drawn from a Beta
- distribution with a mean value of 9%, and a maximum (
+ In this model, the sinking rate of each 
+\change_deleted -2100369821 1616062832
+taxon
+\change_inserted -2100369821 1616062835
+species
+\change_unchanged
+ cysts is drawn from a Beta distribution with a mean value of 9%, and a
+ maximum (
 \begin_inset Formula $S_{\text{max}}$
 \end_inset
 
@@ -2410,7 +2522,7 @@ In addition to phenology parameters, whose estimation process is described
  study 
 \begin_inset CommandInset citation
 LatexCommand citep
-after "see Section 3 of the SI for the equations"
+after "see Section S3 of the SI for the equations"
 key "picoche_strong_2020"
 literal "false"
 
@@ -2635,6 +2747,11 @@ literal "false"
 
 .
  
+\change_inserted -2100369821 1616063556
+We base the different populations on the most frequent genera observed along
+ the French Coast (Section S4 in the SI).
+\change_unchanged
+
 \begin_inset Note Note
 status open
 
@@ -2735,13 +2852,23 @@ For each value of the multiplicative factor, we therefore run 4 simulations
 \change_inserted -2100369821 1616003779
  
 \change_unchanged
-Here, both intra and intertaxa interactions are modified; we present in
- Section 
+Here, both intra and inter
+\change_deleted -2100369821 1616063375
+taxa
+\change_inserted -2100369821 1616063376
+species
+\change_unchanged
+ interactions are modified; we present in Section 
 \change_inserted -2100369821 1616003849
 S
 \change_unchanged
-6 of the SI additional simulations with a change in intertaxa interactions
- only.
+6 of the SI additional simulations with a change in inter
+\change_deleted -2100369821 1616063575
+taxa
+\change_inserted -2100369821 1616063576
+species
+\change_unchanged
+ interactions only.
 \end_layout
 
 \begin_layout Standard
@@ -2954,9 +3081,21 @@ In three cases (cyst burial rate set to 0.1, resuspension to 10
 
  or exchange rate set to 0), the final richness of the oceanic community
  decreased from 11 to 4.
- Extant taxa were the same in all simulations (CHA, THP, NIT, PSE).
- When resuspension was set to 0.001, a taxon periodically disappeared from
- the ocean, to be subsequently re-seeded by the coastal population.
+ Extant 
+\change_deleted -2100369821 1616063407
+taxa
+\change_inserted -2100369821 1616063409
+species
+\change_unchanged
+ were the same in all simulations (CHA, THP, NIT, PSE).
+ When resuspension was set to 0.001, a 
+\change_deleted -2100369821 1616063644
+taxon
+\change_inserted -2100369821 1616063645
+species
+\change_unchanged
+ periodically disappeared from the ocean, to be subsequently re-seeded by
+ the coastal population.
 \end_layout
 
 \begin_layout Standard
@@ -3002,9 +3141,19 @@ Values used in the sensitivity analysis are in the second row of the x-axis
  used in the sensitivity analysis (e.g.
  mortality rates in the sensitivity analysis are both below the value used
  in other simulations).
- Numbers in red are the final number of taxa in the ocean and dots correspond
- to simulations in which at least one taxon reached 0 at one point but did
- not disappear.
+ Numbers in red are the final number of 
+\change_deleted -2100369821 1616063415
+taxa
+\change_inserted -2100369821 1616063417
+species
+\change_unchanged
+ in the ocean and dots correspond to simulations in which at least one 
+\change_deleted -2100369821 1616063656
+taxon
+\change_inserted -2100369821 1616063658
+species
+\change_unchanged
+ reached 0 at one point but did not disappear.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3035,7 +3184,17 @@ Two scenarios were designed to test the buffering effect of the cyst bank
  In both cases, it consisted in removing the cyst bank by setting cyst mortality
  to 100% per day.
  Without any other disturbance to the system, this led to a decrease in
- taxon richness from 11 to 4 taxa at the end of the simulation (Fig.
+ 
+\change_deleted -2100369821 1616063668
+taxon 
+\change_unchanged
+richness from 11 to 4 
+\change_deleted -2100369821 1616063421
+taxa
+\change_inserted -2100369821 1616063422
+species
+\change_unchanged
+ at the end of the simulation (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3054,13 +3213,7 @@ noprefix "false"
  in all cases).
  The inverse of the Simpson index (the second Hill number) decreased from
  approximately 3 to 1, showing that the disappearance of the cyst bank did
- not affect only the rarest 
-\change_deleted -2100369821 1615999183
-species
-\change_inserted -2100369821 1615999184
-taxa
-\change_unchanged
-.
+ not affect only the rarest species.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3083,8 +3236,17 @@ noprefix "false"
 
 ) showed that an increase in competition strength only had negative effects
  with model I, and for high competition values (6 times the reference ones
- at least), shifting from 4 taxa to 3 taxa in the oceanic compartment of
- a community without cyst bank.
+ at least), shifting from 4 
+\change_deleted -2100369821 1616063450
+taxa
+\change_unchanged
+ to 3 
+\change_deleted -2100369821 1616063458
+taxa 
+\change_inserted -2100369821 1616063467
+species 
+\change_unchanged
+in the oceanic compartment of a community without cyst bank.
  By contrast, an increase in competition strength did not affect the richness
  of a community with a cyst bank.
  On the contrary, a decrease in competition (from a factor 0.5 and lower)
@@ -3111,21 +3273,22 @@ confirmed.
  in competition or an increase in facilitation with model II) was observed
  in a community with a cyst bank, but for larger disturbances.
  Competition indeed had to be at least divided by 6 or facilitation, to
- be multiplied by 7 for richness to decrease to 9 taxa.
+ be multiplied by 7 for richness to decrease to 9 
+\change_deleted -2100369821 1616063476
+taxa
+\change_inserted -2100369821 1616063476
+species
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
 The inverse of the Simpson index was also affected by the changes in interaction
  strengths, with similar patterns to richness, as it was lowest for high
  facilitation or low competition.
- Presumably some 
-\change_deleted -2100369821 1615999218
-species
-\change_inserted -2100369821 1615999218
-taxa
-\change_unchanged
- reach very high growth rates in these scenarios, which then feeds back
- onto community dynamics, generating lower diversity in the end.
+ Presumably some species reach very high growth rates in these scenarios,
+ which then feeds back onto community dynamics, generating lower diversity
+ in the end.
 \end_layout
 
 \begin_layout Standard
@@ -3193,7 +3356,13 @@ noprefix "false"
 
 ).
  In contrast, their interactions were not qualitatively different from the
- other taxa
+ other 
+\change_deleted -2100369821 1616063498
+taxa
+\change_inserted -2100369821 1616063499
+species
+\change_unchanged
+
 \begin_inset Note Note
 status collapsed
 
@@ -3230,10 +3399,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Probability of survival of taxa when competition increases in the absence
- of a cyst bank, as a function of their dynamics characteristics (minimum
- abundance, logarithm of amplitude and niche width) in the reference parameter
- set
+Probability of survival of 
+\change_deleted -2100369821 1616063504
+taxa
+\change_inserted -2100369821 1616063504
+species
+\change_unchanged
+ when competition increases in the absence of a cyst bank, as a function
+ of their dynamics characteristics (minimum abundance, logarithm of amplitude
+ and niche width) in the reference parameter set
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Probability-of-survival"
@@ -3286,9 +3460,21 @@ literal "false"
 ).
  In all cases however, the total abundances were not strongly affected.
  Indeed, the total abundance of a community is driven by a small number
- of numerically dominant taxa, which did not disappear.
+ of numerically dominant 
+\change_deleted -2100369821 1616063509
+taxa
+\change_inserted -2100369821 1616063509
+species
+\change_unchanged
+, which did not disappear.
  High total abundances tended to correspond to the abundance of only one
- or two taxa.
+ or two 
+\change_deleted -2100369821 1616063513
+taxa
+\change_inserted -2100369821 1616063514
+species
+\change_unchanged
+.
  Model II consistenly led to higher abundances, as was already the case
  in the reference simulations.
 \end_layout
@@ -3363,11 +3549,8 @@ Using a meta-community model which accounts for exchanges between the ocean
  abundances and temporal patterns), while including the effects of both
  positive and negative interactions on community dynamics.
  When removing the cyst bank, biodiversity decreased drastically.
- This was true for the reference parameter values, as well as when 
-\change_deleted -2100369821 1615999653
-species 
-\change_unchanged
-interaction strengths and environmental fluctuation levels where altered,
+ This was true for the reference parameter values, as well as when species
+ interaction strengths and environmental fluctuation levels where altered,
  in which cases the cyst bank's buffering influence disappeared.
  The total abundance of the community decreased as well.
  Moreover, when faced with a biotic or abiotic 
@@ -3378,20 +3561,9 @@ press
 \begin_inset Quotes erd
 \end_inset
 
- perturbation, communities where 
-\change_deleted -2100369821 1615999661
-species
-\change_inserted -2100369821 1615999662
-taxa
-\change_unchanged
- could divert part of their population to a dormant stage were less prone
- to 
-\change_deleted -2100369821 1615999668
-species
-\change_inserted -2100369821 1615999668
-taxon
-\change_unchanged
- loss and could maintain their biomass through the years.
+ perturbation, communities where species could divert part of their population
+ to a dormant stage were less prone to species loss and could maintain their
+ biomass through the years.
  These results were consistent for the two interaction models that we considered
 , with and without progressive saturation in interaction strengths
 \begin_inset Note Note
@@ -3410,13 +3582,8 @@ F/ I added this because technically model I has saturation too, just threshold
  Our results therefore demonstrate the major potential role of phytoplanktonic
  cyst banks in maintaining biodiversity.
  These results align with the findings of previous theoretical studies,
- that have put forward similar effects of dormant stages in other 
-\change_deleted -2100369821 1615999686
-taxa
-\change_inserted -2100369821 1615999687
-systems
-\change_unchanged
-, such as plants 
+ that have put forward similar effects of dormant stages in other taxa,
+ such as plants 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "levine_effects_2004,jabot_macroecology_2017"
@@ -3546,20 +3713,8 @@ s and mean interaction values in the community.
 \end_layout
 
 \begin_layout Standard
-The various 
-\change_deleted -2100369821 1615999728
-species
-\change_inserted -2100369821 1615999728
-taxa
-\change_unchanged
- present in the community had different survival probabilities in the absence
- of a 
-\change_deleted -2100369821 1615999734
-seed
-\change_inserted -2100369821 1615999735
-cyst
-\change_unchanged
- bank.
+The various species present in the community had different survival probabilitie
+s in the absence of a seed bank.
  Some species could persist without a cyst bank while others could not (which
  confirms conclusions from 
 \begin_inset CommandInset citation
@@ -3570,22 +3725,11 @@ literal "false"
 \end_inset
 
  for single species).
- Other 
-\change_deleted -2100369821 1615999760
-species
-\change_inserted -2100369821 1615999760
-taxa
-\change_unchanged
- periodically disappeared from the community in the open ocean, while being
- able to reinvade the coast which connected to the cyst bank.
- This suggests that some 
-\change_deleted -2100369821 1615999768
-species
-\change_inserted -2100369821 1615999769
-taxa
-\change_unchanged
- may be locally transient: they are filtered out from certain patches, but
- can reinvade more or less periodically the environment 
+ Other species periodically disappeared from the community in the open ocean,
+ while being able to reinvade the coast which connected to the cyst bank.
+ This suggests that some species may be locally transient: they are filtered
+ out from certain patches, but can reinvade more or less periodically the
+ environment 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "guittar_quantifying_2020"
@@ -3594,27 +3738,13 @@ literal "false"
 \end_inset
 
 .
- Certain 
-\change_deleted -2100369821 1615999775
-species
-\change_inserted -2100369821 1615999776
-taxon
-\change_unchanged
- characteristics could explain 
-\change_deleted -2100369821 1615999779
-species
-\change_inserted -2100369821 1615999779
-their
-\change_unchanged
- extinction, whether definitive or only temporary: higher amplitudes of
- population variation were typically associated with extinctions.
+ Certain species characteristics could explain species extinction, whether
+ definitive or only temporary: higher amplitudes of population variation
+ were typically associated with extinctions.
  We identified, by studying realised population growth rates (Fig.
  S7 in SI), that a smaller niche width (i.e., being a specialist) or being
- strongly affected by 
-\change_deleted -2100369821 1615999880
-species 
-\change_unchanged
-interactions can explain rapid extinction without a cyst bank.
+ strongly affected by species interactions can explain rapid extinction
+ without a cyst bank.
 \end_layout
 
 \begin_layout Standard
