@@ -5,8 +5,8 @@ This repository contains the data, code and analyses of a phytoplankton metacomm
 The folder is organized as follow:
 
 * `article` is self-explanatory
-* `output`: contains the figure from the scripts in `script`, mostly related to the phenology of species. It also contains the scripts and results of the calibration of the two models developed in the paper 
-* `param`: contains the time series from the example site + parameters for the models
-* `script`: contains all scripts for both models and calibration/parameterisation of the model
+* `output` contains the figure from the scripts in `script`, mostly related to the phenology of species. It also contains the scripts and results of the calibration of the interactions of the model developed in the paper. 
+* `param` contains the time series from the example site + parameters for the model.
+* `script` contains scripts for the calibration of the phenology, as well as the scripts for the main figures (and corresponding simulations) in `script/common_scripts`.
 
 .
