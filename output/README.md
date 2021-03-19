@@ -1,0 +1,1 @@
+This folder contains figures phenology analyses and the calibration of the interactions of the two models we use in the analyses. Modelv1.1 is the mass-action model while modelv2.1 is the model with saturating interactions. 
