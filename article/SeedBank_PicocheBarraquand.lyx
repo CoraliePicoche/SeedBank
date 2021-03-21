@@ -98,20 +98,12 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2100369821 "cpicoche"
-\author -666822487 "frederic"
 \end_header
 
 \begin_body
 
 \begin_layout Title
-
-\change_deleted -666822487 1616169217
-Why s
-\change_inserted -666822487 1616169217
-S
-\change_unchanged
-eed banks can help to maintain the diversity of interacting phytoplankton
+Seed banks can help to maintain the diversity of interacting phytoplankton
  species
 \end_layout
 
@@ -125,19 +117,13 @@ Coralie Picoche
 \end_inset
 
 
-\change_inserted -666822487 1616169940
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -666822487 1616169940
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1616169940
 
 
 \backslash
@@ -147,25 +133,16 @@ vspace{-1cm}
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Address
 \noindent
 \align center
-
-\change_inserted -666822487 1616169661
 \begin_inset Formula $^{1}$
 \end_inset
 
-
-\change_unchanged
-Institute of Mathematics of Bordeaux, University of Bordeaux and CNRS, 
-\change_inserted -666822487 1616073435
-Talence, 
-\change_unchanged
-France
+Institute of Mathematics of Bordeaux, University of Bordeaux and CNRS, Talence,
+ France
 \begin_inset VSpace medskip
 \end_inset
 
@@ -175,26 +152,14 @@ France
 
 Integrative and Theoretical Ecology, LabEx COTE, University of Bordeaux,
  Pessac, France
-\change_inserted -666822487 1616169895
-
 \end_layout
 
 \begin_layout Abstract
 Seed formation is part of the reproductive cycle, leading to the accumulation
  of resistance stages that can withstand harsh environmental conditions
  for long periods of time.
- At the community 
-\change_deleted -666822487 1616169477
-scale
-\change_inserted -666822487 1616169478
-level
-\change_unchanged
-, multiple species with such long-lasting life stages can be more likely
- to coexist
-\change_deleted -666822487 1616169459
- thanks to the buffering effect of seed banks
-\change_unchanged
-.
+ At the community level, multiple species with such long-lasting life stages
+ can be more likely to coexist.
  While the implications of this process for biodiversity have been studied
  in terrestrial plants, seed banks are usually neglected in phytoplankton
  multispecies dynamic models, in spite of widespread empirical evidence
@@ -264,8 +229,6 @@ Note for us: Longer periods of time would be possible to consider than 30
 \end_inset
 
 
-\change_inserted -2100369821 1616001611
-
 \end_layout
 
 \begin_layout Standard
@@ -294,11 +257,7 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1616169966
-
 %
-\change_unchanged
-
 \backslash
 linenumbers
 \end_layout
@@ -2394,29 +2353,15 @@ Parameter calibration
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -666822487 1616170626
-In addition to phenology parameters, whose estimation process is described
- in Section S1 of the SI, the 49 non-zero interactions that form the community
- matrix of the model are inferred from field data.
- 
-\change_inserted -666822487 1616170628
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1616170642
 Difficult to understand.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 We use initial interaction estimates from our previous time series modelling
  study 
 \begin_inset CommandInset citation
@@ -2429,11 +2374,8 @@ literal "false"
 
 .
  These initial interaction estimates are then calibrated to the time series
-\change_inserted -666822487 1616170678
- (see below)
-\change_unchanged
-, to take into account the differences in model structure and timescale
- between this study and 
+ (see below), to take into account the differences in model structure and
+ timescale between this study and 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "picoche_strong_2020"
@@ -2576,15 +2518,7 @@ Parameters taken from the literature may be site- or model- specific, or
 \begin_inset Formula $\gamma$
 \end_inset
 
-, cyst 
-\change_deleted -2100369821 1615994820
-mortality 
-\begin_inset Formula $m$
-\end_inset
-
- and 
-\change_unchanged
-burial 
+, cyst burial 
 \begin_inset Formula $\zeta$
 \end_inset
 
@@ -2593,25 +2527,16 @@ burial
 \end_inset
 
 
-\change_inserted -666822487 1616170240
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1616170323
 OK so we did not change cyst mortality, right? I'm OK with it, just to be
  clear.
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  We therefore performed a sensitivity analysis to these highly uncertain
  parameters.
@@ -2635,27 +2560,9 @@ Empirical dataset used for calibration
 \end_layout
 
 \begin_layout Standard
-The model
-\change_deleted -666822487 1616170588
-ed community is inspired by
-\change_inserted -666822487 1616170595
-s are calibrated using
-\change_unchanged
- 
-\change_deleted -666822487 1616170712
-previously analysed field data 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "REPHY_db,picoche_strong_2020"
-literal "false"
-
-\end_inset
-
-.
- For calibration, we use 
-\change_unchanged
-time series of phytoplanktonic abundances that have been monitored biweekly
- for 21 years in the Marennes-Oléron Bay, on the French Atlantic Coast 
+The models are calibrated using time series of phytoplanktonic abundances
+ that have been monitored biweekly for 21 years in the Marennes-Oléron Bay,
+ on the French Atlantic Coast 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "the Auger site analysed in"
@@ -2665,19 +2572,12 @@ literal "false"
 \end_inset
 
 .
- 
-\change_inserted -666822487 1616171113
-This dataset – like most other plankton monitoring studies – has a slightly
+ This dataset – like most other plankton monitoring studies – has a slightly
  coarser taxonomy than our mechanistic model.
  We stress that we are not trying to model precisely this particular community,
  but rather to constrain our models to produce lifelike patterns of phytoplankto
 n community dynamics.
  
-\change_deleted -666822487 1616170733
-We base the different populations on the most frequent genera observed along
- the French Coast (Section S4 in the SI).
-\change_unchanged
-
 \begin_inset Note Note
 status collapsed
 
@@ -2774,11 +2674,7 @@ For each value of the multiplicative factor, we therefore run 4 simulations
 
 \end_inset
 
-
-\change_inserted -2100369821 1616003779
- 
-\change_unchanged
-Here, both intra and interspecies interactions are modified; we present
+ Here, both intra and interspecies interactions are modified; we present
  in Section S6 of the SI additional simulations with a change in interspecies
  interactions only.
 \end_layout
