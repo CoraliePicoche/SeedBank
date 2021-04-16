@@ -1,0 +1,2098 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\usepackage{graphicx}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes true
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author -2100369821 "cpicoche"
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\series bold
+Supporting Information
+\series default
+ for 
+\emph on
+Seed banks can help to maintain the diversity of interacting phytoplankton
+ species 
+\emph default
+by C.
+ Picoche & F.
+ Barraquand.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+thesection{S
+\backslash
+arabic{section}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+thefigure{S
+\backslash
+arabic{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Intrinsic growth rate modeling
+\end_layout
+
+\begin_layout Standard
+The intrinsic growth rate can be decomposed in 2 elements:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r_{i}(T)=E(T)f_{i}(T)\label{eq:growth_rate}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ the response to temperature common to all species and 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ the species-specific response.
+ This section provides detailed information regarding 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ estimates that affect the realized growth rate of phytoplanktonic organisms
+ in a community.
+\end_layout
+
+\begin_layout Subsection*
+Common response to temperature
+\end_layout
+
+\begin_layout Standard
+Phytoplanktonic growth rates cover a broad range of values: between 0.2 and
+ 1.78 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ for diatoms in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "reynolds2006ecology"
+literal "false"
+
+\end_inset
+
+, even reaching 3 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ in the meta-analysis of 308 experiments by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_light_2015"
+literal "false"
+
+\end_inset
+
+.
+ These values are often computed from measurements on isolated species or
+ on small communities in laboratory conditions, in a constant environment.
+ A broader perspective is therefore necessary to understand general responses
+ to changes in the environment 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bissinger_predicting_2008,edwards_phytoplankton_2016"
+literal "false"
+
+\end_inset
+
+, especially temperature.
+\end_layout
+
+\begin_layout Standard
+We first used the equation by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ as a starting point, but it was not able to reproduce the observed values
+ found in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "edwards_light_2015"
+literal "false"
+
+\end_inset
+
+ (see low values of the growth rate in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-of-growth-rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+a, between 0.05 and 0.8, in place of values between 0.2 and 3 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+).
+ In this context, we decided to use the formula by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ to compute the maximum growth rate response to the temperature.
+ There are two reasons for this choice.
+ First, their model is a general function that can be applied to all species.
+ Second, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ is an update of the seminal work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+ which was used in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+, but might be outdated.
+\end_layout
+
+\begin_layout Standard
+The relationship between temperature and growth rate is then 
+\begin_inset Formula $E(T)\thinspace=\thinspace0.81\exp^{0.0631(T-273.15)}$
+\end_inset
+
+, with T in Kelvin degrees.
+ In this case, growth rates vary between 0.81 and 3.9 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ for temperatures between 0 and 25°C, in line with previous observations.
+ However, these daily growth rates need to be proportional to the daylength
+ as no growth occurs at night: we therefore divide 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ by two in our models.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../output/compare_growth_rate_rawBissinger.pdf
+	width 99text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decomposition of the 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ growth rate formula (a).
+ The black line indicates the final growth rate with their model.
+ The blue line corresponds to the species-specific response to temperature
+ for a thermal optimum of 15°C and the green line is the maximum achievable
+ growth rate, a composite of the metabolic theory of ecology and the formula
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+.
+ This formula is shown by black crosses in (b) and compared to the 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "eppley_temperature_1972"
+literal "false"
+
+\end_inset
+
+ curve in blue and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bissinger_predicting_2008"
+literal "false"
+
+\end_inset
+
+ formula in purple.
+ Horizontal lines show limits found in the literature 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "reynolds2006ecology"
+literal "false"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparison-of-growth-rate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Species-specific response to temperature
+\end_layout
+
+\begin_layout Standard
+The niche part of the growth rate 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ is mainly defined by two parameters which drive the phenology of a species:
+ the thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+You don't need to say this, especially as the degrees do not matter in a
+ difference, you said the model is in Kelvin for simpler notations, you
+ give values of T in Celsius in the text, period.
+\end_layout
+
+\end_inset
+
+ and a proxy of the niche width 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:niche_part"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{i}(T)=\begin{cases}
+\exp(-|T-T_{i}^{opt}|^{3}/b_{i}), & T\leq T_{i}^{opt}\\
+\exp(-5|T-T_{i}^{opt}|^{3}/b_{i}), & T>T_{i}^{opt}
+\end{cases}\label{eq:niche_part}
+\end{equation}
+
+\end_inset
+
+The annual dynamics of phytoplanktonic organisms is usually characterized
+ by a blooming period and a lower concentration during the rest of the year.
+ The bloom can be triggered by a combination of nutrient and light input,
+ as well as a sufficient temperature.
+ All parameters being more or less correlated to the seasonal rythm, it
+ is reasonable to restrain this study to the effect of one variable, temperature.
+
+\change_inserted -2100369821 1618580050
+ The niche computed here is not only the thermal niche itself, but a composite
+ of the environmental conditions varying with the temperature, which can
+ also account for predation.
+ As each niche is determined based on the species abundance variation only,
+ it also implicitely takes into account the interactions with other species.
+ 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ is therefore an approximation of the realized niche of species 
+\begin_inset Formula $i$
+\end_inset
+
+, not its fundamental thermal niche.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+We base our estimates of 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ on field observations.
+ For each taxon and each year, we define the beginning of the bloom as the
+ date when the taxon abundance exceeds its median abundance over the year.
+ The duration of the bloom is the number of days between the beginning and
+ the date where abundance falls below the median value.
+ Taxa are then separated into two groups.
+ In the field, generalists are characterized by one long bloom in the year
+ or several blooms during which the abundances oscillate around their median.
+ Specialists tend to appear only once or twice in the year for shorter amounts
+ of time.
+ A genus is therefore defined as a generalist if its cumulated bloom days
+ over a year last more than the average duration of all blooms (137 days)
+ for at least 15 years over the 20 years of the time series, and as a specialist
+ if they fall below this threshold.
+\end_layout
+
+\begin_layout Standard
+In the models, we assume that generalists have a niche width between 15
+ and 30°C and specialists, between 5 and 10°C.
+ We assume that temperatures outside of this range lead to a growth rate
+ at least 10 times inferior to the growth rate obtained at their thermal
+ optimum (
+\begin_inset Formula $\exp(-|7.5|^{3}/b_{i}=0.1$
+\end_inset
+
+ for a niche width of 15°C).
+ This leads to values of 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ between 180 and 1500 for generalists, and 7 and 55 for specialists.
+ A set of 
+\begin_inset Formula $b$
+\end_inset
+
+ values is drawn from a uniform distribution within these boundaries.
+ Meanwhile, taxa are ordered as a function of the mean cumulated bloom length
+ and larger niche values are attributed to longer mean bloom length, i.e.
+ 
+\begin_inset Formula $\sum\overline{L}_{i,b}>\sum\overline{L}_{j,b}\Rightarrow b_{i}>b_{j}$
+\end_inset
+
+ where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\overline{L}$
+\end_inset
+
+ is the mean over 20 years of the annual cumulated lengths of the bloom
+\end_layout
+
+\begin_layout Standard
+The thermal optimum 
+\begin_inset Formula $T_{i}^{opt}$
+\end_inset
+
+ was first defined as the mean minimum temperature of the bloom throughout
+ the whole time series.
+ However, this value led to blooms occuring mainly in the winter and needed
+ to be increased by 5°C in order to simulate realistic phytoplankton cycles.
+\end_layout
+
+\begin_layout Standard
+It should be noted that a variation in niche width also affects the final
+ shape of thermal preferences.
+ Indeed, when 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ increases, the niche term 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ has smaller variation in values around the thermal optimum.
+ In this case, the final value of the growth rate is driven by the metabolism
+ part of the equation (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Growth_niche_metabolism"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../output/further_notes_on_SV.pdf
+	width 99text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relationship between daily growth rates and temperature with different values
+ of niche width 
+\begin_inset Formula $b$
+\end_inset
+
+ (whose values are indicated in the legend, corresponding to specialist
+ and generalist species) and the same thermal optimum, 15°C, indicated by
+ the solid black line (a).
+ On the right panel, only the two extreme values of 
+\begin_inset Formula $b$
+\end_inset
+
+ (10 and 1500) are shown in blue and red respectively.
+ Solid lines then correspond to the final growth rate, points correspond
+ to 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ values (see eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ the dotted line corresponds to 
+\begin_inset Formula $E(T)$
+\end_inset
+
+ values.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Growth_niche_metabolism"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We provide actual shapes of 
+\change_inserted -2100369821 1618578161
+the realized niche 
+\change_unchanged
+
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ for modeled taxa below (Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Thermal_niche"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../output/thermal_niche.pdf
+	width 95text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Growth rate as a function of temperature for the taxa used in the model
+ (names are defined in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Group_definition"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Thermal_niche"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Initial estimates of interaction values
+\end_layout
+
+\begin_layout Subsubsection*
+Model I: Lotka-Volterra interactions
+\end_layout
+
+\begin_layout Standard
+Interactions between taxa have previously been computed with a Multivariate
+ AutoRegressive model (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:MAR_equation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathbf{n}_{t+1}=\mathbf{B}\mathbf{n}_{t}+\textbf{C}\textbf{u}_{t+1}+\mathbf{e}_{t},\mathbf{e}_{t}\thicksim\mathcal{{N_{S}}}(0,\mathbf{Q})\label{eq:MAR_equation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $S$
+\end_inset
+
+ is the number of taxa, 
+\begin_inset Formula $\mathbf{n}_{\ensuremath{t}}$
+\end_inset
+
+ is the 
+\begin_inset Formula $1\times S$
+\end_inset
+
+ vector of log-abundance of phytoplankton taxa, 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ is the 
+\begin_inset Formula $S\times S$
+\end_inset
+
+ interaction matrix with elements 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+ (the effect of taxon 
+\begin_inset Formula $j$
+\end_inset
+
+ on taxon 
+\begin_inset Formula $i$
+\end_inset
+
+), 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ is the 
+\begin_inset Formula $S\times V$
+\end_inset
+
+ environment matrix describing the effects of variables 
+\begin_inset Formula $\mathbf{u}_{t+1}$
+\end_inset
+
+ on growth rates and the noise 
+\begin_inset Formula $\mathbf{e}_{t}$
+\end_inset
+
+ is a 
+\begin_inset Formula $1\times S$
+\end_inset
+
+ noise vector following a multivariate normal distribution with a variance-covar
+iance matrix 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+.
+ The interaction model we use in the present paper is a Beverton-Holt multispeci
+es model (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:growth_rate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), also called at times Leslie-Gower.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+'s Supporting information, we showed that MAR and BH interaction coefficients,
+ respectively 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+, could map once abundances at equilibrium 
+\begin_inset Formula $N_{i}^{*}$
+\end_inset
+
+ are defined.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+b_{ii}-1= & \frac{-\alpha_{ii}N_{i}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}\\
+b_{ij,i\neq j}= & \frac{-\alpha_{ij}N_{j}^{*}}{1+\sum_{l}\alpha_{il}N_{l}^{*}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's define 
+\begin_inset Formula $\tilde{b_{ij}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\tilde{b_{ii}}=b_{ii}-1$
+\end_inset
+
+, and 
+\begin_inset Formula $f_{A}(i)=\sum_{l}\alpha_{ij}N_{l}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tilde{b_{ij}}(1+f_{A}(i))=-\alpha_{ij}N_{j}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We then sum on columns (on 
+\begin_inset Formula $j$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j}[\tilde{b_{ij}}(1+f_{A}(i))]=-f_{A}(i)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow-f_{A}(i)(1+\sum_{j}\tilde{b_{ij}})=\sum_{j}\tilde{b}_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow f_{A}(i)=-\frac{\sum_{j}\tilde{b_{ij}}}{(1+\sum_{j}\tilde{b_{ij}})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}\tilde{b_{ij}}(1-\frac{\sum_{j}\tilde{b_{ij}}}{1+\sum_{j}\tilde{b_{ij}}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Leftrightarrow\alpha_{ij}=-\frac{1}{N_{j}^{*}}\frac{\tilde{b_{ij}}}{1+\sum_{j}\tilde{b_{ij}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives an exact correspondence between 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+.
+ In the multispecies BH model, the presence of mutualistic interactions
+ can lead to an orgy of mutual benefaction 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "may_1981_theoretical"
+literal "false"
+
+\end_inset
+
+.
+ We impose a minimum value of 1 to the denominator of the BH formulation,
+ meaning that the growth rate cannot be higher than the maximum growth rate
+ calculated, 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+.
+ We acknowledge the possibility of overyielding, i.e.
+ an increase in biomass due to the presence of other species, but the phenomenon
+ seems quite rare for phytoplanktonic communities (see 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "schmidtke_mechanistic_2010"
+literal "false"
+
+\end_inset
+
+ for underyielding and see 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "shurin_trait_2014"
+literal "false"
+
+\end_inset
+
+ for an observed but not frequent, and small, overyielding).
+\end_layout
+
+\begin_layout Subsubsection*
+Model II: saturating interactions
+\end_layout
+
+\begin_layout Standard
+We now move to a model with saturating interactions between taxa.
+ 
+\begin_inset Formula 
+\begin{equation}
+N_{t+1,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}\frac{a_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/a\in\mathbb{F}}\frac{a_{F}N_{t,j}}{H_{ij}+N_{t,j}}}\label{eq:saturation_h}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where coefficients 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+ are the maximum interaction strength for competition and facilitation respectiv
+ely, 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ is the abundance of taxon 
+\begin_inset Formula $j$
+\end_inset
+
+ to reach half of the maximum effect of taxon 
+\begin_inset Formula $j$
+\end_inset
+
+ on taxon 
+\begin_inset Formula $i$
+\end_inset
+
+, and 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ are the sets of competitive and facilitative interactions.
+ This formula can be linked to the Unique Interaction Model by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "qian_balance_2020"
+literal "false"
+
+\end_inset
+
+, i.e.
+ each taxon provides a unique type of benefit or disadvantage to the focus
+ taxon.
+\end_layout
+
+\begin_layout Standard
+There is no single solution for matching the 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ matrix of the MAR model and model II including 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+.
+ We approximate the maximum interaction strength 
+\begin_inset Formula $a_{C}$
+\end_inset
+
+ as the average sum of all taxon effects 
+\begin_inset Formula $\alpha_{ij}N_{j}$
+\end_inset
+
+ exerted on a given taxon if all interactions were competitive (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_C"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ To compute 
+\begin_inset Formula $a_{F}$
+\end_inset
+
+, we can make two assumptions: on average, a) there is 70% facilitation
+ in our dataset and b) the growth rate 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+ should not exceed 1, as in model I.
+ We consider that the relationships that apply to individual interactions
+ 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ should also apply to the saturation point (eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\begin_inset Formula 
+\begin{eqnarray}
+a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}\alpha_{ij}N_{j,max}\right)\label{eq:a_C}\\
+(1-0.7)a_{C}+0.7a_{F} & = & 0\label{eq:a_F}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At low abundances, we can consider that interactions are far from saturation.
+ Taking the tangent of the function at this point, 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ can be approximated by 
+\begin_inset Formula $f\frac{a_{C/F}}{\alpha_{ij}}$
+\end_inset
+
+, where 
+\begin_inset Formula $f=2$
+\end_inset
+
+ is a correction factor that takes into account the fact that the slope
+ at origin for the type II response is likely higher than the slope for
+ a linear effect of density.
+\end_layout
+
+\begin_layout Section
+Choice of parameters derived from literature
+\end_layout
+
+\begin_layout Standard
+This section contains additional information on 
+\begin_inset Quotes eld
+\end_inset
+
+fixed
+\begin_inset Quotes erd
+\end_inset
+
+ parameters definitions and chosen values.
+ Note that these values are then subjected to sensitivity analysis.
+\end_layout
+
+\begin_layout Paragraph*
+Loss rate
+\end_layout
+
+\begin_layout Standard
+The loss rate corresponds to multiple mortality processes.
+ The Lotka-Volterra model of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "scranton_coexistence_2016"
+literal "false"
+
+\end_inset
+
+ considered a rate around 0.04 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "jewson_loss_1981"
+literal "false"
+
+\end_inset
+
+, washout (0.5%), parasitism (4% of cells are infested and die) and grazing
+ still remained low (about 0.05%) when compared to growth rates.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "li_what_2000"
+literal "false"
+
+\end_inset
+
+ found values between 0.02 and 0.1 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ for natural mortality only, while a review by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "sarthou_growth_2005"
+literal "false"
+
+\end_inset
+
+ indicated a loss of daily primary productivity around 45% due to grazing
+ only, 0.13 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ being potentially due to cell autolysis (in the absence of nutrients, or
+ because of viral charge).
+ Trying to make a compromise emerge from the literature above, we set the
+ reference value to 0.2 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Sinking rate
+\end_layout
+
+\begin_layout Standard
+Among the hydrodynamics processes that drive the sinking rate, turbulence
+ and eddies – themselves driven by tidal currents, the shape of the coast
+ or wind conditions – are influential in keeping the cells at the top of
+ the water column.
+ For that reason, laboratory experiments on sinking rates are not sufficient
+ to calibrate a field-based model.
+ We therefore chose sinking rate values from field studies.
+ In the Gotland Basin (central Baltic Sea), 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "passow_species-specific_1991"
+literal "false"
+
+\end_inset
+
+ measured a large variability in sinking rates, even within the same genus
+ (e.g., between 1 and 30% for 
+\shape italic
+Chaetoceros
+\shape default
+ spp.).
+ However, a pattern could be highlighted, with a small number of genera
+ that sank more than the rest of the community.
+ The mean sinking rate for 
+\shape italic
+Chaetoceros
+\shape default
+ and 
+\shape italic
+Thalassiosira
+\shape default
+ was around 10% while it was around 1% for the other species.
+ Sinking rate values around 10% are consistent with the loss rates in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kowe_modelling_1998"
+literal "false"
+
+\end_inset
+
+ in a river and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wiedmann_seasonality_2016"
+literal "false"
+
+\end_inset
+
+ in an estuary (mouth of Adventfjorden).
+ When estimating changes of the sinking rate over time, values between 4
+ and 50% were obtained 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jewson_loss_1981"
+literal "false"
+
+\end_inset
+
+.
+ We therefore chose to represent the sinking rates with a Beta-distribution
+ (Fig.
+ S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sinking-distribution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) which accounts for observed maximum and mean values, while still allowing
+ a highly skewed distribution of sinking rates between species.
+ High sinking rates are attributed to the morphotypes corresponding to 
+\shape italic
+Chaetoceros
+\shape default
+ (CHA) and 
+\shape italic
+Thalassiosira 
+\shape default
+(THP)
+\shape italic
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../output/beta_law.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Possible Beta-distribution of sinking rates
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sinking-distribution"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Cyst mortality and burial
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+ present maximum and mean depth of sediment at which germination of diatoms
+ and dinoflagellates could still occur when incubated.
+ The authors also present sediment datation according to depth.
+ Depth can therefore be related to maximum and mean age of phytoplankton
+ cysts before death.
+ Assuming 
+\begin_inset Formula $m$
+\end_inset
+
+ is the probability of mortality and the survival follows a geometric law,
+ the life expectancy of a cyst is 
+\begin_inset Formula $\frac{\ensuremath{1}}{m}\Leftrightarrow m=\frac{1}{L_{mean}}$
+\end_inset
+
+ where 
+\begin_inset Formula $L_{mean}$
+\end_inset
+
+ is the average duration of cyst viability.
+ Another way to look at the process is that life expectancy 
+\begin_inset Formula $L$
+\end_inset
+
+ follows the distribution 
+\begin_inset Formula $p(L>l)=e^{-ml}.$
+\end_inset
+
+ We can arbitrarily choose that for the older cysts (i.e., the ones buried
+ the deepest), 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p(L>l_{max})=0.05$
+\end_inset
+
+.
+ In this, 
+\begin_inset Formula $m=-\frac{ln(p(L>l_{max}))}{l_{max}}$
+\end_inset
+
+.
+ In both cases, 
+\begin_inset Formula $m$
+\end_inset
+
+ varies between 
+\begin_inset Formula $10^{-5}\text{ \text{day}}^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $10^{-4}\text{\text{ day}}^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As we highlight in the main text, burial is a very important process that
+ controls the availability of cysts, conditional to their survival in the
+ sediment.
+ However, burial rate is almost entirely dependent on the local sedimentation
+ and no generally applicable literature could be found.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Burial depends on the hydrodynamics of the site, but also on biotic processes
+ (i.e., bioturbation) and anthropogenic disturbances such as fishing or leisure
+ activities (e.g., jet skiing).
+\end_layout
+
+\end_inset
+
+ We varied it between 0.001 and 0.1 per day.
+\end_layout
+
+\begin_layout Paragraph*
+Resuspension
+\end_layout
+
+\begin_layout Standard
+As mentioned in the main text, resuspension values are mostly taken from
+ models or data for inorganic particles.
+ Rates vary greatly from one publication to another: in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "fransz_modelling_1985"
+literal "false"
+
+\end_inset
+
+, in a coastal area, the resuspension rate of sediments is evaluated around
+ 
+\begin_inset Formula $5\times10^{-5}$
+\end_inset
+
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ in winter and decreases in summer, with a relationship between resuspension
+ and the light extinction coefficient.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kowe_modelling_1998"
+literal "false"
+
+\end_inset
+
+, the resuspension rate of diatoms is evaluated around 
+\begin_inset Formula $1.9\times10^{-5}$
+\end_inset
+
+ day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "le_pape_pelagic_1999"
+literal "false"
+
+\end_inset
+
+, resuspension rate of sediments and dead diatoms is 0.002 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+.
+ In this paper, we explore values between 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ (stratified water column) to 0.1 (highly mixed environment).
+\end_layout
+
+\begin_layout Standard
+Finally, it should be noted that cyst burial, sinking rate and resuspension
+ are all highly contingent upon the local hydrodynamics and therefore are
+ intermingled processes.
+\end_layout
+
+\begin_layout Section
+Phytoplankton taxa at the calibration site
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Code
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Taxa
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CHA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Chaetoceros
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DIT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Ditylum
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GUI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Guinardia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LEP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Leptocylindrus
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NIT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Nitzschia+Hantzschia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Pleurosigma+Gyrosigma
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PRO
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Prorocentrum
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PRP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Protoperidinium+Archaeperidinium+Peridinium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PSE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Pseudo-nitzschia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SKE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Skeletonema
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+THP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Thalassiosira+Porosira
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Name and composition of the phytoplanktonic groups used in main text
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Group_definition"
+
+\end_inset
+
+, see 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+ for more information on these taxa.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Phytoplankton time series with model II
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../output/modelv2.1/time_series_simulation_per_cluster.pdf
+	height 95theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulated phytoplankton time series for a year in model II (with saturating
+ interactions).
+ Each panel corresponds to a cluster of interacting taxa.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Scenario: changing interspecific interaction strengths but not intraspecific
+ interaction strengths
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../script/common_scripts/no_seed_bank_compet_keeping_intra.pdf
+	width 74text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Measures of biodiversity in the ocean at the end of the simulation: a-b)
+ richness and c-d) inverse of the Simpson index, with (dashed line) and
+ without (solid line) a cyst bank, as a function of the strength of competition
+ and facilitation with a classical Beverton-Holt (black lines) or a saturating
+ interaction (grey lines) formulation, keeping the same values for the intraspec
+ific interaction strengths.
+ The x-axis shows the factor by which each interaction coefficient was multiplie
+d (note the logarithmic scale) 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Seed_bank_compet"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When intraspecific interaction strengths do not change, reducing the values
+ of interspecific competition has very little effect on both richness and
+ the inverse of the Simpson index.
+ Increasing facilitation finally destabilizes the ratio of intra- to interspecif
+ic interaction strengths, which destabilizes the community and leads to
+ the observed diversity decrease in the absence of a cyst bank.
+\end_layout
+
+\begin_layout Section
+Growth rates and survival without a cyst bank
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../script/common_scripts/survival_vs_growth_rates.pdf
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probability of survival in the absence of a cyst bank as a function of the
+ realized per capita growth rates (PGCR) of each species in different conditions.
+ We consider mean temperature and low densities (a), i.e., all species density
+ are 1 C/L, or average densities (b), i.e., all species are at their simulated
+ average density values; or average densities and optimal temperature for
+ each species (c), or suboptimal temperatures (d) - here, 30°C.
+ Red points correspond to species which have a high growth rate at low density
+ but still goes extinct.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Extinction in the absence of the cyst bank can be explained by both a low
+ growth rate at low density and average temperature (affecting specialists
+ with a narrow niche) and a low growth rate at average density despite being
+ at optimal temperature (i.e., species strongly affected by interactions).
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "biblio_seed"
+options "ecol_let"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
