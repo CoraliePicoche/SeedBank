@@ -83,6 +83,7 @@
 \html_css_as_file 0
 \html_be_strict false
 \author -2100369821 "cpicoche"
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -476,20 +477,94 @@ The annual dynamics of phytoplanktonic organisms is usually characterized
  is reasonable to restrain this study to the effect of one variable, temperature.
 
 \change_inserted -2100369821 1618580050
- The niche computed here is not only the thermal niche itself, but a composite
- of the environmental conditions varying with the temperature, which can
- also account for predation.
- As each niche is determined based on the species abundance variation only,
- it also implicitely takes into account the interactions with other species.
+ The niche computed here is not 
+\change_deleted -666822487 1619106639
+only
+\change_inserted -666822487 1619106642
+merely
+\change_inserted -2100369821 1618580050
+ the 
+\change_inserted -666822487 1619106648
+fundamental 
+\change_inserted -2100369821 1618580050
+thermal niche
+\change_deleted -666822487 1619106633
+ itself
+\change_inserted -2100369821 1618580050
+, but a composite of 
+\change_deleted -666822487 1619106489
+the
+\change_inserted -666822487 1619106489
+all
+\change_inserted -2100369821 1618580050
+ environmental conditions 
+\change_inserted -666822487 1619106484
+co
+\change_inserted -2100369821 1618580050
+varying with the temperature
+\change_inserted -666822487 1619106676
+ and promoting population growth
+\change_deleted -666822487 1619106500
+, which
+\change_inserted -666822487 1619106702
+.
+ Such environmental conditions
+\change_inserted -2100369821 1618580050
  
+\change_inserted -666822487 1619106731
+of course includes solar irradiance which is strongly correlated to temperature
+ in the field, but 
+\change_deleted -666822487 1619106767
+can
+\change_inserted -666822487 1619106767
+could
+\change_inserted -2100369821 1618580050
+ also account for
+\change_inserted -666822487 1619106775
+ other factors, such as
+\change_inserted -2100369821 1618580050
+ predation
+\change_inserted -666822487 1619106776
+, that have a seasonal rythm which is partly captured by temperature
+\change_inserted -2100369821 1618580050
+.
+ 
+\change_deleted -666822487 1619106535
+As each niche is determined based on the species abundance variation only,
+ it also implicitely takes into account the interactions with other species.
+
+\change_inserted -2100369821 1618580050
+ 
+\change_inserted -666822487 1619106572
+The niche part of the growth rate
+\change_inserted -2100369821 1618580050
+
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- is therefore an approximation of the realized niche of species 
+
+\change_deleted -666822487 1619106577
+ is
+\change_inserted -2100369821 1618580050
+ therefore 
+\change_deleted -666822487 1619106588
+an approximation of
+\change_inserted -666822487 1619106589
+describes
+\change_inserted -2100369821 1618580050
+ the 
+\emph on
+realized
+\emph default
+ niche of species 
 \begin_inset Formula $i$
 \end_inset
 
-, not its fundamental thermal niche.
+, not its fundamental
+\change_deleted -666822487 1619106792
+ thermal
+\change_inserted -2100369821 1618580050
+ niche.
 \change_unchanged
 
 \end_layout
@@ -707,6 +782,24 @@ noprefix "false"
 \end_inset
 
 ).
+\change_inserted -666822487 1619106818
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1619106851
+Is it r_i(T) or f_i(T)?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
