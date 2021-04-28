@@ -98,8 +98,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -2100369821 "cpicoche"
-\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -224,7 +222,7 @@ Seed formation is part of the reproductive cycle, leading to the accumulation
  Our study therefore shows how a cyst stage may help phytoplanktonic diversity
  maintenance.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 289 words
@@ -240,38 +238,12 @@ status open
 \series bold
 Keywords
 \series default
-: 
-\change_deleted -2100369821 1618480003
-phytoplankton; seed bank; 
-\change_unchanged
-dormancy; cyst; coexistence; 
-\change_inserted -666822487 1619104846
-competition;
-\change_unchanged
-facilitation
-\change_inserted -2100369821 1618497654
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1618480049
-Keywords should not include words that are already present in the title
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+: dormancy; cyst; coexistence; competition; facilitation
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Article: 5509
@@ -1969,11 +1941,7 @@ literal "false"
 \end_inset
 
  as no growth occurs at night.
- The 
-\change_inserted -2100369821 1618578389
-realized 
-\change_unchanged
-niche part 
+ The realized niche part 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
@@ -1988,9 +1956,7 @@ niche part
 \end_inset
 
 , which depends on the niche width.
- 
-\change_inserted -666822487 1619105480
-It is important to note that unlike 
+ It is important to note that unlike 
 \begin_inset Formula $E(T)$
 \end_inset
 
@@ -1999,69 +1965,15 @@ It is important to note that unlike
 \end_inset
 
  is a phenomenological construct including all indirect effects of temperature,
- mediated by environmental variables correlated to temperature
-\change_deleted -666822487 1619105419
-Phytoplankton growth is not only a function of temperature, 
-\change_inserted -666822487 1619105510
- (
-\change_deleted -666822487 1619105231
-but also requires 
-\change_inserted -2100369821 1618580569
-light
-\change_deleted -666822487 1619105236
- and
-\change_inserted -666822487 1619105236
-,
-\change_inserted -2100369821 1618580569
- nutrient input
-\change_inserted -666822487 1619105241
-s
-\change_inserted -2100369821 1618580569
-, 
-\change_deleted -666822487 1619105246
-and can be impacted by 
-\change_inserted -2100369821 1618580569
-predation, among other environmental conditions
-\change_inserted -666822487 1619105250
-)
-\change_inserted -2100369821 1618580569
-.
-
-\change_deleted -666822487 1619105270
- In the coastal environments we study, these parameters tend to be highly
- correlated with each other, due to the seasonality of the environment:
- we therefore use the temperature as a proxy for all variables, including
- biotic conditions such predation, that could influence the growth rate
- of phytoplankton species.
- 
-\change_inserted -2100369821 1618580569
-I
-\change_deleted -666822487 1619105578
-t should therefore be noted that
-\change_inserted -666822487 1619105582
-n other words,
-\change_inserted -2100369821 1618580569
- 
+ mediated by environmental variables correlated to temperature (light, nutrient
+ inputs, predation, among other environmental conditions).
+ In other words, 
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- corresponds to a realized niche, 
-\change_inserted -666822487 1619105618
-pertaining to a given environment, 
-\change_deleted -666822487 1619105869
-not a
-\change_inserted -666822487 1619105877
-which can be much more narrow than the
-\change_inserted -2100369821 1618580569
- fundamental thermal niche.
- 
-\change_unchanged
-Parameterisation is further detailed in Section S1 of the SI.
-
-\change_inserted -2100369821 1618578369
- 
-\change_unchanged
-
+ corresponds to a realized niche, pertaining to a given environment, which
+ can be much more narrow than the fundamental thermal niche.
+ Parameterisation is further detailed in Section S1 of the SI.
 \end_layout
 
 \begin_layout Standard
@@ -3567,12 +3479,9 @@ literal "false"
  definitive or only temporary: higher amplitudes of population variation
  were typically associated with extinctions.
  We identified, by studying realised population growth rates (Fig.
- S7 in SI), that a smaller 
-\change_inserted -2100369821 1618580604
-realized 
-\change_unchanged
-niche width (i.e., being a specialist) or being strongly affected by species
- interactions can explain rapid extinction without a cyst bank.
+ S7 in SI), that a smaller realized niche width (i.e., being a specialist)
+ or being strongly affected by species interactions can explain rapid extinction
+ without a cyst bank.
 \end_layout
 
 \begin_layout Standard
@@ -3688,63 +3597,26 @@ literal "false"
  We therefore encourage both experiments and field observations to follow
  actual seed trajectories, in order to help us understand this cryptic part
  of the diversity maintenance process.
-\change_inserted -2100369821 1618497693
-
 \end_layout
 
 \begin_layout Subsubsection*
-
-\change_inserted -2100369821 1618498477
 Declaration of Competing Interest
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1618498477
 The authors declare that they have no known competing financial interests
  or personal relationships that could have appeared to influence the work
  reported in this paper.
 \end_layout
 
 \begin_layout Subsubsection*
-
-\change_inserted -2100369821 1618498303
-CRediT authorship contribution statement
+Author contribution statement
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1618498844
-
-\series bold
-Coralie Picoche
-\series default
-: Conceptualization, Methodology, Software, Formal analysis, Investigation,
- Writing - Original Draft & Review & Editing, Visualization.
- 
-\series bold
-Frédéric Barraquand
-\series default
-: Conceptualization, Methodology, Formal analysis, Writing - Original Draft
- & Review & Editing, Supervision.
-\change_inserted -666822487 1619106282
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1619106282
-I prefer the factual ones we write ourselves, box-thinking is annoying...
- But if we must use CRediT, this will do.
- 
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+CP and FB designed the project.
+ CP wrote the computer code and produced the figures.
+ CP and FB interpreted the results and wrote the manuscript.
 \end_layout
 
 \begin_layout Subsubsection*
