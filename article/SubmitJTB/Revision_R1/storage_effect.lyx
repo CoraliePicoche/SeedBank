@@ -1,0 +1,284 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\usepackage{graphicx}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Storage effect in seed bank model
+\end_layout
+
+\begin_layout Subsection*
+Regarding the storage effect itself
+\end_layout
+
+\begin_layout Standard
+The storage effect depends on 3 conditions (I am using here the wording
+ of Ellner et al.
+ 2016, which is much more comprehensible than usual Chesson's literature):
+\end_layout
+
+\begin_layout Enumerate
+species-specific responses to environmental variability
+\end_layout
+
+\begin_layout Enumerate
+density-dependent covariance between environment and competition, i.e.
+ 
+\begin_inset Formula $cov(E,C)>0$
+\end_inset
+
+, i.e.
+ how much fluctuations in competition covary with fluctuation in competition.
+\end_layout
+
+\begin_layout Enumerate
+buffered population growth 
+\begin_inset Formula $g$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right)<0$
+\end_inset
+
+ (also called subadditivity).
+ This defines the way that the growth rate responds jointly to environmental
+ and competitive conditions.
+ 
+\end_layout
+
+\begin_layout Standard
+In our model, the growth rate of a population is defined by the following
+ equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{t+1,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\alpha_{ij}N_{t,j}}-lN_{t,i}\label{eq:model_step1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here 
+\begin_inset Formula $E_{i}(t+1)=\exp(r_{i}(T))$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{i}(t+1)=1+\sum_{j}\alpha_{ij}N_{t,j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The maximum growth rate 
+\begin_inset Formula $r_{i}(T)$
+\end_inset
+
+ is species-specific.
+\end_layout
+
+\begin_layout Enumerate
+The environmental response is not density-dependent, there is no covariance
+ between 
+\begin_inset Formula $E$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Let's still compute 
+\begin_inset Formula $\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+g_{i} & = & \log\left(\frac{N_{i,t+1}}{N_{i}}\right)\\
+ & = & \log\left(\frac{\exp(r_{i}(T))}{1+\sum_{j}\alpha_{ij}N_{t,j}}-l\right)\\
+ & = & \log\left(\frac{E}{C}-l\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we derive wrt C:
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial g}{\partial C} & = & -\frac{1}{C^{2}}\frac{E}{\frac{E}{C}-l}\\
+ & = & -\frac{E}{CE-lC}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we derive wrt E:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right) & = & -\frac{CE-lC-EC}{(CE-lC)^{2}}\\
+ & = & \frac{lC}{(CE-lC)^{2}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $C=1+\sum_{j}\alpha_{ij}N_{t,j}$
+\end_inset
+
+ with a minimum value of 1 in the first model, or 
+\begin_inset Formula $C=1+\sum_{j\in\mathbb{C}}\frac{a_{C}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}+\sum_{j\in\mathbb{F}}\frac{a_{F}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}$
+\end_inset
+
+, which is never negative, 
+\begin_inset Formula $\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right)>0$
+\end_inset
+
+.
+ There is no buffered growth in the growth function itself.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Regarding possible confusion
+\end_layout
+
+\begin_layout Standard
+While there is no direct covariance between E(t) and C(t), there is indeed
+ a lagged covariance: if E(t-1) leads to an increase in N(t-1), this will
+ lead to an increase in C(t) (question: as E is an autocorrelated signal,
+ i.e.
+ E(t) covaries with E(t-1), is there finally a direct covariance between
+ E(t) and C(t)?).
+ I do not think this is the direct definition of the storage effect but
+ might indeed be misread.
+\end_layout
+
+\begin_layout Standard
+The term 
+\begin_inset Quotes eld
+\end_inset
+
+buffering effect
+\begin_inset Quotes erd
+\end_inset
+
+ might be confusing for some: it is also called subadditivity in Chesson
+ 1994 and might be easier to read that way.
+ This does not only mean that the growth rate is decreased, but that this
+ decrease is due to a joint effect of environment and competition on the
+ growth rate.
+ 
+\end_layout
+
+\end_body
+\end_document
