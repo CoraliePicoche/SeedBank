@@ -98,6 +98,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \end_header
 
 \begin_body
@@ -377,7 +378,7 @@ literal "false"
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 I wondered if we should have a more recent/general definition, from Chesson
@@ -886,6 +887,30 @@ Je mentionne le coût pour expliquer en filigrane que les deux modèles ont
 
 \end_inset
 
+
+\change_inserted -2100369821 1630400412
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630400416
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1630400434
+Insert the paragraph about interactions here instead of after the empirical
+ dataset?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -1987,11 +2012,27 @@ Fixed
 \begin_inset Text
 
 \begin_layout Plain Layout
-Germination 
+Germination
+\change_inserted -2100369821 1630502707
+ (
+\begin_inset Formula $\gamma_{1}$
+\end_inset
+
+)
+\change_unchanged
+ 
 \begin_inset Formula $\times$
 \end_inset
 
- Resuspension rate
+ Resuspension
+\change_inserted -2100369821 1630502718
+ (
+\begin_inset Formula $\gamma_{2}$
+\end_inset
+
+)
+\change_unchanged
+ rate
 \end_layout
 
 \end_inset
@@ -2130,6 +2171,8 @@ Each compartment (ocean, coast, cyst bank) contains
 
 \begin_layout Subsection*
 Parameterization of the models
+\change_inserted -2100369821 1630398486
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2206,7 +2249,7 @@ literal "false"
 
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 F: I added 0.09 to the formula based on the description, check that it is
@@ -2354,7 +2397,7 @@ Parameter calibration
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Difficult to understand.
@@ -2579,7 +2622,7 @@ literal "false"
 n community dynamics.
  
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The Auger sampling site is characterized by a high phytoplanktonic biodiversity,
@@ -2633,6 +2676,107 @@ literal "false"
 \end_inset
 
 
+\change_inserted -2100369821 1630399116
+
+\end_layout
+
+\begin_layout Subsubsection*
+
+\change_inserted -2100369821 1630399117
+Interaction matrix
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1630399117
+This might even make more sense that this section ends up as well with the
+ empirical dataset subsection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630412933
+Interactions between species were parameterized on the dataset described
+ above, using a MAR model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+.
+ MAR(1) models are based on a stochastic, discrete-time Gompertz equation
+ which relates the log-abundance of each of the S taxa at time t + 1 to
+ log-abundances of the whole community at time t, with possible interactions
+ between taxa, and effects of V abiotic variables at time t + 1 (see SI).
+ The interaction matrix therefore only takes into account (lagged) correlations
+ between phytoplankters within the community, i.e.
+ within the same trophic level.
+ Computed interactions are independent from environmental variables such
+ as temperature, which were included separately in the MAR model estimates.
+ A phylogeny-based interaction matrix proved more efficient to model the
+ community dynamics 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1630412314
+as could be expected, see Violle et al.
+ 2011 –if necessary–
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+, i.e.
+ pennate/centric diatoms only interact with other pennate/centric diatoms
+ respectively and dinoflagellates only interact with dinoflagellates.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630413092
+As the MAR model is based on correlation, only apparent competition or facilitat
+ion is shown: complex processes can be at work behind these values, either
+ from abiotic variation or consumption by predators or parasites.
+ For more consideration on apparent interaction in this type of community,
+ we refer the reader to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "barraquand_coastal_2018"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630412978
+In the present model, while we tune interaction strength values, the type
+ of interaction (competition, facilitation or absence of interaction) remains
+ the same as computed in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Subsection*
@@ -2788,7 +2932,12 @@ status open
 
 \begin_layout Plain Layout
 Simulated phytoplankton dynamics for a year in model I.
- Each panel corresponds to a cluster of interacting taxa.
+ Each panel corresponds to a cluster of interacting taxa
+\change_inserted -2100369821 1630504431
+: centric diatoms (a), pennate diatoms (b) and dinoflagellates (c).
+ Taxa only interact within their cluster (see Methods)
+\change_unchanged
+.
  The orange line in the third panel indicates the temperature.
  
 \begin_inset CommandInset label
@@ -2889,7 +3038,12 @@ In three cases (cyst burial rate set to 0.1, resuspension to 10
 
  or exchange rate set to 0), the final richness of the oceanic community
  decreased from 11 to 4.
- Extant species were the same in all simulations (CHA, THP, NIT, PSE).
+ Extant species were the same in all simulations (CHA, THP, NIT, PSE
+\change_inserted -2100369821 1630504662
+; the correspondence between codes and groups of species is given in Section
+ S3 of the SI
+\change_unchanged
+).
  When resuspension was set to 0.001, a species periodically disappeared from
  the ocean, to be subsequently re-seeded by the coastal population.
 \end_layout
@@ -2927,12 +3081,55 @@ Sensitivity of the model to variation in parameters, measured as the difference
  The two metrics used were the average decimal log abundance (a) and the
  decimal logarithm of the ratio between maximum and minimum abundance (b)
  of the coastal phytoplanktonic community.
- Values used in the sensitivity analysis are in the second row of the x-axis
- while values used in the reference simulation are shown in the third row.
+ 
+\change_inserted -2100369821 1630504475
+The x-axis is divided in three rows: the symbol of the parameter defined
+ in Table 1 (first row), 
+\change_deleted -2100369821 1630504478
+V
+\change_inserted -2100369821 1630504478
+v
+\change_unchanged
+alues used in the sensitivity analysis
+\change_inserted -2100369821 1630504483
+ (second row)
+\change_deleted -2100369821 1630504487
+ are in the second row of the x-axis while
+\change_inserted -2100369821 1630504487
+ and
+\change_unchanged
+ values used in the reference simulation
+\change_deleted -2100369821 1630504492
+ are shown in the 
+\change_inserted -2100369821 1630504492
+ (
+\change_unchanged
+third row
+\change_inserted -2100369821 1630504495
+)
+\change_unchanged
+.
  Note that the reference value is not necessarily within the range of values
  used in the sensitivity analysis (e.g.
  mortality rates in the sensitivity analysis are both below the value used
  in other simulations).
+\change_inserted -2100369821 1630504502
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1630504512
+Should we keep the previous sentence?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
  Numbers in red are the final number of species in the ocean and dots correspond
  to simulations in which at least one species reached 0 at one point but
  did not disappear.
@@ -3075,8 +3272,22 @@ Measures of biodiversity in the ocean at the end of the simulation: a-b)
  without (solid line) a cyst bank, as a function of the strength of competition
  and facilitation with a classical Beverton-Holt (black lines) or a saturating
  interaction (grey lines) formulation.
- The x-axis shows the factor by which each interaction was multiplied (note
- the logarithmic scale).
+ The x-axis shows the factor by which each interaction was multiplied
+\change_inserted -2100369821 1630505663
+, e.g.
+ the value 0.1 indicates that the interaction strengths in the simulation
+ is 10 times lower than the interactions strengths in the reference simulation.
+ 
+\change_deleted -2100369821 1630505664
+ (n
+\change_inserted -2100369821 1630505664
+N
+\change_unchanged
+ote the logarithmic scale
+\change_deleted -2100369821 1630505667
+)
+\change_unchanged
+.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3161,6 +3372,13 @@ name "fig:Probability-of-survival"
 \end_inset
 
 .
+
+\change_inserted -2100369821 1630505806
+ Each dot corresponds to a species, and its survival using model I (black)
+ or model II (grey).
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -3447,6 +3665,48 @@ s and mean interaction values in the community.
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted -2100369821 1630512488
+Species persistence varied between the coastal and ocean compartment.
+ Temporary species disparition could happen periodically in the ocean but
+ species were able to reinvade the coast thanks to the connection to the
+ cyst bank, and then reinvaded the ocean from there.
+ Local extinction in the absence of a seed bak confirms conclusions from
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hellweger_agent-based_2008"
+literal "false"
+
+\end_inset
+
+ on single species.
+ This suggests that some species may be locally transient: they are filtered
+ out from certain patches, but can reinvade more or less periodically the
+ environment 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "guittar_quantifying_2020"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630512210
+Survival probabilities of species within the community in the absence of
+ a seed bank also depended on their characteristics.
+ Higher amplitudes of population variation were typically associated with
+ extinctions, as well as a smaller niche width (i.e., being a specialist)
+ or being strongly affected by species interactions (Fig.
+ S7 in SI).
+ 
+\change_deleted -2100369821 1630508593
 The various species present in the community had different survival probabilitie
 s in the absence of a seed bank.
  Some species could persist without a cyst bank while others could not (which
@@ -3479,6 +3739,8 @@ literal "false"
  S7 in SI), that a smaller niche width (i.e., being a specialist) or being
  strongly affected by species interactions can explain rapid extinction
  without a cyst bank.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
