@@ -356,7 +356,38 @@ literal "false"
 \end_inset
 
 .
- The storage effect, a major paradigm in modern coexistence theory 
+ 
+\change_inserted -2100369821 1630682017
+Among them, the storage effect, has been discussed at length in modern coexisten
+ce theory 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chesson_mechanisms_2000,chesson_updates_2018"
+literal "false"
+
+\end_inset
+
+.
+ The presence of a long-lived dormant stage with temporal variation in recruitme
+nt, in addition to interspecific competition in the community, may facilitate
+ the storage effect 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "caceres_temporal_1997,aikio_seed_2002,angert_functional_2009"
+literal "false"
+
+\end_inset
+
+.
+ 
+\change_deleted -2100369821 1630682029
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -2100369821 1630682029
+The storage effect, a major paradigm in modern coexistence theory 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "chesson_mechanisms_2000,chesson_updates_2018"
@@ -409,6 +440,8 @@ literal "false"
 \end_inset
 
 .
+
+\change_unchanged
  However, the contribution of seeds to coexistence may be much larger than
  their potential contribution to the storage effect.
  A long-lived seed bank can help coexistence by other, simpler means.
@@ -2619,8 +2652,24 @@ literal "false"
  coarser taxonomy than our mechanistic model.
  We stress that we are not trying to model precisely this particular community,
  but rather to constrain our models to produce lifelike patterns of phytoplankto
-n community dynamics.
+n community
+\change_deleted -2100369821 1630679259
+ dynamics.
  
+\change_inserted -2100369821 1630681436
+, i.e.
+ seasonal dynamics with high-amplitude blooms, differences in average abundances
+ and degree of specialisation linked to specific thermal niches, and relative
+ strengths of apparent interactions.
+ Morphotypes presented here do not exactly correspond to their observed
+ counterparts (whose codes are defined in Section S3 of the SI) , but function
+ together to form an idealized community.
+ They are referred to as species in the following to keep the terminology
+ in use in the literature, but should be interpreted as simplified phytoplankton
+ population.
+ 
+\change_unchanged
+
 \begin_inset Note Note
 status open
 
@@ -2676,7 +2725,7 @@ literal "false"
 \end_inset
 
 
-\change_inserted -2100369821 1630399116
+\change_inserted -2100369821 1630680716
 
 \end_layout
 
@@ -2684,19 +2733,6 @@ literal "false"
 
 \change_inserted -2100369821 1630399117
 Interaction matrix
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1630399117
-This might even make more sense that this section ends up as well with the
- empirical dataset subsection
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2745,10 +2781,11 @@ as could be expected, see Violle et al.
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1630413092
+\change_inserted -2100369821 1630591547
 As the MAR model is based on correlation, only apparent competition or facilitat
 ion is shown: complex processes can be at work behind these values, either
- from abiotic variation or consumption by predators or parasites.
+ from abiotic (e.g., hydrodynamics) or biotic e.g.
+ consumption by predators or parasites variables.
  For more consideration on apparent interaction in this type of community,
  we refer the reader to 
 \begin_inset CommandInset citation
@@ -3596,7 +3633,7 @@ literal "false"
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 this time the wording is OK
@@ -3624,6 +3661,54 @@ nts.
  Spatial recolonization was therefore less important than temporal recolonizatio
 n; the relative importance of the two processes may vary depending on the
  organisms and the degree of spatial synchrony of their environment.
+
+\change_inserted -2100369821 1630686887
+ Such a spatial recolonization has been found in the Gulf of Maine, where
+ the toxic species Alexandrium fundyense form cyst banks which, when germinating
+, lead to recurrent blooms moving south west: without the so-called 
+\begin_inset Quotes eld
+\end_inset
+
+incubator
+\begin_inset Quotes erd
+\end_inset
+
+ in the North-East part of the Gulf, A.
+ fundyensense populations might have diminished through time (Anderson et
+ al.
+ 2005).
+ In the Gulf of Naples (Montresor et al.
+ 1998), on the contrary, the high heterogeneity between cyst bank compositions
+ between offshore and coastal areas indicate that both hydrodynamics and
+ sediment types may hinder spatial homogeneization.
+ In the Chukchi sea (Tsukazaki et al.
+ 2018), some sampling sites may host occasional blooms from allochtonous
+ species after resting stage cells are transferred by currents.
+ The interplay between cyst banks and hydrodynamics processes may therefore
+ play an important role in the maintenance of 
+\begin_inset Formula $\beta$
+\end_inset
+
+-diversity.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1630685784
+In all three cases, however, the presence of cysts before a bloom might
+ indicate that cyst banks at least participate in the temporal recolonization
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

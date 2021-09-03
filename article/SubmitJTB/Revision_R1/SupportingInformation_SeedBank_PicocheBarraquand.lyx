@@ -82,6 +82,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -2100369821 "cpicoche"
 \end_header
 
 \begin_body
@@ -2001,6 +2002,70 @@ ic interaction strengths, which destabilizes the community and leads to
 
 \begin_layout Section
 Growth rates and survival without a cyst bank
+\change_inserted -2100369821 1630589473
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630591231
+In order to investigate the relationships between dynamics and survival
+ probabilities, we computed the realized per capita growth rates of each
+ species in simplified conditions (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Probability-of-survival"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1630590775
+when all species abundances are set to 1, so that there is nearly no competition
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1630590833
+when all species abundances are set to their average abundance in the environmen
+t, as a proxy of competition endured by each species throughout the year
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1630590748
+when temperature is set to the average temperature of the environment
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -2100369821 1630590846
+when temperature is either optimal for each species, or too high for all
+ species
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630591235
+It should be noted that the realized growth rate is not computed with long-term
+ simulation, but for a given timestep, in the described conditions.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1630591417
+Growth rates are then related to the probability of survival in the ocean
+ without a cyst bank when varying interaction strengths as described in
+ the main text.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2033,6 +2098,17 @@ Probability of survival in the absence of a cyst bank as a function of the
  each species (c), or suboptimal temperatures (d) - here, 30°C.
  Red points correspond to species which have a high growth rate at low density
  but still goes extinct.
+\change_inserted -2100369821 1630591225
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Probability-of-survival"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_inset
