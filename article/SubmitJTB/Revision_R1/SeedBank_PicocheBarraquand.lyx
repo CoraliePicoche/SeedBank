@@ -417,35 +417,14 @@ literal "false"
 \end_inset
 
 .
+
+\change_deleted -2100369821 1631193756
  
-\change_inserted -2100369821 1631049145
-Among them, the storage effect, has been discussed at length in modern coexisten
-ce theory 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "chesson_mechanisms_2000,chesson_updates_2018"
-literal "false"
-
-\end_inset
-
- and could appear in the presence of interspecific competition and a long-lived
- dormant stage with temporal variation in recruitment 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "caceres_temporal_1997,aikio_seed_2002,angert_functional_2009"
-literal "false"
-
-\end_inset
-
-.
- 
-\change_deleted -2100369821 1630682029
+\change_unchanged
 
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -2100369821 1630682029
 The storage effect, a major paradigm in modern coexistence theory 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -454,6 +433,37 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1631194366
+, can operate with a combination of interspecific competition and a long-lived
+ dormant stage with a temporally variable recruitment rate 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "caceres_temporal_1997"
+literal "false"
+
+\end_inset
+
+.
+ The seed bank may therefore lead to a storage effect 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "angert_functional_2009"
+literal "false"
+
+\end_inset
+
+, even though it is not always the case 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "aikio_seed_2002"
+literal "false"
+
+\end_inset
+
+.
+
+\change_deleted -2100369821 1630682029
  which involves covariances between competitive strengths and environmental
  variation, is one of them.
  It has been shown to arise when a long-lived dormant stage combines with
@@ -615,7 +625,21 @@ cysts
 \change_inserted -2100369821 1631006396
 individuals
 \change_unchanged
- are widespread in phytoplankton.
+ are widespread in phytoplankton
+\change_inserted -2100369821 1631197501
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+after " for extensive lists of species with known resting stages"
+before "see"
+key "mcquoid_diatom_1996,tsukazaki_distribution_2018"
+literal "false"
+
+\end_inset
+
+
+\change_unchanged
+.
  
 \change_deleted -2100369821 1631006403
 Cyst f
@@ -633,12 +657,7 @@ can either be part of the life cycle of phytoplankton species and result
 \change_deleted -2100369821 1631006458
  or be
 \change_unchanged
- triggered by
-\change_inserted -2100369821 1631006472
-, e.g.
-
-\change_unchanged
- specific environmental conditions
+ triggered by specific environmental conditions
 \change_deleted -2100369821 1631006467
 , leading to asexual resting stages
 \change_unchanged
@@ -651,6 +670,13 @@ literal "false"
 \end_inset
 
 .
+
+\change_inserted -2100369821 1631197726
+ Hereafter, when referring to 'seed banks', we refer to the accumulation
+ of all types of resting stages, either sexual (dinoflagellates' cysts or
+ diatoms' spores) or asexual, in the seabed.
+
+\change_unchanged
  A variety of models have endeavoured to explain and predict amplitude,
  timing and/or spatial distribution of blooms by explicitly modeling multiple
  stages in the life cycle of a particular species, but without interactions
@@ -681,18 +707,18 @@ species or group interacting mostly with vegetative-only groups.
  of how the 
 \change_deleted -2100369821 1631006510
 cyst
-\change_inserted -2100369821 1631006511
+\change_inserted -2100369821 1631197022
 resting
 \change_unchanged
  stage might help maintain biodiversity in species-rich communities.
  In the present paper, we demonstrate the potential role of 
 \change_deleted -2100369821 1631006523
 cyst
-\change_inserted -2100369821 1631006524
+\change_inserted -2100369821 1631197022
 seed
 \change_unchanged
  banks using a phytoplankton community dynamics model
-\change_inserted -2100369821 1631006532
+\change_inserted -2100369821 1631197022
 .
 
 \change_deleted -2100369821 1631006531
@@ -704,37 +730,13 @@ seed
 \begin_layout Standard
 Phytoplankton communities in coastal environments may benefit from seed
  banks
-\change_deleted -2100369821 1631006549
+\change_deleted -2100369821 1631197733
  (hereafter called cyst banks to be more consistent with the terminology
- in use for such species)
-\change_inserted -2100369821 1631006551
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1631006633
-Should we say here stg like 
-\begin_inset Quotes eld
-\end_inset
-
-We hereafter keep the word seed bank to encompass sexual stages such as
- spore and cysts of diatoms and dinoflagellates, and other potentially asexual
- resting stages
-\begin_inset Quotes erd
-\end_inset
-
- ?
+ in use for such species) 
+\change_inserted -2100369821 1631197733
+ 
 \change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- even more than the oceanic communities 
+even more than the oceanic communities 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see for example"
@@ -1149,30 +1151,6 @@ Je mentionne le coût pour expliquer en filigrane que les deux modèles ont
 
 \end_inset
 
-
-\change_inserted -2100369821 1630400412
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1630400416
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1630400434
-Insert the paragraph about interactions here instead of after the empirical
- dataset?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
@@ -2715,6 +2693,102 @@ literal "false"
 \end_inset
 
  (stratified water column) to 0.1 (highly mixed environment).
+\change_deleted -2100369821 1631197551
+
+\end_layout
+
+\begin_layout Subsubsection*
+
+\change_inserted -2100369821 1631199276
+Initial interaction matrix
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1631200686
+Initial values of interactions strengths between species are based on Multivaria
+te AutoRegressive (MAR) model estimates 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+.
+ MAR(1) models relate the log-abundance of each of the 
+\begin_inset Formula $S$
+\end_inset
+
+ phytoplankton species at time 
+\begin_inset Formula $t+1$
+\end_inset
+
+ to log-abundances of all species at time 
+\begin_inset Formula $t$
+\end_inset
+
+, through an interaction matrix, and effects of abiotic variables at time
+ 
+\begin_inset Formula $t+1$
+\end_inset
+
+ (see SI).
+ Interactions are estimated only between considered species within the same
+ trophic level, and are independent from the environmental variables that
+ were included separately in the MAR model estimates, such as temperature
+ in our case.
+ This allows to remove at least some of the confounding factors, such as
+ seasonality.
+ A phylogeny-based interaction matrix resulted in a better fit to model
+ the community dynamics 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1631197553
+as could be expected, see Violle et al.
+ 2011 –if necessary–
+\end_layout
+
+\end_inset
+
+, i.e.
+ pennate/centric diatoms only interact with other pennate/centric diatoms
+ respectively and dinoflagellates only interact with dinoflagellates.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1631200751
+The MAR model can only estimate apparent interaction strengths: complex
+ processes can be at work behind values of competition and facilitation,
+ either from abiotic (e.g., hydrodynamics) or biotic (e.g.
+ consumption by predators or parasites) variables.
+ For more consideration on apparent interaction detected in phytoplankton
+ communities with the MAR model, we refer the reader to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "barraquand_coastal_2018"
+literal "false"
+
+\end_inset
+
+.
+ In the present model, while we tune interaction strength values (see below),
+ the type of interaction (competition, facilitation or absence of interaction)
+ remains the same as computed in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2948,26 +3022,28 @@ literal "false"
 \end_inset
 
 .
- This dataset – like most other plankton monitoring studies – has a slightly
+ 
+\change_deleted -2100369821 1631106384
+This dataset – like most other plankton monitoring studies – has a slightly
  coarser taxonomy than our mechanistic model.
- We stress that we are not trying to model precisely this particular community,
- but rather to constrain our models to produce lifelike patterns of phytoplankto
-n community
+ 
+\change_unchanged
+We stress that we are not trying to model precisely this particular community
+\change_inserted -2100369821 1631197681
+ of Auger
+\change_unchanged
+, but rather to constrain our models
+\change_inserted -2100369821 1631197663
+ with known interaction networks and species-specific thermal niches
+\change_unchanged
+ to produce lifelike patterns of phytoplankton community
 \change_deleted -2100369821 1630679259
  dynamics.
  
-\change_inserted -2100369821 1631050366
+\change_inserted -2100369821 1631197574
 , i.e.
- seasonal dynamics with high-amplitude blooms, differences in average abundances
- and degree of specialisation related to species-specific thermal niches,
- and relative strengths of apparent interactions.
- Morphotypes presented here do not exactly correspond to their observed
- counterparts (whose codes are defined in Section S3 of the SI) , but function
- together to form an idealized community.
- They are referred to as species in the following to keep the terminology
- in use in the literature, but should be interpreted as simplified phytoplankton
- population.
- 
+ seasonal dynamics with high-amplitude blooms and differences in average
+ abundances matching our data.
 \change_unchanged
 
 \begin_inset Note Note
@@ -3027,108 +3103,6 @@ literal "false"
 
 \change_inserted -2100369821 1630680716
 
-\end_layout
-
-\begin_layout Subsubsection*
-
-\change_inserted -2100369821 1630399117
-Interaction matrix
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1631050555
-Interactions between species were parameterized on the dataset described
- above, using a MAR model 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "picoche_strong_2020"
-literal "false"
-
-\end_inset
-
-.
- MAR(1) models are based on a stochastic, discrete-time Gompertz equation
- which relates the log-abundance of each of the 
-\begin_inset Formula $S$
-\end_inset
-
- species at time 
-\begin_inset Formula $t+1$
-\end_inset
-
- to log-abundances of the whole community at time 
-\begin_inset Formula $t$
-\end_inset
-
-, with possible interactions between species, and effects of abiotic variables
- at time 
-\begin_inset Formula $t+1$
-\end_inset
-
- (see SI).
- The interaction matrix therefore only takes into account (lagged) correlations
- between phytoplankters within the community, i.e.
- within the same trophic level.
- Computed interactions are independent from the environmental variables,
- such as temperature that were included separately in the MAR model estimates.
- A phylogeny-based interaction matrix resulted in a better fit to model
- the community dynamics 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1630412314
-as could be expected, see Violle et al.
- 2011 –if necessary–
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-, i.e.
- pennate/centric diatoms only interact with other pennate/centric diatoms
- respectively and dinoflagellates only interact with dinoflagellates.
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1631050604
-As the MAR model is based on correlation, only apparent competition or facilitat
-ion is shown: complex processes can be at work behind these values, either
- from abiotic (e.g., hydrodynamics) or biotic (e.g.
- consumption by predators or parasites) variables.
- For more consideration on apparent interaction detected in phytoplankton
- communities with the MAR model, we refer the reader to 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "barraquand_coastal_2018"
-literal "false"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1630412978
-In the present model, while we tune interaction strength values, the type
- of interaction (competition, facilitation or absence of interaction) remains
- the same as computed in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "picoche_strong_2020"
-literal "false"
-
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Subsection*
@@ -3464,20 +3438,6 @@ burial rate set to 0.1, resuspension to 10
 \change_inserted -2100369821 1631018889
 ; the correspondence between codes and groups of species is given in Section
  S3 of the SI
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1631018895
-Should we say the name of the species?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
 \change_unchanged
 ).
  When resuspension was set to 0.001, a species periodically disappeared from
@@ -4212,10 +4172,28 @@ literal "false"
 nts.
  Spatial recolonization was therefore less important than temporal recolonizatio
 n; the relative importance of the two processes may vary depending on the
- organisms and the degree of spatial synchrony of their environment.
+ organisms and the degree of spatial synchrony of their environment
+\change_inserted -2100369821 1631199193
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "montresor_dinoflagellate_1998,anderson_alexandrium_2005"
+literal "false"
 
-\change_inserted -2100369821 1631050835
- For example, signs of spatial recolonization might have been found in the
+\end_inset
+
+
+\change_unchanged
+.
+\change_inserted -2100369821 1631116220
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1631197836
+For example, signs of spatial recolonization might have been found in the
  Gulf of Maine, where the toxic species 
 \shape italic
 Alexandrium fundyense
@@ -4254,14 +4232,7 @@ literal "false"
 , on the contrary, the high heterogeneity between seed bank compositions
  between offshore and coastal areas indicate that both hydrodynamics and
  sediment types may hinder spatial homogeneization.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1631050835
-In the Chukchi sea 
+ In the Chukchi sea 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "tsukazaki_distribution_2018"
@@ -4271,35 +4242,19 @@ literal "false"
 
 , some sampling sites may host occasional blooms from allochtonous species
  after resting stage cells are transferred by currents.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-The interplay between seed banks and hydrodynamics processes may therefore
+ The interplay between seed banks and hydrodynamics processes may therefore
  play an important role in the maintenance of 
 \begin_inset Formula $\beta$
 \end_inset
 
 -diversity.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1631050778
-In all three cases, however, the presence of cysts before a bloom might
- indicate that cyst banks at least participate in the temporal recolonization
 \change_unchanged
 
 \end_layout
 
 \end_inset
 
-
+ 
 \begin_inset Note Note
 status open
 
@@ -4314,7 +4269,6 @@ Is this too much info/examples?
 \end_inset
 
 .
- 
 \change_unchanged
 
 \end_layout
@@ -4486,7 +4440,14 @@ Maybe hint at evolution, too,if we'retalking many many generation.
 \end_inset
 
  
-\change_inserted -2100369821 1631051148
+\change_inserted -2100369821 1631106716
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1631106721
 In addition to a better understanding of coexistence, being able to model
  properly phytoplankton dynamics is of crucial importance if we want to
  be able to predict futur changes in phytoplankton communities.
@@ -4513,6 +4474,13 @@ literal "false"
  dormant stages in a diverse community may give new clues about present
  and future disturbances.
  
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \change_unchanged
 When modelling different stages of the life cycle in a detailed manner –
  as done here – is impractical, the recolonization could perhaps be simplified
