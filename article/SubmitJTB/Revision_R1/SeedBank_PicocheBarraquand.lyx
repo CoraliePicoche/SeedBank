@@ -671,8 +671,8 @@ literal "false"
 
 .
 
-\change_inserted -2100369821 1631197726
- Hereafter, when referring to 'seed banks', we refer to the accumulation
+\change_inserted -2100369821 1631264971
+ Hereafter, when using the term 'seed banks', we refer to the accumulation
  of all types of resting stages, either sexual (dinoflagellates' cysts or
  diatoms' spores) or asexual, in the seabed.
 
@@ -2479,8 +2479,12 @@ literal "false"
 \end_inset
 
  (in the absence of nutrients, or because of viral charge).
- A maximum value of 0.2 is fixed for the model (see Section S3 of the SI
- for more details).
+ A maximum value of 0.2 is fixed for the model
+\change_inserted -2100369821 1631265029
+, as a balance between using a high loss rate and keeping all species in
+ the community in the reference model
+\change_unchanged
+ (see Section S3 of the SI for more details).
 \end_layout
 
 \begin_layout Paragraph*
@@ -2705,7 +2709,7 @@ Initial interaction matrix
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1631200686
+\change_inserted -2100369821 1631265064
 Initial values of interactions strengths between species are based on Multivaria
 te AutoRegressive (MAR) model estimates 
 \begin_inset CommandInset citation
@@ -2733,7 +2737,7 @@ literal "false"
 \begin_inset Formula $t+1$
 \end_inset
 
- (see SI).
+ (see Section S2 in SI).
  Interactions are estimated only between considered species within the same
  trophic level, and are independent from the environmental variables that
  were included separately in the MAR model estimates, such as temperature
@@ -3033,8 +3037,8 @@ We stress that we are not trying to model precisely this particular community
  of Auger
 \change_unchanged
 , but rather to constrain our models
-\change_inserted -2100369821 1631197663
- with known interaction networks and species-specific thermal niches
+\change_inserted -2100369821 1631265162
+ with known a interaction network and species-specific thermal niches
 \change_unchanged
  to produce lifelike patterns of phytoplankton community
 \change_deleted -2100369821 1630679259
@@ -3435,9 +3439,9 @@ burial rate set to 0.1, resuspension to 10
  or exchange rate set to 0), the final richness of the oceanic community
  decreased from 11 to 4.
  Extant species were the same in all simulations (CHA, THP, NIT, PSE
-\change_inserted -2100369821 1631018889
+\change_inserted -2100369821 1631264048
 ; the correspondence between codes and groups of species is given in Section
- S3 of the SI
+ S4 of the SI
 \change_unchanged
 ).
  When resuspension was set to 0.001, a species periodically disappeared from
