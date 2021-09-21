@@ -99,6 +99,7 @@
 \html_css_as_file 0
 \html_be_strict false
 \author -2100369821 "cpicoche"
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -164,96 +165,36 @@ Seed formation is part of the reproductive cycle, leading to the accumulation
  While the implications of this process for biodiversity have been studied
  in terrestrial plants, seed banks are usually neglected in phytoplankton
  multispecies dynamic models, in spite of widespread empirical evidence
- for such seed 
-\change_deleted -2100369821 1631005696
-(or rather cyst) 
-\change_unchanged
-banks.
+ for such seed banks.
  In this study, we build a metacommunity model of interacting phytoplankton
- species
-\change_inserted -2100369821 1631006009
-, including a resting stage 
-\change_deleted -2100369821 1631006213
- with
-\change_inserted -2100369821 1631006215
-supplying
-\change_unchanged
- 
-\change_deleted -2100369821 1631006219
-a
-\change_inserted -2100369821 1631006219
-the
-\change_unchanged
- 
-\change_deleted -2100369821 1631005700
-cyst
-\change_inserted -2100369821 1631005700
-seed
-\change_unchanged
- bank.
+ species, including a resting stage supplying the seed bank.
  The model is parameterized with empirically-driven growth rate functions
  and field-based interaction estimates, which include both facilitative
  and competitive interactions.
- Exchanges between compartments (coastal pelagic cells, coastal 
-\change_deleted -2100369821 1631005766
-cysts
-\change_inserted -2100369821 1631005769
-resting cells
-\change_unchanged
- on the seabed, and open ocean pelagic cells) are controlled by hydrodynamical
- parameters to which the sensitivity of the model is assessed.
+ Exchanges between compartments (coastal pelagic cells, coastal resting
+ cells on the seabed, and open ocean pelagic cells) are controlled by hydrodynam
+ical parameters to which the sensitivity of the model is assessed.
  We consider two models, i.e., with and without a saturating effect of the
  interactions on the growth rates.
- Our results are consistent between models, and show that a 
-\change_deleted -2100369821 1631005844
-cyst
-\change_inserted -2100369821 1631005845
-seed
-\change_unchanged
- bank allows to maintain all species in the community over 30 years.
+ Our results are consistent between models, and show that a seed bank allows
+ to maintain all species in the community over 30 years.
  Indeed, a fraction of the species are vulnerable to extinction at specific
  times within the year, but this process is buffered by their survival in
- 
-\change_inserted -2100369821 1631006263
-their resting stage
-\change_deleted -2100369821 1631006258
-the coastal cyst bank
-\change_unchanged
-.
- We thus highlight the potential role of the 
-\change_deleted -2100369821 1631006267
-cyst
-\change_inserted -2100369821 1631006267
-seed
-\change_unchanged
- bank in the recurrent re-invasion of the coastal community, and of coastal
- environments in re-seeding oceanic regions.
- Moreover, the 
-\change_deleted -2100369821 1631006277
-cyst
-\change_inserted -2100369821 1631006278
-seed
-\change_unchanged
- bank enables populations to tolerate stronger interactions within the community
- as well as more severe changes in the environment, such as those predicted
- within a climate change context.
- Our study therefore shows how a 
-\change_deleted -2100369821 1631006285
-cyst
-\change_inserted -2100369821 1631006285
-resting
-\change_unchanged
- stage may help phytoplanktonic diversity maintenance.
+ their resting stage.
+ We thus highlight the potential role of the seed bank in the recurrent
+ re-invasion of the coastal community, and of coastal environments in re-seeding
+ oceanic regions.
+ Moreover, the seed bank enables populations to tolerate stronger interactions
+ within the community as well as more severe changes in the environment,
+ such as those predicted within a climate change context.
+ Our study therefore shows how a resting stage may help phytoplanktonic
+ diversity maintenance.
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-289 words
-\change_inserted -2100369821 1631005855
-.
+289 words.
  CHECK THAT
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -434,9 +375,24 @@ literal "false"
 \end_inset
 
 
+\change_inserted -666822487 1632226609
+ which involves a positive covariance between the strength of competition
+ and favourable environmental variation as well as buffered population growth,
+ is one of them.
+ It 
+\change_deleted -666822487 1632226329
+,
 \change_inserted -2100369821 1631194366
-, can operate with a combination of interspecific competition and a long-lived
- dormant stage with a temporally variable recruitment rate 
+ 
+\change_deleted -666822487 1632226591
+can operate
+\change_inserted -666822487 1632226599
+has been shown to arise from
+\change_deleted -666822487 1632226601
+ with
+\change_inserted -2100369821 1631194366
+ a combination of interspecific competition and a long-lived dormant stage
+ with a temporally variable recruitment rate 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "caceres_temporal_1997"
@@ -445,7 +401,11 @@ literal "false"
 \end_inset
 
 .
- The seed bank may therefore lead to a storage effect 
+ The 
+\change_inserted -666822487 1632226701
+presence of a 
+\change_inserted -2100369821 1631194366
+seed bank may therefore lead to a storage effect 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "angert_functional_2009"
@@ -453,7 +413,25 @@ literal "false"
 
 \end_inset
 
-, even though it is not always the case 
+, 
+\change_deleted -666822487 1632226424
+even 
+\change_inserted -2100369821 1631194366
+though 
+\change_deleted -666822487 1632226427
+it is 
+\change_inserted -2100369821 1631194366
+not 
+\change_deleted -666822487 1632226714
+always
+\change_inserted -666822487 1632226717
+systematically
+\change_inserted -2100369821 1631194366
+ 
+\change_deleted -666822487 1632226434
+the case 
+\change_inserted -2100369821 1631194366
+
 \begin_inset CommandInset citation
 LatexCommand citep
 key "aikio_seed_2002"
@@ -511,8 +489,12 @@ literal "false"
 .
 
 \change_unchanged
- However, the contribution of seeds to coexistence may be much larger than
- their potential contribution to the storage effect.
+ However, 
+\change_inserted -666822487 1632226811
+although the storage effect usually captures theoreticians' attention, 
+\change_unchanged
+the contribution of seeds to coexistence may be much larger than their potential
+ contribution to the storage effect.
  A long-lived seed bank can help coexistence by other, simpler means.
  For instance, in the meta-community model of 
 \begin_inset CommandInset citation
@@ -551,8 +533,37 @@ Although there is some awareness of the role of cryptic life stages in shaping
 \change_deleted -2100369821 1631049648
  
 \change_inserted -2100369821 1631050273
- may constituting one of the most important groups on Earth, being responsible
- not only for half the global primary production
+ 
+\change_deleted -666822487 1632226863
+may constituting
+\change_inserted -666822487 1632226868
+constitute
+\change_inserted -2100369821 1631050273
+ one of the most important 
+\change_inserted -666822487 1632226878
+photosynthetic 
+\change_inserted -2100369821 1631050273
+groups
+\change_inserted -666822487 1632226894
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1632226938
+just important group ça le fait pas trop.
+ Après je me demandais, est-ce que les HAB sont le plus souvent le fait
+ d'espèces photosynthétiques? 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_inserted -2100369821 1631050273
+ on Earth, being responsible not only for half the global primary production
 \begin_inset Note Note
 status collapsed
 
@@ -653,7 +664,11 @@ of a resting cell
 can either be part of the life cycle of phytoplankton species and result
  from sexual reproduction
 \change_inserted -2100369821 1631006456
- or asexual processes
+ or 
+\change_inserted -666822487 1632226998
+result from 
+\change_inserted -2100369821 1631006456
+asexual processes
 \change_deleted -2100369821 1631006458
  or be
 \change_unchanged
@@ -672,9 +687,15 @@ literal "false"
 .
 
 \change_inserted -2100369821 1631264971
- Hereafter, when using the term 'seed banks', we refer to the accumulation
- of all types of resting stages, either sexual (dinoflagellates' cysts or
- diatoms' spores) or asexual, in the seabed.
+ Hereafter, when using the term 
+\change_inserted -666822487 1632226967
+`
+\change_deleted -666822487 1632226966
+'
+\change_inserted -2100369821 1631264971
+seed banks', we refer to the accumulation of all types of resting stages,
+ either sexual (dinoflagellates' cysts or diatoms' spores) or asexual, in
+ the seabed.
 
 \change_unchanged
  A variety of models have endeavoured to explain and predict amplitude,
@@ -2481,8 +2502,11 @@ literal "false"
  (in the absence of nutrients, or because of viral charge).
  A maximum value of 0.2 is fixed for the model
 \change_inserted -2100369821 1631265029
-, as a balance between using a high loss rate and keeping all species in
- the community in the reference model
+, as a balance between using a high loss rate 
+\change_inserted -666822487 1632227113
+(probable because of predation) 
+\change_inserted -2100369821 1631265029
+and keeping all species in the community in the reference model
 \change_unchanged
  (see Section S3 of the SI for more details).
 \end_layout
@@ -2807,6 +2831,8 @@ Parameter calibration
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -666822487 1632227218
 \begin_inset Note Note
 status collapsed
 
@@ -2827,8 +2853,28 @@ literal "false"
 \end_inset
 
 .
- These initial interaction estimates are then calibrated to the time series
- (see below), to take into account the differences in model structure and
+ These
+\change_inserted -666822487 1632227228
+As explained above, we use
+\change_unchanged
+ initial interaction estimates 
+\change_inserted -666822487 1632227249
+from our previous time series modelling 
+\begin_inset CommandInset citation
+LatexCommand citep
+after "see Section S3 of the SI for the equations"
+key "picoche_strong_2020"
+literal "false"
+
+\end_inset
+
+, which 
+\change_unchanged
+are then calibrated to the time series (
+\change_inserted -666822487 1632227510
+thus possibly re-estimated, 
+\change_unchanged
+see below), to take into account the differences in model structure and
  timescale between this study and 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -2838,6 +2884,18 @@ literal "false"
 \end_inset
 
 .
+
+\change_inserted -666822487 1632227572
+ In SI Section S3, we present the formulas relating the MAR interactions
+ coefficients to the Jacobian matrices of the Beverton-Holt multispecies
+ models, as they allow to obtain proper 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ coefficient values.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -3033,18 +3091,30 @@ This dataset – like most other plankton monitoring studies – has a slightly
  
 \change_unchanged
 We stress that we are not trying to model precisely this particular community
-\change_inserted -2100369821 1631197681
+\change_deleted -666822487 1632227616
  of Auger
 \change_unchanged
 , but rather to constrain our models
 \change_inserted -2100369821 1631265162
- with known a interaction network and species-specific thermal niches
+ 
+\change_deleted -666822487 1632227758
+with known a
+\change_inserted -666822487 1632227762
+with an empirically-derived
+\change_inserted -2100369821 1631265162
+ interaction network and species-specific thermal niches
+\change_inserted -666822487 1632227689
+, which helps
 \change_unchanged
  to produce lifelike patterns of phytoplankton community
+\change_inserted -666822487 1632227806
+ dynamics resembling observable data (seasonal dynamics, high-amplitude
+ blooms, differences in average abundances matching data).
+
 \change_deleted -2100369821 1630679259
  dynamics.
  
-\change_inserted -2100369821 1631197574
+\change_deleted -666822487 1632227719
 , i.e.
  seasonal dynamics with high-amplitude blooms and differences in average
  abundances matching our data.
@@ -3132,7 +3202,11 @@ resting-stage
 \change_deleted -2100369821 1631007789
 Cyst
 \change_inserted -2100369821 1631007800
-Mortality in the seed bank is set to 100% to remove the compartment.
+Mortality in the seed bank is set to 100% to 
+\change_inserted -666822487 1632227854
+effectively 
+\change_inserted -2100369821 1631007800
+remove the compartment.
 
 \change_deleted -2100369821 1631007803
  mortality is set to 100% to remove the cyst bank.
@@ -3322,9 +3396,33 @@ Simulated phytoplankton dynamics for a year in model I.
  Each panel corresponds to a cluster of interacting 
 \change_deleted -2100369821 1631018567
 taxa
+\change_deleted -666822487 1632227945
+groups of species
+\change_inserted -666822487 1632227949
+taxa
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1632227985
+\begin_inset Quotes eld
+\end_inset
+
+groups of species
+\begin_inset Quotes erd
+\end_inset
+
+ suggests the cluster itself
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \change_inserted -2100369821 1631018572
-groups of species: centric diatoms (a), pennate diatoms (b) and dinoflagellates
- (c).
+: centric diatoms (a), pennate diatoms (b) and dinoflagellates (c).
  Taxa only interact within their cluster (see Methods)
 \change_unchanged
 .
@@ -3509,19 +3607,25 @@ third row
 )
 \change_unchanged
 .
- Note that the reference value is not necessarily within the range of values
+ 
+\change_deleted -666822487 1632228070
+Note that the reference value is not necessarily within the range of values
  used in the sensitivity analysis (e.g.
  mortality rates in the sensitivity analysis are both below the value used
  in other simulations).
 \change_inserted -2100369821 1630504502
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 \change_inserted -2100369821 1630504512
 Should we keep the previous sentence?
+\change_inserted -666822487 1632228134
+ F.
+ No you are right this confuses things.
+ Delete this comment after so we don't delete another sentence again ;)
 \change_unchanged
 
 \end_layout
@@ -4007,14 +4111,26 @@ Using a meta-community model which accounts for exchanges between the ocean
  coastal water column, we were able to show that 
 \change_deleted -2100369821 1631020134
 a specific life stage, the seed – or cyst –
+\change_deleted -666822487 1632228178
+the
+\change_inserted -666822487 1632228178
+a
 \change_inserted -2100369821 1631020141
-the resting
+ resting
+\change_inserted -666822487 1632228187
+ 
 \change_deleted -2100369821 1631020134
  
 \change_unchanged
 stage
 \change_inserted -2100369821 1631020152
-, when dormant cells are stored in a seed bank
+, when dormant cells 
+\change_deleted -666822487 1632228231
+are stored
+\change_inserted -666822487 1632228233
+can accumulate
+\change_inserted -2100369821 1631020152
+ in a seed bank
 \change_unchanged
 , can help maintain biodiversity.
  This dormant stage was integrated to a phytoplanktonic community dynamics
@@ -4266,6 +4382,8 @@ status open
 
 \change_inserted -2100369821 1631050795
 Is this too much info/examples?
+\change_inserted -666822487 1632228264
+ Yes I think so.
 \change_unchanged
 
 \end_layout
@@ -4325,9 +4443,30 @@ s and mean interaction values in the community.
 
 \change_inserted -2100369821 1631020398
 Species persistence varied between the coastal and ocean compartment.
- Temporary species disparition could happen periodically in the ocean but
- species were able to reinvade the coast thanks to the connection to the
- seed bank, and then reinvaded the ocean from there.
+ Temporary species 
+\change_deleted -666822487 1632228289
+disparition
+\change_inserted -666822487 1632228293
+disappearance
+\change_inserted -2100369821 1631020398
+ could happen periodically in the ocean but species were able to reinvade
+ 
+\change_inserted -666822487 1632228325
+from 
+\change_inserted -2100369821 1631020398
+the coast
+\change_inserted -666822487 1632228357
+,
+\change_inserted -2100369821 1631020398
+ thanks to the connection 
+\change_inserted -666822487 1632228364
+of the coast 
+\change_inserted -2100369821 1631020398
+to the seed bank
+\change_deleted -666822487 1632228376
+, and then reinvaded the ocean from there
+\change_inserted -2100369821 1631020398
+.
  Local extinction in the absence of a seed bank confirms conclusions from
  
 \begin_inset CommandInset citation
@@ -4337,7 +4476,41 @@ literal "false"
 
 \end_inset
 
- on single species.
+ on single species
+\change_inserted -666822487 1632228410
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1632228443
+if they considered a single species, this is 
+\begin_inset Quotes eld
+\end_inset
+
+on a single species
+\begin_inset Quotes erd
+\end_inset
+
+, if they considered several, 
+\begin_inset Quotes eld
+\end_inset
+
+on single species
+\begin_inset Quotes erd
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_inserted -2100369821 1631020398
+.
  This suggests that some species may be locally transient: they are filtered
  out from certain patches, but can reinvade more or less periodically the
  environment 
@@ -4357,11 +4530,19 @@ literal "false"
 
 \change_inserted -2100369821 1630512210
 Survival probabilities of species within the community in the absence of
- a seed bank also depended on their characteristics.
+ a seed bank also depended on their characteristics
+\change_inserted -666822487 1632228507
+ – and therefore species rescued by the seed bank also have specific characteris
+tics
+\change_inserted -2100369821 1630512210
+.
  Higher amplitudes of population variation were typically associated with
  extinctions, as well as a smaller niche width (i.e., being a specialist)
  or being strongly affected by species interactions (Fig.
  S7 in SI).
+ 
+\change_inserted -666822487 1632228569
+These are the species that typically benefit the most from a seed bank.
  
 \change_deleted -2100369821 1630508593
 The various species present in the community had different survival probabilitie
@@ -4413,8 +4594,15 @@ Despite the evidence for seed bank effects that we and others uncovered,
  the open ocean by progressive dispersal by the currents.
  If the goal of a community-level model is very short-term prediction (days,
  weeks), this recolonization can probably be neglected.
- However, over multiple years, ignoring cryptic stages allowing recolonization
- could strongly bias our view of long-term coexistence.
+ However, over multiple years, ignoring cryptic
+\change_inserted -666822487 1632228594
+ life
+\change_unchanged
+ stages allowing recolonization could strongly bias 
+\change_inserted -666822487 1632228615
+downwards 
+\change_unchanged
+our view of long-term coexistence.
  Long-term phytoplankton coexistence modelling (over multiple decades or
  more) likely requires that we take into account 
 \change_deleted -2100369821 1631020443
@@ -4477,6 +4665,10 @@ literal "false"
 , tend to increase with time: being able to model toxic species forming
  dormant stages in a diverse community may give new clues about present
  and future disturbances.
+ 
+\change_inserted -666822487 1632228719
+F: je pense que ce truc devrait rester en commentaire, ça arrive un peu
+ comme un cheveu sur la soupe.
  
 \change_unchanged
 
