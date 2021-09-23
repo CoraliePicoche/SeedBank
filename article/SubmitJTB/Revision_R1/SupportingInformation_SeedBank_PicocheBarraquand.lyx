@@ -142,6 +142,17 @@ arabic{figure}}
 setcounter{figure}{0}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+thetable{S
+\backslash
+arabic{table}}
+\end_layout
+
 \end_inset
 
 
@@ -307,7 +318,7 @@ literal "false"
 
 \begin_layout Standard
 The relationship between temperature and growth rate is then 
-\begin_inset Formula $E(T)\thinspace=\thinspace0.81e^{0.0631(T-273.15)}$
+\begin_inset Formula $E(T)\thinspace=\thinspace0.81\exp^{0.0631(T-273.15)}$
 \end_inset
 
 , with T in Kelvin degrees.
@@ -474,6 +485,26 @@ The annual dynamics of phytoplanktonic organisms is usually characterized
  as well as a sufficient temperature.
  All parameters being more or less correlated to the seasonal rythm, it
  is reasonable to restrain this study to the effect of one variable, temperature.
+ The niche computed here is not merely the fundamental thermal niche, but
+ a composite of all environmental conditions covarying with the temperature
+ and promoting population growth.
+ Such environmental conditions of course include solar irradiance which
+ is strongly correlated to temperature in the field, but could also account
+ for other factors, such as predation, that have a seasonal rythm which
+ is partly captured by temperature.
+ The niche part of the growth rate 
+\begin_inset Formula $f_{i}(T)$
+\end_inset
+
+ therefore describes the 
+\emph on
+realized
+\emph default
+ niche of species 
+\begin_inset Formula $i$
+\end_inset
+
+, not its fundamental niche.
 \end_layout
 
 \begin_layout Standard
@@ -670,11 +701,11 @@ name "fig:Growth_niche_metabolism"
 \end_layout
 
 \begin_layout Standard
-We provide actual shapes of 
-\begin_inset Formula $f_{i}(T)$
+We show the growth rates 
+\begin_inset Formula $r_{i}(T)$
 \end_inset
 
- for modeled taxa below (Fig 
+ as a function of temperature for each modeled taxon below (Fig 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Thermal_niche"
@@ -685,6 +716,16 @@ noprefix "false"
 \end_inset
 
 ).
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Is it r_i(T) or f_i(T)?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1407,13 +1448,13 @@ name "fig:Sinking-distribution"
 
 \begin_layout Paragraph*
 
-\change_deleted -2100369821 1631048406
+\change_deleted -2100369821 1632388046
 Cyst m
-\change_inserted -2100369821 1631048407
+\change_inserted -2100369821 1632388046
 M
 \change_unchanged
 ortality and burial
-\change_inserted -2100369821 1631048414
+\change_inserted -2100369821 1632388051
  in the seed bank
 \change_unchanged
 
@@ -1432,9 +1473,9 @@ literal "false"
  The authors also present sediment datation according to depth.
  Depth can therefore be related to maximum and mean age of phytoplankton
  
-\change_deleted -2100369821 1631021207
+\change_deleted -2100369821 1632388066
 cysts
-\change_inserted -2100369821 1631048468
+\change_inserted -2100369821 1632388068
 resting cells
 \change_unchanged
  before death.
@@ -1444,9 +1485,9 @@ resting cells
 
  is the probability of mortality and the survival follows a geometric law,
  the life expectancy of a 
-\change_deleted -2100369821 1631048475
+\change_deleted -2100369821 1632388074
 cyst
-\change_inserted -2100369821 1631048484
+\change_inserted -2100369821 1632388075
 resting cell
 \change_unchanged
  is 
@@ -1458,9 +1499,9 @@ resting cell
 \end_inset
 
  is the average duration of 
-\change_deleted -2100369821 1631021221
+\change_deleted -2100369821 1632388083
 cyst
-\change_inserted -2100369821 1631021224
+\change_inserted -2100369821 1632388085
 the dormant cell
 \change_unchanged
  viability.
@@ -1473,9 +1514,9 @@ the dormant cell
 \end_inset
 
  We can arbitrarily choose that for the older 
-\change_deleted -2100369821 1631021329
+\change_deleted -2100369821 1632388092
 cysts
-\change_inserted -2100369821 1631021330
+\change_inserted -2100369821 1632388094
 dormant cells
 \change_unchanged
  (i.e., the ones buried the deepest), 
@@ -1519,9 +1560,9 @@ dormant cells
 \begin_layout Standard
 As we highlight in the main text, burial is a very important process that
  controls the availability of 
-\change_deleted -2100369821 1631021351
+\change_deleted -2100369821 1632388102
 cysts
-\change_inserted -2100369821 1631021353
+\change_inserted -2100369821 1632388103
 resting cells
 \change_unchanged
 , conditional to their survival in the sediment.
@@ -1962,13 +2003,10 @@ status open
 \begin_layout Plain Layout
 Simulated phytoplankton time series for a year in model II (with saturating
  interactions).
- Each panel corresponds to a cluster of interacting 
-\change_deleted -2100369821 1631021396
-taxa
-\change_inserted -2100369821 1631021425
-groups of species: centric diatoms (a), pennate diatoms (b) and dinoflagellates
- (c).
- Taxa only interact within their cluster (see Methods)
+ Each panel corresponds to a cluster of interacting taxa
+\change_inserted -2100369821 1632387459
+: centric diatoms (a), pennate diatoms (b) and dinoflagellates (c).
+ Taxa only interact within their cluster (see Methods).
 \change_unchanged
 .
 \end_layout
@@ -2013,9 +2051,9 @@ status open
 Measures of biodiversity in the ocean at the end of the simulation: a-b)
  richness and c-d) inverse of the Simpson index, with (dashed line) and
  without (solid line) a 
-\change_deleted -2100369821 1631021464
+\change_deleted -2100369821 1632387435
 cyst
-\change_inserted -2100369821 1631021464
+\change_inserted -2100369821 1632387435
 seed
 \change_unchanged
  bank, as a function of the strength of competition and facilitation with
@@ -2050,9 +2088,9 @@ When intraspecific interaction strengths do not change, reducing the values
  Increasing facilitation finally destabilizes the ratio of intra- to interspecif
 ic interaction strengths, which destabilizes the community and leads to
  the observed diversity decrease in the absence of a 
-\change_deleted -2100369821 1631021479
+\change_deleted -2100369821 1632387438
 cyst
-\change_inserted -2100369821 1631021480
+\change_inserted -2100369821 1632387438
 seed
 \change_unchanged
  bank.
@@ -2060,19 +2098,19 @@ seed
 
 \begin_layout Section
 Growth rates and survival without a 
-\change_deleted -2100369821 1631021480
+\change_deleted -2100369821 1632387392
 cyst
-\change_inserted -2100369821 1631021481
+\change_inserted -2100369821 1632387393
 seed
 \change_unchanged
  bank
-\change_inserted -2100369821 1630589473
+\change_inserted -2100369821 1632387405
 
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1630591231
+\change_inserted -2100369821 1632387405
 In order to investigate the relationships between dynamics and survival
  probabilities, we computed the realized per capita growth rates of each
  species in simplified conditions (Fig.
@@ -2091,33 +2129,33 @@ noprefix "false"
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1630590775
+\change_inserted -2100369821 1632387405
 when all species abundances are set to 1, so that there is nearly no competition
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1630590833
+\change_inserted -2100369821 1632387405
 when all species abundances are set to their average abundance in the environmen
 t, as a proxy of competition endured by each species throughout the year
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1630590748
+\change_inserted -2100369821 1632387405
 when temperature is set to the average temperature of the environment
 \end_layout
 
 \begin_layout Itemize
 
-\change_inserted -2100369821 1630590846
+\change_inserted -2100369821 1632387405
 when temperature is either optimal for each species, or too high for all
  species
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1631048722
+\change_inserted -2100369821 1632387405
 It should be noted that the realized growth rate is not computed with long-term
  simulation, but for a set of environmental and competition values, in the
  described conditions.
@@ -2126,11 +2164,13 @@ It should be noted that the realized growth rate is not computed with long-term
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1631021511
+\change_inserted -2100369821 1632387405
 Growth rates are then related to the probability of survival in the ocean
  without a seed bank when varying interaction strengths as described in
  the main text.
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2156,9 +2196,9 @@ status open
 
 \begin_layout Plain Layout
 Probability of survival in the absence of a 
-\change_deleted -2100369821 1631021520
+\change_deleted -2100369821 1632387426
 cyst
-\change_inserted -2100369821 1631021520
+\change_inserted -2100369821 1632387427
 seed
 \change_unchanged
  bank as a function of the realized per capita growth rates (PGCR) of each
@@ -2169,8 +2209,9 @@ seed
  each species (c), or suboptimal temperatures (d) - here, 30°C.
  Red points correspond to species which have a high growth rate at low density
  but still goes extinct.
-\change_inserted -2100369821 1630591225
 
+\change_inserted -2100369821 1632388164
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Probability-of-survival"
@@ -2194,9 +2235,9 @@ name "fig:Probability-of-survival"
 
 \begin_layout Standard
 Extinction in the absence of the 
-\change_deleted -2100369821 1631021529
+\change_deleted -2100369821 1632387429
 cyst
-\change_inserted -2100369821 1631021530
+\change_inserted -2100369821 1632387430
 seed
 \change_unchanged
  bank can be explained by both a low growth rate at low density and average
@@ -2216,8 +2257,8 @@ seed
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "biblio_seed"
-options "ecol_let"
+bibfiles "../biblio_seed"
+options "../ecol_let"
 
 \end_inset
 
