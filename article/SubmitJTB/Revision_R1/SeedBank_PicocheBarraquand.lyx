@@ -94,7 +94,7 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes true
-\output_changes false
+\output_changes true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -224,8 +224,13 @@ on the seabed, and open ocean pelagic cells) are controlled by hydrodynamical
  parameters to which the sensitivity of the model is assessed.
  We consider two models, i.e., with and without a saturating effect of the
  interactions on the growth rates.
- Our results are consistent between models, and show that a cyst bank allows
- to maintain all species in the community over 30 years.
+ Our results are consistent between models, and show that a 
+\change_deleted -2100369821 1632732812
+cyst
+\change_inserted -2100369821 1632732813
+seed
+\change_unchanged
+ bank allows to maintain all species in the community over 30 years.
  Indeed, a fraction of the species are vulnerable to extinction at specific
  times within the year, but this process is buffered by their survival in
 \change_deleted -2100369821 1632383126
@@ -234,9 +239,14 @@ on the seabed, and open ocean pelagic cells) are controlled by hydrodynamical
  their resting stage
 \change_unchanged
 .
- We thus highlight the potential role of the cyst bank in the recurrent
- re-invasion of the coastal community, and of coastal environments in re-seeding
- oceanic regions.
+ We thus highlight the potential role of 
+\change_deleted -2100369821 1632732906
+the
+\change_inserted -2100369821 1632732907
+seed
+\change_unchanged
+ cyst bank in the recurrent re-invasion of the coastal community, and of
+ coastal environments in re-seeding oceanic regions.
  Moreover, the 
 \change_deleted -2100369821 1632383145
 cyst
@@ -3560,7 +3570,11 @@ resting-stage
 \end_layout
 
 \begin_layout Standard
-In three cases (cyst burial rate set to 0.1, resuspension to 10
+In three cases (
+\change_deleted -2100369821 1632735077
+cyst 
+\change_unchanged
+burial rate set to 0.1, resuspension to 10
 \begin_inset Formula $^{-5}$
 \end_inset
 
@@ -3707,13 +3721,13 @@ name "fig:Seed_bank_compet"
 \end_layout
 
 \begin_layout Standard
-Our first hypothesis was that the absence of 
-\change_deleted -2100369821 1632385466
-the
-\change_inserted -2100369821 1632385467
+Our first hypothesis was that the absence of the 
+\change_deleted -2100369821 1632735179
+cyst
+\change_inserted -2100369821 1632735180
 seed
 \change_unchanged
- cyst bank would cause the community to be more affected by a higher competition
+ bank would cause the community to be more affected by a higher competition
  strength.
  Counter-intuitively, our results (Fig.
  
@@ -3746,8 +3760,13 @@ seed
  bank.
  On the contrary, a decrease in competition (from a factor 0.5 and lower)
  or an increase in facilitation (starting from a factor 2 and higher) led
- to much smaller communities in model II in the absence of a cyst bank,
- sometimes with a complete competitive exclusion
+ to much smaller communities in model II in the absence of a 
+\change_deleted -2100369821 1632735244
+cyst
+\change_inserted -2100369821 1632735244
+seed
+\change_unchanged
+ bank, sometimes with a complete competitive exclusion
 \begin_inset Note Note
 status collapsed
 
@@ -4045,8 +4064,11 @@ seed
 \change_unchanged
  bank, biodiversity decreased drastically.
  This was true for the reference parameter values, as well as when species
- interaction strengths and environmental fluctuation levels where altered,
- in which cases the 
+ interaction strengths and environmental fluctuation levels w
+\change_deleted -2100369821 1632735447
+h
+\change_unchanged
+ere altered, in which cases the 
 \change_deleted -2100369821 1632385810
 cyst
 \change_inserted -2100369821 1632385811
@@ -4155,7 +4177,7 @@ literal "false"
  effect 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "facelli_differences_2005,angert_functional_2009,bonis_seed_1995"
+key "bonis_seed_1995,facelli_differences_2005,angert_functional_2009"
 literal "false"
 
 \end_inset
@@ -4190,8 +4212,8 @@ nts.
  Spatial recolonization was therefore less important than temporal recolonizatio
 n; the relative importance of the two processes may vary depending on the
  organisms and the degree of spatial synchrony of their environment
-\change_inserted -2100369821 1632386003
-
+\change_inserted -2100369821 1632735595
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "montresor_dinoflagellate_1998,anderson_alexandrium_2005"
