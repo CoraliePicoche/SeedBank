@@ -78,7 +78,7 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes true
-\output_changes false
+\output_changes true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -2061,7 +2061,27 @@ seed
  lines) formulation, keeping the same values for the intraspecific interaction
  strengths.
  The x-axis shows the factor by which each interaction coefficient was multiplie
-d (note the logarithmic scale) 
+d
+\change_inserted -2100369821 1632746742
+, e.g.
+ the value 0.1 indicates that the interaction strengths in the simulation
+ is 10 times lower than the interactions strengths in the reference simulation.
+
+\change_unchanged
+ 
+\change_deleted -2100369821 1632746753
+(n
+\change_inserted -2100369821 1632746753
+N
+\change_unchanged
+ote the logarithmic scale
+\change_deleted -2100369821 1632746757
+)
+\change_inserted -2100369821 1632746780
+.
+
+\change_unchanged
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Seed_bank_compet"
