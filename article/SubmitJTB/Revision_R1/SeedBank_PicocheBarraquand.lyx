@@ -99,6 +99,7 @@
 \html_css_as_file 0
 \html_be_strict false
 \author -2100369821 "cpicoche"
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -406,7 +407,8 @@ literal "false"
 \change_deleted -2100369821 1632383305
 which involves covariances between competitive strengths and environmental
  variation, is one of them.
-
+\change_inserted -666822487 1633965195
+,
 \change_inserted -2100369821 1632383305
  which involves a positive covariance between the strength of competition
  and favourable environmental variation as well as buffered population growth,
@@ -562,7 +564,7 @@ Although there is some awareness of the role of cryptic life stages in shaping
  Such a gap is even more surprising that phytoplankton organisms constitute
  one of the most important photosynthetic groups
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -579,13 +581,23 @@ F: just important group ça le fait pas trop.
  Ca ne me choque pas qu'on garde photosynthetic ici, mais si on craint qu'un
  lecteur qui connaît tout le détail réagisse, on peut aussi éviter de le
  mettre.
+
+\change_inserted -666822487 1633965288
+ Du coup je propose d'enlever la partie HAB qui est plus mineure.
+ 
+\change_inserted -2100369821 1632383526
+
 \end_layout
 
 \end_inset
 
- on Earth, being responsible not only for half the global primary production
+ on Earth, being responsible 
+\change_deleted -666822487 1633965260
+not only 
+\change_inserted -2100369821 1632383507
+for half the global primary production
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -596,8 +608,14 @@ Field et al.
 
 \end_inset
 
+
+\change_inserted -666822487 1633965330
+ and is the very basis of marine food webs
+\change_deleted -666822487 1633965266
  but also for harmful algae blooms (HAB) that can have strong negative impacts
- on aquatic ecosystems.
+ on aquatic ecosystems
+\change_inserted -2100369821 1632383507
+.
  
 \change_unchanged
 The classical view behind phytoplankton dynamics is that their blooms (peaks
@@ -722,11 +740,17 @@ literal "false"
 
 \end_inset
 
- models also exist, but they focus on explaining the dynamics of a single
+ models also exist, 
+\change_inserted -666822487 1633965399
+but include a single species or compartement having a resting stage
+\change_deleted -666822487 1633965360
+but they focus on explaining the dynamics of a single
 \change_deleted -2100369821 1632383725
  cyst-forming
+\change_deleted -666822487 1633965360
+ species or group interacting mostly with vegetative-only groups
 \change_unchanged
- species or group interacting mostly with vegetative-only groups.
+.
  This state of affairs means that we currently have no clear understanding
  of how the 
 \change_deleted -2100369821 1632383757
@@ -734,7 +758,11 @@ cyst
 \change_inserted -2100369821 1632383757
 resting
 \change_unchanged
- stage might help maintain biodiversity in species-rich communities.
+ stage might help maintain
+\change_inserted -666822487 1633965415
+ing
+\change_unchanged
+ biodiversity in species-rich communities.
  In the present paper, we demonstrate the potential role of 
 \change_deleted -2100369821 1632383776
 cyst
@@ -2315,7 +2343,13 @@ noprefix "false"
 
 \end_inset
 
+
+\change_inserted -666822487 1633965449
+:
+\change_deleted -666822487 1633965448
 .
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2532,7 +2566,11 @@ literal "false"
 ).
  Sinking is mostly affected by hydrodynamics, but at the species-level,
  size, shape, density-regulation and colony-formation capabilities are key
- determinants of the particle flotation.
+ determinants of the particle flo
+\change_inserted -666822487 1633965467
+a
+\change_unchanged
+tation.
  In this model, the sinking rate of each species 
 \change_deleted -2100369821 1632384532
 cysts
@@ -2765,16 +2803,30 @@ literal "false"
 \end_inset
 
  (see Section S2 in SI).
- Interactions are estimated only between considered species within the same
- trophic level, and are independent from the environmental variables that
- were included separately in the MAR model estimates, such as temperature
- in our case.
+ Interactions are estimated only between
+\change_deleted -666822487 1633965527
+ considered
+\change_inserted -2100369821 1632384652
+ species within the same trophic level, and are independent from the environment
+al variables that were included 
+\change_deleted -666822487 1633965537
+separately 
+\change_inserted -2100369821 1632384652
+in the MAR model estimates
+\change_inserted -666822487 1633965544
+ as covariates
+\change_inserted -2100369821 1632384652
+, such as temperature in our case.
  This allows to remove at least some of the confounding factors, such as
  seasonality.
  A phylogeny-based interaction matrix resulted in a better fit to model
- the community dynamics 
+ the community dynamics
+\change_deleted -666822487 1633965593
+ 
+\change_inserted -2100369821 1632384652
+
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2787,7 +2839,14 @@ as could be expected, see Violle et al.
 
 , i.e.
  pennate/centric diatoms only interact with other pennate/centric diatoms
- respectively and dinoflagellates only interact with dinoflagellates.
+\change_inserted -666822487 1633965576
+,
+\change_inserted -2100369821 1632384652
+ respectively
+\change_inserted -666822487 1633965577
+,
+\change_inserted -2100369821 1632384652
+ and dinoflagellates only interact with dinoflagellates.
  
 \end_layout
 
@@ -2798,8 +2857,12 @@ The MAR model can only estimate apparent interaction strengths: complex
  processes can be at work behind values of competition and facilitation,
  either from abiotic (e.g., hydrodynamics) or biotic (e.g.
  consumption by predators or parasites) variables.
- For more consideration on apparent interaction detected in phytoplankton
- communities with the MAR model, we refer the reader to 
+ For more consideration on apparent interaction
+\change_inserted -666822487 1633965615
+s
+\change_inserted -2100369821 1632384652
+ detected in phytoplankton communities with the MAR model, we refer the
+ reader to 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "barraquand_coastal_2018"
@@ -2891,9 +2954,18 @@ literal "false"
 .
 
 \change_inserted -2100369821 1632384886
- In SI Section S3, we present the formulas relating the MAR interactions
+ In SI Section S3, we present the formulas relating the MAR interaction
+\change_deleted -666822487 1633965623
+s
+\change_inserted -2100369821 1632384886
  coefficients to the Jacobian matrices of the Beverton-Holt multispecies
- models, as they allow to obtain proper 
+ models, as the
+\change_deleted -666822487 1633965629
+y
+\change_inserted -666822487 1633965631
+se formulas
+\change_inserted -2100369821 1632384886
+ allow to obtain proper 
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
 
@@ -3105,8 +3177,10 @@ literal "false"
 \change_inserted -2100369821 1632385034
  resembling observable data (seasonal dynamics, high-amplitude blooms, differenc
 es in average abundances matching data).
-\change_unchanged
+\change_deleted -666822487 1633965658
 .
+
+\change_unchanged
  
 \begin_inset Note Note
 status collapsed
@@ -3298,7 +3372,11 @@ Simulated phytoplankton dynamics for a year in model I.
  Each panel corresponds to a cluster of interacting taxa
 \change_inserted -2100369821 1632385177
 : centric diatoms (a), pennate diatoms (b) and dinoflagellates (c).
- Taxa only interact within their cluster (see Methods)
+ Taxa only interact within their cluster 
+\change_inserted -666822487 1633965674
+of related taxa 
+\change_inserted -2100369821 1632385177
+(see Methods)
 \change_unchanged
 .
  The orange line in the third panel indicates the temperature.
@@ -3425,9 +3503,16 @@ status open
 Sensitivity of the model to variation in parameters, measured as the difference
  between the reference simulation metric and the metric for the simulation
  including a change in parameter.
- The two metrics used were the average decimal log abundance (a) and the
- decimal logarithm of the ratio between maximum and minimum abundance (b)
- of the coastal phytoplanktonic community.
+ The two metrics used were the 
+\change_deleted -666822487 1633965698
+average 
+\change_unchanged
+decimal log 
+\change_inserted -666822487 1633965701
+average 
+\change_unchanged
+abundance (a) and the decimal logarithm of the ratio between maximum and
+ minimum abundance (b) of the coastal phytoplanktonic community.
  
 \change_deleted -2100369821 1632385232
 V
@@ -3468,9 +3553,12 @@ third row
  in other simulations).
 
 \change_unchanged
- Numbers in red are the final number of species in the ocean and dots correspond
- to simulations in which at least one species reached 0 at one point but
- did not disappear.
+ Numbers in red 
+\change_inserted -666822487 1633965713
+in the top panel 
+\change_unchanged
+are the final number of species in the ocean and dots correspond to simulations
+ in which at least one species reached 0 at one point but did not disappear.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3581,6 +3669,23 @@ burial rate set to 0.1, resuspension to 10
  or exchange rate set to 0), the final richness of the oceanic community
  decreased from 11 to 4.
  Extant species were the same in all simulations (CHA, THP, NIT, PSE
+\change_inserted -666822487 1633965738
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1633965791
+Is this indeed PSE or PLE, given all others are generalists?? Shouldn't
+ we say those are mainly temperature/irradiance generalists?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \change_inserted -2100369821 1632385400
 ; the correspondence between codes and groups of species is given in Section
  S4 of the SI
@@ -3689,7 +3794,11 @@ seed
 \change_inserted -2100369821 1632385506
 , e.g.
  the value 0.1 indicates that the interaction strengths in the simulation
- is 10 times lower than the interactions strengths in the reference simulation.
+ is 10 times lower than the interaction
+\change_deleted -666822487 1633965813
+s
+\change_inserted -2100369821 1632385506
+ strengths in the reference simulation.
 
 \change_deleted -2100369821 1632385510
  (n
@@ -3791,7 +3900,11 @@ cyst
 \change_inserted -2100369821 1632385585
 seed
 \change_unchanged
- bank, but for larger disturbances.
+ bank, but 
+\change_inserted -666822487 1633965868
+only 
+\change_unchanged
+for larger disturbances.
  Competition indeed had to be at least divided by 6 or facilitation, to
  be multiplied by 7 for richness to decrease to 9 species.
 \end_layout
@@ -3887,8 +4000,13 @@ noprefix "false"
 \end_inset
 
 ).
- In contrast, their interactions were not qualitatively different from the
- other species
+ 
+\change_deleted -666822487 1633965907
+In contrast
+\change_inserted -666822487 1633965908
+However
+\change_unchanged
+, their interactions were not qualitatively different from the other species
 \begin_inset Note Note
 status collapsed
 
@@ -4046,7 +4164,13 @@ Using a meta-community model which accounts for exchanges between the ocean
 \change_deleted -2100369821 1632385756
 a specific life stage, the seed – or cyst – stage
 \change_inserted -2100369821 1632385756
-a resting stage, when dormant cells can accumulate in a seed bank
+a resting stage, 
+\change_deleted -666822487 1633965939
+when dormant cells can accumulate in a
+\change_inserted -666822487 1633965943
+leading to the formation of a
+\change_inserted -2100369821 1632385756
+ seed bank
 \change_unchanged
 , can help maintain biodiversity.
  This dormant stage was integrated to a phytoplanktonic community dynamics
@@ -4336,7 +4460,13 @@ literal "false"
  This would be true for most plants too (and perhaps some phytoplankters
  in situations where they are transported by animals).
  However, the restriction about which stage can move did not change the
- general conclusion of 
+ general conclusion 
+\change_deleted -666822487 1633966001
+of
+\change_inserted -666822487 1633966004
+already stated by
+\change_unchanged
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wisnoski_dormancy_2019"
@@ -4441,8 +4571,18 @@ Despite the evidence for seed bank effects that we and others uncovered,
  In our view, this may decrease the possibility of spontaneous re-colonization
  at the coast (at very low densities initially), which can then spill to
  the open ocean by progressive dispersal by the currents.
- If the goal of a community-level model is very short-term prediction (days,
- weeks), this recolonization can probably be neglected.
+ 
+\change_inserted -666822487 1633966102
+This may also decrease overall persistence, as fitting models I and II without
+ a seed bank does not allow all species to persist here.
+ 
+\change_unchanged
+If the goal of a community-level model is very short-term prediction (days,
+ weeks), this recolonization can probably be neglected
+\change_inserted -666822487 1633966176
+, and there are no risks of extinction over these short time frames
+\change_unchanged
+.
  However, over multiple years, ignoring cryptic
 \change_inserted -2100369821 1632386207
  life
@@ -4646,7 +4786,23 @@ Acknowledgements
 
 \begin_layout Standard
 We thank Nathan Wisnoski and Frank Jabot for useful feedback.
- FB and CP were supported by the French ANR through LabEx COTE (ANR-10-LABX-45).
+ FB and CP were supported by 
+\change_deleted -666822487 1633966229
+the French ANR through LabEx COTE
+\change_inserted -666822487 1633966201
+grants
+\change_unchanged
+ 
+\change_deleted -666822487 1633966203
+(
+\change_unchanged
+ANR-10-LABX-45
+\change_inserted -666822487 1633966509
+ and ANR-20-CE45-0004
+\change_deleted -666822487 1633966205
+)
+\change_unchanged
+.
  CP was supported by a PhD grant from the French Ministry of Research.
 \end_layout
 
