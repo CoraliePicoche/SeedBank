@@ -4196,7 +4196,12 @@ cyst
 seed
 \change_unchanged
  bank, biodiversity decreased drastically.
- This was true for the reference parameter values, as well as when species
+ 
+\change_inserted -666822487 1634130851
+The total abundance of the community decreased as well.
+ 
+\change_unchanged
+This was true for the reference parameter values, as well as when species
  interaction strengths and environmental fluctuation levels w
 \change_deleted -2100369821 1632735447
 h
@@ -4208,8 +4213,17 @@ cyst
 seed
 \change_unchanged
  bank's buffering influence disappeared.
- The total abundance of the community decreased as well.
- Moreover, when faced with a biotic or abiotic 
+ 
+\change_inserted -666822487 1634130829
+Additional simulations showed that the rescue frome extinction provided
+ by the seed bank is conditional to the existence of some environmental
+ fluctuations.
+ 
+\change_deleted -666822487 1634130869
+The total abundance of the community decreased as well.
+ 
+\change_unchanged
+Moreover, when faced with a biotic or abiotic 
 \begin_inset Quotes eld
 \end_inset
 

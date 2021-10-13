@@ -578,11 +578,27 @@ We base our estimates of
 \begin_layout Standard
 In the models, we assume that generalists have a niche width between 15
  and 30°C and specialists, between 5 and 10°C.
- We 
+ 
+\change_deleted -666822487 1634130998
+W
+\change_inserted -666822487 1634131007
+In order to compute 
+\begin_inset Formula $b_{i},$
+\end_inset
+
+w
+\change_unchanged
+e 
 \change_deleted -2100369821 1634115212
 assume
 \change_inserted -2100369821 1634115302
-make the second assumption
+make the 
+\change_deleted -666822487 1634131027
+second
+\change_inserted -666822487 1634131028
+additional
+\change_inserted -2100369821 1634115302
+ assumption
 \change_unchanged
  that temperatures outside of this range lead to a growth rate at least
  10 times inferior to the growth rate obtained at their thermal optimum
@@ -591,31 +607,7 @@ make the second assumption
 \end_inset
 
  for a niche width of 15°C).
- 
-\change_inserted -666822487 1633966916
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1633966951
-Not clear whether that's an extra assumption or something that is a consequence
- of previously presented functions.
-
-\change_inserted -2100369821 1634115328
- Better this way?
-\change_inserted -666822487 1633966951
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-This leads to values of 
+ This leads to values of 
 \begin_inset Formula $b_{i}$
 \end_inset
 
@@ -1155,10 +1147,9 @@ literal "false"
 \end_inset
 
 .
- We acknowledge the possibility of overyielding, i.e.
-\change_inserted -666822487 1633967087
-,
-\change_unchanged
+ 
+\change_deleted -666822487 1634131121
+We acknowledge the possibility of overyielding, i.e.
  an increase in biomass due to the presence of other species, but the phenomenon
  seems quite rare for phytoplanktonic communities (see 
 \begin_inset CommandInset citation
@@ -1177,17 +1168,36 @@ literal "false"
 \end_inset
 
  for an observed but not frequent, and small, overyielding).
-\change_inserted -666822487 1633967096
+\change_inserted -666822487 1634131121
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1633967212
-F: I'm not sure I remember why we acknowledge this - and do we acknowledge
- overyielding happens in the model? perhaps best to make that clear.
- 
+\change_inserted -666822487 1634131191
+We acknowledge the possibility of overyielding, i.e., an increase in biomass
+ due to the presence of other species, but the phenomenon seems quite rare
+ for phytoplanktonic communities (see 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "schmidtke_mechanistic_2010"
+literal "false"
+
+\end_inset
+
+ for underyielding and see 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "shurin_trait_2014"
+literal "false"
+
+\end_inset
+
+ for an observed but not frequent, and small, overyielding).
+ [F: not clear whether this restriction on the intrinsic growth rate systematica
+lly restrain overyielding which relates to observed abundances - though
+ this may be the case.]
 \change_unchanged
 
 \end_layout
@@ -1391,9 +1401,28 @@ where
 \end_inset
 
 .
- We use the maximum abundance and the absolute value of interactions (i.e.,
- all interactions are considered competitive in this case) to make sure
- that we maximise the possible strength of competition.
+ We use 
+\change_deleted -666822487 1634131259
+the maximum abundance
+\change_inserted -666822487 1634131259
+ 
+\begin_inset Formula $N_{j,max}$
+\end_inset
+
+
+\change_inserted -2100369821 1634116500
+ and the absolute value of interactions (i.e., all interactions are considered
+ competitive in this case) to make sure that we maximise 
+\change_deleted -666822487 1634131284
+the possible strength of competition
+\change_inserted -666822487 1634131289
+
+\begin_inset Formula $a_{C}$
+\end_inset
+
+
+\change_inserted -2100369821 1634116500
+.
  
 \end_layout
 
@@ -1516,53 +1545,44 @@ while
  (in the absence of nutrients, or because of viral charge)
 \change_inserted -2100369821 1634117064
 .
- Cumulating both natural mortality (cell autolysis) and grazing, we can
- assume that mortality is much higher than the initial 0.04 day
+ Cumulating both natural mortality (cell autolysis) and grazing, we 
+\change_deleted -666822487 1634131487
+can assume that mortality is much higher than the initial 0.04
+\change_inserted -666822487 1634131497
+know that maximum rates should be above 0.24
+\change_inserted -2100369821 1634117064
+ day
 \begin_inset Formula $^{-1}$
 \end_inset
 
+
+\change_deleted -666822487 1634131506
  value
 \change_unchanged
 .
- Trying to make a compromise emerge from the literature above, we set the
- reference value to 0.2 day
+ Trying to make a compromise emerge from the literature above, 
+\change_inserted -666822487 1634131521
+given that we are not always at the maximal loss rates, 
+\change_unchanged
+we set the reference value to 0.2 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
 
+\change_inserted -666822487 1634131543
+.
+ This strikes a
+\change_deleted -666822487 1634131531
+ as a
 \change_inserted -2100369821 1634117104
- as a balance between all sources of mortality and the need to keep all
- species in the reference model
+ balance between 
+\change_inserted -666822487 1634131560
+acknowledging 
+\change_inserted -2100369821 1634117104
+all sources of mortality and the need to keep all species in the reference
+ model
 \change_unchanged
 .
-\change_inserted -666822487 1633967702
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1633967883
-The conclusion to set the value to 0.2 per day cannot be understood without
- spelling out more clear the rates found by Sarthou.
- At the moment it reads like the max value is around 0.1 and to make a compromise
- emerge we chose to set it to 0.2 -> we have to explain that Sarthou suggests
- around 0.2 or probably more, but as these vary from one publication to the
- next we chose 0.2.
- It's clearer in the main text, but perhaps there it can be improved as
- well.
- 
-\change_inserted -2100369821 1634117122
-Je ne vois pas trop ce que je peux rajouter dans le main ?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Paragraph*
@@ -1831,7 +1851,11 @@ Following
 \change_deleted -2100369821 1634117136
 XXXXX
 \change_inserted -2100369821 1634117199
-maximum depth values in 
+maximum depth values
+\change_inserted -666822487 1634131742
+ (for each species)
+\change_inserted -2100369821 1634117199
+ in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -1842,7 +1866,13 @@ literal "false"
 
 \change_unchanged
 .
- In both cases, 
+ 
+\change_deleted -666822487 1634131793
+In both cases
+\change_inserted -666822487 1634131796
+For both methods
+\change_unchanged
+, 
 \begin_inset Formula $m$
 \end_inset
 
@@ -1854,6 +1884,37 @@ literal "false"
 \begin_inset Formula $10^{-4}\text{\text{ day}}^{-1}$
 \end_inset
 
+
+\change_inserted -666822487 1634131816
+and does not vary greatly between species
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -666822487 1634131853
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CHECK or simplify the text without mentioning the species-specific rates.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 .
 \end_layout
 
@@ -2506,6 +2567,8 @@ abovementioned
 \change_inserted -2100369821 1632387405
  conditions.
  
+\change_deleted -666822487 1634132271
+
 \end_layout
 
 \begin_layout Standard
@@ -2540,6 +2603,10 @@ when varying interaction strengths as described in the main text
 
 \change_inserted -2100369821 1632387405
 .
+ 
+\change_inserted -666822487 1634132292
+Probability of survival is itself computed over different values of interaction
+ strengths.
  
 \change_unchanged
 
@@ -2629,7 +2696,7 @@ seed
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "../biblio_seed,biblio_seed"
+bibfiles "biblio_seed"
 options "ecol_let"
 
 \end_inset
