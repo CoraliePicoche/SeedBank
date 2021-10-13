@@ -578,9 +578,15 @@ We base our estimates of
 \begin_layout Standard
 In the models, we assume that generalists have a niche width between 15
  and 30°C and specialists, between 5 and 10°C.
- We assume that temperatures outside of this range lead to a growth rate
- at least 10 times inferior to the growth rate obtained at their thermal
- optimum (
+ We 
+\change_deleted -2100369821 1634115212
+assume
+\change_inserted -2100369821 1634115302
+make the second assumption
+\change_unchanged
+ that temperatures outside of this range lead to a growth rate at least
+ 10 times inferior to the growth rate obtained at their thermal optimum
+ (
 \begin_inset Formula $\exp(-|7.5|^{3}/b_{i}=0.1$
 \end_inset
 
@@ -596,6 +602,10 @@ status open
 \change_inserted -666822487 1633966951
 Not clear whether that's an extra assumption or something that is a consequence
  of previously presented functions.
+
+\change_inserted -2100369821 1634115328
+ Better this way?
+\change_inserted -666822487 1633966951
  
 \change_unchanged
 
@@ -1360,13 +1370,31 @@ F: I'm not sure why there is N_{j,max} and what that means exactly.
 
 \begin_inset Formula 
 \begin{eqnarray}
-a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}\alpha_{ij}N_{j,max}\right)\label{eq:a_C}\\
+a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}|\alpha_{ij}|N_{j,max}\right)\label{eq:a_C}\\
 (1-0.7)a_{C}+0.7a_{F} & = & 0\label{eq:a_F}
 \end{eqnarray}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1634116500
+where 
+\begin_inset Formula $N_{j,max}$
+\end_inset
+
+ is the maximum observed abundance of species 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ We use the maximum abundance and the absolute value of interactions (i.e.,
+ all interactions are considered competitive in this case) to make sure
+ that we maximise the possible strength of competition.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1467,17 +1495,45 @@ literal "false"
 \end_inset
 
  indicated a loss of daily primary productivity around 45% due to grazing
- only, 0.13 day
+ only, 
+\change_deleted -2100369821 1634116900
+0.13 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
- being potentially due to cell autolysis (in the absence of nutrients, or
- because of viral charge).
+ being potentially due to
+\change_inserted -2100369821 1634116901
+while
+\change_unchanged
+ cell autolysis
+\change_inserted -2100369821 1634116938
+ only can lead to a loss rate between 0.005 and 0.24 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+
+\change_unchanged
+ (in the absence of nutrients, or because of viral charge)
+\change_inserted -2100369821 1634117064
+.
+ Cumulating both natural mortality (cell autolysis) and grazing, we can
+ assume that mortality is much higher than the initial 0.04 day
+\begin_inset Formula $^{-1}$
+\end_inset
+
+ value
+\change_unchanged
+.
  Trying to make a compromise emerge from the literature above, we set the
  reference value to 0.2 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
+
+\change_inserted -2100369821 1634117104
+ as a balance between all sources of mortality and the need to keep all
+ species in the reference model
+\change_unchanged
 .
 \change_inserted -666822487 1633967702
 
@@ -1496,6 +1552,8 @@ The conclusion to set the value to 0.2 per day cannot be understood without
  It's clearer in the main text, but perhaps there it can be improved as
  well.
  
+\change_inserted -2100369821 1634117122
+Je ne vois pas trop ce que je peux rajouter dans le main ?
 \change_unchanged
 
 \end_layout
@@ -1769,7 +1827,19 @@ Following
 \begin_inset Formula $l_{\text{max}}$
 \end_inset
 
- derives from XXXXX
+ derives from 
+\change_deleted -2100369821 1634117136
+XXXXX
+\change_inserted -2100369821 1634117199
+maximum depth values in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcquoid_viability_2002"
+literal "false"
+
+\end_inset
+
+
 \change_unchanged
 .
  In both cases, 
@@ -2440,10 +2510,10 @@ abovementioned
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1632387405
+\change_inserted -2100369821 1634117386
 Growth rates are then related to the probability of survival in the ocean
- without a seed bank when varying interaction strengths as described in
- the main text
+ without a seed bank when varying interaction strengths (scenario 1 in the
+ main text) 
 \change_inserted -666822487 1633968286
 
 \begin_inset Note Note

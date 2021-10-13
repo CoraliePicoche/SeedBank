@@ -2588,7 +2588,7 @@ resting cells
 
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 F: I added 0.09 to the formula based on the description, check that it is
@@ -3668,7 +3668,16 @@ burial rate set to 0.1, resuspension to 10
 
  or exchange rate set to 0), the final richness of the oceanic community
  decreased from 11 to 4.
- Extant species were the same in all simulations (CHA, THP, NIT, PSE
+ Extant species were the same in all simulations (CHA, THP, NIT, P
+\change_deleted -2100369821 1634114635
+S
+\change_inserted -2100369821 1634114635
+L
+\change_unchanged
+E
+\change_inserted -2100369821 1634115022
+, i.e.
+ temperature generalist species
 \change_inserted -666822487 1633965738
 
 \begin_inset Note Note
