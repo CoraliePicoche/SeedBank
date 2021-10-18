@@ -1,0 +1,961 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[authoryear]{natbib}
+\onehalfspacing
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newcommand{\lyxaddress}[1]{
+	\par {\raggedright #1
+	\vspace{1.4em}
+	\noindent\par}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{ae,aecompl}
+\usepackage{graphicx}
+\usepackage{lineno}
+\usepackage{authblk}
+\date{}
+
+
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \list{}{
+    \setlength{\leftmargin}{.5cm}%
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\title{Seed banks can help to maintain the diversity of interacting phytoplankton
+species}
+\author{Coralie Picoche$^{1,2,*}$ \& Frédéric Barraquand$^{1,2}$}
+\maketitle
+
+\lyxaddress{\begin{center}
+$^{1}$Institute of Mathematics of Bordeaux, University of Bordeaux
+and CNRS, Talence, France\medskip{}
+$^{2}$Integrative and Theoretical Ecology, LabEx COTE, University
+of Bordeaux, Pessac, France
+\par\end{center}}
+
+$^{*}$corresponding author: \verb|coralie.picoche@u-bordeaux.fr|
+
+\clearpage{}
+
+\linenumbers
+\doublespacing
+\begin{abstract}
+Seed formation is part of the reproductive cycle, leading to the accumulation
+of resistance stages that can withstand harsh environmental conditions
+for long periods of time. At the community level, multiple species
+with such long-lasting life stages can be more likely to coexist.
+While the implications of this process for biodiversity have been
+studied in terrestrial plants, seed banks are usually neglected in
+phytoplankton multispecies dynamic models, in spite of widespread
+empirical evidence for such seed banks. In this study, we build a
+metacommunity model of interacting phytoplankton species, including
+a resting stage supplying the seed bank. The model is parameterized
+with empirically-driven growth rate functions and field-based interaction
+estimates, which include both facilitative and competitive interactions.
+Exchanges between compartments (coastal pelagic cells, coastal resting
+cells on the seabed, and open ocean pelagic cells) are controlled
+by hydrodynamical parameters to which the sensitivity of the model
+is assessed. We consider two models, i.e., with and without a saturating
+effect of the interactions on the growth rates. Our results are consistent
+between models, and show that a seed bank allows to maintain all species
+in the community over 30 years. Indeed, a fraction of the species
+are vulnerable to extinction at specific times within the year, but
+this process is buffered by their survival in their resting stage.
+We thus highlight the potential role of the seed bank in the recurrent
+re-invasion of the coastal community, and of coastal environments
+in re-seeding oceanic regions. Moreover, the seed bank enables populations
+to tolerate stronger interactions within the community as well as
+more severe changes in the environment, such as those predicted within
+a climate change context. Our study therefore shows how a resting
+stage may help phytoplanktonic diversity maintenance.
+\end{abstract}
+\textbf{Keywords}: dormancy; phytoplankton; coexistence; competition; facilitation
+
+\clearpage{}
+
+\section*{Introduction}
+
+How the high biodiversity of primary producers maintains is still
+an unresolved question for both experimental and theoretical ecology.
+Terrestrial plants and phytoplanktonic communities can present hundreds
+of species relying on similar resources, a situation where Gause's
+principle implies that a handful of species should outcompete the
+others. Some degree of niche differentiation, perhaps hidden to the
+human observer, is generally expected for coexistence to maintain
+\citep{chesson_mechanisms_2000}. However, a complex life-history
+structure can further increase the likelihood of coexistence \citep[e.g.,][]{moll_competition_2008,fujiwara_coexistence_2011},
+and so does the response of life history traits to variation in the
+environment \citep{chesson_community_1988,huang_contribution_2016}.
+
+Analyses of coexistence in terrestrial plant communities sometimes
+take into account several life stages \citep[e.g.,][]{aikio_seed_2002,comita_asymmetric_2010,chu_large_2015}
+though many consider only a single life-stage \citep[see, among others,][]{ellner_alternate_1987,levine_effects_2004,martorell_testing_2014}.
+When considering at least two stages, seeds/seedlings and adults,
+several mechanisms that can contribute to long-term coexistence in
+spatially and/or temporally fluctuating environment have been uncovered
+\citep{shmida_coexistence_1985,chu_large_2015}. 
+
+The storage effect, a major paradigm in modern coexistence theory
+\citep{chesson_mechanisms_2000,chesson_updates_2018}, which involves
+a positive covariance between the strength of competition and favourable
+environmental variation as well as buffered population growth, is
+one of them. It has been shown to arise from a combination of interspecific
+competition and a long-lived dormant stage with a temporally variable
+recruitment rate \citep{caceres_temporal_1997}. The presence of
+a seed bank may therefore lead to a storage effect \citep{angert_functional_2009},
+though not systematically \citep{aikio_seed_2002}. However, although
+the storage effect usually captures theoreticians' attention, the
+contribution of seeds to coexistence may be much larger than their
+potential contribution to the storage effect. A long-lived seed bank
+can help coexistence by other, simpler means. For instance, in the
+meta-community model of \citet{wisnoski_dormancy_2019}, when dormancy
+and dispersal are present (without seed dispersal), local diversity
+increases in temporally fluctuating environments. In their model,
+adding a dormant stage could increase species diversity both at the
+local and regional scales. These results suggest that considering
+a seed stage in dynamical models can profoundly alter our understanding
+of community persistence \citep[see also][]{jabot_macroecology_2017}.
+
+Although there is some awareness of the role of cryptic life stages
+in shaping terrestrial plant coexistence, the effect of such dormant
+life stages on aquatic plant communities, and more specifically that
+of phytoplanktonic algae, is often ignored. Such a gap is even more
+surprising that phytoplankton organisms constitute one of the most
+important photosynthetic groups on Earth, being responsible for half
+the global primary production, and are the very basis of marine food
+webs. The classical view behind phytoplankton dynamics is that their
+blooms (peaks in abundances several orders of magnitude above their
+baseline level) are due to seasonal variation in light, temperature
+and nutrients, as well as hydrodynamic processes \citep{reynolds2006ecology}.
+In this mindset, differential responses to environmental signals ensure
+the coexistence of multiple species \citep{margalef_life-forms_1978,smayda_community_2001},
+while always assuming that vegetative cells are already present in
+the environment, or immigrating from a nearby water mass. Momentary
+disappearances of a species are viewed as sampling issues at low density.
+However, a complementary hypothesis suggests that resuspension and
+germination of phytoplanktonic resting cells is another major player
+allowing re-invasion from very low or locally zero population densities
+\citep{patrick_factors_1948,marcus_minireview:_1998}. This long-standing
+hypothesis is supported by recent reviews \citep{azanza_role_2018,ellegaard_long-term_2018}
+which confirm that life history strategies including dormant individuals
+are widespread in phytoplankton \citep[see][ for extensive lists of species with known resting stages]{mcquoid_diatom_1996,tsukazaki_distribution_2018}.
+Formation of a resting cell can either be part of the life cycle of
+phytoplankton species and result from sexual reproduction  or result
+from asexual processes triggered by specific environmental conditions
+\citep{ellegaard_long-term_2018}. Hereafter, when using the term
+`seed banks', we refer to the accumulation of all types of resting
+stages, either sexual (dinoflagellates' cysts or diatoms' spores)
+or asexual, in the seabed. A variety of models have endeavoured to
+explain and predict amplitude, timing and/or spatial distribution
+of blooms by explicitly modeling multiple stages in the life cycle
+of a particular species, but without interactions with other organisms
+(see for example \citealp{mcgillicuddy_mechanisms_2005,hense_towards_2006,hellweger_agent-based_2008,yniguez_investigating_2012}).
+Two-to-four species \citep{yamamoto_modelling_2002,estrada_role_2010,lee_role_2018}
+models also exist, but include a single species or compartement having
+a resting stage. This state of affairs means that we currently have
+no clear understanding of how the resting stage might help maintaining
+biodiversity in species-rich communities. In the present paper, we
+demonstrate the potential role of seed banks using a phytoplankton
+community dynamics model.
+
+Phytoplankton communities in coastal environments may benefit from
+seed banks even more than the oceanic communities \citep[see for example][]{mcgillicuddy_mechanisms_2005},
+as the distance to the sea bottom is smaller, which favours recolonization
+from the sea bottom, something that is impossible in the deep ocean.
+Moreover, `horizontal' exchanges between oceanic and coastal pelagic
+phytoplanktonic communities are usually observed. A flow from the
+ocean to coastal communities has been noticed for dinoflagellates
+especially (\citealp{tester_gymnodinium_1997,batifoulier_distribution_2013}).
+Conversely, in many other bloom-forming species, the shallower coastal
+areas might function as a reservoir for biodiversity in the ocean.
+Indeed, resting cells are able to germinate again after dozens of
+years \citep{mcquoid_viability_2002,ellegaard_long-term_2018} or
+even thousands of years \citep{sanyal_not_2018} of dormancy. Therefore,
+we consider in this study three interlinked compartements: the coastal
+pelagic environment, the seed bank, and the pelagic open ocean. The
+coastal pelagic environment acts as a bridge between the seed bank
+and the open ocean.
+
+Our model is parameterized from field data (growth and interaction
+rates within the phytoplankton community), and includes biotic and
+abiotic constraints (e.g., particle sinking). In our analyses, we
+examine how seed banks may influence the maintenance of biodiversity,
+including under changing biotic interactions or changing environmental
+conditions. We either add or remove the dormant compartment, which
+allows to pinpoint its contribution to coexistence. We find that the
+presence of resting stages prevents the extinction of several species.
+Seed banks also allow a community to maintain its richness even with
+strong disturbances of its interaction network, unless facilitative
+interactions completely eclipse competitive interactions. Changes
+in the environment, here represented by an increase in the mean temperature,
+can also be buffered by seed banks. Finally, we discuss what information
+would be required to further more accurate modeling of resting stages
+in phytoplankton community dynamics.
+
+\section*{Methods}
+
+\subsection*{Models}
+
+Our models (Fig. \ref{fig:Conceptual-model-}) build atop recent models
+developed by \citet{shoemaker_linking_2016} and \citet{wisnoski_dormancy_2019},
+although they diverge in several aspects developed below (e.g., possibility
+for facilitative interactions). These discrete-time models are designed
+for metacommunities with multiple interacting populations. Any discrete-time
+model requires an ordering of events; in our models, these unfold
+as follows: first, populations grow or decline according to a Beverton-Holt
+(BH) multispecies density-dependence (eqs. \ref{eq:model_step1} and
+\ref{eq:model_stepI_saturating}), and then, in a second step, exchanges
+occur between the different compartments or patches constituting the
+metacommunity (eq. \ref{eq:model_step2}).
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[clip,width=0.99\linewidth]{model_visu}
+\par\end{centering}
+\caption{Structure of the model. Phytoplanktonic species (represented by circles)
+are present in the coast (subscript c), the ocean (o) and the seed
+bank (b). Parameters governing demography, interactions between organisms
+and exchanges between compartments are defined in Table \ref{tab:State_Parameter}.
+Only two species are shown here for the sake of simplicity but 11
+species are present in the model. \label{fig:Conceptual-model-}}
+\end{figure}
+
+In this paper, individuals are phytoplanktonic cells that move between
+the upper layer of coastal water, its bottom layer where a seed bank
+accumulates in the sediment, and the oceanic zone surrounding the
+coastal water masses (hereafter ``the ocean\textquotedbl ). Only
+oceanic and coastal pelagic cells are subject to BH-density dependence.
+Resting cells in the seed bank are only affected by mortality $m$
+and burial due to sedimentation $\zeta$. Parameters and state variables
+are defined in Table \ref{tab:State_Parameter}.
+
+\begin{table}[H]
+\noindent\resizebox{0.99\textwidth}{!}{%
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Parameter & Name & Value (unit) & Status\tabularnewline
+\hline 
+$N_{t,i,c/o/b}$ & Abundance of species $i$ at time $t$ in the coast ($c$), ocean
+($o$), or coastal bank ($b$) & NA (Number of cells) & Dynamic\tabularnewline
+$T$ & Temperature & NA ($K$) & Dynamic\tabularnewline
+$r_{i}(T)$ & Intrinsic growth rate of species $i$ & NA (day$^{-1}$) & Dynamic\tabularnewline
+$b_{i}$ & Thermal decay of species $i$ & Field-based ($K^{3}$) & Calibrated\tabularnewline
+$T_{i}^{opt}$ & Optimal temperature for species $i$ & Field-based ($K$) & Calibrated\tabularnewline
+$d$ & Daylength & $50$ (\%) & Fixed\tabularnewline
+$\alpha_{ij}$ & Interaction strength of species $j$ on $i$ in model I & Field-based (Cells$^{-1})$ & Calibrated\tabularnewline
+$a_{C}/a_{F}$ & Maximum competitive/facilitative interaction strength in model II & Field-based (NA) & Calibrated\tabularnewline
+$H_{ij}$ & Half-saturation for the interaction strength of species $j$ on $i$
+in model II & Field-based (Cells$)$ & Calibrated\tabularnewline
+$s_{i}$ & Sinking rate of species $i$'s resting cell & $\{0.1;\mathbf{0.3};0.5\}\times\beta(0.55,1.25)$ (day$^{-1}$) & Fixed\tabularnewline
+$e$ & Exchange rate between ocean and coast & $\left\{ 0;\boldsymbol{0.4};0.9\right\} $ (day$^{-1}$) & Fixed\tabularnewline
+$l$ & Loss rate of pelagic phytoplanktonic cells & $\left\{ 0.04;0.1;\mathbf{0.2}\right\} $ (day$^{-1}$) & Fixed\tabularnewline
+$m$ & Resting cell mortality rate & $\mathbf{10^{-5}}$ (day$^{-1}$) & Fixed\tabularnewline
+$\zeta$ & Resting cell burial rate & $\left\{ 10^{-3},\mathbf{10^{-2}},10^{-1}\right\} $ (day$^{-1}$) & Fixed\tabularnewline
+$\gamma$ & Germination $(\gamma_{1})$ $\times$ Resuspension $(\gamma_{2})$
+rate & $\left\{ 10^{-3},\mathbf{10^{-2}},10^{-1}\right\} \times\left\{ 10^{-5},10^{-3},\mathbf{10^{-1}}\right\} $
+(day$^{-1}$) & Fixed\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+}
+
+\caption{Definition of main state variables and model parameters. State variables
+and fluctuating parameters are indicated in the last column as ``Dynamic''.
+Parameters that are constant through time are either ``Fixed'' (directly
+obtained from literature) or ``Calibrated'' (obtained through model
+fitting, with initial values arising from previous studies at the
+study site). When a range of values is given, the bold numbers indicate
+the reference values while the others are used for sensitivity analysis.
+$\beta(0.55,1.25)$ is the Beta distribution with parameters 0.55
+and 1.25. For $\gamma,$ germination values for sensitivity analysis
+were multiplied by the reference value for resuspension, and conversely.
+\label{tab:State_Parameter}}
+\end{table}
+
+The Beverton-Holt (BH) formulation of multispecies population dynamics,
+sometimes called Leslie-Gower \citep{cushing2004some}, is a Lotka-Volterra
+competition equivalent for discrete-time models, and is often used
+to represent terrestrial plant community dynamics. In our implementation
+of the model, the maximum achievable growth rate is modified by both
+competitive and facilitative interactions, which translates into positive
+and negative $\alpha_{ij}$ coefficients, respectively. We present
+two different interaction models. We first use the classical multispecies
+BH model (model I, eq. \ref{eq:model_step1}), also present in the
+original models of \citet{shoemaker_linking_2016} and \citet{wisnoski_dormancy_2019}.
+However, the high number of facilitative interactions characterizing
+the modeled phytoplankton community \citep{picoche_strong_2020} combined
+to the mass-action assumption could have very irrealistic destabilizing
+consequences, which have been likened to an ``orgy of mutual benefaction''
+\citep{may_1981_theoretical}: populations grow to infinity because
+there is no saturation of beneficial effects when density increases.
+In model I, we therefore forbid the realized growth rate to go above
+the intrinsic growth rate (its theoretical limit), by setting a minimum
+value of 1 to the denominator of the BH formulation. We subsequently
+define saturating interactions, inspired by \citet{qian_balance_2020},
+in our model II (eq. \ref{eq:model_stepI_saturating}). Model II provides
+a more process-orientated solution to the issue of excessive mutual
+benefaction (but at the cost of added parameters). 
+
+In our framework, the first step of model I can be written as
+
+\begin{equation}
+\left\{ \begin{array}{ccc}
+N_{t',i,c} & = & \frac{\exp(r_{i}(T))N_{t,i,c}}{1+\sum_{j}\alpha_{ij}N_{t,j,c}}-lN_{t,i,c}\\
+N_{t',i,o} & = & \frac{\exp(r_{i}(T))N_{t,i,o}}{1+\sum_{j}\alpha_{ij}N_{t,j,o}}-lN_{t,i,o}\\
+N_{t',i,b} & = & N_{t,i,b}(1-m-\zeta)
+\end{array}\right.\label{eq:model_step1}
+\end{equation}
+
+where the intrinsic growth rate $r_{i}(T)$ is a species-specific
+function of the temperature (see eq. \ref{eq:growth_rate}), the interaction
+coefficients $\alpha_{ij}$ are per capita effects of species $j$
+on species $i$, and the loss term $l$ accounts for lethal processes
+such as natural mortality, predation or parasitism. First estimates
+of interaction coefficients are inferred from a previous study of
+coastal community dynamics with Multivariate AutoRegressive (MAR)
+models \citep{picoche_strong_2020}. We later calibrate these coefficients
+for model I, since MAR models were applied at a different timescale.
+
+The intrinsic growth rate $r_{i}(T)$ is defined through a modified
+version of the formula used by \citet{scranton_coexistence_2016}
+(eq. \ref{eq:growth_rate}), which classically decomposes $r_{i}(T)$
+in two parts: the species-independent metabolism part $E(T)$ and
+the species-specific niche part $f_{i}(T)$:
+
+\begin{eqnarray}
+r_{i}(T) & = & E(T)f_{i}(T)\label{eq:growth_rate}\\
+\text{where }E(T) & = & d\times0.81e^{0.0631(T-273.15)}\nonumber \\
+\textnormal{and }f_{i}(T) & = & \begin{cases}
+\exp(-|T-T_{i}^{opt}|^{3}/b_{i}), & T\leq T_{i}^{opt}\\
+\exp(-5|T-T_{i}^{opt}|^{3}/b_{i}), & T>T_{i}^{opt}.
+\end{cases}\nonumber 
+\end{eqnarray}
+
+The metabolism part describes the maximum achievable intrinsic growth
+rate based on \citet{bissinger_predicting_2008}. This maximum daily
+intrinsic growth rate is weighted by the daylength $d$ as no growth
+occurs at night. The realized niche part $f_{i}(T)$ describes the
+decrease in growth rate due to the difference between the temperature
+in the environment and the species-specific thermal optimum $T_{i}^{opt}$,
+and is controlled by the species-specific thermal decay $b_{i}$,
+which depends on the niche width. It is important to note that unlike
+$E(T)$, which models direct effects of temperature on metabolism,
+$f_{i}(T)$ is a phenomenological construct including all indirect
+effects of temperature, mediated by environmental variables correlated
+to temperature (light, nutrient inputs, predation, among other environmental
+conditions). In other words, $f_{i}(T)$ corresponds to a realized
+niche, pertaining to a given environment, which can be much more narrow
+than the fundamental thermal niche. Parameterisation is further detailed
+in Section S1 of the SI.
+
+In model II, oceanic and coastal dynamics are governed by eq. \ref{eq:model_stepI_saturating}:
+
+\begin{equation}
+N_{t',i,c/o}=\frac{\exp(r_{i}(T))N_{t,i,c/o}}{1+\sum_{j\in\mathbb{C}}\frac{a_{C}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}+\sum_{j\in\mathbb{F}}\frac{a_{F}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}}-lN_{t,i,c/o}\label{eq:model_stepI_saturating}
+\end{equation}
+
+where $a_{C}$ and $a_{F}$ are the maximum competition and facilitation
+strengths, respectively, with $\mathbb{C}$ and $\mathbb{F}$ the
+sets of competitors and facilitators of species $i$. We use here
+similar notations to \citet{qian_balance_2020}, but use different
+parameters that vary between species. Indeed, the half-saturation
+coefficients $H_{ij}$ vary between species, as opposed to the maximum
+rates in \citet{qian_balance_2020}. It did not make sense biologically
+for $H_{ij}$ to be fixed (e.g., in a resource competition context,
+different species are expected to feel resource limitations at different
+concentrations of nutrients and at different numbers of competitors).
+How to shift from MAR- to BH-interaction matrices in model I, and
+to use the parameter estimates of model I to specify parameters in
+model II is described in Section S2 of the SI.
+
+After growth and mortality processes occur, exchanges take place between
+the three compartments, which constitutes the second step of the model
+(eq. \ref{eq:model_step2}):
+
+\begin{equation}
+\left\{ \begin{array}{ccc}
+N_{t+1,i,c} & = & (1-s_{i}-e)N_{t',i,c}+\gamma N_{t',i,b}+eN_{t',i,o}\\
+N_{t+1,i,o} & = & (1-s_{i}-e)N_{t',i,o}+eN_{t',i,c}\\
+N_{t+1,i,b} & = & (1-\gamma)N_{t',i,b}+s_{i}N_{t',i,c}
+\end{array}\right.\label{eq:model_step2}
+\end{equation}
+
+Each compartment (ocean, coast, coastal seed bank) contains $10^{3}$
+cells at the beginning of the simulation, and the dynamics are run
+for 30 years with a daily time step. We model the temperature input
+as a noisy sinusoidal signal with the same mean and variance as the
+empirical data set described below: the amplitude of the sinusoid
+is 12.4°C and the standard deviation of the noise is 0.25°C.
+
+\subsection*{Parameterization of the models}
+
+\subsubsection*{Literature-derived parameter values}
+
+\paragraph*{Loss rate}
+
+The loss rate of vegetative cells can be attributed to natural mortality,
+predation or parasitism. This rate is quite variable in the literature:
+the model of \citet{scranton_coexistence_2016} considered a rate
+around 0.04 day$^{-1}$ while a review by \citet{sarthou_growth_2005}
+indicates a grazing rate of the standing stock between 0.2 and 1.8
+day$^{-1}$ and an autolysis rate between 0.005 and 0.24 day$^{-1}$
+(in the absence of nutrients, or because of viral charge). A maximum
+value of 0.2 is fixed for the model, as a balance between using a
+high loss rate (probable because of predation) and keeping all species
+in the community in the reference model (see Section S3 of the SI
+for more details).
+
+\paragraph*{Sinking rate}
+
+Phytoplanktonic particles have a higher density than water and cannot
+swim to prevent sinking (although they are able to regulate their
+buoyancy, \citealt{reynolds2006ecology}). Sinking is mostly affected
+by hydrodynamics, but at the species-level, size, shape, density-regulation
+and colony-formation capabilities are key determinants of the particle
+floatation. In this model, the sinking rate of each species resting
+cells is drawn from a Beta distribution with a mean value of 9\%,
+and a maximum ($S_{\text{max}}$) around 30\%, that is $s\backsim0.3\beta(0.55,1.25)$
+(see Fig. S4), adapted from observations by \citet{passow_species-specific_1991}
+and \citet{wiedmann_seasonality_2016}.
+
+\paragraph*{Exchange rate}
+
+The exchange rate between the ocean and the coast depends on the shape
+and location of the coast (estuary, cape, ...). Our calibration site
+is located at an inlet. The flow at the inlet leads to a renewal time
+of the coastal area water evaluated between 1 and 2.5 days \citep{ascione_kenov_water_2015},
+which corresponds to a daily exchange rate between 40 and 100 \%.
+
+\paragraph*{Mortality and burial in the seed bank}
+
+Loss from the seed bank is the result of cells' mortality $m$ and
+their burial by sedimentation $\zeta$. Mortality values range between
+$10^{-5}$ and $10^{-4}$ per day (more details on the approximation
+of mortality rates from \citealt{mcquoid_viability_2002} are given
+in Section S3 of the SI). However, burial by sedimentation is the
+prevailing phenomenon. Indeed, once resting cells have been buried,
+they are not accessible for resuspension even if they could still
+germinate. Burial depends on the hydrodynamics of the site, but also
+on biotic processes (i.e., bioturbation) and anthropogenic disturbances
+such as fishing or leisure activities (e.g., jet skiing). This parameter
+is thus heavily dependent on the environmental context and varies
+here between 0.001 and 0.1 per day.
+
+\paragraph*{Germination/resuspension}
+
+Both germination ($\gamma_{1})$ and resuspension ($\gamma_{2}$)
+are needed for resting cells to contribute to the vegetative pool
+in the water column ($\gamma=\text{resuspension\ensuremath{\times}germination})$.
+Following \citet{mcquoid_viability_2002} and \citet{agrawal_factors_2009},
+we assume a temperature threshold: germination is triggered by temperatures
+going above 15°C. As actual rates of germination are not easily deduced
+from the literature, a set of credible values has been tested (1\%,
+0.1\%, 0.01\%). Similarly, resuspension values are seldom computed
+for phytoplanktonic cells, but models for inorganic particles can
+be used (see Section S3 of the SI for literature and details). In
+this paper, we explore values between $10^{-5}$ (stratified water
+column) to 0.1 (highly mixed environment).
+
+\subsubsection*{Initial interaction matrix}
+
+Initial values of interaction strengths between species are based
+on Multivariate AutoRegressive (MAR) model estimates \citep{picoche_strong_2020}.
+MAR(1) models relate the log-abundance of each of the $S$ phytoplankton
+species at time $t+1$ to log-abundances of all species at time $t$,
+through an interaction matrix, and effects of abiotic variables at
+time $t+1$ (see Section S2 of the SI). Interactions are estimated
+only between species within the same trophic level, and are independent
+from the environmental variables that were included in the MAR model
+estimates as covariates, such as temperature in our case. This allows
+to remove at least some of the confounding factors, such as seasonality.
+A phylogeny-based interaction matrix resulted in a better fit to model
+the community dynamics, i.e. pennate/centric diatoms only interact
+with other pennate/centric diatoms, respectively, and dinoflagellates
+only interact with dinoflagellates. 
+
+The MAR model can only estimate apparent interaction strengths: complex
+processes can be at work behind values of competition and facilitation,
+either from abiotic (e.g., hydrodynamics) or biotic (e.g. consumption
+by predators or parasites) variables. For more consideration on apparent
+interactions detected in phytoplankton communities with the MAR model,
+we refer the reader to \citet{barraquand_coastal_2018}. In the present
+model, while we tune interaction strength values (see below), the
+type of interaction (competition, facilitation or absence of interaction)
+remains the same as computed in \citet{picoche_strong_2020}. 
+
+\smallskip{}
+
+
+\subsubsection*{Parameter calibration}
+
+As explained above, we use initial interaction estimates from our
+previous time series modelling \citep[see Section S3 of the SI for the equations]{picoche_strong_2020},
+which are then calibrated to the time series (thus possibly re-estimated,
+see below), to take into account the differences in model structure
+and timescale between this study and \citet{picoche_strong_2020}.
+In SI Section S3, we present the formulas relating the MAR interaction
+coefficients to the Jacobian matrices of the Beverton-Holt multispecies
+models, as these formulas allow to obtain proper $\alpha_{ij}$ coefficient
+values. 
+
+The calibration procedure consists in lauching 1000 simulations, each
+characterized by a specific set of interaction coefficients. More
+precisely, for each simulation, an interaction coefficient ($\alpha_{ij}$
+in model I, $H_{ij}$ in model II) has probability $1/5$ to keep
+its present value, probability $1/5$ to increase by 10\% , $1/5$
+to decrease by 10\%, $1/5$ to be halved and $1/5$ to be doubled.
+The numbers of coastal pelagic cells (which are the ones measured
+empirically) are then extracted over the last 2 years of the simulation,
+and compared to observations using the following summary statistics:
+\begin{itemize}
+\item average abundance $f_{1}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left(\bar{n}_{i,obs}-\bar{n}_{i,sim}\right){}^{2}}$
+where $S$ is the number of taxa and $\bar{n_{i}}$ is the logarithm
+of the mean abundance of taxon $i$.
+\item amplitude of the cycles $f_{2}=\sqrt{\frac{1}{S}\sum_{i}^{S}\left[\left(\max(n_{i,obs})-\min(n_{i,obs})\right)-\left(\max(n_{i,sim})-\min(n_{i,sim})\right)\right]{}^{2}}$
+where $n_{i}$ is the logarithm of the abundance of taxon $i$.
+\item period of the bloom. The year is divided in 3 periods, i.e. summer,
+winter and the spring/autumn group (as taxa blooming in these periods
+can appear in either or both seasons). We give a score of 0 if the
+taxon blooms in the same period as its observed counterpart and 1
+otherwise.
+\end{itemize}
+Simulations with taxon extinction (i.e., the taxon is absent for more
+than 6 months in a compartment) are discarded, as extinctions are
+not observed in the field data. Parameter sets are then ranked according
+to their performance for each summary statistic, and we select the
+set of interactions minimizing the sum of the ranks.
+
+\paragraph*{Sensitivity analysis}
+
+Parameters taken from the literature may be site- or model- specific,
+or vary over several orders of magnitude in the literature, e.g.,
+rates of sinking $s$, resuspension/germination $\gamma$, cyst burial
+$\zeta$, and loss of pelagic cells $l$. We therefore performed
+a sensitivity analysis to these highly uncertain parameters. The set
+of tested values for each parameter is given in Table \ref{tab:State_Parameter}.
+We used average abundances and amplitudes at the community and taxon
+levels for the last 2 years of simulations as the major model diagnostics.
+
+\subsubsection*{Empirical dataset used for calibration}
+
+The models are calibrated using time series of phytoplanktonic abundances
+that have been monitored biweekly for 21 years in the Marennes-Oléron
+Bay, on the French Atlantic Coast \citep[the Auger site analysed in][]{picoche_strong_2020}.
+We stress that we are not trying to model precisely this particular
+community, but rather to constrain our models with an empirically-derived
+interaction network and species-specific thermal niches, which helps
+to produce lifelike patterns of phytoplankton community dynamics resembling
+observable data (seasonal dynamics, high-amplitude blooms, differences
+in average abundances matching data). 
+
+\subsection*{Scenarii}
+
+The effect of the seed bank on biodiversity and community dynamics
+can be evaluated through the response to disturbance with and without
+the resting-stage compartment. Mortality in the seed bank is set to
+100\% to effectively remove the compartment. We evaluate two main
+disturbances:
+\begin{enumerate}
+\item increase or decrease in interaction strength
+\item temperature change, either in mean value or variability
+\end{enumerate}
+In the first scenario, interaction strengths are multiplied or divided
+by a factor ranging between 1 and 10. In order to differentiate the
+effects of facilitative and competitive interactions on coexistence,
+we vary only one type of interactions at a time. Here, both intra
+and interspecies interactions are modified; we present in Section
+S6 of the SI additional simulations with a change in interspecies
+interactions only.
+
+In the second scenario, five different climate change trajectories
+are assessed. In the first three, the average temperature is increased
+by 2, 5, or 7°C \citep{boucher_presentation_2020}. In the next two,
+keeping the reference average temperature, the total variance of the
+temperature, including seasonality and noise, is either decreased
+or increased by 25\%. Each climate change trajectory is run 5 times
+to account for the intrinsic stochasticity of the temperature signal.
+
+In both scenarios, simulations are run for 30 years for both population
+growth models, with and without a cyst compartment, and only the last
+2 years are considered to evaluate effects of changes in parameters
+and in temperature. The code for all simulations is to be found at
+\url{https://github.com/CoraliePicoche/SeedBank}.
+
+\section*{Results}
+
+\subsection*{Phytoplankton dynamics}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=0.8\textheight]{time_series_simulation_per_cluster_with_temperature}
+\par\end{centering}
+\caption{Simulated phytoplankton dynamics for a year in model I. Each panel
+corresponds to a cluster of interacting taxa: centric diatoms (a),
+pennate diatoms (b) and dinoflagellates (c). Taxa only interact within
+their cluster of related taxa (see Methods). The orange line in the
+third panel indicates the temperature.\label{fig:-Simulated-phytoplankton}}
+\end{figure}
+
+The classical mass-action (model I) and saturating interaction (model
+II) formulations of multispecies dynamics both reproduced the main
+characteristics of observed phytoplankton dynamics. They produced
+one or two blooms during the year and a range of abundances covering
+several orders of magnitude, with the right timing of the blooms.
+At the Auger site that was used for calibration, abundances increase
+in spring and can last over part of summer, or start a new bloom in
+autumn, which is what we observed as well in the models. Annual mean
+abundance of the various species was also well reproduced. That said,
+in some cases, abundances could be lower than expected and the variation
+in abundances due to seasonality was underestimated (Fig. \ref{fig:-Simulated-phytoplankton}).
+In all cases, saturating interactions led to higher abundances than
+mass-action interactions throughout the year (Fig. S5).
+
+\subsection*{Sensitivity to uncalibrated parameters}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.9\textwidth]{mean_abundance_amplitude_sensitivity}
+\par\end{centering}
+\caption{Sensitivity of the model to variation in parameters, measured as the
+difference between the reference simulation metric and the metric
+for the simulation including a change in parameter. The two metrics
+used were the decimal log average abundance (a) and the decimal logarithm
+of the ratio between maximum and minimum abundance (b) of the coastal
+phytoplanktonic community. The x-axis is divided in three rows: the
+symbol of the parameter defined in Table 1 (first row), values used
+in the sensitivity analysis (second row) and values used in the reference
+simulation (third row). Numbers in red in the top panel are the final
+number of species in the ocean and dots correspond to simulations
+in which at least one species abundance reached 0 at one point but
+the species did not disappear. \label{fig:Sensitivity}}
+\end{figure}
+
+Phytoplankton dynamics were not strongly affected by changes in the
+parameter values (Fig. \ref{fig:Sensitivity}). As parameters were
+varied in their plausible range, the average change in mean abundance
+on the coast between the reference simulation and the sensitivity
+simulations varied between -4.6 and 1.9\% for model I and between
+-4.2 and 1.1\% for model II, with similar deviations (same sign and
+magnitude) in the two models. 
+
+In the two models, the decrease in mortality rate of vegetative cells
+$l$ had the highest impact on the final average abundance, leading
+to an increase in abundances. The exchange rate between the ocean
+and the coast had much less effect on the coastal average abundance.
+
+On the other hand, the amplitude (i.e., decimal logarithm of the maximum
+to minimum ratio of abundance) was more affected by changes in parameters
+and could vary by -39.4 to 18.6\% in model I, and between -41.2\%
+and 23\% in model II. Results were qualitatively the same in the two
+models, with a decrease in resting-stage burial being the main driver
+of the decrease in amplitude, and a decrease in resuspension leading
+to an increase in amplitude.
+
+In three cases (burial rate set to 0.1, resuspension to 10$^{-5}$
+or exchange rate set to 0), the final richness of the oceanic community
+decreased from 11 to 4. Extant species were the same in all simulations
+(CHA, THP, NIT, PLE, i.e. temperature generalist species; the correspondence
+between codes and groups of species is given in Section S4 of the
+SI). When resuspension was set to 0.001, a species periodically disappeared
+from the ocean, to be subsequently re-seeded by the coastal population.
+
+For all parameters, except the sinking rate, an increase in mean abundance
+was associated to a decrease in amplitude.
+
+\subsection*{Scenarii of environmental change}
+
+Two scenarios were designed to test the buffering effect of the seed
+bank against disruption. In both cases, it consisted in removing the
+seed bank by setting resting-stage mortality to 100\% per day. Without
+any other disturbance to the system, this led to a decrease in richness
+from 11 to 4 species at the end of the simulation (Fig. \ref{fig:Seed_bank_compet})
+while the total abundance of phytoplankton was not strongly affected
+(around $10^{5}$ in all cases). The inverse of the Simpson index
+(the second Hill number) decreased from approximately 3 to 1, showing
+that the disappearance of the seed bank did not affect only the rarest
+species.
+
+\subsubsection*{Biotic effects}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.7\textwidth]{no_seed_bank_compet}
+\par\end{centering}
+\caption{Measures of biodiversity in the ocean at the end of the simulation:
+a-b) richness and c-d) inverse of the Simpson index, with (dashed
+line) and without (solid line) a seed bank, as a function of the strength
+of competition and facilitation with a classical Beverton-Holt (black
+lines) or a saturating interaction (grey lines) formulation. The x-axis
+shows the factor by which each interaction was multiplied, e.g. the
+value 0.1 indicates that the interaction strengths in the simulation
+are 10 times lower than the interaction strengths in the reference
+simulation. Note the logarithmic scale.\label{fig:Seed_bank_compet}}
+\end{figure}
+
+Our first hypothesis was that the absence of the seed bank would cause
+the community to be more affected by a higher competition strength.
+Counter-intuitively, our results (Fig. \ref{fig:Seed_bank_compet})
+showed that an increase in competition strength only had negative
+effects with model I, and for high competition values (6 times the
+reference ones at least), shifting from 4 to 3 species in the oceanic
+compartment of a community without a seed bank. By contrast, an increase
+in competition strength did not affect the richness of a community
+with a seed bank. On the contrary, a decrease in competition (from
+a factor 0.5 and lower) or an increase in facilitation (starting from
+a factor 2 and higher) led to much smaller communities in model II
+in the absence of a seed bank, sometimes with a complete competitive
+exclusion. Richness was lowest when competition was divided by 6
+or when facilitation was multiplied by 8 in model II. The same pattern
+(richness stability with model I, sensitivity to a decrease in competition
+or an increase in facilitation with model II) was observed in a community
+with a seed bank, but only for larger disturbances. Competition indeed
+had to be at least divided by 6 or facilitation, to be multiplied
+by 7 for richness to decrease to 9 species.
+
+The inverse of the Simpson index was also affected by the changes
+in interaction strengths, with similar patterns to richness, as it
+was lowest for high facilitation or low competition. Presumably some
+species reached very high growth rates in these scenarios, which then
+fed back onto community dynamics, generating lower diversity in the
+end.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.99\textwidth]{dynamics_vs_survival_no_seed_bank_minab_amplitude_niche}
+\par\end{centering}
+\caption{Probability of survival of species when competition increases in the
+absence of a seed bank, as a function of their dynamics characteristics
+(minimum abundance, logarithm of amplitude and niche width) in the
+reference parameter set.\label{fig:Probability-of-survival} Each
+dot corresponds to a species, and its survival using model I (black)
+or model II (grey). }
+\end{figure}
+
+Species which disappeared were characterized by a lower minimum abundance,
+a higher amplitude of fluctuations and a small niche (Fig. \ref{fig:Probability-of-survival}).
+However, their interactions were not qualitatively different from
+the other species.
+
+\subsubsection*{Abiotic effects}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.7\textwidth]{no_seed_bank_temp}
+\par\end{centering}
+\caption{Variation in richness and total abundance with and without a seed
+bank as a function of the mean (left) and variance (right) of the
+temperature with a mass-action (black line, model I) or a saturating
+interaction (grey line, model II) formulation. \label{fig:Seed_bank_temp}}
+\end{figure}
+
+Our second hypothesis was that the absence of a seed bank would reduce
+the ability of a community to withstand changes in its abiotic environment,
+here represented by variation in the temperature. This was true for
+both models (Fig. \ref{fig:Seed_bank_temp}), as the communities without
+a seed bank could not maintain their richness with an increase in
+temperature above 2°C, as opposed to communities with a seed bank,
+which could only be affected by a 7°C increase (scenario SSP5 8.5,
+\citealt{boucher_presentation_2020}). In all cases however, the total
+abundances were not strongly affected. Indeed, the total abundance
+of a community is driven by a small number of numerically dominant
+species, which did not disappear. High total abundances tended to
+correspond to the abundance of only one or two species. Model II consistenly
+led to higher abundances, as was already the case in the reference
+simulations.
+
+The variance of the temperature did not affect richness nor total
+abundance of communities with a seed bank. This was also true without
+a seed bank. The presence of resting stages did increase total abundance
+though.
+
+\section*{Discussion}
+
+Using a meta-community model which accounts for exchanges between
+the ocean and the coast, as well as movements between the top and
+the bottom of the coastal water column, we were able to show that
+a resting stage, leading to the formation of a seed bank, can help
+maintain biodiversity. This dormant stage was integrated to a phytoplanktonic
+community dynamics model, which was parameterized based on literature,
+field-based phenology, and interaction strength estimates. The model
+was then calibrated on phytoplankton community time series. Our model
+was able to simulate realistic community dynamics (both mean abundances
+and temporal patterns), while including the effects of both positive
+and negative interactions on community dynamics. When removing the
+seed bank, biodiversity decreased drastically. The total abundance
+of the community decreased as well. This was true for the reference
+parameter values, as well as when species interaction strengths and
+environmental fluctuation levels were altered, in which cases the
+seed bank's buffering influence disappeared. Additional simulations
+showed that the rescue from extinction provided by the seed bank is
+conditional to the existence of some environmental fluctuations. Moreover,
+when faced with a biotic or abiotic ``press'' perturbation, communities
+where species could divert part of their population to a dormant stage
+were less prone to species loss and could maintain their biomass through
+the years. These results were consistent for the two interaction models
+that we considered, with and without progressive saturation in interaction
+strengths. Our results therefore demonstrate the major potential
+role of phytoplanktonic resting stages in maintaining biodiversity.
+These results align with the findings of previous theoretical studies,
+that have put forward similar effects of dormant stages in other taxa,
+such as plants \citep{levine_effects_2004,jabot_macroecology_2017},
+invertebrates \citep{wisnoski_dormancy_2019} or (smaller) microbes
+\citep{jones_dormancy_2010}.
+
+The effect of the seed bank is, of course, contingent upon a long
+dormancy of the resting stage. Dormancy has long been observed in
+field and experimental data, including for phytoplanktonic organisms
+\citep{eilertsen_phytoplankton_2000}. It has been theorized to be
+an important and neglected process in the wider microbiology literature
+\citep{locey_synthesizing_2010,jones_dormancy_2010}. Processes behind
+diversity maintenance by the seed stage include the storage effect
+\citep{bonis_seed_1995,facelli_differences_2005,angert_functional_2009}
+but are not limited to it. This is because a long dormancy alone can
+allow future recolonization of a community where counts of pelagic
+cells alone would suggest that some species have gone extinct. This
+colonization-in-time may of course combine with present recolonization
+from other spatial areas \citep{shmida_coexistence_1985}. In our
+case, our focus on phytoplankton led us to assume that organisms moved
+between the coast and the ocean, which were largely synchronous environments.
+Spatial recolonization was therefore less important than temporal
+recolonization; the relative importance of the two processes may vary
+depending on the organisms and the degree of spatial synchrony of
+their environment \citep{montresor_dinoflagellate_1998,anderson_alexandrium_2005}.
+
+The specificities of phytoplankton resting stages, that usually fall
+to the ocean bottom in coastal areas, led us to assume that only the
+``vegetative'' stage (here, the classic pelagic form of planktonic
+cells) disperse. In some other metacommunity models with dormant seed
+banks \citep[e.g.][]{wisnoski_dormancy_2019}, the dormant stage can
+disperse as well. This would be true for most plants too (and perhaps
+some phytoplankters in situations where they are transported by animals).
+However, the restriction about which stage can move did not change
+the general conclusion already stated by \citet{wisnoski_dormancy_2019}:
+the combination of spatial dispersal and dormancy through seed banks
+greatly helps biodiversity maintenance. In our study, this main result
+was also robust to changes in exchange parameters and mean interaction
+values in the community.
+
+ Species persistence varied between the coastal and ocean compartment.
+Temporary species disappearance could happen periodically in the ocean
+but species were able to reinvade from the coast, thanks to the connection
+of the coast to the seed bank. Local extinction in the absence of
+a seed bank confirms conclusions from \citet{hellweger_agent-based_2008}
+on a single species. This suggests that some species may be locally
+transient: they are filtered out from certain patches, but can reinvade
+more or less periodically the environment \citep{guittar_quantifying_2020}.
+
+Survival probabilities of species within the community in the absence
+of a seed bank also depended on their characteristics -- and therefore
+species rescued by the seed bank also have specific characteristics.
+Higher amplitudes of population variation were typically associated
+with extinctions, as well as a smaller niche width (i.e., being a
+specialist) or being strongly affected by species interactions (Fig.
+S7 in SI). These are the species that typically benefit the most from
+a seed bank. 
+
+Despite the evidence for seed bank effects that we and others uncovered,
+phytoplanktonic community models designed to explain biodiversity
+usually avoid modelling seed banks. In our view, this may decrease
+the possibility of spontaneous re-colonization at the coast (at very
+low densities initially), which can then spill to the open ocean by
+progressive dispersal by the currents. This may also decrease overall
+persistence, as fitting models I and II without a seed bank does not
+allow all species to persist here. If the goal of a community-level
+model is very short-term prediction (days, weeks), this recolonization
+can probably be neglected, and there are no risks of extinction over
+these short time frames. However, over multiple years, ignoring cryptic
+life stages allowing recolonization could strongly bias downwards
+our view of long-term coexistence. Long-term phytoplankton coexistence
+modelling (over multiple decades or more) likely requires that we
+take into account resting stages, whose influence may become only
+more important as the timescale increases, due to the very long possible
+dormancies that have been evidenced \citep{ellegaard_long-term_2018,sanyal_not_2018}.
+When modelling different stages of the life cycle in a detailed manner
+-- as done here -- is impractical, the recolonization could perhaps
+be simplified to a stochastic immigration term (as done in \citealt{stock_evaluating_2005}
+in a single-species context). This technical suggestion certainly
+extends to models of (terrestrial) plant community dynamics.
+
+More research on dormant stages may be needed to parameterize truly
+predictive mechanistic phytoplankton models with multiple life stages,
+in particular to inform parameters such as the sinking rate of resting
+cells, as well as burial and resuspension parameters. These parameters
+are all linked to hydrodynamics \citep{yamamoto_modelling_2002,yniguez_investigating_2012}
+and may locally vary. Sinking rates show an interesting conflict between
+short- and long-term survival: in coastal areas, a fraction of sinking
+cells contribute to the seed bank, increasing the odds of species
+long-term survival at the cost of short-term individual cell survival.
+But high sinking rates are essentially ``wasted'' in the open ocean
+-- whether different sinking rates can be selected, to some degree,
+by such different environments could be quite revealing. How cells
+get up rather than down in water column might be as interesting but
+more difficult to study. The likely idiosyncratic nature of recolonization
+by resting cells -- due to the contingency on local hydrodynamics
+-- means that experimentation might be the only manner in which the
+frequency of reinvasion can be assessed. Currently, one of the only
+parameters measured in the field is the rate of survival of the cells
+found in the sediment \citep{montresor_diversity_2013,solow_testing_2014}.
+While very important, this parameter is a necessary not sufficient
+condition for reinvasion of the population at future times. We need
+more information about the abilities of resting cells buried in the
+sediment to come up to the pelagic zone, which is required for recolonization
+to actually occur. Many factors may contribute: bottom currents, benthic
+animals, ... We therefore encourage both experiments and field observations
+to follow actual seed trajectories, in order to help us understand
+this cryptic part of the diversity maintenance process.
+
+\subsubsection*{Declaration of Competing Interest}
+
+The authors declare that they have no known competing financial interests
+or personal relationships that could have appeared to influence the
+work reported in this paper.
+
+\subsubsection*{Author contribution statement}
+
+CP and FB designed the project. CP wrote the computer code and produced
+the figures. CP and FB interpreted the results and wrote the manuscript.
+
+\subsubsection*{Acknowledgements}
+
+We thank Nathan Wisnoski and Frank Jabot for useful feedback. FB and
+CP were supported by grants ANR-10-LABX-45 and ANR-20-CE45-0004. CP
+was supported by a PhD grant from the French Ministry of Research.
+
+\bibliographystyle{../ecol_let}
+\bibliography{biblio_seed}
+
+\end{document}

@@ -240,14 +240,16 @@ seed
  their resting stage
 \change_unchanged
 .
- We thus highlight the potential role of 
-\change_deleted -2100369821 1632732906
-the
-\change_inserted -2100369821 1632732907
-seed
+ We thus highlight the potential role of the
+\change_inserted -2100369821 1634545583
+ seed
 \change_unchanged
- cyst bank in the recurrent re-invasion of the coastal community, and of
- coastal environments in re-seeding oceanic regions.
+ 
+\change_deleted -2100369821 1634545573
+cyst 
+\change_unchanged
+bank in the recurrent re-invasion of the coastal community, and of coastal
+ environments in re-seeding oceanic regions.
  Moreover, the 
 \change_deleted -2100369821 1632383145
 cyst
@@ -261,7 +263,7 @@ seed
 \change_deleted -2100369821 1632383165
 cyst
 \change_inserted -2100369821 1632383166
-resting stage
+resting
 \change_unchanged
  stage may help phytoplanktonic diversity maintenance.
 \begin_inset Note Note
@@ -281,7 +283,13 @@ status collapsed
 \series bold
 Keywords
 \series default
-: dormancy; cyst; coexistence; competition; facilitation
+: dormancy; 
+\change_inserted -2100369821 1634563313
+phytoplankton
+\change_deleted -2100369821 1634563237
+cyst
+\change_unchanged
+; coexistence; competition; facilitation
 \end_layout
 
 \begin_layout Standard
@@ -339,7 +347,7 @@ literal "false"
  of coexistence 
 \begin_inset CommandInset citation
 LatexCommand citep
-before "e.g."
+before "e.g.,"
 key "moll_competition_2008,fujiwara_coexistence_2011"
 literal "false"
 
@@ -403,9 +411,9 @@ literal "false"
 
 \end_inset
 
- 
-\change_deleted -2100369821 1632383305
-which involves covariances between competitive strengths and environmental
+
+\change_deleted -2100369821 1634545641
+ which involves covariances between competitive strengths and environmental
  variation, is one of them.
 \change_inserted -666822487 1633965195
 ,
@@ -594,7 +602,7 @@ F: just important group ça le fait pas trop.
  on Earth, being responsible 
 \change_deleted -666822487 1633965260
 not only 
-\change_inserted -2100369821 1632383507
+\change_inserted -2100369821 1634545702
 for half the global primary production
 \begin_inset Note Note
 status open
@@ -608,9 +616,15 @@ Field et al.
 
 \end_inset
 
-
+,
 \change_inserted -666822487 1633965330
- and is the very basis of marine food webs
+ and 
+\change_deleted -2100369821 1634545711
+is
+\change_inserted -2100369821 1634545712
+are
+\change_inserted -666822487 1633965330
+ the very basis of marine food webs
 \change_deleted -666822487 1633965266
  but also for harmful algae blooms (HAB) that can have strong negative impacts
  on aquatic ecosystems
@@ -1012,7 +1026,13 @@ status open
 \begin_layout Plain Layout
 Structure of the model.
  Phytoplanktonic species (represented by circles) are present in the coast
- (subscript c), the ocean (o) and the cyst bank (b).
+ (subscript c), the ocean (o) and the 
+\change_deleted -2100369821 1634545742
+cyst
+\change_inserted -2100369821 1634545742
+seed
+\change_unchanged
+ bank (b).
  Parameters governing demography, interactions between organisms and exchanges
  between compartments are defined in Table 
 \begin_inset CommandInset ref
@@ -1358,6 +1378,14 @@ Dynamic
 
 \begin_layout Plain Layout
 Thermal decay
+\change_inserted -2100369821 1634545829
+ of species 
+\begin_inset Formula $i$
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1916,15 +1944,15 @@ Germination
 \begin_inset Formula $\times$
 \end_inset
 
- Resuspension rate
-\change_inserted -2100369821 1632384457
+ Resuspension
+\change_inserted -2100369821 1634545923
  
 \begin_inset Formula $(\gamma_{2})$
 \end_inset
 
 
 \change_unchanged
-
+ rate
 \end_layout
 
 \end_inset
@@ -2020,8 +2048,12 @@ Calibrated
 \begin_inset Formula $\gamma,$
 \end_inset
 
- germination values for sensivity analysis were multiplied by the reference
- value for resuspension, and conversely.
+ germination values for sensi
+\change_inserted -2100369821 1634545839
+ti
+\change_unchanged
+vity analysis were multiplied by the reference value for resuspension, and
+ conversely.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2723,7 +2755,27 @@ Germination/resuspension
 \end_layout
 
 \begin_layout Standard
-Both resuspension and germination are needed for 
+Both 
+\change_inserted -2100369821 1634545886
+germination (
+\begin_inset Formula $\gamma_{1})$
+\end_inset
+
+
+\change_deleted -2100369821 1634545881
+resuspension
+\change_unchanged
+ and 
+\change_deleted -2100369821 1634545896
+germination
+\change_inserted -2100369821 1634545906
+resuspension (
+\begin_inset Formula $\gamma_{2}$
+\end_inset
+
+)
+\change_unchanged
+ are needed for 
 \change_deleted -2100369821 1632384627
 cysts
 \change_inserted -2100369821 1632384628
@@ -2774,9 +2826,9 @@ Initial interaction matrix
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1632384652
-Initial values of interactions strengths between species are based on Multivaria
-te AutoRegressive (MAR) model estimates 
+\change_inserted -2100369821 1634546131
+Initial values of interaction strengths between species are based on Multivariat
+e AutoRegressive (MAR) model estimates 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "picoche_strong_2020"
@@ -2802,7 +2854,7 @@ literal "false"
 \begin_inset Formula $t+1$
 \end_inset
 
- (see Section S2 in SI).
+ (see Section S2 of the SI).
  Interactions are estimated only between
 \change_deleted -666822487 1633965527
  considered
@@ -3056,6 +3108,10 @@ taxon
 \end_inset
 
 
+\change_inserted -2100369821 1634546176
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -3098,8 +3154,17 @@ Sensitivity analysis
 
 \begin_layout Standard
 Parameters taken from the literature may be site- or model- specific, or
- vary over one order of magnitude in the literature, e.g., rates of sinking
- 
+ vary over 
+\change_deleted -2100369821 1634546189
+one
+\change_inserted -2100369821 1634546190
+several
+\change_unchanged
+ order
+\change_inserted -2100369821 1634546192
+s
+\change_unchanged
+ of magnitude in the literature, e.g., rates of sinking 
 \begin_inset Formula $s$
 \end_inset
 
@@ -3280,7 +3345,11 @@ temperature change, either in mean value or variability
 In the first scenario, interaction strengths are multiplied or divided by
  a factor ranging between 1 and 10.
  In order to differentiate the effects of facilitative and competitive interacti
-ons on coexistence, we only vary only one type of interactions at a time.
+ons on coexistence, we 
+\change_deleted -2100369821 1634546207
+only 
+\change_unchanged
+vary only one type of interactions at a time.
 \begin_inset Note Note
 status open
 
@@ -3558,7 +3627,15 @@ third row
 in the top panel 
 \change_unchanged
 are the final number of species in the ocean and dots correspond to simulations
- in which at least one species reached 0 at one point but did not disappear.
+ in which at least one species 
+\change_inserted -2100369821 1634546261
+abundance 
+\change_unchanged
+reached 0 at one point but 
+\change_inserted -2100369821 1634546272
+the species 
+\change_unchanged
+did not disappear.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3710,7 +3787,13 @@ For all parameters, except the sinking rate, an increase in mean abundance
 \end_layout
 
 \begin_layout Subsection*
-Scenarios of environmental change
+Scenari
+\change_inserted -2100369821 1634546283
+i
+\change_deleted -2100369821 1634546283
+os
+\change_unchanged
+ of environmental change
 \end_layout
 
 \begin_layout Standard
@@ -3800,10 +3883,10 @@ seed
  a classical Beverton-Holt (black lines) or a saturating interaction (grey
  lines) formulation.
  The x-axis shows the factor by which each interaction was multiplied
-\change_inserted -2100369821 1632385506
+\change_inserted -2100369821 1634546293
 , e.g.
  the value 0.1 indicates that the interaction strengths in the simulation
- is 10 times lower than the interaction
+ are 10 times lower than the interaction
 \change_deleted -666822487 1633965813
 s
 \change_inserted -2100369821 1632385506
@@ -3922,9 +4005,19 @@ for larger disturbances.
 The inverse of the Simpson index was also affected by the changes in interaction
  strengths, with similar patterns to richness, as it was lowest for high
  facilitation or low competition.
- Presumably some species reach very high growth rates in these scenarios,
- which then feeds back onto community dynamics, generating lower diversity
- in the end.
+ Presumably some species reach
+\change_inserted -2100369821 1634546314
+ed
+\change_unchanged
+ very high growth rates in these scenarios, which then fe
+\change_deleted -2100369821 1634546319
+e
+\change_unchanged
+d
+\change_deleted -2100369821 1634546318
+s
+\change_unchanged
+ back onto community dynamics, generating lower diversity in the end.
 \end_layout
 
 \begin_layout Standard
@@ -4215,9 +4308,12 @@ seed
  bank's buffering influence disappeared.
  
 \change_inserted -666822487 1634130829
-Additional simulations showed that the rescue frome extinction provided
- by the seed bank is conditional to the existence of some environmental
- fluctuations.
+Additional simulations showed that the rescue from
+\change_deleted -2100369821 1634546332
+e
+\change_inserted -666822487 1634130829
+ extinction provided by the seed bank is conditional to the existence of
+ some environmental fluctuations.
  
 \change_deleted -666822487 1634130869
 The total abundance of the community decreased as well.

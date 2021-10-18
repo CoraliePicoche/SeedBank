@@ -78,7 +78,7 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes true
-\output_changes true
+\output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -398,8 +398,11 @@ literal "false"
  The black line indicates the final growth rate with their model.
  The blue line corresponds to the species-specific response to temperature
  for a thermal optimum of 15°C and the green line is the maximum achievable
- growth rate, a composite of the metabolic theory of ecology and the formula
- by 
+ growth rate, a composite of the metabolic theory of ecology
+\change_inserted -2100369821 1634547180
+ (MTE)
+\change_unchanged
+ and the formula by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "eppley_temperature_1972"
@@ -569,10 +572,19 @@ We base our estimates of
  or several blooms during which the abundances oscillate around their median.
  Specialists tend to appear only once or twice in the year for shorter amounts
  of time.
- A genus is therefore defined as a generalist if its cumulated bloom days
- over a year last more than the average duration of all blooms (137 days)
- for at least 15 years over the 20 years of the time series, and as a specialist
- if they fall below this threshold.
+ A genus is therefore defined as a generalist if
+\change_inserted -2100369821 1634547219
+ the duration of
+\change_unchanged
+ its cumulated bloom days over a year last more 
+\change_deleted -2100369821 1634547238
+than
+\change_inserted -2100369821 1634547239
+is above
+\change_unchanged
+ the average duration of all blooms (137 days) for at least 15 years over
+ the 20 years of the time series, and as a specialist if they fall below
+ this threshold.
 \end_layout
 
 \begin_layout Standard
@@ -620,7 +632,7 @@ additional
  Meanwhile, taxa are ordered as a function of the mean cumulated bloom length
  and larger niche values are attributed to longer mean bloom length, i.e.
  
-\begin_inset Formula $\sum\overline{L}_{i,b}>\sum\overline{L}_{j,b}\Rightarrow b_{i}>b_{j}$
+\begin_inset Formula $\sum\overline{L}_{i}>\sum\overline{L}_{j}\Rightarrow b_{i}>b_{j}$
 \end_inset
 
  where 
@@ -976,6 +988,8 @@ C
  The interaction model we use in the present paper is a Beverton-Holt multispeci
 es model (eq.
  
+\change_deleted -2100369821 1634547294
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:growth_rate"
@@ -985,6 +999,10 @@ noprefix "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1634547308
+1 in main text
+\change_unchanged
 ), also called at times Leslie-Gower.
  In 
 \begin_inset CommandInset citation
@@ -1241,7 +1259,11 @@ where coefficients
 \begin_inset Formula $a_{F}$
 \end_inset
 
- are the maximum interaction strength for competition and facilitation
+ are the maximum interaction strength
+\change_inserted -2100369821 1634547324
+s
+\change_unchanged
+ for competition and facilitation
 \change_inserted -666822487 1633967125
 ,
 \change_unchanged
@@ -1410,9 +1432,13 @@ the maximum abundance
 \end_inset
 
 
-\change_inserted -2100369821 1634116500
- and the absolute value of interactions (i.e., all interactions are considered
- competitive in this case) to make sure that we maximise 
+\change_inserted -2100369821 1634547334
+ and the absolute value of interactions 
+\begin_inset Formula $|\alpha_{ij}|$
+\end_inset
+
+ (i.e., all interactions are considered competitive in this case) to make
+ sure that we maximise 
 \change_deleted -666822487 1634131284
 the possible strength of competition
 \change_inserted -666822487 1634131289
@@ -1458,7 +1484,11 @@ fixed
 \begin_inset Quotes erd
 \end_inset
 
- parameters definitions 
+ parameter
+\change_deleted -2100369821 1634547369
+s
+\change_unchanged
+ definitions 
 \change_inserted -666822487 1633967292
 (i.e., parameter not estimated from field data) 
 \change_unchanged
@@ -1651,7 +1681,11 @@ literal "false"
 .
  We therefore chose to represent the sinking rates with a Beta-distribution
  (Fig.
- S
+ 
+\change_deleted -2100369821 1634547377
+S
+\change_unchanged
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sinking-distribution"
@@ -1885,8 +1919,12 @@ For both methods
 \end_inset
 
 
-\change_inserted -666822487 1634131816
+\change_deleted -2100369821 1634133244
 and does not vary greatly between species
+\change_inserted -2100369821 1634133252
+ for all species considered
+\change_inserted -666822487 1634131816
+
 \begin_inset Note Note
 status collapsed
 
@@ -2008,9 +2046,12 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Finally, it should be noted that cyst burial, sinking rate and resuspension
- are all highly contingent upon the local hydrodynamics and therefore are
- intermingled processes.
+Finally, it should be noted that 
+\change_deleted -2100369821 1634547403
+cyst 
+\change_unchanged
+burial, sinking rate and resuspension are all highly contingent upon the
+ local hydrodynamics and therefore are intermingled processes.
 \end_layout
 
 \begin_layout Section
@@ -2365,9 +2406,9 @@ status open
 Simulated phytoplankton time series for a year in model II (with saturating
  interactions).
  Each panel corresponds to a cluster of interacting taxa
-\change_inserted -2100369821 1632387459
+\change_inserted -2100369821 1634547423
 : centric diatoms (a), pennate diatoms (b) and dinoflagellates (c).
- Taxa only interact within their cluster (see Methods).
+ Taxa only interact within their cluster (see Methods in main text)
 \change_unchanged
 .
 \end_layout
@@ -2423,10 +2464,10 @@ seed
  strengths.
  The x-axis shows the factor by which each interaction coefficient was multiplie
 d
-\change_inserted -2100369821 1632746742
+\change_inserted -2100369821 1634547435
 , e.g.
  the value 0.1 indicates that the interaction strengths in the simulation
- is 10 times lower than the interactions strengths in the reference simulation.
+ are 10 times lower than the interactions strengths in the reference simulation.
 
 \change_unchanged
  
@@ -2576,11 +2617,11 @@ abovementioned
 \change_inserted -2100369821 1634117386
 Growth rates are then related to the probability of survival in the ocean
  without a seed bank when varying interaction strengths (scenario 1 in the
- main text) 
+ main text)
 \change_inserted -666822487 1633968286
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2640,8 +2681,13 @@ cyst
 \change_inserted -2100369821 1632387427
 seed
 \change_unchanged
- bank as a function of the realized per capita growth rates (PGCR) of each
- species in different conditions.
+ bank as a function of the realized per capita growth rates (
+\change_deleted -2100369821 1634547482
+PGCR
+\change_inserted -2100369821 1634547486
+PCGR
+\change_unchanged
+) of each species in different conditions.
  We consider mean temperature and low densities (a), i.e., all species density
  are 1 C/L, or average densities (b), i.e., all species are at their simulated
  average density values; or average densities and optimal temperature for
