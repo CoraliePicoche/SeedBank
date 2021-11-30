@@ -83,7 +83,6 @@
 \html_css_as_file 0
 \html_be_strict false
 \author -2100369821 "cpicoche"
-\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -196,29 +195,7 @@ with
 \begin_inset Formula $f_{i}(T)$
 \end_inset
 
- estimates
-\change_deleted -666822487 1633966704
- that affect the realized growth rate of phytoplanktonic organisms in a
- community
-\change_inserted -666822487 1633966708
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1633966745
-it's a bit ambiguous to use the intrinsic growth rate to say that these
- are the components that affect the realized growth rate
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ estimates.
 \end_layout
 
 \begin_layout Subsection*
@@ -327,11 +304,7 @@ literal "false"
 
 \end_inset
 
- 
-\change_inserted -666822487 1633966768
-(
-\change_unchanged
-which was used in 
+ (which was used in 
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "scranton_coexistence_2016"
@@ -339,11 +312,7 @@ literal "false"
 
 \end_inset
 
-, but might be outdated
-\change_inserted -666822487 1633966777
-)
-\change_unchanged
-.
+, but might be outdated).
 \end_layout
 
 \begin_layout Standard
@@ -398,11 +367,8 @@ literal "false"
  The black line indicates the final growth rate with their model.
  The blue line corresponds to the species-specific response to temperature
  for a thermal optimum of 15°C and the green line is the maximum achievable
- growth rate, a composite of the metabolic theory of ecology
-\change_inserted -2100369821 1634547180
- (MTE)
-\change_unchanged
- and the formula by 
+ growth rate, a composite of the metabolic theory of ecology (MTE) and the
+ formula by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "eppley_temperature_1972"
@@ -516,24 +482,12 @@ The annual dynamics of phytoplanktonic organisms is usually characterized
  by a blooming period and a lower concentration during the rest of the year.
  The bloom can be triggered by a combination of nutrient and light input,
  as well as a sufficient temperature.
- All 
-\change_deleted -666822487 1633966870
-parameters
-\change_inserted -666822487 1633966872
-these variables
-\change_unchanged
- being more or less correlated to the seasonal rythm, it is reasonable to
- restrain this study to the effect of one variable, temperature.
- Th
-\change_inserted -666822487 1633966881
-us, th
-\change_unchanged
-e niche computed here is not 
-\change_deleted -666822487 1633966889
-merely 
-\change_unchanged
-the fundamental thermal niche, but a composite of all environmental conditions
- covarying with the temperature and promoting population growth.
+ All these variables being more or less correlated to the seasonal rythm,
+ it is reasonable to restrain this study to the effect of one variable,
+ temperature.
+ Thus, the niche computed here is not the fundamental thermal niche, but
+ a composite of all environmental conditions covarying with the temperature
+ and promoting population growth.
  Such environmental conditions of course include solar irradiance which
  is strongly correlated to temperature in the field, but could also account
  for other factors, such as predation, that have a seasonal rythm which
@@ -572,49 +526,22 @@ We base our estimates of
  or several blooms during which the abundances oscillate around their median.
  Specialists tend to appear only once or twice in the year for shorter amounts
  of time.
- A genus is therefore defined as a generalist if
-\change_inserted -2100369821 1634547219
- the duration of
-\change_unchanged
- its cumulated bloom days over a year last more 
-\change_deleted -2100369821 1634547238
-than
-\change_inserted -2100369821 1634547239
-is above
-\change_unchanged
- the average duration of all blooms (137 days) for at least 15 years over
- the 20 years of the time series, and as a specialist if they fall below
- this threshold.
+ A genus is therefore defined as a generalist if the duration of its cumulated
+ bloom days over a year last more is above the average duration of all blooms
+ (137 days) for at least 15 years over the 20 years of the time series,
+ and as a specialist if they fall below this threshold.
 \end_layout
 
 \begin_layout Standard
 In the models, we assume that generalists have a niche width between 15
  and 30°C and specialists, between 5 and 10°C.
- 
-\change_deleted -666822487 1634130998
-W
-\change_inserted -666822487 1634131007
-In order to compute 
+ In order to compute 
 \begin_inset Formula $b_{i},$
 \end_inset
 
-w
-\change_unchanged
-e 
-\change_deleted -2100369821 1634115212
-assume
-\change_inserted -2100369821 1634115302
-make the 
-\change_deleted -666822487 1634131027
-second
-\change_inserted -666822487 1634131028
-additional
-\change_inserted -2100369821 1634115302
- assumption
-\change_unchanged
- that temperatures outside of this range lead to a growth rate at least
- 10 times inferior to the growth rate obtained at their thermal optimum
- (
+we make the additional assumption that temperatures outside of this range
+ lead to a growth rate at least 10 times inferior to the growth rate obtained
+ at their thermal optimum (
 \begin_inset Formula $\exp(-|7.5|^{3}/b_{i}=0.1$
 \end_inset
 
@@ -961,14 +888,10 @@ iance matrix
 \end_inset
 
 
-\change_inserted -666822487 1633966986
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1633967041
 Keep in mind we'll have to correct 1xS into Sx1 on HAL for Picoche & Barraquand
  2020.
  The dimensionality for 
@@ -976,34 +899,14 @@ Keep in mind we'll have to correct 1xS into Sx1 on HAL for Picoche & Barraquand
 C
 \series default
  was already correct.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  The interaction model we use in the present paper is a Beverton-Holt multispeci
 es model (eq.
- 
-\change_deleted -2100369821 1634547294
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:growth_rate"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-
-\change_inserted -2100369821 1634547308
-1 in main text
-\change_unchanged
-), also called at times Leslie-Gower.
+ 1 in main text), also called at times Leslie-Gower.
  In 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1074,13 +977,7 @@ We then sum on columns (on
 \begin_inset Formula $j$
 \end_inset
 
-)
-\change_inserted -666822487 1633967069
-:
-\change_deleted -666822487 1633967069
-.
-\change_unchanged
-
+):
 \end_layout
 
 \begin_layout Standard
@@ -1166,34 +1063,10 @@ literal "false"
 
 .
  
-\change_deleted -666822487 1634131121
-We acknowledge the possibility of overyielding, i.e.
- an increase in biomass due to the presence of other species, but the phenomenon
- seems quite rare for phytoplanktonic communities (see 
-\begin_inset CommandInset citation
-LatexCommand citealt
-key "schmidtke_mechanistic_2010"
-literal "false"
-
-\end_inset
-
- for underyielding and see 
-\begin_inset CommandInset citation
-LatexCommand citealt
-key "shurin_trait_2014"
-literal "false"
-
-\end_inset
-
- for an observed but not frequent, and small, overyielding).
-\change_inserted -666822487 1634131121
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1634131191
 We acknowledge the possibility of overyielding, i.e., an increase in biomass
  due to the presence of other species, but the phenomenon seems quite rare
  for phytoplanktonic communities (see 
@@ -1216,14 +1089,10 @@ literal "false"
  [F: not clear whether this restriction on the intrinsic growth rate systematica
 lly restrain overyielding which relates to observed abundances - though
  this may be the case.]
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1232,14 +1101,7 @@ Model II: saturating interactions
 \end_layout
 
 \begin_layout Standard
-We now move to a model with saturating interactions between taxa
-\change_inserted -666822487 1633967115
-:
-\change_deleted -666822487 1633967114
-.
-
-\change_unchanged
- 
+We now move to a model with saturating interactions between taxa: 
 \begin_inset Formula 
 \begin{equation}
 N_{t+1,i}=\frac{e^{r_{i}(T)}N_{t,i}}{1+\sum_{j/a\in\mathbb{C}}\frac{a_{C}N_{t,j}}{H_{ij}+N_{t,j}}+\sum_{j/a\in\mathbb{F}}\frac{a_{F}N_{t,j}}{H_{ij}+N_{t,j}}}\label{eq:saturation_h}
@@ -1259,14 +1121,7 @@ where coefficients
 \begin_inset Formula $a_{F}$
 \end_inset
 
- are the maximum interaction strength
-\change_inserted -2100369821 1634547324
-s
-\change_unchanged
- for competition and facilitation
-\change_inserted -666822487 1633967125
-,
-\change_unchanged
+ are the maximum interaction strengths for competition and facilitation,
  respectively, 
 \begin_inset Formula $H_{ij}$
 \end_inset
@@ -1300,12 +1155,8 @@ literal "false"
 
 \end_inset
 
-, i.e.
-\change_inserted -666822487 1633967133
-,
-\change_unchanged
- each taxon provides a unique type of benefit or disadvantage to the focus
- taxon.
+, i.e., each taxon provides a unique type of benefit or disadvantage to the
+ focus taxon.
 \end_layout
 
 \begin_layout Standard
@@ -1313,13 +1164,7 @@ There is no single solution for matching the
 \begin_inset Formula $\mathbf{B}$
 \end_inset
 
- matrix of the MAR model 
-\change_deleted -666822487 1633967143
-and
-\change_inserted -666822487 1633967143
-to
-\change_unchanged
- model II including 
+ matrix of the MAR model to model II including 
 \begin_inset Formula $H_{ij}$
 \end_inset
 
@@ -1378,28 +1223,7 @@ noprefix "false"
 
 \end_inset
 
-)
-\change_inserted -666822487 1633967235
-, so that
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1633967263
-F: I'm not sure why there is N_{j,max} and what that means exactly.
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted -666822487 1633967227
-.
-\change_unchanged
-
+), so that:
 \begin_inset Formula 
 \begin{eqnarray}
 a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}|\alpha_{ij}|N_{j,max}\right)\label{eq:a_C}\\
@@ -1412,8 +1236,6 @@ a_{C} & = & \frac{1}{S}\sum_{i}\left(\sum_{j}|\alpha_{ij}|N_{j,max}\right)\label
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1634116500
 where 
 \begin_inset Formula $N_{j,max}$
 \end_inset
@@ -1424,32 +1246,19 @@ where
 
 .
  We use 
-\change_deleted -666822487 1634131259
-the maximum abundance
-\change_inserted -666822487 1634131259
- 
 \begin_inset Formula $N_{j,max}$
 \end_inset
 
-
-\change_inserted -2100369821 1634547334
  and the absolute value of interactions 
 \begin_inset Formula $|\alpha_{ij}|$
 \end_inset
 
  (i.e., all interactions are considered competitive in this case) to make
  sure that we maximise 
-\change_deleted -666822487 1634131284
-the possible strength of competition
-\change_inserted -666822487 1634131289
-
 \begin_inset Formula $a_{C}$
 \end_inset
 
-
-\change_inserted -2100369821 1634116500
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -1484,24 +1293,10 @@ fixed
 \begin_inset Quotes erd
 \end_inset
 
- parameter
-\change_deleted -2100369821 1634547369
-s
-\change_unchanged
- definitions 
-\change_inserted -666822487 1633967292
-(i.e., parameter not estimated from field data) 
-\change_unchanged
-and 
-\change_inserted -666822487 1633967294
-their 
-\change_unchanged
-chosen values.
- Note that these values are then subjected to sensitivity analysis
-\change_inserted -666822487 1633967311
-, where by definition they are modified
-\change_unchanged
-.
+ parameter definitions (i.e., parameter not estimated from field data) and
+ their chosen values.
+ Note that these values are then subjected to sensitivity analysis, where
+ by definition they are modified.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1554,65 +1349,27 @@ literal "false"
 \end_inset
 
  indicated a loss of daily primary productivity around 45% due to grazing
- only, 
-\change_deleted -2100369821 1634116900
-0.13 day
+ only, while cell autolysis only can lead to a loss rate between 0.005 and
+ 0.24 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
- being potentially due to
-\change_inserted -2100369821 1634116901
-while
-\change_unchanged
- cell autolysis
-\change_inserted -2100369821 1634116938
- only can lead to a loss rate between 0.005 and 0.24 day
+ (in the absence of nutrients, or because of viral charge).
+ Cumulating both natural mortality (cell autolysis) and grazing, we know
+ that maximum rates should be above 0.24 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
-
-\change_unchanged
- (in the absence of nutrients, or because of viral charge)
-\change_inserted -2100369821 1634117064
 .
- Cumulating both natural mortality (cell autolysis) and grazing, we 
-\change_deleted -666822487 1634131487
-can assume that mortality is much higher than the initial 0.04
-\change_inserted -666822487 1634131497
-know that maximum rates should be above 0.24
-\change_inserted -2100369821 1634117064
- day
+ Trying to make a compromise emerge from the literature above, given that
+ we are not always at the maximal loss rates, we set the reference value
+ to 0.2 day
 \begin_inset Formula $^{-1}$
 \end_inset
 
-
-\change_deleted -666822487 1634131506
- value
-\change_unchanged
 .
- Trying to make a compromise emerge from the literature above, 
-\change_inserted -666822487 1634131521
-given that we are not always at the maximal loss rates, 
-\change_unchanged
-we set the reference value to 0.2 day
-\begin_inset Formula $^{-1}$
-\end_inset
-
-
-\change_inserted -666822487 1634131543
-.
- This strikes a
-\change_deleted -666822487 1634131531
- as a
-\change_inserted -2100369821 1634117104
- balance between 
-\change_inserted -666822487 1634131560
-acknowledging 
-\change_inserted -2100369821 1634117104
-all sources of mortality and the need to keep all species in the reference
- model
-\change_unchanged
-.
+ This strikes a balance between acknowledging all sources of mortality and
+ the need to keep all species in the reference model.
 \end_layout
 
 \begin_layout Paragraph*
@@ -1682,10 +1439,6 @@ literal "false"
  We therefore chose to represent the sinking rates with a Beta-distribution
  (Fig.
  
-\change_deleted -2100369821 1634547377
-S
-\change_unchanged
-
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sinking-distribution"
@@ -1731,13 +1484,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -666822487 1633967903
-Possible
-\change_inserted -666822487 1633967903
-Assumed
-\change_unchanged
- Beta-distribution of sinking rates
+Assumed Beta-distribution of sinking rates
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sinking-distribution"
@@ -1758,17 +1505,7 @@ name "fig:Sinking-distribution"
 \end_layout
 
 \begin_layout Paragraph*
-
-\change_deleted -2100369821 1632388046
-Cyst m
-\change_inserted -2100369821 1632388046
-M
-\change_unchanged
-ortality and burial
-\change_inserted -2100369821 1632388051
- in the seed bank
-\change_unchanged
-
+Mortality and burial in the seed bank
 \end_layout
 
 \begin_layout Standard
@@ -1783,28 +1520,13 @@ literal "false"
  and dinoflagellates could still occur when incubated.
  The authors also present sediment datation according to depth.
  Depth can therefore be related to maximum and mean age of phytoplankton
- 
-\change_deleted -2100369821 1632388066
-cysts
-\change_inserted -2100369821 1632388068
-resting cells
-\change_unchanged
- before death.
+ resting cells before death.
  Assuming 
 \begin_inset Formula $m$
 \end_inset
 
- is the probability of mortality and 
-\change_deleted -666822487 1633967914
-the 
-\change_unchanged
-survival follows a geometric law, the life expectancy of a 
-\change_deleted -2100369821 1632388074
-cyst
-\change_inserted -2100369821 1632388075
-resting cell
-\change_unchanged
- is 
+ is the probability of mortality and survival follows a geometric law, the
+ life expectancy of a resting cell is 
 \begin_inset Formula $\frac{\ensuremath{1}}{m}\Leftrightarrow m=\frac{1}{L_{mean}}$
 \end_inset
 
@@ -1812,13 +1534,7 @@ resting cell
 \begin_inset Formula $L_{mean}$
 \end_inset
 
- is the average duration of 
-\change_deleted -2100369821 1632388083
-cyst
-\change_inserted -2100369821 1632388085
-the dormant cell
-\change_unchanged
- viability.
+ is the average duration of the dormant cell viability.
  Another way to look at the process is that life expectancy 
 \begin_inset Formula $L$
 \end_inset
@@ -1827,27 +1543,8 @@ the dormant cell
 \begin_inset Formula $p(L>l)=e^{-ml}.$
 \end_inset
 
- We 
-\change_deleted -666822487 1633967953
-can 
-\change_unchanged
-arbitrarily ch
-\change_deleted -666822487 1633967958
-o
-\change_unchanged
-ose that for the olde
-\change_deleted -666822487 1633967971
-r
-\change_inserted -666822487 1633967971
-st
-\change_unchanged
- 
-\change_deleted -2100369821 1632388092
-cysts
-\change_inserted -2100369821 1632388094
-dormant cells
-\change_unchanged
- (i.e., the ones buried the deepest), 
+ We arbitrarily chose that for the oldest dormant cells (i.e., the ones buried
+ the deepest), 
 \family roman
 \series medium
 \shape up
@@ -1865,31 +1562,15 @@ dormant cells
 \end_inset
 
 .
- 
-\change_deleted -666822487 1633967984
-In
-\change_inserted -666822487 1633967986
-Following
-\change_unchanged
- this, 
+ Following this, 
 \begin_inset Formula $m=-\frac{\ln(0.05)}{l_{max}}$
 \end_inset
 
-
-\change_inserted -666822487 1633968042
  where 
 \begin_inset Formula $l_{\text{max}}$
 \end_inset
 
- derives from 
-\change_deleted -2100369821 1634117136
-XXXXX
-\change_inserted -2100369821 1634117199
-maximum depth values
-\change_inserted -666822487 1634131742
- (for each species)
-\change_inserted -2100369821 1634117199
- in 
+ derives from maximum depth values (for each species) in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -1897,16 +1578,8 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 .
- 
-\change_deleted -666822487 1634131793
-In both cases
-\change_inserted -666822487 1634131796
-For both methods
-\change_unchanged
-, 
+ For both methods, 
 \begin_inset Formula $m$
 \end_inset
 
@@ -1918,19 +1591,11 @@ For both methods
 \begin_inset Formula $10^{-4}\text{\text{ day}}^{-1}$
 \end_inset
 
-
-\change_deleted -2100369821 1634133244
-and does not vary greatly between species
-\change_inserted -2100369821 1634133252
  for all species considered
-\change_inserted -666822487 1634131816
-
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -666822487 1634131853
 
 \family roman
 \series medium
@@ -1945,26 +1610,17 @@ status collapsed
 \noun off
 \color none
 CHECK or simplify the text without mentioning the species-specific rates.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
 \end_layout
 
 \begin_layout Standard
 As we highlight in the main text, burial is a very important process that
- controls the availability of 
-\change_deleted -2100369821 1632388102
-cysts
-\change_inserted -2100369821 1632388103
-resting cells
-\change_unchanged
-, conditional to their survival in the sediment.
+ controls the availability of resting cells, conditional to their survival
+ in the sediment.
  However, burial rate is almost entirely dependent on the local sedimentation
  and no generally applicable literature could be found.
  
@@ -2046,12 +1702,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Finally, it should be noted that 
-\change_deleted -2100369821 1634547403
-cyst 
-\change_unchanged
-burial, sinking rate and resuspension are all highly contingent upon the
- local hydrodynamics and therefore are intermingled processes.
+Finally, it should be noted that burial, sinking rate and resuspension are
+ all highly contingent upon the local hydrodynamics and therefore are intermingl
+ed processes.
 \end_layout
 
 \begin_layout Section
@@ -2405,12 +2058,9 @@ status open
 \begin_layout Plain Layout
 Simulated phytoplankton time series for a year in model II (with saturating
  interactions).
- Each panel corresponds to a cluster of interacting taxa
-\change_inserted -2100369821 1634547423
-: centric diatoms (a), pennate diatoms (b) and dinoflagellates (c).
- Taxa only interact within their cluster (see Methods in main text)
-\change_unchanged
-.
+ Each panel corresponds to a cluster of interacting taxa: centric diatoms
+ (a), pennate diatoms (b) and dinoflagellates (c).
+ Taxa only interact within their cluster (see Methods in main text).
 \end_layout
 
 \end_inset
@@ -2452,37 +2102,15 @@ status open
 \begin_layout Plain Layout
 Measures of biodiversity in the ocean at the end of the simulation: a-b)
  richness and c-d) inverse of the Simpson index, with (dashed line) and
- without (solid line) a 
-\change_deleted -2100369821 1632387435
-cyst
-\change_inserted -2100369821 1632387435
-seed
-\change_unchanged
- bank, as a function of the strength of competition and facilitation with
- a classical Beverton-Holt (black lines) or a saturating interaction (grey
- lines) formulation, keeping the same values for the intraspecific interaction
- strengths.
+ without (solid line) a seed bank, as a function of the strength of competition
+ and facilitation with a classical Beverton-Holt (black lines) or a saturating
+ interaction (grey lines) formulation, keeping the same values for the intraspec
+ific interaction strengths.
  The x-axis shows the factor by which each interaction coefficient was multiplie
-d
-\change_inserted -2100369821 1634547435
-, e.g.
+d, e.g.
  the value 0.1 indicates that the interaction strengths in the simulation
  are 10 times lower than the interactions strengths in the reference simulation.
-
-\change_unchanged
- 
-\change_deleted -2100369821 1632746753
-(n
-\change_inserted -2100369821 1632746753
-N
-\change_unchanged
-ote the logarithmic scale
-\change_deleted -2100369821 1632746757
-)
-\change_inserted -2100369821 1632746780
-.
-
-\change_unchanged
+ Note the logarithmic scale.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2509,45 +2137,26 @@ When intraspecific interaction strengths do not change, reducing the values
  the inverse of the Simpson index.
  Increasing facilitation finally destabilizes the ratio of intra- to interspecif
 ic interaction strengths, which destabilizes the community and leads to
- the observed diversity decrease in the absence of a 
-\change_deleted -2100369821 1632387438
-cyst
-\change_inserted -2100369821 1632387438
-seed
-\change_unchanged
- bank.
-
-\change_inserted -666822487 1633968206
+ the observed diversity decrease in the absence of a seed bank.
  We do stress, however, that this scenario is more of a thought experiment
  changing niche differentiation rather than anything mimicking an environmental
  perturbation, where the factors that change the degree of competition between
  species will likely change competition within species too.
+
+\change_deleted -2100369821 1638284697
  
 \change_unchanged
 
 \end_layout
 
 \begin_layout Section
-Growth rates and survival without a 
-\change_deleted -2100369821 1632387392
-cyst
-\change_inserted -2100369821 1632387393
-seed
-\change_unchanged
- bank
-\change_inserted -2100369821 1632387405
-
+Growth rates and survival without a seed bank
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1632387405
-In order to investigate the relationships between 
-\change_inserted -666822487 1633968222
-population 
-\change_inserted -2100369821 1632387405
-dynamics and survival probabilities, we computed the realized per capita
- growth rates of each species in simplified conditions (Fig.
+In order to investigate the relationships between population dynamics and
+ survival probabilities, we computed the realized per capita growth rates
+ of each species in simplified conditions (Fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2562,95 +2171,31 @@ noprefix "false"
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1632387405
 when all species abundances are set to 1, so that there is nearly no competition
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1632387405
 when all species abundances are set to their average abundance in the environmen
 t, as a proxy of competition endured by each species throughout the year
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1632387405
 when temperature is set to the average temperature of the environment
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -2100369821 1632387405
 when temperature is either optimal for each species, or too high for all
  species
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -2100369821 1632387405
-It should be noted that the realized growth rate is not computed 
-\change_deleted -666822487 1633968250
-with
-\change_inserted -666822487 1633968250
-using
-\change_inserted -2100369821 1632387405
- long-term simulation, but for a set of 
-\change_inserted -666822487 1633968256
-fixed 
-\change_inserted -2100369821 1632387405
-environmental and competition values, in the 
-\change_deleted -666822487 1633968239
-described
-\change_inserted -666822487 1633968244
-abovementioned
-\change_inserted -2100369821 1632387405
- conditions.
- 
-\change_deleted -666822487 1634132271
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1634117386
-Growth rates are then related to the probability of survival in the ocean
+It should be noted that the realized growth rate is not computed using long-term
+ simulation, but for a set of fixed environmental and competition values,
+ in the abovementioned conditions.
+ Growth rates are then related to the probability of survival in the ocean
  without a seed bank when varying interaction strengths (scenario 1 in the
- main text)
-\change_inserted -666822487 1633968286
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -666822487 1633968372
-F: I don't get the second part, 
-\begin_inset Quotes eld
-\end_inset
-
-when varying interaction strengths as described in the main text
-\begin_inset Quotes erd
-\end_inset
-
-? Do you refer to scenarios? 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_inserted -2100369821 1632387405
-.
- 
-\change_inserted -666822487 1634132292
-Probability of survival is itself computed over different values of interaction
- strengths.
- 
-\change_unchanged
-
+ main text) Probability of survival is itself computed over different values
+ of interaction strengths.
 \end_layout
 
 \begin_layout Standard
@@ -2675,27 +2220,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Probability of survival in the absence of a 
-\change_deleted -2100369821 1632387426
-cyst
-\change_inserted -2100369821 1632387427
-seed
-\change_unchanged
- bank as a function of the realized per capita growth rates (
-\change_deleted -2100369821 1634547482
-PGCR
-\change_inserted -2100369821 1634547486
-PCGR
-\change_unchanged
-) of each species in different conditions.
+Probability of survival in the absence of a seed bank as a function of the
+ realized per capita growth rates (PCGR) of each species in different conditions.
  We consider mean temperature and low densities (a), i.e., all species density
  are 1 C/L, or average densities (b), i.e., all species are at their simulated
  average density values; or average densities and optimal temperature for
  each species (c), or suboptimal temperatures (d) - here, 30°C.
  Red points correspond to species which have a high growth rate at low density
  but still goes extinct.
-
-\change_inserted -2100369821 1632388164
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2703,8 +2235,6 @@ name "fig:Probability-of-survival"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -2719,16 +2249,244 @@ name "fig:Probability-of-survival"
 \end_layout
 
 \begin_layout Standard
-Extinction in the absence of the 
-\change_deleted -2100369821 1632387429
-cyst
-\change_inserted -2100369821 1632387430
-seed
-\change_unchanged
- bank can be explained by both a low growth rate at low density and average
- temperature (affecting specialists with a narrow niche) and a low growth
- rate at average density despite being at optimal temperature (i.e., species
- strongly affected by interactions).
+Extinction in the absence of the seed bank can be explained by both a low
+ growth rate at low density and average temperature (affecting specialists
+ with a narrow niche) and a low growth rate at average density despite being
+ at optimal temperature (i.e., species strongly affected by interactions).
+\change_inserted -2100369821 1638285047
+
+\end_layout
+
+\begin_layout Section
+
+\change_inserted -2100369821 1638288443
+Presence of a storage effect in the model
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290724
+The first step of our model (eq.
+ 1 and 3 in main text) describes the increase in abundance of coastal and
+ oceanic populations due to both environmental fluctuations and interactions
+ with other organisms.
+ The formula may be interpreted by certain readers as already including
+ a storage effect due to the buffering effect of the loss rate, as shown
+ by Miller & Klausmeier (2017) for a continuous-time model.
+ However, this is due to a confusion between continuous- and discrete-time
+ models.
+ We show below that the intra-compartment growth in discrete-time model
+ does not lead to a storage effect.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290201
+The storage effect requires three elements: (a) a positive covariance between
+ good environmental conditions and competition, (b) species-specific environment
+al responses and (c) subadditivity of environmental and competitive effects
+ on the growth rate (Chesson 2000).
+ Condition (a) is met as covariance may be created by temporally correlated
+ fluctuations in the environmental signal (Schreiber et al.
+ 2021).
+ Condition (b) is also met, as shown in Figure S3.
+ Condition (c), however, is not met.
+ Subadditivity of environmental and competitive effects can be mathematically
+ expressed as 
+\begin_inset Formula $\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right)<0$
+\end_inset
+
+ where 
+\begin_inset Formula $g$
+\end_inset
+
+ is the growth rate, and 
+\begin_inset Formula $E$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ are the effects of the environment and competition on the growth rate respectiv
+ely.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290225
+In model I, the growth rate of a population is defined by the following
+ equation:
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290229
+\begin_inset Formula 
+\[
+N_{t+1,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\alpha_{ij}N_{t,j}}-lN_{t,i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290257
+Here 
+\begin_inset Formula $E_{i}(t+1)=\exp(r_{i}(T))$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{i}(t+1)=1+\sum_{j}\alpha_{ij}N_{t,j}$
+\end_inset
+
+.
+ Therefore,
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290265
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+g_{i} & = & \log\left(\frac{N_{i,t+1}}{N_{i}}\right)\\
+ & = & \log\left(\frac{\exp(r_{i}(T))}{1+\sum_{j}\alpha_{ij}N_{t,j}}-l\right)\\
+ & = & \log\left(\frac{E}{C}-l\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290323
+If we derive with regards to competition effect 
+\begin_inset Formula $C$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290326
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\frac{\partial g}{\partial C} & = & -\frac{1}{C^{2}}\frac{E}{\frac{E}{C}-l}\\
+ & = & -\frac{E}{CE-lC}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290363
+Finally, we derive with regards to 
+\begin_inset Formula $E$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290380
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right) & = & -\frac{CE-lC-EC}{(CE-lC)^{2}}\\
+ & = & \frac{lC}{(CE-lC)^{2}}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638290455
+As 
+\begin_inset Formula $C=1+\sum_{j}\alpha_{ij}N_{t,j}$
+\end_inset
+
+ with a minimum value of 1 in the first model, or 
+\begin_inset Formula $C=1+\sum_{j\in\mathbb{C}}\frac{a_{C}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}+\sum_{j\in\mathbb{F}}\frac{a_{F}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}$
+\end_inset
+
+ in the second model, which is never negative, 
+\begin_inset Formula $\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right)>0$
+\end_inset
+
+.
+ There is no buffered growth in the growth function itself.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638291518
+The storage effect can also be due to the presence of the seed bank, whose
+ exchanges with other compartments are described in the second step of the
+ model (eq.
+ 4 in main text).
+ The presence of a seed bank is indeed often associated with a storage effect
+ maintaining coexistence 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "angert_functional_2009"
+literal "false"
+
+\end_inset
+
+, even though models show that this association is not systematic 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "aikio_seed_2002"
+literal "false"
+
+\end_inset
+
+.
+ This is less clear in our model as neither environmental nor competition
+ effects have a direct impact on the exchanges with the seed bank: the sinking
+ and germination+resuspension rates are fixed and independent from both
+ past and current environmental conditions (except for the temperature threshold
+ for germination).
+ Therefore, the decrease/increase in population abundances that they respectivel
+y create, and the corresponding decrease/increase in perceived competition
+ or facilitation, cannot be directly related to environmental conditions.
+ However, there is indeed a buffering effect of the seed bank against harsh
+ environmental conditions.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638291687
+Removing the seed bank in a constant environment helps us understand the
+ interaction between environmental fluctuations and the seed bank.
+ In the absence of environmental fluctuations (i.e., the temperature is fixed
+ to 15.4°C throughout the simulation), final richness is the same with and
+ without seed bank.
+ In model I, there are 9 species at the end of the simulations, while in
+ model II, there are 11 species surviving.
+ This shows that the seed bank effect only exists in the presence of environment
+al fluctuations and the unstability they generate in population dynamics,
+ which tend to support the idea of a storage effect due to the seed bank.
 \end_layout
 
 \begin_layout Standard
