@@ -371,6 +371,10 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted -2100369821 1638367441
+, later understood as depending on environmental conditions (Chesson 2003)
+\change_unchanged
 .
 \begin_inset Note Note
 status collapsed
@@ -3523,10 +3527,16 @@ Using a meta-community model which accounts for exchanges between the ocean
  This was true for the reference parameter values, as well as when species
  interaction strengths and environmental fluctuation levels were altered,
  in which cases the seed bank's buffering influence disappeared.
- Additional simulations showed that the rescue from extinction provided
- by the seed bank is conditional to the existence of some environmental
- fluctuations.
- Moreover, when faced with a biotic or abiotic 
+ 
+\change_deleted -2100369821 1638368671
+Additional simulations showed that the rescue from extinction provided by
+ the seed bank is conditional to the existence of some environmental fluctuation
+s.
+ 
+\change_unchanged
+Moreover, when faced with a biotic or abiotic 
+\change_deleted -2100369821 1638369033
+
 \begin_inset Quotes eld
 \end_inset
 
@@ -3534,7 +3544,9 @@ press
 \begin_inset Quotes erd
 \end_inset
 
- perturbation, communities where species could divert part of their population
+ 
+\change_unchanged
+perturbation, communities where species could divert part of their population
  to a dormant stage were less prone to species loss and could maintain their
  biomass through the years.
  These results were consistent for the two interaction models that we considered
@@ -3581,11 +3593,72 @@ literal "false"
 \end_inset
 
 .
+\change_inserted -2100369821 1638368722
+
 \end_layout
 
 \begin_layout Standard
-The effect of the seed bank is, of course, contingent upon a long dormancy
- of the resting stage.
+
+\change_inserted -2100369821 1638373955
+Most theoretical studies include temporal and/or spatial environmental fluctuati
+ons, usually with a positive effect on diversity when coupled with dormancy
+ (Levine 2004, Jones 2010).
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1638370944
+This is the case in all aforamentioned theoretical studies, which I do not
+ know how to mention naturally here
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ In our model, running additional simulations in a constant environment
+ (i.e.
+ with a fixed temperature) led to identical richness with and without a
+ seed bank: there were 9 species at the end of model-I simulations and 11
+ species for model-II simulations.
+ High species richness in a constant environment might be surprising, as
+ fluctuations are often considered to promote diversity (but see Fox 2013).
+ These results are similar with those of Wisnoski (2019) and may illustrate
+ that interactions (competition and facilitation) can by themselves promote
+ diversity.
+ Introducing environmental perturbations can periodically decrease certain
+ population abundances, reducing interaction effects between organisms,
+ thus increasing the relative environmental effects on populations.
+ As most of our species are specialists, they are more strongly affected
+ by unfavorable environmental conditions: when these unfavorable conditions,
+ the buffering effect of the seed bank is not enough as the species never
+ 
+\begin_inset Quotes eld
+\end_inset
+
+have time
+\begin_inset Quotes erd
+\end_inset
+
+ to replenish their populations.
+ This is what happened in a constant environment in a model with no progressive
+ saturation in interaction strengths (model I): the two species furthest
+ from their thermal optima went extinct even in the presence of a seed bank.
+ Rescue from extinction provided by the seed bank is conditional to the
+ existence of some environmental fluctuations.
+\change_deleted -2100369821 1638371196
+
+\end_layout
+
+\begin_layout Standard
+The effect of the seed bank is
+\change_deleted -2100369821 1638368769
+, of course,
+\change_inserted -2100369821 1638368769
+ also
+\change_unchanged
+ contingent upon a long dormancy of the resting stage.
  Dormancy has long been observed in field and experimental data, including
  for phytoplanktonic organisms 
 \begin_inset CommandInset citation
@@ -3606,7 +3679,24 @@ literal "false"
 \end_inset
 
 .
- Processes behind diversity maintenance by the seed stage include the storage
+ 
+\change_inserted -2100369821 1638374778
+The storage effect is often cited as an important process behind diversity
+ maintenance due to dormancy 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bonis_seed_1995,facelli_differences_2005,angert_functional_2009"
+literal "false"
+
+\end_inset
+
+, but its conditions are not always fulfilled: it requires an impact of
+ environmental variations on recruitment rates, a mechanism which is not
+ necessarily ensured (and is not modeled here, see further explanations
+ in Section SX of the SI).
+ 
+\change_deleted -2100369821 1638374679
+Processes behind diversity maintenance by the seed stage include the storage
  effect 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -3626,9 +3716,15 @@ this time the wording is OK
 \end_inset
 
  but are not limited to it.
- This is because a long dormancy alone can allow future recolonization of
- a community where counts of pelagic cells alone would suggest that some
- species have gone extinct.
+ 
+\change_inserted -2100369821 1638374827
+ Even in the absence of a storage effect, however, 
+\change_deleted -2100369821 1638374819
+This is because 
+\change_unchanged
+a long dormancy alone can allow future recolonization of a community where
+ counts of pelagic cells alone would suggest that some species have gone
+ extinct.
  This colonization-in-time may of course combine with present recolonization
  from other spatial areas 
 \begin_inset CommandInset citation

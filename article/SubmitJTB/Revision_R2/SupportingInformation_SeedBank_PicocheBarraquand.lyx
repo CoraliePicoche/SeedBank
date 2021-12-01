@@ -1370,6 +1370,15 @@ literal "false"
 .
  This strikes a balance between acknowledging all sources of mortality and
  the need to keep all species in the reference model.
+
+\change_inserted -2100369821 1638378829
+ Moreover, in scenarios where we remove the seed bank (setting seed bank
+ mortality to 100%), sinking and other loss processes combine to increase
+ 'apparent' mortality, which may then be closer to observed mortality in
+ the field.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -2350,7 +2359,8 @@ Here
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638290265
+\change_inserted -2100369821 1638355510
+have a direct impact on
 \begin_inset Formula 
 \[
 \begin{array}{ccc}
@@ -2367,7 +2377,16 @@ g_{i} & = & \log\left(\frac{N_{i,t+1}}{N_{i}}\right)\\
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638290323
+\change_inserted -2100369821 1638355566
+While this formula is at first sight very similar to the one in Chesson
+ (2003), used to study the storage effect, we want to draw the reader's
+ attention to the fact that, contrary to Chesson (2003), interaction strengths
+ do not depend on environmental effects, nor are linearly correlated.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638355566
 If we derive with regards to competition effect 
 \begin_inset Formula $C$
 \end_inset
@@ -2439,8 +2458,8 @@ As
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638291518
-The storage effect can also be due to the presence of the seed bank, whose
+\change_inserted -2100369821 1638355437
+The storage effect could also be due to the presence of the seed bank, whose
  exchanges with other compartments are described in the second step of the
  model (eq.
  4 in main text).
@@ -2462,21 +2481,27 @@ literal "false"
 \end_inset
 
 .
- This is less clear in our model as neither environmental nor competition
- effects have a direct impact on the exchanges with the seed bank: the sinking
- and germination+resuspension rates are fixed and independent from both
- past and current environmental conditions (except for the temperature threshold
- for germination).
- Therefore, the decrease/increase in population abundances that they respectivel
-y create, and the corresponding decrease/increase in perceived competition
- or facilitation, cannot be directly related to environmental conditions.
- However, there is indeed a buffering effect of the seed bank against harsh
- environmental conditions.
+ However, for the storage effect to happen due to the seed bank, environmental
+ variations have to affect the recruitment rate, i.e.
+ in our case, the germination and resuspension rates (Chesson 2003).
+ In our model, neither environmental nor competition effects affect the
+ exchanges with the seed bank: the sinking and germination/resuspension
+ rates are fixed and independent from both past and current environmental
+ conditions (except for the temperature threshold for germination).
+ We can therefore say that storage effect is most certainly absent from
+ our model.
+ 
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638291687
+\change_inserted -2100369821 1638355589
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1638355589
 Removing the seed bank in a constant environment helps us understand the
  interaction between environmental fluctuations and the seed bank.
  In the absence of environmental fluctuations (i.e., the temperature is fixed
@@ -2487,6 +2512,13 @@ Removing the seed bank in a constant environment helps us understand the
  This shows that the seed bank effect only exists in the presence of environment
 al fluctuations and the unstability they generate in population dynamics,
  which tend to support the idea of a storage effect due to the seed bank.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
