@@ -2279,15 +2279,31 @@ Presence of a storage effect in the model
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638440207
+\change_inserted -2100369821 1638462602
 The first step of our model (eq.
  1 and 3 in main text) describes the increase in abundance of coastal and
  oceanic populations due to both environmental fluctuations and interactions
  with other organisms.
  The formula may be interpreted by certain readers as already including
  a storage effect either due to the buffering effect of the loss rate, as
- shown by Miller & Klausmeier (2017) for a continuous-time model, or due
- to its apparent similarity to the model of Chesson (2003) in discrete-time.
+ shown by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "miller_evolutionary_2017"
+literal "false"
+
+\end_inset
+
+ for a continuous-time model, or due to its apparent similarity to the model
+ of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chesson_quantifying_2003"
+literal "false"
+
+\end_inset
+
+ in discrete-time.
  We show below why the results of the cited analyses do not apply here and
  that the intra-compartment growth in discrete-time model does not lead
  to a storage effect.
@@ -2295,14 +2311,29 @@ The first step of our model (eq.
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638440128
+\change_inserted -2100369821 1638462717
 The storage effect requires three elements: (a) a positive covariance between
  good environmental conditions and competition, (b) species-specific environment
 al responses and (c) subadditivity of environmental and competitive effects
- on the growth rate (Chesson 2000).
+ on the growth rate 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chesson_quantifying_2003"
+literal "false"
+
+\end_inset
+
+.
  Condition (a) is met as covariance may be created by temporally correlated
- fluctuations in the environmental signal (Schreiber et al.
- 2021).
+ fluctuations in the environmental signal 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "schreiber_positively_2021"
+literal "false"
+
+\end_inset
+
+.
  Condition (b) is also met, as shown in Figure S3.
  Condition (c), however, is not met.
  Subadditivity of environmental and competitive effects can be mathematically
@@ -2387,11 +2418,19 @@ Confusions with Miller & Klausmeier (2017) can be avoided by reminding here
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638440292
+\change_inserted -2100369821 1638462750
 While the discrete-time formula is at first sight very similar to the one
- in Chesson (2003), we want to draw the reader's attention to the fact that,
- contrary to Chesson (2003), interaction strengths do not depend on environmenta
-l effects, nor are linearly correlated.
+ in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chesson_quantifying_2003"
+literal "false"
+
+\end_inset
+
+we want to draw the reader's attention to the fact that, contrary to their
+ model, interaction strengths do not depend on environmental effects, nor
+ are linearly correlated.
 \end_layout
 
 \begin_layout Standard
@@ -2468,7 +2507,7 @@ As
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638355437
+\change_inserted -2100369821 1638462763
 The storage effect could also be due to the presence of the seed bank, whose
  exchanges with other compartments are described in the second step of the
  model (eq.
@@ -2493,7 +2532,15 @@ literal "false"
 .
  However, for the storage effect to happen due to the seed bank, environmental
  variations have to affect the recruitment rate, i.e.
- in our case, the germination and resuspension rates (Chesson 2003).
+ in our case, the germination and resuspension rates 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chesson_quantifying_2003"
+literal "false"
+
+\end_inset
+
+.
  In our model, neither environmental nor competition effects affect the
  exchanges with the seed bank: the sinking and germination/resuspension
  rates are fixed and independent from both past and current environmental

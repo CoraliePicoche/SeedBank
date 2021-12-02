@@ -372,9 +372,17 @@ literal "false"
 \end_inset
 
 
-\change_inserted -2100369821 1638440391
+\change_inserted -2100369821 1638461158
 , later understood as depending on temporally variable environmental conditions
- (Chesson 2003)
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chesson_quantifying_2003"
+literal "false"
+
+\end_inset
+
+
 \change_unchanged
 .
 \begin_inset Note Note
@@ -3600,10 +3608,18 @@ literal "false"
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638440783
+\change_inserted -2100369821 1638461281
 Most theoretical studies include temporal and/or spatial environmental fluctuati
 ons, usually with a positive effect on diversity when coupled with dormancy
- (Levine 2004, Jones 2010).
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "levine_effects_2004,jones_dormancy_2010"
+literal "false"
+
+\end_inset
+
+.
  In our model however, running additional simulations in a constant environment
  (i.e.
  with a fixed temperature) led to identical richness with and without a
@@ -3611,10 +3627,25 @@ ons, usually with a positive effect on diversity when coupled with dormancy
  species for model-II simulations.
  Lower diversity in a variable environment with a seed bank compared to
  a constant environment might be surprising, as fluctuations are often considere
-d to promote diversity but Fox (2013) has already shown that this hypothesis
- does not always hold.
- Our results align with those of Wisnoski (2019) and may illustrate that
- interactions (competition and facilitation) can by themselves promote diversity.
+d to promote diversity but 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "fox_intermediate_2013"
+literal "false"
+
+\end_inset
+
+ has already shown that this hypothesis does not always hold.
+ Our results align with those of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wisnoski_dormancy_2019"
+literal "false"
+
+\end_inset
+
+ and may illustrate that interactions (competition and facilitation) can
+ by themselves promote diversity.
  Introducing environmental perturbations can periodically decrease certain
  population abundances, reducing interaction effects between organisms,
  thus increasing the relative environmental effects on populations.
