@@ -1705,6 +1705,20 @@ literal "false"
 Finally, it should be noted that burial, sinking rate and resuspension are
  all highly contingent upon the local hydrodynamics and therefore are intermingl
 ed processes.
+
+\change_inserted -2100369821 1638439964
+ Moreover, in scenarios where we remove the seed bank (setting seed bank
+ mortality to 100%), sinking still happens due to the negative buoyancy
+ of phytoplanktonic particles, even when germination and resuspension do
+ not.
+ Indeed, our model only consider the effect of dormancy, removed when the
+ dormant stage disappears, not the effect of cyst/spore formation which
+ can still sink.
+ Sinking therefore combines with other loss processes to increase 'apparent'
+ mortality but this does not change our conclusion on the effect of dormancy.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -2265,23 +2279,23 @@ Presence of a storage effect in the model
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638290724
+\change_inserted -2100369821 1638440207
 The first step of our model (eq.
  1 and 3 in main text) describes the increase in abundance of coastal and
  oceanic populations due to both environmental fluctuations and interactions
  with other organisms.
  The formula may be interpreted by certain readers as already including
- a storage effect due to the buffering effect of the loss rate, as shown
- by Miller & Klausmeier (2017) for a continuous-time model.
- However, this is due to a confusion between continuous- and discrete-time
- models.
- We show below that the intra-compartment growth in discrete-time model
- does not lead to a storage effect.
+ a storage effect either due to the buffering effect of the loss rate, as
+ shown by Miller & Klausmeier (2017) for a continuous-time model, or due
+ to its apparent similarity to the model of Chesson (2003) in discrete-time.
+ We show below why the results of the cited analyses do not apply here and
+ that the intra-compartment growth in discrete-time model does not lead
+ to a storage effect.
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638290201
+\change_inserted -2100369821 1638440128
 The storage effect requires three elements: (a) a positive covariance between
  good environmental conditions and competition, (b) species-specific environment
 al responses and (c) subadditivity of environmental and competitive effects
@@ -2335,7 +2349,7 @@ N_{t+1,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\alpha_{ij}N_{t,j}}-lN_{t,i}
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638290257
+\change_inserted -2100369821 1638355510
 Here 
 \begin_inset Formula $E_{i}(t+1)=\exp(r_{i}(T))$
 \end_inset
@@ -2346,11 +2360,6 @@ Here
 
 .
  Therefore,
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1638290265
 \begin_inset Formula 
 \[
 \begin{array}{ccc}
@@ -2367,7 +2376,27 @@ g_{i} & = & \log\left(\frac{N_{i,t+1}}{N_{i}}\right)\\
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638290323
+\change_inserted -2100369821 1638440283
+Confusions with Miller & Klausmeier (2017) can be avoided by reminding here
+ that the growth rate in continuous time is 
+\begin_inset Formula $\frac{1}{N_{i}}\frac{dN_{i}}{dt}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638440292
+While the discrete-time formula is at first sight very similar to the one
+ in Chesson (2003), we want to draw the reader's attention to the fact that,
+ contrary to Chesson (2003), interaction strengths do not depend on environmenta
+l effects, nor are linearly correlated.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -2100369821 1638355566
 If we derive with regards to competition effect 
 \begin_inset Formula $C$
 \end_inset
@@ -2419,7 +2448,7 @@ Finally, we derive with regards to
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638290455
+\change_inserted -2100369821 1638440324
 As 
 \begin_inset Formula $C=1+\sum_{j}\alpha_{ij}N_{t,j}$
 \end_inset
@@ -2433,14 +2462,14 @@ As
 \end_inset
 
 .
- There is no buffered growth in the growth function itself.
- 
+ There is no buffered growth in the growth function itself, therefore no
+ storage effect in the coastal or oceanic compartments themselves.
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638291518
-The storage effect can also be due to the presence of the seed bank, whose
+\change_inserted -2100369821 1638355437
+The storage effect could also be due to the presence of the seed bank, whose
  exchanges with other compartments are described in the second step of the
  model (eq.
  4 in main text).
@@ -2462,21 +2491,27 @@ literal "false"
 \end_inset
 
 .
- This is less clear in our model as neither environmental nor competition
- effects have a direct impact on the exchanges with the seed bank: the sinking
- and germination+resuspension rates are fixed and independent from both
- past and current environmental conditions (except for the temperature threshold
- for germination).
- Therefore, the decrease/increase in population abundances that they respectivel
-y create, and the corresponding decrease/increase in perceived competition
- or facilitation, cannot be directly related to environmental conditions.
- However, there is indeed a buffering effect of the seed bank against harsh
- environmental conditions.
+ However, for the storage effect to happen due to the seed bank, environmental
+ variations have to affect the recruitment rate, i.e.
+ in our case, the germination and resuspension rates (Chesson 2003).
+ In our model, neither environmental nor competition effects affect the
+ exchanges with the seed bank: the sinking and germination/resuspension
+ rates are fixed and independent from both past and current environmental
+ conditions (except for the temperature threshold for germination).
+ We can therefore say that storage effect is most certainly absent from
+ our model.
+ 
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -2100369821 1638291687
+\change_inserted -2100369821 1638355589
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -2100369821 1638355589
 Removing the seed bank in a constant environment helps us understand the
  interaction between environmental fluctuations and the seed bank.
  In the absence of environmental fluctuations (i.e., the temperature is fixed
@@ -2487,6 +2522,13 @@ Removing the seed bank in a constant environment helps us understand the
  This shows that the seed bank effect only exists in the presence of environment
 al fluctuations and the unstability they generate in population dynamics,
  which tend to support the idea of a storage effect due to the seed bank.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
