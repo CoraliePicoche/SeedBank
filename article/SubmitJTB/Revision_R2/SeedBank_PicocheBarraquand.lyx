@@ -4114,7 +4114,7 @@ We thank Nathan Wisnoski and Frank Jabot for useful feedback.
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "biblio_seed"
-options "../ecol_let"
+options "ecol_let"
 
 \end_inset
 
