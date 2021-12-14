@@ -3615,114 +3615,61 @@ literal "false"
 The positive effect of dormancy on species diversity in our model is contingent
  upon a fluctuating environment.
  
-\change_inserted -2100369821 1638368722
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -2100369821 1638461281
-Most theoretical studies include temporal and/or spatial environmental fluctuati
-ons, usually with a positive effect on diversity when coupled with dormancy
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "levine_effects_2004,jones_dormancy_2010"
-literal "false"
-
-\end_inset
-
-.
-\change_inserted -666822487 1639476925
-
+\change_inserted -2100369821 1639501691
+Indeed, in additional simulations where the temperature was kept constant
+ (equal to the average temperature in the fluctuating environment), the
+ presence of a seed bank did not change the final richness of the communities.
+ In model I, there were 9 extant species at the end of the simulations,
+ whether there was a seed bank or not.
+ Diversity was therefore higher in a fluctuating (11 species) than in a
+ constant (9 species) environment in the presence of the seed bank.
+ The thermal optima of the two species, both specialists, which went extinct
+ were the two furthest from the constant temperature.
+ In the absence of fluctuations in the environment, these species never
+ had the opportunity to 're-invade' the community, and the buffering effect
+ of the seed bank was not sufficient to prevent them from disappearing.
+ Diversity remained the same in the absence of a seed bank in a constant
+ environment (9), higher than in a fluctuating enviroment (4 species).
+ A possible explanation for such result lies in the relative strengths of
+ density-dependent and density-independent mechanisms.
+ Competition and facilitation could help maintain diversity, but these density-d
+ependent effects were strongly altered when environmental perturbations
+ decreased and/or increased population abundances, leading to a stronger
+ effect of density-independent effects, especially detrimental for specialists
+ which were outside of their thermal range and could not be saved by the
+ seed bank
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -666822487 1639476970
-So far I do not understand how their results are different than ours, if
- they have always kept the seed bank/the dormant stage they found exactly
- the same as us.
- 
+\change_inserted -2100369821 1639501607
+I am using Reviewer 2's comment here.
+ This is plausible, but VERY speculative.
 \change_unchanged
 
 \end_layout
 
 \end_inset
 
-
-\change_inserted -2100369821 1638461281
- In our model
-\change_inserted -666822487 1639476793
-,
-\change_inserted -2100369821 1638461281
- however, running additional simulations in a constant environment (i.e.
- with a fixed temperature) led to identical richness with and without a
- seed bank: there were 9 species at the end of model-I simulations and 11
- species for model-II simulations.
- Lower diversity in a variable environment with
-\change_inserted -666822487 1639477077
-out
-\change_inserted -2100369821 1638461281
- a seed bank 
-\change_inserted -666822487 1639477075
-(number) 
-\change_inserted -2100369821 1638461281
-compared to a constant environment 
-\change_inserted -666822487 1639477084
-(number) 
-\change_inserted -2100369821 1638461281
-might be surprising, as fluctuations are often considered to promote diversity
-\change_inserted -666822487 1639477092
 .
+ The importance of interactions tends to be confirmed by our results with
+ model II (with a progressive saturation in interaction strengths): in a
+ constant environment, the 11 species remained in the community with and
+ without a seed bank.
+\change_unchanged
 
-\change_inserted -2100369821 1638461281
- 
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -2100369821 1639499475
+,out(number) (number) .
 \change_deleted -666822487 1639477094
 but
-\change_inserted -666822487 1639477096
+\change_deleted -2100369821 1639499475
 However,
-\change_inserted -2100369821 1638461281
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "fox_intermediate_2013"
-literal "false"
-
-\end_inset
-
- has already shown that this hypothesis does not always hold.
- Our results align with those of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "wisnoski_dormancy_2019"
-literal "false"
-
-\end_inset
-
- and may illustrate that interactions (competition and facilitation) can
- by themselves promote diversity.
- Introducing environmental perturbations can periodically decrease certain
- population abundances, reducing interaction effects between organisms,
- thus increasing the relative environmental effects on populations.
- As most of our species are specialists, they are more strongly affected
- by unfavorable environmental conditions: in this case, the buffering effect
- of the seed bank is not sufficient as the species never 
-\begin_inset Quotes eld
-\end_inset
-
-have time
-\begin_inset Quotes erd
-\end_inset
-
- to replenish their populations.
- This is what happened in a constant environment in a model with no progressive
- saturation in interaction strengths (model I): the two species furthest
- from their thermal optima went extinct even in the presence of a seed bank.
- Rescue from extinction provided by the seed bank is conditional to the
- existence of some environmental fluctuations.
-\change_deleted -2100369821 1638371196
+\change_unchanged
 
 \end_layout
 
