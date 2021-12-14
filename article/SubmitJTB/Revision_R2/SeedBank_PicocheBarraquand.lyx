@@ -100,6 +100,7 @@
 \html_be_strict false
 \author -2100369821 "cpicoche"
 \author -666822487 "frederic"
+\author 617562988 "fbarraquand"
 \end_header
 
 \begin_body
@@ -3619,18 +3620,72 @@ The positive effect of dormancy on species diversity in our model is contingent
 Indeed, in additional simulations where the temperature was kept constant
  (equal to the average temperature in the fluctuating environment), the
  presence of a seed bank did not change the final richness of the communities.
- In model I, there were 9 extant species at the end of the simulations,
- whether there was a seed bank or not.
+ In model I, there were 9 extant species at the end of the 
+\change_inserted 617562988 1639502603
+constant-environment 
+\change_inserted -2100369821 1639501691
+simulations, whether there was a seed bank or not.
  Diversity was therefore higher in a fluctuating (11 species) than in a
  constant (9 species) environment in the presence of the seed bank.
- The thermal optima of the two species, both specialists, which went extinct
- were the two furthest from the constant temperature.
+ T
+\change_inserted 617562988 1639502935
+h
+\change_deleted 617562988 1639502643
+he thermal optima of t
+\change_inserted -2100369821 1639501691
+he two species
+\change_deleted 617562988 1639502647
+, both specialists, which
+\change_inserted 617562988 1639502650
+ that
+\change_inserted -2100369821 1639501691
+ went extinct 
+\change_inserted 617562988 1639502671
+in the constant environment 
+\change_inserted -2100369821 1639501691
+were 
+\change_inserted 617562988 1639502678
+both specialists, and 
+\change_inserted -2100369821 1639501691
+the
+\change_inserted 617562988 1639502688
+ir thermal optimas were the
+\change_inserted -2100369821 1639501691
+ two furthest from the constant temperature.
  In the absence of fluctuations in the environment, these species never
- had the opportunity to 're-invade' the community, and the buffering effect
- of the seed bank was not sufficient to prevent them from disappearing.
- Diversity remained the same in the absence of a seed bank in a constant
- environment (9), higher than in a fluctuating enviroment (4 species).
- A possible explanation for such result lies in the relative strengths of
+ had the opportunity to 
+\change_deleted 617562988 1639502700
+'
+\change_inserted -2100369821 1639501691
+re-invade
+\change_deleted 617562988 1639502702
+'
+\change_inserted -2100369821 1639501691
+ the community, 
+\change_deleted 617562988 1639502977
+and the buffering effect of the seed bank was not sufficient to prevent
+ them from disappearing
+\change_inserted 617562988 1639502996
+even if a seed bank was present
+\change_inserted -2100369821 1639501691
+.
+ 
+\change_deleted 617562988 1639502758
+Diversity remained the same in the absence of a seed bank
+\change_inserted 617562988 1639502774
+Removing the seed bank did not alter species diversity
+\change_inserted -2100369821 1639501691
+ in a constant environment
+\change_inserted 617562988 1639502790
+.
+
+\change_inserted -2100369821 1639501691
+ 
+\change_deleted 617562988 1639502787
+(9), higher than in a fluctuating enviroment (4 species).
+ 
+\change_inserted -2100369821 1639501691
+A possible explanation for such result lies in the relative strengths of
  density-dependent and density-independent mechanisms.
  Competition and facilitation could help maintain diversity, but these density-d
 ependent effects were strongly altered when environmental perturbations
@@ -3694,7 +3749,11 @@ high longevity
 \change_deleted -666822487 1639477452
 dormancy
 \change_unchanged
- of the resting stage.
+ of the resting stage
+\change_inserted 617562988 1639503121
+, which is linked to dormancy
+\change_unchanged
+.
  Dormancy has long been observed in field and experimental data, including
  for phytoplanktonic organisms 
 \begin_inset CommandInset citation
@@ -3716,8 +3775,12 @@ literal "false"
 
 .
  
+\change_deleted 617562988 1639503145
+Dormancy
+\change_inserted 617562988 1639503153
+It is not always appreciated that dormancy
 \change_inserted -666822487 1639477610
-Dormancy can impact population and community dynamics in multiple ways.
+ can impact population and community dynamics in multiple ways.
  
 \change_inserted -2100369821 1638440844
 The storage effect is often cited as the mechanism behind diversity maintenance
@@ -3729,10 +3792,33 @@ literal "false"
 
 \end_inset
 
-, but its conditions are not always fulfilled: it requires an impact of
- environmental variations on recruitment rates, a mechanism which is not
- necessarily ensured (and is not modeled here, see further explanations
- in Section SX of the SI).
+, but its conditions are not always fulfilled: it requires 
+\change_deleted 617562988 1639503172
+an impact of 
+\change_inserted 617562988 1639503173
+that 
+\change_inserted -2100369821 1638440844
+environmental variation
+\change_deleted 617562988 1639503167
+s
+\change_inserted -2100369821 1638440844
+ 
+\change_inserted 617562988 1639503176
+affects 
+\change_deleted 617562988 1639503179
+on 
+\change_inserted -2100369821 1638440844
+recruitment rates, a mechanism which is not necessarily 
+\change_deleted 617562988 1639503186
+ensured
+\change_inserted 617562988 1639503188
+always present
+\change_inserted -2100369821 1638440844
+ (and 
+\change_inserted 617562988 1639503191
+that 
+\change_inserted -2100369821 1638440844
+is not modeled here, see further explanations in Section SX of the SI).
  
 \change_deleted -2100369821 1638374679
 Processes behind diversity maintenance by the seed stage include the storage
@@ -3788,6 +3874,8 @@ literal "false"
 \end_inset
 
 .
+\change_deleted 617562988 1639503227
+
 \begin_inset Note Note
 status collapsed
 
@@ -3851,7 +3939,11 @@ literal "false"
 
 \end_inset
 
+
+\change_unchanged
  
+\change_deleted 617562988 1639503215
+
 \begin_inset Note Note
 status open
 
@@ -3861,6 +3953,8 @@ Is this too much info/examples? Yes I think so.
 
 \end_inset
 
+
+\change_unchanged
 
 \end_layout
 
