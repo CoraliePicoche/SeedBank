@@ -83,6 +83,7 @@
 \html_css_as_file 0
 \html_be_strict false
 \author -2100369821 "cpicoche"
+\author -666822487 "frederic"
 \end_header
 
 \begin_body
@@ -1635,7 +1636,33 @@ Burial depends on the hydrodynamics of the site, but also on biotic processes
 
 \end_inset
 
- We varied it between 0.001 and 0.1 per day.
+ We varied 
+\change_inserted -666822487 1639475622
+the burial rate 
+\begin_inset Formula $\zeta$
+\end_inset
+
+
+\change_deleted -666822487 1639475613
+it
+\change_unchanged
+ between 0.001 and 0.1 per day.
+\change_inserted -666822487 1639475630
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -666822487 1639475930
+In scenarios where we remove the seed bank, we set 
+\begin_inset Formula $m+\zeta$
+\end_inset
+
+ to 100% (for simplicity, we do not remove resting stage formation, only
+ resting stage survival).
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -1705,20 +1732,6 @@ literal "false"
 Finally, it should be noted that burial, sinking rate and resuspension are
  all highly contingent upon the local hydrodynamics and therefore are intermingl
 ed processes.
-
-\change_inserted -2100369821 1638439964
- Moreover, in scenarios where we remove the seed bank (setting seed bank
- mortality to 100%), sinking still happens due to the negative buoyancy
- of phytoplanktonic particles, even when germination and resuspension do
- not.
- Indeed, our model only consider the effect of dormancy, removed when the
- dormant stage disappears, not the effect of cyst/spore formation which
- can still sink.
- Sinking therefore combines with other loss processes to increase 'apparent'
- mortality but this does not change our conclusion on the effect of dormancy.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -2273,8 +2286,12 @@ Extinction in the absence of the seed bank can be explained by both a low
 
 \begin_layout Section
 
+\change_deleted -666822487 1639477702
+Presence
+\change_inserted -666822487 1639477703
+Absence
 \change_inserted -2100369821 1638288443
-Presence of a storage effect in the model
+ of a storage effect in the model
 \end_layout
 
 \begin_layout Standard
@@ -2285,8 +2302,11 @@ The first step of our model (eq.
  oceanic populations due to both environmental fluctuations and interactions
  with other organisms.
  The formula may be interpreted by certain readers as already including
- a storage effect either due to the buffering effect of the loss rate, as
- shown by 
+ a storage effect
+\change_inserted -666822487 1639477730
+,
+\change_inserted -2100369821 1638462602
+ either due to the buffering effect of the loss rate, as shown by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "miller_evolutionary_2017"
@@ -2408,8 +2428,22 @@ g_{i} & = & \log\left(\frac{N_{i,t+1}}{N_{i}}\right)\\
 \begin_layout Standard
 
 \change_inserted -2100369821 1638440283
-Confusions with Miller & Klausmeier (2017) can be avoided by reminding here
- that the growth rate in continuous time is 
+Confusions with 
+\change_deleted -666822487 1639477774
+Miller & Klausmeier (2017)
+\change_inserted -666822487 1639477774
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "miller_evolutionary_2017"
+literal "false"
+
+\end_inset
+
+
+\change_inserted -2100369821 1638440283
+ can be avoided by reminding here that the growth rate in continuous time
+ is 
 \begin_inset Formula $\frac{1}{N_{i}}\frac{dN_{i}}{dt}$
 \end_inset
 
