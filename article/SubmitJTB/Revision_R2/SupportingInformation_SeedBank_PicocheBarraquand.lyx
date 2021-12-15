@@ -84,6 +84,7 @@
 \html_be_strict false
 \author -2100369821 "cpicoche"
 \author -666822487 "frederic"
+\author 617562988 "fbarraquand"
 \end_header
 
 \begin_body
@@ -2460,15 +2461,34 @@ literal "false"
 
 \end_inset
 
-we want to draw the reader's attention to the fact that, contrary to their
- model, interaction strengths do not depend on environmental effects, nor
- are linearly correlated.
+
+\change_inserted 617562988 1639591388
+, 
+\change_inserted -2100369821 1638462750
+we w
+\change_inserted 617562988 1639591391
+ish
+\change_deleted 617562988 1639591390
+ant
+\change_inserted -2100369821 1638462750
+ to draw the reader's attention to the fact that, contrary to their model,
+ interaction strengths do not depend on environmental effects, nor are
+\change_inserted 617562988 1639591407
+ they
+\change_inserted -2100369821 1638462750
+ linearly correlated.
 \end_layout
 
 \begin_layout Standard
 
 \change_inserted -2100369821 1638355566
-If we derive with regards to competition effect 
+If we 
+\change_deleted 617562988 1639591415
+derive
+\change_inserted 617562988 1639591418
+take derivatives
+\change_inserted -2100369821 1638355566
+ with regards to competition effect 
 \begin_inset Formula $C$
 \end_inset
 
@@ -2494,7 +2514,19 @@ If we derive with regards to competition effect
 \begin_layout Standard
 
 \change_inserted -2100369821 1638290363
-Finally, we derive with regards to 
+Finally, we 
+\change_deleted 617562988 1639591426
+derive
+\change_inserted 617562988 1639591429
+take a derivative
+\change_inserted -2100369821 1638290363
+ with 
+\change_deleted 617562988 1639591448
+regards
+\change_inserted 617562988 1639591449
+respect
+\change_inserted -2100369821 1638290363
+ to 
 \begin_inset Formula $E$
 \end_inset
 
@@ -2528,17 +2560,34 @@ As
 \begin_inset Formula $C=1+\sum_{j\in\mathbb{C}}\frac{a_{C}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}+\sum_{j\in\mathbb{F}}\frac{a_{F}N_{t,j,c/o}}{H_{ij}+N_{t,j,c/o}}$
 \end_inset
 
- in the second model, which is never negative, 
+ in the second model, which is never negative,
+\change_inserted 617562988 1639591488
+ we have always
+\change_inserted -2100369821 1638440324
+ 
 \begin_inset Formula $\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right)>0$
 \end_inset
 
 .
- There is no buffered growth in the growth function itself, therefore no
- storage effect in the coastal or oceanic compartments themselves.
+ There is no buffered growth in the 
+\change_deleted 617562988 1639591512
+growth function
+\change_inserted 617562988 1639591514
+effective growth rate
+\change_inserted -2100369821 1638440324
+ itself, 
+\change_inserted 617562988 1639591533
+and 
+\change_inserted -2100369821 1638440324
+therefore no storage effect in the coastal or oceanic compartments themselves.
 \end_layout
 
 \begin_layout Standard
 
+\change_inserted 617562988 1639591577
+Now we highlight a more delicate point, in models that include the seed
+ bank compartment.
+ 
 \change_inserted -2100369821 1638462763
 The storage effect could also be due to the presence of the seed bank, whose
  exchanges with other compartments are described in the second step of the
@@ -2562,8 +2611,11 @@ literal "false"
 \end_inset
 
 .
- However, for the storage effect to happen due to the seed bank, environmental
- variations have to affect the recruitment rate, i.e.
+ However, for the storage effect to happen due to the seed bank, 
+\change_inserted 617562988 1639591636
+theory currently highlights that 
+\change_inserted -2100369821 1638462763
+environmental variations have to affect the recruitment rate, i.e.
  in our case, the germination and resuspension rates 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -2576,7 +2628,25 @@ literal "false"
  In our model, neither environmental nor competition effects affect the
  exchanges with the seed bank: the sinking and germination/resuspension
  rates are fixed and independent from both past and current environmental
- conditions (except for the temperature threshold for germination).
+ conditions (except for the temperature threshold for germination)
+\change_inserted 617562988 1639591673
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 617562988 1639591697
+F: Can't this theoretically contribute to a storage effect?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_inserted -2100369821 1638462763
+.
  We can therefore say that storage effect is most certainly absent from
  our model.
  
