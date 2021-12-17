@@ -2628,8 +2628,8 @@ literal "false"
  In our model, neither environmental nor competition effects affect the
  exchanges with the seed bank: the sinking and germination/resuspension
  rates are fixed and independent from both past and current environmental
- conditions (except for the temperature threshold for germination)
-\change_inserted 617562988 1639591673
+ conditions
+\change_deleted -2100369821 1639660944
 
 \begin_inset Note Note
 status open
@@ -2645,10 +2645,21 @@ F: Can't this theoretically contribute to a storage effect?
 \end_inset
 
 
-\change_inserted -2100369821 1638462763
+\change_inserted -2100369821 1639673759
 .
- We can therefore say that storage effect is most certainly absent from
- our model.
+ The storage effect is therefore unlikely to happen in our model.
+ A thorough analysis of the storage effect based on simulations, as described
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ellner_how_2016"
+literal "false"
+
+\end_inset
+
+, would however be needed to conclude with complete certainty, as the presence
+ of three distinct compartments may create non-obvious non-addivities or
+ non-linearities.
  
 \end_layout
 

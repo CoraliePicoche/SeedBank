@@ -2424,7 +2424,9 @@ Both germination (
 \end_inset
 
 .
- Following 
+ 
+\change_deleted -2100369821 1639660341
+Following 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mcquoid_viability_2002"
@@ -2442,7 +2444,9 @@ literal "false"
 
 , we assume a temperature threshold: germination is triggered by temperatures
  going above 15°C.
- As actual rates of germination are not easily deduced from the literature,
+ 
+\change_unchanged
+As actual rates of germination are not easily deduced from the literature,
  a set of credible values has been tested (1%, 0.1%, 0.01%).
  Similarly, resuspension values are seldom computed for phytoplanktonic
  cells, but models for inorganic particles can be used (see Section S3 of
@@ -3850,16 +3854,18 @@ literal "false"
 \change_deleted 617562988 1639590359
 , which is absent from our model.
  Indeed, o
-\change_inserted 617562988 1639590359
+\change_inserted -2100369821 1639731856
+Storage effect is very unlikely to be at play here as 
+\change_deleted -2100369821 1639673376
 O
-\change_inserted -2100369821 1639585043
-ne of the required conditions for the storage effect 
+\change_inserted -2100369821 1639673383
+one of its required conditions
 \change_deleted 617562988 1639590368
 is
 \change_inserted 617562988 1639590375
 to manifest in such models
-\change_inserted -2100369821 1639585043
- that environmental conditions should impact recruitment rates
+\change_inserted -2100369821 1639673263
+ is that environmental conditions should impact recruitment rates
 \change_inserted 617562988 1639590409
  
 \begin_inset CommandInset citation
@@ -3870,7 +3876,7 @@ literal "false"
 \end_inset
 
 
-\change_inserted -2100369821 1639585043
+\change_inserted -2100369821 1639673298
 , which is not the case here (see Section SX in SI)
 \change_inserted 617562988 1639590426
 
@@ -3894,9 +3900,8 @@ I'm still a little skeptical as to whether this is enough to prove this
 \end_inset
 
 
-\change_inserted -2100369821 1639585043
+\change_inserted -2100369821 1639673420
 .
- 
 \end_layout
 
 \begin_layout Standard
