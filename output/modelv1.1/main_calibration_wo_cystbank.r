@@ -130,7 +130,7 @@ for(t in 1:(n_iter-1)){
                 var_tmp=step1_modelI(N[t,,],list_inter,temp_model[t],M,morta,a_d,T_opt,B,threshold)
                 Ntmp=var_tmp[[1]]
 #                effect_compet[t+1,,]=var_tmp[[2]]
-                N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 ,silent=T)
 
@@ -186,7 +186,7 @@ for(t in 1:(n_iter-1)){
 	        var_tmp=step1_modelI(N[t,,],list_inter,temp_model[t],M,morta,a_d,T_opt,B,threshold)
 		Ntmp=var_tmp[[1]]
 #		effect_compet[t+1,,]=var_tmp[[2]]
-        	N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+        	N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 ,silent=T)
 
@@ -250,7 +250,7 @@ for(t in 1:(n_iter-1)){
                 var_tmp=step1_modelI(N[t,,],list_inter,temp_model[t],M,morta,a_d,T_opt,B,threshold)
                 Ntmp=var_tmp[[1]]
                 effect_compet[t+1,,]=var_tmp[[2]]
-                N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 tab_coast=N[,1,]
 #Statistics per species

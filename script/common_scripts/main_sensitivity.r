@@ -85,11 +85,11 @@ N_original_set[1,,,]=10^3
 for(t in 1:(n_iter-1)){
                 var_tmp=step1_modelI(N_original_set[t,,,"modelI"],list_inter_I,temp_model[t],M,morta,a_d,T_opt,B,threshold)
                 Ntmp=var_tmp[[1]]
-                N_original_set[t+1,,,'modelI']=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N_original_set[t+1,,,'modelI']=step2(Ntmp,S,Gamma,e)
                 
 		var_tmp=step1_modelII(N_original_set[t,,,'modelII'],list_H_II,type_inter_II,temp_model[t],M,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
-                N_original_set[t+1,,,'modelII']=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N_original_set[t+1,,,'modelII']=step2(Ntmp,S,Gamma,e)
 }
 
 #Parameters to move
@@ -151,11 +151,11 @@ for(t in 1:(n_iter-1)){
 
 		var_tmp=step1_modelI(N_simu[t,,,1],list_inter_I,temp_model[t],M,morta,a_d,T_opt,B,threshold)
                 Ntmp=var_tmp[[1]]
-                N_simu[t+1,,,1]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N_simu[t+1,,,1]=step2(Ntmp,S,Gamma,e)
 
                 var_tmp=step1_modelII(N_simu[t,,,2],list_H_II,type_inter_II,temp_model[t],M,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
-                N_simu[t+1,,,2]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N_simu[t+1,,,2]=step2(Ntmp,S,Gamma,e)
 }
                 N_sensitivity[,,,nb_simu,]=N_simu[id,,,]
 		for(m in 1:2){

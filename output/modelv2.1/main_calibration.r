@@ -94,7 +94,7 @@ names(B)=name_spp
 r_mean=growth_rate_noMTE_Bissinger(288,T_opt,B,a_d)
 
 print("No quadratic programming available for saturating interactions, for now")
-write.table(inter_mat[[2]],paste("interaction_matrix_before_calibration.csv",sep=""),sep=";",row.names=F,dec=".")
+write.table(inter_mat[[2]],paste("interaction_matrix_before_calibration_test_on_original.csv",sep=""),sep=";",row.names=F,dec=".")
 
 #list_inter=list(inter_mat,k_coast2ocean*inter_mat)
 
@@ -135,7 +135,7 @@ for(t in 1:(n_iter-1)){
                 var_tmp=step1_modelII(N[t,,],list_H_tmp,type_inter,temp_model[t],M,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
                 effect_compet[t+1,,]=var_tmp[[2]]
-                N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 ,silent=T)
 tab_coast=N[,1,]
@@ -144,7 +144,7 @@ final_summary_tmp=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
 final_summary=matrix(unlist(final_summary_tmp),ncol=3) 
 rownames(final_summary)=names(final_summary_tmp[[1]])
 colnames(final_summary)=colnames(tab_summary)[1:3]
-write.table(final_summary,"summary_statistics_per_species_before_calibration.txt",dec=".",sep=";")
+write.table(final_summary,"summary_statistics_per_species_before_calibration_test_on_original.txt",dec=".",sep=";")
 
 #Just in case the simulation before calibration is better than everything else
 tab_simu[nb_simu+1,]=1.0
@@ -187,7 +187,7 @@ for(t in 1:(n_iter-1)){
 		var_tmp=step1_modelII(N[t,,],list_H_tmp,type_inter,temp_model[t],M,morta,a_d,T_opt,B)
 		Ntmp=var_tmp[[1]]
 		effect_compet[t+1,,]=var_tmp[[2]]
-        	N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+        	N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 ,silent=T)
 tab_coast=N[,1,]
@@ -212,13 +212,13 @@ tab_summary[sim,"Persistence_ocean",]=apply(N[id_persistence,"ocean",]==0,2,sum)
 print(Sys.time()-t1)
 
 #Write simulations
-write.table(tab_simu,paste("list_simulation_calibration.csv",sep=""),sep=";",dec=".")
+write.table(tab_simu,paste("list_simulation_calibration_test_on_original.csv",sep=""),sep=";",dec=".")
 tab_summary_sum_species=apply(tab_summary[,1:3,],2,translate)
 persistence_coast=apply(tab_summary[,"Persistence_coast",],1,sum)
 persistence_ocean=apply(tab_summary[,"Persistence_ocean",],1,sum)
 diff_sum=apply(tab_summary_sum_species,1,sum)
 tab_summary_tmp=cbind(tab_summary_sum_species,diff_sum,persistence_coast,persistence_ocean)
-write.table(tab_summary_tmp,paste("list_statistics_calibration.csv",sep=""),sep=";",dec=".")
+write.table(tab_summary_tmp,paste("list_statistics_calibration_test_on_original.csv",sep=""),sep=";",dec=".")
 
 
 #best=which(tab_summary[,4]==min(tab_summary[,4],na.rm=T)) Before: we added all RMSE for each interaction model and then the best model was the one which minimized the sum.
@@ -235,7 +235,7 @@ best_line_inter=tab_simu[best,]
 
 
 tab_summary_tmp=cbind(tab_summary_sum_species,diff_sum,persistence_coast,persistence_ocean,compare_ranks)
-write.table(tab_summary_tmp,paste("list_statistics_calibration.csv",sep=""),sep=";",dec=".")
+write.table(tab_summary_tmp,paste("list_statistics_calibration_test_on_original.csv",sep=""),sep=";",dec=".")
 
 
 tmp_inter=list_H[[1]]
@@ -256,7 +256,7 @@ for(t in 1:(n_iter-1)){
                 var_tmp=step1_modelII(N[t,,],list_H_tmp,type_inter,temp_model[t],M,morta,a_d,T_opt,B)
                 Ntmp=var_tmp[[1]]
                 effect_compet[t+1,,]=var_tmp[[2]]
-                N[t+1,,]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                N[t+1,,]=step2(Ntmp,S,Gamma,e)
 }
 tab_coast=N[,1,]
 #Statistics per species
@@ -264,7 +264,7 @@ final_summary_tmp=summary_statistics(pop_table,tab_pheno,tab_coast,nb_year)
 final_summary=matrix(unlist(final_summary_tmp),ncol=3)
 rownames(final_summary)=names(final_summary_tmp[[1]])
 colnames(final_summary)=colnames(tab_summary)[1:3]
-write.table(final_summary,"summary_statistics_per_species_after_calibration.txt",dec=".",sep=";")
+write.table(final_summary,"summary_statistics_per_species_after_calibration_test_on_original.txt",dec=".",sep=";")
 
 
 
@@ -272,16 +272,16 @@ colnames(list_H_tmp[[1]])=name_spp
 rownames(list_H_tmp[[1]])=name_spp
 colnames(type_inter[[1]])=name_spp
 rownames(type_inter[[1]])=name_spp
-write.table(list_H_tmp[[1]],"interaction_matrix_after_calibration.csv",sep=";",dec=".")
-write.table(type_inter[[1]],"facilitation_and_competition.csv",sep=";",dec=".")
+write.table(list_H_tmp[[1]],"interaction_matrix_after_calibration_test_on_original.csv",sep=";",dec=".")
+write.table(type_inter[[1]],"facilitation_and_competition_test_on_original.csv",sep=";",dec=".")
 
 
-write.table(N[,1,],paste("out_coast.csv",sep=""),sep=";",dec=".")
-write.table(N[,2,],paste("out_ocean.csv",sep=""),sep=";",dec=".")
-write.table(N[,3,],paste("out_seed.csv",sep=""),sep=";",dec=".")
+write.table(N[,1,],paste("out_coast_test_on_original.csv",sep=""),sep=";",dec=".")
+write.table(N[,2,],paste("out_ocean_test_on_original.csv",sep=""),sep=";",dec=".")
+write.table(N[,3,],paste("out_seed_test_on_original.csv",sep=""),sep=";",dec=".")
 #If we want to debug, see the effect of competition on species
 #write.table(effect_compet[,1,],paste("compet_coast.csv",sep=""),sep=";",dec=".")
 #write.table(effect_compet[,2,],paste("compet_ocean.csv",sep=""),sep=";",dec=".")
 
-source("../../script/diagnostics_single_simu.r")
+#source("../../script/diagnostics_single_simu.r")
 

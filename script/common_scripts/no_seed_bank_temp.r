@@ -106,23 +106,23 @@ for(m in 1:length(mean_tmp)){
 				#Without Seed Bank
                 		var_tmp=step1_modelI(N_array_simu[t,,,"Model I"],list_inter,temp_model[t],M,morta,a_d,T_opt,B,threshold)
   		              	Ntmp=var_tmp[[1]]
-                		N_array_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                		N_array_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma,e)
 		
 				#With Seed Bank
 		                var_tmp=step1_modelI(N_orig_simu[t,,,"Model I"],list_inter,temp_model[t],M_orig,morta,a_d,T_opt,B,threshold)
                 		Ntmp=var_tmp[[1]]
-               			N_orig_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+               			N_orig_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma,e)
 
 				#Model II
 				#Without Seed Bank
                                 var_tmp=step1_modelII(N_array_simu[t,,,"Model II"],list_H,type_inter,temp_model[t],M,morta,a_d,T_opt,B)
                                 Ntmp=var_tmp[[1]]
-                                N_array_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                                N_array_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma,e)
 
                                 #With Seed Bank
                                 var_tmp=step1_modelII(N_orig_simu[t,,,"Model II"],list_H,type_inter,temp_model[t],M_orig,morta,a_d,T_opt,B)
                                 Ntmp=var_tmp[[1]]
-                                N_orig_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                                N_orig_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma,e)
 
 			}
                         N_array[,,,s,m,v,]=N_array_simu[id,,,]

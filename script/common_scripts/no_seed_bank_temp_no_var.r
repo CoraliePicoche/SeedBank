@@ -107,23 +107,23 @@ for(m in 1:length(mean_tmp)){
 				#Without Seed Bank
                 		var_tmp=step1_modelI(N_array_simu[t,,,"Model I"],list_inter,temp_model[t],M,morta,a_d,T_opt,B,threshold)
   		              	Ntmp=var_tmp[[1]]
-                		N_array_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                		N_array_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma,e)
 		
 				#With Seed Bank
 		                var_tmp=step1_modelI(N_orig_simu[t,,,"Model I"],list_inter,temp_model[t],M_orig,morta,a_d,T_opt,B,threshold)
                 		Ntmp=var_tmp[[1]]
-               			N_orig_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+               			N_orig_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma,e)
 
 				#Model II
 				#Without Seed Bank
                                 var_tmp=step1_modelII(N_array_simu[t,,,"Model II"],list_H,type_inter,temp_model[t],M,morta,a_d,T_opt,B)
                                 Ntmp=var_tmp[[1]]
-                                N_array_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                                N_array_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma,e)
 
                                 #With Seed Bank
                                 var_tmp=step1_modelII(N_orig_simu[t,,,"Model II"],list_H,type_inter,temp_model[t],M_orig,morta,a_d,T_opt,B)
                                 Ntmp=var_tmp[[1]]
-                                N_orig_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma*(temp_model[t]>=temp_germin),e)
+                                N_orig_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma,e)
 
 			}
                         N_array[,,,s,m,v,]=N_array_simu[id,,,]
@@ -137,7 +137,7 @@ load("no_seed_temp_no_var_simu.RData")
 }
 id_persistence=seq(length(id)-nb_persistence+1,length(id))
 
-pdf("no_seed_bank_temp_no_var.pdf",height=5,width=10)
+#pdf("no_seed_bank_temp_no_var.pdf",height=5,width=10)
 par(mfrow=c(1,2),mar=c(2,4.5,2,1))
 plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(0,11.5),xaxt="n",ylab="Richness",xlab="",xlim=c(0.8,length(mean_tmp)+0.5),cex.axis=1.5,cex.lab=1.5,xaxt="n")
 mtext("a",line=0.2,at=.75,cex=1.3,font=2)
@@ -189,4 +189,4 @@ for(i in 1:length(mean_tmp)){
 
 legend("bottomleft",c("W/o seed bank","W seed bank","Model I","Model II"),col=c("black","black","black","grey"),pch=c(16,17,16,16),bty="n",cex=1.25)
 
-dev.off()
+#dev.off()
