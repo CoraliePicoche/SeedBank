@@ -3527,24 +3527,96 @@ The variance of the temperature did not affect richness nor total abundance
 
 \begin_layout Standard
 
+\change_deleted 617562988 1639590768
+In
+\change_inserted 617562988 1639590769
+Some
 \change_inserted -2100369821 1639580547
-In additional simulations where the temperature was kept constant (equal
- to the average temperature in a fluctuating environment), the presence
- of a seed bank did not change the final richness of the communities.
+ additional simulations 
+\change_inserted 617562988 1639590788
+were made to better understand the functioning of the model,
+\change_deleted 617562988 1639590791
+where
+\change_inserted 617562988 1639591036
+ during which
+\change_inserted -2100369821 1639580547
+ the temperature was kept constant (equal to the average temperature 
+\change_deleted 617562988 1639591057
+in a
+\change_inserted 617562988 1639591058
+of the
+\change_inserted -2100369821 1639580547
+ fluctuating environment)
+\change_inserted 617562988 1639590819
+.
+ For a constant and average temperature,
+\change_deleted 617562988 1639590800
+,
+\change_inserted -2100369821 1639580547
+ the presence of a seed bank did not change the final richness of the communitie
+s.
  In model I, there were 9 extant species at the end of the constant-environment
  simulations, whether there was a seed bank or not.
- The two specialists whose thermal optima were furthest from the constant
- temperature, went extinct.
- Removing the seed bank did not alter species diversity in a constant environmen
-t.
- In model II, all 11 species survived with and without a seed bank.
- In both models, the system reaches a fixed point.
+ The two specialist
+\change_inserted 617562988 1639590842
+ species
+\change_deleted 617562988 1639590841
+s
+\change_inserted -2100369821 1639580547
+ whose thermal optima were f
+\change_inserted 617562988 1639590868
+a
+\change_deleted 617562988 1639590868
+u
+\change_inserted -2100369821 1639580547
+rthest from the constant temperature
+\change_deleted 617562988 1639590884
+,
+\change_inserted -2100369821 1639580547
+ went extinct
+\change_inserted 617562988 1639591169
+ even when the seed bank was present, since the environmental fluctuations
+ allowing them to benefit from cold or warm temperature were removed
+\change_inserted -2100369821 1639580547
+.
+ 
+\change_inserted 617562988 1639591231
+The other species benefited from the constant environment, as 9 species
+ instead of 4 persisted in the case where the seed bank was removed (see
+ below for a discussion).
+ 
+\change_deleted 617562988 1639590906
+Removing the seed bank did not alter species diversity in a constant environment.
+ 
+\change_inserted -2100369821 1639580547
+In model II, all 11 species survived with and without a seed bank.
+ 
+\change_inserted 617562988 1639591255
+For
+\change_deleted 617562988 1639591254
+In
+\change_inserted -2100369821 1639580547
+ both models
+\change_inserted 617562988 1639591247
+ I and II
+\change_inserted -2100369821 1639580547
+, the 
+\change_inserted 617562988 1639590975
+dynamical 
+\change_inserted -2100369821 1639580547
+system reache
+\change_inserted 617562988 1639590980
+d
+\change_deleted 617562988 1639590980
+s
+\change_inserted -2100369821 1639580547
+ a fixed point
+\change_inserted 617562988 1639591022
+ equilibrium in absence of the fluctuations induced by a variable temperature
+\change_inserted -2100369821 1639580547
+.
  
 \change_deleted -2100369821 1639580187
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -3638,14 +3710,81 @@ literal "false"
 \begin_layout Standard
 
 \change_inserted -2100369821 1639585043
-The positive effect of dormancy on species diversity in our model is contigent
- upon fluctuations in the environment.
- In a constant environment, the absence of a seed bank did not alter persistance
-, and final richness actually increased when compared to fluctuating-environment
- simulations (9 species in a constant environment vs.
- 4 species).
- Less perturbations in the intrinsic growth rates enable species which were
- not too far from their thermal optima to maintain.
+The positive effect of 
+\change_deleted 617562988 1639590207
+dormancy
+\change_inserted 617562988 1639590209
+a seed bank
+\change_inserted -2100369821 1639585043
+ on species diversity in our model is conti
+\change_inserted 617562988 1639589744
+n
+\change_inserted -2100369821 1639585043
+gent upon 
+\change_deleted 617562988 1639589749
+fluctuations in the environment
+\change_inserted 617562988 1639589754
+environmental fluctuations
+\change_inserted -2100369821 1639585043
+.
+ I
+\change_inserted 617562988 1639590004
+ndeed, i
+\change_inserted -2100369821 1639585043
+n a constant environment, the absence of a seed bank did not alter persist
+\change_inserted 617562988 1639589783
+e
+\change_deleted 617562988 1639589782
+a
+\change_inserted -2100369821 1639585043
+nce, and final richness 
+\change_deleted 617562988 1639589809
+actually increased when compared
+\change_inserted 617562988 1639589817
+was higher 
+\change_deleted 617562988 1639590024
+ 
+\change_inserted -2100369821 1639585043
+t
+\change_inserted 617562988 1639589823
+han in
+\change_deleted 617562988 1639589821
+o
+\change_inserted -2100369821 1639585043
+ 
+\change_inserted 617562988 1639590047
+a 
+\change_inserted -2100369821 1639585043
+fluctuating
+\change_inserted 617562988 1639590043
+ 
+\change_deleted 617562988 1639590043
+-
+\change_inserted -2100369821 1639585043
+environment simulations (9 species in a constant environment vs.
+ 4 species
+\change_inserted 617562988 1639589852
+ in a variable environment, both without a seed bank
+\change_inserted -2100369821 1639585043
+).
+ 
+\change_deleted 617562988 1639589957
+Less
+\change_inserted 617562988 1639590096
+The absence of
+\change_inserted -2100369821 1639585043
+ 
+\change_inserted 617562988 1639590080
+abiotic 
+\change_inserted -2100369821 1639585043
+perturbations 
+\change_deleted 617562988 1639590087
+in
+\change_inserted 617562988 1639590102
+of
+\change_inserted -2100369821 1639585043
+ the intrinsic growth rates enable species which were not too far from their
+ thermal optima to maintain.
  This might be surprising for readers acquainted with Hutchinson's nonequilibriu
 m theory 
 \begin_inset CommandInset citation
@@ -3655,20 +3794,108 @@ literal "false"
 
 \end_inset
 
-, but literature on persistence in variable environment has shown that more
- mechanisms are needed to maintain diversity, such as relative nonlinearities
- or the storage effect 
+
+\change_deleted 617562988 1639590133
+, but
+\change_inserted 617562988 1639590133
+.
+
+\change_inserted -2100369821 1639585043
+ 
+\change_inserted 617562988 1639590144
+However, the theoretical 
+\change_inserted -2100369821 1639585043
+literature on persistence in variable environment
+\change_inserted 617562988 1639590148
+s
+\change_inserted -2100369821 1639585043
+ has shown that 
+\change_deleted 617562988 1639590151
+more
+\change_inserted 617562988 1639590152
+additional
+\change_inserted -2100369821 1639585043
+ mechanisms 
+\change_inserted 617562988 1639590287
+
 \begin_inset CommandInset citation
 LatexCommand citep
+before "reviewed in"
 key "fox_intermediate_2013"
 literal "false"
 
 \end_inset
 
+ 
+\change_inserted -2100369821 1639585043
+are needed to maintain diversity
+\change_inserted 617562988 1639590159
+ in the long run
+\change_inserted -2100369821 1639585043
+, such as relative nonlinearities or the storage effect 
+\change_deleted 617562988 1639590297
+
+\begin_inset CommandInset citation
+LatexCommand citep
+before "reviewed in"
+key "fox_intermediate_2013"
+literal "false"
+
+\end_inset
+
+
+\change_inserted 617562988 1639590302
+.
+ 
+\change_deleted 617562988 1639590359
 , which is absent from our model.
- Indeed, one of the required conditions for the storage effect is that environme
-ntal conditions should impact recruitment rates, which is not the case here
- (see Section SX in SI).
+ Indeed, o
+\change_inserted 617562988 1639590359
+O
+\change_inserted -2100369821 1639585043
+ne of the required conditions for the storage effect 
+\change_deleted 617562988 1639590368
+is
+\change_inserted 617562988 1639590375
+to manifest in such models
+\change_inserted -2100369821 1639585043
+ that environmental conditions should impact recruitment rates
+\change_inserted 617562988 1639590409
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chesson_quantifying_2003"
+literal "false"
+
+\end_inset
+
+
+\change_inserted -2100369821 1639585043
+, which is not the case here (see Section SX in SI)
+\change_inserted 617562988 1639590426
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 617562988 1639590514
+I'm still a little skeptical as to whether this is enough to prove this
+ in the case with the seed bank, but perhaps.
+ Let's see after looking at the SI.
+ In any case we're not going to perform the complex simulations of Ellner
+ et al.
+ (2016) here, this would be another paper...
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_inserted -2100369821 1639585043
+.
  
 \end_layout
 
@@ -3678,8 +3905,18 @@ ntal conditions should impact recruitment rates, which is not the case here
 Even in the absence of a storage effect, however, the high longevity of
  the resting stage itself can explain the effect of the seed bank in a fluctuati
 ng environment.
- Dormancy has long been observed in field and experimental data, including
- for phytoplanktonic organisms 
+ 
+\change_deleted 617562988 1639590566
+D
+\change_inserted 617562988 1639590571
+Such longevity is due to d
+\change_inserted -2100369821 1639585179
+ormancy
+\change_inserted 617562988 1639590574
+, which
+\change_inserted -2100369821 1639585179
+ has long been observed in field and experimental data, including for phytoplank
+tonic organisms 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "eilertsen_phytoplankton_2000"
@@ -3697,213 +3934,32 @@ literal "false"
 \end_inset
 
 .
- It is not always appreciated that dormancy can impact population and community
- dynamics in multiple ways.
- It can allow future recolonization of a community where counts of pelagic
- cells alone would suggest that some species have gone extinct.
- This colonization-in-time may of course combine with present recolonization
- from other spatial areas 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "shmida_coexistence_1985"
-literal "false"
-
-\end_inset
-
-.
- In our case, our focus on phytoplankton led us to assume that organisms
- moved between the coast and the ocean, which were largely synchronous environme
-nts.
- Spatial recolonization was therefore less important than temporal recolonizatio
-n; the relative importance of the two processes may vary depending on the
- organisms and the degree of spatial synchrony of their environment 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "montresor_dinoflagellate_1998,anderson_alexandrium_2005"
-literal "false"
-
-\end_inset
-
-.
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -2100369821 1639581407
-The positive effect of dormancy on species diversity in our model is contingent
- upon a fluctuating environment.
- constant-environment h
-\change_deleted 617562988 1639502647
-he thermal optima of t, both specialists, which
-\change_deleted -2100369821 1639581407
- thatin the constant environment both specialists, and ir thermal optimas
- were the
-\change_deleted 617562988 1639502977
-''and the buffering effect of the seed bank was not sufficient to prevent
- them from disappearing
-\change_deleted -2100369821 1639581407
-even if a seed bank was present
-\change_deleted 617562988 1639502758
-Diversity remained the same in the absence of a seed bank
-\change_deleted -2100369821 1639581407
-Removing the seed bank did not alter species diversity.
-\change_deleted 617562988 1639502787
-(9), higher than in a fluctuating enviroment (4 species).
  
-\change_inserted -2100369821 1639581407
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1639581407
-The positive effect of dormancy on species diversity in our model is contingent
- upon a fluctuating environment.
- Indeed, in additional simulations where the temperature was kept constant
- (equal to the average temperature in the fluctuating environment), the
- presence of a seed bank did not change the final richness of the communities.
- In model I, there were 9 extant species at the end of the constant-environment
- simulations, whether there was a seed bank or not.
- Diversity was therefore higher in a fluctuating (11 species) than in a
- constant (9 species) environment in the presence of the seed bank.
- Thhe two species that went extinct in the constant environment were both
- specialists, and their thermal optimas were the two furthest from the constant
- temperature.
- In the absence of fluctuations in the environment, these species never
- had the opportunity to re-invade the community, even if a seed bank was
- present.
- Removing the seed bank did not alter species diversity in a constant environmen
-t.
- A possible explanation for such result lies in the relative strengths of
- density-dependent and density-independent mechanisms.
- Competition and facilitation could help maintain diversity, but these density-d
-ependent effects were strongly altered when environmental perturbations
- decreased and/or increased population abundances, leading to a stronger
- effect of density-independent effects, especially detrimental for specialists
- which were outside of their thermal range and could not be saved by the
- seed bank
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -2100369821 1639581407
-I am using Reviewer 2's comment here.
- This is plausible, but VERY speculative.
-\end_layout
-
-\end_inset
-
-.
- The importance of interactions tends to be confirmed by our results with
- model II (with a progressive saturation in interaction strengths): in a
- constant environment, the 11 species remained in the community with and
- without a seed bank.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -2100369821 1639499475
-,out(number) (number) .
-\change_deleted -666822487 1639477094
-but
-\change_deleted -2100369821 1639499475
-However,
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -2100369821 1639584176
-The effect of the seed bank is, of course, contingent upon a 
-\change_deleted -666822487 1639477461
-
-\emph on
-long
-\change_deleted -2100369821 1639584176
-
-\emph default
-high longevity 
-\change_deleted -666822487 1639477452
-dormancy
-\change_deleted -2100369821 1639584176
- of the resting stage, which is linked to dormancy.
- Dormancy has long been observed in field and experimental data, including
- for phytoplanktonic organisms 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "eilertsen_phytoplankton_2000"
-literal "false"
-
-\end_inset
-
-.
- It has been theorized to be an important and neglected process in the wider
- microbiology literature 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "locey_synthesizing_2010,jones_dormancy_2010"
-literal "false"
-
-\end_inset
-
-.
- 
-\change_deleted 617562988 1639503145
-Dormancy
-\change_deleted -2100369821 1639583742
+\change_deleted 617562988 1639590623
 It is not always appreciated that dormancy can impact population and community
  dynamics in multiple ways.
  
-\change_deleted 617562988 1639503172
-an impact of 
-\change_deleted -2100369821 1639583742
-that 
-\change_deleted 617562988 1639503167
+\change_inserted -2100369821 1639585179
+It 
+\change_deleted 617562988 1639590625
+can 
+\change_inserted -2100369821 1639585179
+allow
+\change_inserted 617562988 1639590627
 s
-\change_deleted -2100369821 1639583742
-affects 
-\change_deleted 617562988 1639503186
-on ensured
-\change_deleted -2100369821 1639583742
-always presentthat Processes behind diversity maintenance by the seed stage
- include the storage effect 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bonis_seed_1995,facelli_differences_2005,angert_functional_2009"
-literal "false"
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-this time the wording is OK
-\end_layout
-
-\end_inset
-
- but are not limited to it.
- This is because a long dormancy alone can allow future recolonization of
- a community where counts of pelagic cells alone would suggest that some
- species have gone extinct.
+\change_inserted -2100369821 1639585179
+ 
+\change_deleted 617562988 1639590652
+future 
+\change_inserted -2100369821 1639585179
+recolonization of a community where counts of pelagic cells alone would
+ suggest that some species have gone extinct.
  This colonization-in-time may of course combine with present recolonization
- from other spatial areas 
+ from other spatial areas
+\change_inserted 617562988 1639590694
+, as is known for plants
+\change_inserted -2100369821 1639585179
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "shmida_coexistence_1985"
@@ -3911,6 +3967,24 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted 617562988 1639590698
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 617562988 1639590710
+Otherwise we suggest that they model plankton...
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_inserted -2100369821 1639585179
 .
  In our case, our focus on phytoplankton led us to assume that organisms
  moved between the coast and the ocean, which were largely synchronous environme
@@ -3926,86 +4000,6 @@ literal "false"
 \end_inset
 
 .
-\change_deleted 617562988 1639503227
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-For example, signs of spatial recolonization might have been found in the
- Gulf of Maine, where the toxic species 
-\shape italic
-Alexandrium fundyense
-\shape default
- form cyst banks which, when germinating, lead to recurrent blooms moving
- south west: without the so-called 
-\begin_inset Quotes eld
-\end_inset
-
-incubator
-\begin_inset Quotes erd
-\end_inset
-
- in the North-East part of the Gulf, 
-\shape italic
-A.
- fundyensense
-\shape default
- populations might have diminished through time 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "anderson_alexandrium_2005"
-literal "false"
-
-\end_inset
-
-.
- In the Gulf of Naples 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "montresor_dinoflagellate_1998"
-literal "false"
-
-\end_inset
-
-, on the contrary, the high heterogeneity between seed bank compositions
- between offshore and coastal areas indicate that both hydrodynamics and
- sediment types may hinder spatial homogeneization.
- In the Chukchi sea 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "tsukazaki_distribution_2018"
-literal "false"
-
-\end_inset
-
-, some sampling sites may host occasional blooms from allochtonous species
- after resting stage cells are transferred by currents.
- The interplay between seed banks and hydrodynamics processes may therefore
- play an important role in the maintenance of 
-\begin_inset Formula $\beta$
-\end_inset
-
--diversity.
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- 
-\change_deleted 617562988 1639503215
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Is this too much info/examples? Yes I think so.
-\end_layout
-
-\end_inset
-
-
 \change_unchanged
 
 \end_layout
