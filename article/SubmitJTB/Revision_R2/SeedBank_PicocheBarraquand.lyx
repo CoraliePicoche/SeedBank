@@ -3595,6 +3595,14 @@ Removing the seed bank did not alter species diversity in a constant environment
 \change_inserted -2100369821 1639580547
 In model II, all 11 species survived with and without a seed bank.
  
+\change_inserted -666822487 1639993259
+Both model I and II have mechanisms to avoid irrealistically high population
+ growth rates (see Methods) but in model II, the fact that interactions
+ progressively saturate probably helps persistence.
+ The high persistence in a constant environment (9 and 11 species out of
+ 11) translates the stabilizing, data-driven interaction structure of our
+ model.
+ 
 \change_inserted 617562988 1639591255
 For
 \change_deleted 617562988 1639591254
@@ -3765,7 +3773,11 @@ fluctuating
 \change_deleted 617562988 1639590043
 -
 \change_inserted -2100369821 1639585043
-environment simulations (9 species in a constant environment vs.
+environment 
+\change_deleted -666822487 1639990129
+simulations 
+\change_inserted -2100369821 1639585043
+(9 species in a constant environment vs.
  4 species
 \change_inserted 617562988 1639589852
  in a variable environment, both without a seed bank
@@ -3787,8 +3799,11 @@ in
 \change_inserted 617562988 1639590102
 of
 \change_inserted -2100369821 1639585043
- the intrinsic growth rates enable species which were not too far from their
- thermal optima to maintain.
+ the intrinsic growth rates enable
+\change_inserted -666822487 1639990138
+d
+\change_inserted -2100369821 1639585043
+ species which were not too far from their thermal optima to maintain.
  This might be surprising for readers acquainted with Hutchinson's nonequilibriu
 m theory 
 \begin_inset CommandInset citation
@@ -3836,7 +3851,26 @@ are needed to maintain diversity
 \change_inserted 617562988 1639590159
  in the long run
 \change_inserted -2100369821 1639585043
-, such as relative nonlinearities or the storage effect 
+, such as relative nonlinearities or the storage effect
+\change_inserted -666822487 1639990816
+, which is at least absent from the pelagic part of our model due to the
+ absence of buffered growth (see Section S9 in SI).
+
+\change_inserted -2100369821 1639731856
+ 
+\change_inserted -666822487 1639991859
+There is a clear destabilizing effect of environmental variation in our
+ model without the seed bank, which is probably heightened by the fact that
+ environmental variation is positively autocorrelated through seasonality
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "picoche_how_2019,schreiber_positively_2021"
+literal "false"
+
+\end_inset
+
+.
 \change_deleted 617562988 1639590297
 
 \begin_inset CommandInset citation
@@ -3854,18 +3888,36 @@ literal "false"
 \change_deleted 617562988 1639590359
 , which is absent from our model.
  Indeed, o
+\change_deleted -666822487 1639989954
+S
+\change_inserted -666822487 1639990830
+Although the s
 \change_inserted -2100369821 1639731856
-Storage effect is very unlikely to be at play here as 
+torage effect
+\change_inserted -666822487 1639990856
+ could manifest itself when combining pelagic and seed bank parts of our
+ model, it
+\change_inserted -2100369821 1639731856
+ is very unlikely to be at play here as 
 \change_deleted -2100369821 1639673376
 O
-\change_inserted -2100369821 1639673383
+\change_deleted -666822487 1639990873
 one of its required conditions
 \change_deleted 617562988 1639590368
 is
-\change_inserted 617562988 1639590375
-to manifest in such models
-\change_inserted -2100369821 1639673263
- is that environmental conditions should impact recruitment rates
+\change_deleted -666822487 1639990875
+to manifest in such models is that 
+\change_inserted -2100369821 1639731856
+environmental conditions 
+\change_deleted -666822487 1639990880
+should
+\change_inserted -666822487 1639990881
+do not
+\change_inserted -2100369821 1639731856
+ impact recruitment rates
+\change_inserted -666822487 1639990905
+ in our model, while this is usually a requirement for the storage effect
+ to manifest in such models
 \change_inserted 617562988 1639590409
  
 \begin_inset CommandInset citation
@@ -3876,32 +3928,15 @@ literal "false"
 \end_inset
 
 
-\change_inserted -2100369821 1639673298
+\change_deleted -666822487 1639990910
 , which is not the case here (see Section SX in SI)
-\change_inserted 617562988 1639590426
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted 617562988 1639590514
-I'm still a little skeptical as to whether this is enough to prove this
- in the case with the seed bank, but perhaps.
- Let's see after looking at the SI.
- In any case we're not going to perform the complex simulations of Ellner
- et al.
- (2016) here, this would be another paper...
- 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_inserted -2100369821 1639673420
+\change_inserted -2100369821 1639731856
 .
+
+\change_inserted -666822487 1639991796
+ 
+\change_inserted -2100369821 1639731856
+
 \end_layout
 
 \begin_layout Standard
