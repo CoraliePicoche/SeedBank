@@ -78,7 +78,7 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes true
-\output_changes true
+\output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -2073,7 +2073,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../../../output/modelv2.1/time_series_simulation_per_cluster.pdf
-	height 95theight%
+	height 90theight%
 
 \end_inset
 
@@ -2237,7 +2237,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename ../../../script/common_scripts/survival_vs_growth_rates.pdf
-	width 80text%
+	width 75text%
 
 \end_inset
 
@@ -2306,7 +2306,7 @@ The first step of our model (eq.
  a storage effect
 \change_inserted -666822487 1639477730
 ,
-\change_inserted -2100369821 1638462602
+\change_inserted -2100369821 1640967143
  either due to the buffering effect of the loss rate, as shown by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -2324,7 +2324,7 @@ literal "false"
 
 \end_inset
 
- in discrete-time.
+ in discrete time.
  We show below why the results of the cited analyses do not apply here and
  that the intra-compartment growth in discrete-time model does not lead
  to a storage effect.
@@ -2403,11 +2403,11 @@ N_{t+1,i}=\frac{\exp(r_{i}(T))N_{t,i}}{1+\sum_{j}\alpha_{ij}N_{t,j}}-lN_{t,i}
 
 \change_inserted -2100369821 1638355510
 Here 
-\begin_inset Formula $E_{i}(t+1)=\exp(r_{i}(T))$
+\begin_inset Formula $E_{i}(t)=\exp(r_{i}(T))$
 \end_inset
 
  and 
-\begin_inset Formula $C_{i}(t+1)=1+\sum_{j}\alpha_{ij}N_{t,j}$
+\begin_inset Formula $C_{i}(t)=1+\sum_{j}\alpha_{ij}N_{t,j}$
 \end_inset
 
 .
@@ -2415,7 +2415,7 @@ Here
 \begin_inset Formula 
 \[
 \begin{array}{ccc}
-g_{i} & = & \log\left(\frac{N_{i,t+1}}{N_{i}}\right)\\
+g_{i} & = & \log\left(\frac{N_{t+1,i}}{N_{i}}\right)\\
  & = & \log\left(\frac{\exp(r_{i}(T))}{1+\sum_{j}\alpha_{ij}N_{t,j}}-l\right)\\
  & = & \log\left(\frac{E}{C}-l\right)
 \end{array}
@@ -2562,9 +2562,13 @@ As
 
  in the second model, which is never negative,
 \change_inserted 617562988 1639591488
- we have always
-\change_inserted -2100369821 1638440324
- 
+ we 
+\change_deleted -2100369821 1640967525
+have 
+\change_inserted 617562988 1639591488
+always
+\change_inserted -2100369821 1640967529
+ have 
 \begin_inset Formula $\frac{\partial}{\partial E}\left(\frac{\partial g}{\partial C}\right)>0$
 \end_inset
 

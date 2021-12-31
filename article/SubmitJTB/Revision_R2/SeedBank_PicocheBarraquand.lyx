@@ -94,7 +94,7 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes true
-\output_changes true
+\output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -2593,8 +2593,12 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-The calibration procedure consists in lauching 1000 simulations, each characteri
-zed by a specific set of interaction coefficients.
+The calibration procedure consists in lau
+\change_inserted -2100369821 1640966779
+n
+\change_unchanged
+ching 1000 simulations, each characterized by a specific set of interaction
+ coefficients.
  More precisely, for each simulation, an interaction coefficient (
 \begin_inset Formula $\alpha_{ij}$
 \end_inset
@@ -2709,7 +2713,7 @@ Simulations with taxon extinction (i.e., the taxon is absent for more than
  sum of the ranks.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Sensitivity analysis
 \end_layout
 
@@ -2912,8 +2916,14 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In both scenarios, simulations are run for 30 years for both population
- growth models, with and without a 
+In both scenari
+\change_inserted -2100369821 1640966805
+i
+\change_deleted -2100369821 1640966804
+os
+\change_unchanged
+, simulations are run for 30 years for both population growth models, with
+ and without a 
 \change_deleted -2100369821 1638291796
 cyst
 \change_inserted -2100369821 1638291798
@@ -3187,7 +3197,11 @@ On the other hand, the amplitude (i.e., decimal logarithm of the maximum to
 \end_layout
 
 \begin_layout Standard
-In three cases (burial rate set to 0.1, resuspension to 10
+In three cases (burial rate set to 0.1, resuspension 
+\change_inserted -2100369821 1640966832
+set 
+\change_unchanged
+to 10
 \begin_inset Formula $^{-5}$
 \end_inset
 
@@ -3221,8 +3235,13 @@ Scenarii of environmental change
 \end_layout
 
 \begin_layout Standard
-Two scenarios were designed to test the buffering effect of the seed bank
- against disruption.
+Two scenari
+\change_inserted -2100369821 1640966840
+i
+\change_deleted -2100369821 1640966840
+os
+\change_unchanged
+ were designed to test the buffering effect of the seed bank against disruption.
  In both cases, it consisted in removing the seed bank by setting resting-stage
  mortality to 100% per day.
  Without any other disturbance to the system, this led to a decrease in
@@ -3854,7 +3873,13 @@ are needed to maintain diversity
 , such as relative nonlinearities or the storage effect
 \change_inserted -666822487 1639990816
 , which is at least absent from the pelagic part of our model due to the
- absence of buffered growth (see Section S9 in SI).
+ absence of buffered growth (see Section S
+\change_inserted -2100369821 1640966890
+8
+\change_deleted -2100369821 1640966890
+9
+\change_inserted -666822487 1639990816
+ in SI).
 
 \change_inserted -2100369821 1639731856
  
@@ -3882,8 +3907,10 @@ literal "false"
 \end_inset
 
 
-\change_inserted 617562988 1639590302
+\change_deleted -2100369821 1640870342
 .
+
+\change_inserted 617562988 1639590302
  
 \change_deleted 617562988 1639590359
 , which is absent from our model.
@@ -4083,7 +4110,11 @@ s and mean interaction values in the community.
 \end_layout
 
 \begin_layout Standard
-Species persistence varied between the coastal and ocean compartment.
+Species persistence varied between the coastal and ocean
+\change_inserted -2100369821 1640966901
+ic
+\change_unchanged
+ compartment.
  Temporary species disappearance could happen periodically in the ocean
  but species were able to reinvade from the coast, thanks to the connection
  of the coast to the seed bank.
