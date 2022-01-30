@@ -4,7 +4,7 @@
 # 01/09/2021 CP: Based on no_seed_ban_temp.r, but removing variability in the temperature signal
 ###
 
-doyouload=T #TRUE if you want to reload previous results to plot graphs; FALSE if you want to relaunch the analyses (and then plot the graphs)
+doyouload=F #TRUE if you want to reload previous results to plot graphs; FALSE if you want to relaunch the analyses (and then plot the graphs)
 
 if(!doyouload){
 rm(list=ls())
@@ -90,6 +90,9 @@ id=(n_iter-365):n_iter
 N_array=array(NA,dim=c(length(id),3,nspp,nb_simu,length(mean_tmp),length(vari_tmp),2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,1:nb_simu,mean_tmp,vari_tmp,c("Model I","Model II")))
 N_orig=array(NA,dim=c(length(id),3,nspp,nb_simu,length(mean_tmp),length(vari_tmp),2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,1:nb_simu,mean_tmp,vari_tmp,c("Model I","Model II")))
 
+gr_array=array(NA,dim=c(length(id),2,nspp,nb_simu,length(mean_tmp),length(vari_tmp),2),dimnames=list(NULL,c("coast","ocean"),name_spp,1:nb_simu,mean_tmp,vari_tmp,c("Model I","Model II")))
+gr_orig=array(NA,dim=c(length(id),2,nspp,nb_simu,length(mean_tmp),length(vari_tmp),2),dimnames=list(NULL,c("coast","ocean"),name_spp,1:nb_simu,mean_tmp,vari_tmp,c("Model I","Model II")))
+
 theta=1.412
 for(m in 1:length(mean_tmp)){
 	print(paste("mean temp",mean_tmp[m]))
@@ -99,45 +102,53 @@ for(m in 1:length(mean_tmp)){
 		for(s in 1:nb_simu){
 			temp_model=rep(mean_simu,n_iter)
 			N_array_simu=array(NA,dim=c(n_iter,3,nspp,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,c("Model I","Model II")))
+			gr_array_simu=array(NA,dim=c(n_iter,2,nspp,2),dimnames=list(NULL,c("coast","ocean"),name_spp,c("Model I","Model II")))
 			N_array_simu[1,,,]=10^3
 			N_orig_simu=array(NA,dim=c(n_iter,3,nspp,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,c("Model I","Model II")))
+			gr_orig_simu=array(NA,dim=c(n_iter,2,nspp,2),dimnames=list(NULL,c("coast","ocean"),name_spp,c("Model I","Model II")))
 			N_orig_simu[1,,,]=10^3
 			for(t in 1:(n_iter-1)){
 				#ModelI
 				#Without Seed Bank
                 		var_tmp=step1_modelI(N_array_simu[t,,,"Model I"],list_inter,temp_model[t],M,morta,a_d,T_opt,B,threshold)
   		              	Ntmp=var_tmp[[1]]
+                                gr_array_simu[t+1,,,"Model I"]=var_tmp[[2]]
                 		N_array_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma,e)
 		
 				#With Seed Bank
 		                var_tmp=step1_modelI(N_orig_simu[t,,,"Model I"],list_inter,temp_model[t],M_orig,morta,a_d,T_opt,B,threshold)
                 		Ntmp=var_tmp[[1]]
+                                gr_orig_simu[t+1,,,"Model I"]=var_tmp[[2]]
                			N_orig_simu[t+1,,,"Model I"]=step2(Ntmp,S,Gamma,e)
 
 				#Model II
 				#Without Seed Bank
                                 var_tmp=step1_modelII(N_array_simu[t,,,"Model II"],list_H,type_inter,temp_model[t],M,morta,a_d,T_opt,B)
                                 Ntmp=var_tmp[[1]]
+                                gr_array_simu[t+1,,,"Model II"]=var_tmp[[2]]
                                 N_array_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma,e)
 
                                 #With Seed Bank
                                 var_tmp=step1_modelII(N_orig_simu[t,,,"Model II"],list_H,type_inter,temp_model[t],M_orig,morta,a_d,T_opt,B)
                                 Ntmp=var_tmp[[1]]
+                                gr_orig_simu[t+1,,,"Model II"]=var_tmp[[2]]
                                 N_orig_simu[t+1,,,"Model II"]=step2(Ntmp,S,Gamma,e)
 
 			}
                         N_array[,,,s,m,v,]=N_array_simu[id,,,]
                         N_orig[,,,s,m,v,]=N_orig_simu[id,,,]
+                        gr_array[,,,s,m,v,]=gr_array_simu[id,,,]
+                        gr_orig[,,,s,m,v,]=gr_orig_simu[id,,,]
 		}
 	}
 }
-save(list = ls(all.names = TRUE), file = "no_seed_temp_no_var_simu.RData", envir = .GlobalEnv)
+save(list = ls(all.names = TRUE), file = "no_seed_temp_no_var_simu_corrected_extract_gr.RData", envir = .GlobalEnv)
 }else{##end !doyouload
-load("no_seed_temp_no_var_simu.RData")
+load("no_seed_temp_no_var_simu_corrected_extract_gr.RData")
 }
 id_persistence=seq(length(id)-nb_persistence+1,length(id))
 
-#pdf("no_seed_bank_temp_no_var.pdf",height=5,width=10)
+pdf("no_seed_bank_temp_no_var.pdf",height=5,width=10)
 par(mfrow=c(1,2),mar=c(2,4.5,2,1))
 plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(0,11.5),xaxt="n",ylab="Richness",xlab="",xlim=c(0.8,length(mean_tmp)+0.5),cex.axis=1.5,cex.lab=1.5,xaxt="n")
 mtext("a",line=0.2,at=.75,cex=1.3,font=2)
@@ -189,4 +200,4 @@ for(i in 1:length(mean_tmp)){
 
 legend("bottomleft",c("W/o seed bank","W seed bank","Model I","Model II"),col=c("black","black","black","grey"),pch=c(16,17,16,16),bty="n",cex=1.25)
 
-#dev.off()
+dev.off()

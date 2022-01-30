@@ -3,12 +3,12 @@
 # 21/05/2020 CP: General script for both models
 ###
 
-doyouload=T #TRUE if you want to reload previous results to plot graphs; FALSE if you want to relaunch the analyses (and then plot the graphs)
+doyouload=F #TRUE if you want to reload previous results to plot graphs; FALSE if you want to relaunch the analyses (and then plot the graphs)
 
 if(!doyouload){
 rm(list=ls())
 graphics.off()
-source("step_functions.r")
+source("step_functions_corrected.r")
 
 nb_year=2
 cpt="ocean"
@@ -130,13 +130,13 @@ for(m in 1:length(mean_tmp)){
 		}
 	}
 }
-save(list = ls(all.names = TRUE), file = "no_seed_temp_simu.RData", envir = .GlobalEnv)
+save(list = ls(all.names = TRUE), file = "no_seed_temp_simu_threshold_modelII.RData", envir = .GlobalEnv)
 }else{##end !doyouload
-load("no_seed_temp_simu.RData")
+load("no_seed_temp_simu_threshold_modelII.RData")
 }
 id_persistence=seq(length(id)-nb_persistence+1,length(id))
 
-pdf("no_seed_bank_temp.pdf")
+pdf("no_seed_bank_temp_threshold_modelII.pdf")
 par(mfrow=c(2,2),mar=c(2,4.5,2,0))
 plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(0,11.5),xaxt="n",ylab="Richness",xlab="",xlim=c(0.8,length(mean_tmp)+0.5),cex.axis=1.5,cex.lab=1.5)
 mtext("a",line=0.2,at=.75,cex=1.3,font=2)

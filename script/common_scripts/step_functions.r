@@ -30,10 +30,12 @@ growth_rate_noMTE_Bissinger=function(temp,T_opt,B,d){ #from Scranton and Vasseur
 step1_modelI=function(n_t,list_inter,temp,M,mort,irradiance,T_opt,B,threshold){ #regular BH
 	tmp=matrix(NA,dim(n_t)[1],dim(n_t)[2])
 	effect_compet=matrix(NA,2,dim(n_t)[2])
+	gr=matrix(NA,2,dim(n_t)[2])
 	colnames(tmp)=colnames(n_t)
 	for(i in 1:2){
 		growth=growth_rate_noMTE_Bissinger(temp,T_opt,B,irradiance)
 		effect_compet[i,]=1+list_inter[[i]]%*%n_t[i,]
+		gr[i,]=exp(growth)/pmax(threshold,1+list_inter[[i]]%*%n_t[i,])
 		tmp[i,]=exp(growth)*n_t[i,]/pmax(threshold,1+list_inter[[i]]%*%n_t[i,]) - mort*n_t[i,]
 	}
 	tmp[3,]=n_t[3,]*(1-M)
@@ -48,7 +50,7 @@ step1_modelI=function(n_t,list_inter,temp,M,mort,irradiance,T_opt,B,threshold){ 
 	print(tmp[2,])
 	print(tmp[3,])
 	stop()}
-	return(list(tmp,effect_compet))
+	return(list(tmp,gr))
 }
 
 step1_modelII=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B){ #BH with saturating interactions
@@ -57,6 +59,7 @@ step1_modelII=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B){ #B
         effect_compet=matrix(NA,2,nspp)
         colnames(tmp)=colnames(n_t)
         colnames(effect_compet)=colnames(n_t)
+	gr=matrix(NA,2,dim(n_t)[2])
         for(i in 1:2){
                 growth=growth_rate_noMTE_Bissinger(temp,T_opt,B,irradiance)
                 for(sp1 in 1:nspp){
@@ -66,8 +69,9 @@ step1_modelII=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B){ #B
                                         val1=val1+type_inter[[i]][sp1,sp2]*n_t[i,sp2]/(list_H[[i]][sp1,sp2]+n_t[i,sp2])
                                 }
                         }
-                        effect_compet[i,sp1]=1+val1
+                        effect_compet[i,sp1]=max(1,1+val1)
                 }
+		gr[i,]=exp(growth)/effect_compet[i,]
                 tmp[i,]=exp(growth)*n_t[i,]/effect_compet[i,] - mort*n_t[i,]
         }
         tmp[3,]=n_t[3,]*(1-M)
@@ -75,12 +79,12 @@ step1_modelII=function(n_t,list_H,type_inter,temp,M,mort,irradiance,T_opt,B){ #B
         if(length(extinction)>1){
                 tmp[extinction]=0
                }
-        if(sum(c(tmp)<0)>0){
-        print(tmp[1,])
-        print(tmp[2,])
-        print(tmp[3,])
-        stop()}
-        return(list(tmp,effect_compet))
+        #if(sum(c(tmp)<0)>0){
+        #print(tmp[1,])
+        #print(tmp[2,])
+        #print(tmp[3,])
+        #stop()}
+        return(list(tmp,gr))
 }
 
 

@@ -78,7 +78,6 @@ type_inter_II=list(type_inter_tmp,k_coast2ocean*type_inter_tmp)
 ###############Golden_set
 #Initialize
 N_original_set=array(NA,dim=c(n_iter,3,nspp,2),dimnames=list(NULL,c("coast","ocean","seed"),name_spp,c("modelI","modelII")))
-#effect_compet=array(NA,dim=c(n_iter,2,nspp),dimnames=list(NULL,c("coast","ocean"),name_spp))
 N_original_set[1,,,]=10^3
 
 ##Run
@@ -119,9 +118,7 @@ N_sensitivity=array(NA,dim=c(length(id),3,nspp,nrow(list_simulation),2),dimnames
 
 nb_simu=0
 for(param_to_move in rownames(free_param)){
-#for(param_to_move in rownames(free_param)[4]){
         for(value in free_param[param_to_move,c("Value_min","Value_max")]){
-#        for(value in free_param[param_to_move,c("Value_max")]){
                 nb_simu=nb_simu+1
                 #Keep other parameters
                 all_others=as.numeric(as.character(free_param[,"Value_used"]))
@@ -172,14 +169,13 @@ for(t in 1:(n_iter-1)){
 		tab_summary[nb_simu,"Persistence_ocean",m]=sum(apply(N_simu[id_persistence,"ocean",,m]==0,2,sum)<nb_persistence)
 
 		}
-#		if(nb_simu==8){stop()}
 }
 }
 analyses=rownames(list_simulation)
 
-save(list = ls(all.names = TRUE), file = "main_sensitivity_simu.RData", envir = .GlobalEnv)
+save(list = ls(all.names = TRUE), file = "main_sensitivity_simu_corrected.RData", envir = .GlobalEnv)
 }else{ #end if doyouload
-load("main_sensitivity_simu.RData")
+load("main_sensitivity_simu_corrected.RData")
 }
 
 #Difference between abundance on the coast and on the ocean
@@ -228,18 +224,13 @@ for(param_to_move in rownames(free_param)){
 let_panels=c("a","b")
 
 pdf(paste("mean_abundance_amplitude_sensitivity.pdf",sep=""),width=12,height=10)
-#par(mfrow=c(2,1),mar=c(3,5,3,1)) ##Original
 par(mfrow=c(2,1),mar=c(3.5,5,3.5,1))
 plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-5,2),xaxt="n",ylab="%Diff log10(mean abundance)",xlab="",cex.lab=1.65,cex.axis=1.65)
-#axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
 abline(h=0)
-#mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.3)
 mtext("a",3,line=0.5,at=0.6,cex=1.75,font=2)
 l=0
 val_text=c()
 at_val_text=c()
-#val_label=c(expression("S"["max"]),"",expression(zeta),"","germination","","resuspension","","l","","e")
-#val_label=c(expression("S"["max"]),"",expression(zeta),"",expression(gamma[1]),"",expression(gamma[2]),"","l","","e")
 val_label=c(expression("S"["max"]),expression(zeta),expression(gamma[1]),expression(gamma[2]),"l","e")
 for(param_to_move in rownames(free_param)){
         l=l+1
@@ -252,6 +243,8 @@ for(param_to_move in rownames(free_param)){
 
 		for(mod in 1:2){
                 per_change=mean(matrix_mean[param_to_move,i,,mod]*is.finite(matrix_mean[param_to_move,i,,mod]),na.rm=T)
+		print(paste(analyses[id_param],mod))
+		print(per_change)
 		if(mod==1){
 			colm="lightgrey"
 			idplus=idplus_text=0
@@ -261,15 +254,13 @@ for(param_to_move in rownames(free_param)){
 			idplus_text=0.
 		}
                 rect(l+0.75*seq_space[i]+idplus,min(c(0,per_change)),l+1.25*seq_space[i]+idplus,max(c(per_change,0)),col=colm)
-		print(analyses[i])
-		print(tab_summary[id_param[i],,mod])
+		#print(analyses[i])
+		#print(tab_summary[id_param[i],,mod])
                 if(tab_summary[id_param[i],4,mod]==0){
 			if((tab_summary[id_param[i],"Persistence_coast",mod]<nspp)|(tab_summary[id_param[i],"Persistence_ocean",mod]<nspp)){
-                        #text(l+seq_space[i]+idplus,per_change+(0.1*9)*sign(per_change),tab_summary[id_param[i],"Persistence",mod],col="red")
                         text(l+seq_space[i]+idplus,2-idplus*4,tab_summary[id_param[i],"Persistence_ocean",mod],col="red",cex=1.5)
 #                        text(l+seq_space[i]+idplus_text,3-0.4,tab_summary[id_param[i],"Persistence_coast",mod],col="blue")
 			}else{
-                        #points(l+seq_space[i]+idplus,per_change+(0.1*11)*sign(per_change),t="p",pch=16,col="red",cex=0.5)
                         points(l+seq_space[i]+idplus,2,t="p",pch=16,col="red",cex=1)
 			}
                 }
@@ -279,16 +270,12 @@ for(param_to_move in rownames(free_param)){
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
 }
-#mtext(val_text,1,line=2.25,at=at_val_text,cex=1.3)
 legend("bottomleft",c("Model I","Model II"),col=c("lightgrey","darkgrey"),pch=16,bty="n",cex=1.75)
 
-#par(mar=c(4.5,5,1.5,1)) ##Original
 par(mar=c(5.5,5,1.5,1))
 plot(0,0,t="n",xlim=c(0.75,nrow(free_param)+0.25),ylim=c(-40,30),xaxt="n",ylab="%Diff log.amplitude",xlab="",cex.axis=1.65,cex.lab=1.65)
-#axis(1,labels=rownames(free_param),at=1:nrow(free_param),cex.axis=1.525)
 axis(1,labels=val_label,at=1:nrow(free_param),cex.axis=1.525)
 abline(h=0)
-#mtext(c(all_others),1,line=3.5,at=1:nrow(free_param),cex=1.4) ##Original
 mtext(c(all_others),1,line=4,at=1:nrow(free_param),cex=1.4)
 mtext("b",3,line=0.5,at=0.6,cex=1.75,font=2)
 l=0
@@ -303,7 +290,7 @@ for(param_to_move in rownames(free_param)){
 		for(mod in 1:2){
 		print(paste(analyses[id_param],mod))
                 per_change=mean(matrix_amplitude[param_to_move,i,,mod]*is.finite(matrix_mean[param_to_move,i,,mod]),na.rm=T)
-		print(per_change)
+	#	print(per_change)
                 if(mod==1){
                         colm="lightgrey"
                         idplus=0
@@ -327,9 +314,7 @@ for(param_to_move in rownames(free_param)){
                 val_text=c(val_text,tmp_text[[1]][length(tmp_text[[1]])])
         }
 }
-#mtext(val_text,1,line=2.25,at=at_val_text,cex=1.3) ##Original
 mtext(val_text,1,line=2.5,at=at_val_text,cex=1.3)
-#mtext(val_label,1,line=2.25,at=at_val_text,cex=1.3)
 dev.off()
 } #end of  cpt="coast
 
@@ -456,6 +441,7 @@ for(param_to_move in rownames(free_param)){
 
                 for(mod in 1:2){
                 per_change=mean(matrix_mean[param_to_move,i,,mod]*is.finite(matrix_mean[param_to_move,i,,mod]),na.rm=T)
+                print(per_change)
                 if(mod==1){
                         colm="lightgrey"
                         idplus=idplus_text=0
