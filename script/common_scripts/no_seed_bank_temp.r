@@ -8,7 +8,7 @@ doyouload=F #TRUE if you want to reload previous results to plot graphs; FALSE i
 if(!doyouload){
 rm(list=ls())
 graphics.off()
-source("step_functions_corrected.r")
+source("step_functions.r")
 
 nb_year=2
 cpt="ocean"
@@ -136,11 +136,10 @@ load("no_seed_temp_simu_threshold_modelII.RData")
 }
 id_persistence=seq(length(id)-nb_persistence+1,length(id))
 
-pdf("no_seed_bank_temp_threshold_modelII.pdf")
+pdf("no_seed_bank_temp.pdf")
 par(mfrow=c(2,2),mar=c(2,4.5,2,0))
 plot(1:length(mean_tmp),rep(NA,length(mean_tmp)),ylim=c(0,11.5),xaxt="n",ylab="Richness",xlab="",xlim=c(0.8,length(mean_tmp)+0.5),cex.axis=1.5,cex.lab=1.5)
 mtext("a",line=0.2,at=.75,cex=1.3,font=2)
-#axis(1,at=1:length(mean_tmp),labels=NA)
 for(m in 1:2){
 	if(m==1){
 		acol="black"
@@ -153,8 +152,6 @@ for(i in 1:length(mean_tmp)){
 	tmp_value=rep(NA,length(nb_simu))
 	tmp_value_orig=rep(NA,length(nb_simu))
 	for(j in 1:nb_simu){
-		#tmp_value[j]=apply(apply(N_array[id_persistence,"ocean",,j,i,1,m]==0,c(2,3),sum)<nb_persistence,2,sum)
-		#tmp_value_orig[j]=apply(apply(N_orig[id_persistence,"ocean",,j,i,1,m]==0,c(2,3),sum)<nb_persistence,2,sum)
 		tmp_value[j]=sum(apply(N_array[id_persistence,"ocean",,j,i,1,m]==0,2,sum)<nb_persistence)
 		tmp_value_orig[j]=sum(apply(N_orig[id_persistence,"ocean",,j,i,1,m]==0,c(2),sum)<nb_persistence)
 	}
@@ -170,7 +167,6 @@ par(mar=c(2,2.5,2,2))
 plot(1:length(vari_tmp),rep(NA,length(vari_tmp)),ylim=c(0,11.5),xaxt="n",xlab="",ylab="",xlim=c(0.8,length(vari_tmp)+0.5),cex.axis=1.5,cex.lab=1.5,yaxt="n")
 mtext("b",line=0.2,at=0.75,cex=1.3,font=2)
 
-#axis(1,at=1:length(vari_tmp),labels=NA)
 for(m in 1:2){
 	if(m==1){
 		acol="black"
@@ -183,8 +179,6 @@ for(i in 1:length(vari_tmp)){
         tmp_value=rep(NA,length(nb_simu))
         tmp_valuei_orig=rep(NA,length(nb_simu))
         for(j in 1:nb_simu){
-		#tmp_value[j]=apply(apply(N_array[id_persistence,"ocean",,j,1,i,m]==0,c(2,3),sum)<nb_persistence,2,sum)
-		#tmp_value_orig[j]=apply(apply(N_orig[id_persistence,"ocean",,j,1,i,m]==0,c(2,3),sum)<nb_persistence,2,sum)
 		tmp_value[j]=sum(apply(N_array[id_persistence,"ocean",,j,1,i,m]==0,2,sum)<nb_persistence)
 		tmp_value_orig[j]=sum(apply(N_orig[id_persistence,"ocean",,j,1,i,m]==0,2,sum)<nb_persistence)
         }
